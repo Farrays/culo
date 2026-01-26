@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { HOMEPAGE_V2_CONFIG } from '../../constants/homepage-v2-config';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
@@ -130,7 +130,19 @@ const ComparisonIcons: Record<string, React.FC<{ className?: string }>> = {
  * Usa el estilo visual coherente con WhyFIDC.
  */
 const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   const iconKeys = [

@@ -23,7 +23,7 @@
 
 import React, { memo, useId, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import LazyImage from '../LazyImage';
 import { getRelatedClassImageUrl } from '../../constants/style-images';
@@ -406,7 +406,20 @@ interface RelatedClassesProps {
  * ```
  */
 const RelatedClasses: React.FC<RelatedClassesProps> = memo(({ relatedClasses, className = '' }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   // Generate unique IDs for accessibility
   const sectionId = useId();

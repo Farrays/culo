@@ -12,7 +12,7 @@
  */
 
 import React, { useState, lazy, Suspense } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { Novedad } from '../../types/novedad';
 import { BADGE_COLORS } from '../../types/novedad';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
@@ -68,7 +68,20 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
   index = 0,
   total = 1,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCTAClick = (e: React.MouseEvent) => {

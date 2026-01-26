@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import ServicePageTemplate from './templates/ServicePageTemplate';
 import type {
   ServiceFeature,
@@ -24,7 +24,19 @@ import type {
 } from './templates/ServicePageTemplate.types';
 
 const TeamBuildingPage: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Trust signals (E-E-A-T)
   const trustSignals: TrustSignal[] = [

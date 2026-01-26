@@ -14,7 +14,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES, type Locale } from '../../types';
 import GenericLeadModal from './GenericLeadModal';
 import AnimateOnScroll from '../AnimateOnScroll';
@@ -68,7 +68,19 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
   prefix,
   theme,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const intervalMs = intervalDays * 24 * 60 * 60 * 1000;
   const baseDateObj = useMemo(() => new Date(baseDate), [baseDate]);
@@ -184,7 +196,19 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
   styleName,
   exploreUrl,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   if (!isOpen) return null;
 
@@ -268,7 +292,20 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
 // =============================================================================
 
 const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const navigate = useNavigate();
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);

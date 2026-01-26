@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ServiceInfo } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
 import {
@@ -100,7 +100,20 @@ interface ServicesProps {
 }
 
 const Services: React.FC<ServicesProps> = ({ showAll = false }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   // Filtrar servicios: solo los destacados o todos
   const displayedServices = showAll

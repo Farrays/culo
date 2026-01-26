@@ -7,7 +7,7 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ArticleSection } from '../../constants/blog/types';
 
 interface TableOfContentsProps {
@@ -24,7 +24,19 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
   sticky = false,
   className = '',
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [activeId, setActiveId] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState(!sticky);
 

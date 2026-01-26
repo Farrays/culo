@@ -1,4 +1,4 @@
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { HOMEPAGE_V2_CONFIG } from '../../constants/homepage-v2-config';
 
@@ -15,7 +15,19 @@ interface SocialProofSectionProps {
  * - Logos de apariciones (Got Talent, etc.)
  */
 const SocialProofSection: React.FC<SocialProofSectionProps> = ({ config }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-12 md:py-16 bg-black">

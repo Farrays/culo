@@ -1,4 +1,4 @@
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 /**
  * StatsBar - Barra de estadísticas elegante y minimalista
@@ -7,7 +7,19 @@ import { useI18n } from '../../hooks/useI18n';
  * Diseño limpio sin iconos, solo tipografía.
  */
 const StatsBar: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const stats = [
     {

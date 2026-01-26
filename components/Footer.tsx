@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { CookieSettingsButton } from './shared/CookieBanner';
 
 // Schema.org Organization for SEO - Created dynamically for i18n
@@ -108,7 +108,19 @@ const FooterLink: React.FC<{ to?: string; href?: string; textKey: string }> = ({
   href,
   textKey,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   if (to) {
     return (
       <li>
@@ -153,7 +165,20 @@ const GOOGLE_MAPS_URL =
   'https://www.google.com/maps/place/Farray%E2%80%99s+International+Dance+Center/@41.380421,2.148014,17z';
 
 const Footer: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const organizationSchema = createOrganizationSchema(t);
 
   return (
@@ -278,7 +303,7 @@ const Footer: React.FC = () => {
               <p className="text-neutral/70">
                 {t('footerAddressValue')
                   .split('\n')
-                  .map((line, index) => (
+                  .map((line: string, index: number) => (
                     <React.Fragment key={index}>
                       {line}
                       <br />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { ANIMATION_DELAYS } from '../../constants/shared';
 
@@ -35,7 +35,19 @@ interface WhyUsComparisonSectionProps {
 }
 
 const WhyUsComparisonSection: React.FC<WhyUsComparisonSectionProps> = ({ styleKey, config }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const rowCount = config.rowCount || 8;
   const meaningCount = config.meaningCount || 4;
   const showCTA = config.showCTA !== false;

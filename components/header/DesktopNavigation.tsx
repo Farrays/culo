@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { ChevronDownIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 import type { DropdownKey } from '../Header';
@@ -95,7 +95,19 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   toggleDropdown,
   closeAllDropdowns,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const location = useLocation();
 
   // Refs for dropdown containers (keyboard navigation)

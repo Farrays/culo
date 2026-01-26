@@ -1,14 +1,14 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { renderHook } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../../test/i18n-test-config';
 import { getImageAltByPath, validateAltTexts, useImageAlt } from '../useImageAlt';
+import type { ReactNode } from 'react';
 
-// Mock useI18n
-vi.mock('../useI18n', () => ({
-  useI18n: () => ({
-    locale: 'es',
-    t: (key: string) => key,
-  }),
-}));
+// Wrapper component for hook tests
+const wrapper = ({ children }: { children: ReactNode }) => (
+  <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+);
 
 // Mock IMAGE_ALT_TEXTS
 vi.mock('../../constants/image-alt-texts', () => ({
@@ -108,49 +108,49 @@ describe('validateAltTexts', () => {
 
 describe('useImageAlt', () => {
   it('returns getAlt function', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     expect(typeof result.current.getAlt).toBe('function');
   });
 
   it('returns getAltForLocale function', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     expect(typeof result.current.getAltForLocale).toBe('function');
   });
 
   it('returns hasAlt function', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     expect(typeof result.current.hasAlt).toBe('function');
   });
 
   it('returns current locale', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     expect(result.current.locale).toBe('es');
   });
 
   it('getAlt returns correct alt text', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     const alt = result.current.getAlt('classes.dancehall.hero');
     expect(alt).toBe('Clase de dancehall en acción');
   });
 
   it('getAltForLocale returns alt for specified locale', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     const alt = result.current.getAltForLocale('classes.dancehall.hero', 'en');
     expect(alt).toBe('Dancehall class in action');
   });
 
   it('hasAlt returns true for existing paths', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     expect(result.current.hasAlt('classes.dancehall.hero')).toBe(true);
   });
 
   it('hasAlt returns false for non-existing paths', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     expect(result.current.hasAlt('nonexistent.path')).toBe(false);
   });
 
   it('getAlt handles gallery images with index', () => {
-    const { result } = renderHook(() => useImageAlt());
+    const { result } = renderHook(() => useImageAlt(), { wrapper });
     const alt = result.current.getAlt('classes.dancehall.gallery', 0);
     expect(alt).toBe('Estudiantes bailando');
   });

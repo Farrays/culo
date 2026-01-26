@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import {
   SALSA_LADY_STYLE_TESTIMONIALS,
@@ -21,6 +21,7 @@ import YouTubeEmbed from './YouTubeEmbed';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
 import { StarRating, CalendarDaysIcon } from '../lib/icons';
 import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
+import type { Locale } from '../types';
 
 // Icon components for a clean, professional look
 const CheckIcon: React.FC<{ className?: string }> = ({ className = '' }) => (
@@ -138,7 +139,20 @@ const PillarIcon: React.FC<{ type: string; className?: string }> = ({ type, clas
 };
 
 const SalsaLadyStylePageV2: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/salsa-lady-style-barcelona`;
 
@@ -164,7 +178,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
     itemReviewed: { name: t('schema_salsaLady_courseName'), type: 'Course' },
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-    reviewBody: testimonial.quote[locale],
+    reviewBody: testimonial.quote[locale as Locale],
     datePublished: new Date().toISOString().split('T')[0],
   }));
 
@@ -897,7 +911,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                   <div className="h-full p-4 bg-black/50 border border-primary-dark/50 rounded-xl hover:border-primary-accent transition-all duration-300">
                     <StarRating size="sm" />
                     <p className="text-neutral/90 text-xs sm:text-sm mt-3 mb-3 sm:mb-4 leading-relaxed">
-                      &ldquo;{testimonial.quote[locale]}&rdquo;
+                      &ldquo;{testimonial.quote[locale as Locale]}&rdquo;
                     </p>
                     <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
                       {testimonial.name}

@@ -7,7 +7,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES } from '../../types';
 import { getAllCategories, getCategoryMeta } from '../../constants/blog/categories';
 import type { BlogCategory, ArticleCardData } from '../../constants/blog/types';
@@ -40,7 +40,20 @@ const ALL_ARTICLES: ArticleCardData[] = [
 ];
 
 const BlogListPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const { category } = useParams<{ category?: string }>();
   const baseUrl = 'https://www.farrayscenter.com';
 

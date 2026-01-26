@@ -101,7 +101,7 @@ export const NOVEDADES_DATA: Novedad[] = [
     },
     cta: {
       textKey: 'novedades_cta_info',
-      link: '/es/formacion-profesional',
+      openModal: true,
     },
     featured: true,
     order: 3,

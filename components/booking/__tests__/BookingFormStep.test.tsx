@@ -100,7 +100,7 @@ describe('BookingFormStep', () => {
     it('should render submit button', () => {
       renderComponent();
 
-      const submitButton = screen.getByRole('button', { name: /booking_submit/i });
+      const submitButton = screen.getByRole('button', { name: /Confirmar Reserva/i });
       expect(submitButton).toBeInTheDocument();
       expect(submitButton).toHaveAttribute('type', 'submit');
     });
@@ -237,7 +237,7 @@ describe('BookingFormStep', () => {
     it('should show loading state on submit button', () => {
       renderComponent({ status: 'loading' });
 
-      expect(screen.getByText(/booking_submit_loading/i)).toBeInTheDocument();
+      expect(screen.getByText(/Procesando/i)).toBeInTheDocument();
     });
   });
 
@@ -273,7 +273,7 @@ describe('BookingFormStep', () => {
       });
 
       // Should show field-specific error
-      const errorMessages = screen.getAllByText(/booking_error_field_required/i);
+      const errorMessages = screen.getAllByText(/Este campo es obligatorio/i);
       expect(errorMessages.length).toBeGreaterThan(0);
     });
 
@@ -360,16 +360,21 @@ describe('BookingFormStep', () => {
       renderComponent();
 
       // Should have legal text at the bottom
-      expect(screen.getByText(/booking_legal_responsible/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Responsable: Farray's International Dance Center/i)
+      ).toBeInTheDocument();
     });
 
     it('should have privacy policy modal trigger', () => {
       renderComponent();
 
       // Privacy link is now a button that opens a modal
-      const privacyButton = screen.getByText(/booking_consent_privacy_link/i);
-      expect(privacyButton).toBeInTheDocument();
-      expect(privacyButton.tagName.toLowerCase()).toBe('button');
+      const privacyButtons = screen.getAllByText(/política de privacidad/i);
+      expect(privacyButtons.length).toBeGreaterThan(0);
+      const firstButton = privacyButtons[0];
+      if (firstButton) {
+        expect(firstButton.tagName.toLowerCase()).toBe('button');
+      }
     });
   });
 });

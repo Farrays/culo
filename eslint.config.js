@@ -126,6 +126,7 @@ export default [
   },
   {
     ignores: [
+      'i18n/locales/es-temp.cjs',
       'node_modules/',
       'dist/',
       '.next/',

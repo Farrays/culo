@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import BlogArticleTemplate from '../templates/BlogArticleTemplate';
 import type { BlogArticleConfig } from '../../constants/blog/types';
 
@@ -36,7 +36,20 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
 
 const BlogArticlePage: React.FC = () => {
   const { slug, category } = useParams<{ slug: string; category: string }>();
-  const { locale } = useI18n();
+  const { i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   // Find article config by slug
   const config = slug ? ARTICLE_CONFIGS[slug] : undefined;

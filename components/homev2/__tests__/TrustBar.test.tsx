@@ -1,22 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/test-utils';
 import TrustBar from '../TrustBar';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        trustbar_cidunesco: 'Affiliated',
-        trustbar_students: 'Students',
-        trustbar_facilities: 'Facilities',
-        trustbar_styles: 'Dance Styles',
-        trustbar_google: 'Google Rating',
-      };
-      return translations[key] || key;
-    },
-  }),
-}));
 
 // Mock AnimateOnScroll
 vi.mock('../../AnimateOnScroll', () => ({
@@ -45,11 +29,11 @@ describe('TrustBar', () => {
   it('displays translated labels', () => {
     render(<TrustBar />);
 
-    expect(screen.getByText('Affiliated')).toBeInTheDocument();
-    expect(screen.getByText('Students')).toBeInTheDocument();
-    expect(screen.getByText('Facilities')).toBeInTheDocument();
-    expect(screen.getByText('Dance Styles')).toBeInTheDocument();
-    expect(screen.getByText('Google Rating')).toBeInTheDocument();
+    expect(screen.getByText('Acreditados')).toBeInTheDocument();
+    expect(screen.getByText('Estudiantes')).toBeInTheDocument();
+    expect(screen.getByText('Instalaciones')).toBeInTheDocument();
+    expect(screen.getByText('Estilos')).toBeInTheDocument();
+    expect(screen.getByText('Google Reviews')).toBeInTheDocument();
   });
 
   it('wraps content in AnimateOnScroll', () => {
@@ -65,7 +49,7 @@ describe('TrustBar', () => {
     expect(ratingValue).toBeInTheDocument();
 
     // Check that rating is near the Google Rating label
-    const ratingLabel = screen.getByText('Google Rating');
+    const ratingLabel = screen.getByText('Google Reviews');
     expect(ratingLabel).toBeInTheDocument();
   });
 

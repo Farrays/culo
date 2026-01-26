@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { useScrollToSection } from '../../hooks/useActiveSection';
 import {
   TIME_BLOCKS,
@@ -13,7 +13,19 @@ import {
  * Shows a visual grid of when classes are available
  */
 export const WeeklyAvailabilityMatrix: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const scrollToSection = useScrollToSection();
   const availability = getWeeklyAvailability();
 

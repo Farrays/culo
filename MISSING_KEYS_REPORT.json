@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-01-25T20:49:47.562Z",
+  "summary": {
+    "blogEN": {
+      "missing": 0,
+      "extra": 0
+    },
+    "blogFR": {
+      "missing": 0,
+      "extra": 0
+    },
+    "contactFR": {
+      "missing": 6,
+      "extra": 0
+    }
+  },
+  "details": {
+    "blogEN": {
+      "missing": [],
+      "extra": []
+    },
+    "blogFR": {
+      "missing": [],
+      "extra": []
+    },
+    "contactFR": {
+      "missing": [
+        "baExitIntent_title",
+        "baExitIntent_description",
+        "baExitIntent_ctaExplore",
+        "baExitIntent_ctaDancehall",
+        "baExitIntent_ctaClose",
+        "baExitIntent_hint"
+      ],
+      "extra": []
+    }
+  }
+}

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import DOMPurify from 'dompurify';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ArticleSection } from '../../constants/blog/types';
 import AnimateOnScroll from '../AnimateOnScroll';
 import LazyImage from '../LazyImage';
@@ -23,7 +23,19 @@ interface ArticleContentProps {
 }
 
 const ArticleContent: React.FC<ArticleContentProps> = ({ sections, className = '' }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   /**
    * Parse markdown-like content to HTML

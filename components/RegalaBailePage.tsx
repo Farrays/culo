@@ -1,13 +1,26 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import Icon from './Icon';
 
 const RegalaBailePage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
   // Beneficios de regalar baile

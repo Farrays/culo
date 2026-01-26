@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import useScrollProgress from '../../hooks/useScrollProgress';
 import useActiveSection, { useScrollToSection } from '../../hooks/useActiveSection';
 
@@ -25,7 +25,19 @@ export const StickyScheduleNav: React.FC<StickyScheduleNavProps> = ({
   items,
   showAfterScroll = 400,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const progress = useScrollProgress();
   const [isVisible, setIsVisible] = useState(false);
 

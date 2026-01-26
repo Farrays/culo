@@ -13,7 +13,7 @@
 
 import React, { useEffect, memo, useRef, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 // Hooks
 import { useBookingFilters } from './hooks/useBookingFilters';
@@ -159,7 +159,20 @@ const LanguageSelector: React.FC<{
 const FORM_SUBMISSION_TIMEOUT_MS = 30000;
 
 const BookingWidgetV2: React.FC = memo(() => {
-  const { t, locale, setLocale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -196,7 +209,7 @@ const BookingWidgetV2: React.FC = memo(() => {
   // Language change handler
   const handleLanguageChange = (newLocale: 'es' | 'ca' | 'en' | 'fr') => {
     if (newLocale !== locale) {
-      setLocale(newLocale);
+      i18n.changeLanguage(newLocale);
       const newPath = location.pathname.replace(/^\/(es|ca|en|fr)/, `/${newLocale}`);
       navigate(newPath + location.search, { replace: true });
     }

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon from './Icon';
@@ -71,7 +71,20 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'rate_limited';
 // ============================================================================
 
 const ContactPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const successRef = useRef<HTMLDivElement>(null);
 

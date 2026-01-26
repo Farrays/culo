@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { HOMEPAGE_V2_CONFIG } from '../../constants/homepage-v2-config';
 
@@ -50,7 +50,20 @@ const PillarIcons: Record<string, React.FC<{ className?: string }>> = {
  * - Glow effects en hover
  */
 const MethodSection: React.FC<MethodSectionProps> = ({ config }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   return (
     <section id="method-section" className="py-12 md:py-16 bg-black">

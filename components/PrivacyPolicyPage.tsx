@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useCallback, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { ChevronDownIcon } from '../lib/icons';
 
 interface PrivacySection {
@@ -45,7 +45,20 @@ const PrivacySectionAccordion: React.FC<{
 PrivacySectionAccordion.displayName = 'PrivacySectionAccordion';
 
 const PrivacyPolicyPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const lastUpdated = '24/12/2025';
   const [openSections, setOpenSections] = useState<Set<string>>(new Set(['section-1']));

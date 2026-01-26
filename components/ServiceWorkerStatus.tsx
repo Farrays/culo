@@ -5,13 +5,25 @@
 
 import React, { memo } from 'react';
 import { useServiceWorker } from '../hooks/useServiceWorker';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Offline indicator banner
  */
 const OfflineBanner: React.FC = memo(() => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div
@@ -45,7 +57,19 @@ OfflineBanner.displayName = 'OfflineBanner';
  * Update available notification
  */
 const UpdateBanner: React.FC<{ onUpdate: () => void }> = memo(({ onUpdate }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div

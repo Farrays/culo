@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { FilterState, FilterOptions } from '../types/booking';
 import {
   STYLE_OPTIONS,
@@ -268,7 +268,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   filterOptions,
   loading = false,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   // Filters visible by default on mobile, click to hide
   const [isExpanded, setIsExpanded] = useState(true);

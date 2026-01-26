@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { HUB_CATEGORIES } from '../constants/danceClassesHub';
 import { SALSA_BACHATA_FAQS_CONFIG } from '../constants/salsa-bachata';
 import AnimateOnScroll from './AnimateOnScroll';
@@ -108,7 +108,19 @@ const relatedClasses: RelatedClass[] = [
 // ============================================================================
 
 const WhatIsSalsaBachataSection: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section aria-labelledby="what-is-title" className="py-12 md:py-16 bg-black">
@@ -150,7 +162,19 @@ const WhatIsSalsaBachataSection: React.FC = () => {
 };
 
 const WhichStyleSection: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const tableRows = [
     { goal: 'social', style: 'social', why: 'social' },
@@ -262,7 +286,20 @@ const WhichStyleSection: React.FC = () => {
 // ============================================================================
 
 const SalsaBachataPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
   // Get the "latin" category data from HUB_CATEGORIES

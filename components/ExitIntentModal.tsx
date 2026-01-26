@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import CountdownTimer from './shared/CountdownTimer';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../utils/analytics';
 
@@ -43,7 +43,20 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
   promoEndDate = new Date('2025-01-31T23:59:59'),
   discountPercent = 50,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
   const [email, setEmail] = useState('');

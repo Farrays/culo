@@ -10,7 +10,8 @@ import {
   useNavigationType,
 } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { I18nProvider, useI18n } from './hooks/useI18n';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n/i18n';
 import type { Locale } from './types';
 import { SUPPORTED_LOCALES } from './types';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -169,7 +170,7 @@ const ScrollToTop: React.FC = () => {
 // Component to sync URL locale with i18n context and validate
 const LocaleSync: React.FC = () => {
   const { locale: urlLocale } = useParams<{ locale: Locale }>();
-  const { setLocale, locale: currentLocale } = useI18n();
+  const currentLocale: Locale = i18n.language as Locale;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -177,14 +178,14 @@ const LocaleSync: React.FC = () => {
       if (VALID_LOCALES.includes(urlLocale as Locale)) {
         // Only update if the locale from the URL is different
         if (urlLocale !== currentLocale) {
-          setLocale(urlLocale as Locale);
+          i18n.changeLanguage(urlLocale);
         }
       } else {
         // If the locale in the URL is invalid, redirect to the current valid locale's equivalent page
         navigate(`/${currentLocale}`, { replace: true });
       }
     }
-  }, [urlLocale, currentLocale, setLocale, navigate]);
+  }, [urlLocale, currentLocale, navigate]);
 
   return null;
 };
@@ -237,7 +238,7 @@ const EXIT_INTENT_PROMO_CONFIG = {
 };
 
 const AppContent: React.FC = () => {
-  const { locale } = useI18n();
+  const locale: Locale = i18n.language as Locale;
   const location = useLocation();
 
   // Check if current route is a landing page (no header/footer)
@@ -1213,11 +1214,11 @@ const App: React.FC = () => {
   return (
     <ErrorBoundary>
       <HelmetProvider>
-        <I18nProvider>
+        <I18nextProvider i18n={i18n}>
           <BrowserRouter>
             <AppContent />
           </BrowserRouter>
-        </I18nProvider>
+        </I18nextProvider>
       </HelmetProvider>
     </ErrorBoundary>
   );

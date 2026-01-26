@@ -1,26 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render, screen, fireEvent } from '../../../test/test-utils';
 import HeroV2 from '../HeroV2';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        hero_headline: 'Bailar es Vivir',
-        hero_subheadline: 'La escuela de baile',
-        hero_tagline: 'Donde el arte cobra vida',
-        hero_value_proposition: 'Aprende a bailar con los mejores',
-        hero_urgency: 'Primera clase gratis',
-        hero_cta_reserve: 'Reserva tu clase',
-        hero_cta_schedule: 'Ver horarios',
-      };
-      return translations[key] || key;
-    },
-    locale: 'es',
-  }),
-}));
 
 // Mock LeadCaptureModal
 vi.mock('../../shared/LeadCaptureModal', () => ({
@@ -57,32 +37,28 @@ const mockConfig = {
   },
 };
 
-const renderWithRouter = (ui: React.ReactElement) => {
-  return render(<MemoryRouter>{ui}</MemoryRouter>);
-};
-
 describe('HeroV2', () => {
   it('renders without crashing', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
     expect(screen.getByText('Bailar es Vivir')).toBeInTheDocument();
   });
 
   it('displays headline and subheadline', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     expect(screen.getByText('Bailar es Vivir')).toBeInTheDocument();
     expect(screen.getByText('La escuela de baile')).toBeInTheDocument();
   });
 
   it('displays tagline and value proposition', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     expect(screen.getByText('Donde el arte cobra vida')).toBeInTheDocument();
     expect(screen.getByText('Aprende a bailar con los mejores')).toBeInTheDocument();
   });
 
   it('displays social proof rating', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     expect(screen.getByText('4.9')).toBeInTheDocument();
     // Component renders: reviewCount + "+ opiniones en Google"
@@ -90,12 +66,14 @@ describe('HeroV2', () => {
   });
 
   it('displays urgency message', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
-    expect(screen.getByText('Primera clase gratis')).toBeInTheDocument();
+    render(<HeroV2 config={mockConfig} />);
+    expect(
+      screen.getByText('Oferta Enero: Clase de bienvenida + Regalo sorpresa')
+    ).toBeInTheDocument();
   });
 
   it('opens modal on CTA click', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     const ctaButton = screen.getByText('Reserva tu clase');
     fireEvent.click(ctaButton);
@@ -104,7 +82,7 @@ describe('HeroV2', () => {
   });
 
   it('closes modal when close button clicked', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     // Open modal
     fireEvent.click(screen.getByText('Reserva tu clase'));
@@ -116,9 +94,9 @@ describe('HeroV2', () => {
   });
 
   it('renders schedule link with correct href', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
-    const scheduleLink = screen.getByText('Ver horarios');
+    const scheduleLink = screen.getByText('Ver Horarios');
     expect(scheduleLink.closest('a')).toHaveAttribute(
       'href',
       '/es/horarios-clases-baile-barcelona'
@@ -126,7 +104,7 @@ describe('HeroV2', () => {
   });
 
   it('renders 5 star icons for social proof', () => {
-    const { container } = renderWithRouter(<HeroV2 config={mockConfig} />);
+    const { container } = render(<HeroV2 config={mockConfig} />);
 
     const starsContainer = container.querySelector('.text-yellow-400');
     expect(starsContainer).toBeInTheDocument();
@@ -136,7 +114,7 @@ describe('HeroV2', () => {
   });
 
   it('renders with image background by default', () => {
-    const { container } = renderWithRouter(<HeroV2 config={mockConfig} />);
+    const { container } = render(<HeroV2 config={mockConfig} />);
 
     const bgImage = container.querySelector('img[src="/hero-bg.jpg"]');
     expect(bgImage).toBeInTheDocument();
@@ -149,7 +127,7 @@ describe('HeroV2', () => {
       backgroundVideo: '/hero-video.mp4',
     };
 
-    const { container } = renderWithRouter(<HeroV2 config={videoConfig} />);
+    const { container } = render(<HeroV2 config={videoConfig} />);
 
     const video = container.querySelector('video');
     expect(video).toBeInTheDocument();
@@ -159,7 +137,7 @@ describe('HeroV2', () => {
   });
 
   it('has proper h1 structure', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     const heading = screen.getByRole('heading', { level: 1 });
     expect(heading).toBeInTheDocument();
@@ -167,7 +145,7 @@ describe('HeroV2', () => {
   });
 
   it('has accessible section label', () => {
-    renderWithRouter(<HeroV2 config={mockConfig} />);
+    render(<HeroV2 config={mockConfig} />);
 
     const section = screen.getByRole('region', { name: /hero section/i });
     expect(section).toBeInTheDocument();

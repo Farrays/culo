@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 type SharePlatform = 'whatsapp' | 'facebook' | 'twitter' | 'linkedin' | 'email';
 
@@ -27,7 +27,19 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({
   platforms = ['whatsapp', 'facebook', 'twitter', 'linkedin', 'email'],
   className = '',
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
   const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);

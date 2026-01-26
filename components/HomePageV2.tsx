@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { HOMEPAGE_V2_CONFIG } from '../constants/homepage-v2-config';
 import ProblemSolutionSection from './homev2/ProblemSolutionSection';
 import MethodSection from './homev2/MethodSection';
@@ -12,7 +12,20 @@ import MethodSection from './homev2/MethodSection';
  * 2. MethodSection - Método Farray® (3 pilares)
  */
 const HomePageV2: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const config = HOMEPAGE_V2_CONFIG;
 

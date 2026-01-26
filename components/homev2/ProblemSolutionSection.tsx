@@ -1,4 +1,4 @@
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 
 /**
@@ -10,7 +10,19 @@ import AnimateOnScroll from '../AnimateOnScroll';
  * 3. Solución: Presenta el Método Farray
  */
 const ProblemSolutionSection: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const problems = [
     {

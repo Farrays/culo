@@ -1,0 +1,66 @@
+Processing: components/booking/components/ActiveFilterBadges.tsx
+
+🔄 Migrating: components/booking/components/ActiveFilterBadges.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/BookingError.tsx
+
+🔄 Migrating: components/booking/components/BookingError.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/BookingErrorBoundary.tsx
+
+🔄 Migrating: components/booking/components/BookingErrorBoundary.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/BookingFormStep.tsx
+
+🔄 Migrating: components/booking/components/BookingFormStep.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/BookingSuccess.tsx
+
+🔄 Migrating: components/booking/components/BookingSuccess.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/ClassCard.tsx
+
+🔄 Migrating: components/booking/components/ClassCard.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/ClassListStep.tsx
+
+🔄 Migrating: components/booking/components/ClassListStep.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/CountryPhoneInput.tsx
+
+🔄 Migrating: components/booking/components/CountryPhoneInput.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/FilterBar.tsx
+
+🔄 Migrating: components/booking/components/FilterBar.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/SocialProofTicker.tsx
+
+🔄 Migrating: components/booking/components/SocialProofTicker.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---
+Processing: components/booking/components/WeekNavigation.tsx
+
+🔄 Migrating: components/booking/components/WeekNavigation.tsx
+ℹ️  No changes needed - file may already be migrated
+
+---

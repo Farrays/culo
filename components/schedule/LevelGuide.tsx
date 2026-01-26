@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import {
   ChevronDownIcon,
@@ -64,7 +64,19 @@ const PREMIUM_LEVELS = [
  * Explains what each class level means with 3D card effects
  */
 export const LevelGuide: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [expandedLevel, setExpandedLevel] = useState<string | null>(null);
 
   return (

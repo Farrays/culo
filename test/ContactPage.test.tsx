@@ -11,17 +11,17 @@ describe('ContactPage - Rate Limiting', () => {
 
   it('should render the contact form', () => {
     render(<ContactPage />);
-    expect(screen.getByRole('heading', { name: /Contact Us|Get in Touch/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Contacta con Nosotros/i })).toBeInTheDocument();
   });
 
   it('should show validation errors for empty form submission', async () => {
     render(<ContactPage />);
 
-    const submitButton = screen.getByRole('button', { name: /Send Message/i });
+    const submitButton = screen.getByRole('button', { name: /Enviar Mensaje/i });
     fireEvent.click(submitButton);
 
     await waitFor(() => {
-      const firstNameInput = screen.getByLabelText(/First name/i);
+      const firstNameInput = screen.getByLabelText(/Nombre/i);
       expect(firstNameInput).toBeInTheDocument();
     });
   });
@@ -30,10 +30,10 @@ describe('ContactPage - Rate Limiting', () => {
     render(<ContactPage />);
 
     // Fill out the form - uses firstName and lastName separately
-    const firstNameInput = screen.getByLabelText(/First name/i);
-    const lastNameInput = screen.getByLabelText(/Last name/i);
+    const firstNameInput = screen.getByLabelText(/Nombre/i);
+    const lastNameInput = screen.getByLabelText(/Apellido/i);
     const emailInput = screen.getByLabelText(/Email/i);
-    const messageInput = screen.getByLabelText(/Message/i);
+    const messageInput = screen.getByLabelText(/Mensaje/i);
 
     fireEvent.change(firstNameInput, { target: { value: 'John' } });
     fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
@@ -42,7 +42,7 @@ describe('ContactPage - Rate Limiting', () => {
       target: { value: 'This is a test message with more than 10 characters' },
     });
 
-    const submitButton = screen.getByRole('button', { name: /Send Message/i });
+    const submitButton = screen.getByRole('button', { name: /Enviar Mensaje/i });
     fireEvent.click(submitButton);
 
     // Check that localStorage was updated

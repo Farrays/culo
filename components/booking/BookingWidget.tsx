@@ -12,7 +12,7 @@
  */
 import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import {
   CheckIcon,
   XMarkIcon,
@@ -419,7 +419,20 @@ const INITIAL_FILTERS: Filters = {
 // ============================================================================
 
 const BookingWidget: React.FC = memo(function BookingWidget() {
-  const { t, locale, setLocale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -999,7 +1012,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
   // Language switcher
   const handleLanguageChange = (newLocale: 'es' | 'ca' | 'en' | 'fr') => {
     if (newLocale !== locale) {
-      setLocale(newLocale);
+      i18n.changeLanguage(newLocale);
       // Update URL to reflect new locale
       const newPath = location.pathname.replace(/^\/(es|ca|en|fr)/, `/${newLocale}`);
       navigate(newPath + location.search, { replace: true });

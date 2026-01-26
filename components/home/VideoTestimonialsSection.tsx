@@ -1,5 +1,5 @@
 import React, { useState, memo, lazy, Suspense } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import VideoCard from '../shared/VideoCard';
 
@@ -72,7 +72,19 @@ const VideoTestimonialsSection: React.FC<VideoTestimonialsSectionProps> = memo(
     titleKey = 'videoTestimonialsTitle',
     subtitleKey = 'videoTestimonialsSubtitle',
   }) {
-    const { t } = useI18n();
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const [selectedVideo, setSelectedVideo] = useState<VideoTestimonial | null>(null);
 
     const handleOpenVideo = (video: VideoTestimonial) => {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { debounce } from '../utils/debounce';
 import { MenuIcon, XMarkIcon as CloseIcon, ChevronDownIcon } from '../lib/icons';
 import MobileNavigation from './header/MobileNavigation';
@@ -46,7 +46,20 @@ const NESTED_DROPDOWNS: Record<DropdownKey, DropdownKey[]> = {
 };
 
 const Header: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -252,6 +265,7 @@ const Header: React.FC = () => {
         { path: `/${locale}/alquiler-salas-baile-barcelona`, textKey: 'navAlquilerSalas' },
         { path: `/${locale}/estudio-grabacion-barcelona`, textKey: 'navEstudioGrabacion' },
         { path: `/${locale}/regala-baile`, textKey: 'navRegalaBaile' },
+        { path: `/${locale}/team-building-barcelona`, textKey: 'navTeamBuilding' },
       ],
     },
     aboutUs: {
@@ -782,7 +796,8 @@ const Header: React.FC = () => {
                     location.pathname.includes('/alquiler-salas') ||
                     location.pathname.includes('/estudio-grabacion') ||
                     location.pathname.includes('/regala-baile') ||
-                    location.pathname.includes('/clases-particulares')
+                    location.pathname.includes('/clases-particulares') ||
+                    location.pathname.includes('/team-building')
                       ? 'text-white bg-white/5'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
                   }`}
@@ -836,6 +851,14 @@ const Header: React.FC = () => {
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
                       {t('headerGiftDance')}
                     </Link>
+                    <Link
+                      to={`/${locale}/team-building-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
+                      {t('navTeamBuilding')}
+                    </Link>
                   </div>
                 )}
               </div>
@@ -878,7 +901,7 @@ const Header: React.FC = () => {
             {/* Language Selector + CTA Button */}
             <div className="hidden lg:flex items-center gap-5">
               <LanguageSelector
-                locale={locale}
+                locale={locale as Locale}
                 isOpen={isDropdownOpen('lang')}
                 onToggle={() => toggleDropdown('lang')}
                 handleLanguageChange={handleLanguageChange}
@@ -911,7 +934,7 @@ const Header: React.FC = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         menuStructure={menuStructure}
-        locale={locale}
+        locale={locale as Locale}
         handleLanguageChange={handleLanguageChange}
         onOpenLeadModal={() => setIsLeadModalOpen(true)}
         languageNames={languageNames}

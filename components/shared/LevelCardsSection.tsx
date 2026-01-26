@@ -1,6 +1,6 @@
 import AnimateOnScroll from '../AnimateOnScroll';
 import { ANIMATION_DELAYS } from '../../constants/shared';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 export interface LevelConfig {
   id: string;
@@ -29,7 +29,19 @@ const LevelCardsSection: React.FC<LevelCardsSectionProps> = ({
   levels,
   className = '',
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Get styles based on level color progression
 

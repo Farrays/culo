@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { CATEGORIES } from '../../constants/categories';
 import CategoryCard from '../home/CategoryCard';
@@ -11,7 +11,20 @@ import CategoryCard from '../home/CategoryCard';
  * Usa el estilo visual de CategoriesSection.
  */
 const ClassesPreview: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   // Mostrar solo las primeras 4 categorías (excluir "todas")
   const previewCategories = CATEGORIES.filter(cat => cat.key !== 'todas').slice(0, 4);

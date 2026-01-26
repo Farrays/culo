@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 import {
   getUpcomingEvents,
@@ -133,7 +133,20 @@ EventCard.displayName = 'EventCard';
  * Displays upcoming events on the Home page
  */
 const CalendarWidget: React.FC = memo(() => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   // Get next 4 upcoming events
   const upcomingEvents = useMemo(() => getUpcomingEvents(4), []);

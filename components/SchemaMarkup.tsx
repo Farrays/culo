@@ -34,7 +34,7 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Global Organization Schema - renders once at app level.
@@ -42,7 +42,10 @@ import { useI18n } from '../hooks/useI18n';
  * This should be included in App.tsx or the main layout component.
  */
 export const OrganizationSchema: React.FC = () => {
-  const { t, locale } = useI18n();
+  // Use common namespace with fallback to all namespaces
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t, i18n } = useTranslation('common');
+  const locale = i18n.language;
 
   const schema = {
     '@context': 'https://schema.org',
@@ -58,6 +61,7 @@ export const OrganizationSchema: React.FC = () => {
       height: '512',
     },
     image: 'https://www.farrayscenter.com/images/og-home.jpg',
+    // @ts-ignore - Type instantiation depth limitation
     description: t('schema_org_description'),
     foundingDate: '2017',
     founder: {
@@ -149,7 +153,9 @@ export const OrganizationSchema: React.FC = () => {
  * This should be included in App.tsx or the main layout component.
  */
 export const WebSiteSchema: React.FC = () => {
-  const { t, locale } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t, i18n } = useTranslation('common');
+  const locale = i18n.language;
 
   const schema = {
     '@context': 'https://schema.org',
@@ -199,7 +205,9 @@ interface NavigationItem {
  * This should be included in App.tsx or Header component.
  */
 export const SiteNavigationElementSchema: React.FC = () => {
-  const { t, locale } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t, i18n } = useTranslation('common');
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
   // Main navigation items matching the Header structure - translated and locale-aware
@@ -336,7 +344,8 @@ interface ReviewSchemaProps {
 }
 
 export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => {
-  const { t } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t } = useTranslation('common');
 
   const schema = {
     '@context': 'https://schema.org',
@@ -500,7 +509,8 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
   streetAddress: streetAddressProp,
   addressRegion: addressRegionProp,
 }) => {
-  const { t } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t } = useTranslation('common');
 
   // Use translated defaults if props not provided
   const streetAddress = streetAddressProp || t('schema_streetAddress');
@@ -696,7 +706,8 @@ interface DefinedTermSchemaProps {
 }
 
 export const DefinedTermSchema: React.FC<DefinedTermSchemaProps> = props => {
-  const { t } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t } = useTranslation('common');
 
   const schema = {
     '@context': 'https://schema.org',
@@ -922,7 +933,8 @@ export const BreadcrumbListSchema: React.FC<BreadcrumbListSchemaProps> = ({ item
  * @see https://schema.org/AggregateRating
  */
 export const DanceSchoolWithRatingSchema: React.FC = () => {
-  const { t } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t } = useTranslation('common');
 
   const schema = {
     '@context': 'https://schema.org',
@@ -1156,7 +1168,8 @@ export const LeadCaptureActionSchema: React.FC<LeadCaptureActionSchemaProps> = (
   resultDescription,
   askActionName,
 }) => {
-  const { t } = useI18n();
+  // @ts-ignore - Type instantiation depth limitation with react-i18next
+  const { t } = useTranslation('common');
 
   const schema = {
     '@context': 'https://schema.org',

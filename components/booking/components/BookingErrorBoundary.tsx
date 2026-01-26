@@ -5,7 +5,7 @@
  */
 
 import { Component, ErrorInfo, ReactNode } from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   children: ReactNode;
@@ -32,7 +32,19 @@ interface ErrorFallbackProps {
 }
 
 function ErrorFallbackUI({ errorId, onRetry }: ErrorFallbackProps) {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden">

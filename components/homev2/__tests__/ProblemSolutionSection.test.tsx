@@ -1,28 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../../test/test-utils';
 import ProblemSolutionSection from '../ProblemSolutionSection';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        pas_title: '¿Te suena familiar?',
-        pas_subtitle: 'No estás solo',
-        pas_problem1: 'Problema 1',
-        pas_problem2: 'Problema 2',
-        pas_problem3: 'Problema 3',
-        pas_problem4: 'Problema 4',
-        pas_agitation1: 'Agitación 1',
-        pas_agitation2: 'Agitación 2',
-        pas_solution1: 'Hay una solución',
-        pas_solution2: 'El Método Farray',
-        pas_cta: 'Descubre cómo',
-      };
-      return translations[key] || key;
-    },
-  }),
-}));
 
 // Mock AnimateOnScroll
 vi.mock('../../AnimateOnScroll', () => ({
@@ -39,43 +17,45 @@ describe('ProblemSolutionSection', () => {
 
   it('renders without crashing', () => {
     render(<ProblemSolutionSection />);
-    expect(screen.getByText('¿Te suena familiar?')).toBeInTheDocument();
+    expect(screen.getByText('¿Te Suena Familiar?')).toBeInTheDocument();
   });
 
   it('displays section title and subtitle', () => {
     render(<ProblemSolutionSection />);
 
-    expect(screen.getByText('¿Te suena familiar?')).toBeInTheDocument();
-    expect(screen.getByText('No estás solo')).toBeInTheDocument();
+    expect(screen.getByText('¿Te Suena Familiar?')).toBeInTheDocument();
+    expect(
+      screen.getByText('Si alguna de estas frases resuena contigo, no estás solo.')
+    ).toBeInTheDocument();
   });
 
   it('displays all four problems', () => {
     render(<ProblemSolutionSection />);
 
-    expect(screen.getByText('Problema 1')).toBeInTheDocument();
-    expect(screen.getByText('Problema 2')).toBeInTheDocument();
-    expect(screen.getByText('Problema 3')).toBeInTheDocument();
-    expect(screen.getByText('Problema 4')).toBeInTheDocument();
+    expect(screen.getByText(/Llevas años queriendo aprender a bailar/)).toBeInTheDocument();
+    expect(screen.getByText(/Probaste otras escuelas y te sentiste/)).toBeInTheDocument();
+    expect(screen.getByText(/Los horarios nunca cuadran/)).toBeInTheDocument();
+    expect(screen.getByText(/Sientes que "no tienes ritmo"/)).toBeInTheDocument();
   });
 
   it('displays agitation text', () => {
     render(<ProblemSolutionSection />);
 
-    expect(screen.getByText('Agitación 1')).toBeInTheDocument();
-    expect(screen.getByText('Agitación 2')).toBeInTheDocument();
+    expect(screen.getByText(/Cada día que pasa es un día menos/)).toBeInTheDocument();
+    expect(screen.getByText(/Y la verdad es que el problema nunca fuiste tú/)).toBeInTheDocument();
   });
 
   it('displays solution section', () => {
     render(<ProblemSolutionSection />);
 
-    expect(screen.getByText('Hay una solución')).toBeInTheDocument();
-    expect(screen.getByText('El Método Farray')).toBeInTheDocument();
+    expect(screen.getByText(/El problema era no encontrar EL MÉTODO correcto/)).toBeInTheDocument();
+    expect(screen.getByText(/En Farray's, hemos creado algo diferente/)).toBeInTheDocument();
   });
 
   it('displays CTA button', () => {
     render(<ProblemSolutionSection />);
 
-    const ctaButton = screen.getByText('Descubre cómo');
+    const ctaButton = screen.getByText('Descubre el Método Farray®');
     expect(ctaButton).toBeInTheDocument();
     expect(ctaButton.tagName.toLowerCase()).toBe('button');
   });
@@ -88,7 +68,7 @@ describe('ProblemSolutionSection', () => {
 
     render(<ProblemSolutionSection />);
 
-    const ctaButton = screen.getByText('Descubre cómo');
+    const ctaButton = screen.getByText('Descubre el Método Farray®');
     fireEvent.click(ctaButton);
 
     expect(mockElement.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' });
@@ -100,7 +80,7 @@ describe('ProblemSolutionSection', () => {
   it('handles CTA click when method section does not exist', () => {
     render(<ProblemSolutionSection />);
 
-    const ctaButton = screen.getByText('Descubre cómo');
+    const ctaButton = screen.getByText('Descubre el Método Farray®');
 
     // Should not throw error
     expect(() => fireEvent.click(ctaButton)).not.toThrow();

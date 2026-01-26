@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 // X icon
 const XMarkIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -25,7 +25,19 @@ interface BookingErrorProps {
 }
 
 export const BookingError: React.FC<BookingErrorProps> = ({ errorMessage, onRetry }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div className="animate-fade-in text-center py-8">

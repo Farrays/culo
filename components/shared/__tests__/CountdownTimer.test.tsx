@@ -1,23 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act } from '../../../test/test-utils';
 import CountdownTimer from '../CountdownTimer';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        exitIntent_days: 'días',
-        exitIntent_hours: 'horas',
-        exitIntent_minutes: 'min',
-        exitIntent_seconds: 'seg',
-        exitIntent_expired: 'Expirado',
-      };
-      return translations[key] || key;
-    },
-    locale: 'es',
-  }),
-}));
 
 describe('CountdownTimer', () => {
   beforeEach(() => {

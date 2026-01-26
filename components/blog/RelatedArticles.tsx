@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { getCategoryMeta } from '../../constants/blog/categories';
 import type { RelatedArticle } from '../../constants/blog/types';
 import AnimateOnScroll from '../AnimateOnScroll';
@@ -21,7 +21,20 @@ interface RelatedArticlesProps {
 }
 
 const RelatedArticles: React.FC<RelatedArticlesProps> = ({ articles, className = '' }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
 
   if (!articles || articles.length === 0) return null;
 

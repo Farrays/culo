@@ -159,9 +159,8 @@ describe('BookingError', () => {
     it('should render error message paragraph', () => {
       render(<BookingError onRetry={mockOnRetry} />);
 
-      // Find paragraph containing error message (translation key)
-      const paragraphs = screen.getAllByText(/booking_error/);
-      expect(paragraphs.length).toBeGreaterThan(0);
+      // Find paragraph containing error message (Spanish translation)
+      expect(screen.getByText(/Ha ocurrido un error/)).toBeInTheDocument();
     });
 
     it('should render custom error message when provided', () => {

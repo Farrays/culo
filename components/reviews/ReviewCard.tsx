@@ -5,9 +5,10 @@
  */
 
 import React, { useState } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { getReviewText, hasTranslation } from '../../hooks/useReviews';
 import type { GoogleReview } from '../../constants/reviews-data';
+import type { Locale } from '../../types';
 
 interface ReviewCardProps {
   review: GoogleReview;
@@ -52,7 +53,20 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   showCategory = false,
   className = '',
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language as Locale;
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Get translated text if available for current locale

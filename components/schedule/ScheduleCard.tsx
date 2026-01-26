@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { DAYS_I18N, getClassBadges, type BadgeType } from '../../constants/horarios-page-data';
 import type { ScheduleClass, LevelKey } from '../../constants/schedule-data';
 import {
@@ -54,7 +54,20 @@ export const ScheduleCard: React.FC<ScheduleCardProps> = ({
   showActions = true,
   colorClass = 'primary-accent',
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const badges = getClassBadges(scheduleClass.className);
 
   const levelLabels: Record<LevelKey, string> = {

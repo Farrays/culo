@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { getCategoryMeta } from '../../constants/blog/categories';
 import type { ArticleCardData } from '../../constants/blog/types';
 import LazyImage from '../LazyImage';
@@ -23,7 +23,20 @@ interface ArticleCardProps {
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay = 0, className = '' }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
+  const locale = i18n.language;
   const categoryMeta = getCategoryMeta(article.category);
   const articleUrl = `/${locale}/blog/${article.category}/${article.slug}`;
 

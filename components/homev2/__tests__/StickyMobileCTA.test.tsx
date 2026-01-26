@@ -1,20 +1,7 @@
 /* global Event */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '../../../test/test-utils';
 import StickyMobileCTA from '../StickyMobileCTA';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        sticky_cta: 'Reserva tu clase',
-        sticky_trust1: 'Sin compromiso',
-      };
-      return translations[key] || key;
-    },
-  }),
-}));
 
 // Mock LeadCaptureModal
 vi.mock('../../shared/LeadCaptureModal', () => ({
@@ -53,7 +40,7 @@ describe('StickyMobileCTA', () => {
 
   it('renders without crashing', () => {
     render(<StickyMobileCTA />);
-    expect(screen.getByText('Reserva tu clase')).toBeInTheDocument();
+    expect(screen.getByText('Clase de Bienvenida')).toBeInTheDocument();
   });
 
   it('is hidden initially (before scrolling)', () => {
@@ -98,7 +85,7 @@ describe('StickyMobileCTA', () => {
   it('opens modal when CTA button is clicked', () => {
     render(<StickyMobileCTA />);
 
-    const ctaButton = screen.getByText('Reserva tu clase');
+    const ctaButton = screen.getByText('Clase de Bienvenida');
     fireEvent.click(ctaButton);
 
     expect(screen.getByTestId('lead-capture-modal')).toBeInTheDocument();
@@ -108,7 +95,7 @@ describe('StickyMobileCTA', () => {
     render(<StickyMobileCTA />);
 
     // Open modal
-    fireEvent.click(screen.getByText('Reserva tu clase'));
+    fireEvent.click(screen.getByText('Clase de Bienvenida'));
     expect(screen.getByTestId('lead-capture-modal')).toBeInTheDocument();
 
     // Close modal

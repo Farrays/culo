@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 
@@ -14,7 +14,19 @@ import LeadCaptureModal from '../shared/LeadCaptureModal';
  * - CTA prominente
  */
 const IrresistibleOfferSection: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [spotsLeft, setSpotsLeft] = useState(7);
 

@@ -1,6 +1,17 @@
 import { vi } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 
+// ============================================================================
+// i18NEXT CONFIGURATION FOR TESTS
+// ============================================================================
+// Initialize i18next with test configuration
+// This ensures all react-i18next hooks work properly in tests
+import './i18n-test-config';
+
+// ============================================================================
+// GLOBAL MOCKS
+// ============================================================================
+
 // Mock IntersectionObserver - proper implementation
 class MockIntersectionObserver {
   readonly root: Element | null = null;
@@ -44,48 +55,9 @@ global.localStorage = localStorageMock as unknown as Storage;
 // Mock scrollTo
 global.scrollTo = vi.fn();
 
-// Mock useI18n hook globally
-vi.mock('../hooks/useI18n', () => {
-  const mockTranslations: Record<string, string> = {
-    // Common
-    navHome: 'Home',
-    navClasses: 'Classes',
-    enrollNow: 'Enroll Now',
-    skipToMainContent: 'Skip to main content',
-
-    // Contact Page
-    contactTitle: 'Contact Us',
-    contact_breadcrumb_home: 'Home',
-    contact_breadcrumb_current: 'Contact',
-    contact_hero_title: 'Get in Touch',
-    contact_hero_subtitle:
-      'We are here to help you. Write to us and we will respond as soon as possible.',
-    contact_info_title: 'Contact Information',
-    contact_address_title: 'Address',
-    contact_address_text: 'Calle Entença nº 100, Barcelona',
-    contact_phone_title: 'Phone',
-    contact_email_title: 'Email',
-    contact_form_title: 'Send us a message',
-    contact_form_firstName: 'First name',
-    contact_form_lastName: 'Last name',
-    contact_form_name: 'Name',
-    contact_form_email: 'Email',
-    contact_form_phone: 'Phone',
-    contact_form_message: 'Message',
-    contact_form_submit: 'Send Message',
-
-    // HomePage
-    pageTitle: "Farray's International Dance Center",
-    metaDescription: 'Elite dance academy in Barcelona',
-  };
-
-  return {
-    useI18n: () => ({
-      locale: 'en',
-      setLocale: vi.fn(),
-      t: (key: string) => mockTranslations[key] || key,
-      isLoading: false,
-    }),
-    I18nProvider: ({ children }: { children: React.ReactNode }) => children,
-  };
-});
+// ============================================================================
+// i18NEXT - NO MOCK NEEDED
+// ============================================================================
+// useI18n is now a direct re-export of useTranslation from react-i18next
+// Tests use the real i18n instance from test/i18n-test-config.ts via test-utils.tsx
+// This provides proper Spanish translations matching production
