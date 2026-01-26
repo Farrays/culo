@@ -27,8 +27,21 @@ const loadTranslations = () => {
 
   const translations: Record<string, unknown> = {};
 
-  // Load all translation namespaces
-  const namespaces = ['common', 'home', 'pages', 'classes', 'schedule', 'booking'];
+  // Load all translation namespaces (must match the ns array in config below)
+  const namespaces = [
+    'common',
+    'home',
+    'pages',
+    'booking',
+    'schedule',
+    'calendar',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'test', // Test-specific translations
+  ];
 
   for (const ns of namespaces) {
     const filePath = path.join(localesDir, `${ns}.json`);
@@ -66,6 +79,7 @@ const testConfig: InitOptions = {
     'faq',
     'about',
     'contact',
+    'test',
   ],
 
   // Fallback to search in all namespaces if key not found
@@ -80,6 +94,7 @@ const testConfig: InitOptions = {
     'faq',
     'about',
     'contact',
+    'test',
   ],
 
   // Load resources synchronously (critical for tests)
