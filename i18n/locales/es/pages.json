@@ -304,7 +304,7 @@
   "reviewsSectionTitle": "Testimonios No Solicitados de Nuestros Socios",
   "thankYouForLove": "Gracias por Tanto Amor",
   "excellent": "EXCELENTE",
-  "basedOnReviews": "A base de {count} reseñas",
+  "basedOnReviews": "Basado en {{count}} reseñas",
   "dancehallCommunityTitle": "Únete a la Comunidad de Dancehall Más Activa de Barcelona",
   "dancehallCommunitySubtitle": "Da el Paso",
   "dancehallCommunityDesc": "Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.",

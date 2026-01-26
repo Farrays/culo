@@ -178,23 +178,21 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 interface ExitIntentPopupProps {
   isOpen: boolean;
   onClose: () => void;
-  onReserve: () => void;
   locale: string;
   prefix: string;
   theme: LandingThemeClasses;
   styleName: string;
-  exploreUrl: string;
+  bookingWidget?: { styleFilter: string };
 }
 
 const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
   isOpen,
   onClose,
-  onReserve,
-  locale: _locale,
+  locale,
   prefix,
   theme,
   styleName,
-  exploreUrl,
+  bookingWidget,
 }) => {
   const { t } = useTranslation([
     'common',
@@ -212,13 +210,14 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
 
   if (!isOpen) return null;
 
-  const handleReserve = () => {
-    onClose();
-    onReserve();
-  };
-
   // Extract base prefix for exit intent keys (dhLanding -> dh)
   const exitPrefix = prefix.replace('Landing', '');
+
+  // Build booking URLs
+  const bookingBaseUrl = `/${locale}/reservas`;
+  const bookingStyleUrl = bookingWidget
+    ? `${bookingBaseUrl}?style=${bookingWidget.styleFilter}&locked=true`
+    : bookingBaseUrl;
 
   return (
     <div
@@ -258,19 +257,23 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
           </p>
 
           <div className="space-y-3">
+            {/* Primary CTA: Style-specific booking */}
             <Link
-              to={exploreUrl}
-              className={`block w-full py-3.5 px-6 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]`}
+              to={bookingStyleUrl}
+              onClick={onClose}
+              className={`block w-full py-3.5 px-6 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] text-center`}
+            >
+              {t(`${exitPrefix}ExitIntent_ctaDancehall`).replace('Dancehall', styleName)}
+            </Link>
+
+            {/* Secondary CTA: See all classes */}
+            <Link
+              to={bookingBaseUrl}
+              onClick={onClose}
+              className={`block w-full py-3 px-6 ${theme.bgPrimaryLight} ${theme.textPrimary} font-semibold rounded-xl transition-all ${theme.borderPrimary} border text-center`}
             >
               {t(`${exitPrefix}ExitIntent_ctaExplore`)}
             </Link>
-
-            <button
-              onClick={handleReserve}
-              className={`block w-full py-3 px-6 ${theme.bgPrimaryLight} ${theme.textPrimary} font-semibold rounded-xl transition-all ${theme.borderPrimary} border`}
-            >
-              {t(`${exitPrefix}ExitIntent_ctaDancehall`).replace('Dancehall', styleName)}
-            </button>
 
             <button
               onClick={onClose}
@@ -692,6 +695,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                     aspectRatio={config.video.aspectRatio || '16:9'}
                     thumbnailUrl={config.video.thumbnailUrl}
                     autoplay={config.video.autoplay}
+                    priority={true}
                   />
                 </div>
               )}
@@ -1197,16 +1201,11 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
       <ExitIntentPopup
         isOpen={isExitPopupOpen}
         onClose={() => setIsExitPopupOpen(false)}
-        onReserve={openModal}
         locale={locale}
         prefix={prefix}
         theme={theme}
         styleName={config.estiloValue}
-        exploreUrl={
-          config.slug === 'jornada-puertas-abiertas'
-            ? `/${locale}/clases`
-            : `/${locale}/jornada-puertas-abiertas?fromExitIntent=true`
-        }
+        bookingWidget={config.bookingWidget}
       />
     </>
   );

@@ -21,6 +21,7 @@ import { useVirtualList } from '../hooks/useVirtualList';
 import { Portal } from './Portal';
 import { registerModalOpen, registerModalClose } from '../utils/modalHistoryManager';
 import { SkeletonClassList } from './SkeletonClassCard';
+import { getStyleLabel, getStyleColor } from '../constants/bookingOptions';
 
 // Estimated height of each ClassCard (in pixels)
 const CLASS_CARD_HEIGHT = 180;
@@ -177,19 +178,7 @@ const DayHeader = memo(
       dateKey: string;
     }
   >(({ dayLabel, classCount, isFirst = false, dateKey }, ref) => {
-    const { t } = useTranslation([
-      'common',
-      'booking',
-      'schedule',
-      'calendar',
-      'home',
-      'classes',
-      'blog',
-      'faq',
-      'about',
-      'contact',
-      'pages',
-    ]);
+    const { t } = useTranslation('booking');
 
     return (
       <div
@@ -207,7 +196,7 @@ const DayHeader = memo(
         <CalendarWeekIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
         <span className="font-semibold text-neutral text-sm md:text-base truncate">{dayLabel}</span>
         <span className="ml-auto text-xs text-neutral/50 bg-white/5 px-2 py-0.5 rounded-full flex-shrink-0">
-          {t('booking_classes_count', { count: classCount })}
+          {t('booking_classes_count', { count: classCount ?? 0 })}
         </span>
       </div>
     );
@@ -223,19 +212,7 @@ const WeekHeader: React.FC<{
   classCount: number;
   isFirst?: boolean;
 }> = memo(({ weekLabel, classCount, isFirst = false }) => {
-  const { t } = useTranslation([
-    'common',
-    'booking',
-    'schedule',
-    'calendar',
-    'home',
-    'classes',
-    'blog',
-    'faq',
-    'about',
-    'contact',
-    'pages',
-  ]);
+  const { t } = useTranslation('booking');
 
   return (
     <div
@@ -250,10 +227,10 @@ const WeekHeader: React.FC<{
     >
       <CalendarWeekIcon className="w-5 h-5 text-primary-accent flex-shrink-0" />
       <span className="font-semibold text-neutral">
-        {t('booking_week_header', { date: weekLabel })}
+        {t('booking_week_header', { date: weekLabel || '' })}
       </span>
       <span className="ml-auto text-sm text-neutral/50">
-        {t('booking_classes_count', { count: classCount })}
+        {t('booking_classes_count', { count: classCount ?? 0 })}
       </span>
     </div>
   );
@@ -267,19 +244,7 @@ const AcuityModeHeader: React.FC<{
   activeStyle?: string;
   totalClasses: number;
 }> = memo(({ activeStyle, totalClasses }) => {
-  const { t } = useTranslation([
-    'common',
-    'booking',
-    'schedule',
-    'calendar',
-    'home',
-    'classes',
-    'blog',
-    'faq',
-    'about',
-    'contact',
-    'pages',
-  ]);
+  const { t } = useTranslation('booking');
 
   return (
     <div className="mb-4 p-4 rounded-xl bg-gradient-to-r from-primary-accent/10 via-primary-accent/5 to-transparent border border-primary-accent/20">
@@ -290,11 +255,11 @@ const AcuityModeHeader: React.FC<{
         <div>
           <h3 className="font-semibold text-neutral">
             {activeStyle
-              ? t('booking_all_weeks_title', { style: activeStyle })
+              ? t('booking_all_weeks_title', { style: activeStyle || '' })
               : t('booking_all_weeks_filtered')}
           </h3>
           <p className="text-sm text-neutral/60">
-            {t('booking_all_weeks_subtitle', { count: totalClasses })}
+            {t('booking_all_weeks_subtitle', { count: totalClasses ?? 0 })}
           </p>
         </div>
       </div>
@@ -553,6 +518,8 @@ interface ClassListStepProps {
   allWeeksClasses?: ClassData[];
   /** Loading state for all weeks fetch */
   allWeeksLoading?: boolean;
+  /** Hide filter UI (but keep filters applied) - for locked mode from landing pages */
+  hideFilters?: boolean;
 }
 
 export const ClassListStep: React.FC<ClassListStepProps> = memo(
@@ -576,6 +543,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     showAllWeeks = false,
     allWeeksClasses = [],
     allWeeksLoading = false,
+    hideFilters = false,
   }) => {
     const { t, i18n } = useTranslation([
       'common',
@@ -677,20 +645,38 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           {t('booking_step1_classes')}
         </h2>
 
-        {/* Filter Bar */}
-        <FilterBar
-          filters={filters}
-          onFilterChange={onFilterChange}
-          filterOptions={filterOptions}
-          loading={loading}
-        />
+        {/* Filter Bar - Hidden in locked mode */}
+        {!hideFilters && (
+          <>
+            <FilterBar
+              filters={filters}
+              onFilterChange={onFilterChange}
+              filterOptions={filterOptions}
+              loading={loading}
+            />
 
-        {/* Active Filter Badges */}
-        <ActiveFilterBadges
-          filters={filters}
-          onClearFilter={onClearFilter}
-          onClearAll={onClearAllFilters}
-        />
+            {/* Active Filter Badges */}
+            <ActiveFilterBadges
+              filters={filters}
+              onClearFilter={onClearFilter}
+              onClearAll={onClearAllFilters}
+            />
+          </>
+        )}
+
+        {/* Locked Mode Indicator - Shows what style is active when filters are hidden */}
+        {hideFilters && filters.style && (
+          <div className="flex items-center justify-center gap-3 py-3 px-4 bg-gradient-to-r from-black/40 to-black/20 border border-white/10 rounded-xl">
+            <div
+              className="w-3 h-3 rounded-full ring-2 ring-white/20"
+              style={{ backgroundColor: getStyleColor(filters.style) }}
+            />
+            <span className="text-sm text-neutral/70">{t('booking_showing_style')}</span>
+            <span className="text-sm font-bold" style={{ color: getStyleColor(filters.style) }}>
+              {getStyleLabel(filters.style)}
+            </span>
+          </div>
+        )}
 
         {/* Week Navigation */}
         <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useCookieConsent } from '../hooks/useCookieConsent';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +9,14 @@ interface YouTubeEmbedProps {
   description?: string;
   uploadDate?: string;
   duration?: string;
+  priority?: boolean; // Load thumbnail eagerly (use for above-the-fold videos)
+}
+
+/** Metrics returned when video loads */
+export interface YouTubeLoadMetrics {
+  thumbnailLoadTime: number | null; // ms to load thumbnail (null if skipped)
+  playerLoadTime: number | null; // ms from click to player ready
+  totalTime: number; // total ms from component mount to playable
 }
 
 // Declaración global para la API de YouTube
@@ -43,13 +51,18 @@ interface YTPlayer {
 }
 
 /**
- * YouTube Embed Component with Thumbnail Placeholder
+ * YouTube Embed Component with Thumbnail Placeholder (Enterprise)
  *
  * Features:
- * - Lazy loading: Shows thumbnail initially, loads iframe only when clicked
+ * - Facade Pattern: Shows thumbnail initially, loads player only when clicked
+ * - Performance: Saves ~500KB of JavaScript until user interacts
+ * - Skeleton loader: Shows shimmer animation while thumbnail loads
+ * - Loading spinner: Visual feedback while player initializes
+ * - Lazy loading: Thumbnail loaded with native lazy loading (or eager with priority)
  * - No suggested videos: Returns to thumbnail when video ends
- * - Performance: Saves bandwidth and improves initial page load
- * - Accessibility: Proper ARIA labels and semantic HTML
+ * - Accessibility: Proper ARIA labels and keyboard navigation
+ * - Cookie consent: GDPR compliant - requires functional cookies
+ * - Privacy: Uses youtube-nocookie.com domain
  * - Responsive: 16:9 aspect ratio maintained across all screen sizes
  */
 const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
@@ -58,6 +71,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   description = '',
   uploadDate = new Date().toISOString().split('T')[0],
   duration = 'PT5M',
+  priority = false,
 }) => {
   const { t } = useTranslation([
     'common',
@@ -75,29 +89,88 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   const { preferences, setShowBanner } = useCookieConsent();
   const hasFunctionalConsent = preferences?.functional ?? false;
 
+  // Core state
   const [isLoaded, setIsLoaded] = useState(false);
+  const [thumbnailLoading, setThumbnailLoading] = useState(true);
+  const [playerLoading, setPlayerLoading] = useState(false);
+
   // Fallback chain: maxresdefault → hqdefault → mqdefault → default
   const [thumbnailFallback, setThumbnailFallback] = useState(0);
   const [thumbnailError, setThumbnailError] = useState(false);
+
+  // Refs
   const playerRef = useRef<YTPlayer | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Metrics tracking
+  const [mountTime] = useState(() => Date.now());
+  const [_thumbnailLoadTime, setThumbnailLoadTime] = useState<number | null>(null);
 
   // YouTube thumbnail quality hierarchy (best to worst)
   const thumbnailQualities = ['maxresdefault', 'hqdefault', 'mqdefault', 'default'];
   const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/${thumbnailQualities[thumbnailFallback]}.jpg`;
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
+  // Enhanced Schema VideoObject for GEO/AIEO
   const videoSchema = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
+    '@id': `https://www.youtube.com/watch?v=${videoId}`,
     name: title,
     description: description || title,
-    thumbnailUrl: [thumbnailUrl],
+    thumbnailUrl: [
+      `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    ],
     uploadDate: uploadDate,
     duration: duration,
     embedUrl: embedUrl,
     contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+    publisher: {
+      '@type': 'Organization',
+      name: "Farray's International Dance Center",
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.farrayscenter.com/logo.svg',
+      },
+    },
+    potentialAction: {
+      '@type': 'WatchAction',
+      target: `https://www.youtube.com/watch?v=${videoId}`,
+    },
   };
+
+  // Handle thumbnail load success
+  const handleThumbnailLoad = useCallback(
+    (e: React.SyntheticEvent<HTMLImageElement>) => {
+      const img = e.currentTarget;
+      // YouTube returns 120x90 gray placeholder when high-res thumbnails don't exist
+      if (thumbnailFallback < thumbnailQualities.length - 1 && img.naturalWidth <= 120) {
+        setThumbnailFallback(prev => prev + 1);
+      } else {
+        setThumbnailLoading(false);
+        setThumbnailLoadTime(Date.now() - mountTime);
+      }
+    },
+    [thumbnailFallback, thumbnailQualities.length, mountTime]
+  );
+
+  // Handle thumbnail load error
+  const handleThumbnailError = useCallback(() => {
+    // Try next thumbnail quality if available
+    if (thumbnailFallback < thumbnailQualities.length - 1) {
+      setThumbnailFallback(prev => prev + 1);
+    } else {
+      setThumbnailError(true);
+      setThumbnailLoading(false);
+    }
+  }, [thumbnailFallback, thumbnailQualities.length]);
+
+  // Handle play click
+  const handlePlay = useCallback(() => {
+    setIsLoaded(true);
+    setPlayerLoading(true);
+  }, []);
 
   // Cargar la API de YouTube cuando se necesite
   useEffect(() => {
@@ -123,6 +196,10 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         },
         events: {
           onReady: event => {
+            // Player listo - ocultar spinner
+            if (isMounted) {
+              setPlayerLoading(false);
+            }
             // Asegurar que el video comienza a reproducirse
             event.target.playVideo();
           },
@@ -135,6 +212,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
               }
               if (isMounted) {
                 setIsLoaded(false);
+                setPlayerLoading(false);
               }
             }
           },
@@ -192,6 +270,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     };
   }, [isLoaded, videoId]);
 
+  // Skeleton shimmer component
+  const SkeletonLoader = () => (
+    <div className="absolute inset-0 bg-neutral-900 overflow-hidden">
+      <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-neutral-800/50 to-transparent" />
+    </div>
+  );
+
   // Show consent required placeholder if user hasn't accepted functional cookies
   if (!hasFunctionalConsent) {
     return (
@@ -199,19 +284,25 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         <Helmet>
           <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
         </Helmet>
-        <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-neutral/30 bg-dark-surface/50">
+        <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-neutral/30 bg-black">
+          {/* Skeleton while thumbnail loads */}
+          {thumbnailLoading && !thumbnailError && <SkeletonLoader />}
+
           <img
             src={thumbnailUrl}
             alt={title}
             width="1280"
             height="720"
             loading="lazy"
-            className="w-full h-full object-cover opacity-30"
+            className={`w-full h-full object-cover opacity-30 transition-opacity duration-300 ${
+              thumbnailLoading ? 'opacity-0' : 'opacity-30'
+            }`}
             onLoad={e => {
               const img = e.currentTarget;
               if (!thumbnailError && img.naturalWidth <= 120) {
                 setThumbnailError(true);
               }
+              setThumbnailLoading(false);
             }}
             onError={() => !thumbnailError && setThumbnailError(true)}
           />
@@ -243,6 +334,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     );
   }
 
+  // Thumbnail/facade view
   if (!isLoaded) {
     return (
       <>
@@ -250,41 +342,45 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
           <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
         </Helmet>
         <div
-          className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 shadow-accent-glow cursor-pointer group"
-          onClick={() => setIsLoaded(true)}
+          className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 shadow-accent-glow cursor-pointer group bg-black"
+          onClick={handlePlay}
           role="button"
           tabIndex={0}
           onKeyDown={e => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              setIsLoaded(true);
+              handlePlay();
             }
           }}
-          aria-label={`Load video: ${title}`}
+          aria-label={`Reproducir video: ${title}`}
         >
-          <img
-            src={thumbnailUrl}
-            alt={title}
-            width="1280"
-            height="720"
-            loading="lazy"
-            className="w-full h-full object-cover"
-            onLoad={e => {
-              // YouTube returns 120x90 gray placeholder when high-res thumbnails don't exist
-              const img = e.currentTarget;
-              if (thumbnailFallback < thumbnailQualities.length - 1 && img.naturalWidth <= 120) {
-                setThumbnailFallback(prev => prev + 1);
-              }
-            }}
-            onError={() => {
-              // Try next thumbnail quality if available
-              if (thumbnailFallback < thumbnailQualities.length - 1) {
-                setThumbnailFallback(prev => prev + 1);
-              }
-            }}
-          />
+          {/* Skeleton loader while thumbnail loads */}
+          {thumbnailLoading && !thumbnailError && <SkeletonLoader />}
+
+          {/* Thumbnail or gradient fallback */}
+          {!thumbnailError ? (
+            <img
+              src={thumbnailUrl}
+              alt={title}
+              width="1280"
+              height="720"
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={priority ? 'high' : 'auto'}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${
+                thumbnailLoading ? 'opacity-0' : 'opacity-100'
+              }`}
+              onLoad={handleThumbnailLoad}
+              onError={handleThumbnailError}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-red-900/50 via-black to-red-600/30" />
+          )}
+
+          {/* Overlay */}
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-            <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            {/* YouTube play button */}
+            <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <svg
                 className="w-10 h-10 text-white ml-1"
                 fill="currentColor"
@@ -300,12 +396,20 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     );
   }
 
+  // Player view with loading spinner
   return (
     <>
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
       </Helmet>
-      <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 shadow-accent-glow">
+      <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 shadow-accent-glow bg-black">
+        {/* Loading spinner while player initializes */}
+        {playerLoading && (
+          <div className="absolute inset-0 bg-neutral-900 flex items-center justify-center z-10">
+            <div className="w-10 h-10 border-3 border-red-600/30 border-t-red-600 rounded-full animate-spin" />
+          </div>
+        )}
+
         <div ref={containerRef} className="w-full h-full" />
       </div>
     </>

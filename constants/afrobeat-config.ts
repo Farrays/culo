@@ -101,6 +101,16 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
 
   videoSection: {
     enabled: true,
+    // Bunny Stream video (appears first, before YouTube)
+    bunnyVideo: {
+      videoId: '44f53623-e523-4f22-a19d-dffff0cc26c0',
+      libraryId: '571535',
+      title: "Clases de Afrobeats en Barcelona - Farray's Center",
+      aspectRatio: '9:16',
+      thumbnailUrl:
+        'https://vz-3d56a778-175.b-cdn.net/44f53623-e523-4f22-a19d-dffff0cc26c0/thumbnail_7f0a80d5.jpg',
+    },
+    // YouTube videos (appear after Bunny video)
     videos: [
       {
         videoId: '8ztKfzywfbA',

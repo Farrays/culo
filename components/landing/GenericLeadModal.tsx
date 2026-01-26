@@ -3,14 +3,20 @@
  * GENERIC LEAD MODAL COMPONENT
  * =============================================================================
  *
- * Modal reutilizable para captación de leads.
+ * Modal reutilizable para captación de leads O flujo de reserva directa.
  * Se usa junto con GenericDanceLanding y recibe la misma configuración.
+ *
+ * FLUJO DE RESERVA DIRECTA (bookingWidget configurado):
+ * 1. Micro-commitment → 2. CTA a widget de reservas con filtros
+ *
+ * FLUJO LEGACY (sin bookingWidget):
+ * 1. Micro-commitment → 2. Formulario de lead → 3. Success
  */
 
 import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
+import { XMarkIcon, CheckIcon, CheckCircleIcon, CalendarIcon } from '../../lib/icons';
 import type { LandingConfig } from '../../constants/landing-template-config';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 
@@ -63,9 +69,19 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
     'contact',
     'pages',
   ]);
+  const navigate = useNavigate();
   const locale = i18n.language;
-  const { translationPrefix: prefix, sourceId, estiloValue, discoveryValue } = config;
+  const {
+    translationPrefix: prefix,
+    sourceId,
+    estiloValue,
+    discoveryValue,
+    bookingWidget,
+  } = config;
   const theme = config.theme.classes;
+
+  // Check if using direct booking flow (high conversion) vs lead capture
+  const useDirectBooking = !!bookingWidget?.styleFilter;
 
   // Form state
   const [formData, setFormData] = useState<FormData>({
@@ -507,27 +523,121 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
               </div>
             ) : !hasMicroCommitment ? (
               /* MICRO COMMITMENT STEP */
-              <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-4">
+              <div className="flex flex-col items-center justify-center text-center py-2 md:py-4">
                 <p className="text-base md:text-lg font-semibold text-neutral mb-4 md:mb-6">
                   {t(`${modalPrefix}_microCommit_question`)}
                 </p>
                 <div className="space-y-3 w-full">
                   <button
-                    onClick={() => setHasMicroCommitment(true)}
+                    onClick={() => {
+                      if (useDirectBooking && bookingWidget) {
+                        // Direct booking flow: go straight to booking widget
+                        pushToDataLayer({
+                          event: 'micro_commitment_booking',
+                          lead_source: 'generic_modal',
+                          style: bookingWidget.styleFilter,
+                          page_path: window.location.pathname,
+                        });
+
+                        // Prevent cleanup from calling history.back() which would undo navigation
+                        historyPushedRef.current = false;
+
+                        const bookingUrl = `/${locale}/reservas?style=${bookingWidget.styleFilter}&locked=true`;
+                        navigate(bookingUrl);
+                        onClose();
+                      } else {
+                        // Legacy flow: show lead form
+                        setHasMicroCommitment(true);
+                      }
+                    }}
                     className={`w-full py-3 md:py-4 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]`}
                   >
                     {t(`${modalPrefix}_microCommit_yes`)}
                   </button>
-                  <button
-                    onClick={() => setHasMicroCommitment(true)}
-                    className={`w-full py-2.5 md:py-3 ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium rounded-xl transition-all ${theme.borderPrimary} border hover:opacity-80`}
-                  >
-                    {t(`${modalPrefix}_microCommit_curious`)}
-                  </button>
+                  {/* Only show "curious" button for legacy lead form flow */}
+                  {!useDirectBooking && (
+                    <button
+                      onClick={() => setHasMicroCommitment(true)}
+                      className={`w-full py-2.5 md:py-3 ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium rounded-xl transition-all ${theme.borderPrimary} border hover:opacity-80`}
+                    >
+                      {t(`${modalPrefix}_microCommit_curious`)}
+                    </button>
+                  )}
                 </div>
               </div>
+            ) : useDirectBooking ? (
+              /* DIRECT BOOKING CTA - This branch is now unreachable for direct booking */
+              /* Kept for backwards compatibility if micro-commitment state changes */
+              <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-4">
+                {/* Success icon */}
+                <div className="flex justify-center mb-4 md:mb-6">
+                  <div className="relative">
+                    <div
+                      className={`absolute inset-0 ${theme.bgPrimaryLight} rounded-full blur-xl motion-reduce:blur-none`}
+                      aria-hidden="true"
+                    />
+                    <div
+                      className={`relative w-14 h-14 md:w-20 md:h-20 ${theme.bgPrimary} rounded-full flex items-center justify-center`}
+                    >
+                      <CalendarIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-black text-neutral mb-3 md:mb-4">
+                  {t(`${modalPrefix}_booking_heading`)}
+                </h3>
+
+                <p className="text-lg text-neutral/90 mb-2">
+                  {t(`${modalPrefix}_booking_message`)}
+                </p>
+
+                {/* Benefits reminder */}
+                <div
+                  className={`${theme.bgPrimaryLight} rounded-xl p-3 md:p-4 mb-6 ${theme.borderPrimaryLight} border text-left w-full`}
+                >
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-sm text-neutral/80">
+                      <CheckIcon className={`w-4 h-4 ${theme.textPrimary} flex-shrink-0 mt-0.5`} />
+                      <span>{t(`${modalPrefix}_benefit1`)}</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-neutral/80">
+                      <CheckIcon className={`w-4 h-4 ${theme.textPrimary} flex-shrink-0 mt-0.5`} />
+                      <span>{t(`${modalPrefix}_benefit3`)}</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-neutral/80">
+                      <CheckIcon className={`w-4 h-4 ${theme.textPrimary} flex-shrink-0 mt-0.5`} />
+                      <span>{t(`${modalPrefix}_benefit4`)}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Booking CTA Button */}
+                <button
+                  onClick={() => {
+                    // Track micro-commitment conversion
+                    pushToDataLayer({
+                      event: 'micro_commitment_booking',
+                      lead_source: 'generic_modal',
+                      style: bookingWidget.styleFilter,
+                      page_path: window.location.pathname,
+                    });
+
+                    // Navigate to booking widget with filters (locked mode - no filter UI)
+                    const bookingUrl = `/${locale}/reservas?style=${bookingWidget.styleFilter}&locked=true`;
+                    navigate(bookingUrl);
+                    onClose();
+                  }}
+                  className={`w-full py-4 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg`}
+                >
+                  <CalendarIcon className="w-6 h-6" />
+                  <span>{t(bookingWidget.ctaKey || `${modalPrefix}_booking_cta`)}</span>
+                </button>
+
+                <p className="text-xs text-neutral/50 mt-4">{t(`${modalPrefix}_booking_note`)}</p>
+              </div>
             ) : (
-              /* FORM STATE */
+              /* LEGACY LEAD FORM */
               <>
                 <p className="text-neutral/70 text-sm mb-4 md:mb-6">{t(`${modalPrefix}_intro`)}</p>
 

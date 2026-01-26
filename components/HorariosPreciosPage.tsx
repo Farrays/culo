@@ -945,7 +945,7 @@ const HorariosPreciosPage: React.FC = () => {
                     ))}
                   </div>
                   <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews').replace('{count}', '509')}
+                    {t('basedOnReviews', { count: 509 })}
                   </div>
                   <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>

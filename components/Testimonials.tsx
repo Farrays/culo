@@ -169,7 +169,7 @@ const Testimonials: React.FC = () => {
               aria-label="Ver reseñas en Google"
             >
               <div className="flex items-center gap-3">
-                <div className="text-2xl font-bold text-neutral">EXCELENTE</div>
+                <div className="text-2xl font-bold text-neutral">{t('pages:excellent')}</div>
                 <div className="flex" role="img" aria-label="5 de 5 estrellas">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="w-6 h-6 text-yellow-400" />
@@ -177,7 +177,7 @@ const Testimonials: React.FC = () => {
                 </div>
               </div>
               <div className="text-neutral/70 text-sm">
-                A base de <span className="font-semibold">509 reseñas</span>
+                {t('pages:basedOnReviews', { count: 509 })}
               </div>
               <div className="flex items-center gap-2">
                 <svg

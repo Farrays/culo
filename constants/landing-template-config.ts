@@ -206,6 +206,22 @@ export interface LandingConfig {
     /** Cargar video directamente sin thumbnail facade */
     autoplay?: boolean;
   };
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+
+  /**
+   * Configuración para flujo de reserva directa (en lugar de captación de lead)
+   * Después del micro-commitment, el usuario ve un CTA que lleva al widget de reservas
+   * con filtros pre-aplicados para mostrar solo las clases relevantes.
+   */
+  bookingWidget?: {
+    /** Filtro de estilo para el widget (e.g., 'afro', 'twerk', 'dancehall', 'hiphop') */
+    styleFilter: string;
+    /** Clave de traducción para el texto del CTA (default: 'booking_cta_reserve') */
+    ctaKey?: string;
+  };
 }
 
 // =============================================================================
@@ -348,4 +364,14 @@ export const LANDING_TEMPLATE: LandingConfig = createLandingConfig('rose', {
   //   autoplay: true, // true = carga video directo, false = muestra thumbnail primero
   //   thumbnailUrl: 'https://vz-XXXXX.b-cdn.net/{videoId}/thumbnail.jpg', // opcional
   // },
+
+  // =========================================================================
+  // BOOKING WIDGET (High Conversion Flow)
+  // =========================================================================
+  // Flujo directo a reservas: Modal CTA → Widget con filtros pre-aplicados
+  // Filtros disponibles: 'afro', 'twerk', 'dancehall', 'hiphop', 'bachata', 'salsa', etc.
+  // Ver todos los filtros en: components/booking/constants/bookingOptions.ts
+  bookingWidget: {
+    styleFilter: 'CAMBIAR', // Filtro de estilo para el widget de reservas
+  },
 });

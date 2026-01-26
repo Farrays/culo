@@ -897,7 +897,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                   <StarRating size="lg" />
                 </div>
                 <div className="text-xs sm:text-sm text-neutral/70">
-                  {t('basedOnReviews').replace('{count}', '509')}
+                  {t('basedOnReviews', { count: 509 })}
                 </div>
               </div>
             </AnimateOnScroll>

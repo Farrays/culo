@@ -191,6 +191,10 @@ export interface VideoSection {
   videos?: Array<{
     videoId: string;
     title: string;
+    // Optional props for enhanced Schema VideoObject (GEO/AIEO)
+    description?: string;
+    uploadDate?: string; // ISO 8601 format: YYYY-MM-DD
+    duration?: string; // ISO 8601 duration format: PT5M30S
   }>;
   placeholderCount?: number; // Number of "coming soon" placeholders
   // Bunny Stream video support
@@ -360,6 +364,17 @@ export interface FullDanceClassConfig {
     descKey: string;
     thumbnailUrl?: string;
     videoId?: string;
+  };
+
+  // === BUNNY VIDEO SCHEMA (for Bunny Stream videos) ===
+  bunnyVideoSchema?: {
+    titleKey: string;
+    descKey: string;
+    thumbnailUrl: string;
+    videoId: string;
+    libraryId: string;
+    duration?: string; // ISO 8601 format, e.g., "PT1M30S"
+    uploadDate?: string; // ISO 8601 date
   };
 
   // === RELATED CLASSES (internal linking) ===
@@ -903,7 +918,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
     [breadcrumbItems]
   );
 
-  // Video schema if provided
+  // Video schema if provided (YouTube)
   const videoSchemaData = config.videoSchema
     ? {
         '@context': 'https://schema.org',
@@ -922,6 +937,67 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           : `${baseUrl}/videos/${config.stylePath}-class-experience.mp4`,
       }
     : null;
+
+  // Bunny Video schema (for self-hosted videos via Bunny.net)
+  const bunnyVideoSchemaData = config.bunnyVideoSchema
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: t(config.bunnyVideoSchema.titleKey),
+        description: t(config.bunnyVideoSchema.descKey),
+        thumbnailUrl: config.bunnyVideoSchema.thumbnailUrl,
+        uploadDate: config.bunnyVideoSchema.uploadDate || '2025-01-01',
+        duration: config.bunnyVideoSchema.duration || 'PT1M',
+        contentUrl: `https://iframe.mediadelivery.net/play/${config.bunnyVideoSchema.libraryId}/${config.bunnyVideoSchema.videoId}`,
+        embedUrl: `https://iframe.mediadelivery.net/embed/${config.bunnyVideoSchema.libraryId}/${config.bunnyVideoSchema.videoId}`,
+        // SEO: Additional properties for better indexing
+        publisher: {
+          '@type': 'Organization',
+          name: "Farray's International Dance Center",
+          logo: {
+            '@type': 'ImageObject',
+            url: `${baseUrl}/logo.svg`,
+          },
+        },
+        // GEO/AIEO: Structured data for AI search engines
+        inLanguage: locale,
+        isAccessibleForFree: true,
+        interactionStatistic: {
+          '@type': 'InteractionCounter',
+          interactionType: { '@type': 'WatchAction' },
+          userInteractionCount: 1000, // Estimated views
+        },
+      }
+    : null;
+
+  // Auto-generate bunnyVideoSchema from videoSection.bunnyVideo if not explicitly provided
+  const effectiveBunnyVideoSchema =
+    bunnyVideoSchemaData ||
+    (config.videoSection?.bunnyVideo
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          name: config.videoSection.bunnyVideo.title || t(`${config.styleKey}VideoTitle`),
+          description: t(`${config.styleKey}VideoDesc`),
+          thumbnailUrl:
+            config.videoSection.bunnyVideo.thumbnailUrl ||
+            `${baseUrl}/images/classes/${config.stylePath}/video-thumbnail.jpg`,
+          uploadDate: '2025-01-01',
+          duration: 'PT1M',
+          contentUrl: `https://iframe.mediadelivery.net/play/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`,
+          embedUrl: `https://iframe.mediadelivery.net/embed/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`,
+          publisher: {
+            '@type': 'Organization',
+            name: "Farray's International Dance Center",
+            logo: {
+              '@type': 'ImageObject',
+              url: `${baseUrl}/logo.svg`,
+            },
+          },
+          inLanguage: locale,
+          isAccessibleForFree: true,
+        }
+      : null);
 
   // FAQ Page schema
   const faqPageSchema = {
@@ -966,14 +1042,58 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Farray's International Dance Center" />
+        {/* Open Graph Video (for pages with Bunny video) */}
+        {config.videoSection?.bunnyVideo && (
+          <>
+            <meta
+              property="og:video"
+              content={`https://iframe.mediadelivery.net/embed/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`}
+            />
+            <meta property="og:video:type" content="text/html" />
+            <meta
+              property="og:video:width"
+              content={config.videoSection.bunnyVideo.aspectRatio === '9:16' ? '360' : '1280'}
+            />
+            <meta
+              property="og:video:height"
+              content={config.videoSection.bunnyVideo.aspectRatio === '9:16' ? '640' : '720'}
+            />
+          </>
+        )}
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:card"
+          content={config.videoSection?.bunnyVideo ? 'player' : 'summary_large_image'}
+        />
         <meta
           name="twitter:title"
           content={`${t(`${config.styleKey}PageTitle`)} | Farray's Center`}
         />
         <meta name="twitter:description" content={t(`${config.styleKey}MetaDescription`)} />
-        <meta name="twitter:image" content={`${baseUrl}/images/og-${config.stylePath}.jpg`} />
+        <meta
+          name="twitter:image"
+          content={
+            config.videoSection?.bunnyVideo?.thumbnailUrl ||
+            `${baseUrl}/images/og-${config.stylePath}.jpg`
+          }
+        />
+        {/* Twitter Player Card (for pages with video) */}
+        {config.videoSection?.bunnyVideo && (
+          <>
+            <meta
+              name="twitter:player"
+              content={`https://iframe.mediadelivery.net/embed/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`}
+            />
+            <meta
+              name="twitter:player:width"
+              content={config.videoSection.bunnyVideo.aspectRatio === '9:16' ? '360' : '1280'}
+            />
+            <meta
+              name="twitter:player:height"
+              content={config.videoSection.bunnyVideo.aspectRatio === '9:16' ? '640' : '720'}
+            />
+          </>
+        )}
         {/* Additional SEO */}
         <meta
           name="robots"
@@ -1029,6 +1149,12 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchemaData) }}
+        />
+      )}
+      {effectiveBunnyVideoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(effectiveBunnyVideoSchema) }}
         />
       )}
       {config.personSchemas?.map((person, idx) => (
@@ -1922,7 +2048,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                 </div>
               </AnimateOnScroll>
 
-              {/* Bunny Stream Video (supports vertical/horizontal) */}
+              {/* Bunny Stream Video (supports vertical/horizontal) - Enterprise optimized */}
               {config.videoSection.bunnyVideo && (
                 <AnimateOnScroll>
                   <BunnyEmbed
@@ -1933,6 +2059,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                     }
                     aspectRatio={config.videoSection.bunnyVideo.aspectRatio}
                     thumbnailUrl={config.videoSection.bunnyVideo.thumbnailUrl}
+                    priority={true}
                   />
                 </AnimateOnScroll>
               )}
@@ -1947,7 +2074,13 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                       key={video.videoId}
                       delay={(index + 1) * ANIMATION_DELAYS.STAGGER_SMALL}
                     >
-                      <YouTubeEmbed videoId={video.videoId} title={video.title} />
+                      <YouTubeEmbed
+                        videoId={video.videoId}
+                        title={video.title}
+                        description={video.description}
+                        uploadDate={video.uploadDate}
+                        duration={video.duration}
+                      />
                     </AnimateOnScroll>
                   ))}
                 </div>

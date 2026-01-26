@@ -157,6 +157,8 @@ export const HIP_HOP_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConf
     bunnyVideoId: '49199a2f-c69d-4be0-935e-66bf22cfe077',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    autoplay: false,
+    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
+    // thumbnailUrl: 'https://vz-3d56a778-175.b-cdn.net/49199a2f-c69d-4be0-935e-66bf22cfe077/thumbnail_XXXXX.jpg',
   },
 });

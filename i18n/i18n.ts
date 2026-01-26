@@ -78,18 +78,21 @@ i18n
       'about',
       'contact',
     ],
-    // Phase 2: Lazy loading - only load 'common' initially, others loaded on demand per route
-    // This reduces initial bundle from ~1.5MB to ~50KB
-    ns: ['common'],
+    // Phase 2: Lazy loading - load 'common' and 'booking' initially, others on demand per route
+    // 'booking' added to fix race condition where components render before namespace loads
+    // This reduces initial bundle from ~1.5MB to ~80KB
+    ns: ['common', 'booking'],
 
     // React integration
     react: {
       useSuspense: false, // Disabled for synchronous component rendering
     },
 
-    // Interpolation
+    // Interpolation - using single braces {variable} instead of default {{variable}}
     interpolation: {
       escapeValue: false, // React already escapes
+      prefix: '{',
+      suffix: '}',
     },
 
     // Development
