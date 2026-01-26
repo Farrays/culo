@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
+import type { Locale } from '../types';
 
 interface Product {
   id: number;
@@ -279,10 +280,10 @@ const MerchandisingPage: React.FC = () => {
                     {/* Product Info */}
                     <div className="flex flex-col flex-grow min-h-[180px] p-6">
                       <h3 className="text-2xl font-bold text-neutral mb-3">
-                        {product.name[locale]}
+                        {product.name[locale as Locale]}
                       </h3>
                       <p className="text-neutral/90 mb-4 flex-grow">
-                        {product.description[locale]}
+                        {product.description[locale as Locale]}
                       </p>
 
                       <div className="flex items-center justify-between pt-4 border-t border-primary-dark/30">

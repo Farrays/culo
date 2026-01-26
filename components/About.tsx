@@ -75,7 +75,7 @@ const About: React.FC = () => {
               >
                 {t('aboutBio')
                   .split('\n\n')
-                  .map((paragraph, index) => (
+                  .map((paragraph: string, index: number) => (
                     <p key={index} id={`about-bio-para-${index + 1}`}>
                       {paragraph}
                     </p>

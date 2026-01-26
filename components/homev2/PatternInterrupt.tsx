@@ -57,7 +57,7 @@ const PatternInterrupt: React.FC<PatternInterruptProps> = ({ textKey, variant = 
       <AnimateOnScroll>
         <div className="max-w-3xl mx-auto text-center">
           <p className={textClasses[variant]}>
-            {text.split('\n').map((line, i) => (
+            {text.split('\n').map((line: string, i: number) => (
               <span key={i} className="block">
                 {line}
               </span>

@@ -303,7 +303,7 @@ const Footer: React.FC = () => {
               <p className="text-neutral/70">
                 {t('footerAddressValue')
                   .split('\n')
-                  .map((line, index) => (
+                  .map((line: string, index: number) => (
                     <React.Fragment key={index}>
                       {line}
                       <br />

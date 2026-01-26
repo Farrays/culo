@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { Testimonial } from '../types';
+import type { Testimonial, Locale } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
 
 // Avatar colors for initials
@@ -231,7 +231,7 @@ const Testimonials: React.FC = () => {
                   ))}
                 </div>
                 <blockquote className="flex-grow text-neutral/90 italic mb-6">
-                  <p className="text-lg">&ldquo;{testimonial.quote[locale]}&rdquo;</p>
+                  <p className="text-lg">&ldquo;{testimonial.quote[locale as Locale]}&rdquo;</p>
                 </blockquote>
                 <div className="flex items-center space-x-4 mt-auto">
                   <InitialsAvatar name={testimonial.name} index={index} />
@@ -239,7 +239,7 @@ const Testimonials: React.FC = () => {
                     <cite className="font-bold text-lg text-neutral not-italic">
                       {testimonial.name}
                     </cite>
-                    <p className="text-sm text-neutral/75">{testimonial.city[locale]}</p>
+                    <p className="text-sm text-neutral/75">{testimonial.city[locale as Locale]}</p>
                   </div>
                 </div>
               </div>

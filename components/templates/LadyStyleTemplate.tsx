@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import type { Locale } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import { ANIMATION_DELAYS } from '../../constants/shared';
 import AnimateOnScroll from '../AnimateOnScroll';
@@ -545,7 +546,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         },
         author: testimonial.name,
         reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-        reviewBody: testimonial.quote[locale],
+        reviewBody: testimonial.quote[locale as Locale],
         datePublished: new Date().toISOString().split('T')[0],
       }));
 
@@ -1589,7 +1590,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                       </div>
                       <blockquote className="flex-grow text-neutral/90 mb-3 sm:mb-4">
                         <p className="text-xs sm:text-sm leading-relaxed">
-                          &ldquo;{testimonial.quote[locale]}&rdquo;
+                          &ldquo;{testimonial.quote[locale as Locale]}&rdquo;
                         </p>
                       </blockquote>
                       <div className="flex items-center gap-3 mt-auto pt-3 sm:pt-4 border-t border-primary-dark/30">
@@ -1597,7 +1598,9 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                           <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
                             {testimonial.name}
                           </cite>
-                          <p className="text-xs text-neutral/75">{testimonial.city[locale]}</p>
+                          <p className="text-xs text-neutral/75">
+                            {testimonial.city[locale as Locale]}
+                          </p>
                         </div>
                       </div>
                     </div>

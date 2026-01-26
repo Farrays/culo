@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getReviewText, hasTranslation } from '../../hooks/useReviews';
 import type { GoogleReview } from '../../constants/reviews-data';
+import type { Locale } from '../../types';
 
 interface ReviewCardProps {
   review: GoogleReview;
@@ -65,7 +66,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
     'contact',
     'pages',
   ]);
-  const locale = i18n.language;
+  const locale = i18n.language as Locale;
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Get translated text if available for current locale

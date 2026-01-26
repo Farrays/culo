@@ -11,7 +11,7 @@
  * @see i18n/i18n.ts - Production configuration
  */
 
-import i18n from 'i18next';
+import i18n, { type InitOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import fs from 'fs';
 import path from 'path';
@@ -46,7 +46,7 @@ const mockTranslations = loadTranslations();
 // i18next TEST CONFIGURATION
 // ============================================================================
 
-i18n.use(initReactI18next).init({
+const testConfig: InitOptions = {
   // Use 'es' as default for tests (matches production and test expectations)
   lng: 'es',
   fallbackLng: 'es',
@@ -84,10 +84,14 @@ i18n.use(initReactI18next).init({
 
   // Load resources synchronously (critical for tests)
   resources: {
-    en: mockTranslations,
-    es: mockTranslations, // Use same translations for all languages in tests
-    ca: mockTranslations,
-    fr: mockTranslations,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    en: mockTranslations as any,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    es: mockTranslations as any, // Use same translations for all languages in tests
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ca: mockTranslations as any,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fr: mockTranslations as any,
   },
 
   // React integration
@@ -107,6 +111,8 @@ i18n.use(initReactI18next).init({
   // Return key as fallback (helps identify missing translations in tests)
   returnEmptyString: false,
   returnNull: false,
-});
+};
+
+i18n.use(initReactI18next).init(testConfig);
 
 export default i18n;

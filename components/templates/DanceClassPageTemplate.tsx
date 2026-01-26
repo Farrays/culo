@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { SUPPORTED_LOCALES } from '../../types';
+import { SUPPORTED_LOCALES, type Locale } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import { StarRating, CheckCircleIcon, ClockIcon, FlameIcon } from '../../lib/icons';
 import { UsersIcon, MapPinIcon } from '../shared/CommonIcons';
@@ -198,7 +198,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         },
         author: testimonial.name,
         reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-        reviewBody: testimonial.quote[locale],
+        reviewBody: testimonial.quote[locale as Locale],
         datePublished: new Date().toISOString().split('T')[0],
       })),
     [testimonials, locale, styleKey, t]

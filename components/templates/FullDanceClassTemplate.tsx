@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useImageAlt } from '../../hooks/useImageAlt';
 import { useReviews } from '../../hooks/useReviews';
 import type { ScheduleSession } from '../../hooks/useScheduleSessions';
+import type { Locale } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import {
   StarRating,
@@ -866,7 +867,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
       },
       author: testimonial.name,
       reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-      reviewBody: testimonial.quote[locale],
+      reviewBody: testimonial.quote[locale as Locale],
       datePublished: currentDate,
     }));
   }, [realGoogleReviews, config.testimonials, locale, config.styleKey, t, currentDate]);

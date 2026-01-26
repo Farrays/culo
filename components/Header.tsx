@@ -901,7 +901,7 @@ const Header: React.FC = () => {
             {/* Language Selector + CTA Button */}
             <div className="hidden lg:flex items-center gap-5">
               <LanguageSelector
-                locale={locale}
+                locale={locale as Locale}
                 isOpen={isDropdownOpen('lang')}
                 onToggle={() => toggleDropdown('lang')}
                 handleLanguageChange={handleLanguageChange}
@@ -934,7 +934,7 @@ const Header: React.FC = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         menuStructure={menuStructure}
-        locale={locale}
+        locale={locale as Locale}
         handleLanguageChange={handleLanguageChange}
         onOpenLeadModal={() => setIsLeadModalOpen(true)}
         languageNames={languageNames}

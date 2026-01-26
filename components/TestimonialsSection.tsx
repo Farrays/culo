@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
-import type { Testimonial } from '../types';
+import type { Testimonial, Locale } from '../types';
 
 interface TestimonialsSectionProps {
   titleKey: string;
@@ -107,7 +107,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function Te
                 </div>
                 <blockquote className="flex-grow text-neutral/90 mb-4">
                   <p className="text-sm leading-relaxed">
-                    &ldquo;{testimonial.quote[locale]}&rdquo;
+                    &ldquo;{testimonial.quote[locale as Locale]}&rdquo;
                   </p>
                 </blockquote>
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-primary-dark/30">
@@ -115,7 +115,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function Te
                     <cite className="font-bold text-neutral not-italic text-sm">
                       {testimonial.name}
                     </cite>
-                    <p className="text-xs text-neutral/75">{testimonial.city[locale]}</p>
+                    <p className="text-xs text-neutral/75">{testimonial.city[locale as Locale]}</p>
                   </div>
                 </div>
               </div>
