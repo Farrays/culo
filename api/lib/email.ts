@@ -37,6 +37,16 @@ function getResend(): Resend {
 // TIPOS
 // ============================================================================
 
+/**
+ * Categorías de clases - cada una tiene instrucciones específicas
+ */
+export type ClassCategory =
+  | 'bailes_sociales' // Salsa, Bachata, Kizomba, etc.
+  | 'danzas_urbanas' // Hip Hop, House, Breaking, etc.
+  | 'danza' // Ballet, Contemporáneo, Jazz, etc.
+  | 'entrenamiento' // Entrenamiento para bailarines (usa mismas instrucciones que danza)
+  | 'heels'; // Heels Dance
+
 export interface BookingEmailData {
   to: string;
   firstName: string;
@@ -46,6 +56,7 @@ export interface BookingEmailData {
   instructor?: string;
   managementUrl: string; // URL con magic link
   mapUrl?: string;
+  category?: ClassCategory; // Categoría para instrucciones específicas
 }
 
 export interface CancellationEmailData {
@@ -80,6 +91,122 @@ export interface FeedbackEmailData {
 // TODO: Cuando se verifique el dominio, cambiar a: reservas@farrayscenter.com
 const FROM_EMAIL = "Farray's Center <onboarding@resend.dev>";
 const REPLY_TO = 'info@farrayscenter.com';
+
+// ============================================================================
+// INSTRUCCIONES POR CATEGORÍA
+// ============================================================================
+
+interface CategoryInstructions {
+  title: string;
+  items: string[];
+  color: string; // Color del header de la sección
+}
+
+/**
+ * Obtiene las instrucciones específicas de "¿Qué traer?" según la categoría
+ */
+function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
+  const commonItems = [
+    '💧 Botella de agua',
+    '🧴 Toalla pequeña',
+    '🔐 Candado para taquilla (opcional)',
+  ];
+
+  switch (category) {
+    case 'bailes_sociales':
+      return {
+        title: '¿Qué traer a tu clase de Bailes Sociales?',
+        color: '#e91e63',
+        items: [
+          '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
+          '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
+          '📝 <strong>Folklore:</strong> Sin calzado (se baila descalzo)',
+          ...commonItems,
+        ],
+      };
+
+    case 'danzas_urbanas':
+      return {
+        title: '¿Qué traer a tu clase de Danzas Urbanas?',
+        color: '#673ab7',
+        items: [
+          '👟 Bambas cómodas (suela limpia)',
+          '👖 Leggings, pantalones cortos o chándal',
+          '👕 Camiseta cómoda que permita moverte',
+          ...commonItems,
+        ],
+      };
+
+    case 'danza':
+    case 'entrenamiento':
+      return {
+        title:
+          category === 'entrenamiento'
+            ? '¿Qué traer a tu Entrenamiento?'
+            : '¿Qué traer a tu clase de Danza?',
+        color: '#9c27b0',
+        items: [
+          '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
+          '🦵 Rodilleras recomendadas (especialmente para floorwork)',
+          '👖 Ropa ajustada que permita ver la línea del cuerpo',
+          ...commonItems,
+        ],
+      };
+
+    case 'heels':
+      return {
+        title: '¿Qué traer a tu clase de Heels?',
+        color: '#e91e63',
+        items: [
+          '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
+          '💃 Ropa femenina y atrevida que te haga sentir poderosa',
+          '🎽 Top o body que permita libertad de movimiento',
+          ...commonItems,
+        ],
+      };
+
+    default:
+      return {
+        title: '¿Qué traer?',
+        color: '#e91e63',
+        items: [
+          '👟 Ropa cómoda para bailar',
+          '👠 Calzado según el estilo de baile',
+          ...commonItems,
+        ],
+      };
+  }
+}
+
+/**
+ * Genera el HTML de la sección "¿Qué traer?" personalizada por categoría
+ */
+function generateWhatToBringSection(category?: ClassCategory): string {
+  const instructions = getCategoryInstructions(category);
+
+  return `
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 15px 0; color: ${instructions.color};">${instructions.title}</h3>
+    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+      ${instructions.items.map(item => `<li>${item}</li>`).join('\n      ')}
+    </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte y prepararte.</p>
+    </div>
+  </div>
+
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>
+  `;
+}
 
 /**
  * Email de confirmación de reserva
@@ -175,14 +302,7 @@ export async function sendBookingConfirmation(
     }
   </div>
 
-  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 10px 0; color: #e65100;">¿Qué traer?</h3>
-    <ul style="margin: 0; padding-left: 20px; color: #666;">
-      <li>Ropa cómoda para bailar</li>
-      <li>Agua</li>
-      <li>¡Muchas ganas de pasarlo bien!</li>
-    </ul>
-  </div>
+  ${generateWhatToBringSection(data.category)}
 
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
     <p>¿Necesitas cambiar o cancelar tu reserva?<br>
