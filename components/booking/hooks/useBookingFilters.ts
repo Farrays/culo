@@ -35,6 +35,8 @@ export interface UseBookingFiltersReturn {
   directClassId: string | null;
   weekOffset: number;
   setWeekOffset: (week: number) => void;
+  /** When true, filters UI should be hidden (user came from landing with pre-selected style) */
+  filtersLocked: boolean;
 }
 
 export function useBookingFilters(): UseBookingFiltersReturn {
@@ -188,6 +190,9 @@ export function useBookingFilters(): UseBookingFiltersReturn {
   const rawWeekOffset = parseInt(searchParams.get('week') || '0', 10);
   const weekOffset = Math.min(4, Math.max(0, isNaN(rawWeekOffset) ? 0 : rawWeekOffset));
 
+  // Check if filters should be locked (hidden UI but filter still applied)
+  const filtersLocked = searchParams.get('locked') === 'true';
+
   // Active filter count for UI
   const activeFilterCount = useMemo(() => Object.values(filters).filter(Boolean).length, [filters]);
 
@@ -204,5 +209,6 @@ export function useBookingFilters(): UseBookingFiltersReturn {
     directClassId,
     weekOffset,
     setWeekOffset,
+    filtersLocked,
   };
 }

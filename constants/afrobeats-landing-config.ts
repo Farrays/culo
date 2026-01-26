@@ -152,5 +152,14 @@ export const AFROBEATS_LANDING_CONFIG: LandingConfig = createLandingConfig('bran
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
     autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/44f53623-e523-4f22-a19d-dffff0cc26c0/thumbnail_7f0a80d5.jpg',
+  },
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'afro', // Filtra solo clases de Afrobeats en el widget
   },
 });

@@ -70,6 +70,7 @@
   "booking_filter_all_instructors": "All instructors",
   "booking_filter_category": "Category",
   "booking_filter_all_categories": "All categories",
+  "booking_showing_style": "Showing classes for",
   "booking_filter_category_danza": "Dance",
   "booking_filter_category_urbano": "Urban Dance",
   "booking_filter_category_latino": "Latin Dance",
@@ -185,5 +186,12 @@
   "booking_legal_legitimation": "Legal basis: Your express consent.",
   "booking_legal_recipients": "Recipients: Momence (booking management), Meta (conversion analysis).",
   "booking_legal_rights": "Rights: Access, rectification, erasure, restriction, portability and objection.",
-  "booking_legal_info": "More information in our privacy policy."
+  "booking_legal_info": "More information in our privacy policy.",
+  "booking_exit_intent_title": "Can't find what you're looking for?",
+  "booking_exit_intent_title_personalized": "{{style}} schedule doesn't work for you?",
+  "booking_exit_intent_description": "We have over 25 dance styles available. Maybe another style suits you better.",
+  "booking_exit_intent_description_personalized": "We have over 25 dance styles and flexible schedules. Maybe another time or style works better for you.",
+  "booking_exit_intent_cta": "See all available classes",
+  "booking_exit_intent_continue": "Continue with {{style}}",
+  "booking_exit_intent_hint": "First trial class free"
 }

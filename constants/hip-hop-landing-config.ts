@@ -136,5 +136,7 @@ export const HIP_HOP_LANDING_CONFIG: LandingConfig = createLandingConfig('brand'
     bunnyLibraryId: '570522',
     aspectRatio: '9:16',
     autoplay: false,
+    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
+    // thumbnailUrl: 'https://vz-XXXXX.b-cdn.net/54f2f015-18db-4535-b520-1c8cedde36b9/thumbnail_XXXXX.jpg',
   },
 });

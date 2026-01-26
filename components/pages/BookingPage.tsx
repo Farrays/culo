@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import BookingWidgetV2 from '../booking/BookingWidgetV2';
+import { BookingExitIntent } from '../booking/components/BookingExitIntent';
 
 /**
  * BookingPage - Página de reservas de clases de bienvenida
@@ -173,6 +174,9 @@ const BookingPage: React.FC = () => {
           </div>
         </div>
       </main>
+
+      {/* Exit Intent for locked mode (came from landing page) */}
+      <BookingExitIntent />
     </>
   );
 };

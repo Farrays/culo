@@ -70,6 +70,7 @@
   "booking_filter_all_instructors": "Tots els professors",
   "booking_filter_category": "Categoria",
   "booking_filter_all_categories": "Totes les categories",
+  "booking_showing_style": "Mostrant classes de",
   "booking_filter_category_danza": "Dansa",
   "booking_filter_category_urbano": "Danses Urbanes",
   "booking_filter_category_latino": "Balls Llatins",
@@ -185,5 +186,12 @@
   "booking_legal_legitimation": "Legitimació: El teu consentiment exprés.",
   "booking_legal_recipients": "Destinataris: Momence (gestió de reserves), Meta (anàlisi de conversions).",
   "booking_legal_rights": "Drets: Accés, rectificació, supressió, limitació, portabilitat i oposició.",
-  "booking_legal_info": "Més informació a la nostra política de privacitat."
+  "booking_legal_info": "Més informació a la nostra política de privacitat.",
+  "booking_exit_intent_title": "No trobes el que busques?",
+  "booking_exit_intent_title_personalized": "L'horari de {{style}} no et va bé?",
+  "booking_exit_intent_description": "Tenim més de 25 estils de ball disponibles. Potser un altre estil encaixi millor amb tu.",
+  "booking_exit_intent_description_personalized": "Tenim més de 25 estils de ball i horaris flexibles. Potser un altre horari o estil encaixi millor amb tu.",
+  "booking_exit_intent_cta": "Veure totes les classes disponibles",
+  "booking_exit_intent_continue": "Continuar amb {{style}}",
+  "booking_exit_intent_hint": "Primera classe de prova gratis"
 }

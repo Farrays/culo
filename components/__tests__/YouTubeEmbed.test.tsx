@@ -48,16 +48,17 @@ describe('YouTubeEmbed', () => {
   it('renders play button', () => {
     renderWithHelmet(<YouTubeEmbed {...defaultProps} />);
 
-    // Play button is inside the clickable div
-    const playButton = screen.getByRole('button', { name: /load video/i });
+    // Play button is inside the clickable div - matches Spanish "Reproducir video" or English "Load video"
+    const playButton = screen.getByRole('button', { name: /video/i });
     expect(playButton).toBeInTheDocument();
   });
 
-  it('has correct aria-label', () => {
+  it('has correct aria-label with video title', () => {
     renderWithHelmet(<YouTubeEmbed {...defaultProps} />);
 
     const button = screen.getByRole('button');
-    expect(button).toHaveAttribute('aria-label', 'Load video: Test Video Title');
+    // Matches both "Reproducir video: Title" (ES) and "Load video: Title" (EN)
+    expect(button.getAttribute('aria-label')).toContain('Test Video Title');
   });
 
   it('is keyboard accessible', () => {

@@ -224,6 +224,7 @@ const BookingWidgetV2: React.FC = memo(() => {
     directClassId,
     weekOffset,
     setWeekOffset,
+    filtersLocked,
   } = useBookingFilters();
 
   // CSRF protection (optional - gracefully handles missing backend endpoint)
@@ -659,6 +660,7 @@ const BookingWidgetV2: React.FC = memo(() => {
         showAllWeeks={hasActiveFilters}
         allWeeksClasses={allWeeksClasses}
         allWeeksLoading={allWeeksLoading}
+        hideFilters={filtersLocked}
       />
     );
   };

@@ -164,6 +164,8 @@ export const TWERK_LANDING_CONFIG: LandingConfig = createLandingConfig('rose', {
     bunnyVideoId: '7e802ebe-cbd7-49ca-a5f1-569e5c1eba7c',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    autoplay: false,
+    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
+    // thumbnailUrl: 'https://vz-3d56a778-175.b-cdn.net/7e802ebe-cbd7-49ca-a5f1-569e5c1eba7c/thumbnail_XXXXX.jpg',
   },
 });

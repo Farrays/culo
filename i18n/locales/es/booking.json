@@ -70,6 +70,7 @@
   "booking_filter_all_instructors": "Todos los profesores",
   "booking_filter_category": "Categoría",
   "booking_filter_all_categories": "Todas las categorías",
+  "booking_showing_style": "Mostrando clases de",
   "booking_filter_category_danza": "Danza",
   "booking_filter_category_urbano": "Danzas Urbanas",
   "booking_filter_category_latino": "Bailes Latinos",
@@ -185,5 +186,12 @@
   "booking_legal_legitimation": "Legitimación: Tu consentimiento expreso.",
   "booking_legal_recipients": "Destinatarios: Momence (gestión de reservas), Meta (análisis de conversiones).",
   "booking_legal_rights": "Derechos: Acceso, rectificación, supresión, limitación, portabilidad y oposición.",
-  "booking_legal_info": "Más información en nuestra política de privacidad."
+  "booking_legal_info": "Más información en nuestra política de privacidad.",
+  "booking_exit_intent_title": "¿No encuentras lo que buscas?",
+  "booking_exit_intent_title_personalized": "¿El horario de {{style}} no te va bien?",
+  "booking_exit_intent_description": "Tenemos más de 25 estilos de baile disponibles. Quizás otro estilo encaje mejor contigo.",
+  "booking_exit_intent_description_personalized": "Tenemos más de 25 estilos de baile y horarios flexibles. Quizás otro horario o estilo encaje mejor contigo.",
+  "booking_exit_intent_cta": "Ver todas las clases disponibles",
+  "booking_exit_intent_continue": "Continuar con {{style}}",
+  "booking_exit_intent_hint": "Primera clase de prueba gratis"
 }

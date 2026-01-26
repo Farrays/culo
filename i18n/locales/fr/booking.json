@@ -55,6 +55,7 @@
   "booking_filter_all_instructors": "Tous les professeurs",
   "booking_filter_category": "Catégorie",
   "booking_filter_all_categories": "Toutes les catégories",
+  "booking_showing_style": "Affichage des cours de",
   "booking_filter_category_danza": "Danse",
   "booking_filter_category_urbano": "Danses Urbaines",
   "booking_filter_category_latino": "Danses Latines",
@@ -185,5 +186,12 @@
   "booking_legal_legitimation": "Base juridique : Votre consentement exprès.",
   "booking_legal_recipients": "Destinataires : Momence (gestion des réservations), Meta (analyse des conversions).",
   "booking_legal_rights": "Droits : Accès, rectification, suppression, limitation, portabilité et opposition.",
-  "booking_legal_info": "Plus d'informations dans notre politique de confidentialité."
+  "booking_legal_info": "Plus d'informations dans notre politique de confidentialité.",
+  "booking_exit_intent_title": "Vous ne trouvez pas ce que vous cherchez ?",
+  "booking_exit_intent_title_personalized": "L'horaire de {{style}} ne vous convient pas ?",
+  "booking_exit_intent_description": "Nous proposons plus de 25 styles de danse. Peut-être qu'un autre style vous conviendrait mieux.",
+  "booking_exit_intent_description_personalized": "Nous proposons plus de 25 styles de danse et des horaires flexibles. Peut-être qu'un autre horaire ou style vous conviendrait mieux.",
+  "booking_exit_intent_cta": "Voir tous les cours disponibles",
+  "booking_exit_intent_continue": "Continuer avec {{style}}",
+  "booking_exit_intent_hint": "Premier cours d'essai gratuit"
 }
