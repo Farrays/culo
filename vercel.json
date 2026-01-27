@@ -608,6 +608,7 @@
     { "source": "/:locale(es|en|ca|fr)/politica-privacidad", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/politica-cookies", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/reservas", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/mi-reserva", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/test/:path*", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/404", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/team-building-barcelona", "destination": "/index.html" },

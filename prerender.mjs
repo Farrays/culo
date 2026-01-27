@@ -150,6 +150,7 @@ const PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT = [
   'horariosPrecio', // Datos en tiempo real
   'calendario',     // Datos dinámicos
   'reservas',       // Widget interactivo con APIs del navegador - causa hydration mismatch
+  'miReserva',      // Página dinámica con datos de Redis
   'notFound',       // Ya tiene contenido
   // Páginas legales - ya tienen contenido manual
   'termsConditions',
@@ -227,6 +228,7 @@ const routes = [
   { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
   { path: 'es/reservas', lang: 'es', page: 'reservas' },
+  { path: 'es/mi-reserva', lang: 'es', page: 'miReserva' },
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
   { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
@@ -297,6 +299,7 @@ const routes = [
   { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
   { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
+  { path: 'ca/mi-reserva', lang: 'ca', page: 'miReserva' },
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
   { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
@@ -367,6 +370,7 @@ const routes = [
   { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
   { path: 'en/reservas', lang: 'en', page: 'reservas' },
+  { path: 'en/mi-reserva', lang: 'en', page: 'miReserva' },
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
   { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
@@ -437,6 +441,7 @@ const routes = [
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
   { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
+  { path: 'fr/mi-reserva', lang: 'fr', page: 'miReserva' },
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
   { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
@@ -705,6 +710,11 @@ const metadata = {
     reservas: {
       title: 'Reserva tu Clase de Bienvenida | Farray\'s Center Barcelona',
       description: 'Reserva tu clase de bienvenida en la escuela de baile de Barcelona. Más de 25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo.',
+    },
+    miReserva: {
+      title: 'Mi Reserva | Farray\'s Center Barcelona',
+      description: 'Gestiona tu reserva de clase en Farray\'s Center Barcelona. Reprograma o cancela tu clase.',
+      robots: 'noindex, nofollow',
     },
     blog: {
       title: 'Blog de Baile | Consejos, Tutoriales e Historia del Baile | Farray\'s Center',
@@ -1022,6 +1032,11 @@ const metadata = {
       title: 'Reserva la teva Classe de Benvinguda | Farray\'s Center Barcelona',
       description: 'Reserva la teva classe de benvinguda a l\'escola de ball de Barcelona. Més de 25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu.',
     },
+    miReserva: {
+      title: 'La Meva Reserva | Farray\'s Center Barcelona',
+      description: 'Gestiona la teva reserva de classe a Farray\'s Center Barcelona. Reprograma o cancel·la la teva classe.',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
       description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
@@ -1338,6 +1353,11 @@ const metadata = {
       title: 'Book Your Welcome Class | Farray\'s Center Barcelona',
       description: 'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
     },
+    miReserva: {
+      title: 'My Booking | Farray\'s Center Barcelona',
+      description: 'Manage your class booking at Farray\'s Center Barcelona. Reschedule or cancel your class.',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
       description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
@@ -1653,6 +1673,11 @@ const metadata = {
     reservas: {
       title: 'Réservez votre Cours de Bienvenue | Farray\'s Center Barcelone',
       description: 'Réservez votre cours de bienvenue à l\'école de danse de Barcelone. Plus de 25 styles : salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive.',
+    },
+    miReserva: {
+      title: 'Ma Réservation | Farray\'s Center Barcelone',
+      description: 'Gérez votre réservation de cours chez Farray\'s Center Barcelone. Reprogrammez ou annulez votre cours.',
+      robots: 'noindex, nofollow',
     },
     blog: {
       title: 'Blog de Danse | Conseils, Tutoriels et Histoire de la Danse | Farray\'s Center',

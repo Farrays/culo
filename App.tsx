@@ -121,6 +121,7 @@ const ProfesoresBaileBarcelonaPage = lazy(
 
 // ===== BOOKING PAGE =====
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
+const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
 // ===== LEGAL PAGES =====
 const TermsConditionsPage = lazy(() => import('./components/TermsConditionsPage'));
@@ -266,7 +267,8 @@ const AppContent: React.FC = () => {
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
 
   // Booking page without header/footer (clean funnel experience)
-  const isBookingPage = location.pathname.includes('/reservas');
+  const isBookingPage =
+    location.pathname.includes('/reservas') || location.pathname.includes('/mi-reserva');
 
   // Combined check for hiding header/footer
   const hideHeaderFooter = isPromoLanding || isMinimalLegalPage || isBookingPage;
@@ -746,6 +748,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <BookingPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/mi-reserva"
+              element={
+                <>
+                  <LocaleSync />
+                  <MyBookingPage />
                 </>
               }
             />
