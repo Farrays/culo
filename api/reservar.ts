@@ -16,6 +16,13 @@ type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenami
 const EMAIL_FROM = "Farray's Center <onboarding@resend.dev>";
 const EMAIL_REPLY_TO = 'info@farrayscenter.com';
 
+// Colores corporativos
+const BRAND_PRIMARY = '#B01E3C'; // Rojo carmesí del logo
+const BRAND_DARK = '#800020';
+const LOGO_URL = 'https://farrayscenter.vercel.app/images/logo/img/logo-fidc_256.png';
+// TODO: Cambiar a farrayscenter.com cuando esté listo
+const BASE_URL = 'https://farrayscenter.vercel.app';
+
 interface CategoryInstructions {
   title: string;
   items: string[];
@@ -33,7 +40,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     case 'bailes_sociales':
       return {
         title: '¿Qué traer a tu clase de Bailes Sociales?',
-        color: '#e91e63',
+        color: BRAND_PRIMARY,
         items: [
           '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
           '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
@@ -44,7 +51,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     case 'danzas_urbanas':
       return {
         title: '¿Qué traer a tu clase de Danzas Urbanas?',
-        color: '#673ab7',
+        color: BRAND_PRIMARY,
         items: [
           '👟 Bambas cómodas (suela limpia)',
           '👖 Leggings, pantalones cortos o chándal',
@@ -61,7 +68,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
           category === 'entrenamiento'
             ? '¿Qué traer a tu Entrenamiento?'
             : '¿Qué traer a tu clase de Danza?',
-        color: '#9c27b0',
+        color: BRAND_PRIMARY,
         items: [
           '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
           '🦵 Rodilleras recomendadas (especialmente para floorwork)',
@@ -72,7 +79,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     case 'heels':
       return {
         title: '¿Qué traer a tu clase de Heels?',
-        color: '#e91e63',
+        color: BRAND_PRIMARY,
         items: [
           '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
           '💃 Ropa femenina y atrevida que te haga sentir poderosa',
@@ -83,7 +90,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     default:
       return {
         title: '¿Qué traer?',
-        color: '#e91e63',
+        color: BRAND_PRIMARY,
         items: ['👟 Ropa cómoda para bailar', '👠 Calzado según el estilo', ...commonItems],
       };
   }
@@ -133,13 +140,12 @@ async function sendBookingConfirmationEmail(data: {
       to: data.to,
       replyTo: EMAIL_REPLY_TO,
       subject: `Reserva confirmada: ${data.className}`,
-      html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
-    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0;">Farray's International Dance Center</h1>
   </div>
-  <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
     <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
   </div>
@@ -156,13 +162,16 @@ async function sendBookingConfirmationEmail(data: {
     </table>
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
     ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
   </div>
   ${generateWhatToBringSection(data.category)}
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${data.managementUrl}" style="color: #e91e63;">Gestionar mi reserva</a></p>
-    <p style="margin-top: 20px;">Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a></p>
+    <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${data.managementUrl}" style="color: ${BRAND_PRIMARY};">Gestionar mi reserva</a></p>
+    <div style="margin-top: 25px;">
+      <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="80" height="80" style="margin-bottom: 10px;">
+      <p style="margin: 0;">Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="${BASE_URL}" style="color: ${BRAND_PRIMARY};">farrayscenter.com</a></p>
+    </div>
   </div>
 </body></html>`,
     });
@@ -1170,9 +1179,11 @@ export default async function handler(
       success: false,
       error: 'Not attempted',
     };
+    console.warn('[reservar] Email attempt starting...');
+    console.warn('[reservar] RESEND_API_KEY configured:', !!process.env['RESEND_API_KEY']);
     try {
       // Generar URL de gestión con magic link (básico por ahora)
-      const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
+      const managementUrl = `${BASE_URL}/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
       const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
 
       emailResult = await sendBookingConfirmationEmail({
