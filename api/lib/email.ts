@@ -358,23 +358,45 @@ export async function sendCancellationEmail(
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
     <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
+    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
   </div>
 
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">Tu reserva para <strong>${data.className}</strong> ha sido cancelada correctamente.</p>
+    <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
+    <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
+    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> ha sido cancelada ✅ y la plaza liberada para que otra persona pueda aprovecharla.</p>
+  </div>
+
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
+    <p style="margin: 0;">Puedes reservar tu clase gratis cuando quieras, siempre que la promo siga activa y queden plazas.</p>
   </div>
 
   <div style="text-align: center; margin-bottom: 30px;">
-    <p style="color: #666;">¿Quieres reservar otra clase?</p>
-    <a href="${data.bookingUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
-      Ver clases disponibles
+    <a href="${data.bookingUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+      Reservar otra clase gratis
     </a>
   </div>
 
+  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 10px 0;"><strong>💡 ¿Sabías que...?</strong></p>
+    <p style="margin: 0;">Las clases sueltas están desde <strong>20€</strong>. Y la clase gratis... ¡es una oferta top por tiempo limitado y las plazas vuelan!</p>
+  </div>
+
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
+    <p style="margin: 0;">Escríbenos por WhatsApp al <strong>+34 622 247 085</strong><br>y te responderemos lo antes posible.</p>
+  </div>
+
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>¡Esperamos verte pronto!</p>
-    <p>Farray's International Dance Center</p>
+    <p style="margin: 0 0 10px 0;">¡Mil gracias por pensar en nosotros!</p>
+    <p style="margin: 0 0 20px 0;">Esperamos verte muy pronto para que vengas a vivir<br>la experiencia Farray's a tope. 💃🕺</p>
+    <p style="margin: 0;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br>
+      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> |
+      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a>
+    </p>
   </div>
 </body>
 </html>

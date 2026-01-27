@@ -208,7 +208,45 @@ export default async function handler(
     await redis.del(bookingKey);
     console.warn('[Cancel] Redis key deleted:', bookingKey);
 
-    // 4. Retornar confirmación
+    // 4. Enviar notificaciones de cancelación
+
+    // 4a. WhatsApp de cancelación
+    let whatsappSent = false;
+    if (bookingData.phone) {
+      try {
+        const { sendCancellationWhatsApp } = await import('./lib/whatsapp');
+        const whatsappResult = await sendCancellationWhatsApp({
+          to: bookingData.phone,
+          firstName: bookingData.firstName,
+        });
+        whatsappSent = whatsappResult.success;
+        if (!whatsappResult.success) {
+          console.warn('[Cancel] WhatsApp failed:', whatsappResult.error);
+        }
+      } catch (e) {
+        console.warn('[Cancel] WhatsApp error:', e);
+      }
+    }
+
+    // 4b. Email de cancelación
+    let emailSent = false;
+    try {
+      const { sendCancellationEmail } = await import('./lib/email');
+      const emailResult = await sendCancellationEmail({
+        to: bookingData.email,
+        firstName: bookingData.firstName,
+        className: bookingData.className,
+        bookingUrl: 'https://farrayscenter.com/reservas',
+      });
+      emailSent = emailResult.success;
+      if (!emailResult.success) {
+        console.warn('[Cancel] Email failed:', emailResult.error);
+      }
+    } catch (e) {
+      console.warn('[Cancel] Email error:', e);
+    }
+
+    // 5. Retornar confirmación
     return res.status(200).json({
       success: true,
       message: 'Reserva cancelada correctamente',
@@ -216,6 +254,8 @@ export default async function handler(
         className: bookingData.className,
         classDate: bookingData.classDate,
         momenceCancelled,
+        whatsappSent,
+        emailSent,
       },
     });
   } catch (error) {
