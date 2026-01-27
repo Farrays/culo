@@ -16,6 +16,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { sendCancellationEmail } from './lib/email';
 
 export default async function handler(
   req: VercelRequest,
@@ -58,8 +59,6 @@ export default async function handler(
   try {
     // Si es plantilla de cancelación, usar la función del módulo email
     if (templateName === 'cancelar') {
-      const { sendCancellationEmail } = await import('./lib/email');
-
       const result = await sendCancellationEmail({
         to,
         firstName: userFirstName,
