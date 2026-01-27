@@ -166,17 +166,9 @@ async function sendBookingConfirmationEmail(data: {
     ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
   </div>
   ${generateWhatToBringSection(data.category)}
-  <div style="background: #fef7f8; border: 1px solid #f8d7da; border-radius: 12px; padding: 25px; margin-bottom: 25px; text-align: center;">
-    <p style="margin: 0 0 10px 0; font-size: 16px; color: #333; font-weight: bold;">¿El horario de ${data.className} no te va bien?</p>
-    <p style="margin: 0 0 20px 0; color: #666; font-size: 14px; line-height: 1.5;">Tenemos más de 25 estilos de baile y horarios flexibles.<br>Quizás otro horario o estilo encaje mejor contigo.</p>
-    <div style="margin-bottom: 15px;">
-      <a href="${BASE_URL}/es/reservas" style="display: inline-block; background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver todas las clases</a>
-    </div>
-    <p style="margin: 0; color: #888; font-size: 12px;">Primera clase de prueba gratis</p>
-  </div>
-  <div style="text-align: center; padding: 15px 0;">
-    <p style="color: #666; font-size: 14px; margin: 0 0 12px 0;">¿No puedes asistir?</p>
-    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY}; font-size: 14px;">Reprogramar / Cancelar</a>
+  <div style="text-align: center; padding: 25px 0;">
+    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
+    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
   </div>
   <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
     <tr>
