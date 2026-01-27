@@ -626,6 +626,8 @@ export default async function handler(
       sessionId, // ID de la clase en Momence (opcional)
       className, // Nombre de la clase (para display)
       classDate, // Fecha de la clase
+      classTime, // Hora de la clase (e.g. "19:00")
+      category, // Categoría: bailes_sociales, danzas_urbanas, danza, entrenamiento, heels
       estilo, // Estilo de baile
       comoconoce, // Cómo nos conoció
       acceptsTerms, // UI checkbox (consolidates marketing, no-refund, image)
@@ -754,6 +756,7 @@ export default async function handler(
     if (redis) {
       try {
         const bookingTimestamp = Date.now();
+        // Deduplication key (simple)
         await redis.setex(
           bookingKey,
           BOOKING_TTL_SECONDS,
@@ -766,8 +769,31 @@ export default async function handler(
           })
         );
 
-        // Añadir a lista de reservas recientes para Social Proof Ticker
+        // Full booking details for reminders/cancellation
         const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+        const normalizedPhone = normalizePhone(sanitize(phone));
+        const bookingDetailsKey = `booking_details:${finalEventId}`;
+        await redis.setex(
+          bookingDetailsKey,
+          BOOKING_TTL_SECONDS,
+          JSON.stringify({
+            eventId: finalEventId,
+            firstName: firstNameOnly,
+            lastName: sanitize(lastName),
+            email: normalizedEmail,
+            phone: normalizedPhone,
+            className: className || estilo || 'Clase de Prueba',
+            classDate: classDate || '',
+            classTime: classTime || '',
+            sessionId: sessionId || null,
+            momenceBookingId: momenceResult.bookingId || null,
+            category: category || 'bailes_sociales',
+            createdAt: new Date().toISOString(),
+            status: 'confirmed',
+          })
+        );
+
+        // Añadir a lista de reservas recientes para Social Proof Ticker
         await redis.lpush(
           'recent_bookings',
           JSON.stringify({

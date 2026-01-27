@@ -85,6 +85,11 @@ export interface ReminderWhatsAppData {
   category: ClassCategory;
 }
 
+export interface CancellationWhatsAppData {
+  to: string;
+  firstName: string;
+}
+
 // Tipos internos para la API de WhatsApp
 interface WhatsAppTemplateComponent {
   type: 'header' | 'body' | 'button';
@@ -253,6 +258,26 @@ export async function sendReminderWhatsApp(data: ReminderWhatsAppData): Promise<
         { type: 'text', text: data.classDate },
         { type: 'text', text: data.classTime },
       ],
+    },
+  ]);
+}
+
+/**
+ * Envía confirmación de cancelación por WhatsApp
+ *
+ * Plantilla: cancelacion_reserva
+ * Parámetros:
+ * - {{1}} firstName
+ *
+ * NOTA: Debes crear esta plantilla en Meta Business Suite antes de usar esta función.
+ */
+export async function sendCancellationWhatsApp(
+  data: CancellationWhatsAppData
+): Promise<WhatsAppResult> {
+  return sendTemplate('cancelar', data.to, 'es_ES', [
+    {
+      type: 'body',
+      parameters: [{ type: 'text', text: data.firstName }],
     },
   ]);
 }
