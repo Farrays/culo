@@ -31,8 +31,8 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed. Use GET.' });
   }
 
-  const email = req.query.email as string;
-  const eventId = req.query.event as string;
+  const email = req.query['email'] as string;
+  const eventId = req.query['event'] as string;
 
   if (!email) {
     return res.status(400).json({ error: 'Email parameter required' });
