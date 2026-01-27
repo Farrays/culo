@@ -2,9 +2,15 @@
  * Test endpoint para verificar conexión con Resend
  *
  * GET /api/test-email?to=tu@email.com
+ * GET /api/test-email?to=tu@email.com&template=cancelar&firstName=Juan&className=Salsa
  *
  * Query params:
  * - to: Email de destino (requerido)
+ * - template: Plantilla a usar (opcional, default: test)
+ *   - test: Email de prueba básico
+ *   - cancelar: Email de cancelación de reserva
+ * - firstName: Nombre para plantilla cancelar (opcional, default: Usuario)
+ * - className: Nombre de la clase para plantilla cancelar (opcional, default: Clase)
  *
  * @note Este endpoint es solo para testing. Eliminar o proteger en producción.
  */
@@ -20,14 +26,23 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { to } = req.query;
+  const { to, template, firstName, className } = req.query;
 
   if (!to || typeof to !== 'string') {
     return res.status(400).json({
       error: 'Missing "to" query parameter',
       usage: '/api/test-email?to=tu@email.com',
+      templates: {
+        test: '/api/test-email?to=tu@email.com',
+        cancelar:
+          '/api/test-email?to=tu@email.com&template=cancelar&firstName=Juan&className=Salsa',
+      },
     });
   }
+
+  const templateName = (template as string) || 'test';
+  const userFirstName = (firstName as string) || 'Usuario';
+  const userClassName = (className as string) || 'Clase';
 
   // Validar formato de email básico
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,7 +56,31 @@ export default async function handler(
   const hasApiKey = !!process.env['RESEND_API_KEY'];
 
   try {
-    // Importar dinámicamente para evitar errores de módulo
+    // Si es plantilla de cancelación, usar la función del módulo email
+    if (templateName === 'cancelar') {
+      const { sendCancellationEmail } = await import('./lib/email');
+
+      const result = await sendCancellationEmail({
+        to,
+        firstName: userFirstName,
+        className: userClassName,
+        bookingUrl: 'https://farrayscenter.com/reservas',
+      });
+
+      return res.status(result.success ? 200 : 500).json({
+        success: result.success,
+        message: result.success ? `Cancellation email sent to ${to}` : undefined,
+        template: templateName,
+        firstName: userFirstName,
+        className: userClassName,
+        emailId: result.id,
+        error: result.error,
+        hasApiKey,
+        timestamp: new Date().toISOString(),
+      });
+    }
+
+    // Plantilla de test por defecto
     const { Resend } = await import('resend');
 
     const apiKey = process.env['RESEND_API_KEY'];
@@ -78,6 +117,7 @@ export default async function handler(
       return res.status(500).json({
         success: false,
         error: result.error.message,
+        template: templateName,
         hasApiKey,
       });
     }
@@ -85,6 +125,7 @@ export default async function handler(
     return res.status(200).json({
       success: true,
       message: `Test email sent to ${to}`,
+      template: templateName,
       emailId: result.data?.id,
       hasApiKey,
       timestamp: new Date().toISOString(),
@@ -95,6 +136,7 @@ export default async function handler(
     return res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error',
+      template: templateName,
       hasApiKey,
     });
   }
