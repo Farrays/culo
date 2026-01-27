@@ -129,14 +129,21 @@ export const HIP_HOP_LANDING_CONFIG: LandingConfig = createLandingConfig('brand'
   },
 
   // =========================================================================
-  // VIDEO (Bunny.net)
+  // VIDEO (Bunny.net) - Enterprise Mode
   // =========================================================================
   video: {
     bunnyVideoId: '54f2f015-18db-4535-b520-1c8cedde36b9',
-    bunnyLibraryId: '570522',
+    bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: false,
-    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
-    // thumbnailUrl: 'https://vz-XXXXX.b-cdn.net/54f2f015-18db-4535-b520-1c8cedde36b9/thumbnail_XXXXX.jpg',
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/54f2f015-18db-4535-b520-1c8cedde36b9/thumbnail.jpg',
+  },
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'hiphop', // Filtra solo clases de Hip Hop en el widget
   },
 });

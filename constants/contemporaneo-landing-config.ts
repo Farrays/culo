@@ -188,14 +188,21 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
   },
 
   // =========================================================================
-  // VIDEO (Bunny.net)
+  // VIDEO (Bunny.net) - Enterprise Mode
   // =========================================================================
   video: {
     bunnyVideoId: '75a74b09-277f-493f-b142-8a84df33a487',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: false,
-    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
-    // thumbnailUrl: 'https://vz-3d56a778-175.b-cdn.net/75a74b09-277f-493f-b142-8a84df33a487/thumbnail_XXXXX.jpg',
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/75a74b09-277f-493f-b142-8a84df33a487/thumbnail_3b4401bc.jpg',
+  },
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'contemporaneo', // Filtra solo clases de Contemporáneo en el widget
   },
 });

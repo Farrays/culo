@@ -188,10 +188,10 @@
   "booking_legal_rights": "Drets: Accés, rectificació, supressió, limitació, portabilitat i oposició.",
   "booking_legal_info": "Més informació a la nostra política de privacitat.",
   "booking_exit_intent_title": "No trobes el que busques?",
-  "booking_exit_intent_title_personalized": "L'horari de {{style}} no et va bé?",
+  "booking_exit_intent_title_personalized": "L'horari de {style} no et va bé?",
   "booking_exit_intent_description": "Tenim més de 25 estils de ball disponibles. Potser un altre estil encaixi millor amb tu.",
   "booking_exit_intent_description_personalized": "Tenim més de 25 estils de ball i horaris flexibles. Potser un altre horari o estil encaixi millor amb tu.",
   "booking_exit_intent_cta": "Veure totes les classes disponibles",
-  "booking_exit_intent_continue": "Continuar amb {{style}}",
+  "booking_exit_intent_continue": "Continuar amb {style}",
   "booking_exit_intent_hint": "Primera classe de prova gratis"
 }

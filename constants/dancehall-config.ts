@@ -111,7 +111,16 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: true, // Shows "Video Próximamente" placeholder (video 79nTjrMB7_A has thumbnail issues)
+    enabled: true,
+    // Enterprise: Bunny.net video (high performance, facade pattern)
+    bunnyVideo: {
+      videoId: 'ee68f627-8330-41aa-b1a8-5307a8400fc6',
+      libraryId: '571535',
+      title: 'Clase de Dancehall en Barcelona',
+      aspectRatio: '9:16', // Formato vertical (Reel)
+      thumbnailUrl:
+        'https://vz-3d56a778-175.b-cdn.net/ee68f627-8330-41aa-b1a8-5307a8400fc6/thumbnail.jpg',
+    },
   },
 
   logosSection: {

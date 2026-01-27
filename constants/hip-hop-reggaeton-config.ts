@@ -102,6 +102,16 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
 
   videoSection: {
     enabled: true,
+    // Enterprise: Bunny.net video (renders first - high performance, facade pattern)
+    bunnyVideo: {
+      videoId: '49199a2f-c69d-4be0-935e-66bf22cfe077',
+      libraryId: '571535',
+      title: 'Clase de Hip Hop Reggaeton en Barcelona',
+      aspectRatio: '9:16', // Formato vertical (Reel)
+      thumbnailUrl:
+        'https://vz-3d56a778-175.b-cdn.net/49199a2f-c69d-4be0-935e-66bf22cfe077/thumbnail.jpg',
+    },
+    // YouTube video (renders after Bunny video)
     videos: [
       {
         videoId: HIP_HOP_REGGAETON_VIDEO_ID,
