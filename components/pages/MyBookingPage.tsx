@@ -74,7 +74,7 @@ const MyBookingPage: React.FC = () => {
     if (lower.includes('afro jazz')) return 'Afro Jazz';
     if (lower.includes('contempor')) return 'Contemporáneo';
     if (lower.includes('ballet')) return 'Ballet';
-    return className.split(' ')[0]; // Return first word
+    return className.split(' ')[0] || className; // Return first word
   };
 
   const email = searchParams.get('email');
@@ -620,25 +620,6 @@ const MyBookingPage: React.FC = () => {
                     {locale === 'ca' && 'Reprogramar / Cancel·lar Reserva'}
                     {locale === 'en' && 'Reschedule / Cancel Booking'}
                     {locale === 'fr' && 'Reprogrammer / Annuler Réservation'}
-                  </button>
-
-                  {/* New booking button */}
-                  <button
-                    onClick={() => navigate(`/${locale}/reservas`)}
-                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-primary-accent hover:bg-primary-dark text-white rounded-xl transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 4v16m8-8H4"
-                      />
-                    </svg>
-                    {locale === 'es' && 'Reservar otra clase'}
-                    {locale === 'ca' && 'Reservar una altra classe'}
-                    {locale === 'en' && 'Book another class'}
-                    {locale === 'fr' && 'Réserver un autre cours'}
                   </button>
                 </div>
 
