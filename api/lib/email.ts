@@ -312,7 +312,8 @@ export async function sendBookingConfirmation(
     <p style="margin-top: 20px;">
       Farray's International Dance Center<br>
       C/ Entença 100, 08015 Barcelona<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a>
+      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> |
+      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a>
     </p>
   </div>
 </body>
