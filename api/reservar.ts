@@ -1175,6 +1175,9 @@ export default async function handler(
             momenceEventId: finalEventId,
             bookedAt: new Date().toISOString(),
             category: category || null,
+            // Datos de Momence para cancelar/reprogramar
+            momenceBookingId: momenceResult.bookingId || null,
+            classDateRaw: classDate || null,
           })
         );
 

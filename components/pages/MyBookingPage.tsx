@@ -23,7 +23,7 @@ interface BookingData {
   category?: string;
 }
 
-type LoadingState = 'loading' | 'success' | 'error' | 'not-found';
+type LoadingState = 'loading' | 'success' | 'error' | 'not-found' | 'cancelled';
 
 const MyBookingPage: React.FC = () => {
   const { i18n } = useTranslation(['common', 'booking']);
@@ -34,6 +34,48 @@ const MyBookingPage: React.FC = () => {
   const [loadingState, setLoadingState] = useState<LoadingState>('loading');
   const [booking, setBooking] = useState<BookingData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string>('');
+
+  // Modal state
+  const [showCancelModal, setShowCancelModal] = useState(false);
+  const [isCancelling, setIsCancelling] = useState(false);
+  const [cancelledBooking, setCancelledBooking] = useState<BookingData | null>(null);
+
+  // Helper to extract style slug for URL filtering
+  const getStyleSlug = (className: string): string | null => {
+    const lower = className.toLowerCase();
+    // Map class names to URL-friendly style slugs
+    if (lower.includes('bachata')) return 'bachata';
+    if (lower.includes('salsa')) return 'salsa-cubana';
+    if (lower.includes('dancehall')) return 'dancehall';
+    if (lower.includes('heels') || lower.includes('femmology')) return 'heels';
+    if (lower.includes('twerk')) return 'twerk';
+    if (lower.includes('hip hop') || lower.includes('hip-hop')) return 'hip-hop';
+    if (lower.includes('sexy style')) return 'sexy-style';
+    if (lower.includes('reggaeton')) return 'sexy-reggaeton';
+    if (lower.includes('afrobeat')) return 'afrobeats';
+    if (lower.includes('afro jazz')) return 'afro-jazz';
+    if (lower.includes('contempor')) return 'contemporaneo';
+    if (lower.includes('ballet')) return 'ballet';
+    return null; // No specific filter
+  };
+
+  // Get display name for the class type (simplified)
+  const getClassTypeDisplay = (className: string): string => {
+    const lower = className.toLowerCase();
+    if (lower.includes('bachata')) return 'Bachata';
+    if (lower.includes('salsa')) return 'Salsa';
+    if (lower.includes('dancehall')) return 'Dancehall';
+    if (lower.includes('heels') || lower.includes('femmology')) return 'Heels';
+    if (lower.includes('twerk')) return 'Twerk';
+    if (lower.includes('hip hop') || lower.includes('hip-hop')) return 'Hip Hop';
+    if (lower.includes('sexy style')) return 'Sexy Style';
+    if (lower.includes('reggaeton')) return 'Reggaeton';
+    if (lower.includes('afrobeat')) return 'Afrobeats';
+    if (lower.includes('afro jazz')) return 'Afro Jazz';
+    if (lower.includes('contempor')) return 'Contemporáneo';
+    if (lower.includes('ballet')) return 'Ballet';
+    return className.split(' ')[0]; // Return first word
+  };
 
   const email = searchParams.get('email');
   const eventId = searchParams.get('event');
@@ -77,9 +119,42 @@ const MyBookingPage: React.FC = () => {
     fetchBooking();
   }, [email, eventId]);
 
-  // URLs para gestionar en Momence
-  const momenceBaseUrl = 'https://www.momence.com';
-  const rescheduleUrl = booking ? `${momenceBaseUrl}/event/${booking.momenceEventId}` : '#';
+  // Handle cancel booking
+  const handleCancelBooking = async () => {
+    if (!email || !booking) return;
+
+    setIsCancelling(true);
+    try {
+      const response = await fetch('/api/cancelar-reserva', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          eventId: booking.momenceEventId,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // Save booking info before clearing for reschedule options
+        setCancelledBooking(booking);
+        setShowCancelModal(false);
+        setLoadingState('cancelled');
+      } else {
+        setErrorMessage(data.message || 'Error al cancelar la reserva');
+        setShowCancelModal(false);
+        setLoadingState('error');
+      }
+    } catch (err) {
+      console.error('Error cancelling booking:', err);
+      setErrorMessage('Error de conexión');
+      setShowCancelModal(false);
+      setLoadingState('error');
+    } finally {
+      setIsCancelling(false);
+    }
+  };
 
   // SEO metadata
   const title =
@@ -179,6 +254,132 @@ const MyBookingPage: React.FC = () => {
                   {locale === 'en' && 'Make new booking'}
                   {locale === 'fr' && 'Faire nouvelle réservation'}
                 </button>
+              </div>
+            )}
+
+            {/* Cancelled state */}
+            {loadingState === 'cancelled' && (
+              <div className="space-y-6">
+                <div className="bg-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-green-500/30 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 text-green-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="text-xl font-bold text-white mb-2">
+                    {locale === 'es' && 'Reserva Cancelada'}
+                    {locale === 'ca' && 'Reserva Cancel·lada'}
+                    {locale === 'en' && 'Booking Cancelled'}
+                    {locale === 'fr' && 'Réservation Annulée'}
+                  </h2>
+                  <p className="text-gray-400 mb-6">
+                    {locale === 'es' && 'Tu reserva ha sido cancelada correctamente.'}
+                    {locale === 'ca' && 'La teva reserva ha estat cancel·lada correctament.'}
+                    {locale === 'en' && 'Your booking has been cancelled successfully.'}
+                    {locale === 'fr' && 'Votre réservation a été annulée avec succès.'}
+                  </p>
+                </div>
+
+                {/* Reschedule options */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                  <h3 className="text-lg font-semibold text-white mb-3 text-center">
+                    {locale === 'es' && '¿Quieres reprogramar?'}
+                    {locale === 'ca' && 'Vols reprogramar?'}
+                    {locale === 'en' && 'Want to reschedule?'}
+                    {locale === 'fr' && 'Voulez-vous reprogrammer?'}
+                  </h3>
+                  <p className="text-gray-400 mb-5 text-sm text-center">
+                    {locale === 'es' && 'Elige una opción para reservar tu nueva clase.'}
+                    {locale === 'ca' && 'Escull una opció per reservar la teva nova classe.'}
+                    {locale === 'en' && 'Choose an option to book your new class.'}
+                    {locale === 'fr' && 'Choisissez une option pour réserver votre nouveau cours.'}
+                  </p>
+
+                  <div className="space-y-3">
+                    {/* Option 1: Same class type - only show if we have a style */}
+                    {cancelledBooking && getStyleSlug(cancelledBooking.className) && (
+                      <button
+                        onClick={() => {
+                          const style = getStyleSlug(cancelledBooking.className);
+                          navigate(`/${locale}/reservas${style ? `?style=${style}` : ''}`);
+                        }}
+                        className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-primary-accent hover:bg-primary-dark text-white rounded-xl transition-colors font-semibold"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                        {locale === 'es' &&
+                          `Otra clase de ${getClassTypeDisplay(cancelledBooking.className)}`}
+                        {locale === 'ca' &&
+                          `Altra classe de ${getClassTypeDisplay(cancelledBooking.className)}`}
+                        {locale === 'en' &&
+                          `Another ${getClassTypeDisplay(cancelledBooking.className)} class`}
+                        {locale === 'fr' &&
+                          `Autre cours de ${getClassTypeDisplay(cancelledBooking.className)}`}
+                      </button>
+                    )}
+
+                    {/* Option 2: All classes */}
+                    <button
+                      onClick={() => navigate(`/${locale}/reservas`)}
+                      className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl transition-all"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 6h16M4 10h16M4 14h16M4 18h16"
+                        />
+                      </svg>
+                      {locale === 'es' && 'Ver todas las clases'}
+                      {locale === 'ca' && 'Veure totes les classes'}
+                      {locale === 'en' && 'View all classes'}
+                      {locale === 'fr' && 'Voir tous les cours'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Contact info */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 text-center">
+                  <p className="text-gray-400 text-sm">
+                    {locale === 'es' && '¿Necesitas ayuda?'}
+                    {locale === 'ca' && 'Necessites ajuda?'}
+                    {locale === 'en' && 'Need help?'}
+                    {locale === 'fr' && "Besoin d'aide?"}
+                  </p>
+                  <a
+                    href="https://wa.me/34622247085"
+                    className="text-primary-accent hover:text-primary-dark transition-colors text-sm"
+                  >
+                    WhatsApp: +34 622 24 70 85
+                  </a>
+                </div>
               </div>
             )}
 
@@ -402,11 +603,9 @@ const MyBookingPage: React.FC = () => {
 
                 {/* Actions */}
                 <div className="space-y-3">
-                  {/* Reschedule button */}
-                  <a
-                    href={rescheduleUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  {/* Cancel/Reschedule button */}
+                  <button
+                    onClick={() => setShowCancelModal(true)}
                     className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl transition-all"
                   >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -421,7 +620,7 @@ const MyBookingPage: React.FC = () => {
                     {locale === 'ca' && 'Reprogramar / Cancel·lar Reserva'}
                     {locale === 'en' && 'Reschedule / Cancel Booking'}
                     {locale === 'fr' && 'Reprogrammer / Annuler Réservation'}
-                  </a>
+                  </button>
 
                   {/* New booking button */}
                   <button
@@ -463,6 +662,93 @@ const MyBookingPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Cancel Confirmation Modal */}
+      {showCancelModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <div className="bg-[#1a1a1a] rounded-2xl p-6 max-w-md w-full border border-white/10 shadow-2xl">
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 text-yellow-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                {locale === 'es' && '¿Cancelar o reprogramar?'}
+                {locale === 'ca' && 'Cancel·lar o reprogramar?'}
+                {locale === 'en' && 'Cancel or reschedule?'}
+                {locale === 'fr' && 'Annuler ou reprogrammer?'}
+              </h3>
+              <p className="text-gray-400 text-sm">
+                {locale === 'es' &&
+                  'Para reprogramar tu clase primero es obligatorio cancelarla. Después podrás elegir una nueva fecha.'}
+                {locale === 'ca' &&
+                  'Per reprogramar la teva classe primer és obligatori cancel·lar-la. Després podràs escollir una nova data.'}
+                {locale === 'en' &&
+                  'To reschedule your class, you must first cancel it. Then you can choose a new date.'}
+                {locale === 'fr' &&
+                  "Pour reprogrammer votre cours, vous devez d'abord l'annuler. Ensuite, vous pourrez choisir une nouvelle date."}
+              </p>
+            </div>
+
+            {/* Class info reminder */}
+            {booking && (
+              <div className="bg-white/5 rounded-lg p-3 mb-6 text-center">
+                <p className="text-white font-medium">{booking.className}</p>
+                <p className="text-gray-400 text-sm">
+                  {booking.classDate} - {booking.classTime}
+                </p>
+              </div>
+            )}
+
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowCancelModal(false)}
+                disabled={isCancelling}
+                className="flex-1 px-4 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-colors disabled:opacity-50"
+              >
+                {locale === 'es' && 'No, volver'}
+                {locale === 'ca' && 'No, tornar'}
+                {locale === 'en' && 'No, go back'}
+                {locale === 'fr' && 'Non, retour'}
+              </button>
+              <button
+                onClick={handleCancelBooking}
+                disabled={isCancelling}
+                className="flex-1 px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                {isCancelling ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    {locale === 'es' && 'Cancelando...'}
+                    {locale === 'ca' && 'Cancel·lant...'}
+                    {locale === 'en' && 'Cancelling...'}
+                    {locale === 'fr' && 'Annulation...'}
+                  </>
+                ) : (
+                  <>
+                    {locale === 'es' && 'Sí, cancelar'}
+                    {locale === 'ca' && 'Sí, cancel·lar'}
+                    {locale === 'en' && 'Yes, cancel'}
+                    {locale === 'fr' && 'Oui, annuler'}
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
