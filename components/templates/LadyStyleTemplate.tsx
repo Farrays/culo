@@ -26,7 +26,7 @@ import OptimizedImage from '../OptimizedImage';
 import { getStyleImage, getContextualAltKey } from '../../constants/style-images';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 import ReviewsSection from '../reviews/ReviewsSection';
-import { useReviews } from '../../hooks/useReviews';
+import { useReviews, getReviewText } from '../../hooks/useReviews';
 
 // ============= CONFIG TYPES =============
 
@@ -536,7 +536,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         },
         author: review.author,
         reviewRating: { ratingValue: review.rating.toString(), bestRating: '5' },
-        reviewBody: review.text,
+        reviewBody: getReviewText(review, locale as Locale),
         datePublished: review.dateISO,
       }))
     : (config.testimonials ?? []).map(testimonial => ({

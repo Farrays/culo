@@ -99,7 +99,16 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: true, // Shows "Video Próximamente" placeholder
+    enabled: true,
+    // Enterprise: Bunny.net video (high performance, facade pattern)
+    bunnyVideo: {
+      videoId: '54f2f015-18db-4535-b520-1c8cedde36b9',
+      libraryId: '571535',
+      title: 'Clase de Hip Hop en Barcelona',
+      aspectRatio: '9:16', // Formato vertical (Reel)
+      thumbnailUrl:
+        'https://vz-3d56a778-175.b-cdn.net/54f2f015-18db-4535-b520-1c8cedde36b9/thumbnail.jpg',
+    },
   },
 
   logosSection: {

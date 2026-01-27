@@ -48,10 +48,8 @@ self.addEventListener('install', (event) => {
           // Continue even if some assets fail
         });
       })
-      .then(() => {
-        // Skip waiting to activate immediately
-        self.skipWaiting();
-      })
+      // Note: Don't call skipWaiting() here - let user control when to update
+      // The useServiceWorker hook will send SKIP_WAITING message when user clicks "Update"
   );
 });
 

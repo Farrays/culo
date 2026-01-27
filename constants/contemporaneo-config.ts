@@ -103,7 +103,16 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: true, // Shows "Video Próximamente" placeholder
+    enabled: true,
+    // Enterprise: Bunny.net video (high performance, facade pattern)
+    bunnyVideo: {
+      videoId: '75a74b09-277f-493f-b142-8a84df33a487',
+      libraryId: '571535',
+      title: 'Clase de Danza Contemporánea en Barcelona',
+      aspectRatio: '9:16', // Formato vertical (Reel)
+      thumbnailUrl:
+        'https://vz-3d56a778-175.b-cdn.net/75a74b09-277f-493f-b142-8a84df33a487/thumbnail_3b4401bc.jpg',
+    },
   },
 
   logosSection: {

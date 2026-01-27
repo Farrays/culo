@@ -173,15 +173,22 @@ export const DANCEHALL_LANDING_CONFIG: LandingConfig = createLandingConfig('rose
   },
 
   // =========================================================================
-  // VIDEO (Bunny.net)
+  // VIDEO (Bunny.net) - Enterprise Mode
   // =========================================================================
   video: {
     bunnyVideoId: 'ee68f627-8330-41aa-b1a8-5307a8400fc6',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: false,
-    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
-    // thumbnailUrl: 'https://vz-3d56a778-175.b-cdn.net/ee68f627-8330-41aa-b1a8-5307a8400fc6/thumbnail_XXXXX.jpg',
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/ee68f627-8330-41aa-b1a8-5307a8400fc6/thumbnail.jpg',
+  },
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'dancehall', // Filtra solo clases de Dancehall en el widget
   },
 });
 
