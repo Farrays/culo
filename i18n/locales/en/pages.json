@@ -222,7 +222,7 @@
   "allLevelsLevel": "All levels",
   "reviewsSectionTitle": "Unsolicited Testimonials from Our Members",
   "excellent": "EXCELLENT",
-  "basedOnReviews": "Based on {{count}} reviews",
+  "basedOnReviews": "Based on {count} reviews",
   "dhV3IdentifyTitle": "Do you identify with any of these situations?",
   "dhV3Identify1": "You're so sick of routine that even your coffee doesn't want you. You need something to wake you up NOW.",
   "dhV3Identify2": "You want to look in the mirror and see pure confidence, real attitude, and zero fear of what they'll say.",

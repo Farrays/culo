@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useImageAlt } from '../../hooks/useImageAlt';
-import { useReviews } from '../../hooks/useReviews';
+import { useReviews, getReviewText } from '../../hooks/useReviews';
 import type { ScheduleSession } from '../../hooks/useScheduleSessions';
 import type { Locale } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
@@ -870,7 +870,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         },
         author: review.author,
         reviewRating: { ratingValue: '5', bestRating: '5' },
-        reviewBody: review.text,
+        reviewBody: getReviewText(review, locale as Locale),
         datePublished: review.dateISO || currentDate,
       }));
     }

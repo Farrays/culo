@@ -222,7 +222,7 @@
   "allLevelsLevel": "Tots els nivells",
   "reviewsSectionTitle": "Testimonis No Sol·licitats dels Nostres Socis",
   "excellent": "EXCEL·LENT",
-  "basedOnReviews": "Basat en {{count}} ressenyes",
+  "basedOnReviews": "Basat en {count} ressenyes",
   "dhV3IdentifyTitle": "T'identifiques amb alguna d'aquestes situacions?",
   "dhV3Identify1": "Estàs tan fart/a de la rutina que ja ni el cafè et vol. Necessites alguna cosa que et desperti JA.",
   "dhV3Identify2": "Vols mirar-te al mirall i veure confiança pura, actitud real i zero por del què diran.",

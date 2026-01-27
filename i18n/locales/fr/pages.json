@@ -222,7 +222,7 @@
   "allLevelsLevel": "Tous les niveaux",
   "reviewsSectionTitle": "Témoignages Non Sollicités de Nos Membres",
   "excellent": "EXCELLENT",
-  "basedOnReviews": "Basé sur {{count}} avis",
+  "basedOnReviews": "Basé sur {count} avis",
   "dhV3IdentifyTitle": "Vous vous identifiez à l'une de ces situations ?",
   "dhV3Identify1": "Vous en avez tellement marre de la routine que même votre café ne vous veut plus. Vous avez besoin de quelque chose qui vous réveille MAINTENANT.",
   "dhV3Identify2": "Vous voulez vous regarder dans le miroir et voir une confiance pure, une attitude réelle et zéro peur du qu'en-dira-t-on.",

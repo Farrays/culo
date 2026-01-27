@@ -87,6 +87,8 @@
   "reviews_seeLess": "Voir moins",
   "reviews_starRating": "{rating} sur 5 étoiles",
   "reviews_google": "Google",
+  "excellent": "EXCELLENT",
+  "basedOnReviews": "Basé sur {count} avis",
   "reviews_category_salsa": "Salsa",
   "reviews_category_bachata": "Bachata",
   "reviews_category_heels": "Heels",
