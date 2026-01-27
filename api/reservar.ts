@@ -1148,7 +1148,13 @@ export default async function handler(
       fbp,
     });
 
-    // 3. Guardar en Redis
+    // Variables comunes para Redis y notificaciones
+    const category = determineCategory(className || '', estilo);
+    const formattedDate = formatDateReadable(classDate || '');
+    const classTime = extractTime(classDate || '');
+    const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+
+    // 3. Guardar en Redis (datos completos para página mi-reserva)
     if (redis) {
       try {
         const bookingTimestamp = Date.now();
@@ -1158,14 +1164,21 @@ export default async function handler(
           JSON.stringify({
             timestamp: bookingTimestamp,
             sessionId,
-            className,
-            classDate,
-            eventId: finalEventId,
+            // Datos para MyBookingPage
+            firstName: firstNameOnly,
+            lastName: sanitize(lastName),
+            email: normalizedEmail,
+            phone: phone || null,
+            className: className || estilo || 'Clase de Prueba',
+            classDate: formattedDate,
+            classTime: classTime || '19:00',
+            momenceEventId: finalEventId,
+            bookedAt: new Date().toISOString(),
+            category: category || null,
           })
         );
 
         // Añadir a lista de reservas recientes para Social Proof Ticker
-        const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
         await redis.lpush(
           'recent_bookings',
           JSON.stringify({
@@ -1182,10 +1195,6 @@ export default async function handler(
     }
 
     // 4. Enviar notificaciones (Email + WhatsApp)
-    const category = determineCategory(className || '', estilo);
-    const formattedDate = formatDateReadable(classDate || '');
-    const classTime = extractTime(classDate || '');
-    const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
 
     // 4a. Enviar email de confirmación
     let emailResult: { success: boolean; error?: string } = {
