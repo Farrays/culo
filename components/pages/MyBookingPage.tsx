@@ -82,7 +82,12 @@ const MyBookingPage: React.FC = () => {
     if (lower.includes('modern jazz') || lower.includes('jazz')) return 'jazz';
 
     // Entrenamiento
-    if (lower.includes('cuerpo fit') || lower.includes('cuerpofit')) return 'cuerpofit';
+    if (
+      lower.includes('cuerpo fit') ||
+      lower.includes('cuerpofit') ||
+      lower.includes('body conditioning')
+    )
+      return 'cuerpofit';
     if (lower.includes('bum bum') || lower.includes('bumbum') || lower.includes('glúteo'))
       return 'bumbum';
     if (lower.includes('stretching') || lower.includes('estiramiento')) return 'stretching';
@@ -129,7 +134,7 @@ const MyBookingPage: React.FC = () => {
     if (lower.includes('jazz')) return 'Jazz';
 
     // Entrenamiento
-    if (lower.includes('cuerpo fit')) return 'Cuerpo Fit';
+    if (lower.includes('cuerpo fit') || lower.includes('body conditioning')) return 'Cuerpo Fit';
     if (lower.includes('bum bum') || lower.includes('bumbum')) return 'Bum Bum';
     if (lower.includes('stretching')) return 'Stretching';
     if (lower.includes('fitness') || lower.includes('cardio')) return 'Fitness';

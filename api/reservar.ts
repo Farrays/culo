@@ -15,6 +15,7 @@ type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenami
 
 const EMAIL_FROM = "Farray's Center <onboarding@resend.dev>";
 const EMAIL_REPLY_TO = 'info@farrayscenter.com';
+const INSTAGRAM_URL = 'https://www.instagram.com/farrays_centerbcn/';
 
 // Colores corporativos
 const BRAND_PRIMARY = '#B01E3C'; // Rojo carmesí del logo
@@ -22,6 +23,107 @@ const BRAND_DARK = '#800020';
 const LOGO_URL = 'https://farrayscenter.vercel.app/images/logo/img/logo-fidc_256.png';
 // TODO: Cambiar a farrayscenter.com cuando esté listo
 const BASE_URL = 'https://farrayscenter.vercel.app';
+const LOCATION_ADDRESS = "Farray's International Dance Center, C/ Entença 100, 08015 Barcelona";
+
+// Calendar URL generators
+const SPANISH_MONTHS: Record<string, number> = {
+  enero: 0,
+  febrero: 1,
+  marzo: 2,
+  abril: 3,
+  mayo: 4,
+  junio: 5,
+  julio: 6,
+  agosto: 7,
+  septiembre: 8,
+  octubre: 9,
+  noviembre: 10,
+  diciembre: 11,
+};
+
+function parseSpanishDate(classDate: string, classDateRaw?: string | null): Date {
+  if (classDateRaw) {
+    return new Date(classDateRaw);
+  }
+  // Parse from formatted date "Lunes, 27 de enero de 2026"
+  const match = classDate.match(/(\d{1,2}) de (\w+) de (\d{4})/);
+  if (match && match[1] && match[2] && match[3]) {
+    const day = parseInt(match[1], 10);
+    const monthName = match[2].toLowerCase();
+    const month = SPANISH_MONTHS[monthName] ?? 0;
+    const year = parseInt(match[3], 10);
+    return new Date(year, month, day);
+  }
+  return new Date();
+}
+
+function parseTime(timeStr: string, date: Date): void {
+  const timeMatch = timeStr.match(/(\d{1,2}):(\d{2})/);
+  if (timeMatch && timeMatch[1] && timeMatch[2]) {
+    date.setHours(parseInt(timeMatch[1], 10), parseInt(timeMatch[2], 10), 0, 0);
+  }
+}
+
+function formatCalendarDate(d: Date): string {
+  return d
+    .toISOString()
+    .replace(/[-:]/g, '')
+    .replace(/\.\d{3}/, '');
+}
+
+function generateGoogleCalendarUrl(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+}): string {
+  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
+  parseTime(data.classTime, startDate);
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+
+  const params = new globalThis.URLSearchParams({
+    action: 'TEMPLATE',
+    text: `${data.className} - Farray's Center`,
+    dates: `${formatCalendarDate(startDate)}/${formatCalendarDate(endDate)}`,
+    details: `Clase de prueba en Farray's International Dance Center.\n\nRecuerda llegar 10 minutos antes para cambiarte.\n\nMás info: ${BASE_URL}`,
+    location: LOCATION_ADDRESS,
+  });
+
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+function generateIcsDataUrl(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+}): string {
+  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
+  parseTime(data.classTime, startDate);
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+
+  const uid = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}@farrayscenter.com`;
+
+  const icsContent = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Farrays Center//Booking System//ES',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `UID:${uid}`,
+    `DTSTAMP:${formatCalendarDate(new Date())}`,
+    `DTSTART:${formatCalendarDate(startDate)}`,
+    `DTEND:${formatCalendarDate(endDate)}`,
+    `SUMMARY:${data.className} - Farray's Center`,
+    `DESCRIPTION:Clase de prueba en Farray's International Dance Center.\\nRecuerda llegar 10 minutos antes.`,
+    `LOCATION:${LOCATION_ADDRESS}`,
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n');
+
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
+}
 
 interface CategoryInstructions {
   title: string;
@@ -129,9 +231,25 @@ async function sendBookingConfirmationEmail(data: {
   managementUrl: string;
   mapUrl?: string;
   category?: ClassCategory;
+  classDateRaw?: string | null;
 }): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env['RESEND_API_KEY'];
   if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  // Generate calendar URLs
+  const googleCalUrl = generateGoogleCalendarUrl({
+    className: data.className,
+    classDate: data.classDate,
+    classTime: data.classTime,
+    classDateRaw: data.classDateRaw,
+  });
+
+  const icsUrl = generateIcsDataUrl({
+    className: data.className,
+    classDate: data.classDate,
+    classTime: data.classTime,
+    classDateRaw: data.classDateRaw,
+  });
 
   const resend = new Resend(apiKey);
   try {
@@ -161,9 +279,14 @@ async function sendBookingConfirmationEmail(data: {
       <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
     </table>
   </div>
-  <div style="text-align: center; margin-bottom: 30px;">
+  <div style="text-align: center; margin-bottom: 20px;">
     <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
     ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
+  </div>
+  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="${googleCalUrl}" target="_blank" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
+    <a href="${icsUrl}" download="farrays-clase.ics" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
   </div>
   ${generateWhatToBringSection(data.category)}
   <div style="text-align: center; padding: 25px 0;">
@@ -180,7 +303,7 @@ async function sendBookingConfirmationEmail(data: {
           <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
         </p>
         <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
-          <a href="https://instagram.com/farrayscenter" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
           <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
         </p>
       </td>
@@ -1267,6 +1390,7 @@ export default async function handler(
         managementUrl,
         mapUrl,
         category,
+        classDateRaw: classDate || null,
       });
       console.warn('[reservar] Email result:', emailResult);
     } catch (emailError) {
