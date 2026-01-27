@@ -696,19 +696,6 @@ const BookingWidgetV2: React.FC = memo(() => {
               {locale === 'en' && 'View my booking'}
               {locale === 'fr' && 'Voir ma réservation'}
             </button>
-
-            <button
-              onClick={() => {
-                setExistingBookingEmail(null);
-                reset();
-              }}
-              className="w-full px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-colors text-sm"
-            >
-              {locale === 'es' && 'Usar otro email'}
-              {locale === 'ca' && 'Usar un altre email'}
-              {locale === 'en' && 'Use another email'}
-              {locale === 'fr' && 'Utiliser un autre email'}
-            </button>
           </div>
 
           {/* Help link */}
