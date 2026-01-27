@@ -3,13 +3,17 @@
  *
  * GET /api/test-whatsapp?to=34612345678
  * GET /api/test-whatsapp?to=34612345678&template=cancelar&firstName=Juan
+ * GET /api/test-whatsapp?to=34612345678&template=recordatorio&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00
  *
  * Query params:
  * - to: Número de teléfono con código de país (requerido)
  * - template: Plantilla a usar (opcional, default: hello_world)
  *   - hello_world: Plantilla de prueba por defecto
  *   - cancelar: Plantilla de cancelación (requiere firstName)
- * - firstName: Nombre para plantilla cancelar (requerido si template=cancelar)
+ *   - recordatorio: Plantilla de recordatorio 48h (requiere firstName, className, dateTime)
+ * - firstName: Nombre para plantillas (default: Usuario)
+ * - className: Nombre de la clase para recordatorio (default: Clase)
+ * - dateTime: Fecha y hora para recordatorio (default: fecha actual + 48h)
  *
  * @note Este endpoint es solo para testing. Eliminar o proteger en producción.
  */
@@ -27,7 +31,7 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { to, template, firstName } = req.query;
+  const { to, template, firstName, className, dateTime } = req.query;
 
   if (!to || typeof to !== 'string') {
     return res.status(400).json({
@@ -36,6 +40,8 @@ export default async function handler(
       templates: {
         hello_world: '/api/test-whatsapp?to=34612345678',
         cancelar: '/api/test-whatsapp?to=34612345678&template=cancelar&firstName=Juan',
+        recordatorio:
+          '/api/test-whatsapp?to=34612345678&template=recordatorio&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00',
       },
       note: 'Phone number must include country code without + (e.g., 34 for Spain)',
     });
@@ -43,6 +49,19 @@ export default async function handler(
 
   const templateName = (template as string) || 'hello_world';
   const userFirstName = (firstName as string) || 'Usuario';
+  const userClassName = (className as string) || 'Clase';
+
+  // Generar fecha/hora por defecto (48h desde ahora)
+  const defaultDateTime = (() => {
+    const date = new Date(Date.now() + 48 * 60 * 60 * 1000);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${day}/${month}/${year}, ${hours}:${minutes}`;
+  })();
+  const userDateTime = (dateTime as string) || defaultDateTime;
 
   // Validar formato de teléfono básico (solo números, min 10 dígitos)
   const phoneRegex = /^\d{10,15}$/;
@@ -109,6 +128,27 @@ export default async function handler(
             {
               type: 'body',
               parameters: [{ type: 'text', text: userFirstName }],
+            },
+          ],
+        },
+      };
+    } else if (templateName === 'recordatorio') {
+      // Plantilla de recordatorio 48h con firstName, className, dateTime
+      message = {
+        messaging_product: 'whatsapp',
+        to: normalizedPhone,
+        type: 'template',
+        template: {
+          name: 'recordatorio',
+          language: { code: 'es_ES' },
+          components: [
+            {
+              type: 'body',
+              parameters: [
+                { type: 'text', text: userFirstName },
+                { type: 'text', text: userClassName },
+                { type: 'text', text: userDateTime },
+              ],
             },
           ],
         },
