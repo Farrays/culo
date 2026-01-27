@@ -1,6 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
+import { sendBookingConfirmation, type ClassCategory } from './lib/email';
+import { sendBookingConfirmationWhatsApp, isWhatsAppConfigured } from './lib/whatsapp';
 
 /* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
@@ -427,6 +429,137 @@ async function createMomenceBooking(
 // Timezone de España para formatear fechas
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 
+// ============================================================================
+// CATEGORIZACIÓN DE CLASES
+// ============================================================================
+
+/**
+ * Determina la categoría de una clase basándose en su nombre o estilo
+ */
+function determineCategory(className: string, estilo?: string): ClassCategory {
+  const text = `${className} ${estilo || ''}`.toLowerCase();
+
+  // Heels / Femmology
+  if (text.includes('heel') || text.includes('femmology') || text.includes('stiletto')) {
+    return 'heels';
+  }
+
+  // Bailes Sociales
+  if (
+    text.includes('salsa') ||
+    text.includes('bachata') ||
+    text.includes('kizomba') ||
+    text.includes('zouk') ||
+    text.includes('merengue') ||
+    text.includes('rueda') ||
+    text.includes('casino') ||
+    text.includes('timba') ||
+    text.includes('son cubano') ||
+    text.includes('folklore')
+  ) {
+    return 'bailes_sociales';
+  }
+
+  // Danzas Urbanas
+  if (
+    text.includes('hip hop') ||
+    text.includes('hiphop') ||
+    text.includes('house') ||
+    text.includes('breaking') ||
+    text.includes('break') ||
+    text.includes('dancehall') ||
+    text.includes('afrobeat') ||
+    text.includes('twerk') ||
+    text.includes('sexy style') ||
+    text.includes('sexy reggaeton') ||
+    text.includes('reggaeton') ||
+    text.includes('k-pop') ||
+    text.includes('kpop') ||
+    text.includes('commercial')
+  ) {
+    return 'danzas_urbanas';
+  }
+
+  // Danza
+  if (
+    text.includes('ballet') ||
+    text.includes('contempor') ||
+    text.includes('jazz') ||
+    text.includes('modern') ||
+    text.includes('afro jazz') ||
+    text.includes('afro contempor')
+  ) {
+    return 'danza';
+  }
+
+  // Entrenamiento / Fitness
+  if (
+    text.includes('entrenamiento') ||
+    text.includes('training') ||
+    text.includes('fitness') ||
+    text.includes('stretch') ||
+    text.includes('cardio') ||
+    text.includes('bum bum') ||
+    text.includes('cuerpo fit')
+  ) {
+    return 'entrenamiento';
+  }
+
+  // Default: danzas urbanas (la más común)
+  return 'danzas_urbanas';
+}
+
+/**
+ * Formatea fecha ISO a formato legible
+ * Entrada: "2024-01-20T18:00:00.000Z"
+ * Salida: "Lunes 20 de Enero 2024"
+ */
+function formatDateReadable(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return isoDate;
+
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: SPAIN_TIMEZONE,
+    };
+
+    const formatted = new Intl.DateTimeFormat('es-ES', options).format(date);
+    // Capitalizar primera letra
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+  } catch {
+    return isoDate;
+  }
+}
+
+/**
+ * Extrae la hora de una fecha ISO
+ * Entrada: "2024-01-20T18:00:00.000Z"
+ * Salida: "19:00" (en hora de Madrid)
+ */
+function extractTime(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return '';
+
+    const options: Intl.DateTimeFormatOptions = {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: SPAIN_TIMEZONE,
+    };
+
+    return new Intl.DateTimeFormat('es-ES', options).format(date);
+  } catch {
+    return '';
+  }
+}
+
 // Formatear fecha ISO a formato ISO local de Madrid (para automatizaciones de Momence)
 // Entrada: "2024-01-20T18:00:00.000Z" (UTC)
 // Salida: "2024-01-20T19:00:00" (Madrid local, sin Z)
@@ -783,6 +916,62 @@ export default async function handler(
       }
     }
 
+    // 4. Enviar notificaciones (Email + WhatsApp)
+    const category = determineCategory(className || '', estilo);
+    const formattedDate = formatDateReadable(classDate || '');
+    const classTime = extractTime(classDate || '');
+    const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+
+    // 4a. Enviar email de confirmación
+    let emailResult: { success: boolean; error?: string } = {
+      success: false,
+      error: 'Not attempted',
+    };
+    try {
+      // Generar URL de gestión con magic link (básico por ahora)
+      const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
+      const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
+
+      emailResult = await sendBookingConfirmation({
+        to: normalizedEmail,
+        firstName: firstNameOnly,
+        className: className || estilo || 'Clase de Prueba',
+        classDate: formattedDate,
+        classTime: classTime || '19:00',
+        managementUrl,
+        mapUrl,
+        category,
+      });
+      console.warn('[reservar] Email result:', emailResult);
+    } catch (emailError) {
+      console.error('[reservar] Email error:', emailError);
+      emailResult = { success: false, error: String(emailError) };
+    }
+
+    // 4b. Enviar WhatsApp de confirmación
+    let whatsappResult: { success: boolean; error?: string } = {
+      success: false,
+      error: 'Not attempted',
+    };
+    if (isWhatsAppConfigured()) {
+      try {
+        whatsappResult = await sendBookingConfirmationWhatsApp({
+          to: sanitize(phone),
+          firstName: firstNameOnly,
+          className: className || estilo || 'Clase de Prueba',
+          classDate: formattedDate,
+          classTime: classTime || '19:00',
+          category,
+        });
+        console.warn('[reservar] WhatsApp result:', whatsappResult);
+      } catch (whatsappError) {
+        console.error('[reservar] WhatsApp error:', whatsappError);
+        whatsappResult = { success: false, error: String(whatsappError) };
+      }
+    } else {
+      console.warn('[reservar] WhatsApp not configured, skipping');
+    }
+
     // Respuesta
     return res.status(200).json({
       success: true,
@@ -792,8 +981,11 @@ export default async function handler(
         eventId: finalEventId,
         className: className || 'Clase de Prueba',
         classDate: classDate || '',
+        category,
         momenceSuccess: momenceResult.success,
         trackingSuccess: metaResult.success,
+        emailSuccess: emailResult.success,
+        whatsappSuccess: whatsappResult.success,
       },
     });
   } catch (error) {
