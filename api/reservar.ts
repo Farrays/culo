@@ -166,8 +166,9 @@ async function sendBookingConfirmationEmail(data: {
     ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
   </div>
   ${generateWhatToBringSection(data.category)}
-  <div style="text-align: center; color: #666; font-size: 14px; padding-top: 20px;">
-    <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${data.managementUrl}" style="color: ${BRAND_PRIMARY};">Gestionar mi reserva</a></p>
+  <div style="text-align: center; padding: 25px 0;">
+    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
+    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
   </div>
   <div style="background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); color: #ffffff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px;">
     <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="80" height="80" style="margin-bottom: 15px;">
