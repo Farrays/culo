@@ -40,41 +40,101 @@ const MyBookingPage: React.FC = () => {
   const [isCancelling, setIsCancelling] = useState(false);
   const [cancelledBooking, setCancelledBooking] = useState<BookingData | null>(null);
 
-  // Helper to extract style slug for URL filtering
+  // Helper to extract style slug for URL filtering (must match API clases.ts STYLE_KEYWORDS keys)
   const getStyleSlug = (className: string): string | null => {
     const lower = className.toLowerCase();
-    // Map class names to URL-friendly style slugs
+
+    // IMPORTANT: Order matters - more specific matches first
+
+    // Bailes Sociales
     if (lower.includes('bachata')) return 'bachata';
-    if (lower.includes('salsa')) return 'salsa-cubana';
+    if (lower.includes('lady style') || lower.includes('salsa lady')) return 'salsaladystyle';
+    if (lower.includes('salsa')) return 'salsa';
+    if (lower.includes('timba')) return 'timba';
+    if (lower.includes('folklore')) return 'folklore';
+
+    // Danzas Urbanas - specific combos first
+    if (lower.includes('hip hop reggaeton') || lower.includes('hip-hop reggaeton'))
+      return 'hiphopreggaeton';
+    if (lower.includes('sexy reggaeton')) return 'sexyreggaeton';
+    if (lower.includes('reparto') || lower.includes('perreo')) return 'reparto';
+    if (lower.includes('reggaeton') || lower.includes('reggaetón')) return 'reparto'; // Generic reggaeton -> reparto
     if (lower.includes('dancehall')) return 'dancehall';
-    if (lower.includes('heels') || lower.includes('femmology')) return 'heels';
+    if (lower.includes('hip hop') || lower.includes('hip-hop') || lower.includes('hiphop'))
+      return 'hiphop';
+    if (lower.includes('commercial') || lower.includes('comercial')) return 'commercial';
+    if (lower.includes('k-pop') || lower.includes('kpop')) return 'kpop';
+
+    // Heels & Sexy
+    if (lower.includes('sexy style')) return 'sexystyle';
+    if (lower.includes('femmology')) return 'femmology';
+    if (lower.includes('heels') || lower.includes('tacones')) return 'heels';
     if (lower.includes('twerk')) return 'twerk';
-    if (lower.includes('hip hop') || lower.includes('hip-hop')) return 'hip-hop';
-    if (lower.includes('sexy style')) return 'sexy-style';
-    if (lower.includes('reggaeton')) return 'sexy-reggaeton';
-    if (lower.includes('afrobeat')) return 'afrobeats';
-    if (lower.includes('afro jazz')) return 'afro-jazz';
+    if (lower.includes('girly')) return 'girly';
+
+    // Danza
+    if (lower.includes('afro contempor')) return 'afrocontemporaneo';
+    if (lower.includes('afro jazz')) return 'afro';
+    if (lower.includes('afrobeat') || lower.includes('afrodance') || lower.includes('afro'))
+      return 'afro';
     if (lower.includes('contempor')) return 'contemporaneo';
     if (lower.includes('ballet')) return 'ballet';
-    return null; // No specific filter
+    if (lower.includes('modern jazz') || lower.includes('jazz')) return 'jazz';
+
+    // Entrenamiento
+    if (lower.includes('cuerpo fit') || lower.includes('cuerpofit')) return 'cuerpofit';
+    if (lower.includes('bum bum') || lower.includes('bumbum') || lower.includes('glúteo'))
+      return 'bumbum';
+    if (lower.includes('stretching') || lower.includes('estiramiento')) return 'stretching';
+    if (lower.includes('fitness') || lower.includes('cardio') || lower.includes('full body'))
+      return 'fitness';
+
+    return null; // No specific filter - show all classes
   };
 
-  // Get display name for the class type (simplified)
+  // Get display name for the class type (user-friendly labels)
   const getClassTypeDisplay = (className: string): string => {
     const lower = className.toLowerCase();
+
+    // Bailes Sociales
     if (lower.includes('bachata')) return 'Bachata';
+    if (lower.includes('lady style') || lower.includes('salsa lady')) return 'Salsa Lady Style';
     if (lower.includes('salsa')) return 'Salsa';
-    if (lower.includes('dancehall')) return 'Dancehall';
-    if (lower.includes('heels') || lower.includes('femmology')) return 'Heels';
-    if (lower.includes('twerk')) return 'Twerk';
-    if (lower.includes('hip hop') || lower.includes('hip-hop')) return 'Hip Hop';
-    if (lower.includes('sexy style')) return 'Sexy Style';
+    if (lower.includes('timba')) return 'Timba';
+    if (lower.includes('folklore')) return 'Folklore';
+
+    // Danzas Urbanas
+    if (lower.includes('hip hop reggaeton')) return 'Hip Hop Reggaeton';
+    if (lower.includes('sexy reggaeton')) return 'Sexy Reggaeton';
+    if (lower.includes('reparto') || lower.includes('perreo')) return 'Reparto';
     if (lower.includes('reggaeton')) return 'Reggaeton';
-    if (lower.includes('afrobeat')) return 'Afrobeats';
+    if (lower.includes('dancehall')) return 'Dancehall';
+    if (lower.includes('hip hop') || lower.includes('hip-hop')) return 'Hip Hop';
+    if (lower.includes('commercial')) return 'Commercial';
+    if (lower.includes('kpop') || lower.includes('k-pop')) return 'K-Pop';
+
+    // Heels & Sexy
+    if (lower.includes('sexy style')) return 'Sexy Style';
+    if (lower.includes('femmology')) return 'Femmology';
+    if (lower.includes('heels')) return 'Heels';
+    if (lower.includes('twerk')) return 'Twerk';
+    if (lower.includes('girly')) return 'Girly';
+
+    // Danza
+    if (lower.includes('afro contempor')) return 'Afro Contemporáneo';
     if (lower.includes('afro jazz')) return 'Afro Jazz';
+    if (lower.includes('afrobeat') || lower.includes('afro')) return 'Afro';
     if (lower.includes('contempor')) return 'Contemporáneo';
     if (lower.includes('ballet')) return 'Ballet';
-    return className.split(' ')[0] || className; // Return first word
+    if (lower.includes('jazz')) return 'Jazz';
+
+    // Entrenamiento
+    if (lower.includes('cuerpo fit')) return 'Cuerpo Fit';
+    if (lower.includes('bum bum') || lower.includes('bumbum')) return 'Bum Bum';
+    if (lower.includes('stretching')) return 'Stretching';
+    if (lower.includes('fitness') || lower.includes('cardio')) return 'Fitness';
+
+    return className.split(' ')[0] || className;
   };
 
   const email = searchParams.get('email');
