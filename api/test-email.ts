@@ -16,6 +16,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { Resend } from 'resend';
 
 export default async function handler(
   req: VercelRequest,
@@ -56,8 +57,6 @@ export default async function handler(
   const hasApiKey = !!process.env['RESEND_API_KEY'];
 
   try {
-    const { Resend } = await import('resend');
-
     const apiKey = process.env['RESEND_API_KEY'];
 
     if (!apiKey) {
