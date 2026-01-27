@@ -132,7 +132,9 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
         items: [
           '👟 Bambas cómodas (suela limpia)',
           '👖 Leggings, pantalones cortos o chándal',
-          '👕 Camiseta cómoda que permita moverte',
+          '👕 Ropa cómoda y ligera (tipo fitness)',
+          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto con suela antideslizante. Rodilleras recomendadas',
+          '🍑 <strong>Twerk:</strong> Rodilleras recomendadas',
           ...commonItems,
         ],
       };
