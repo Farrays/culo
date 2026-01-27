@@ -193,6 +193,9 @@ const BookingWidgetV2: React.FC = memo(() => {
   // Track active form submission AbortController
   const formAbortControllerRef = useRef<AbortController | null>(null);
 
+  // Track if booking already exists (duplicate detection)
+  const [existingBookingEmail, setExistingBookingEmail] = React.useState<string | null>(null);
+
   // Cleanup on unmount
   useEffect(() => {
     isMountedRef.current = true;
@@ -553,8 +556,15 @@ const BookingWidgetV2: React.FC = memo(() => {
         throw new Error(data.error || t('booking_error_generic'));
       }
 
+      // Check if this is an existing booking (duplicate detection)
+      const isExistingBooking = data.status === 'existing';
+
       // Success - only update if still mounted
       if (isMountedRef.current) {
+        if (isExistingBooking) {
+          // Save email for existing booking flow
+          setExistingBookingEmail(sanitizedData.email);
+        }
         setStatus('success');
         clearPersistedData();
         triggerHaptic('success');
@@ -615,6 +625,106 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   // Render content based on status and step
   const renderContent = () => {
+    // Existing booking - show professional message with link to manage
+    if (status === 'success' && existingBookingEmail) {
+      return (
+        <div className="text-center py-8 px-4">
+          {/* Icon */}
+          <div className="relative mx-auto w-20 h-20 mb-6">
+            <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-xl" />
+            <div className="relative w-20 h-20 bg-gradient-to-br from-amber-600 to-amber-500 rounded-full flex items-center justify-center">
+              <svg
+                className="w-10 h-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-white mb-3">
+            {locale === 'es' && '¡Ya tienes una reserva!'}
+            {locale === 'ca' && 'Ja tens una reserva!'}
+            {locale === 'en' && 'You already have a booking!'}
+            {locale === 'fr' && 'Vous avez déjà une réservation!'}
+          </h3>
+
+          {/* Description */}
+          <p className="text-gray-400 mb-6 max-w-sm mx-auto">
+            {locale === 'es' &&
+              'Hemos encontrado una reserva activa con este email. Puedes ver los detalles o gestionarla desde el enlace de abajo.'}
+            {locale === 'ca' &&
+              "Hem trobat una reserva activa amb aquest email. Pots veure els detalls o gestionar-la des de l'enllaç de baix."}
+            {locale === 'en' &&
+              'We found an active booking with this email. You can view the details or manage it from the link below.'}
+            {locale === 'fr' &&
+              'Nous avons trouvé une réservation active avec cet email. Vous pouvez voir les détails ou la gérer depuis le lien ci-dessous.'}
+          </p>
+
+          {/* Buttons */}
+          <div className="space-y-3 max-w-xs mx-auto">
+            <button
+              onClick={() =>
+                navigate(`/${locale}/mi-reserva?email=${encodeURIComponent(existingBookingEmail)}`)
+              }
+              className="w-full px-6 py-4 bg-primary-accent hover:bg-primary-dark text-white rounded-xl transition-colors font-semibold flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              {locale === 'es' && 'Ver mi reserva'}
+              {locale === 'ca' && 'Veure la meva reserva'}
+              {locale === 'en' && 'View my booking'}
+              {locale === 'fr' && 'Voir ma réservation'}
+            </button>
+
+            <button
+              onClick={() => {
+                setExistingBookingEmail(null);
+                reset();
+              }}
+              className="w-full px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-colors text-sm"
+            >
+              {locale === 'es' && 'Usar otro email'}
+              {locale === 'ca' && 'Usar un altre email'}
+              {locale === 'en' && 'Use another email'}
+              {locale === 'fr' && 'Utiliser un autre email'}
+            </button>
+          </div>
+
+          {/* Help link */}
+          <p className="text-gray-500 text-sm mt-6">
+            {locale === 'es' && '¿Necesitas ayuda? '}
+            {locale === 'ca' && 'Necessites ajuda? '}
+            {locale === 'en' && 'Need help? '}
+            {locale === 'fr' && "Besoin d'aide? "}
+            <a href="https://wa.me/34622247085" className="text-primary-accent hover:underline">
+              WhatsApp
+            </a>
+          </p>
+        </div>
+      );
+    }
+
     if (status === 'success' && selectedClass) {
       return <BookingSuccess selectedClass={selectedClass} />;
     }
