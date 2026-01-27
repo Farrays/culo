@@ -315,16 +315,39 @@ let redisClient: Redis | null = null;
 
 function getRedisClient(): Redis | null {
   const redisUrl = process.env['STORAGE_REDIS_URL'];
-  if (!redisUrl) return null;
+  if (!redisUrl) {
+    console.warn('[Redis] STORAGE_REDIS_URL not configured');
+    return null;
+  }
 
   if (!redisClient) {
+    console.warn('[Redis] Creating new Redis client');
     redisClient = new Redis(redisUrl, {
-      maxRetriesPerRequest: 1,
-      connectTimeout: 5000,
+      maxRetriesPerRequest: 2,
+      connectTimeout: 10000,
       lazyConnect: true,
+      retryStrategy: times => {
+        if (times > 3) return null;
+        return Math.min(times * 100, 2000);
+      },
     });
   }
   return redisClient;
+}
+
+// Helper to ensure Redis is connected
+async function ensureRedisConnected(redis: Redis): Promise<boolean> {
+  try {
+    if (redis.status !== 'ready') {
+      await redis.connect();
+    }
+    // Quick ping to verify connection
+    await redis.ping();
+    return true;
+  } catch (e) {
+    console.error('[Redis] Connection check failed:', e);
+    return false;
+  }
 }
 
 function isRateLimited(ip: string): boolean {
@@ -1056,22 +1079,34 @@ export default async function handler(
     const normalizedEmail = sanitize(email).toLowerCase();
     const bookingKey = `${BOOKING_KEY_PREFIX}${normalizedEmail}`;
 
+    console.warn('[reservar] Deduplication check for:', { email: normalizedEmail, bookingKey });
+
     // Deduplicación con Redis
     const redis = getRedisClient();
     if (redis) {
-      try {
-        const existing = await redis.get(bookingKey);
-        if (existing) {
-          // Ya existe una reserva reciente
-          return res.status(200).json({
-            success: true,
-            status: 'existing',
-            message: 'Ya tienes una reserva registrada. ¡Te esperamos!',
-          });
+      const isConnected = await ensureRedisConnected(redis);
+      console.warn('[reservar] Redis connected:', isConnected);
+
+      if (isConnected) {
+        try {
+          const existing = await redis.get(bookingKey);
+          console.warn('[reservar] Existing booking found:', !!existing);
+
+          if (existing) {
+            // Ya existe una reserva reciente
+            console.warn('[reservar] DUPLICATE DETECTED! Returning existing status');
+            return res.status(200).json({
+              success: true,
+              status: 'existing',
+              message: 'Ya tienes una reserva registrada. ¡Te esperamos!',
+            });
+          }
+        } catch (e) {
+          console.error('[reservar] Redis lookup failed:', e);
         }
-      } catch (e) {
-        console.warn('Redis lookup failed:', e);
       }
+    } else {
+      console.warn('[reservar] Redis not available for deduplication');
     }
 
     // Generar eventId único si no viene del frontend
@@ -1156,12 +1191,13 @@ export default async function handler(
 
     // 3. Guardar en Redis (datos completos para página mi-reserva)
     if (redis) {
-      try {
-        const bookingTimestamp = Date.now();
-        await redis.setex(
-          bookingKey,
-          BOOKING_TTL_SECONDS,
-          JSON.stringify({
+      const isConnected = await ensureRedisConnected(redis);
+      console.warn('[reservar] Redis connected for save:', isConnected);
+
+      if (isConnected) {
+        try {
+          const bookingTimestamp = Date.now();
+          const bookingData = {
             timestamp: bookingTimestamp,
             sessionId,
             // Datos para MyBookingPage
@@ -1178,23 +1214,34 @@ export default async function handler(
             // Datos de Momence para cancelar/reprogramar
             momenceBookingId: momenceResult.bookingId || null,
             classDateRaw: classDate || null,
-          })
-        );
+          };
 
-        // Añadir a lista de reservas recientes para Social Proof Ticker
-        await redis.lpush(
-          'recent_bookings',
-          JSON.stringify({
-            firstName: firstNameOnly,
-            className: className || estilo || 'Clase de Prueba',
-            timestamp: bookingTimestamp,
-          })
-        );
-        // Mantener solo las últimas 50 reservas
-        await redis.ltrim('recent_bookings', 0, 49);
-      } catch (e) {
-        console.warn('Redis save failed:', e);
+          await redis.setex(bookingKey, BOOKING_TTL_SECONDS, JSON.stringify(bookingData));
+
+          // Verify the save worked
+          const saved = await redis.get(bookingKey);
+          console.warn('[reservar] Booking saved successfully:', {
+            key: bookingKey,
+            verified: !!saved,
+          });
+
+          // Añadir a lista de reservas recientes para Social Proof Ticker
+          await redis.lpush(
+            'recent_bookings',
+            JSON.stringify({
+              firstName: firstNameOnly,
+              className: className || estilo || 'Clase de Prueba',
+              timestamp: bookingTimestamp,
+            })
+          );
+          // Mantener solo las últimas 50 reservas
+          await redis.ltrim('recent_bookings', 0, 49);
+        } catch (e) {
+          console.error('[reservar] Redis save failed:', e);
+        }
       }
+    } else {
+      console.warn('[reservar] Redis not available for save');
     }
 
     // 4. Enviar notificaciones (Email + WhatsApp)
@@ -1232,6 +1279,12 @@ export default async function handler(
       success: false,
       error: 'Not attempted',
     };
+    console.warn('[reservar] WhatsApp config check:', {
+      hasToken: !!process.env['WHATSAPP_TOKEN'],
+      hasPhoneId: !!process.env['WHATSAPP_PHONE_ID'],
+      isConfigured: isWhatsAppConfigured(),
+      phoneToSend: phone ? phone.substring(0, 6) + '...' : 'none',
+    });
     if (isWhatsAppConfigured()) {
       try {
         whatsappResult = await sendBookingConfirmationWhatsApp({
