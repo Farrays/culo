@@ -166,11 +166,19 @@ async function sendBookingConfirmationEmail(data: {
     ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
   </div>
   ${generateWhatToBringSection(data.category)}
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
+  <div style="text-align: center; color: #666; font-size: 14px; padding-top: 20px;">
     <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${data.managementUrl}" style="color: ${BRAND_PRIMARY};">Gestionar mi reserva</a></p>
-    <div style="margin-top: 25px;">
-      <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="80" height="80" style="margin-bottom: 10px;">
-      <p style="margin: 0;">Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="${BASE_URL}" style="color: ${BRAND_PRIMARY};">farrayscenter.com</a></p>
+  </div>
+  <div style="background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); color: #ffffff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px;">
+    <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="80" height="80" style="margin-bottom: 15px;">
+    <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 16px;">Farray's International Dance Center</p>
+    <p style="margin: 0; color: #aaaaaa; font-size: 14px;">C/ Entença 100, 08015 Barcelona</p>
+    <div style="margin-top: 15px;">
+      <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold;">farrayscenter.com</a>
+    </div>
+    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #333;">
+      <a href="https://instagram.com/farrayscenter" style="color: #aaaaaa; text-decoration: none; margin: 0 10px; font-size: 13px;">Instagram</a>
+      <a href="https://wa.me/34622247085" style="color: #aaaaaa; text-decoration: none; margin: 0 10px; font-size: 13px;">WhatsApp</a>
     </div>
   </div>
 </body></html>`,
