@@ -170,18 +170,22 @@ async function sendBookingConfirmationEmail(data: {
     <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
     <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
   </div>
-  <div style="background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); color: #ffffff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px;">
-    <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="80" height="80" style="margin-bottom: 15px;">
-    <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 16px;">Farray's International Dance Center</p>
-    <p style="margin: 0; color: #aaaaaa; font-size: 14px;">C/ Entença 100, 08015 Barcelona</p>
-    <div style="margin-top: 15px;">
-      <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold;">farrayscenter.com</a>
-    </div>
-    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #333;">
-      <a href="https://instagram.com/farrayscenter" style="color: #aaaaaa; text-decoration: none; margin: 0 10px; font-size: 13px;">Instagram</a>
-      <a href="https://wa.me/34622247085" style="color: #aaaaaa; text-decoration: none; margin: 0 10px; font-size: 13px;">WhatsApp</a>
-    </div>
-  </div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="https://instagram.com/farrayscenter" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
 </body></html>`,
     });
     if (result.error) return { success: false, error: result.error.message };
