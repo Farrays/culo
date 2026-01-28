@@ -2,15 +2,21 @@
  * Test endpoint para verificar conexión con Resend
  *
  * GET /api/test-email?to=tu@email.com
- * GET /api/test-email?to=tu@email.com&template=cancelar&firstName=Juan&className=Salsa
+ * GET /api/test-email?to=tu@email.com&template=confirmation&firstName=Juan&className=Salsa&classDate=Viernes 31 de Enero&classTime=19:00
+ * GET /api/test-email?to=tu@email.com&template=cancellation&firstName=Juan
+ * GET /api/test-email?to=tu@email.com&template=reminder&firstName=Juan&className=Salsa&classDate=Viernes 31 de Enero&classTime=19:00
  *
  * Query params:
  * - to: Email de destino (requerido)
  * - template: Plantilla a usar (opcional, default: test)
  *   - test: Email de prueba básico
- *   - cancelar: Email de cancelación de reserva
- * - firstName: Nombre para plantilla cancelar (opcional, default: Usuario)
- * - className: Nombre de la clase para plantilla cancelar (opcional, default: Clase)
+ *   - confirmation: Email de confirmación de reserva
+ *   - cancellation: Email de cancelación de reserva
+ *   - reminder: Email de recordatorio 48h
+ * - firstName: Nombre (opcional, default: Usuario)
+ * - className: Nombre de la clase (opcional, default: Clase)
+ * - classDate: Fecha de la clase (opcional, default: Viernes 31 de Enero)
+ * - classTime: Hora de la clase (opcional, default: 19:00)
  *
  * @note Este endpoint es solo para testing. Eliminar o proteger en producción.
  */
@@ -27,7 +33,7 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { to, template, firstName, className } = req.query;
+  const { to, template, firstName, className, classDate, classTime } = req.query;
 
   if (!to || typeof to !== 'string') {
     return res.status(400).json({
@@ -35,8 +41,11 @@ export default async function handler(
       usage: '/api/test-email?to=tu@email.com',
       templates: {
         test: '/api/test-email?to=tu@email.com',
-        cancelar:
-          '/api/test-email?to=tu@email.com&template=cancelar&firstName=Juan&className=Salsa',
+        confirmation:
+          '/api/test-email?to=tu@email.com&template=confirmation&firstName=Juan&className=Salsa&classDate=Viernes 31 de Enero&classTime=19:00',
+        cancellation: '/api/test-email?to=tu@email.com&template=cancellation&firstName=Juan',
+        reminder:
+          '/api/test-email?to=tu@email.com&template=reminder&firstName=Juan&className=Salsa&classDate=Viernes 31 de Enero&classTime=19:00',
       },
     });
   }
@@ -44,6 +53,8 @@ export default async function handler(
   const templateName = (template as string) || 'test';
   const userFirstName = (firstName as string) || 'Usuario';
   const userClassName = (className as string) || 'Clase';
+  const userClassDate = (classDate as string) || 'Viernes 31 de Enero';
+  const userClassTime = (classTime as string) || '19:00';
 
   // Validar formato de email básico
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -69,8 +80,70 @@ export default async function handler(
 
     const resend = new Resend(apiKey);
 
+    // Plantilla de confirmación
+    if (templateName === 'confirmation') {
+      const { sendBookingConfirmation } = await import('./lib/email');
+      const result = await sendBookingConfirmation({
+        to,
+        firstName: userFirstName,
+        className: userClassName,
+        classDate: userClassDate,
+        classTime: userClassTime,
+        managementUrl: 'https://farrayscenter.com/mis-reservas',
+      });
+
+      if (!result.success) {
+        return res.status(500).json({
+          success: false,
+          error: result.error,
+          template: templateName,
+          hasApiKey,
+        });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: `Confirmation email sent to ${to}`,
+        template: templateName,
+        emailId: result.id,
+        hasApiKey,
+        timestamp: new Date().toISOString(),
+      });
+    }
+
+    // Plantilla de recordatorio
+    if (templateName === 'reminder') {
+      const { sendReminderEmail } = await import('./lib/email');
+      const result = await sendReminderEmail({
+        to,
+        firstName: userFirstName,
+        className: userClassName,
+        classDate: userClassDate,
+        classTime: userClassTime,
+        managementUrl: 'https://farrayscenter.com/mis-reservas',
+      });
+
+      if (!result.success) {
+        return res.status(500).json({
+          success: false,
+          error: result.error,
+          template: templateName,
+          hasApiKey,
+        });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: `Reminder email sent to ${to}`,
+        template: templateName,
+        emailId: result.id,
+        hasApiKey,
+        timestamp: new Date().toISOString(),
+      });
+    }
+
     // Plantilla de cancelación
-    if (templateName === 'cancelar') {
+    if (templateName === 'cancellation' || templateName === 'cancelar') {
       const bookingUrl = 'https://farrayscenter.com/reservas';
 
       const result = await resend.emails.send({
