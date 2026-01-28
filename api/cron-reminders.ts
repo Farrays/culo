@@ -16,11 +16,11 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { sendReminderWhatsApp } from './lib/whatsapp';
 
 // Constantes
 const REMINDER_WINDOW_HOURS = 48; // Recordatorio 48h antes de la clase
 const REMINDER_TOLERANCE_HOURS = 1; // +/- 1 hora de tolerancia
+const WHATSAPP_API_VERSION = 'v23.0';
 
 interface BookingData {
   firstName: string;
@@ -117,6 +117,71 @@ function isInReminderWindow(classDate: Date): boolean {
   return hoursUntilClass >= minHours && hoursUntilClass <= maxHours;
 }
 
+/**
+ * Envía recordatorio de WhatsApp (inline para evitar problemas de imports en Vercel)
+ */
+async function sendReminderWhatsApp(
+  to: string,
+  firstName: string,
+  className: string,
+  classDateTime: string
+): Promise<{ success: boolean; error?: string }> {
+  const token = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+
+  if (!token || !phoneId) {
+    return { success: false, error: 'Missing WhatsApp credentials' };
+  }
+
+  const normalizedPhone = to.replace(/[\s\-+]/g, '');
+  const apiUrl = `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`;
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        messaging_product: 'whatsapp',
+        to: normalizedPhone,
+        type: 'template',
+        template: {
+          name: 'recordatorio_prueba_0',
+          language: { code: 'es_ES' },
+          components: [
+            {
+              type: 'body',
+              parameters: [
+                { type: 'text', text: firstName },
+                { type: 'text', text: className },
+                { type: 'text', text: classDateTime },
+              ],
+            },
+          ],
+        },
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || data.error) {
+      return {
+        success: false,
+        error: data.error?.message || `HTTP ${response.status}`,
+      };
+    }
+
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -183,12 +248,12 @@ export default async function handler(
         console.warn(`[Reminders] Sending reminder to ${booking.email} for ${booking.className}`);
 
         // Enviar WhatsApp
-        const whatsappResult = await sendReminderWhatsApp({
-          to: booking.phone,
-          firstName: booking.firstName,
-          className: booking.className,
-          classDateTime,
-        });
+        const whatsappResult = await sendReminderWhatsApp(
+          booking.phone,
+          booking.firstName,
+          booking.className,
+          classDateTime
+        );
 
         if (whatsappResult.success) {
           // Marcar como enviado
