@@ -18,7 +18,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 
 // Constantes
-const REMINDER_WINDOW_HOURS = 48;
+const REMINDER_WINDOW_HOURS = 48; // Recordatorio 48h antes de la clase
 const REMINDER_TOLERANCE_HOURS = 1; // +/- 1 hora de tolerancia
 
 interface BookingData {

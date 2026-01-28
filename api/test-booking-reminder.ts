@@ -14,17 +14,26 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { Redis } from '@upstash/redis';
+import Redis from 'ioredis';
 
-function getRedis() {
-  const url = process.env['UPSTASH_REDIS_REST_URL'];
-  const token = process.env['UPSTASH_REDIS_REST_TOKEN'];
+let redisClient: Redis | null = null;
 
-  if (!url || !token) {
-    throw new Error('Missing Redis credentials');
+function getRedis(): Redis {
+  const redisUrl = process.env['STORAGE_REDIS_URL'];
+
+  if (!redisUrl) {
+    throw new Error('Missing STORAGE_REDIS_URL');
   }
 
-  return new Redis({ url, token });
+  if (!redisClient) {
+    redisClient = new Redis(redisUrl, {
+      maxRetriesPerRequest: 1,
+      connectTimeout: 5000,
+      lazyConnect: true,
+    });
+  }
+
+  return redisClient;
 }
 
 const TEST_BOOKING_KEY = 'booking:test-reminder-12345';
