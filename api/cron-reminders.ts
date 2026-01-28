@@ -16,6 +16,7 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { sendReminderWhatsApp } from './lib/whatsapp';
 
 // Constantes
 const REMINDER_WINDOW_HOURS = 48; // Recordatorio 48h antes de la clase
@@ -145,6 +146,7 @@ export default async function handler(
     // Escanear todas las reservas
     const bookingKeys = await redis.keys('booking:*');
     console.warn(`[Reminders] Found ${bookingKeys.length} bookings to check`);
+    console.warn(`[Reminders] Keys:`, bookingKeys.slice(0, 5)); // Log first 5 keys
 
     for (const key of bookingKeys) {
       try {
@@ -181,7 +183,6 @@ export default async function handler(
         console.warn(`[Reminders] Sending reminder to ${booking.email} for ${booking.className}`);
 
         // Enviar WhatsApp
-        const { sendReminderWhatsApp } = await import('./lib/whatsapp');
         const whatsappResult = await sendReminderWhatsApp({
           to: booking.phone,
           firstName: booking.firstName,
