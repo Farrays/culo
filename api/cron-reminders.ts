@@ -42,7 +42,8 @@ interface ReminderResult {
   phone: string;
   className: string;
   classDateTime: string;
-  success: boolean;
+  whatsappSuccess: boolean;
+  emailSuccess: boolean;
   error?: string;
 }
 
@@ -182,6 +183,84 @@ async function sendReminderWhatsApp(
   }
 }
 
+/**
+ * Envía recordatorio por email (inline para evitar problemas de imports en Vercel)
+ */
+async function sendReminderEmailInline(
+  to: string,
+  firstName: string,
+  className: string,
+  classDate: string,
+  classTime: string,
+  managementUrl: string
+): Promise<{ success: boolean; error?: string }> {
+  const { Resend } = await import('resend');
+  const apiKey = process.env['RESEND_API_KEY'];
+
+  if (!apiKey) {
+    return { success: false, error: 'Missing Resend API key' };
+  }
+
+  const resend = new Resend(apiKey);
+
+  try {
+    const result = await resend.emails.send({
+      from: "Farray's Center <onboarding@resend.dev>",
+      to,
+      replyTo: 'info@farrayscenter.com',
+      subject: `Recordatorio: Tu clase de ${className} es pasado mañana`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
+    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+  </div>
+  <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
+    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
+  </div>
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0;">Hola <strong>${firstName}</strong>,</p>
+    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
+  </div>
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${className}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${classTime}</strong></td></tr>
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
+    </table>
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">Ver mi reserva</a>
+  </div>
+  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
+    <p>Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> | <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a></p>
+  </div>
+</body>
+</html>
+      `,
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -247,36 +326,37 @@ export default async function handler(
 
         console.warn(`[Reminders] Sending reminder to ${booking.email} for ${booking.className}`);
 
-        // Enviar WhatsApp
-        const whatsappResult = await sendReminderWhatsApp(
-          booking.phone,
-          booking.firstName,
-          booking.className,
-          classDateTime
-        );
+        // Enviar WhatsApp y Email en paralelo
+        const [whatsappResult, emailResult] = await Promise.all([
+          sendReminderWhatsApp(booking.phone, booking.firstName, booking.className, classDateTime),
+          sendReminderEmailInline(
+            booking.email,
+            booking.firstName,
+            booking.className,
+            booking.classDate,
+            booking.classTime,
+            '' // TODO: Add management URL
+          ),
+        ]);
 
-        if (whatsappResult.success) {
-          // Marcar como enviado
+        // Marcar como enviado si al menos uno tuvo éxito
+        if (whatsappResult.success || emailResult.success) {
           booking.reminderSent = true;
           await redis.set(key, JSON.stringify(booking), 'KEEPTTL');
-
-          results.push({
-            email: booking.email,
-            phone: booking.phone.slice(0, 4) + '***',
-            className: booking.className,
-            classDateTime,
-            success: true,
-          });
-        } else {
-          results.push({
-            email: booking.email,
-            phone: booking.phone.slice(0, 4) + '***',
-            className: booking.className,
-            classDateTime,
-            success: false,
-            error: whatsappResult.error,
-          });
         }
+
+        results.push({
+          email: booking.email,
+          phone: booking.phone.slice(0, 4) + '***',
+          className: booking.className,
+          classDateTime,
+          whatsappSuccess: whatsappResult.success,
+          emailSuccess: emailResult.success,
+          error:
+            !whatsappResult.success || !emailResult.success
+              ? `WhatsApp: ${whatsappResult.error || 'OK'}, Email: ${emailResult.error || 'OK'}`
+              : undefined,
+        });
       } catch (bookingError) {
         errors.push(`Error processing ${key}: ${String(bookingError)}`);
       }

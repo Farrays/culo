@@ -431,7 +431,7 @@ export async function sendReminderEmail(
       from: FROM_EMAIL,
       to: data.to,
       replyTo: REPLY_TO,
-      subject: `Recordatorio: Mañana tienes clase de ${data.className}`,
+      subject: `Recordatorio: Tu clase de ${data.className} es pasado mañana`,
       html: `
 <!DOCTYPE html>
 <html>
@@ -442,32 +442,57 @@ export async function sendReminderEmail(
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
     <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
+    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
   </div>
 
   <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">¡Mañana es el día!</h2>
+    <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
+    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
   </div>
 
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">Te recordamos que mañana tienes tu clase de prueba:</p>
+    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
   </div>
 
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px; text-align: center;">
-    <h3 style="margin: 0 0 15px 0; color: #e91e63;">${data.className}</h3>
-    <p style="margin: 5px 0;"><strong>${data.classDate}</strong></p>
-    <p style="margin: 5px 0;"><strong>${data.classTime}</strong></p>
-    <p style="margin: 15px 0 0 0; color: #666;">C/ Entença 100, Barcelona</p>
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+          <span style="color: #666;">Clase</span><br>
+          <strong style="font-size: 18px;">${data.className}</strong>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+          <span style="color: #666;">Fecha</span><br>
+          <strong>${data.classDate}</strong>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+          <span style="color: #666;">Hora</span><br>
+          <strong>${data.classTime}</strong>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0;">
+          <span style="color: #666;">Ubicación</span><br>
+          <strong>Farray's International Dance Center</strong><br>
+          <span style="color: #666;">C/ Entença 100, 08015 Barcelona</span>
+        </td>
+      </tr>
+    </table>
   </div>
 
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; margin: 5px;">
-      Ver/Cancelar reserva
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+      Ver mi reserva
     </a>
     ${
       data.mapUrl
         ? `
-    <a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; margin: 5px;">
+    <a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
       Cómo llegar
     </a>
     `
@@ -475,8 +500,25 @@ export async function sendReminderEmail(
     }
   </div>
 
-  <div style="text-align: center; color: #666; font-size: 14px;">
-    <p>¡Te esperamos!</p>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>
+
+  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
+    <p>¿Necesitas cambiar o cancelar tu reserva?<br>
+    <a href="${data.managementUrl}" style="color: #4caf50;">Gestionar mi reserva</a></p>
+    <p style="margin-top: 20px;">
+      Farray's International Dance Center<br>
+      C/ Entença 100, 08015 Barcelona<br>
+      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> |
+      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a>
+    </p>
   </div>
 </body>
 </html>
