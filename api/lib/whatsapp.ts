@@ -238,14 +238,14 @@ export async function sendBookingConfirmationWhatsApp(
 /**
  * Envía recordatorio de clase por WhatsApp (48h antes)
  *
- * Plantilla: recordatorio
+ * Plantilla: recordatorio_prueba_0
  * Parámetros:
  * - {{1}} firstName
  * - {{2}} className
  * - {{3}} dateTime (fecha y hora combinadas, ej: "17/07/2025, 19:00")
  */
 export async function sendReminderWhatsApp(data: ReminderWhatsAppData): Promise<WhatsAppResult> {
-  return sendTemplate('recordatorio', data.to, 'es_ES', [
+  return sendTemplate('recordatorio_prueba_0', data.to, 'es_ES', [
     {
       type: 'body',
       parameters: [

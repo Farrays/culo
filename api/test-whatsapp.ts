@@ -3,14 +3,14 @@
  *
  * GET /api/test-whatsapp?to=34612345678
  * GET /api/test-whatsapp?to=34612345678&template=cancelar&firstName=Juan
- * GET /api/test-whatsapp?to=34612345678&template=recordatorio&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00
+ * GET /api/test-whatsapp?to=34612345678&template=recordatorio_prueba_0&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00
  *
  * Query params:
  * - to: Número de teléfono con código de país (requerido)
  * - template: Plantilla a usar (opcional, default: hello_world)
  *   - hello_world: Plantilla de prueba por defecto
  *   - cancelar: Plantilla de cancelación (requiere firstName)
- *   - recordatorio: Plantilla de recordatorio 48h (requiere firstName, className, dateTime)
+ *   - recordatorio_prueba_0: Plantilla de recordatorio 48h (requiere firstName, className, dateTime)
  * - firstName: Nombre para plantillas (default: Usuario)
  * - className: Nombre de la clase para recordatorio (default: Clase)
  * - dateTime: Fecha y hora para recordatorio (default: fecha actual + 48h)
@@ -40,8 +40,8 @@ export default async function handler(
       templates: {
         hello_world: '/api/test-whatsapp?to=34612345678',
         cancelar: '/api/test-whatsapp?to=34612345678&template=cancelar&firstName=Juan',
-        recordatorio:
-          '/api/test-whatsapp?to=34612345678&template=recordatorio&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00',
+        recordatorio_prueba_0:
+          '/api/test-whatsapp?to=34612345678&template=recordatorio_prueba_0&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00',
       },
       note: 'Phone number must include country code without + (e.g., 34 for Spain)',
     });
@@ -132,14 +132,14 @@ export default async function handler(
           ],
         },
       };
-    } else if (templateName === 'recordatorio') {
+    } else if (templateName === 'recordatorio_prueba_0') {
       // Plantilla de recordatorio 48h con firstName, className, dateTime
       message = {
         messaging_product: 'whatsapp',
         to: normalizedPhone,
         type: 'template',
         template: {
-          name: 'recordatorio',
+          name: 'recordatorio_prueba_0',
           language: { code: 'es_ES' },
           components: [
             {
