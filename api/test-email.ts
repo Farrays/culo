@@ -80,22 +80,20 @@ export default async function handler(
 
     const resend = new Resend(apiKey);
 
-    // Plantilla de confirmación
+    // Plantilla de confirmación (usa lib/email.ts directamente)
     if (templateName === 'confirmation') {
-      const { sendBookingConfirmation } = await import('./lib/email');
-      const result = await sendBookingConfirmation({
+      const result = await resend.emails.send({
+        from: "Farray's Center <onboarding@resend.dev>",
         to,
-        firstName: userFirstName,
-        className: userClassName,
-        classDate: userClassDate,
-        classTime: userClassTime,
-        managementUrl: 'https://farrayscenter.com/mis-reservas',
+        replyTo: 'info@farrayscenter.com',
+        subject: `Reserva confirmada: ${userClassName}`,
+        html: `<!DOCTYPE html><html><body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="text-align: center; margin-bottom: 30px;"><h1 style="color: #e91e63; margin: 0;">Farray's Center</h1><p style="color: #666; margin: 5px 0;">International Dance Center</p></div><div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;"><h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2></div><div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;"><p style="margin: 0 0 15px 0;">Hola <strong>${userFirstName}</strong>,</p><p style="margin: 0;">Tu reserva ha sido confirmada:</p></div><div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${userClassName}</strong></td></tr><tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${userClassDate}</strong></td></tr><tr><td style="padding: 10px 0;"><span style="color: #666;">Hora</span><br><strong>${userClassTime}</strong></td></tr></table></div><div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;"><p>Farray's International Dance Center<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> | <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a></p></div></body></html>`,
       });
 
-      if (!result.success) {
+      if (result.error) {
         return res.status(500).json({
           success: false,
-          error: result.error,
+          error: result.error.message,
           template: templateName,
           hasApiKey,
         });
@@ -105,7 +103,7 @@ export default async function handler(
         success: true,
         message: `Confirmation email sent to ${to}`,
         template: templateName,
-        emailId: result.id,
+        emailId: result.data?.id,
         hasApiKey,
         timestamp: new Date().toISOString(),
       });
@@ -113,20 +111,18 @@ export default async function handler(
 
     // Plantilla de recordatorio
     if (templateName === 'reminder') {
-      const { sendReminderEmail } = await import('./lib/email');
-      const result = await sendReminderEmail({
+      const result = await resend.emails.send({
+        from: "Farray's Center <onboarding@resend.dev>",
         to,
-        firstName: userFirstName,
-        className: userClassName,
-        classDate: userClassDate,
-        classTime: userClassTime,
-        managementUrl: 'https://farrayscenter.com/mis-reservas',
+        replyTo: 'info@farrayscenter.com',
+        subject: `Recordatorio: Tu clase de ${userClassName} es pasado mañana`,
+        html: `<!DOCTYPE html><html><body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="text-align: center; margin-bottom: 30px;"><h1 style="color: #e91e63; margin: 0;">Farray's Center</h1><p style="color: #666; margin: 5px 0;">International Dance Center</p></div><div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;"><h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2><p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p></div><div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;"><p style="margin: 0 0 15px 0;">Hola <strong>${userFirstName}</strong>,</p><p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p></div><div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${userClassName}</strong></td></tr><tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${userClassDate}</strong></td></tr><tr><td style="padding: 10px 0;"><span style="color: #666;">Hora</span><br><strong>${userClassTime}</strong></td></tr></table></div><div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;"><p>Farray's International Dance Center<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> | <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a></p></div></body></html>`,
       });
 
-      if (!result.success) {
+      if (result.error) {
         return res.status(500).json({
           success: false,
-          error: result.error,
+          error: result.error.message,
           template: templateName,
           hasApiKey,
         });
@@ -136,7 +132,7 @@ export default async function handler(
         success: true,
         message: `Reminder email sent to ${to}`,
         template: templateName,
-        emailId: result.id,
+        emailId: result.data?.id,
         hasApiKey,
         timestamp: new Date().toISOString(),
       });
