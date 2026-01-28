@@ -238,10 +238,21 @@ async function sendReminderEmailInline(
     </table>
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">Ver mi reserva</a>
+    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    <a href="https://maps.app.goo.gl/4AtNaEzTAhNUuFfJ6" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
   </div>
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> | <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a></p>
+    <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${managementUrl}" style="color: #e91e63;">Gestionar mi reserva</a></p>
+    <p style="margin-top: 20px;">Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> | <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a></p>
   </div>
 </body>
 </html>

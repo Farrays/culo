@@ -486,7 +486,7 @@ export async function sendReminderEmail(
   </div>
 
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
       Ver mi reserva
     </a>
     ${
@@ -512,7 +512,7 @@ export async function sendReminderEmail(
 
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
     <p>¿Necesitas cambiar o cancelar tu reserva?<br>
-    <a href="${data.managementUrl}" style="color: #4caf50;">Gestionar mi reserva</a></p>
+    <a href="${data.managementUrl}" style="color: #e91e63;">Gestionar mi reserva</a></p>
     <p style="margin-top: 20px;">
       Farray's International Dance Center<br>
       C/ Entença 100, 08015 Barcelona<br>
