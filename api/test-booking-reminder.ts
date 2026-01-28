@@ -95,9 +95,7 @@ export default async function handler(
     };
 
     // Guardar en Redis con TTL de 1 hora (suficiente para la prueba)
-    await redis.set(TEST_BOOKING_KEY, JSON.stringify(testBooking), {
-      ex: 3600, // 1 hora
-    });
+    await redis.setex(TEST_BOOKING_KEY, 3600, JSON.stringify(testBooking));
 
     return res.status(200).json({
       success: true,
