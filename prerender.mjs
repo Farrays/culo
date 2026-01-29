@@ -27,7 +27,7 @@ const LANDING_SLUGS = [
   'salsa-cubana',
   'ballet',
   'afro-contemporaneo',
-  'jornada-puertas-abiertas',
+  'clase-bienvenida',
 ];
 
 // Helper: convert slug to page key (e.g., 'sexy-reggaeton' -> 'sexyReggaetonLanding')
@@ -82,7 +82,7 @@ const LANDING_DISPLAY_NAMES = {
   'salsa-cubana': { es: 'Salsa Cubana', ca: 'Salsa Cubana', en: 'Cuban Salsa', fr: 'Salsa Cubaine' },
   'ballet': { es: 'Ballet Clásico', ca: 'Ballet Clàssic', en: 'Classical Ballet', fr: 'Ballet Classique' },
   'afro-contemporaneo': { es: 'Afro Contemporáneo', ca: 'Afro Contemporani', en: 'Afro Contemporary', fr: 'Afro Contemporain' },
-  'jornada-puertas-abiertas': { es: 'Jornada Puertas Abiertas', ca: 'Jornada Portes Obertes', en: 'Open Doors Day', fr: 'Journée Portes Ouvertes' },
+  'clase-bienvenida': { es: 'Clase de Bienvenida', ca: 'Classe de Benvinguda', en: 'Welcome Class', fr: 'Cours de Bienvenue' },
 };
 
 // Auto-generate landing metadata for all languages
