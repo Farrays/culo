@@ -850,5 +850,25 @@
   "jpaLeadModal_success_cta": "Cerrar",
   "jpaLeadModal_error_title": "Error al procesar",
   "jpaLeadModal_error_message": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
-  "jpaLeadModal_error_cta": "Reintentar"
+  "jpaLeadModal_error_cta": "Reintentar",
+  "jpaLeadModal_booking_heading": "¡Perfecto! Reserva tu clase ahora",
+  "jpaLeadModal_booking_message": "Elige el horario que mejor te venga y confirma tu plaza en segundos.",
+  "jpaLeadModal_booking_cta": "Ver horarios y reservar",
+  "jpaLeadModal_booking_note": "Reserva online inmediata · Sin compromiso · Cancela cuando quieras",
+
+  "cbLeadModal_title": "Reserva tu clase de bienvenida",
+  "cbLeadModal_subtitle": "Prueba una clase de cualquier estilo sin compromiso",
+  "cbLeadModal_microCommit_question": "¿Te gustaría reservar tu clase de bienvenida?",
+  "cbLeadModal_microCommit_yes": "¡Sí, quiero reservar!",
+  "cbLeadModal_booking_heading": "¡Perfecto! Reserva tu clase ahora",
+  "cbLeadModal_booking_message": "Elige el horario que mejor te venga y confirma tu plaza en segundos.",
+  "cbLeadModal_booking_cta": "Ver horarios y reservar",
+  "cbLeadModal_booking_note": "Reserva online inmediata · Sin compromiso · Cancela cuando quieras",
+
+  "cbExitIntent_title": "¿Te vas sin reservar tu clase de bienvenida?",
+  "cbExitIntent_description": "Tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.",
+  "cbExitIntent_ctaDancehall": "Reservar clase de bienvenida",
+  "cbExitIntent_ctaExplore": "Ver todas las clases disponibles",
+  "cbExitIntent_ctaClose": "Cerrar",
+  "cbExitIntent_hint": "Dancehall, Twerk, Heels, Hip-Hop, Afrobeats, Salsa, Bachata, Contemporáneo y mucho más..."
 }

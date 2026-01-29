@@ -838,5 +838,25 @@
   "jpaLeadModal_success_cta": "Close",
   "jpaLeadModal_error_title": "Processing Error",
   "jpaLeadModal_error_message": "An error occurred. Please try again.",
-  "jpaLeadModal_error_cta": "Retry"
+  "jpaLeadModal_error_cta": "Retry",
+  "jpaLeadModal_booking_heading": "Perfect! Book your class now",
+  "jpaLeadModal_booking_message": "Choose the schedule that works best for you and confirm your spot in seconds.",
+  "jpaLeadModal_booking_cta": "View schedules and book",
+  "jpaLeadModal_booking_note": "Instant online booking · No commitment · Cancel anytime",
+
+  "cbLeadModal_title": "Book your welcome class",
+  "cbLeadModal_subtitle": "Try any style class with no commitment",
+  "cbLeadModal_microCommit_question": "Would you like to book your welcome class?",
+  "cbLeadModal_microCommit_yes": "Yes, I want to book!",
+  "cbLeadModal_booking_heading": "Perfect! Book your class now",
+  "cbLeadModal_booking_message": "Choose the schedule that works best for you and confirm your spot in seconds.",
+  "cbLeadModal_booking_cta": "View schedules and book",
+  "cbLeadModal_booking_note": "Instant online booking · No commitment · Cancel anytime",
+
+  "cbExitIntent_title": "Leaving without booking your welcome class?",
+  "cbExitIntent_description": "We have over 25 different dance styles. There's definitely one perfect for you.",
+  "cbExitIntent_ctaDancehall": "Book welcome class",
+  "cbExitIntent_ctaExplore": "View all available classes",
+  "cbExitIntent_ctaClose": "Close",
+  "cbExitIntent_hint": "Dancehall, Twerk, Heels, Hip-Hop, Afrobeats, Salsa, Bachata, Contemporary and much more..."
 }

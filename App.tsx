@@ -103,8 +103,8 @@ const BalletLanding = lazy(() => import('./components/landing/pages/BalletLandin
 const AfroContemporaneoLanding = lazy(
   () => import('./components/landing/pages/AfroContemporaneoLanding')
 );
-const JornadaPuertasAbiertasLanding = lazy(
-  () => import('./components/landing/pages/JornadaPuertasAbiertasLanding')
+const ClaseBienvenidaLanding = lazy(
+  () => import('./components/landing/pages/ClaseBienvenidaLanding')
 );
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
@@ -226,7 +226,7 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/salsa-cubana',
   '/ballet',
   '/afro-contemporaneo',
-  '/jornada-puertas-abiertas',
+  '/clase-bienvenida',
 ];
 
 // Promotion configuration - easy to update
@@ -260,7 +260,7 @@ const AppContent: React.FC = () => {
       location.pathname.endsWith('/salsa-cubana') ||
       location.pathname.endsWith('/ballet') ||
       location.pathname.endsWith('/afro-contemporaneo') ||
-      location.pathname.endsWith('/jornada-puertas-abiertas'));
+      location.pathname.endsWith('/clase-bienvenida'));
 
   // Legal pages without header/footer (accessed from landing modal links)
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
@@ -1052,11 +1052,11 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
-              path="/:locale/jornada-puertas-abiertas"
+              path="/:locale/clase-bienvenida"
               element={
                 <>
                   <LocaleSync />
-                  <JornadaPuertasAbiertasLanding />
+                  <ClaseBienvenidaLanding />
                 </>
               }
             />

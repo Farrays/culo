@@ -838,5 +838,25 @@
   "jpaLeadModal_success_cta": "Tancar",
   "jpaLeadModal_error_title": "Error al processar",
   "jpaLeadModal_error_message": "Hi ha hagut un error. Si us plau, torna-ho a intentar.",
-  "jpaLeadModal_error_cta": "Reintentar"
+  "jpaLeadModal_error_cta": "Reintentar",
+  "jpaLeadModal_booking_heading": "Perfecte! Reserva la teva classe ara",
+  "jpaLeadModal_booking_message": "Tria l'horari que millor et vagi i confirma la teva plaça en segons.",
+  "jpaLeadModal_booking_cta": "Veure horaris i reservar",
+  "jpaLeadModal_booking_note": "Reserva online immediata · Sense compromís · Cancel·la quan vulguis",
+
+  "cbLeadModal_title": "Reserva la teva classe de benvinguda",
+  "cbLeadModal_subtitle": "Prova una classe de qualsevol estil sense compromís",
+  "cbLeadModal_microCommit_question": "T'agradaria reservar la teva classe de benvinguda?",
+  "cbLeadModal_microCommit_yes": "Sí, vull reservar!",
+  "cbLeadModal_booking_heading": "Perfecte! Reserva la teva classe ara",
+  "cbLeadModal_booking_message": "Tria l'horari que millor et vagi i confirma la teva plaça en segons.",
+  "cbLeadModal_booking_cta": "Veure horaris i reservar",
+  "cbLeadModal_booking_note": "Reserva online immediata · Sense compromís · Cancel·la quan vulguis",
+
+  "cbExitIntent_title": "Te'n vas sense reservar la teva classe de benvinguda?",
+  "cbExitIntent_description": "Tenim més de 25 estils de ball diferents. Segur que n'hi ha un perfecte per a tu.",
+  "cbExitIntent_ctaDancehall": "Reservar classe de benvinguda",
+  "cbExitIntent_ctaExplore": "Veure totes les classes disponibles",
+  "cbExitIntent_ctaClose": "Tancar",
+  "cbExitIntent_hint": "Dancehall, Twerk, Heels, Hip-Hop, Afrobeats, Salsa, Bachata, Contemporani i molt més..."
 }

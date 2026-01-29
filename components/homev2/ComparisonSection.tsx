@@ -193,7 +193,9 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-neutral/70">Academia Típica</h3>
+                  <h3 className="text-2xl font-bold text-neutral/70">
+                    {t('home:homev2_comparisonTypicalAcademy')}
+                  </h3>
                 </div>
                 <ul className="space-y-6">
                   {config.rows.map((row, index) => {

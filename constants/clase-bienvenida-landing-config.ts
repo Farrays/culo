@@ -1,41 +1,37 @@
 /**
  * =============================================================================
- * JORNADA PUERTAS ABIERTAS LANDING PAGE CONFIGURATION - ENTERPRISE
+ * CLASE DE BIENVENIDA LANDING PAGE CONFIGURATION - ENTERPRISE
  * =============================================================================
  *
- * Landing page para la Jornada de Puertas Abiertas de Farray's Center.
- * FECHAS: Del 7 al 31 de enero de 2025
- *
- * Muestra el widget completo de horarios (todas las clases) sin navegación.
- * Los usuarios pueden reservar UNA clase de prueba gratuita.
- * Si desean probar más clases, deben abonar el precio de clase suelta.
+ * Landing page general para captar nuevos alumnos en cualquier estilo de baile.
+ * Ofrece una clase de bienvenida gratuita para probar sin compromiso.
  *
  * RUTA EN App.tsx:
- * import { JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG } from './constants/jornada-puertas-abiertas-landing-config';
- * <Route path="/:locale/jornada-puertas-abiertas" element={<GenericDanceLanding config={JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG} />} />
+ * import { CLASE_BIENVENIDA_LANDING_CONFIG } from './constants/clase-bienvenida-landing-config';
+ * <Route path="/:locale/clase-bienvenida" element={<GenericDanceLanding config={CLASE_BIENVENIDA_LANDING_CONFIG} />} />
  *
  * TEMA: Brand (colores oficiales de Farray's)
- * TARGET: Público general interesado en conocer todas las clases del centro
+ * TARGET: Público general interesado en probar cualquier estilo de baile
  * SOURCE ID: 129204 (Momence)
  * VIDEO: f9ad8f80-f1be-4c20-a40d-c6f007759db7 (Bunny Stream)
  *
- * CARACTERÍSTICAS ESPECIALES:
- * - showFullSchedule: true - Muestra widget de horarios completo con filtros
- * - Las clases NO son clicables (solo visualización)
- * - Registro mediante modal de captación
- * - Descuento exclusivo en primera mensualidad si se inscribe
+ * CARACTERÍSTICAS:
+ * - Muestra todas las clases disponibles en el booking widget
+ * - Flujo directo de reserva (sin formulario de lead)
+ * - Video enterprise con facade pattern
+ * - Countdown recurrente cada 14 días
  */
 
 import { createLandingConfig, type LandingConfig } from './landing-template-config';
 
-export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLandingConfig('brand', {
+export const CLASE_BIENVENIDA_LANDING_CONFIG: LandingConfig = createLandingConfig('brand', {
   // =========================================================================
   // IDENTIFICADORES
   // =========================================================================
-  id: 'jornada-puertas-abiertas-landing',
-  slug: 'jornada-puertas-abiertas',
+  id: 'clase-bienvenida-landing',
+  slug: 'clase-bienvenida',
   sourceId: 129204,
-  estiloValue: 'Jornada Puertas Abiertas',
+  estiloValue: 'Clase de Bienvenida',
   discoveryValue: 'Facebook',
 
   // =========================================================================
@@ -44,8 +40,8 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
   images: {
     hero: '/images/categories/img/todas_1024.webp',
     showcase: '/images/categories/img/todas_1024.webp',
-    heroAlt: "Jornada de Puertas Abiertas - Farray's Center Barcelona",
-    showcaseAlt: 'Conoce todas nuestras clases de baile en Barcelona',
+    heroAlt: "Clase de Bienvenida Gratuita - Farray's Center Barcelona",
+    showcaseAlt: 'Descubre tu estilo de baile en Barcelona',
   },
 
   // =========================================================================
@@ -65,50 +61,50 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
   // =========================================================================
   // CLAVES DE TRADUCCIÓN
   // =========================================================================
-  translationPrefix: 'jpaLanding',
+  translationPrefix: 'cbLanding',
 
   // =========================================================================
   // VALUE STACK - Lo que incluye la clase de bienvenida
   // =========================================================================
   valueStack: [
-    { key: 'jpaLandingValueItem1', price: 20, priceKey: 'jpaLandingValuePrice1' },
-    { key: 'jpaLandingValueItem2', price: 0, priceKey: 'jpaLandingValueIncluded' },
-    { key: 'jpaLandingValueItem3', price: 0, priceKey: 'jpaLandingValueIncluded' },
-    { key: 'jpaLandingValueItem4', price: 0, priceKey: 'jpaLandingValueIncluded' },
-    { key: 'jpaLandingValueItem5', price: 0, priceKey: 'jpaLandingValueIncluded' },
+    { key: 'cbLandingValueItem1', price: 20, priceKey: 'cbLandingValuePrice1' },
+    { key: 'cbLandingValueItem2', price: 0, priceKey: 'cbLandingValueIncluded' },
+    { key: 'cbLandingValueItem3', price: 0, priceKey: 'cbLandingValueIncluded' },
+    { key: 'cbLandingValueItem4', price: 0, priceKey: 'cbLandingValueIncluded' },
+    { key: 'cbLandingValueItem5', price: 0, priceKey: 'cbLandingValueIncluded' },
   ],
 
   // =========================================================================
   // WHY US - Por qué elegir Farray's
   // =========================================================================
   whyUs: [
-    { titleKey: 'jpaLandingWhyTitle1', descKey: 'jpaLandingWhyDesc1' },
-    { titleKey: 'jpaLandingWhyTitle2', descKey: 'jpaLandingWhyDesc2' },
-    { titleKey: 'jpaLandingWhyTitle3', descKey: 'jpaLandingWhyDesc3' },
-    { titleKey: 'jpaLandingWhyTitle4', descKey: 'jpaLandingWhyDesc4' },
+    { titleKey: 'cbLandingWhyTitle1', descKey: 'cbLandingWhyDesc1' },
+    { titleKey: 'cbLandingWhyTitle2', descKey: 'cbLandingWhyDesc2' },
+    { titleKey: 'cbLandingWhyTitle3', descKey: 'cbLandingWhyDesc3' },
+    { titleKey: 'cbLandingWhyTitle4', descKey: 'cbLandingWhyDesc4' },
   ],
 
   // =========================================================================
-  // FAQS - Preguntas frecuentes sobre la jornada
+  // FAQS - Preguntas frecuentes
   // =========================================================================
   faqs: [
-    { id: 'jpa-1', questionKey: 'jpaLandingObjQ1', answerKey: 'jpaLandingObjA1' },
-    { id: 'jpa-2', questionKey: 'jpaLandingObjQ2', answerKey: 'jpaLandingObjA2' },
-    { id: 'jpa-3', questionKey: 'jpaLandingObjQ3', answerKey: 'jpaLandingObjA3' },
-    { id: 'jpa-4', questionKey: 'jpaLandingObjQ4', answerKey: 'jpaLandingObjA4' },
+    { id: 'cb-1', questionKey: 'cbLandingObjQ1', answerKey: 'cbLandingObjA1' },
+    { id: 'cb-2', questionKey: 'cbLandingObjQ2', answerKey: 'cbLandingObjA2' },
+    { id: 'cb-3', questionKey: 'cbLandingObjQ3', answerKey: 'cbLandingObjA3' },
+    { id: 'cb-4', questionKey: 'cbLandingObjQ4', answerKey: 'cbLandingObjA4' },
   ],
 
   // =========================================================================
   // TESTIMONIALES
   // =========================================================================
   testimonials: [
-    { id: 1, name: 'María T.', quote: 'jpaLandingTestimonial1' },
-    { id: 2, name: 'Carlos R.', quote: 'jpaLandingTestimonial2' },
-    { id: 3, name: 'Laura P.', quote: 'jpaLandingTestimonial3' },
+    { id: 1, name: 'María T.', quote: 'cbLandingTestimonial1' },
+    { id: 2, name: 'Carlos R.', quote: 'cbLandingTestimonial2' },
+    { id: 3, name: 'Laura P.', quote: 'cbLandingTestimonial3' },
   ],
 
   // =========================================================================
-  // HORARIOS - Vacío porque usamos showFullSchedule
+  // HORARIOS - Vacío (se usa booking widget directo)
   // =========================================================================
   schedule: [],
 
@@ -122,11 +118,11 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
   },
 
   // =========================================================================
-  // COUNTDOWN - Fin de la jornada (31 de enero 2026)
+  // COUNTDOWN - Oferta recurrente cada 14 días
   // =========================================================================
   countdown: {
-    baseDate: '2026-01-31T23:59:59', // Fin de la Jornada de Puertas Abiertas
-    intervalDays: 0, // No se reinicia, es una fecha fija
+    baseDate: '2025-01-06T23:59:59',
+    intervalDays: 14, // Resetea cada 2 semanas
   },
 
   // =========================================================================
@@ -145,6 +141,6 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
   // BOOKING WIDGET (Direct booking flow - high conversion)
   // =========================================================================
   bookingWidget: {
-    styleFilter: '', // Sin filtro = muestra todas las clases (Jornada Puertas Abiertas)
+    styleFilter: '', // Sin filtro = muestra todas las clases
   },
 });
