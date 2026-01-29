@@ -203,8 +203,16 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
     const newUntilDate = new Date();
     newUntilDate.setDate(newUntilDate.getDate() + 14);
 
+    const classId = 1000 + weekOffset * 100 + idx;
+    const nameSlug = template.name
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-zA-Z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
+
     classes.push({
-      id: 1000 + weekOffset * 100 + idx,
+      id: classId,
       name: template.name,
       date: classDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' }),
       time: template.time,
@@ -220,6 +228,7 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
       description: template.description,
       isNew: isNewClass,
       newUntil: isNewClass ? newUntilDate.toISOString().split('T')[0] : undefined,
+      checkoutUrl: `https://momence.com/Farray's-International-Dance-Center/${nameSlug}/${classId}`,
     });
   });
 

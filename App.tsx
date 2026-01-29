@@ -106,6 +106,17 @@ const AfroContemporaneoLanding = lazy(
 const ClaseBienvenidaLanding = lazy(
   () => import('./components/landing/pages/ClaseBienvenidaLanding')
 );
+const BachataVentaDirectaLanding = lazy(
+  () => import('./components/landing/pages/BachataVentaDirectaLanding')
+);
+const SalsaVentaDirectaLanding = lazy(
+  () => import('./components/landing/pages/SalsaVentaDirectaLanding')
+);
+// TEST: Pagina de prueba para el nuevo sistema de ofertas
+const OfferTestLanding = lazy(() => import('./components/landing/pages/OfferTestLanding'));
+const SalsaSimpleLanding = lazy(() => import('./components/landing/pages/SalsaSimpleLanding'));
+// TEST: Pagina de prueba para PaidClassSelector (clases de pago 10€/20€)
+const TestPaidSelector = lazy(() => import('./pages/TestPaidSelector'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
@@ -227,6 +238,9 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/ballet',
   '/afro-contemporaneo',
   '/clase-bienvenida',
+  '/bachata-curso',
+  '/salsa-curso',
+  '/salsa-test',
 ];
 
 // Promotion configuration - easy to update
@@ -260,7 +274,10 @@ const AppContent: React.FC = () => {
       location.pathname.endsWith('/salsa-cubana') ||
       location.pathname.endsWith('/ballet') ||
       location.pathname.endsWith('/afro-contemporaneo') ||
-      location.pathname.endsWith('/clase-bienvenida'));
+      location.pathname.endsWith('/clase-bienvenida') ||
+      location.pathname.endsWith('/bachata-curso') ||
+      location.pathname.endsWith('/salsa-curso') ||
+      location.pathname.endsWith('/salsa-test'));
 
   // Legal pages without header/footer (accessed from landing modal links)
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
@@ -923,6 +940,24 @@ const AppContent: React.FC = () => {
             />
 
             {/* ===== TEST/EXPERIMENTAL ROUTES ===== */}
+            <Route
+              path="/:locale/offer-test"
+              element={
+                <>
+                  <LocaleSync />
+                  <OfferTestLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/test-paid-selector"
+              element={
+                <>
+                  <LocaleSync />
+                  <TestPaidSelector />
+                </>
+              }
+            />
 
             {/* ===== LANDING PAGES (Lazy-loaded with code splitting) ===== */}
             <Route
@@ -994,6 +1029,33 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <BachataLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/bachata-curso"
+              element={
+                <>
+                  <LocaleSync />
+                  <BachataVentaDirectaLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/salsa-curso"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaVentaDirectaLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/salsa-test"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaSimpleLanding />
                 </>
               }
             />

@@ -193,5 +193,13 @@
   "booking_exit_intent_description_personalized": "We have over 25 dance styles and flexible schedules. Maybe another time or style works better for you.",
   "booking_exit_intent_cta": "See all available classes",
   "booking_exit_intent_continue": "Continue with {style}",
-  "booking_exit_intent_hint": "First trial class free"
+  "booking_exit_intent_hint": "First trial class free",
+  "paidSelector_singleClass": "1 class",
+  "paidSelector_singleSubtitle": "30 days to use it",
+  "paidSelector_packClass": "3-Class Pack",
+  "paidSelector_packSubtitle": "7 days to use them",
+  "paidSelector_bestValue": "BEST VALUE",
+  "booking_classes_available": "classes available",
+  "booking_no_classes_found": "No classes available with these filters",
+  "booking_clear_filters": "Clear filters"
 }

@@ -74,6 +74,8 @@ export interface ClassData {
   isNew?: boolean;
   /** ISO date string - badge shows until this date (e.g., "2025-02-15") */
   newUntil?: string;
+  /** URL directa al checkout de Momence para esta sesión */
+  checkoutUrl?: string;
 }
 
 // Form data for booking submission

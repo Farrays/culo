@@ -193,5 +193,13 @@
   "booking_exit_intent_description_personalized": "Tenemos más de 25 estilos de baile y horarios flexibles. Quizás otro horario o estilo encaje mejor contigo.",
   "booking_exit_intent_cta": "Ver todas las clases disponibles",
   "booking_exit_intent_continue": "Continuar con {style}",
-  "booking_exit_intent_hint": "Primera clase de prueba gratis"
+  "booking_exit_intent_hint": "Primera clase de prueba gratis",
+  "paidSelector_singleClass": "1 clase",
+  "paidSelector_singleSubtitle": "30 días para usarla",
+  "paidSelector_packClass": "Pack 3 clases",
+  "paidSelector_packSubtitle": "7 días para usarlas",
+  "paidSelector_bestValue": "MEJOR VALOR",
+  "booking_classes_available": "clases disponibles",
+  "booking_no_classes_found": "No hay clases disponibles con estos filtros",
+  "booking_clear_filters": "Quitar filtros"
 }

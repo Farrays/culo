@@ -193,5 +193,13 @@
   "booking_exit_intent_description_personalized": "Nous proposons plus de 25 styles de danse et des horaires flexibles. Peut-être qu'un autre horaire ou style vous conviendrait mieux.",
   "booking_exit_intent_cta": "Voir tous les cours disponibles",
   "booking_exit_intent_continue": "Continuer avec {style}",
-  "booking_exit_intent_hint": "Premier cours d'essai gratuit"
+  "booking_exit_intent_hint": "Premier cours d'essai gratuit",
+  "paidSelector_singleClass": "1 cours",
+  "paidSelector_singleSubtitle": "30 jours pour l'utiliser",
+  "paidSelector_packClass": "Pack 3 cours",
+  "paidSelector_packSubtitle": "7 jours pour les utiliser",
+  "paidSelector_bestValue": "MEILLEUR RAPPORT",
+  "booking_classes_available": "cours disponibles",
+  "booking_no_classes_found": "Aucun cours disponible avec ces filtres",
+  "booking_clear_filters": "Effacer les filtres"
 }
