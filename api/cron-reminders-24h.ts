@@ -1,24 +1,25 @@
 /**
- * Cron endpoint para enviar recordatorios de clase 48h antes
+ * Cron endpoint para enviar recordatorios de clase 24h antes
  *
- * GET /api/cron-reminders
+ * GET /api/cron-reminders-24h
  *
  * Este endpoint debe ser llamado por un cron job (ej: Vercel Cron)
- * Se recomienda ejecutar cada hora para no perder ninguna ventana de 48h
+ * Se recomienda ejecutar cada hora para no perder ninguna ventana de 24h
  *
  * Flujo:
  * 1. Escanear todas las reservas en Redis (booking:*)
- * 2. Verificar si la clase es en ~48h (ventana de 47-49h)
- * 3. Verificar si ya se envió recordatorio (reminderSent flag)
- * 4. Enviar WhatsApp de recordatorio
- * 5. Marcar como enviado
+ * 2. Verificar si la clase es en ~24h (ventana de 23-25h)
+ * 3. Verificar si ya se envió recordatorio 24h (reminder24hSent flag)
+ * 4. Enviar WhatsApp de recordatorio con plantilla recordatorio_prueba_2
+ * 5. Enviar Email de recordatorio 24h
+ * 6. Marcar como enviado
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 
 // Constantes
-const REMINDER_WINDOW_HOURS = 48; // Recordatorio 48h antes de la clase
+const REMINDER_WINDOW_HOURS = 24; // Recordatorio 24h antes de la clase
 const REMINDER_TOLERANCE_HOURS = 1; // +/- 1 hora de tolerancia
 const WHATSAPP_API_VERSION = 'v23.0';
 
@@ -35,6 +36,7 @@ interface BookingData {
   bookedAt: string;
   category?: string;
   reminderSent?: boolean;
+  reminder24hSent?: boolean;
 }
 
 interface ReminderResult {
@@ -106,7 +108,7 @@ function formatDateTimeForTemplate(date: Date): string {
 }
 
 /**
- * Verifica si una fecha está dentro de la ventana de recordatorio (48h +/- 1h)
+ * Verifica si una fecha está dentro de la ventana de recordatorio (24h +/- 1h)
  */
 function isInReminderWindow(classDate: Date): boolean {
   const now = new Date();
@@ -119,9 +121,9 @@ function isInReminderWindow(classDate: Date): boolean {
 }
 
 /**
- * Envía recordatorio de WhatsApp (inline para evitar problemas de imports en Vercel)
+ * Envía recordatorio de WhatsApp 24h con plantilla recordatorio_prueba_2
  */
-async function sendReminderWhatsApp(
+async function sendReminder24hWhatsApp(
   to: string,
   firstName: string,
   className: string,
@@ -149,7 +151,7 @@ async function sendReminderWhatsApp(
         to: normalizedPhone,
         type: 'template',
         template: {
-          name: 'recordatorio_prueba_0',
+          name: 'recordatorio_prueba_2',
           language: { code: 'es_ES' },
           components: [
             {
@@ -158,6 +160,7 @@ async function sendReminderWhatsApp(
                 { type: 'text', text: firstName },
                 { type: 'text', text: className },
                 { type: 'text', text: classDateTime },
+                { type: 'text', text: 'C/ Entença 100, 08015 Barcelona' },
               ],
             },
           ],
@@ -184,9 +187,9 @@ async function sendReminderWhatsApp(
 }
 
 /**
- * Envía recordatorio por email (inline para evitar problemas de imports en Vercel)
+ * Envía recordatorio 24h por email
  */
-async function sendReminderEmailInline(
+async function sendReminder24hEmailInline(
   to: string,
   firstName: string,
   className: string,
@@ -208,7 +211,7 @@ async function sendReminderEmailInline(
       from: "Farray's Center <onboarding@resend.dev>",
       to,
       replyTo: 'info@farrayscenter.com',
-      subject: `Recordatorio: Tu clase de ${className} es pasado mañana`,
+      subject: `¡Tu clase de ${className} es mañana! 🎁 Promoción especial 24h`,
       html: `
 <!DOCTYPE html>
 <html>
@@ -220,13 +223,33 @@ async function sendReminderEmailInline(
   <div style="text-align: center; margin-bottom: 30px;">
     <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
-  <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
+  <div style="background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px 0;">⏰ ¡Tu clase es mañana!</h2>
+    <p style="margin: 0; opacity: 0.9; font-size: 18px;">Recordatorio de 24 horas</p>
+  </div>
+  <div style="background: #fff3cd; border-left: 4px solid #ff9800; padding: 20px; margin-bottom: 30px; border-radius: 8px;">
+    <h3 style="margin: 0 0 10px 0; color: #ff9800;">🎁 PROMOCIÓN ESPECIAL 24H</h3>
+    <p style="margin: 0 0 10px 0; color: #856404; font-size: 16px;"><strong>👉 MATRÍCULA GRATIS</strong></p>
+    <p style="margin: 0 0 15px 0; color: #856404; font-size: 15px;">
+      <strong style="font-size: 18px;">🔝 ANTES 60€ — AHORA 0€</strong>
+    </p>
+    <p style="margin: 0 0 10px 0; color: #856404; font-size: 14px;">
+      <strong>📜 Condiciones:</strong> promoción válida solo si te apuntas mañana después de tu clase de prueba y realizas el primer pago en efectivo.
+    </p>
+    <p style="margin: 0 0 10px 0; color: #856404; font-size: 14px;">
+      Así tú te ahorras la matrícula… y nosotros las comisiones bancarias. <strong>¡Ganamos todos! 😉</strong>
+    </p>
+    <p style="margin: 0 0 10px 0; color: #856404; font-size: 13px;">
+      Todo de forma transparente: recibirás tu recibo correspondiente al momento del alta. 💥
+    </p>
+    <p style="margin: 0; color: #856404; font-size: 14px;">
+      Aquí puedes ver todas las tarifas: <a href="https://www.farrayscenter.com/es/horarios-precios" style="color: #ff9800; font-weight: bold; text-decoration: none;">www.farrayscenter.com/horarios-precios</a>
+    </p>
   </div>
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0;">Hola <strong>${firstName}</strong>,</p>
-    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
+    <p style="margin: 0 0 15px 0;">¡Te esperamos mañana en tu clase de prueba!</p>
+    <p style="margin: 0; font-weight: bold; color: #333;">¿Nos confirmas tu asistencia? 🙏</p>
   </div>
   <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
     <table style="width: 100%; border-collapse: collapse;">
@@ -311,8 +334,7 @@ export default async function handler(
   try {
     // Escanear todas las reservas
     const bookingKeys = await redis.keys('booking:*');
-    console.warn(`[Reminders] Found ${bookingKeys.length} bookings to check`);
-    console.warn(`[Reminders] Keys:`, bookingKeys.slice(0, 5)); // Log first 5 keys
+    console.warn(`[Reminders24h] Found ${bookingKeys.length} bookings to check`);
 
     for (const key of bookingKeys) {
       try {
@@ -321,8 +343,8 @@ export default async function handler(
 
         const booking: BookingData = JSON.parse(bookingDataStr);
 
-        // Saltar si ya se envió recordatorio
-        if (booking.reminderSent) {
+        // Saltar si ya se envió recordatorio 24h
+        if (booking.reminder24hSent) {
           continue;
         }
 
@@ -334,11 +356,11 @@ export default async function handler(
         // Parsear fecha de la clase
         const classDate = parseClassDate(booking.classDateRaw, booking.classTime);
         if (!classDate) {
-          console.warn(`[Reminders] Could not parse date for ${key}:`, booking.classDateRaw);
+          console.warn(`[Reminders24h] Could not parse date for ${key}:`, booking.classDateRaw);
           continue;
         }
 
-        // Verificar si está en la ventana de 48h
+        // Verificar si está en la ventana de 24h
         if (!isInReminderWindow(classDate)) {
           continue;
         }
@@ -346,12 +368,19 @@ export default async function handler(
         // Formatear fecha/hora para la plantilla
         const classDateTime = formatDateTimeForTemplate(classDate);
 
-        console.warn(`[Reminders] Sending reminder to ${booking.email} for ${booking.className}`);
+        console.warn(
+          `[Reminders24h] Sending reminder to ${booking.email} for ${booking.className}`
+        );
 
         // Enviar WhatsApp y Email en paralelo
         const [whatsappResult, emailResult] = await Promise.all([
-          sendReminderWhatsApp(booking.phone, booking.firstName, booking.className, classDateTime),
-          sendReminderEmailInline(
+          sendReminder24hWhatsApp(
+            booking.phone,
+            booking.firstName,
+            booking.className,
+            classDateTime
+          ),
+          sendReminder24hEmailInline(
             booking.email,
             booking.firstName,
             booking.className,
@@ -363,7 +392,7 @@ export default async function handler(
 
         // Marcar como enviado si al menos uno tuvo éxito
         if (whatsappResult.success || emailResult.success) {
-          booking.reminderSent = true;
+          booking.reminder24hSent = true;
           await redis.set(key, JSON.stringify(booking), 'KEEPTTL');
         }
 
@@ -392,7 +421,7 @@ export default async function handler(
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
-    console.error('[Reminders] Error:', error);
+    console.error('[Reminders24h] Error:', error);
     return res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error',

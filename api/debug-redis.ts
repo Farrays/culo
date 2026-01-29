@@ -22,7 +22,7 @@ function getRedis(): Redis {
 }
 
 export default async function handler(
-  req: VercelRequest,
+  _req: VercelRequest,
   res: VercelResponse
 ): Promise<VercelResponse> {
   const redis = getRedis();

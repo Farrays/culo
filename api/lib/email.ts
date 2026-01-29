@@ -233,8 +233,7 @@ export async function sendBookingConfirmation(
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
-    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
 
   <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
@@ -306,14 +305,21 @@ export async function sendBookingConfirmation(
 
   ${generateWhatToBringSection(data.category)}
 
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>¿Necesitas cambiar o cancelar tu reserva?<br>
-    <a href="${data.managementUrl}" style="color: #e91e63;">Gestionar mi reserva</a></p>
-    <p style="margin-top: 20px;">
-      Farray's International Dance Center<br>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+      Cancelar/Reprogramar
+    </a>
+  </div>
+
+  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
+    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
+      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
       C/ Entença 100, 08015 Barcelona<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a>
+      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
+      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
+      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
     </p>
   </div>
 </body>
@@ -358,8 +364,7 @@ export async function sendCancellationEmail(
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
-    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
 
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
@@ -389,14 +394,19 @@ export async function sendCancellationEmail(
     <p style="margin: 0;">Escríbenos por WhatsApp al <strong>+34 622 247 085</strong><br>y te responderemos lo antes posible.</p>
   </div>
 
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p style="margin: 0 0 10px 0;">¡Mil gracias por pensar en nosotros!</p>
-    <p style="margin: 0 0 20px 0;">Esperamos verte muy pronto para que vengas a vivir<br>la experiencia Farray's a tope. 💃🕺</p>
-    <p style="margin: 0;">
-      <strong>Farray's International Dance Center</strong><br>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p style="color: #666; margin: 10px 0;">¡Mil gracias por pensar en nosotros!</p>
+    <p style="color: #666; margin: 10px 0;">Esperamos verte muy pronto para que vengas a vivir<br>la experiencia Farray's a tope. 💃🕺</p>
+  </div>
+
+  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
+    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
+      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
       C/ Entença 100, 08015 Barcelona<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a>
+      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
+      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
+      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
     </p>
   </div>
 </body>
@@ -441,8 +451,7 @@ export async function sendReminderEmail(
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
-    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
 
   <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
@@ -510,14 +519,21 @@ export async function sendReminderEmail(
     </p>
   </div>
 
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>¿Necesitas cambiar o cancelar tu reserva?<br>
-    <a href="${data.managementUrl}" style="color: #e91e63;">Gestionar mi reserva</a></p>
-    <p style="margin-top: 20px;">
-      Farray's International Dance Center<br>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+      Cancelar/Reprogramar
+    </a>
+  </div>
+
+  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
+    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
+      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
       C/ Entença 100, 08015 Barcelona<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63;">Instagram</a>
+      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
+      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
+      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
     </p>
   </div>
 </body>
