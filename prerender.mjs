@@ -21,6 +21,8 @@ const LANDING_SLUGS = [
   'contemporaneo',
   'femmology',
   'bachata',
+  'bachata-curso', // Direct sale landing (Hormozi style)
+  'salsa-curso',   // Direct sale landing (Hormozi style)
   'hip-hop',
   'afrobeats',
   'afro-jazz',
@@ -76,6 +78,8 @@ const LANDING_DISPLAY_NAMES = {
   'contemporaneo': { es: 'Contemporáneo', ca: 'Contemporani', en: 'Contemporary Dance', fr: 'Danse Contemporaine' },
   'femmology': { es: 'Femmology', ca: 'Femmology', en: 'Femmology', fr: 'Femmology' },
   'bachata': { es: 'Bachata Sensual', ca: 'Bachata Sensual', en: 'Sensual Bachata', fr: 'Bachata Sensuelle' },
+  'bachata-curso': { es: 'Curso de Bachata', ca: 'Curs de Bachata', en: 'Bachata Course', fr: 'Cours de Bachata' },
+  'salsa-curso': { es: 'Curso de Salsa', ca: 'Curs de Salsa', en: 'Salsa Course', fr: 'Cours de Salsa' },
   'hip-hop': { es: 'Hip Hop', ca: 'Hip Hop', en: 'Hip Hop', fr: 'Hip Hop' },
   'afrobeats': { es: 'Afrobeats', ca: 'Afrobeats', en: 'Afrobeats', fr: 'Afrobeats' },
   'afro-jazz': { es: 'Afro Jazz', ca: 'Afro Jazz', en: 'Afro Jazz', fr: 'Afro Jazz' },
