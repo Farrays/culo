@@ -1,5 +1,5 @@
 # Robots.txt - Farray's International Dance Center
-# Updated: 2025-11-08
+# Updated: 2026-01-29 - Enterprise Sitemap Ecosystem
 
 # Allow all crawlers
 User-agent: *

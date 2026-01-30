@@ -74,6 +74,7 @@ const routes = [
   { path: 'yunaisy-farray', priority: '0.7', changefreq: 'monthly' },
   { path: 'profesores-baile-barcelona', priority: '0.7', changefreq: 'monthly' },
   { path: 'instalaciones-escuela-baile-barcelona', priority: '0.7', changefreq: 'monthly' },
+  { path: 'como-llegar-escuela-baile-barcelona', priority: '0.7', changefreq: 'monthly' },
   { path: 'contacto', priority: '0.7', changefreq: 'monthly' },
   { path: 'preguntas-frecuentes', priority: '0.6', changefreq: 'monthly' },
   { path: 'calendario', priority: '0.6', changefreq: 'monthly' },

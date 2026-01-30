@@ -132,6 +132,148 @@ const LANDING_METADATA = generateLandingMetadata();
 const LANDING_CONTENT = generateLandingContent();
 
 // =============================================================================
+// OG IMAGE MAPPING - Mapeo inteligente de imágenes Open Graph por página
+// =============================================================================
+// Cada pageKey se mapea a su imagen OG correspondiente.
+// Las imágenes pueden estar en:
+// - /images/og-{name}.jpg (imágenes OG dedicadas)
+// - /images/{folder}/og.jpg (subcarpetas con og.jpg)
+// - /images/classes/{style}/img/{image}_1920.jpg (hero de clases como fallback)
+// Fallback final: og-home.jpg
+
+const OG_IMAGE_MAP = {
+  // === Páginas principales ===
+  home: 'og-home.jpg',
+  classesHub: 'og-classes.jpg',
+  classes: 'og-classes.jpg',
+  horariosPrecio: 'og-horarios-clases-baile.jpg',
+
+  // === Páginas de información ===
+  about: 'og-home.jpg', // Usa home como fallback
+  yunaisy: 'og-yunaisy-farray.jpg',
+  metodoFarray: 'og-home.jpg',
+  facilities: 'og-home.jpg',
+  contact: 'og-home.jpg',
+  faq: 'og-home.jpg',
+  profesores: 'og-home.jpg',
+  merchandising: 'og-home.jpg',
+  regalaBaile: 'og-home.jpg',
+  reservas: 'og-home.jpg',
+  miReserva: 'og-home.jpg',
+  calendario: 'og-horarios-clases-baile.jpg',
+  serviciosBaile: 'og-classes.jpg',
+
+  // === Categorías de clases ===
+  danza: 'categories/hero/clases-de-danza-og.jpg',
+  salsaBachata: 'og-salsaBachata.jpg',
+  danzasUrbanas: 'og-dancehall.jpg',
+
+  // === Estilos de baile - Salsa/Bachata ===
+  bachataSensual: 'classes/Bachata/img/clases-bachata-sensual-barcelona_1920.jpg',
+  salsaCubana: 'classes/salsa-cubana/img/salsa-cubana_1920.jpg',
+  salsaLadyStyle: 'classes/Salsa-Lady-Style/img/clases-salsa-lady-style-barcelona_1920.jpg',
+  folkloreCubano: 'classes/folklore-cubano/img/folklore-calle-habana_1920.jpg',
+  timba: 'classes/timba/img/timba-cubana_1920.jpg',
+  bachataLadyStyle: 'classes/bachata-lady-style/img/clases-bachata-lady-style-barcelona_1920.jpg',
+  kizomba: 'og-salsaBachata.jpg', // Usa salsa/bachata como fallback
+
+  // === Estilos de baile - Urbano ===
+  dancehall: 'og-dancehall.jpg',
+  twerk: 'classes/twerk/img/clases-twerk-barcelona_1920.jpg',
+  afrobeat: 'og-afrobeat.jpg',
+  kpop: 'og-dancehall.jpg', // Usa dancehall como fallback urbano
+  commercial: 'og-dancehall.jpg',
+  hipHopReggaeton: 'classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_1920.jpg',
+  sexyReggaeton: 'classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1920.jpg',
+  reggaetonCubano: 'classes/reggaeton-cubano/img/mgs_8884_1920.jpg',
+  hipHop: 'classes/hip-hop/img/clases-hip-hop-barcelona_1920.jpg',
+
+  // === Estilos de baile - Sexy/Femenino ===
+  heelsBarcelona: 'classes/Heels/img/clases-heels-barcelona_1920.jpg',
+  femmology: 'og-femmology.jpg',
+  sexyStyle: 'og-sexy-style.jpg',
+
+  // === Estilos de baile - Danza/Ballet ===
+  modernJazz: 'og-modern-jazz.jpg',
+  ballet: 'og-ballet.jpg',
+  contemporaneo: 'classes/contemporaneo/img/mgs_5189_1920.jpg',
+  afroContemporaneo: 'classes/afro-contemporaneo/img/mgs_5260_1920.jpg',
+  afroJazz: 'classes/afro-jazz/img/afro-jazz_1920.jpg',
+
+  // === Estilos de baile - Fitness/Cuerpo ===
+  cuerpoFit: 'classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines_1920.jpg',
+  cuerpoFitPage: 'classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines_1920.jpg',
+  bumBum: 'og-ejercicios-gluteos-barcelona.jpg',
+  stretching: 'og-stretching.jpg',
+  entrenamientoBailarines: 'og-entrenamiento-bailarines.jpg',
+  baileManananas: 'og-baileManananas.jpg',
+
+  // === Servicios ===
+  clasesParticulares: 'og-clasesParticulares.jpg',
+  teamBuilding: 'og-classes.jpg',
+  alquilerSalas: 'alquiler-salas/og.jpg',
+  estudioGrabacion: 'estudio-grabacion/og.jpg',
+
+  // === Blog - Hub y categorías ===
+  blog: 'og-home.jpg',
+  blogLifestyle: 'og-home.jpg',
+  blogHistoria: 'og-home.jpg',
+  blogTutoriales: 'og-home.jpg',
+  blogTips: 'og-home.jpg',
+  blogFitness: 'og-home.jpg',
+
+  // === Blog - Artículos ===
+  blogBeneficiosSalsa: 'blog/beneficios-salsa/og.jpg',
+  blogClasesSalsaBarcelona: 'blog/hablemos-salsa/og.jpg',
+  blogPerderMiedoBailar: 'blog/como-perder-miedo/og.jpg',
+  blogHistoriaSalsa: 'blog/historia-salsa/og.jpg',
+  blogHistoriaBachata: 'blog/historia-bachata/og.jpg',
+  blogSalsaRitmo: 'blog/salsa-ritmo/og.jpg',
+  blogSalsaVsBachata: 'blog/salsa-vs-bachata/og.jpg',
+  blogClasesPrincipiantes: 'blog/clases-principiantes/og.jpg',
+  blogAcademiaDanza: 'blog/academia-danza-barcelona/og.jpg',
+  blogBalletAdultos: 'blog/ballet-adultos/og.jpg',
+  blogDanzaContemporaneaVsJazzBallet: 'blog/danza-contemporanea-vs-jazz-ballet/og.jpg',
+  blogBaileSaludMental: 'blog/beneficios-salsa/og.jpg', // Reutiliza beneficios
+
+  // === Páginas legales ===
+  termsConditions: 'og-home.jpg',
+  legalNotice: 'og-home.jpg',
+  privacyPolicy: 'og-home.jpg',
+  cookiePolicy: 'og-home.jpg',
+
+  // === Landing pages (Facebook Ads) - usan imagen del estilo ===
+  dancehallLanding: 'og-dancehall.jpg',
+  twerkLanding: 'classes/twerk/img/clases-twerk-barcelona_1920.jpg',
+  sexyReggaetonLanding: 'classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1920.jpg',
+  sexyStyleLanding: 'og-sexy-style.jpg',
+  hipHopReggaetonLanding: 'classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_1920.jpg',
+  contemporaneoLanding: 'classes/contemporaneo/img/mgs_5189_1920.jpg',
+  femmologyLanding: 'og-femmologyLanding.jpg',
+  bachataLanding: 'classes/Bachata/img/clases-bachata-sensual-barcelona_1920.jpg',
+  hipHopLanding: 'classes/hip-hop/img/clases-hip-hop-barcelona_1920.jpg',
+  afrobeatsLanding: 'og-afrobeat.jpg',
+  afroJazzLanding: 'classes/afro-jazz/img/afro-jazz_1920.jpg',
+  salsaCubanaLanding: 'classes/salsa-cubana/img/salsa-cubana_1920.jpg',
+  balletLanding: 'og-ballet.jpg',
+  afroContemporaneoLanding: 'classes/afro-contemporaneo/img/mgs_5260_1920.jpg',
+  jornadaPuertasAbiertasLanding: 'og-home.jpg',
+
+  // === Promociones ===
+  promoClaseGratis: 'og-home.jpg',
+  promoSexyReggaeton: 'classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1920.jpg',
+
+  // === 404 ===
+  notFound: 'og-home.jpg',
+};
+
+// Función helper para obtener la URL completa de la imagen OG
+const getOgImageUrl = (pageKey) => {
+  const imagePath = OG_IMAGE_MAP[pageKey] || 'og-home.jpg';
+  return `https://www.farrayscenter.com/images/${imagePath}`;
+};
+
+// =============================================================================
 // AUTO-GENERATE INITIAL CONTENT FROM METADATA (SEO para LLMs)
 // =============================================================================
 // Genera contenido HTML mínimo desde la metadata existente para que los LLMs
@@ -243,7 +385,6 @@ const routes = [
   { path: 'es/clases/bachata-lady-style-barcelona', lang: 'es', page: 'bachataLadyStyle' },
   { path: 'es/clases/ejercicios-gluteos-barcelona', lang: 'es', page: 'bumBum' },
   { path: 'es/clases/acondicionamiento-fisico-bailarines', lang: 'es', page: 'cuerpoFitPage' },
-  { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'es/profesores-baile-barcelona', lang: 'es', page: 'profesores' },
   { path: 'es/preguntas-frecuentes', lang: 'es', page: 'faq' },
@@ -256,8 +397,8 @@ const routes = [
   { path: 'es/politica-cookies', lang: 'es', page: 'cookiePolicy' },
   // Additional pages
   { path: 'es/servicios-baile-barcelona', lang: 'es', page: 'serviciosBaile' },
+  { path: 'es/como-llegar-escuela-baile-barcelona', lang: 'es', page: 'ubicacion' },
   { path: 'es/calendario', lang: 'es', page: 'calendario' },
-  { path: 'es/clases/salsa-lady-style-v2', lang: 'es', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'es/instalaciones-escuela-baile-barcelona', lang: 'es', page: 'facilities' },
   { path: 'es/horarios-clases-baile-barcelona', lang: 'es', page: 'horariosPrecio' },
@@ -314,7 +455,6 @@ const routes = [
   { path: 'ca/clases/bachata-lady-style-barcelona', lang: 'ca', page: 'bachataLadyStyle' },
   { path: 'ca/clases/ejercicios-gluteos-barcelona', lang: 'ca', page: 'bumBum' },
   { path: 'ca/clases/acondicionamiento-fisico-bailarines', lang: 'ca', page: 'cuerpoFitPage' },
-  { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'ca/profesores-baile-barcelona', lang: 'ca', page: 'profesores' },
   { path: 'ca/preguntas-frecuentes', lang: 'ca', page: 'faq' },
@@ -327,8 +467,8 @@ const routes = [
   { path: 'ca/politica-cookies', lang: 'ca', page: 'cookiePolicy' },
   // Additional pages
   { path: 'ca/servicios-baile-barcelona', lang: 'ca', page: 'serviciosBaile' },
+  { path: 'ca/como-llegar-escuela-baile-barcelona', lang: 'ca', page: 'ubicacion' },
   { path: 'ca/calendario', lang: 'ca', page: 'calendario' },
-  { path: 'ca/clases/salsa-lady-style-v2', lang: 'ca', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'ca/instalaciones-escuela-baile-barcelona', lang: 'ca', page: 'facilities' },
   { path: 'ca/horarios-clases-baile-barcelona', lang: 'ca', page: 'horariosPrecio' },
@@ -385,7 +525,6 @@ const routes = [
   { path: 'en/clases/bachata-lady-style-barcelona', lang: 'en', page: 'bachataLadyStyle' },
   { path: 'en/clases/ejercicios-gluteos-barcelona', lang: 'en', page: 'bumBum' },
   { path: 'en/clases/acondicionamiento-fisico-bailarines', lang: 'en', page: 'cuerpoFitPage' },
-  { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'en/profesores-baile-barcelona', lang: 'en', page: 'profesores' },
   { path: 'en/preguntas-frecuentes', lang: 'en', page: 'faq' },
@@ -398,8 +537,8 @@ const routes = [
   { path: 'en/politica-cookies', lang: 'en', page: 'cookiePolicy' },
   // Additional pages
   { path: 'en/servicios-baile-barcelona', lang: 'en', page: 'serviciosBaile' },
+  { path: 'en/como-llegar-escuela-baile-barcelona', lang: 'en', page: 'ubicacion' },
   { path: 'en/calendario', lang: 'en', page: 'calendario' },
-  { path: 'en/clases/salsa-lady-style-v2', lang: 'en', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'en/instalaciones-escuela-baile-barcelona', lang: 'en', page: 'facilities' },
   { path: 'en/horarios-clases-baile-barcelona', lang: 'en', page: 'horariosPrecio' },
@@ -456,7 +595,6 @@ const routes = [
   { path: 'fr/clases/bachata-lady-style-barcelona', lang: 'fr', page: 'bachataLadyStyle' },
   { path: 'fr/clases/ejercicios-gluteos-barcelona', lang: 'fr', page: 'bumBum' },
   { path: 'fr/clases/acondicionamiento-fisico-bailarines', lang: 'fr', page: 'cuerpoFitPage' },
-  { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'fr/profesores-baile-barcelona', lang: 'fr', page: 'profesores' },
   { path: 'fr/preguntas-frecuentes', lang: 'fr', page: 'faq' },
@@ -469,8 +607,8 @@ const routes = [
   { path: 'fr/politica-cookies', lang: 'fr', page: 'cookiePolicy' },
   // Additional pages
   { path: 'fr/servicios-baile-barcelona', lang: 'fr', page: 'serviciosBaile' },
+  { path: 'fr/como-llegar-escuela-baile-barcelona', lang: 'fr', page: 'ubicacion' },
   { path: 'fr/calendario', lang: 'fr', page: 'calendario' },
-  { path: 'fr/clases/salsa-lady-style-v2', lang: 'fr', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'fr/instalaciones-escuela-baile-barcelona', lang: 'fr', page: 'facilities' },
   { path: 'fr/horarios-clases-baile-barcelona', lang: 'fr', page: 'horariosPrecio' },
@@ -492,6 +630,9 @@ const routes = [
   { path: 'es/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
+  { path: 'es/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'es', page: 'blogAcademiaDanza' },
+  { path: 'es/blog/tips/ballet-para-adultos-barcelona', lang: 'es', page: 'blogBalletAdultos' },
+  { path: 'es/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'es', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
   { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
@@ -508,6 +649,9 @@ const routes = [
   { path: 'ca/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
+  { path: 'ca/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'ca', page: 'blogAcademiaDanza' },
+  { path: 'ca/blog/tips/ballet-para-adultos-barcelona', lang: 'ca', page: 'blogBalletAdultos' },
+  { path: 'ca/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'ca', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
   { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
@@ -524,6 +668,9 @@ const routes = [
   { path: 'en/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
+  { path: 'en/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'en', page: 'blogAcademiaDanza' },
+  { path: 'en/blog/tips/ballet-para-adultos-barcelona', lang: 'en', page: 'blogBalletAdultos' },
+  { path: 'en/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'en', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
   { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
@@ -540,6 +687,9 @@ const routes = [
   { path: 'fr/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
+  { path: 'fr/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'fr', page: 'blogAcademiaDanza' },
+  { path: 'fr/blog/tips/ballet-para-adultos-barcelona', lang: 'fr', page: 'blogBalletAdultos' },
+  { path: 'fr/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'fr', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
   { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 
@@ -768,6 +918,18 @@ const metadata = {
       title: 'Clases de baile para principiantes en Barcelona | Farray\'s Center',
       description: 'Guía completa para empezar a bailar desde cero en Barcelona. Desde 10€/clase, bonos desde 60€. +40 estilos, +15.000 alumnos. ¡Reserva!',
     },
+    blogAcademiaDanza: {
+      title: 'Academia de Danza en Barcelona: Cómo Elegir | Farray\'s Center',
+      description: 'Te hablo como directora de una academia de danza en Barcelona: qué mirar, qué evitar y cómo elegir un lugar donde de verdad aprendas a bailar.',
+    },
+    blogBalletAdultos: {
+      title: 'Ballet para Adultos Barcelona: Guía Honesta para Empezar | Farray\'s',
+      description: 'Ballet para adultos en Barcelona con método seguro y progresivo. Descubre si puedes empezar de cero, beneficios reales y cómo elegir escuela en el Eixample.',
+    },
+    blogDanzaContemporaneaVsJazzBallet: {
+      title: 'Danza Contemporánea vs Modern Jazz vs Ballet: Guía Comparativa 2025 | Farray\'s',
+      description: 'Descubre las diferencias entre danza contemporánea, modern jazz y ballet clásico. Comparativa técnica, beneficios y cómo elegir el estilo que mejor se adapta a ti.',
+    },
     blogPerderMiedoBailar: {
       title: 'Cómo Perder el Miedo a Bailar: Guía Práctica 2025 | Farray\'s Center',
       description: 'Descubre técnicas probadas para superar la vergüenza y el miedo a bailar. El 80% de adultos sienten ansiedad al bailar. Aprende cómo superarlo paso a paso.',
@@ -866,13 +1028,13 @@ const metadata = {
       title: 'Servicios de Baile en Barcelona | Farray\'s Center',
       description: 'Servicios profesionales de baile en Barcelona: clases particulares, coreografías para eventos, shows y espectáculos. Contáctanos.',
     },
+    ubicacion: {
+      title: 'Cómo Llegar a Farray\'s Center | Escuela de Baile Barcelona',
+      description: 'Cómo llegar a Farray\'s Center en Barcelona. Metro Rocafort (L1) a 4 min, Sants Estació a 8 min. Carrer d\'Entença 100. Perfectamente conectado.',
+    },
     calendario: {
       title: 'Calendario de Eventos | Farray\'s International Dance Center',
       description: 'Calendario de eventos, workshops y actividades especiales en Farray\'s Center Barcelona. Mantente al día de todas las novedades.',
-    },
-    salsaLadyStyleV2: {
-      title: 'Clases de Salsa Lady Style en Barcelona | Farray\'s Center',
-      description: 'Clases de Salsa Lady Style en Barcelona. Desarrolla tu feminidad, elegancia y estilo personal bailando salsa con el Método Farray®.',
     },
     notFound: {
       title: 'Página No Encontrada | 404 | Farray\'s Center',
@@ -1089,6 +1251,18 @@ const metadata = {
       title: 'Classes de ball per a principiants a Barcelona | Farray\'s Center',
       description: 'Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.',
     },
+    blogAcademiaDanza: {
+      title: 'Acadèmia de Dansa a Barcelona: Com Triar | Farray\'s Center',
+      description: 'Et parlo com a directora d\'una acadèmia de dansa a Barcelona: què mirar, què evitar i com triar un lloc on de veritat aprenguis a ballar.',
+    },
+    blogBalletAdultos: {
+      title: 'Ballet per a Adults Barcelona: Guia Honesta per Començar | Farray\'s',
+      description: 'Ballet per a adults a Barcelona amb mètode segur i progressiu. Descobreix si pots començar de zero, beneficis reals i com triar escola a l\'Eixample.',
+    },
+    blogDanzaContemporaneaVsJazzBallet: {
+      title: 'Dansa Contemporània vs Modern Jazz vs Ballet: Guia Comparativa 2025 | Farray\'s',
+      description: 'Descobreix les diferències entre dansa contemporània, modern jazz i ballet clàssic. Comparativa tècnica, beneficis i com triar l\'estil que millor s\'adapta a tu.',
+    },
     blogPerderMiedoBailar: {
       title: 'Com Perdre la Por a Ballar: Guia Pràctica 2025 | Farray\'s Center',
       description: 'Descobreix tècniques provades per superar la vergonya i la por a ballar. El 80% dels adults senten ansietat en ballar. Aprèn com superar-ho pas a pas.',
@@ -1187,13 +1361,13 @@ const metadata = {
       title: 'Serveis de Ball a Barcelona | Farray\'s Center',
       description: 'Serveis professionals de ball a Barcelona: classes particulars, coreografies per a esdeveniments, shows i espectacles.',
     },
+    ubicacion: {
+      title: 'Com Arribar a Farray\'s Center | Escola de Ball Barcelona',
+      description: 'Com arribar a Farray\'s Center a Barcelona. Metro Rocafort (L1) a 4 min, Sants Estació a 8 min. Carrer d\'Entença 100. Perfectament connectat.',
+    },
     calendario: {
       title: 'Calendari d\'Esdeveniments | Farray\'s International Dance Center',
       description: 'Calendari d\'esdeveniments, workshops i activitats especials a Farray\'s Center Barcelona.',
-    },
-    salsaLadyStyleV2: {
-      title: 'Classes de Salsa Lady Style a Barcelona | Farray\'s Center',
-      description: 'Classes de Salsa Lady Style a Barcelona. Desenvolupa la teva feminitat, elegància i estil personal ballant salsa amb el Mètode Farray®.',
     },
     notFound: {
       title: 'Pàgina No Trobada | 404 | Farray\'s Center',
@@ -1410,6 +1584,18 @@ const metadata = {
       title: 'Beginner Dance Classes in Barcelona | Farray\'s Center',
       description: 'Complete guide to start dancing from scratch in Barcelona. From €10/class, passes from €60. +40 styles, +15,000 students. Book now!',
     },
+    blogAcademiaDanza: {
+      title: 'Dance Academy in Barcelona: How to Choose | Farray\'s Center',
+      description: 'As a dance academy director in Barcelona, I share what to look for, what to avoid, and how to choose a place where you truly learn to dance.',
+    },
+    blogBalletAdultos: {
+      title: 'Adult Ballet Barcelona: Honest Guide to Getting Started | Farray\'s',
+      description: 'Adult ballet in Barcelona with safe and progressive method. Discover if you can start from scratch, real benefits, and how to choose a school in Eixample.',
+    },
+    blogDanzaContemporaneaVsJazzBallet: {
+      title: 'Contemporary Dance vs Modern Jazz vs Ballet: Complete Comparison Guide 2025 | Farray\'s',
+      description: 'Discover the differences between contemporary dance, modern jazz and classical ballet. Technical comparison, benefits and how to choose the style that suits you best.',
+    },
     blogPerderMiedoBailar: {
       title: 'How to Overcome Fear of Dancing: Practical Guide 2025 | Farray\'s Center',
       description: 'Discover proven techniques to overcome shyness and fear of dancing. 80% of adults feel anxiety when dancing. Learn how to overcome it step by step.',
@@ -1508,13 +1694,13 @@ const metadata = {
       title: 'Dance Services in Barcelona | Farray\'s Center',
       description: 'Professional dance services in Barcelona: private lessons, event choreography, shows and performances. Contact us.',
     },
+    ubicacion: {
+      title: 'How to Get to Farray\'s Center | Dance School Barcelona',
+      description: 'How to get to Farray\'s Center in Barcelona. Metro Rocafort (L1) 4 min walk, Sants Station 8 min. Carrer d\'Entença 100. Perfectly connected.',
+    },
     calendario: {
       title: 'Events Calendar | Farray\'s International Dance Center',
       description: 'Calendar of events, workshops and special activities at Farray\'s Center Barcelona. Stay up to date with all the news.',
-    },
-    salsaLadyStyleV2: {
-      title: 'Salsa Lady Style Classes in Barcelona | Farray\'s Center',
-      description: 'Salsa Lady Style classes in Barcelona. Develop your femininity, elegance and personal style dancing salsa with the Farray Method®.',
     },
     notFound: {
       title: 'Page Not Found | 404 | Farray\'s Center',
@@ -1731,6 +1917,18 @@ const metadata = {
       title: 'Cours de danse pour débutants à Barcelone | Farray\'s Center',
       description: 'Guide complet pour commencer à danser à Barcelone. Dès 10€/cours, forfaits dès 60€. +40 styles, +15 000 élèves. Réservez maintenant!',
     },
+    blogAcademiaDanza: {
+      title: 'Académie de Danse à Barcelone : Comment Choisir | Farray\'s Center',
+      description: 'En tant que directrice d\'une académie de danse à Barcelone, je vous explique quoi regarder, quoi éviter et comment choisir un lieu où vous apprenez vraiment à danser.',
+    },
+    blogBalletAdultos: {
+      title: 'Ballet pour Adultes Barcelone : Guide Honnête pour Commencer | Farray\'s',
+      description: 'Ballet pour adultes à Barcelone avec méthode sûre et progressive. Découvrez si vous pouvez commencer de zéro, les vrais bénéfices et comment choisir une école.',
+    },
+    blogDanzaContemporaneaVsJazzBallet: {
+      title: 'Danse Contemporaine vs Modern Jazz vs Ballet : Guide Comparatif 2025 | Farray\'s',
+      description: 'Découvrez les différences entre danse contemporaine, modern jazz et ballet classique. Comparaison technique, avantages et comment choisir le style qui vous convient le mieux.',
+    },
     blogPerderMiedoBailar: {
       title: 'Comment Vaincre la Peur de Danser : Guide Pratique 2025 | Farray\'s Center',
       description: 'Découvrez des techniques éprouvées pour surmonter la timidité et la peur de danser. 80% des adultes ressentent de l\'anxiété en dansant. Apprenez à la surmonter pas à pas.',
@@ -1829,13 +2027,13 @@ const metadata = {
       title: 'Services de Danse à Barcelone | Farray\'s Center',
       description: 'Services danse Barcelone : cours particuliers personnalisés, chorégraphies événements, shows et performances. Académie CID-UNESCO. Contactez-nous!',
     },
+    ubicacion: {
+      title: 'Comment Venir à Farray\'s Center | École de Danse Barcelone',
+      description: 'Comment venir à Farray\'s Center à Barcelone. Métro Rocafort (L1) à 4 min, Gare de Sants à 8 min. Carrer d\'Entença 100. Parfaitement connecté.',
+    },
     calendario: {
       title: 'Calendrier des Événements | Farray\'s International Dance Center',
       description: 'Calendrier des événements, workshops et activités spéciales à Farray\'s Center Barcelone.',
-    },
-    salsaLadyStyleV2: {
-      title: 'Cours de Salsa Lady Style à Barcelone | Farray\'s Center',
-      description: 'Cours de Salsa Lady Style à Barcelone. Développez votre féminité, élégance et style personnel en dansant la salsa avec la Méthode Farray®.',
     },
     notFound: {
       title: 'Page Non Trouvée | 404 | Farray\'s Center',
@@ -1910,6 +2108,7 @@ const manualOverrides = {
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacidad</h1><p>Información sobre el tratamiento de datos personales según el RGPD.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Cookies</h1><p>Información sobre las cookies utilizadas en nuestro sitio web.</p></main>`,
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Servicios de Baile</h1><p>Clases particulares, coreografías para eventos, shows y espectáculos profesionales.</p></main>`,
+    ubicacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cómo Llegar a Farray's Center</h1><p>Estamos en Carrer d'Entença 100, Barcelona. Metro Rocafort (L1) a 4 min, Sants Estació a 8 min. Perfectamente conectado con toda la ciudad.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendario de Eventos</h1><p>Workshops, masterclasses y actividades especiales en Farray's Center Barcelona.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
   },
@@ -1943,6 +2142,7 @@ const manualOverrides = {
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacitat</h1><p>Informació sobre el tractament de dades personals segons el RGPD.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Cookies</h1><p>Informació sobre les cookies utilitzades al nostre lloc web.</p></main>`,
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Serveis de Ball</h1><p>Classes particulars, coreografies per a esdeveniments, shows i espectacles professionals.</p></main>`,
+    ubicacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Com Arribar a Farray's Center</h1><p>Som al Carrer d'Entença 100, Barcelona. Metro Rocafort (L1) a 4 min, Sants Estació a 8 min. Perfectament connectat amb tota la ciutat.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendari d'Esdeveniments</h1><p>Workshops, masterclasses i activitats especials a Farray's Center Barcelona.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
   },
@@ -1976,6 +2176,7 @@ const manualOverrides = {
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Privacy Policy</h1><p>Information about personal data processing in accordance with GDPR.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cookie Policy</h1><p>Information about cookies used on our website.</p></main>`,
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Services</h1><p>Private lessons, event choreography, professional shows and performances.</p></main>`,
+    ubicacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">How to Get to Farray's Center</h1><p>We're at Carrer d'Entença 100, Barcelona. Metro Rocafort (L1) 4 min walk, Sants Station 8 min. Perfectly connected with the entire city.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Events Calendar</h1><p>Workshops, masterclasses and special activities at Farray's Center Barcelona.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
   },
@@ -2009,6 +2210,7 @@ const manualOverrides = {
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Confidentialité</h1><p>Informations sur le traitement des données personnelles conformément au RGPD.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Cookies</h1><p>Informations sur les cookies utilisés sur notre site web.</p></main>`,
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Services de Danse</h1><p>Cours particuliers, chorégraphies pour événements, shows et spectacles professionnels.</p></main>`,
+    ubicacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Comment Venir à Farray's Center</h1><p>Nous sommes au Carrer d'Entença 100, Barcelone. Métro Rocafort (L1) à 4 min, Gare de Sants à 8 min. Parfaitement connecté avec toute la ville.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendrier des Événements</h1><p>Workshops, masterclasses et activités spéciales à Farray's Center Barcelone.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
   },
@@ -2161,6 +2363,12 @@ routes.forEach(route => {
     pagePath = 'blog/tips';
   } else if (page === 'blogClasesPrincipiantes') {
     pagePath = 'blog/tips/clases-baile-principiantes-barcelona-farrays';
+  } else if (page === 'blogAcademiaDanza') {
+    pagePath = 'blog/tips/academia-de-danza-barcelona-guia-completa';
+  } else if (page === 'blogBalletAdultos') {
+    pagePath = 'blog/tips/ballet-para-adultos-barcelona';
+  } else if (page === 'blogDanzaContemporaneaVsJazzBallet') {
+    pagePath = 'blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet';
   } else if (page === 'blogPerderMiedoBailar') {
     pagePath = 'blog/lifestyle/como-perder-miedo-bailar';
   } else if (page === 'blogFitness') {
@@ -2233,7 +2441,7 @@ routes.forEach(route => {
     <meta property="og:url" content="${currentUrl}" />
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
-    <meta property="og:image" content="https://www.farrayscenter.com/images/og-${page}.jpg" />
+    <meta property="og:image" content="${getOgImageUrl(page)}" />
     <meta property="og:locale" content="${lang}_ES" />
 
     <!-- Twitter Card -->
@@ -2241,7 +2449,7 @@ routes.forEach(route => {
     <meta name="twitter:url" content="${currentUrl}" />
     <meta name="twitter:title" content="${meta.title}" />
     <meta name="twitter:description" content="${meta.description}" />
-    <meta name="twitter:image" content="https://www.farrayscenter.com/images/og-${page}.jpg" />
+    <meta name="twitter:image" content="${getOgImageUrl(page)}" />
 ${preloadHintsHtml}
     ${localeScript}
   </head>`);

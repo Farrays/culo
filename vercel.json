@@ -615,6 +615,10 @@
       "destination": "/index.html"
     },
     { "source": "/:locale(es|en|ca|fr)/servicios-baile-barcelona", "destination": "/index.html" },
+    {
+      "source": "/:locale(es|en|ca|fr)/como-llegar-escuela-baile-barcelona",
+      "destination": "/index.html"
+    },
     { "source": "/:locale(es|en|ca|fr)/estudio-grabacion-barcelona", "destination": "/index.html" },
     {
       "source": "/:locale(es|en|ca|fr)/instalaciones-escuela-baile-barcelona",

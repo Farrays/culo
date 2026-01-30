@@ -8,7 +8,13 @@
 export * from './types';
 
 // Author
-export { AUTHOR_YUNAISY, AUTHOR_MAR_GUERRERO, DEFAULT_AUTHOR } from './author';
+export {
+  AUTHOR_YUNAISY,
+  AUTHOR_MAR_GUERRERO,
+  AUTHOR_DANIEL_SENE,
+  AUTHOR_ALEJANDRO_MINOSO,
+  DEFAULT_AUTHOR,
+} from './author';
 
 // Categories
 export {
@@ -29,6 +35,9 @@ export { CLASES_PRINCIPIANTES_CONFIG } from './articles/clases-baile-principiant
 export { SALSA_VS_BACHATA_CONFIG } from './articles/salsa-vs-bachata';
 export { COMO_PERDER_MIEDO_BAILAR_CONFIG } from './articles/como-perder-miedo-bailar';
 export { BAILE_SALUD_MENTAL_CONFIG } from './articles/baile-salud-mental';
+export { ACADEMIA_DANZA_BARCELONA_CONFIG } from './articles/academia-de-danza-barcelona';
+export { BALLET_ADULTOS_BARCELONA_CONFIG } from './articles/ballet-para-adultos-barcelona';
+export { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from './articles/danza-contemporanea-vs-modern-jazz-vs-ballet';
 
 // Template Enterprise (Reference - Do not use in production routes)
 export { TEMPLATE_ENTERPRISE_CONFIG } from './articles/_TEMPLATE_ENTERPRISE';

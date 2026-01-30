@@ -26,6 +26,10 @@ import { SALSA_VS_BACHATA_CONFIG } from '../../constants/blog/articles/salsa-vs-
 import { CLASES_SALSA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-de-salsa-barcelona';
 import { CLASES_PRINCIPIANTES_CONFIG } from '../../constants/blog/articles/clases-baile-principiantes-barcelona';
 import { COMO_PERDER_MIEDO_BAILAR_CONFIG } from '../../constants/blog/articles/como-perder-miedo-bailar';
+import { BAILE_SALUD_MENTAL_CONFIG } from '../../constants/blog/articles/baile-salud-mental';
+import { ACADEMIA_DANZA_BARCELONA_CONFIG } from '../../constants/blog/articles/academia-de-danza-barcelona';
+import { BALLET_ADULTOS_BARCELONA_CONFIG } from '../../constants/blog/articles/ballet-para-adultos-barcelona';
+import { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from '../../constants/blog/articles/danza-contemporanea-vs-modern-jazz-vs-ballet';
 
 // Generate article card data from configs
 const ALL_ARTICLES: ArticleCardData[] = [
@@ -37,6 +41,10 @@ const ALL_ARTICLES: ArticleCardData[] = [
   getArticleCardData(CLASES_SALSA_BARCELONA_CONFIG),
   getArticleCardData(CLASES_PRINCIPIANTES_CONFIG),
   getArticleCardData(COMO_PERDER_MIEDO_BAILAR_CONFIG),
+  getArticleCardData(BAILE_SALUD_MENTAL_CONFIG),
+  getArticleCardData(ACADEMIA_DANZA_BARCELONA_CONFIG),
+  getArticleCardData(BALLET_ADULTOS_BARCELONA_CONFIG),
+  getArticleCardData(DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG),
 ];
 
 const BlogListPage: React.FC = () => {

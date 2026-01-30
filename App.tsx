@@ -44,11 +44,11 @@ const MetodoFarrayPage = lazy(() => import('./components/MetodoFarrayPage'));
 const RegalaBailePage = lazy(() => import('./components/RegalaBailePage'));
 const AlquilerSalasPage = lazy(() => import('./components/AlquilerSalasPage'));
 const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'));
+const UbicacionPage = lazy(() => import('./components/UbicacionPage'));
 const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPage'));
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
-const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
 const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
@@ -578,17 +578,6 @@ const AppContent: React.FC = () => {
               }
             />
 
-            {/* V2 Alternative - for A/B testing comparison */}
-            <Route
-              path="/:locale/clases/salsa-lady-style-v2"
-              element={
-                <>
-                  <LocaleSync />
-                  <SalsaLadyStylePageV2 />
-                </>
-              }
-            />
-
             <Route
               path="/:locale/clases/bachata-lady-style-barcelona"
               element={
@@ -885,6 +874,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ServiciosBailePage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/como-llegar-escuela-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <UbicacionPage />
                 </>
               }
             />

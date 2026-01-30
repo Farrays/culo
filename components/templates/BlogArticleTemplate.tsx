@@ -25,12 +25,19 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES } from '../../types';
 import type { BlogArticleConfig, AuthorConfig } from '../../constants/blog/types';
-import { AUTHOR_YUNAISY, AUTHOR_MAR_GUERRERO } from '../../constants/blog/author';
+import {
+  AUTHOR_YUNAISY,
+  AUTHOR_MAR_GUERRERO,
+  AUTHOR_DANIEL_SENE,
+  AUTHOR_ALEJANDRO_MINOSO,
+} from '../../constants/blog/author';
 
 // Author registry - add new authors here
 const AUTHORS: Record<string, AuthorConfig> = {
   'yunaisy-farray': AUTHOR_YUNAISY,
   'mar-guerrero': AUTHOR_MAR_GUERRERO,
+  'daniel-sene': AUTHOR_DANIEL_SENE,
+  'alejandro-minoso': AUTHOR_ALEJANDRO_MINOSO,
 };
 
 // Blog Components
