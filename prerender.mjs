@@ -231,6 +231,7 @@ const routes = [
   { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
   { path: 'es/reservas', lang: 'es', page: 'reservas' },
+  { path: 'es/hazte-socio', lang: 'es', page: 'hazteSocio' },
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
   { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
@@ -301,6 +302,7 @@ const routes = [
   { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
   { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
+  { path: 'ca/hazte-socio', lang: 'ca', page: 'hazteSocio' },
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
   { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
@@ -371,6 +373,7 @@ const routes = [
   { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
   { path: 'en/reservas', lang: 'en', page: 'reservas' },
+  { path: 'en/hazte-socio', lang: 'en', page: 'hazteSocio' },
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
   { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
@@ -441,6 +444,7 @@ const routes = [
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
   { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
+  { path: 'fr/hazte-socio', lang: 'fr', page: 'hazteSocio' },
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
   { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
@@ -709,6 +713,11 @@ const metadata = {
     reservas: {
       title: 'Reserva tu Clase de Bienvenida | Farray\'s Center Barcelona',
       description: 'Reserva tu clase de bienvenida en la escuela de baile de Barcelona. Más de 25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo.',
+    },
+    hazteSocio: {
+      title: 'Hazte Socio | Clases de Baile Barcelona | Farray\'s Center',
+      description: 'Únete a Farray\'s. Desde 50€/mes. +80 clases semanales, +25 estilos. Sin permanencia. App para reservar. ¡Empieza hoy!',
+      robots: 'noindex, nofollow',
     },
     blog: {
       title: 'Blog de Baile | Consejos, Tutoriales e Historia del Baile | Farray\'s Center',
@@ -1026,6 +1035,11 @@ const metadata = {
       title: 'Reserva la teva Classe de Benvinguda | Farray\'s Center Barcelona',
       description: 'Reserva la teva classe de benvinguda a l\'escola de ball de Barcelona. Més de 25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu.',
     },
+    hazteSocio: {
+      title: 'Fes-te Soci | Classes de Ball Barcelona | Farray\'s Center',
+      description: 'Uneix-te a Farray\'s. Des de 50€/mes. +80 classes setmanals, +25 estils. Sense permanència. App per reservar. Comença avui!',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
       description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
@@ -1342,6 +1356,11 @@ const metadata = {
       title: 'Book Your Welcome Class | Farray\'s Center Barcelona',
       description: 'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
     },
+    hazteSocio: {
+      title: 'Become a Member | Dance Classes Barcelona | Farray\'s Center',
+      description: 'Join Farray\'s. From 50€/month. +80 weekly classes, +25 styles. No commitment. App to book. Start today!',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
       description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
@@ -1657,6 +1676,11 @@ const metadata = {
     reservas: {
       title: 'Réservez votre Cours de Bienvenue | Farray\'s Center Barcelone',
       description: 'Réservez votre cours de bienvenue à l\'école de danse de Barcelone. Plus de 25 styles : salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive.',
+    },
+    hazteSocio: {
+      title: 'Devenez Membre | Cours de Danse Barcelone | Farray\'s Center',
+      description: 'Rejoignez Farray\'s. À partir de 50€/mois. +80 cours par semaine, +25 styles. Sans engagement. App pour réserver. Commencez aujourd\'hui!',
+      robots: 'noindex, nofollow',
     },
     blog: {
       title: 'Blog de Danse | Conseils, Tutoriels et Histoire de la Danse | Farray\'s Center',

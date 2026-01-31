@@ -1,43 +1,135 @@
 # Robots.txt - Farray's International Dance Center
-# Updated: 2025-11-08
+# Updated: 2026-01-31
+# Enterprise-level configuration for SEO, GEO, AIO, AIEO
 
-# Allow all crawlers
+# =============================================================================
+# DEFAULT RULES (All crawlers)
+# =============================================================================
 User-agent: *
 Allow: /
 
-# Disallow admin/test paths if they exist
+# Admin/system paths
 Disallow: /admin/
 Disallow: /test/
 Disallow: /*.json$
 Disallow: /api/
 
-# Sitemap location
-Sitemap: https://www.farrayscenter.com/sitemap.xml
+# Landing pages de pago - noindex
+# Estas páginas son para campañas de ads, no para SEO orgánico
+Disallow: /*/dancehall
+Disallow: /*/twerk
+Disallow: /*/sexy-reggaeton
+Disallow: /*/sexy-style
+Disallow: /*/hip-hop-reggaeton
+Disallow: /*/contemporaneo
+Disallow: /*/femmology
+Disallow: /*/bachata
+Disallow: /*/bachata-curso
+Disallow: /*/salsa-curso
+Disallow: /*/salsa-test
+Disallow: /*/hip-hop
+Disallow: /*/afrobeats
+Disallow: /*/afro-jazz
+Disallow: /*/salsa-cubana
+Disallow: /*/ballet
+Disallow: /*/afro-contemporaneo
+Disallow: /*/clase-bienvenida
+Disallow: /*/hazte-socio
 
-# Crawl delay for polite bots
+# Crawl delay for unknown bots
 Crawl-delay: 1
 
-# Specific rules for major search engines
+# =============================================================================
+# SITEMAP & HOST
+# =============================================================================
+Sitemap: https://www.farrayscenter.com/sitemap.xml
+Host: https://www.farrayscenter.com
+
+# =============================================================================
+# TRADITIONAL SEARCH ENGINES
+# =============================================================================
+
+# Google (primary)
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Video
+Allow: /
+Crawl-delay: 0
+
+# Bing / Microsoft
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+User-agent: msnbot
+Allow: /
+Crawl-delay: 0
+
+# Yahoo
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
-# AI Crawlers - GEO Optimization (Added: 2026-01-25)
-# These AI search engines use our content to answer user queries
-# Crawl-delay: 0 for faster indexing in AI search results
+# Yandex (Russia/Eastern Europe)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
 
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Baidu (China)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Qwant (European privacy search)
+User-agent: Qwantify
+Allow: /
+Crawl-delay: 0
+
+# Brave Search
+User-agent: BraveBot
+Allow: /
+Crawl-delay: 0
+
+# Ecosia (eco-friendly search)
+User-agent: Ecosia
+Allow: /
+Crawl-delay: 0
+
+# Mojeek (UK independent search)
+User-agent: MojeekBot
+Allow: /
+Crawl-delay: 1
+
+# =============================================================================
+# AI SEARCH ENGINES & LLMs (GEO/AIO/AIEO)
+# Priority: Maximum visibility in AI-powered search results
+# =============================================================================
+
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 Crawl-delay: 0
 
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0
+
+# Anthropic / Claude
 User-agent: anthropic-ai
 Allow: /
 Crawl-delay: 0
@@ -46,15 +138,242 @@ User-agent: Claude-Web
 Allow: /
 Crawl-delay: 0
 
-User-agent: PerplexityBot
+User-agent: ClaudeBot
 Allow: /
 Crawl-delay: 0
 
+# Google AI (Gemini, Bard, AI Overviews)
 User-agent: Google-Extended
 Allow: /
 Crawl-delay: 0
 
-# CommonCrawl can maintain delay (not a primary search engine)
+User-agent: Google-InspectionTool
+Allow: /
+Crawl-delay: 0
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+# Microsoft Copilot / Bing AI
+User-agent: BingPreview
+Allow: /
+Crawl-delay: 0
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 0
+
+# Meta AI (WhatsApp, Instagram, Facebook AI)
+User-agent: meta-externalagent
+Allow: /
+Crawl-delay: 0
+
+User-agent: MetaAI
+Allow: /
+Crawl-delay: 0
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 0
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+Crawl-delay: 0
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 0
+
+# AI21 Labs
+User-agent: AI21Bot
+Allow: /
+Crawl-delay: 0
+
+# Allen Institute for AI
+User-agent: AI2Bot
+Allow: /
+Crawl-delay: 0
+
+# Neeva AI (acquired by Snowflake)
+User-agent: NeevaBot
+Allow: /
+Crawl-delay: 0
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 0
+
+# Huawei / Petal Search
+User-agent: PetalBot
+Allow: /
+Crawl-delay: 0
+
+# =============================================================================
+# SOCIAL MEDIA CRAWLERS (Link Previews & Sharing)
+# =============================================================================
+
+# Facebook / Meta
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 0
+
+User-agent: Facebot
+Allow: /
+Crawl-delay: 0
+
+# Twitter / X
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 0
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 0
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+Crawl-delay: 0
+
+User-agent: Pinterestbot
+Allow: /
+Crawl-delay: 0
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+Crawl-delay: 0
+
+# WhatsApp (uses facebookexternalhit, but also)
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 0
+
+# Slack
+User-agent: Slackbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slackbot-LinkExpanding
+Allow: /
+Crawl-delay: 0
+
+# Discord
+User-agent: Discordbot
+Allow: /
+Crawl-delay: 0
+
+# Snapchat
+User-agent: Snapchat
+Allow: /
+Crawl-delay: 0
+
+# =============================================================================
+# DATA AGGREGATORS & RESEARCH (Allow for visibility)
+# =============================================================================
+
+# CommonCrawl (used by many AI models for training)
 User-agent: CCBot
 Allow: /
 Crawl-delay: 1
+
+# Internet Archive / Wayback Machine
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 1
+
+# Diffbot (knowledge graphs)
+User-agent: Diffbot
+Allow: /
+Crawl-delay: 1
+
+# =============================================================================
+# SEO TOOLS (Allow for monitoring)
+# =============================================================================
+
+# Ahrefs
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+# SEMrush
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
+# Moz
+User-agent: rogerbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: dotbot
+Allow: /
+Crawl-delay: 2
+
+# Majestic
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 2
+
+# Screaming Frog (audits)
+User-agent: Screaming Frog SEO Spider
+Allow: /
+Crawl-delay: 0
+
+# =============================================================================
+# BLOCKED BOTS (Aggressive scrapers / No value)
+# =============================================================================
+
+# Generic scrapers
+User-agent: SiteLeakBot
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: harvest
+Disallow: /
+
+User-agent: extract
+Disallow: /
+
+# Email harvesters
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+# Aggressive/malicious bots
+User-agent: MauiBot
+Disallow: /
+
+User-agent: AlphaBot
+Disallow: /
+
+User-agent: Zealbot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
