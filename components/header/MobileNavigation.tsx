@@ -530,6 +530,19 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                     )}
                   </div>
                 ))}
+
+                {/* Calendario Académico - Static link at end of Classes */}
+                <Link
+                  to={`/${locale}/calendario`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-3 py-3 px-3 text-base sm:text-lg font-bold tracking-wide transition-all duration-300 ${
+                    location.pathname === `/${locale}/calendario`
+                      ? 'text-primary-accent'
+                      : 'text-white hover:text-primary-accent'
+                  }`}
+                >
+                  {t('navCalendar')}
+                </Link>
               </div>
             )}
           </div>

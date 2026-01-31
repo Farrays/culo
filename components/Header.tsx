@@ -772,6 +772,13 @@ const Header: React.FC = () => {
                     >
                       {t('navPricing')}
                     </Link>
+                    <Link
+                      to={`/${locale}/calendario`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navCalendar')}
+                    </Link>
                   </div>
                 )}
               </div>
