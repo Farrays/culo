@@ -264,15 +264,26 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
             role="list"
             aria-label={t('novedades_carouselLabel')}
             aria-live="polite"
-            tabIndex={0}
-            onKeyDown={handleKeyDown}
-            className="flex gap-6 overflow-x-auto overflow-y-visible scroll-snap-x-mandatory scrollbar-hide py-4 -mx-6 px-6 md:mx-0 md:px-0 focus:outline-none focus:ring-2 focus:ring-primary-accent/30 rounded-lg"
-            style={{
-              scrollSnapType: 'x mandatory',
-              WebkitOverflowScrolling: 'touch',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-            }}
+            tabIndex={novedades.length > 1 ? 0 : -1}
+            onKeyDown={novedades.length > 1 ? handleKeyDown : undefined}
+            className={`flex gap-6 overflow-y-visible scrollbar-hide py-4 focus:outline-none focus:ring-2 focus:ring-primary-accent/30 rounded-lg ${
+              novedades.length === 1
+                ? 'justify-center'
+                : 'overflow-x-auto scroll-snap-x-mandatory -mx-6 px-6 md:mx-0 md:px-0'
+            }`}
+            style={
+              novedades.length > 1
+                ? {
+                    scrollSnapType: 'x mandatory',
+                    WebkitOverflowScrolling: 'touch',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                  }
+                : {
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                  }
+            }
           >
             {novedades.map((novedad, index) => (
               <div key={novedad.id} className="flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
@@ -314,8 +325,8 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
             </div>
           )}
 
-          {/* Progress Bar (optional - for auto-play visualization) */}
-          {autoPlayInterval > 0 && !prefersReducedMotion && (
+          {/* Progress Bar (optional - for auto-play visualization, hidden for single item) */}
+          {autoPlayInterval > 0 && !prefersReducedMotion && novedades.length > 1 && (
             <div className="h-1 bg-primary-dark/30 rounded-full mt-4 overflow-hidden">
               <div
                 className="h-full bg-primary-accent rounded-full"

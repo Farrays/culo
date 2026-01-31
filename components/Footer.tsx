@@ -191,6 +191,42 @@ const Footer: React.FC = () => {
                   />
                 </picture>
               </Link>
+              {/* Tagline debajo del logo - Mini ManifestoBanner */}
+              <div className="mt-3" style={{ perspective: '400px' }}>
+                <div
+                  className="text-center"
+                  style={{
+                    transform: 'rotateX(30deg)',
+                    transformOrigin: 'center top',
+                    transformStyle: 'preserve-3d',
+                  }}
+                >
+                  <p
+                    className="font-black tracking-tighter leading-none text-primary-accent text-sm sm:text-base"
+                    style={{
+                      textShadow: '0 0 20px rgba(200, 34, 96, 0.5)',
+                    }}
+                  >
+                    {t('footer_tagline_1')}
+                  </p>
+                  <p
+                    className="font-black tracking-tighter leading-none text-white text-[10px] sm:text-xs mt-0.5"
+                    style={{
+                      textShadow: '0 0 15px rgba(200, 34, 96, 0.3)',
+                    }}
+                  >
+                    {t('footer_tagline_2')}
+                  </p>
+                  <p
+                    className="font-black tracking-tighter leading-none text-primary-accent text-sm sm:text-base mt-0.5"
+                    style={{
+                      textShadow: '0 0 20px rgba(200, 34, 96, 0.5)',
+                    }}
+                  >
+                    {t('footer_tagline_3')}
+                  </p>
+                </div>
+              </div>
               <div className="flex space-x-3 mt-2">
                 <SocialIcon
                   href="https://www.instagram.com/farrays_centerbcn/"
@@ -400,10 +436,6 @@ const Footer: React.FC = () => {
               />
               <FooterLink to={`/${locale}/regala-baile`} textKey="sitemapRegala" />
               <FooterLink to={`/${locale}/preguntas-frecuentes`} textKey="sitemapFAQ" />
-              <FooterLink
-                to={`/${locale}/como-llegar-escuela-baile-barcelona`}
-                textKey="sitemapUbicacion"
-              />
             </FooterSection>
           </div>
 
