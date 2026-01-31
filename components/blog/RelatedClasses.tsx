@@ -334,11 +334,8 @@ const ClassCard: React.FC<ClassCardProps> = memo(
                        focus:ring-offset-2 focus:ring-offset-black"
             aria-label={`${className} - ${ctaText}`}
           >
-            {/* Image Container with fixed aspect ratio */}
-            <div
-              className="relative overflow-hidden"
-              style={{ aspectRatio: `${IMAGE_DIMENSIONS.width}/${IMAGE_DIMENSIONS.height}` }}
-            >
+            {/* Image Container with fixed height for consistency */}
+            <div className="relative overflow-hidden h-48 sm:h-52">
               <LazyImage
                 src={getRelatedClassImageUrl(classItem.slug)}
                 alt={`Clase de ${className} en Barcelona - Farray's Dance Center`}

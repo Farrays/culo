@@ -1,10 +1,14 @@
 # Robots.txt - Farray's International Dance Center
+
 # Updated: 2026-01-31
 # Enterprise-level configuration for SEO, GEO, AIO, AIEO
 
-# =============================================================================
+# Updated: 2026-01-29 - Enterprise Sitemap Ecosystem
+
+
+# 
 # DEFAULT RULES (All crawlers)
-# =============================================================================
+# 
 User-agent: *
 Allow: /
 
@@ -39,15 +43,15 @@ Disallow: /*/hazte-socio
 # Crawl delay for unknown bots
 Crawl-delay: 1
 
-# =============================================================================
+# 
 # SITEMAP & HOST
-# =============================================================================
+# 
 Sitemap: https://www.farrayscenter.com/sitemap.xml
 Host: https://www.farrayscenter.com
 
-# =============================================================================
+# 
 # TRADITIONAL SEARCH ENGINES
-# =============================================================================
+# 
 
 # Google (primary)
 User-agent: Googlebot
@@ -115,10 +119,10 @@ User-agent: MojeekBot
 Allow: /
 Crawl-delay: 1
 
-# =============================================================================
+# 
 # AI SEARCH ENGINES & LLMs (GEO/AIO/AIEO)
 # Priority: Maximum visibility in AI-powered search results
-# =============================================================================
+# 
 
 # OpenAI / ChatGPT
 User-agent: GPTBot
@@ -219,9 +223,9 @@ User-agent: PetalBot
 Allow: /
 Crawl-delay: 0
 
-# =============================================================================
+# 
 # SOCIAL MEDIA CRAWLERS (Link Previews & Sharing)
-# =============================================================================
+# 
 
 # Facebook / Meta
 User-agent: facebookexternalhit
@@ -280,9 +284,9 @@ User-agent: Snapchat
 Allow: /
 Crawl-delay: 0
 
-# =============================================================================
+# 
 # DATA AGGREGATORS & RESEARCH (Allow for visibility)
-# =============================================================================
+# 
 
 # CommonCrawl (used by many AI models for training)
 User-agent: CCBot
@@ -299,9 +303,9 @@ User-agent: Diffbot
 Allow: /
 Crawl-delay: 1
 
-# =============================================================================
+# 
 # SEO TOOLS (Allow for monitoring)
-# =============================================================================
+# 
 
 # Ahrefs
 User-agent: AhrefsBot
@@ -332,9 +336,9 @@ User-agent: Screaming Frog SEO Spider
 Allow: /
 Crawl-delay: 0
 
-# =============================================================================
+# 
 # BLOCKED BOTS (Aggressive scrapers / No value)
-# =============================================================================
+# 
 
 # Generic scrapers
 User-agent: SiteLeakBot

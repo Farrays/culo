@@ -21,6 +21,10 @@ import { SALSA_VS_BACHATA_CONFIG } from '../../constants/blog/articles/salsa-vs-
 import { CLASES_SALSA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-de-salsa-barcelona';
 import { CLASES_PRINCIPIANTES_CONFIG } from '../../constants/blog/articles/clases-baile-principiantes-barcelona';
 import { COMO_PERDER_MIEDO_BAILAR_CONFIG } from '../../constants/blog/articles/como-perder-miedo-bailar';
+import { BAILE_SALUD_MENTAL_CONFIG } from '../../constants/blog/articles/baile-salud-mental';
+import { ACADEMIA_DANZA_BARCELONA_CONFIG } from '../../constants/blog/articles/academia-de-danza-barcelona';
+import { BALLET_ADULTOS_BARCELONA_CONFIG } from '../../constants/blog/articles/ballet-para-adultos-barcelona';
+import { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from '../../constants/blog/articles/danza-contemporanea-vs-modern-jazz-vs-ballet';
 
 // Map of slug -> config for all articles
 const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
@@ -32,6 +36,10 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
   'clases-de-salsa-barcelona': CLASES_SALSA_BARCELONA_CONFIG,
   'clases-baile-principiantes-barcelona-farrays': CLASES_PRINCIPIANTES_CONFIG,
   'como-perder-miedo-bailar': COMO_PERDER_MIEDO_BAILAR_CONFIG,
+  'baile-salud-mental': BAILE_SALUD_MENTAL_CONFIG,
+  'academia-de-danza-barcelona-guia-completa': ACADEMIA_DANZA_BARCELONA_CONFIG,
+  'ballet-para-adultos-barcelona': BALLET_ADULTOS_BARCELONA_CONFIG,
+  'danza-contemporanea-vs-modern-jazz-vs-ballet': DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG,
 };
 
 const BlogArticlePage: React.FC = () => {

@@ -44,11 +44,11 @@ const MetodoFarrayPage = lazy(() => import('./components/MetodoFarrayPage'));
 const RegalaBailePage = lazy(() => import('./components/RegalaBailePage'));
 const AlquilerSalasPage = lazy(() => import('./components/AlquilerSalasPage'));
 const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'));
+const UbicacionPage = lazy(() => import('./components/UbicacionPage'));
 const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPage'));
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
-const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
 const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
@@ -132,6 +132,7 @@ const ProfesoresBaileBarcelonaPage = lazy(
 
 // ===== BOOKING PAGE =====
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
+const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
 // ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
 const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
@@ -287,7 +288,8 @@ const AppContent: React.FC = () => {
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
 
   // Booking page without header/footer (clean funnel experience)
-  const isBookingPage = location.pathname.includes('/reservas');
+  const isBookingPage =
+    location.pathname.includes('/reservas') || location.pathname.includes('/mi-reserva');
 
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
@@ -584,17 +586,6 @@ const AppContent: React.FC = () => {
               }
             />
 
-            {/* V2 Alternative - for A/B testing comparison */}
-            <Route
-              path="/:locale/clases/salsa-lady-style-v2"
-              element={
-                <>
-                  <LocaleSync />
-                  <SalsaLadyStylePageV2 />
-                </>
-              }
-            />
-
             <Route
               path="/:locale/clases/bachata-lady-style-barcelona"
               element={
@@ -787,6 +778,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/mi-reserva"
+              element={
+                <>
+                  <LocaleSync />
+                  <MyBookingPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/terminos-y-condiciones"
               element={
                 <>
@@ -892,6 +893,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ServiciosBailePage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/como-llegar-escuela-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <UbicacionPage />
                 </>
               }
             />
