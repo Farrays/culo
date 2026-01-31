@@ -3,7 +3,7 @@ import Redis from 'ioredis';
 
 /* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
-// Console logging is intentional for cron job monitoring
+// Console logging is intentional for cron job monitoring (allowed by project eslint config)
 
 /**
  * API Route: /api/cache-warm

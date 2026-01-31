@@ -43,11 +43,10 @@ Disallow: /*/hazte-socio
 # Crawl delay for unknown bots
 Crawl-delay: 1
 
-# 
-# SITEMAP & HOST
-# 
+#
+# SITEMAP
+#
 Sitemap: https://www.farrayscenter.com/sitemap.xml
-Host: https://www.farrayscenter.com
 
 # 
 # TRADITIONAL SEARCH ENGINES

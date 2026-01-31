@@ -188,12 +188,17 @@ describe('useBookingFilters', () => {
       expect(result.current.weekOffset).toBe(2);
     });
 
-    it('should default to 0 when no week in URL', () => {
+    it('should use smart default when no week in URL', () => {
       const { result } = renderHook(() => useBookingFilters(), {
         wrapper: createWrapper(),
       });
 
-      expect(result.current.weekOffset).toBe(0);
+      // Smart default: Mon-Wed = week 0, Thu-Sun = week 1
+      const today = new Date();
+      const dayOfWeek = today.getDay();
+      const expectedDefault = dayOfWeek === 0 || dayOfWeek >= 4 ? 1 : 0;
+
+      expect(result.current.weekOffset).toBe(expectedDefault);
     });
   });
 
