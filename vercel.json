@@ -383,37 +383,37 @@
     },
     {
       "source": "/blog-de-farrays",
-      "destination": "/es",
+      "destination": "/es/blog",
       "permanent": true
     },
     {
       "source": "/8-razones-para-ir-a-clases-de-salsa",
-      "destination": "/es",
+      "destination": "/es/blog/beneficios-bailar-salsa",
       "permanent": true
     },
     {
       "source": "/historia-de-la-salsa",
-      "destination": "/es",
+      "destination": "/es/blog/historia-salsa-barcelona",
       "permanent": true
     },
     {
       "source": "/historia-de-la-bachata",
-      "destination": "/es",
+      "destination": "/es/blog/historia-bachata-barcelona",
       "permanent": true
     },
     {
       "source": "/salsa-un-genero-bailable-singular",
-      "destination": "/es",
+      "destination": "/es/blog/salsa-ritmo-conquisto-mundo",
       "permanent": true
     },
     {
       "source": "/hablemos-salsa",
-      "destination": "/es",
+      "destination": "/es/blog/beneficios-bailar-salsa",
       "permanent": true
     },
     {
       "source": "/empezar-a-bailar",
-      "destination": "/es",
+      "destination": "/es/blog/clases-baile-principiantes-barcelona-farrays",
       "permanent": true
     },
     {
