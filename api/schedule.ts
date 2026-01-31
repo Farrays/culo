@@ -423,137 +423,66 @@ async function getAccessToken(): Promise<string | null> {
   }
 }
 
-// Obtener fecha mínima/máxima de una página
-async function getPageDateRange(
-  accessToken: string,
-  page: number
-): Promise<{
-  minDate: Date;
-  maxDate: Date;
-  totalPages: number;
-  sessions: MomenceSession[];
-} | null> {
-  const response = await fetch(
-    `${MOMENCE_API_URL}/api/v2/host/sessions?page=${page}&pageSize=100`,
-    {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
-      },
-    }
-  );
-
-  if (!response.ok) return null;
-
-  const data = await response.json();
-  const sessions = data.payload || [];
-
-  if (sessions.length === 0) return null;
-
-  const dates = sessions.map((s: MomenceSession) => new Date(s.startsAt).getTime());
-  return {
-    minDate: new Date(Math.min(...dates)),
-    maxDate: new Date(Math.max(...dates)),
-    totalPages: Math.ceil(data.pagination.totalCount / 100),
-    sessions,
-  };
-}
-
-// Búsqueda binaria para encontrar la página con sesiones actuales
-async function findCurrentPage(
-  accessToken: string,
-  targetDate: Date
-): Promise<{ page: number; totalPages: number }> {
-  const firstPage = await getPageDateRange(accessToken, 0);
-  if (!firstPage) return { page: 0, totalPages: 0 };
-
-  const totalPages = firstPage.totalPages;
-  let left = 0;
-  let right = totalPages - 1;
-  let resultPage = 0;
-  let iterations = 0;
-
-  while (left <= right && iterations < 20) {
-    iterations++;
-    const mid = Math.floor((left + right) / 2);
-
-    const pageData = await getPageDateRange(accessToken, mid);
-    if (!pageData) {
-      right = mid - 1;
-      continue;
-    }
-
-    if (pageData.minDate <= targetDate && targetDate <= pageData.maxDate) {
-      resultPage = mid;
-      break;
-    }
-
-    if (pageData.minDate > targetDate) {
-      right = mid - 1;
-    } else {
-      left = mid + 1;
-      resultPage = mid;
-    }
-  }
-
-  return { page: resultPage, totalPages };
-}
-
-// Obtener sesiones futuras
+// Fetch sessions from Momence API with native date filtering
+// Uses startAfter/startBefore params for efficient server-side filtering
+// This replaces the old binary search approach which made 10-20+ API calls
 async function fetchFutureSessions(
   accessToken: string,
   daysAhead: number
 ): Promise<MomenceSession[]> {
   const now = new Date();
-  const futureLimit = new Date(Date.now() + daysAhead * 24 * 60 * 60 * 1000);
+  const futureLimit = new Date(now.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
-  const { page: startPage, totalPages } = await findCurrentPage(accessToken, now);
+  // Format dates for Momence API (ISO 8601)
+  const startAfter = now.toISOString();
+  const startBefore = futureLimit.toISOString();
 
   const allSessions: MomenceSession[] = [];
-  let currentPage = startPage;
-  const maxPagesToFetch = 15; // Increased for more days
-  let pagesWithFutureSessions = 0;
+  let page = 0;
+  let hasMore = true;
 
-  while (currentPage < totalPages && pagesWithFutureSessions < maxPagesToFetch) {
-    const response = await fetch(
-      `${MOMENCE_API_URL}/api/v2/host/sessions?page=${currentPage}&pageSize=100`,
-      {
+  // Fetch pages until we have all sessions in the date range
+  // Using Momence's native filtering: startAfter, startBefore, sortBy
+  while (hasMore && page < 5) {
+    // Max 5 pages (500 sessions) as safety limit
+    try {
+      const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+      url.searchParams.set('page', page.toString());
+      url.searchParams.set('pageSize', '100');
+      url.searchParams.set('startAfter', startAfter);
+      url.searchParams.set('startBefore', startBefore);
+      url.searchParams.set('sortBy', 'startsAt');
+      url.searchParams.set('sortOrder', 'ASC');
+
+      const response = await fetch(url.toString(), {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
         },
-      }
-    );
+      });
 
-    if (!response.ok) break;
-
-    const data = await response.json();
-    const sessions = data.payload || [];
-
-    if (sessions.length === 0) break;
-
-    const futureSessions = sessions.filter((s: MomenceSession) => new Date(s.startsAt) >= now);
-
-    if (futureSessions.length > 0) {
-      allSessions.push(...futureSessions);
-      pagesWithFutureSessions++;
-
-      const lastSession = futureSessions[futureSessions.length - 1];
-      if (new Date(lastSession.startsAt) > futureLimit) {
+      if (!response.ok) {
+        console.warn(`[schedule] Momence API returned ${response.status}`);
         break;
       }
-    }
 
-    currentPage++;
+      const data = await response.json();
+      const sessions = data.payload || [];
+      allSessions.push(...sessions);
+
+      // Check if there are more pages
+      const totalCount = data.pagination?.totalCount || 0;
+      const fetchedCount = (page + 1) * 100;
+      hasMore = fetchedCount < totalCount && sessions.length === 100;
+      page++;
+    } catch (error) {
+      console.warn('[schedule] Error fetching page:', error);
+      break;
+    }
   }
 
-  // Filtrar al rango deseado y ordenar
-  return allSessions
-    .filter(s => {
-      const d = new Date(s.startsAt);
-      return d >= now && d <= futureLimit;
-    })
-    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+  // Sessions are already sorted by Momence API (sortBy=startsAt)
+  return allSessions;
 }
 
 export default async function handler(
