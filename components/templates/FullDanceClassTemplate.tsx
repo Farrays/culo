@@ -999,20 +999,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         }
       : null);
 
-  // FAQ Page schema
-  const faqPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <>
       {/* ===== HEAD / META ===== */}
@@ -1140,10 +1126,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
       />
       {videoSchemaData && (
         <script

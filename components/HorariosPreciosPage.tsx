@@ -50,10 +50,12 @@ const MonthlyPlanCard = memo(
     plan,
     t,
     isPremium,
+    locale,
   }: {
     plan: MonthlyPlan;
     t: (key: string) => string;
     isPremium: boolean;
+    locale: string;
   }) => {
     const isPopular = plan.isPopular;
 
@@ -102,10 +104,8 @@ const MonthlyPlanCard = memo(
             )}
           </ul>
 
-          <a
-            href="https://www.farrayscenter.com/hazte-socio"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to={`/${locale}/hazte-socio`}
             className={`block w-full text-center font-bold py-3 px-6 rounded-full transition-all duration-300 mt-auto ${
               isPopular
                 ? 'bg-primary-accent text-white hover:shadow-accent-glow animate-glow'
@@ -113,7 +113,7 @@ const MonthlyPlanCard = memo(
             }`}
           >
             {t('pricing_select_plan')}
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -130,10 +130,12 @@ const FlexiblePlanCard = memo(
     plan,
     t,
     isPremium,
+    locale,
   }: {
     plan: FlexiblePlan;
     t: (key: string) => string;
     isPremium: boolean;
+    locale: string;
   }) => (
     <div className="[perspective:1000px] h-full">
       <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-5 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
@@ -164,14 +166,12 @@ const FlexiblePlanCard = memo(
           )}
         </div>
 
-        <a
-          href="https://www.farrayscenter.com/hazte-socio"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={`/${locale}/hazte-socio`}
           className="block w-full text-center font-bold py-3 px-6 rounded-full transition-all duration-300 mt-auto bg-black/50 border border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-white"
         >
           {t('pricing_select_plan')}
-        </a>
+        </Link>
       </div>
     </div>
   )
@@ -435,14 +435,12 @@ const HorariosPreciosPage: React.FC = () => {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                 <div className="w-full sm:w-auto">
-                  <a
-                    href="https://www.farrayscenter.com/hazte-socio"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={`/${locale}/hazte-socio`}
                     className="block w-full sm:min-w-[280px] bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
                     {t('pricing_cta_primary')}
-                  </a>
+                  </Link>
                   <p className="text-xs text-neutral/70 mt-2 text-center">
                     {t('pricing_cta_primary_subtext')}
                   </p>
@@ -565,7 +563,7 @@ const HorariosPreciosPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {displayedPlans.map((plan, index) => (
                 <AnimateOnScroll key={plan.id} delay={index * 100}>
-                  <MonthlyPlanCard plan={plan} t={t} isPremium={isPremiumTab} />
+                  <MonthlyPlanCard plan={plan} t={t} isPremium={isPremiumTab} locale={locale} />
                 </AnimateOnScroll>
               ))}
             </div>
@@ -605,14 +603,12 @@ const HorariosPreciosPage: React.FC = () => {
                     ~{formatPrice(UNLIMITED_PLAN.pricePerActivity)} / {t('pricing_per_activity')}
                   </p>
                   <p className="text-neutral/90 mb-6">{t('pricing_unlimited_desc')}</p>
-                  <a
-                    href="https://www.farrayscenter.com/hazte-socio"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={`/${locale}/hazte-socio`}
                     className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
                     {t('pricing_unlimited_cta')}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -669,7 +665,7 @@ const HorariosPreciosPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {currentFlexiblePlans.map((plan, index) => (
                 <AnimateOnScroll key={plan.id} delay={index * 100}>
-                  <FlexiblePlanCard plan={plan} t={t} isPremium={isPremiumTab} />
+                  <FlexiblePlanCard plan={plan} t={t} isPremium={isPremiumTab} locale={locale} />
                 </AnimateOnScroll>
               ))}
             </div>
@@ -698,14 +694,12 @@ const HorariosPreciosPage: React.FC = () => {
                           <p className="text-3xl font-black text-neutral mb-4">
                             {formatPrice(price.price)}
                           </p>
-                          <a
-                            href="https://www.farrayscenter.com/hazte-socio"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <Link
+                            to={`/${locale}/hazte-socio`}
                             className="block w-full text-center font-bold py-2 px-4 rounded-full transition-all duration-300 mt-auto bg-black/50 border border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-white text-sm"
                           >
                             {t('pricing_select_plan')}
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </AnimateOnScroll>
@@ -1026,14 +1020,12 @@ const HorariosPreciosPage: React.FC = () => {
                 {/* Final CTAs */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                   <div className="w-full sm:w-auto">
-                    <a
-                      href="https://www.farrayscenter.com/hazte-socio"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to={`/${locale}/hazte-socio`}
                       className="block w-full sm:min-w-[280px] bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                     >
                       {t('pricing_cta_primary')}
-                    </a>
+                    </Link>
                     <p className="text-xs text-neutral/70 mt-2 text-center">
                       {t('pricing_cta_primary_subtext')}
                     </p>

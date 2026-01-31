@@ -214,7 +214,7 @@ const ScheduleImagesSection: React.FC = () => {
             role="tabpanel"
             aria-labelledby={`tab-${activeTab}`}
             tabIndex={-1}
-            className="max-w-[900px] mx-auto focus:outline-none"
+            className="max-w-[600px] lg:max-w-[700px] mx-auto focus:outline-none"
           >
             <button
               onClick={openLightbox}
@@ -224,14 +224,15 @@ const ScheduleImagesSection: React.FC = () => {
               <OptimizedImage
                 src={activeCategory.imageBasePath}
                 altKey={activeCategory.altKey}
-                sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 900px"
+                sizes="(max-width: 640px) 95vw, (max-width: 1024px) 70vw, 700px"
                 aspectRatio="4/5"
                 objectFit="contain"
                 width={1080}
                 height={1350}
-                priority={activeTab === 'danza' ? 'high' : 'low'}
+                priority="high"
                 placeholder="blur"
                 blurDataURL={activeCategory.blurDataURL}
+                breakpoints={[320, 640, 1024, 1440, 1920]}
                 className="w-full transition-transform duration-500 group-hover:scale-105"
               />
 

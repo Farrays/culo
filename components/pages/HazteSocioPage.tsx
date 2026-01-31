@@ -553,15 +553,6 @@ const HazteSocioPage: React.FC = () => {
         ================================================================ */}
         <section id="horarios" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('hazteSocio_schedule_title')}
-                </h2>
-                <p className="text-lg text-neutral/80">{t('hazteSocio_schedule_subtitle')}</p>
-              </div>
-            </AnimateOnScroll>
-
             {/* Multi-Style Info Box */}
             <AnimateOnScroll delay={100}>
               <div className="max-w-2xl mx-auto mb-8 [perspective:1000px]">
