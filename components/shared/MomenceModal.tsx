@@ -16,27 +16,45 @@ interface MomenceModalProps {
 }
 
 /**
- * MomenceModal - Abre Momence en nueva pestaña
+ * MomenceModal - Abre Momence en popup centrado
  *
- * Momence bloquea iframes por seguridad (X-Frame-Options).
- * Abrimos en nueva pestaña para mejor compatibilidad.
+ * Momence bloquea iframes (X-Frame-Options) en dominios no whitelisteados.
+ * Usamos popup centrado para una experiencia más "modal-like".
+ *
+ * TODO: Cuando Momence whitelist el dominio, restaurar iframe.
  */
 const MomenceModal: React.FC<MomenceModalProps> = memo(function MomenceModal({
   isOpen,
   onClose,
   url,
 }) {
-  // Cuando se abre, redirigir a Momence en nueva pestaña
+  // Cuando se abre, abrir popup centrado
   useEffect(() => {
     if (isOpen && url) {
-      // Abrir en nueva pestaña
-      window.open(url, '_blank', 'noopener,noreferrer');
-      // Cerrar el "modal" inmediatamente
+      // Calcular dimensiones del popup (80% de la pantalla)
+      const width = Math.min(1200, window.innerWidth * 0.9);
+      const height = Math.min(800, window.innerHeight * 0.9);
+      const left = (window.innerWidth - width) / 2 + window.screenX;
+      const top = (window.innerHeight - height) / 2 + window.screenY;
+
+      // Abrir popup centrado
+      const popup = window.open(
+        url,
+        'MomenceCheckout',
+        `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
+      );
+
+      // Focus en el popup
+      if (popup) {
+        popup.focus();
+      }
+
+      // Cerrar el estado del modal
       onClose();
     }
   }, [isOpen, url, onClose]);
 
-  // No renderiza nada - solo abre en nueva pestaña
+  // No renderiza nada - solo abre popup
   return null;
 });
 
