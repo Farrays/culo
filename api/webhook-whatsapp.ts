@@ -2,12 +2,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
-import { sendTextMessage } from './lib/whatsapp';
-import {
-  updateEventAttendance,
-  isGoogleCalendarConfigured,
-  type AttendanceStatus,
-} from './lib/google-calendar';
 
 /**
  * API Route: /api/webhook-whatsapp
@@ -18,15 +12,82 @@ import {
  * GET: Verificación del webhook (requerido por Meta)
  * POST: Recepción de mensajes y eventos
  *
- * Quick Reply Buttons (plantilla recordatorio_prueba_0):
+ * Quick Reply Buttons (plantilla recordatorio_prueba_2):
  * - "Sí, asistiré": El alumno confirma que asistirá → attendance = 'confirmed'
  * - "No podré ir": El alumno no asistirá → attendance = 'not_attending'
  *
  * Variables de entorno requeridas:
  * - WHATSAPP_WEBHOOK_VERIFY_TOKEN: Token para verificación del webhook
  * - WHATSAPP_TOKEN: Token de acceso de WhatsApp
+ * - WHATSAPP_PHONE_ID: ID del número de WhatsApp Business
  * - STORAGE_REDIS_URL: URL de Redis
  */
+
+// ============================================================================
+// WHATSAPP INLINE (evitar imports de api/lib/ que fallan en Vercel)
+// ============================================================================
+
+const WHATSAPP_API_VERSION = 'v23.0';
+
+function getWhatsAppConfig() {
+  const token = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+
+  if (!token || !phoneId) {
+    return null;
+  }
+
+  return {
+    token,
+    phoneId,
+    apiUrl: `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
+  };
+}
+
+function normalizePhone(phone: string): string {
+  return phone.replace(/[\s\-+]/g, '');
+}
+
+async function sendTextMessage(
+  to: string,
+  text: string
+): Promise<{ success: boolean; error?: string }> {
+  const config = getWhatsAppConfig();
+  if (!config) {
+    return { success: false, error: 'WhatsApp not configured' };
+  }
+
+  const normalizedPhone = normalizePhone(to);
+
+  const message = {
+    messaging_product: 'whatsapp',
+    to: normalizedPhone,
+    type: 'text',
+    text: { body: text },
+  };
+
+  try {
+    const response = await fetch(config.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${config.token}`,
+      },
+      body: JSON.stringify(message),
+    });
+
+    const data = (await response.json()) as { error?: { message: string } };
+
+    if (!response.ok || data.error) {
+      console.error('WhatsApp API error:', data.error);
+      return { success: false, error: data.error?.message || `HTTP ${response.status}` };
+    }
+
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
 
 // ============================================================================
 // LAZY REDIS
@@ -243,10 +304,10 @@ async function processMessage(
 
     if (normalizedPayload.includes('si') && normalizedPayload.includes('asistir')) {
       // "Sí, asistiré" o variaciones
-      await handleAttendanceConfirmation(phone, 'confirmed', contactName);
+      await handleAttendanceConfirmation(phone, 'confirmed');
     } else if (normalizedPayload.includes('no') && normalizedPayload.includes('podr')) {
       // "No podré ir" o variaciones
-      await handleAttendanceConfirmation(phone, 'not_attending', contactName);
+      await handleAttendanceConfirmation(phone, 'not_attending');
     }
   }
 
@@ -263,9 +324,9 @@ async function processMessage(
       .replace(/[\u0300-\u036f]/g, '');
 
     if (normalizedTitle.includes('si') && normalizedTitle.includes('asistir')) {
-      await handleAttendanceConfirmation(phone, 'confirmed', contactName);
+      await handleAttendanceConfirmation(phone, 'confirmed');
     } else if (normalizedTitle.includes('no') && normalizedTitle.includes('podr')) {
-      await handleAttendanceConfirmation(phone, 'not_attending', contactName);
+      await handleAttendanceConfirmation(phone, 'not_attending');
     }
   }
 
@@ -281,8 +342,7 @@ async function processMessage(
 
 async function handleAttendanceConfirmation(
   phone: string,
-  status: 'confirmed' | 'not_attending',
-  _contactName: string
+  status: 'confirmed' | 'not_attending'
 ): Promise<void> {
   const redis = getRedisClient();
 
@@ -313,15 +373,8 @@ async function handleAttendanceConfirmation(
 
     console.log(`[webhook-whatsapp] Attendance updated: ${booking.firstName} - ${status}`);
 
-    // Actualizar Google Calendar
-    if (isGoogleCalendarConfigured() && booking.calendarEventId) {
-      try {
-        await updateEventAttendance(booking.calendarEventId, status as AttendanceStatus);
-        console.log(`[webhook-whatsapp] Calendar updated for ${booking.calendarEventId}`);
-      } catch (error) {
-        console.warn('[webhook-whatsapp] Calendar update failed:', error);
-      }
-    }
+    // Nota: Google Calendar update se hace por separado si está configurado
+    // No lo incluimos aquí para evitar dependencias de googleapis
 
     // Enviar respuesta automática
     if (status === 'confirmed') {
