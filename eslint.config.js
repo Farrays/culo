@@ -125,6 +125,13 @@ export default [
     },
   },
   {
+    // Allow console.log in API routes (needed for cron job monitoring)
+    files: ['api/**/*.ts'],
+    rules: {
+      'no-console': 'off',
+    },
+  },
+  {
     ignores: [
       'i18n/locales/es-temp.cjs',
       'node_modules/',
