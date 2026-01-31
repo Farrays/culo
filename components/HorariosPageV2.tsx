@@ -183,7 +183,7 @@ FAQItem.displayName = 'FAQItem';
 
 const HorariosPageV2: React.FC = () => {
   // @ts-ignore - Known issue with react-i18next type inference with many namespaces
-  const { t, i18n } = useTranslation([
+  const { t: tRaw, i18n } = useTranslation([
     'common',
     'booking',
     'schedule',
@@ -196,6 +196,7 @@ const HorariosPageV2: React.FC = () => {
     'contact',
     'pages',
   ]);
+  const t = tRaw as (key: string, options?: Record<string, unknown>) => string;
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 

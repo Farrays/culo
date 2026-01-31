@@ -21,6 +21,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import MomenceModal from '../shared/MomenceModal';
+import OptimizedImage from '../OptimizedImage';
 
 // Lazy load the booking components
 const ClassListStep = lazy(() =>
@@ -473,9 +474,20 @@ const HazteSocioPage: React.FC = () => {
         {/* ================================================================
             SECTION 1: HERO
         ================================================================ */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
+        <section className="relative py-16 md:py-24 overflow-hidden min-h-[70vh] flex items-center">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src="/images/categories/hero/clases-baile-barcelona-hero"
+              alt="Clases de baile en Barcelona - Farray's Dance Center"
+              sizes="100vw"
+              className="w-full h-full object-cover"
+              priority="high"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          </div>
 
           <div className="relative z-10 container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
+import OptimizedImage from './OptimizedImage';
 import HorariosScheduleSection from './HorariosScheduleSection';
 import ScheduleImagesSection from './ScheduleImagesSection';
 import { ReviewsSection } from './reviews';
@@ -375,12 +376,21 @@ const HorariosPreciosPage: React.FC = () => {
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* ================================================================
-            SECTION 1: HERO
+            SECTION 1: HERO - Enterprise Background Image
         ================================================================ */}
-        <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]">
-          {/* Background */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+        <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[70vh]">
+          {/* Background Image - Enterprise Level */}
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src="/images/categories/hero/clases-salsa-bachata-barcelona"
+              alt="Clases de salsa y bachata en Barcelona - Farray's Dance Center horarios y precios"
+              sizes="100vw"
+              className="w-full h-full object-cover"
+              priority="high"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
