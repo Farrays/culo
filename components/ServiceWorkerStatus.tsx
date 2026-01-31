@@ -118,20 +118,22 @@ UpdateBanner.displayName = 'UpdateBanner';
 
 /**
  * Service Worker Status Container
- * Renders offline banner and update notification when needed
+ * Renders offline banner only. Updates are applied silently.
  */
 export const ServiceWorkerStatus: React.FC = memo(() => {
   const { isOffline, hasUpdate, update, isSupported } = useServiceWorker();
 
+  // Auto-update silently when new version is available
+  React.useEffect(() => {
+    if (hasUpdate && isSupported) {
+      update();
+    }
+  }, [hasUpdate, update, isSupported]);
+
   // Don't render anything if SW not supported
   if (!isSupported) return null;
 
-  return (
-    <>
-      {isOffline && <OfflineBanner />}
-      {hasUpdate && <UpdateBanner onUpdate={update} />}
-    </>
-  );
+  return <>{isOffline && <OfflineBanner />}</>;
 });
 ServiceWorkerStatus.displayName = 'ServiceWorkerStatus';
 

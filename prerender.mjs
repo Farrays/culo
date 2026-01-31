@@ -4,9 +4,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// =============================================================================
+// 
 // ENTERPRISE LANDING CONFIGURATION
-// =============================================================================
+// 
 // Single source of truth for all landing pages (Facebook Ads campaigns)
 // To add a new landing: just add the slug here, everything else is auto-generated
 
@@ -131,9 +131,9 @@ const LANDING_ROUTES = generateLandingRoutes();
 const LANDING_METADATA = generateLandingMetadata();
 const LANDING_CONTENT = generateLandingContent();
 
-// =============================================================================
+// 
 // OG IMAGE MAPPING - Mapeo inteligente de imágenes Open Graph por página
-// =============================================================================
+// 
 // Cada pageKey se mapea a su imagen OG correspondiente.
 // Las imágenes pueden estar en:
 // - /images/og-{name}.jpg (imágenes OG dedicadas)
@@ -273,9 +273,9 @@ const getOgImageUrl = (pageKey) => {
   return `https://www.farrayscenter.com/images/${imagePath}`;
 };
 
-// =============================================================================
+// 
 // AUTO-GENERATE INITIAL CONTENT FROM METADATA (SEO para LLMs)
-// =============================================================================
+// 
 // Genera contenido HTML mínimo desde la metadata existente para que los LLMs
 // que no ejecutan JavaScript puedan ver contenido básico de la página.
 // Ref: ROADMAP_ENTERPRISE.md - Sección 11 (SEO para LLMs)
@@ -331,7 +331,7 @@ const generateContentFromMetadata = (pageKey, lang, allMetadata) => {
   return `<main id="main-content"><h1>${cleanTitle}</h1><p>${meta.description}</p></main>`;
 };
 
-// =============================================================================
+// 
 
 // All language/page combinations to prerender
 const routes = [
@@ -374,7 +374,11 @@ const routes = [
   { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
   { path: 'es/reservas', lang: 'es', page: 'reservas' },
+
+  { path: 'es/hazte-socio', lang: 'es', page: 'hazteSocio' },
+
   { path: 'es/mi-reserva', lang: 'es', page: 'miReserva' },
+
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
   { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
@@ -444,7 +448,11 @@ const routes = [
   { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
   { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
+
+  { path: 'ca/hazte-socio', lang: 'ca', page: 'hazteSocio' },
+
   { path: 'ca/mi-reserva', lang: 'ca', page: 'miReserva' },
+
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
   { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
@@ -514,7 +522,11 @@ const routes = [
   { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
   { path: 'en/reservas', lang: 'en', page: 'reservas' },
+
+  { path: 'en/hazte-socio', lang: 'en', page: 'hazteSocio' },
+
   { path: 'en/mi-reserva', lang: 'en', page: 'miReserva' },
+
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
   { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
@@ -584,7 +596,11 @@ const routes = [
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
   { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
+
+  { path: 'fr/hazte-socio', lang: 'fr', page: 'hazteSocio' },
+
   { path: 'fr/mi-reserva', lang: 'fr', page: 'miReserva' },
+
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
   { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
@@ -864,6 +880,12 @@ const metadata = {
     reservas: {
       title: 'Reserva tu Clase de Bienvenida | Farray\'s Center Barcelona',
       description: 'Reserva tu clase de bienvenida en la escuela de baile de Barcelona. Más de 25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo.',
+    },
+
+    hazteSocio: {
+      title: 'Hazte Socio | Clases de Baile Barcelona | Farray\'s Center',
+      description: 'Únete a Farray\'s. Desde 50€/mes. +80 clases semanales, +25 estilos. Sin permanencia. App para reservar. ¡Empieza hoy!',
+      robots: 'noindex, nofollow',
     },
     miReserva: {
       title: 'Mi Reserva | Farray\'s Center Barcelona',
@@ -1198,6 +1220,12 @@ const metadata = {
       title: 'Reserva la teva Classe de Benvinguda | Farray\'s Center Barcelona',
       description: 'Reserva la teva classe de benvinguda a l\'escola de ball de Barcelona. Més de 25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu.',
     },
+
+    hazteSocio: {
+      title: 'Fes-te Soci | Classes de Ball Barcelona | Farray\'s Center',
+      description: 'Uneix-te a Farray\'s. Des de 50€/mes. +80 classes setmanals, +25 estils. Sense permanència. App per reservar. Comença avui!',
+      robots: 'noindex, nofollow',
+    },
     miReserva: {
       title: 'La Meva Reserva | Farray\'s Center Barcelona',
       description: 'Gestiona la teva reserva de classe a Farray\'s Center Barcelona. Reprograma o cancel·la la teva classe.',
@@ -1530,6 +1558,12 @@ const metadata = {
     reservas: {
       title: 'Book Your Welcome Class | Farray\'s Center Barcelona',
       description: 'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
+    },
+
+    hazteSocio: {
+      title: 'Become a Member | Dance Classes Barcelona | Farray\'s Center',
+      description: 'Join Farray\'s. From 50€/month. +80 weekly classes, +25 styles. No commitment. App to book. Start today!',
+      robots: 'noindex, nofollow',
     },
     miReserva: {
       title: 'My Booking | Farray\'s Center Barcelona',
@@ -1864,6 +1898,12 @@ const metadata = {
       title: 'Réservez votre Cours de Bienvenue | Farray\'s Center Barcelone',
       description: 'Réservez votre cours de bienvenue à l\'école de danse de Barcelone. Plus de 25 styles : salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive.',
     },
+
+    hazteSocio: {
+      title: 'Devenez Membre | Cours de Danse Barcelone | Farray\'s Center',
+      description: 'Rejoignez Farray\'s. À partir de 50€/mois. +80 cours par semaine, +25 styles. Sans engagement. App pour réserver. Commencez aujourd\'hui!',
+      robots: 'noindex, nofollow',
+    },
     miReserva: {
       title: 'Ma Réservation | Farray\'s Center Barcelone',
       description: 'Gérez votre réservation de cours chez Farray\'s Center Barcelone. Reprogrammez ou annulez votre cours.',
@@ -2045,9 +2085,9 @@ const metadata = {
   },
 };
 
-// =============================================================================
+// 
 // INITIAL CONTENT GENERATION
-// =============================================================================
+// 
 // Genera contenido pre-renderizado para cada página.
 // - Páginas con metadata: genera automáticamente desde title/description
 // - Páginas excluidas: mantienen '' vacío (home, horarios, etc.)

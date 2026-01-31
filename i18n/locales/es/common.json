@@ -189,5 +189,9 @@
   "teacher.crisAg.specialty": "Especialista en Body Conditioning, Cuerpo Fit y Stretching - Método Farray® desde 2012",
   "teacher.crisAg.bio": "CrisAg comenzó su pasión por el baile desde temprana edad. Licenciada en Filología Inglesa por la Universidad de Barcelona, se ha formado con Jorge Camagüey e integró su compañía Calle Real de Camagüey. Completó su formación en The Cuban School of Arts de Londres, trabajando junto a prestigiosas bailarinas como Yunaisy Farray, Kirenia Cantin y Damarys Farrés. Desde 2012 se ha formado en el Método Farray® y actualmente es un referente en Barcelona como profesora de Body Conditioning, Cuerpo Fit, Bum Bum Glúteos y Stretching, fusionando sus dos pasiones: el baile y el fitness.",
   "teacher.juanAlvarez.specialty": "Especialista en Bachata Sensual - Talento Emergente Barcelona",
-  "teacher.juanAlvarez.bio": "Juan Alvarez es otro de los talentos emergentes en Barcelona. Instructor de Bachata Sensual, la forma como transmite la esencia de este baile latino con pasión, técnica depurada, conexión y musicalidad, junto con su enfoque práctico y cercano que facilita el aprendizaje desde el primer día, le ha permitido conectar con sus alumnos desde el primer momento."
+  "teacher.juanAlvarez.bio": "Juan Alvarez es otro de los talentos emergentes en Barcelona. Instructor de Bachata Sensual, la forma como transmite la esencia de este baile latino con pasión, técnica depurada, conexión y musicalidad, junto con su enfoque práctico y cercano que facilita el aprendizaje desde el primer día, le ha permitido conectar con sus alumnos desde el primer momento.",
+  "offline_mode": "Sin conexión - Mostrando datos guardados",
+  "update_available": "Nueva versión disponible",
+  "update_description": "Actualiza para obtener las últimas mejoras",
+  "update_now": "Actualizar ahora"
 }

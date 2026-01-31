@@ -134,6 +134,9 @@ const ProfesoresBaileBarcelonaPage = lazy(
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
 const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
+// ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
+const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
+
 // ===== LEGAL PAGES =====
 const TermsConditionsPage = lazy(() => import('./components/TermsConditionsPage'));
 const LegalNoticePage = lazy(() => import('./components/LegalNoticePage'));
@@ -242,6 +245,7 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/bachata-curso',
   '/salsa-curso',
   '/salsa-test',
+  '/hazte-socio',
 ];
 
 // Promotion configuration - easy to update
@@ -287,8 +291,12 @@ const AppContent: React.FC = () => {
   const isBookingPage =
     location.pathname.includes('/reservas') || location.pathname.includes('/mi-reserva');
 
+  // Hazte socio page without header/footer (landing pura for maximum conversion)
+  const isHazteSocioPage = location.pathname.includes('/hazte-socio');
+
   // Combined check for hiding header/footer
-  const hideHeaderFooter = isPromoLanding || isMinimalLegalPage || isBookingPage;
+  const hideHeaderFooter =
+    isPromoLanding || isMinimalLegalPage || isBookingPage || isHazteSocioPage;
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
@@ -754,6 +762,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <BookingPage />
+                </>
+              }
+            />
+
+            {/* ===== HAZTE SOCIO (Landing pura - sin header/footer) ===== */}
+            <Route
+              path="/:locale/hazte-socio"
+              element={
+                <>
+                  <LocaleSync />
+                  <HazteSocioPage />
                 </>
               }
             />
