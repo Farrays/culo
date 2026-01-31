@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { debounce } from '../utils/debounce';
-import { MenuIcon, XMarkIcon as CloseIcon, ChevronDownIcon } from '../lib/icons';
+import { MenuIcon, XMarkIcon as CloseIcon, ChevronDownIcon, UserIcon } from '../lib/icons';
 import MobileNavigation from './header/MobileNavigation';
 import LanguageSelector from './header/LanguageSelector';
 import LeadCaptureModal from './shared/LeadCaptureModal';
@@ -887,8 +887,19 @@ const Header: React.FC = () => {
               </Link>
             </nav>
 
-            {/* Language Selector + CTA Button */}
+            {/* Member Area + Language Selector + CTA Button */}
             <div className="hidden lg:flex items-center gap-5">
+              {/* Área de Socio - icono discreto */}
+              <a
+                href="https://momence.com/sign-in?hostId=36148"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300"
+                title={t('header_member_area')}
+                aria-label={t('header_member_area')}
+              >
+                <UserIcon className="w-6 h-6" />
+              </a>
               <LanguageSelector
                 locale={locale as Locale}
                 isOpen={isDropdownOpen('lang')}
