@@ -187,6 +187,9 @@ const BookingWidgetV2: React.FC = memo(() => {
   // Track if we pushed a history state for the form step
   const historyPushedRef = useRef(false);
 
+  // Ref for scrolling widget into view when entering form step
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
+
   // Track component mounted state for safe async updates
   const isMountedRef = useRef(true);
 
@@ -355,6 +358,21 @@ const BookingWidgetV2: React.FC = memo(() => {
     }
     if (step === 'class') {
       historyPushedRef.current = false;
+    }
+  }, [step]);
+
+  // Scroll widget into view when entering form step
+  // This prevents the page from scrolling to an unexpected position
+  useEffect(() => {
+    if (step === 'form' && widgetContainerRef.current) {
+      // Small delay to ensure DOM has updated after step change
+      const timeoutId = setTimeout(() => {
+        widgetContainerRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 50);
+      return () => clearTimeout(timeoutId);
     }
   }, [step]);
 
@@ -843,7 +861,7 @@ const BookingWidgetV2: React.FC = memo(() => {
   }
 
   return (
-    <div className="relative">
+    <div ref={widgetContainerRef} className="relative">
       {/* Skip link for accessibility - visible only on focus */}
       <a
         href="#booking-content"
