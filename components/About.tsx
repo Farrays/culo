@@ -109,7 +109,7 @@ const About: React.FC = () => {
           <AnimateOnScroll delay={300}>
             <div className="flex justify-center md:justify-end">
               <figure
-                className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg w-full max-w-[400px] md:max-w-[450px]"
+                className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg w-full max-w-[400px] md:max-w-[450px] block leading-none"
                 itemProp="image"
                 itemScope
                 itemType="https://schema.org/ImageObject"
