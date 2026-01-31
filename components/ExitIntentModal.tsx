@@ -71,6 +71,8 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
 
   // Check if already shown within expiry period
   const hasBeenShown = useCallback(() => {
+    // SSR guard - localStorage not available during pre-rendering
+    if (typeof window === 'undefined') return false;
     try {
       const shown = localStorage.getItem(cookieName);
       if (!shown) return false;
@@ -85,6 +87,8 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
 
   // Mark as shown
   const markAsShown = useCallback(() => {
+    // SSR guard - localStorage not available during pre-rendering
+    if (typeof window === 'undefined') return;
     try {
       localStorage.setItem(cookieName, new Date().toISOString());
     } catch {

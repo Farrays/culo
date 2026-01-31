@@ -83,10 +83,12 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
     const hasTrackedImpression = useRef(false);
     const cycleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    // Check for reduced motion preference
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Check for reduced motion preference - must be in useEffect to avoid hydration mismatch
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+    useEffect(() => {
+      setPrefersReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }, []);
 
     // Track impression when ticker becomes visible (only once per session)
     useEffect(() => {

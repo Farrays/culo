@@ -58,10 +58,16 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
-  // Check for reduced motion preference
-  const prefersReducedMotion = useMemo(() => {
-    if (typeof window === 'undefined') return false;
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Check for reduced motion preference - must be in useEffect to avoid hydration mismatch
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
   }, []);
 
   // Get active novedades
@@ -136,28 +142,27 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
     [scrollPrev, scrollNext]
   );
 
-  // Auto-play effect
+  // Refs to avoid recreating interval on every state change
+  const currentIndexRef = useRef(currentIndex);
+  currentIndexRef.current = currentIndex;
+
+  const scrollToIndexRef = useRef(scrollToIndex);
+  scrollToIndexRef.current = scrollToIndex;
+
+  // Auto-play effect - uses refs to avoid dependency on changing values
   useEffect(() => {
-    if (!autoPlayInterval || isPaused || prefersReducedMotion) return;
+    if (!autoPlayInterval || isPaused || prefersReducedMotion || novedades.length <= 1) return;
 
     const timer = setInterval(() => {
-      if (currentIndex >= novedades.length - 1) {
-        scrollToIndex(0);
+      if (currentIndexRef.current >= novedades.length - 1) {
+        scrollToIndexRef.current(0);
       } else {
-        scrollNext();
+        scrollToIndexRef.current(currentIndexRef.current + 1);
       }
     }, autoPlayInterval);
 
     return () => clearInterval(timer);
-  }, [
-    autoPlayInterval,
-    isPaused,
-    prefersReducedMotion,
-    currentIndex,
-    novedades.length,
-    scrollNext,
-    scrollToIndex,
-  ]);
+  }, [autoPlayInterval, isPaused, prefersReducedMotion, novedades.length]);
 
   // Scroll listener
   useEffect(() => {

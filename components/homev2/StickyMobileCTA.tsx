@@ -26,11 +26,19 @@ const StickyMobileCTA: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      // Mostrar después de pasar el hero (aproximadamente 100vh)
-      const scrollY = window.scrollY;
-      const heroHeight = window.innerHeight;
-      setIsVisible(scrollY > heroHeight * 0.5);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Mostrar después de pasar el hero (aproximadamente 100vh)
+          const scrollY = window.scrollY;
+          const heroHeight = window.innerHeight;
+          setIsVisible(scrollY > heroHeight * 0.5);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

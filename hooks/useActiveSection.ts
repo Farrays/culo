@@ -45,6 +45,9 @@ export function useActiveSection({
 }: UseActiveSectionOptions): string | null {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const lastUpdateRef = useRef<number>(0);
+  // Use ref to avoid circular dependency in useCallback
+  const activeSectionRef = useRef<string | null>(null);
+  activeSectionRef.current = activeSection;
 
   const updateActiveSection = useCallback(() => {
     const now = Date.now();
@@ -86,10 +89,11 @@ export function useActiveSection({
       }
     }
 
-    if (currentSection !== activeSection) {
+    // Use ref to compare without causing circular dependency
+    if (currentSection !== activeSectionRef.current) {
       setActiveSection(currentSection);
     }
-  }, [sectionIds, offset, activeSection, throttleMs]);
+  }, [sectionIds, offset, throttleMs]);
 
   useEffect(() => {
     // Initial check

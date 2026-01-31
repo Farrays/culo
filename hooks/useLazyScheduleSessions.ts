@@ -35,16 +35,18 @@ import { useSharedIntersectionObserver, OBSERVER_CONFIGS } from './useSharedInte
 
 // Prefetch configuration - responsive margins for better mobile experience
 const PREFETCH_ROOT_MARGIN_DESKTOP = '400px'; // Desktop: 400px prefetch
-const PREFETCH_ROOT_MARGIN_MOBILE = '200px'; // Mobile: 200px (less aggressive)
+// Note: Mobile margin (200px) was removed to fix hydration mismatch - SSR always uses desktop margin
 const LAZY_LOAD_ROOT_MARGIN = '100px'; // Consider visible when 100px from viewport
 
 /**
  * Get responsive prefetch margin based on viewport width
  * Returns smaller margin on mobile to reduce unnecessary data fetching
+ * NOTE: Always returns desktop margin during SSR to avoid hydration mismatch
  */
 function getPrefetchRootMargin(): string {
-  if (typeof window === 'undefined') return PREFETCH_ROOT_MARGIN_DESKTOP;
-  return window.innerWidth < 768 ? PREFETCH_ROOT_MARGIN_MOBILE : PREFETCH_ROOT_MARGIN_DESKTOP;
+  // Always use desktop margin - responsive adjustment happens client-side only
+  // This prevents hydration mismatch between server and client
+  return PREFETCH_ROOT_MARGIN_DESKTOP;
 }
 
 export interface UseLazyScheduleSessionsOptions extends UseScheduleSessionsOptions {

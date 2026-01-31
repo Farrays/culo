@@ -1,6 +1,6 @@
 /* global Event */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, act } from '../../../test/test-utils';
+import { render, screen, fireEvent, act, waitFor } from '../../../test/test-utils';
 import StickyMobileCTA from '../StickyMobileCTA';
 
 // Mock LeadCaptureModal
@@ -50,7 +50,7 @@ describe('StickyMobileCTA', () => {
     expect(ctaContainer).toHaveClass('translate-y-full', 'opacity-0');
   });
 
-  it('becomes visible after scrolling past hero (50% of viewport height)', () => {
+  it('becomes visible after scrolling past hero (50% of viewport height)', async () => {
     const { container } = render(<StickyMobileCTA />);
 
     // Simulate scrolling past 50% of viewport
@@ -59,11 +59,14 @@ describe('StickyMobileCTA', () => {
       window.dispatchEvent(new Event('scroll'));
     });
 
-    const ctaContainer = container.querySelector('.fixed.bottom-0');
-    expect(ctaContainer).toHaveClass('translate-y-0', 'opacity-100');
+    // Wait for requestAnimationFrame to process the scroll
+    await waitFor(() => {
+      const ctaContainer = container.querySelector('.fixed.bottom-0');
+      expect(ctaContainer).toHaveClass('translate-y-0', 'opacity-100');
+    });
   });
 
-  it('hides again when scrolling back up', () => {
+  it('hides again when scrolling back up', async () => {
     const { container } = render(<StickyMobileCTA />);
 
     // First scroll down
@@ -72,14 +75,23 @@ describe('StickyMobileCTA', () => {
       window.dispatchEvent(new Event('scroll'));
     });
 
+    // Wait for visibility
+    await waitFor(() => {
+      const ctaContainer = container.querySelector('.fixed.bottom-0');
+      expect(ctaContainer).toHaveClass('translate-y-0', 'opacity-100');
+    });
+
     // Then scroll back up
     act(() => {
       Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
       window.dispatchEvent(new Event('scroll'));
     });
 
-    const ctaContainer = container.querySelector('.fixed.bottom-0');
-    expect(ctaContainer).toHaveClass('translate-y-full', 'opacity-0');
+    // Wait for hidden state
+    await waitFor(() => {
+      const ctaContainer = container.querySelector('.fixed.bottom-0');
+      expect(ctaContainer).toHaveClass('translate-y-full', 'opacity-0');
+    });
   });
 
   it('opens modal when CTA button is clicked', () => {
