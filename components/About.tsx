@@ -107,33 +107,35 @@ const About: React.FC = () => {
 
           {/* Columna derecha: Foto artística de Yunaisy */}
           <AnimateOnScroll delay={300}>
-            <figure
-              className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg"
-              itemProp="image"
-              itemScope
-              itemType="https://schema.org/ImageObject"
-            >
-              <Suspense
-                fallback={<div className="aspect-[3/4] bg-primary-dark/30 animate-pulse" />}
+            <div className="flex justify-center md:justify-end">
+              <figure
+                className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg w-full max-w-[400px] md:max-w-[450px]"
+                itemProp="image"
+                itemScope
+                itemType="https://schema.org/ImageObject"
               >
-                <OptimizedImage
-                  src="/images/yunaisy/img/yunaisy-artistica-4"
-                  alt={t('aboutYunaisyPhotoAlt')}
-                  aspectRatio="3/4"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="w-full"
-                  objectFit="cover"
-                  objectPosition="top"
-                  breakpoints={[320, 640, 768, 1024, 1440]}
+                <Suspense
+                  fallback={<div className="aspect-[3/4] bg-primary-dark/30 animate-pulse" />}
+                >
+                  <OptimizedImage
+                    src="/images/yunaisy/img/yunaisy-artistica-4"
+                    alt={t('aboutYunaisyPhotoAlt')}
+                    aspectRatio="3/4"
+                    sizes="(max-width: 768px) 400px, 450px"
+                    className="w-full h-full"
+                    objectFit="cover"
+                    objectPosition="center center"
+                    breakpoints={[320, 640, 768, 1024]}
+                  />
+                </Suspense>
+                <meta
+                  itemProp="url"
+                  content="https://www.farrayscenter.com/images/yunaisy/img/yunaisy-artistica-4_1024.webp"
                 />
-              </Suspense>
-              <meta
-                itemProp="url"
-                content="https://www.farrayscenter.com/images/yunaisy/img/yunaisy-artistica-4_1024.webp"
-              />
-              <meta itemProp="width" content="1024" />
-              <meta itemProp="height" content="1365" />
-            </figure>
+                <meta itemProp="width" content="1024" />
+                <meta itemProp="height" content="1365" />
+              </figure>
+            </div>
           </AnimateOnScroll>
         </div>
 
