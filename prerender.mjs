@@ -160,6 +160,7 @@ const OG_IMAGE_MAP = {
   regalaBaile: 'og-home.jpg',
   reservas: 'og-home.jpg',
   miReserva: 'og-home.jpg',
+  feedbackGracias: 'og-home.jpg',
   calendario: 'og-horarios-clases-baile.jpg',
   serviciosBaile: 'og-classes.jpg',
 
@@ -297,6 +298,7 @@ const PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT = [
   'calendario',     // Datos dinámicos
   'reservas',       // Widget interactivo con APIs del navegador - causa hydration mismatch
   'miReserva',      // Página dinámica con datos de Redis
+  'feedbackGracias', // Página de agradecimiento de feedback
   'notFound',       // Ya tiene contenido
   // Páginas legales - ya tienen contenido manual
   'termsConditions',
@@ -378,6 +380,7 @@ const routes = [
   { path: 'es/hazte-socio', lang: 'es', page: 'hazteSocio' },
 
   { path: 'es/mi-reserva', lang: 'es', page: 'miReserva' },
+  { path: 'es/feedback-gracias', lang: 'es', page: 'feedbackGracias' },
 
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
@@ -452,6 +455,7 @@ const routes = [
   { path: 'ca/hazte-socio', lang: 'ca', page: 'hazteSocio' },
 
   { path: 'ca/mi-reserva', lang: 'ca', page: 'miReserva' },
+  { path: 'ca/feedback-gracias', lang: 'ca', page: 'feedbackGracias' },
 
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
@@ -526,6 +530,7 @@ const routes = [
   { path: 'en/hazte-socio', lang: 'en', page: 'hazteSocio' },
 
   { path: 'en/mi-reserva', lang: 'en', page: 'miReserva' },
+  { path: 'en/feedback-gracias', lang: 'en', page: 'feedbackGracias' },
 
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
@@ -600,6 +605,7 @@ const routes = [
   { path: 'fr/hazte-socio', lang: 'fr', page: 'hazteSocio' },
 
   { path: 'fr/mi-reserva', lang: 'fr', page: 'miReserva' },
+  { path: 'fr/feedback-gracias', lang: 'fr', page: 'feedbackGracias' },
 
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
@@ -890,6 +896,11 @@ const metadata = {
     miReserva: {
       title: 'Mi Reserva | Farray\'s Center Barcelona',
       description: 'Gestiona tu reserva de clase en Farray\'s Center Barcelona. Reprograma o cancela tu clase.',
+      robots: 'noindex, nofollow',
+    },
+    feedbackGracias: {
+      title: 'Gracias por tu opinión | Farray\'s Center Barcelona',
+      description: 'Tu opinión nos ayuda a mejorar. Gracias por compartir tu experiencia con nosotros.',
       robots: 'noindex, nofollow',
     },
     blog: {
@@ -1231,6 +1242,11 @@ const metadata = {
       description: 'Gestiona la teva reserva de classe a Farray\'s Center Barcelona. Reprograma o cancel·la la teva classe.',
       robots: 'noindex, nofollow',
     },
+    feedbackGracias: {
+      title: 'Gràcies per la teva opinió | Farray\'s Center Barcelona',
+      description: 'La teva opinió ens ajuda a millorar. Gràcies per compartir la teva experiència amb nosaltres.',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
       description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
@@ -1570,6 +1586,11 @@ const metadata = {
       description: 'Manage your class booking at Farray\'s Center Barcelona. Reschedule or cancel your class.',
       robots: 'noindex, nofollow',
     },
+    feedbackGracias: {
+      title: 'Thank You for Your Feedback | Farray\'s Center Barcelona',
+      description: 'Your feedback helps us improve. Thank you for sharing your experience with us.',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
       description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
@@ -1907,6 +1928,11 @@ const metadata = {
     miReserva: {
       title: 'Ma Réservation | Farray\'s Center Barcelone',
       description: 'Gérez votre réservation de cours chez Farray\'s Center Barcelone. Reprogrammez ou annulez votre cours.',
+      robots: 'noindex, nofollow',
+    },
+    feedbackGracias: {
+      title: 'Merci pour Votre Avis | Farray\'s Center Barcelone',
+      description: 'Votre avis nous aide à nous améliorer. Merci de partager votre expérience avec nous.',
       robots: 'noindex, nofollow',
     },
     blog: {
@@ -2434,7 +2460,7 @@ routes.forEach(route => {
   // It reads the locale from the HTML lang attribute which is set during prerendering
   const localeScript = `
     <script>
-      (function(){var l=document.documentElement.lang||'es';localStorage.setItem('fidc_preferred_locale',l);document.cookie='fidc_locale='+l+';expires='+new Date(Date.now()+31536e6).toUTCString()+';path=/;SameSite=Lax';})();
+      (function(){var l=document.documentElement.lang||'es';localStorage.setItem('fidc_preferred_locale',l);document.cookie='fidc_locale='+l+';max-age=31536000;path=/;SameSite=Lax';})();
     </script>
   `;
 

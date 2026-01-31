@@ -13,7 +13,6 @@ import {
   SALSA_CUBANA_FAQS_CONFIG,
   SALSA_CUBANA_SCHEDULE_KEYS,
   SALSA_CUBANA_NEARBY_AREAS,
-  SALSA_CUBANA_VIDEO_ID,
   SALSA_CUBANA_LEVELS,
   SALSA_CUBANA_PREPARE_CONFIG,
 } from '../constants/salsa-cubana';
@@ -25,7 +24,6 @@ import FAQSection from './FAQSection';
 import LevelCardsSection from './shared/LevelCardsSection';
 import PrepareClassSection from './shared/PrepareClassSection';
 import AnimatedCounter from './AnimatedCounter';
-import YouTubeEmbed from './YouTubeEmbed';
 import { LocalBusinessSchema, CourseSchema } from './SchemaMarkup';
 import {
   StarRating,
@@ -75,18 +73,6 @@ const SalsaCubanaPage: React.FC = () => {
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
   }));
-
-  // VideoObject Schema
-  const videoSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: t('salsaCubanaVideoTitle'),
-    description: t('salsaCubanaVideoDesc'),
-    thumbnailUrl: `https://img.youtube.com/vi/${SALSA_CUBANA_VIDEO_ID}/maxresdefault.jpg`,
-    uploadDate: '2025-01-01',
-    contentUrl: `https://www.youtube.com/watch?v=${SALSA_CUBANA_VIDEO_ID}`,
-    embedUrl: `https://www.youtube.com/embed/${SALSA_CUBANA_VIDEO_ID}`,
-  };
 
   // BreadcrumbList Schema (JSON-LD)
   const breadcrumbSchema = {
@@ -153,12 +139,6 @@ const SalsaCubanaPage: React.FC = () => {
         <meta name="twitter:description" content={t('salsaCubanaMetaDescription')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-salsa-cubana.jpg`} />
       </Helmet>
-
-      {/* VideoObject Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-      />
 
       {/* BreadcrumbList Schema */}
       <script
@@ -1253,14 +1233,35 @@ const SalsaCubanaPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            <div className="max-w-4xl mx-auto">
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
-                <YouTubeEmbed
-                  videoId={SALSA_CUBANA_VIDEO_ID}
-                  title={t('salsaCubana_video_embedTitle')}
-                />
-              </AnimateOnScroll>
-            </div>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+              {/* Video Coming Soon Placeholder - Enterprise (Not clickable) */}
+              <div className="max-w-2xl mx-auto">
+                <div className="relative aspect-video bg-gradient-to-br from-primary-dark/40 via-black/60 to-primary-dark/30 rounded-2xl border border-primary-accent/20 overflow-hidden shadow-xl pointer-events-none select-none">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-accent/10 via-transparent to-transparent" />
+
+                  {/* Content */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                    {/* Play icon placeholder */}
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-accent/20 border-2 border-primary-accent/40 flex items-center justify-center mb-4 backdrop-blur-sm">
+                      <svg
+                        className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent/60"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+
+                    {/* Text */}
+                    <p className="text-lg sm:text-xl font-bold text-neutral/90 mb-1">
+                      {t('videoComingSoon')}
+                    </p>
+                    <p className="text-sm text-neutral/70">{t('videoComingSoonDesc')}</p>
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
 

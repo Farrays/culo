@@ -804,7 +804,7 @@ const BookingWidgetV2: React.FC = memo(() => {
         hasMore={hasMore}
         isLoadingMore={loading && currentPage > 1}
         selectedClassId={selectedClass?.id ?? null}
-        showAllWeeks={hasActiveFilters}
+        showAllWeeks={false}
         allWeeksClasses={allWeeksClasses}
         allWeeksLoading={allWeeksLoading}
         hideFilters={filtersLocked}

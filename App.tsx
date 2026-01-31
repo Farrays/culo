@@ -49,6 +49,7 @@ const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPag
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
+// const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2')); // Removed - file doesn't exist
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
 const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
@@ -120,6 +121,7 @@ const TestPaidSelector = lazy(() => import('./pages/TestPaidSelector'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
+const MiReservaPage = lazy(() => import('./components/MiReservaPage'));
 
 // ===== BLOG PAGES =====
 const BlogListPage = lazy(() => import('./components/pages/BlogListPage'));
@@ -133,6 +135,9 @@ const ProfesoresBaileBarcelonaPage = lazy(
 // ===== BOOKING PAGE =====
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
 const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
+
+// ===== FEEDBACK PAGE =====
+const FeedbackGraciasPage = lazy(() => import('./components/FeedbackGraciasPage'));
 
 // ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
 const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
@@ -289,7 +294,9 @@ const AppContent: React.FC = () => {
 
   // Booking page without header/footer (clean funnel experience)
   const isBookingPage =
-    location.pathname.includes('/reservas') || location.pathname.includes('/mi-reserva');
+    location.pathname.includes('/reservas') ||
+    location.pathname.includes('/mi-reserva') ||
+    location.pathname.includes('/feedback-gracias');
 
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
@@ -586,6 +593,18 @@ const AppContent: React.FC = () => {
               }
             />
 
+            {/* V2 Alternative - for A/B testing comparison - DISABLED (file doesn't exist)
+            <Route
+              path="/:locale/clases/salsa-lady-style-v2"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaLadyStylePageV2 />
+                </>
+              }
+            />
+            */}
+
             <Route
               path="/:locale/clases/bachata-lady-style-barcelona"
               element={
@@ -788,6 +807,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/feedback-gracias"
+              element={
+                <>
+                  <LocaleSync />
+                  <FeedbackGraciasPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/terminos-y-condiciones"
               element={
                 <>
@@ -965,6 +994,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HorariosPageV2 />
+                </>
+              }
+            />
+
+            {/* Mi Reserva - Magic Link Management Page */}
+            <Route
+              path="/:locale/mi-reserva"
+              element={
+                <>
+                  <LocaleSync />
+                  <MiReservaPage />
                 </>
               }
             />

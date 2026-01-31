@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import HorariosScheduleSection from './HorariosScheduleSection';
+import ScheduleImagesSection from './ScheduleImagesSection';
+import { ReviewsSection } from './reviews';
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -101,7 +103,7 @@ const MonthlyPlanCard = memo(
           </ul>
 
           <a
-            href="https://momence.com/sign-in?hostId=36148"
+            href="https://www.farrayscenter.com/hazte-socio"
             target="_blank"
             rel="noopener noreferrer"
             className={`block w-full text-center font-bold py-3 px-6 rounded-full transition-all duration-300 mt-auto ${
@@ -135,7 +137,7 @@ const FlexiblePlanCard = memo(
   }) => (
     <div className="[perspective:1000px] h-full">
       <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-5 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
-        <div className="flex justify-between items-start mb-3 flex-grow">
+        <div className="flex justify-between items-start mb-3">
           <div>
             <p className="text-xl font-bold text-neutral">
               {plan.activities} {t('pricing_activities')}
@@ -151,7 +153,7 @@ const FlexiblePlanCard = memo(
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-sm text-neutral/70 mt-auto">
+        <div className="flex items-center gap-2 text-sm text-neutral/70 mb-4">
           <ClockIcon className="w-4 h-4 flex-shrink-0" />
           {t('pricing_duration')}: {plan.duration}
           {isPremium && (
@@ -161,6 +163,15 @@ const FlexiblePlanCard = memo(
             </>
           )}
         </div>
+
+        <a
+          href="https://www.farrayscenter.com/hazte-socio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full text-center font-bold py-3 px-6 rounded-full transition-all duration-300 mt-auto bg-black/50 border border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-white"
+        >
+          {t('pricing_select_plan')}
+        </a>
       </div>
     </div>
   )
@@ -425,10 +436,10 @@ const HorariosPreciosPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                 <div className="w-full sm:w-auto">
                   <a
-                    href="https://momence.com/sign-in?hostId=36148"
+                    href="https://www.farrayscenter.com/hazte-socio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                    className="block w-full sm:min-w-[280px] bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
                     {t('pricing_cta_primary')}
                   </a>
@@ -438,10 +449,8 @@ const HorariosPreciosPage: React.FC = () => {
                 </div>
                 <div className="w-full sm:w-auto">
                   <a
-                    href="https://momence.com/sign-in?hostId=36148"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full sm:w-auto bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
+                    href="#cuota-inscripcion"
+                    className="block w-full sm:min-w-[280px] bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
                   >
                     {t('pricing_cta_secondary')}
                   </a>
@@ -458,6 +467,11 @@ const HorariosPreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
+            SCHEDULE IMAGES GALLERY 2026
+        ================================================================ */}
+        <ScheduleImagesSection />
+
+        {/* ================================================================
             SECTION 2: SCHEDULE (Horarios)
         ================================================================ */}
         <HorariosScheduleSection />
@@ -465,7 +479,7 @@ const HorariosPreciosPage: React.FC = () => {
         {/* ================================================================
             SECTION 3: ENROLLMENT FEE
         ================================================================ */}
-        <section className="py-12 md:py-16 bg-black">
+        <section id="cuota-inscripcion" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto [perspective:1000px]">
@@ -538,6 +552,12 @@ const HorariosPreciosPage: React.FC = () => {
                     {t('pricing_tab_premium')}
                   </button>
                 </div>
+
+                {/* Premium Note */}
+                <p className="text-sm text-neutral/70 mt-4 max-w-2xl mx-auto">
+                  Los cursos <strong className="text-primary-accent">Premium</strong> son impartidos
+                  por la Maestra Yunaisy Farray
+                </p>
               </div>
             </AnimateOnScroll>
 
@@ -586,10 +606,10 @@ const HorariosPreciosPage: React.FC = () => {
                   </p>
                   <p className="text-neutral/90 mb-6">{t('pricing_unlimited_desc')}</p>
                   <a
-                    href="https://momence.com/sign-in?hostId=36148"
+                    href="https://www.farrayscenter.com/hazte-socio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                    className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
                     {t('pricing_unlimited_cta')}
                   </a>
@@ -637,6 +657,12 @@ const HorariosPreciosPage: React.FC = () => {
                     {t('pricing_tab_premium')}
                   </button>
                 </div>
+
+                {/* Premium Note */}
+                <p className="text-sm text-neutral/70 mt-4 max-w-2xl mx-auto">
+                  Los cursos <strong className="text-primary-accent">Premium</strong> son impartidos
+                  por la Maestra Yunaisy Farray
+                </p>
               </div>
             </AnimateOnScroll>
 
@@ -664,14 +690,22 @@ const HorariosPreciosPage: React.FC = () => {
                   {DROP_IN_PRICES.map((price, index) => (
                     <AnimateOnScroll key={price.id} delay={index * 50}>
                       <div className="[perspective:1000px] h-full">
-                        <div className="h-full flex flex-col justify-center bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-4 text-center hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
+                        <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-4 text-center hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
                           <p className="text-sm text-neutral/70 mb-1">
                             {price.duration} -{' '}
                             {price.type === 'premium' ? t('pricing_premium') : t('pricing_regular')}
                           </p>
-                          <p className="text-3xl font-black text-neutral">
+                          <p className="text-3xl font-black text-neutral mb-4">
                             {formatPrice(price.price)}
                           </p>
+                          <a
+                            href="https://www.farrayscenter.com/hazte-socio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block w-full text-center font-bold py-2 px-4 rounded-full transition-all duration-300 mt-auto bg-black/50 border border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-white text-sm"
+                          >
+                            {t('pricing_select_plan')}
+                          </a>
                         </div>
                       </div>
                     </AnimateOnScroll>
@@ -923,80 +957,9 @@ const HorariosPreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 11: TESTIMONIALS / SOCIAL PROOF
+            SECTION 11: TESTIMONIALS / SOCIAL PROOF - Google Reviews
         ================================================================ */}
-        <section id="testimonials" className="py-12 md:py-16 bg-primary-dark/10">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('pricing_testimonials_title')}
-                </h2>
-                <div className="inline-block">
-                  <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">
-                    {t('excellent')}
-                  </div>
-                  <div className="flex items-center justify-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon
-                        key={i}
-                        className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-yellow-400"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews', { count: 509 })}
-                  </div>
-                  <div className="mt-2 text-xs text-neutral/70">Google</div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {[
-                { id: 1, name: 'Ana Cid', city: 'Barcelona', quote: 'pricing_testimonial1_text' },
-                {
-                  id: 2,
-                  name: 'María García',
-                  city: "L'Hospitalet",
-                  quote: 'pricing_testimonial2_text',
-                },
-                { id: 3, name: 'Carlos Ruiz', city: 'Gràcia', quote: 'pricing_testimonial3_text' },
-                {
-                  id: 4,
-                  name: 'Laura Martínez',
-                  city: 'Eixample',
-                  quote: 'pricing_testimonial4_text',
-                },
-              ].map((testimonial, index) => (
-                <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-                  <div className="[perspective:1000px] h-full">
-                    <div className="flex flex-col h-full min-h-[180px] sm:min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg [transform-style:preserve-3d] transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)]">
-                      <div className="mb-2 sm:mb-3 flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                        ))}
-                      </div>
-                      <blockquote className="flex-grow text-neutral/90 mb-3 sm:mb-4">
-                        <p className="text-xs sm:text-sm leading-relaxed">
-                          &ldquo;{t(testimonial.quote)}&rdquo;
-                        </p>
-                      </blockquote>
-                      <div className="flex items-center gap-3 mt-auto pt-3 sm:pt-4 border-t border-primary-dark/30">
-                        <div>
-                          <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
-                            {testimonial.name}
-                          </cite>
-                          <p className="text-xs text-neutral/75">{testimonial.city}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* ================================================================
             SECTION 11: FAQ
@@ -1064,10 +1027,10 @@ const HorariosPreciosPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                   <div className="w-full sm:w-auto">
                     <a
-                      href="https://momence.com/sign-in?hostId=36148"
+                      href="https://www.farrayscenter.com/hazte-socio"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                      className="block w-full sm:min-w-[280px] bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                     >
                       {t('pricing_cta_primary')}
                     </a>
@@ -1077,10 +1040,8 @@ const HorariosPreciosPage: React.FC = () => {
                   </div>
                   <div className="w-full sm:w-auto">
                     <a
-                      href="https://momence.com/sign-in?hostId=36148"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full sm:w-auto bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
+                      href="#cuota-inscripcion"
+                      className="block w-full sm:min-w-[280px] bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
                     >
                       {t('pricing_cta_secondary')}
                     </a>

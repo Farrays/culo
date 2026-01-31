@@ -445,8 +445,8 @@ const YunaisyFarrayPage: React.FC = () => {
               <div className="grid lg:grid-cols-5 gap-8 items-start">
                 {/* Photo Column */}
                 <AnimateOnScroll delay={100} className="lg:col-span-2">
-                  <div className="max-w-sm mx-auto lg:mx-0">
-                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-primary-accent/30 shadow-accent-glow">
+                  <div className="max-w-sm mx-auto lg:mx-0 [perspective:1000px]">
+                    <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-primary-accent/30 shadow-accent-glow [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent">
                       <OptimizedImage
                         src="/images/teachers/img/maestra-yunaisy-farray"
                         alt="Yunaisy Farray - Fundadora y Directora de Farray's International Dance Center"
@@ -455,7 +455,7 @@ const YunaisyFarrayPage: React.FC = () => {
                         aspectRatio="3/4"
                         objectFit="cover"
                         objectPosition="center top"
-                        className="w-full"
+                        className="w-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                       />
                       {/* Holographic overlay effect */}
                       <div className="absolute inset-0 bg-gradient-to-tr from-primary-accent/10 via-transparent to-primary-dark/10 pointer-events-none"></div>
@@ -505,8 +505,8 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Artistic Photo - Vertical Jump */}
         <section className="py-10 md:py-16 bg-black overflow-hidden">
           <AnimateOnScroll>
-            <div className="max-w-md mx-auto px-6">
-              <div className="relative group rounded-2xl overflow-hidden border border-primary-accent/20 shadow-2xl shadow-primary-accent/10">
+            <div className="max-w-md mx-auto px-6 [perspective:1000px]">
+              <div className="relative group rounded-2xl overflow-hidden border border-primary-accent/20 shadow-2xl shadow-primary-accent/10 [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent">
                 <OptimizedImage
                   src="/images/yunaisy/img/yunaisy-artistica-1"
                   alt="Yunaisy Farray ejecutando salto con extensión vertical - Directora de Farray's Dance Center Barcelona, maestra CID-UNESCO de danza cubana y contemporánea"
@@ -514,7 +514,7 @@ const YunaisyFarrayPage: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, 448px"
                   aspectRatio="4/5"
                   objectFit="cover"
-                  className="w-full"
+                  className="w-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 {/* Diagonal hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary-accent/5 to-primary-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -549,8 +549,8 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Artistic Photo - Backbend */}
         <section className="py-8 md:py-14 bg-gradient-to-b from-black via-primary-dark/5 to-black overflow-hidden">
           <AnimateOnScroll>
-            <div className="max-w-md mx-auto px-4">
-              <div className="relative group rounded-2xl overflow-hidden border border-primary-dark/30 shadow-2xl">
+            <div className="max-w-md mx-auto px-4 [perspective:1000px]">
+              <div className="relative group rounded-2xl overflow-hidden border border-primary-dark/30 shadow-2xl [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent">
                 <OptimizedImage
                   src="/images/yunaisy/img/yunaisy-artistica-2"
                   alt="Yunaisy Farray en backbend con extensión de pierna - Bailarina profesional y coreógrafa internacional, fundadora escuela de baile en Barcelona Eixample"
@@ -558,7 +558,7 @@ const YunaisyFarrayPage: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, 448px"
                   aspectRatio="4/5"
                   objectFit="cover"
-                  className="w-full"
+                  className="w-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 {/* Diagonal hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-accent/5 to-primary-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -607,8 +607,8 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Artistic Photo - Split Jump - Wide */}
         <section className="py-10 md:py-20 bg-gradient-to-b from-black via-primary-dark/10 to-black overflow-hidden">
           <AnimateOnScroll>
-            <div className="max-w-4xl mx-auto px-4">
-              <div className="relative group rounded-3xl overflow-hidden border-2 border-primary-accent/30 shadow-[0_0_60px_rgba(var(--color-primary-accent-rgb),0.12)]">
+            <div className="max-w-4xl mx-auto px-4 [perspective:1000px]">
+              <div className="relative group rounded-3xl overflow-hidden border-2 border-primary-accent/30 shadow-[0_0_60px_rgba(var(--color-primary-accent-rgb),0.12)] [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent">
                 <OptimizedImage
                   src="/images/yunaisy/img/yunaisy-artistica-3"
                   alt="Yunaisy Farray realizando grand jeté split aéreo - Artista de danza contemporánea y cubana, profesora de baile Barcelona, actriz Street Dance 2"
@@ -616,7 +616,7 @@ const YunaisyFarrayPage: React.FC = () => {
                   sizes="(max-width: 1024px) 100vw, 896px"
                   aspectRatio="16/10"
                   objectFit="cover"
-                  className="w-full"
+                  className="w-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 {/* Diagonal hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-bl from-primary-accent/15 via-primary-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -689,8 +689,8 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Artistic Photo - Pink Dress */}
         <section className="py-10 md:py-16 bg-black overflow-hidden">
           <AnimateOnScroll>
-            <div className="max-w-lg mx-auto px-4">
-              <div className="relative group rounded-3xl overflow-hidden border-2 border-primary-accent/25 shadow-[0_0_60px_rgba(var(--color-primary-accent-rgb),0.1)]">
+            <div className="max-w-lg mx-auto px-4 [perspective:1000px]">
+              <div className="relative group rounded-3xl overflow-hidden border-2 border-primary-accent/25 shadow-[0_0_60px_rgba(var(--color-primary-accent-rgb),0.1)] [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent">
                 <OptimizedImage
                   src="/images/yunaisy/img/yunaisy-artistica-4"
                   alt="Yunaisy Farray en salto artístico con vestido rosa - Coreógrafa y maestra de baile cubano en Barcelona, finalista Got Talent España, formadora CID-UNESCO"
@@ -698,7 +698,7 @@ const YunaisyFarrayPage: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, 512px"
                   aspectRatio="4/5"
                   objectFit="cover"
-                  className="w-full"
+                  className="w-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 {/* Diagonal hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary-accent/8 to-primary-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -805,8 +805,8 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Artistic Photo - Floor Pose - Final Impact */}
         <section className="py-12 md:py-20 bg-gradient-to-b from-black to-primary-dark/10 overflow-hidden">
           <AnimateOnScroll>
-            <div className="max-w-4xl mx-auto px-4">
-              <div className="relative group rounded-3xl overflow-hidden border border-primary-accent/20 shadow-[0_0_80px_rgba(var(--color-primary-accent-rgb),0.1)]">
+            <div className="max-w-4xl mx-auto px-4 [perspective:1000px]">
+              <div className="relative group rounded-3xl overflow-hidden border border-primary-accent/20 shadow-[0_0_80px_rgba(var(--color-primary-accent-rgb),0.1)] [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent">
                 <OptimizedImage
                   src="/images/yunaisy/img/yunaisy-artistica-5"
                   alt="Yunaisy Farray en pose contemporánea de suelo - Bailarina y profesora de danza contemporánea Barcelona, técnica corporal avanzada, escuela Eixample"
@@ -814,7 +814,7 @@ const YunaisyFarrayPage: React.FC = () => {
                   sizes="(max-width: 1024px) 100vw, 896px"
                   aspectRatio="4/3"
                   objectFit="cover"
-                  className="w-full"
+                  className="w-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 {/* Diagonal hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-accent/5 to-primary-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

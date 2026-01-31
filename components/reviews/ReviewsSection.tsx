@@ -69,7 +69,7 @@ const GoogleRatingBadge: React.FC<{ className?: string }> = ({ className = '' })
 
       {/* Review count */}
       <div className="text-sm text-neutral/70">
-        {t('basedOnReviews', { count: googleStats.totalReviews })}
+        {t('pages:basedOnReviews', { count: googleStats.totalReviews })}
       </div>
       <div className="mt-2 text-xs text-neutral/70">{t('reviews_google')}</div>
     </div>

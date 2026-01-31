@@ -149,6 +149,38 @@ export const IMAGE_ALT_TEXTS = {
       },
     },
 
+    // ==========================================================================
+    // SCHEDULE IMAGES (Horarios 2026)
+    // ==========================================================================
+    horarios: {
+      schedules: {
+        danza2026: {
+          es: "Horario de clases de Danza 2026 - Ballet, Contemporáneo, Modern Jazz en Farray's Center Barcelona",
+          en: "Dance Class Schedule 2026 - Ballet, Contemporary, Modern Jazz at Farray's Center Barcelona",
+          ca: "Horari de classes de Dansa 2026 - Ballet, Contemporani, Modern Jazz a Farray's Center Barcelona",
+          fr: "Emploi du temps des cours de Danse 2026 - Ballet, Contemporain, Modern Jazz chez Farray's Center Barcelone",
+        },
+        morning2026: {
+          es: 'Horario de clases matinales 2026 - Stretching, Pilates, Yoga en Barcelona',
+          en: 'Morning Class Schedule 2026 - Stretching, Pilates, Yoga in Barcelona',
+          ca: 'Horari de classes matinals 2026 - Stretching, Pilates, Ioga a Barcelona',
+          fr: 'Emploi du temps des cours matinaux 2026 - Stretching, Pilates, Yoga à Barcelone',
+        },
+        social2026: {
+          es: "Horario de bailes latinos 2026 - Salsa, Bachata, Kizomba en Farray's Center Barcelona",
+          en: "Latin Dance Schedule 2026 - Salsa, Bachata, Kizomba at Farray's Center Barcelona",
+          ca: "Horari de balls llatins 2026 - Salsa, Bachata, Kizomba a Farray's Center Barcelona",
+          fr: "Emploi du temps des danses latines 2026 - Salsa, Bachata, Kizomba chez Farray's Center Barcelone",
+        },
+        urban2026: {
+          es: 'Horario de danza urbana 2026 - Hip Hop, Dancehall, Afrobeat, Twerk en Barcelona',
+          en: 'Urban Dance Schedule 2026 - Hip Hop, Dancehall, Afrobeat, Twerk in Barcelona',
+          ca: 'Horari de dansa urbana 2026 - Hip Hop, Dancehall, Afrobeat, Twerk a Barcelona',
+          fr: 'Emploi du temps de danse urbaine 2026 - Hip Hop, Dancehall, Afrobeat, Twerk à Barcelone',
+        },
+      },
+    },
+
     ballet: {
       hero: {
         es: "Clases de Ballet Clásico en Barcelona - Farray's Center",

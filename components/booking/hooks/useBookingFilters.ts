@@ -2,8 +2,6 @@
  * useBookingFilters Hook
  * Manages filter state with URL synchronization for deep linking
  */
-/* global URLSearchParams */
-
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import type { FilterState } from '../types/booking';

@@ -90,7 +90,7 @@ const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, 
         srcSet={`${basePath}_320.jpg 320w, ${basePath}_640.jpg 640w, ${basePath}_960.jpg 960w`}
         sizes="(max-width: 768px) 128px, 160px"
         alt={t('teacher_photo_alt', { name })}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
         loading="lazy"
         decoding="async"
         width={160}
@@ -162,14 +162,16 @@ const Teachers: React.FC = () => {
                 }`}
               >
                 {/* Teacher Image */}
-                <div
-                  className={`flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 transition-all duration-300 ${
-                    teacher.isDirector
-                      ? 'border-primary-accent'
-                      : 'border-primary-accent/50 group-hover:border-primary-accent'
-                  }`}
-                >
-                  <TeacherImage basePath={teacher.imageBasePath} name={teacher.name} />
+                <div className="flex-shrink-0 [perspective:1000px]">
+                  <div
+                    className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 transition-all duration-500 ease-in-out [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow ${
+                      teacher.isDirector
+                        ? 'border-primary-accent'
+                        : 'border-primary-accent/50 group-hover:border-primary-accent'
+                    }`}
+                  >
+                    <TeacherImage basePath={teacher.imageBasePath} name={teacher.name} />
+                  </div>
                 </div>
 
                 {/* Teacher Info */}
