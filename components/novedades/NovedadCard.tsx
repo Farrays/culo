@@ -135,7 +135,7 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
   return (
     <>
       <article
-        className="group relative flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[380px] scroll-snap-align-start"
+        className="group relative flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[380px] scroll-snap-align-start [perspective:1000px]"
         role="listitem"
         aria-setsize={total}
         aria-posinset={index + 1}
@@ -151,9 +151,9 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
           />
         )}
 
-        <div className="relative bg-black/60 backdrop-blur-md border border-primary-dark/50 rounded-2xl overflow-hidden transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:border-primary-accent hover:shadow-accent-glow">
-          {/* Image Container */}
-          <div className="relative aspect-video overflow-hidden">
+        <div className="relative bg-black/60 backdrop-blur-md border border-primary-dark/50 rounded-2xl overflow-hidden transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:border-primary-accent hover:shadow-accent-glow">
+          {/* Image Container - shorter aspect ratio to show more content */}
+          <div className="relative aspect-[16/8] overflow-hidden">
             {shouldLoadImage ? (
               <Suspense
                 fallback={<div className="absolute inset-0 bg-primary-dark/30 animate-pulse" />}

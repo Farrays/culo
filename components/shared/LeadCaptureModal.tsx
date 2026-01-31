@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef, memo, useTransition } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
@@ -27,6 +28,8 @@ interface LeadCaptureModalProps {
   isOpen: boolean;
   onClose: () => void;
   defaultValues?: Partial<FormData>;
+  /** Full page mode - takes entire screen on all devices */
+  fullPage?: boolean;
 }
 
 // ============================================================================
@@ -75,6 +78,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
   isOpen,
   onClose,
   defaultValues = {},
+  fullPage = false,
 }) {
   const { t, i18n } = useTranslation([
     'common',
@@ -404,11 +408,12 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
   if (!isOpen) return null;
 
-  return (
+  // Use portal to render modal at document.body level, avoiding stacking context issues
+  const modalContent = (
     <div
-      className={`fixed inset-0 z-[9999] flex items-end md:items-center justify-center transition-all duration-300 motion-reduce:transition-none ${
-        showContent ? 'opacity-100' : 'opacity-0'
-      }`}
+      className={`fixed inset-0 z-[9999] flex justify-center transition-all duration-300 motion-reduce:transition-none ${
+        fullPage ? 'items-stretch' : 'items-end md:items-center'
+      } ${showContent ? 'opacity-100' : 'opacity-0'}`}
       role="dialog"
       aria-modal="true"
       aria-labelledby="lead-modal-title"
@@ -420,10 +425,12 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         aria-hidden="true"
       />
 
-      {/* Modal Container - Full screen en movil, centrado en desktop */}
+      {/* Modal Container - Full screen en movil, centrado en desktop (unless fullPage) */}
       <div
         ref={modalRef}
-        className={`relative z-10 w-full md:max-w-lg md:mx-4 transition-all duration-500 motion-reduce:transition-none ${
+        className={`relative z-10 w-full transition-all duration-500 motion-reduce:transition-none ${
+          fullPage ? 'h-full' : 'md:max-w-lg md:mx-4'
+        } ${
           showContent
             ? 'translate-y-0 md:scale-100'
             : 'translate-y-full md:translate-y-0 md:scale-95'
@@ -436,7 +443,11 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         />
 
         {/* Modal Content */}
-        <div className="relative bg-black md:bg-black/95 md:backdrop-blur-xl border-t md:border border-primary-accent/30 md:rounded-3xl overflow-hidden shadow-2xl max-h-[95vh] md:max-h-[90vh] overflow-y-auto">
+        <div
+          className={`relative bg-black md:bg-black/95 md:backdrop-blur-xl border-t md:border border-primary-accent/30 overflow-hidden shadow-2xl overflow-y-auto ${
+            fullPage ? 'h-full rounded-none' : 'md:rounded-3xl max-h-[95vh] md:max-h-[90vh]'
+          }`}
+        >
           {/* Decorative top line */}
           <div
             className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent"
@@ -819,6 +830,9 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       </div>
     </div>
   );
+
+  // Render modal in portal to escape parent stacking contexts (transforms, etc.)
+  return createPortal(modalContent, document.body);
 });
 
 export default LeadCaptureModal;

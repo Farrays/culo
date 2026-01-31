@@ -38,21 +38,31 @@ const FounderSection: React.FC<FounderSectionProps> = ({ config }) => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Imagen de Yunaisy */}
-          <AnimateOnScroll>
-            <div className="relative group">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-primary-dark/50 group-hover:border-primary-accent/50 transition-all duration-500">
-                <img
-                  src={config.image}
-                  alt="Yunaisy Farray - Fundadora de Farray's International Dance Center"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
+          <div className="flex justify-center lg:justify-start" style={{ perspective: '1000px' }}>
+            <div
+              className="group relative w-64 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-primary-dark/50 hover:border-primary-accent/50 cursor-pointer"
+              style={{
+                transformStyle: 'preserve-3d',
+                transition: 'transform 0.5s ease',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform =
+                  'translateY(-0.5rem) scale(1.02) rotateY(5deg) rotateX(2deg)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0) scale(1) rotateY(0) rotateX(0)';
+              }}
+            >
+              <img
+                src={config.image}
+                alt="Yunaisy Farray - Fundadora de Farray's International Dance Center"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
               {/* Decorativo - Glow accent */}
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary-accent/20 rounded-full blur-3xl group-hover:bg-primary-accent/30 transition-all duration-500" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary-dark/30 rounded-full blur-2xl" />
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary-accent/20 rounded-full blur-3xl group-hover:bg-primary-accent/30 transition-all duration-500 pointer-events-none" />
             </div>
-          </AnimateOnScroll>
+          </div>
 
           {/* Contenido narrativo - Estilo HappinessStory */}
           <div className="text-center lg:text-left">
