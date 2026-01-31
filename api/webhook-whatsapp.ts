@@ -1,6 +1,6 @@
+/* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import { Buffer } from 'buffer';
 import Redis from 'ioredis';
 import { sendTextMessage } from './lib/whatsapp';
 import {
