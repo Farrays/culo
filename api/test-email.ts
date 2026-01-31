@@ -57,8 +57,9 @@ export default async function handler(
     const resend = new Resend(apiKey);
 
     const result = await resend.emails.send({
-      from: "Farray's Center <onboarding@resend.dev>",
+      from: "Farray's Center <reservas@farrayscenter.com>",
       to,
+      replyTo: 'info@farrayscenter.com',
       subject: "Test de conexión - Farray's Center",
       html: `
 <!DOCTYPE html>

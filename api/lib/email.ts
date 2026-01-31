@@ -1,13 +1,20 @@
 /**
- * Resend Email Helper
+ * Resend Email Helper - Enterprise Configuration
  *
  * Helper para envío de emails transaccionales del sistema de reservas.
- * Usa Resend para envío de emails.
+ * Configuración enterprise con máxima entregabilidad.
  *
  * @see https://resend.com/docs
  *
- * TODO: Verificar dominio farrayscenter.com en Resend para enviar desde @farrayscenter.com
- * Por ahora usa onboarding@resend.dev para testing
+ * Configuración Resend Dashboard:
+ * - Click Tracking: OFF (evita spam filters)
+ * - Open Tracking: OFF (mejora entregabilidad)
+ * - TLS: Opportunistic (balance seguridad/entrega)
+ *
+ * DNS Records requeridos:
+ * - SPF: ✅ (configurado por Resend)
+ * - DKIM: ✅ (configurado por Resend)
+ * - DMARC: Añadir manualmente (ver README)
  */
 
 import { Resend } from 'resend';
@@ -77,9 +84,28 @@ export interface FeedbackEmailData {
 // EMAIL TEMPLATES
 // ============================================================================
 
-// TODO: Cuando se verifique el dominio, cambiar a: reservas@farrayscenter.com
-const FROM_EMAIL = "Farray's Center <onboarding@resend.dev>";
+// ============================================================================
+// CONFIGURACIÓN DE EMAILS - ENTERPRISE
+// ============================================================================
+
+/**
+ * Email addresses configurados:
+ * - FROM: Dirección verificada en Resend (dominio farrayscenter.com)
+ * - REPLY_TO: Dirección donde recibes respuestas
+ *
+ * Nomenclatura recomendada:
+ * - reservas@ → Confirmaciones y recordatorios
+ * - noreply@ → Emails automáticos sin respuesta esperada
+ * - info@ → Respuestas generales
+ */
+const FROM_EMAIL = "Farray's Center <reservas@farrayscenter.com>";
 const REPLY_TO = 'info@farrayscenter.com';
+
+// Headers adicionales para máxima entregabilidad
+const EMAIL_HEADERS = {
+  'X-Entity-Ref-ID': 'farrayscenter-booking-system',
+  'List-Unsubscribe': '<mailto:unsubscribe@farrayscenter.com>',
+};
 
 /**
  * Email de confirmación de reserva
@@ -94,6 +120,7 @@ export async function sendBookingConfirmation(
       from: FROM_EMAIL,
       to: data.to,
       replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
       subject: `Reserva confirmada: ${data.className}`,
       html: `
 <!DOCTYPE html>
@@ -225,6 +252,7 @@ export async function sendCancellationEmail(
       from: FROM_EMAIL,
       to: data.to,
       replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
       subject: `Reserva cancelada: ${data.className}`,
       html: `
 <!DOCTYPE html>
@@ -308,6 +336,7 @@ export async function sendReminderEmail(
       from: FROM_EMAIL,
       to: data.to,
       replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
       subject: `Recordatorio: Mañana tienes clase de ${data.className}`,
       html: `
 <!DOCTYPE html>
@@ -387,6 +416,7 @@ export async function sendFeedbackEmail(
       from: FROM_EMAIL,
       to: data.to,
       replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
       subject: `¿Qué tal tu clase de ${data.className}?`,
       html: `
 <!DOCTYPE html>
@@ -462,6 +492,7 @@ export async function sendTestEmail(
       from: FROM_EMAIL,
       to,
       replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
       subject: "Test de conexión - Farray's Center",
       html: `
 <!DOCTYPE html>
