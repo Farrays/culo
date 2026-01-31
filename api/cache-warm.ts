@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 
-/* eslint-disable no-undef, no-console */
+/* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
-// Console logging is intentional for cron job monitoring
+// Console logging is intentional for cron job monitoring (allowed by project eslint config)
 
 /**
  * API Route: /api/cache-warm
@@ -319,6 +319,7 @@ async function warmCache(): Promise<{
         // Check if cache is still valid (more than 5 min remaining)
         const ttl = await redis.ttl(cacheKey);
         if (ttl > 300) {
+          // eslint-disable-next-line no-console
           console.log(
             `[cache-warm] Week ${config.weekOffset}: Cache valid (${ttl}s TTL), skipping`
           );
@@ -335,6 +336,7 @@ async function warmCache(): Promise<{
         // Store in cache
         await redis.setex(cacheKey, CACHE_TTL_SECONDS, JSON.stringify(sessions));
 
+        // eslint-disable-next-line no-console
         console.log(`[cache-warm] Week ${config.weekOffset}: Cached ${sessions.length} sessions`);
         return { status: 'warmed' as const };
       } catch (error) {
@@ -390,11 +392,13 @@ export default async function handler(
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
+  // eslint-disable-next-line no-console
   console.log('[cache-warm] Starting cache warming...');
 
   try {
     const result = await warmCache();
 
+    // eslint-disable-next-line no-console
     console.log(
       `[cache-warm] Complete: ${result.warmed} warmed, ${result.skipped} skipped, ${result.errors.length} errors, ${result.duration}ms`
     );
