@@ -107,9 +107,9 @@ const About: React.FC = () => {
 
           {/* Columna derecha: Foto artística de Yunaisy */}
           <AnimateOnScroll delay={300}>
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end [perspective:1000px]">
               <figure
-                className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg w-full max-w-[400px] md:max-w-[450px] block leading-none"
+                className="group rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg w-full max-w-[400px] md:max-w-[450px] block leading-none [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow hover:border-primary-accent"
                 itemProp="image"
                 itemScope
                 itemType="https://schema.org/ImageObject"
@@ -122,7 +122,7 @@ const About: React.FC = () => {
                     alt={t('aboutYunaisyPhotoAlt')}
                     aspectRatio="3/4"
                     sizes="(max-width: 768px) 400px, 450px"
-                    className="w-full h-full"
+                    className="w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                     objectFit="cover"
                     objectPosition="center center"
                     breakpoints={[320, 640, 768, 1024]}
