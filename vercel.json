@@ -277,6 +277,11 @@
       "permanent": true
     },
     {
+      "source": "/trainer/enric-bertran",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
       "source": "/trainer/fabio-pinto",
       "destination": "/es/profesores-baile-barcelona",
       "permanent": true
@@ -499,6 +504,11 @@
     {
       "source": "/bootcamp-salsa",
       "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/bootcamp-reggaeton",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
       "permanent": true
     },
     {
