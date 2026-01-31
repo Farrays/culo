@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { GlobeIcon, ChevronDownIcon, XMarkIcon } from '../../lib/icons';
+import { GlobeIcon, ChevronDownIcon, XMarkIcon, UserIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 import { SUPPORTED_LOCALES } from '../../types';
 
@@ -653,7 +653,31 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         </nav>
 
         {/* Bottom Section */}
-        <div className="mt-auto pt-8">
+        <div className="mt-auto pt-8 space-y-4">
+          {/* Área de Socio - Link externo */}
+          <a
+            href="https://momence.com/sign-in?hostId=36148"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 w-full py-3 px-4 text-white/80 hover:text-white border border-white/20 hover:border-white/40 rounded-full transition-all duration-300"
+          >
+            <UserIcon className="w-5 h-5" />
+            <span className="font-semibold">{t('header_member_area')}</span>
+            <svg
+              className="w-4 h-4 opacity-50"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+
           {/* CTA Button */}
           <button
             onClick={() => {

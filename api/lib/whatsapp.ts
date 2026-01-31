@@ -80,7 +80,11 @@ export interface ReminderWhatsAppData {
   to: string;
   firstName: string;
   className: string;
-  classDateTime: string; // Fecha y hora combinadas: "17/07/2025, 19:00"
+  classDateTime?: string; // Fecha y hora combinadas: "17/07/2025, 19:00"
+  classDate?: string; // Alternative: separate date
+  classTime?: string; // Alternative: separate time
+  category?: 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels'; // For category-specific instructions
+  reminderType?: '48h' | '24h'; // Tipo de recordatorio
 }
 
 export interface CancellationWhatsAppData {
@@ -245,13 +249,18 @@ export async function sendBookingConfirmationWhatsApp(
  * - {{3}} dateTime (fecha y hora combinadas, ej: "17/07/2025, 19:00")
  */
 export async function sendReminderWhatsApp(data: ReminderWhatsAppData): Promise<WhatsAppResult> {
+  // Combinar classDate y classTime si classDateTime no está proporcionado
+  const classDateTime =
+    data.classDateTime ||
+    (data.classDate && data.classTime ? `${data.classDate}, ${data.classTime}` : '');
+
   return sendTemplate('recordatorio_prueba_0', data.to, 'es_ES', [
     {
       type: 'body',
       parameters: [
         { type: 'text', text: data.firstName },
         { type: 'text', text: data.className },
-        { type: 'text', text: data.classDateTime },
+        { type: 'text', text: classDateTime },
       ],
     },
   ]);
