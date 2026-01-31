@@ -108,10 +108,11 @@ const About: React.FC = () => {
           {/* Columna derecha: Foto artística de Yunaisy */}
           <AnimateOnScroll delay={300}>
             <figure
-              className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg"
+              className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg relative"
               itemProp="image"
               itemScope
               itemType="https://schema.org/ImageObject"
+              style={{ aspectRatio: '3/4', maxWidth: '450px', margin: '0 auto' }}
             >
               <Suspense
                 fallback={<div className="aspect-[3/4] bg-primary-dark/30 animate-pulse" />}
@@ -119,11 +120,10 @@ const About: React.FC = () => {
                 <OptimizedImage
                   src="/images/yunaisy/img/yunaisy-artistica-4"
                   alt={t('aboutYunaisyPhotoAlt')}
-                  aspectRatio="3/4"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="w-full"
+                  sizes="(max-width: 768px) 100vw, 450px"
+                  className="absolute inset-0 w-full h-full"
                   objectFit="cover"
-                  objectPosition="top"
+                  objectPosition="center center"
                   breakpoints={[320, 640, 768, 1024, 1440]}
                 />
               </Suspense>
