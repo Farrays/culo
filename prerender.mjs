@@ -2143,32 +2143,10 @@ const generateInitialContentForLang = (lang, manualOverrides) => {
 };
 
 // Overrides manuales por idioma (páginas que necesitan contenido específico)
+// NOTE: home is excluded to avoid hydration mismatch - React components don't match static HTML
 const manualOverrides = {
   es: {
-    home: `<main id="main-content">
-      <h1 class="holographic-text text-4xl font-bold mb-6">Farray's International Dance Center - Academia de Baile en Barcelona</h1>
-      <p class="text-lg mb-4">Descubre el arte del baile con más de 25 estilos de danza en la academia CID-UNESCO de Barcelona. Desde Salsa Cubana y Bachata Sensual hasta Hip Hop, Dancehall, Heels y Danza Contemporánea.</p>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Método Farray® - Excelencia en Danza</h2>
-        <p>Academia dirigida por Yunaisy Farray, graduada de la Escuela Nacional de Arte de Cuba (ENA). Más de 15,000 alumnos formados desde 2005 con nuestro método exclusivo que combina técnica académica y expresión artística.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">+25 Estilos de Baile</h2>
-        <p>Salsa Cubana, Bachata Sensual, Reggaeton, Hip Hop, Dancehall, Twerk, Heels, Danza Contemporánea, Ballet, Afrobeats, Kizomba, Modern Jazz, Lady Style, Femmology y mucho más. Todos los niveles: principiante, intermedio y avanzado.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Acreditación CID-UNESCO</h2>
-        <p>Somos miembros oficiales del Consejo Internacional de la Danza (CID-UNESCO). Instalaciones de 700m² con 4 salas profesionales en el corazón del Eixample, Barcelona.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Profesores de Élite</h2>
-        <p>Equipo de 18+ profesores profesionales graduados de ENA Cuba, ISA Cuba, Compañía Carlos Acosta (Royal Ballet London), campeones mundiales de Bachata y bailarines de El Rey León París.</p>
-      </section>
-      <section>
-        <p><strong>Rating: 5.0 estrellas</strong> - Más de 505 reseñas en Google. Reserva tu clase de bienvenida HOY.</p>
-        <p><strong>Dirección:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Tel:</strong> +34 622 247 085</p>
-      </section>
-    </main>`,
+    // home excluded - causes hydration error #418 because React renders complex components
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Términos y Condiciones</h1><p>Información legal sobre inscripciones, pagos y políticas de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Aviso Legal</h1><p>Información sobre la empresa, propiedad intelectual y condiciones de uso.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacidad</h1><p>Información sobre el tratamiento de datos personales según el RGPD.</p></main>`,
@@ -2179,30 +2157,7 @@ const manualOverrides = {
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
   },
   ca: {
-    home: `<main id="main-content">
-      <h1 class="holographic-text text-4xl font-bold mb-6">Farray's International Dance Center - Acadèmia de Ball a Barcelona</h1>
-      <p class="text-lg mb-4">Descobreix l'art del ball amb més de 25 estils de dansa a l'acadèmia CID-UNESCO de Barcelona. Des de Salsa Cubana i Bachata Sensual fins a Hip Hop, Dancehall, Heels i Dansa Contemporània.</p>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Mètode Farray® - Excel·lència en Dansa</h2>
-        <p>Acadèmia dirigida per Yunaisy Farray, graduada de l'Escola Nacional d'Art de Cuba (ENA). Més de 15.000 alumnes formats des del 2005 amb el nostre mètode exclusiu que combina tècnica acadèmica i expressió artística.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">+25 Estils de Ball</h2>
-        <p>Salsa Cubana, Bachata Sensual, Reggaeton, Hip Hop, Dancehall, Twerk, Heels, Dansa Contemporània, Ballet, Afrobeats, Kizomba, Modern Jazz, Lady Style, Femmology i molt més. Tots els nivells: principiant, intermedi i avançat.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Acreditació CID-UNESCO</h2>
-        <p>Som membres oficials del Consell Internacional de la Dansa (CID-UNESCO). Instal·lacions de 700m² amb 4 sales professionals al cor de l'Eixample, Barcelona.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Professors d'Elit</h2>
-        <p>Equip de 18+ professors professionals graduats d'ENA Cuba, ISA Cuba, Companyia Carlos Acosta (Royal Ballet London), campions mundials de Bachata i ballarins d'El Rei Lleó París.</p>
-      </section>
-      <section>
-        <p><strong>Rating: 5.0 estrelles</strong> - Més de 505 ressenyes a Google. Reserva la teva classe de benvinguda AVUI.</p>
-        <p><strong>Adreça:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Tel:</strong> +34 622 247 085</p>
-      </section>
-    </main>`,
+    // home excluded - causes hydration error #418 because React renders complex components
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Termes i Condicions</h1><p>Informació legal sobre inscripcions, pagaments i polítiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Avís Legal</h1><p>Informació sobre l'empresa, propietat intel·lectual i condicions d'ús.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacitat</h1><p>Informació sobre el tractament de dades personals segons el RGPD.</p></main>`,
@@ -2213,30 +2168,7 @@ const manualOverrides = {
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
   },
   en: {
-    home: `<main id="main-content">
-      <h1 class="holographic-text text-4xl font-bold mb-6">Farray's International Dance Center - Dance Academy in Barcelona</h1>
-      <p class="text-lg mb-4">Discover the art of dance with more than 25 dance styles at Barcelona's CID-UNESCO accredited academy. From Cuban Salsa and Sensual Bachata to Hip Hop, Dancehall, Heels, and Contemporary Dance.</p>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Farray® Method - Excellence in Dance</h2>
-        <p>Academy directed by Yunaisy Farray, graduate of Cuba's National School of Arts (ENA). Over 15,000 students trained since 2005 with our exclusive method combining academic technique and artistic expression.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">+25 Dance Styles</h2>
-        <p>Cuban Salsa, Sensual Bachata, Reggaeton, Hip Hop, Dancehall, Twerk, Heels, Contemporary Dance, Ballet, Afrobeats, Kizomba, Modern Jazz, Lady Style, Femmology and much more. All levels: beginner, intermediate and advanced.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">CID-UNESCO Accreditation</h2>
-        <p>We are official members of the International Dance Council (CID-UNESCO). 700m² facilities with 4 professional studios in the heart of Eixample, Barcelona.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Elite Teachers</h2>
-        <p>Team of 18+ professional teachers graduated from ENA Cuba, ISA Cuba, Carlos Acosta Company (Royal Ballet London), World Bachata Champions, and dancers from The Lion King Paris.</p>
-      </section>
-      <section>
-        <p><strong>Rating: 5.0 stars</strong> - Over 505 Google reviews. Book your welcome class TODAY.</p>
-        <p><strong>Address:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Phone:</strong> +34 622 247 085</p>
-      </section>
-    </main>`,
+    // home excluded - causes hydration error #418 because React renders complex components
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Terms and Conditions</h1><p>Legal information about registration, payments and policies at Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Legal Notice</h1><p>Information about the company, intellectual property and terms of use.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Privacy Policy</h1><p>Information about personal data processing in accordance with GDPR.</p></main>`,
@@ -2247,30 +2179,7 @@ const manualOverrides = {
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
   },
   fr: {
-    home: `<main id="main-content">
-      <h1 class="holographic-text text-4xl font-bold mb-6">Farray's International Dance Center - Académie de Danse à Barcelone</h1>
-      <p class="text-lg mb-4">Découvrez l'art de la danse avec plus de 25 styles de danse dans l'académie accréditée CID-UNESCO de Barcelone. De la Salsa Cubaine et Bachata Sensuelle au Hip Hop, Dancehall, Heels et Danse Contemporaine.</p>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Méthode Farray® - Excellence en Danse</h2>
-        <p>Académie dirigée par Yunaisy Farray, diplômée de l'École Nationale d'Art de Cuba (ENA). Plus de 15 000 étudiants formés depuis 2005 avec notre méthode exclusive combinant technique académique et expression artistique.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">+25 Styles de Danse</h2>
-        <p>Salsa Cubaine, Bachata Sensuelle, Reggaeton, Hip Hop, Dancehall, Twerk, Heels, Danse Contemporaine, Ballet, Afrobeats, Kizomba, Modern Jazz, Lady Style, Femmology et bien plus. Tous niveaux : débutant, intermédiaire et avancé.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Accréditation CID-UNESCO</h2>
-        <p>Nous sommes membres officiels du Conseil International de la Danse (CID-UNESCO). Installations de 700m² avec 4 studios professionnels au cœur de l'Eixample, Barcelone.</p>
-      </section>
-      <section class="mb-6">
-        <h2 class="text-2xl font-bold mb-3">Professeurs d'Élite</h2>
-        <p>Équipe de 18+ professeurs professionnels diplômés d'ENA Cuba, ISA Cuba, Compagnie Carlos Acosta (Royal Ballet London), champions du monde de Bachata et danseurs du Roi Lion Paris.</p>
-      </section>
-      <section>
-        <p><strong>Note: 5.0 étoiles</strong> - Plus de 505 avis Google. Réservez votre cours de bienvenue AUJOURD'HUI.</p>
-        <p><strong>Adresse:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Tél:</strong> +34 622 247 085</p>
-      </section>
-    </main>`,
+    // home excluded - causes hydration error #418 because React renders complex components
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditions Générales</h1><p>Informations légales sur les inscriptions, paiements et politiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Mentions Légales</h1><p>Informations sur l'entreprise, propriété intellectuelle et conditions d'utilisation.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Confidentialité</h1><p>Informations sur le traitement des données personnelles conformément au RGPD.</p></main>`,
