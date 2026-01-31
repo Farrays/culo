@@ -3,12 +3,13 @@
  * Enterprise-level integration with BookingWidgetV2
  */
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 import BookingWidgetV2 from './booking/BookingWidgetV2';
 
 const HorariosScheduleSection = () => {
-  const { t } = useTranslation([
+  const { t, i18n } = useTranslation([
     'common',
     'booking',
     'schedule',
@@ -22,6 +23,8 @@ const HorariosScheduleSection = () => {
     'pages',
   ]);
 
+  const locale = i18n.language;
+
   return (
     <section className="py-16 min-h-screen bg-black">
       <div className="container mx-auto px-4">
@@ -31,9 +34,9 @@ const HorariosScheduleSection = () => {
             {/* Descripción */}
             <div className="max-w-3xl mx-auto mb-8">
               <p className="text-neutral/80 text-lg md:text-xl leading-relaxed">
-                Consulta nuestros horarios aquí. Si deseas reservar una{' '}
-                <strong className="text-neutral">clase de bienvenida sin compromiso</strong>, pulsa
-                en tu clase preferida y sigue los pasos.
+                {t('schedule:horarios_intro_text')}{' '}
+                <strong className="text-neutral">{t('schedule:horarios_intro_highlight')}</strong>
+                {t('schedule:horarios_intro_suffix')}
               </p>
             </div>
 
@@ -84,7 +87,7 @@ const HorariosScheduleSection = () => {
                   <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
-                  <span>Basado en 500+ reseñas</span>
+                  <span>{t('schedule:horarios_reviews_based_on')}</span>
                 </div>
                 <div className="text-xs text-neutral/50 mt-1 font-medium">Google</div>
               </div>
@@ -93,7 +96,7 @@ const HorariosScheduleSection = () => {
         </AnimateOnScroll>
 
         {/* BookingWidget - Full functionality */}
-        <div>
+        <div className="max-w-2xl mx-auto">
           <AnimateOnScroll delay={100}>
             <BookingWidgetV2 />
           </AnimateOnScroll>
@@ -110,15 +113,13 @@ const HorariosScheduleSection = () => {
                 {t('pricing_cta_subtitle')}
               </p>
 
-              {/* CTA Hazte Socio (repetido aquí) */}
-              <a
-                href="https://www.farrayscenter.com/hazte-socio"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* CTA Hazte Socio - Dynamic locale link */}
+              <Link
+                to={`/${locale}/hazte-socio`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
               >
-                Hazte Socio
-              </a>
+                {t('common:nav_hazte_socio', 'Hazte Socio')}
+              </Link>
 
               <p className="text-xs text-neutral/70 mt-4 max-w-lg mx-auto">
                 {t('pricing_cta_secondary_subtext')}

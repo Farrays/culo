@@ -245,5 +245,9 @@
   "horariosV2_block_salsa-bachata_ex3": "Salsa Lady Style 21:30h",
   "horariosV2_block_salsa_ex1": "Salsa Cubana 19:30h",
   "horariosV2_block_salsa_ex2": "Bachata Sensual 20:30h",
-  "horariosV2_block_salsa_ex3": "Salsa Lady Style 21:30h"
+  "horariosV2_block_salsa_ex3": "Salsa Lady Style 21:30h",
+  "horarios_intro_text": "Consulta els nostres horaris en temps real aquí. Utilitza els filtres per trobar la teva activitat preferida. Si vols reservar una",
+  "horarios_intro_highlight": "sessió de benvinguda sense compromís",
+  "horarios_intro_suffix": ", prem a la teva activitat preferida i segueix els passos.",
+  "horarios_reviews_based_on": "Basat en 500+ ressenyes"
 }
