@@ -2,6 +2,11 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
+import {
+  createBookingEvent,
+  isGoogleCalendarConfigured,
+  type BookingCalendarData,
+} from './lib/google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -1159,22 +1164,82 @@ export default async function handler(
       }
     }
 
-    // 4. Enviar notificaciones (Email + WhatsApp)
+    // 4. Preparar datos comunes para notificaciones y calendario
     const category = determineCategory(className || '', estilo);
     const formattedDate = formatDateReadable(classDate || '');
     const classTime = extractTime(classDate || '');
     const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+    const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
+    const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
 
-    // 4a. Enviar email de confirmación
+    // 5. Crear evento en Google Calendar (Calendario Académico)
+    let calendarEventId: string | undefined;
+    if (isGoogleCalendarConfigured()) {
+      try {
+        // Extraer fecha ISO de classDate (puede venir como "2024-01-20T18:00:00.000Z")
+        const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
+        const calendarDateStr = isoMatch ? isoMatch[0] : classDate || '';
+
+        const calendarData: BookingCalendarData = {
+          firstName: sanitize(firstName),
+          lastName: sanitize(lastName),
+          email: normalizedEmail,
+          phone: sanitize(phone),
+          className: className || estilo || 'Clase de Prueba',
+          classDate: calendarDateStr,
+          classTime: classTime || '19:00',
+          category,
+          eventId: finalEventId,
+          managementUrl,
+        };
+
+        const calendarResult = await createBookingEvent(calendarData);
+        console.warn('[reservar] Google Calendar result:', calendarResult);
+
+        if (calendarResult.success && calendarResult.calendarEventId) {
+          calendarEventId = calendarResult.calendarEventId;
+
+          // Guardar detalles completos del booking con calendarEventId para attendance.ts
+          if (redis) {
+            try {
+              await redis.setex(
+                `booking_details:${finalEventId}`,
+                BOOKING_TTL_SECONDS,
+                JSON.stringify({
+                  firstName: sanitize(firstName),
+                  lastName: sanitize(lastName),
+                  email: normalizedEmail,
+                  phone: sanitize(phone),
+                  className: className || estilo || 'Clase de Prueba',
+                  classDate: classDate || '',
+                  classTime: classTime || '19:00',
+                  category,
+                  calendarEventId,
+                  createdAt: new Date().toISOString(),
+                })
+              );
+              console.warn('[reservar] Booking details saved with calendarEventId');
+            } catch (e) {
+              console.warn('[reservar] Failed to save booking details:', e);
+            }
+          }
+        }
+      } catch (calendarError) {
+        console.error('[reservar] Google Calendar error:', calendarError);
+        // No bloquear la reserva si falla el calendario
+      }
+    } else {
+      console.warn('[reservar] Google Calendar not configured, skipping');
+    }
+
+    // 6. Enviar notificaciones (Email + WhatsApp)
+
+    // 6a. Enviar email de confirmación
     let emailResult: { success: boolean; error?: string } = {
       success: false,
       error: 'Not attempted',
     };
     try {
-      // Generar URL de gestión con magic link (básico por ahora)
-      const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
-      const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
-
       emailResult = await sendBookingConfirmationEmail({
         to: normalizedEmail,
         firstName: firstNameOnly,
@@ -1191,7 +1256,7 @@ export default async function handler(
       emailResult = { success: false, error: String(emailError) };
     }
 
-    // 4b. Enviar WhatsApp de confirmación
+    // 6b. Enviar WhatsApp de confirmación
     let whatsappResult: { success: boolean; error?: string } = {
       success: false,
       error: 'Not attempted',
@@ -1227,6 +1292,7 @@ export default async function handler(
         category,
         momenceSuccess: momenceResult.success,
         trackingSuccess: metaResult.success,
+        calendarSuccess: !!calendarEventId,
         emailSuccess: emailResult.success,
         whatsappSuccess: whatsappResult.success,
       },
