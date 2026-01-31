@@ -546,7 +546,7 @@ const RelatedClassesSchema: React.FC<{
         url: `${baseUrl}/${locale}/clases/${classInfo.slug}`,
         image: `${baseUrl}${classInfo.imageUrl || getRelatedClassImageUrl(classInfo.slug)}`,
         provider: {
-          '@type': 'DanceSchool',
+          '@type': 'EducationalOrganization',
           name: "Farray's International Dance Center",
           url: baseUrl,
         },
@@ -1150,7 +1150,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
               jobTitle: t(person.jobTitleKey),
               description: t(person.descriptionKey),
               worksFor: {
-                '@type': 'DanceSchool',
+                '@type': 'EducationalOrganization',
                 name: "Farray's International Dance Center",
                 url: baseUrl,
               },

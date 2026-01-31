@@ -242,7 +242,7 @@ const ServiciosBailePage: React.FC = () => {
     description: t('serviciosBaile_metaDescription'),
     serviceType: 'Dance Services',
     provider: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
       alternateName: "Farray's Center",

@@ -206,7 +206,7 @@ const UbicacionPage: React.FC = () => {
   const localBusinessSchema = useMemo(
     () => ({
       '@context': 'https://schema.org',
-      '@type': 'DanceSchool',
+      '@type': 'LocalBusiness',
       '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
       description: t('ubicacion_pageDescription'),

@@ -115,7 +115,7 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
         name: courseName,
         description: courseDescription || defaultDescription,
         provider: {
-          '@type': 'DanceSchool',
+          '@type': 'EducationalOrganization',
           '@id': `${baseUrl}/#organization`,
           name: "Farray's International Dance Center",
           url: baseUrl,
@@ -388,7 +388,7 @@ export const VacationSchema: React.FC<{
     name: courseName,
     description: vacationDescription,
     provider: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
     },

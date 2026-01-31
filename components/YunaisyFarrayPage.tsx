@@ -251,7 +251,7 @@ const YunaisyFarrayPage: React.FC = () => {
     image: `${baseUrl}/images/yunaisy-portrait.jpg`,
     url: `${baseUrl}/${locale}/yunaisy-farray`,
     worksFor: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       name: "Farray's International Dance Center",
       url: baseUrl,
     },

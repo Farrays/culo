@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
               'https://www.imdb.com/name/nm4533322/',
             ],
             worksFor: {
-              '@type': 'DanceSchool',
+              '@type': 'EducationalOrganization',
               '@id': `${baseUrl}/#organization`,
               name: "Farray's International Dance Center",
             },

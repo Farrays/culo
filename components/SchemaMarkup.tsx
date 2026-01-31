@@ -349,7 +349,7 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => 
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'DanceSchool',
+    '@type': 'LocalBusiness',
     '@id': 'https://www.farrayscenter.com/#localbusiness',
     name: props.name,
     description: props.description,
@@ -523,7 +523,7 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
     name,
     description,
     provider: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
       url: baseUrl,
@@ -938,7 +938,7 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'DanceSchool',
+    '@type': 'LocalBusiness',
     '@id': 'https://www.farrayscenter.com/#danceschool',
     name: "Farray's International Dance Center",
     alternateName: "Farray's Center",

@@ -230,7 +230,7 @@ const RelatedClassesSchema: React.FC<RelatedClassesSchemaProps> = memo(({ items,
         url: `${baseUrl}/${locale}${item.url}`,
         image: `${baseUrl}${getRelatedClassImageUrl(item.slug)}`,
         provider: {
-          '@type': 'DanceSchool',
+          '@type': 'EducationalOrganization',
           name: "Farray's International Dance Center",
           url: baseUrl,
         },

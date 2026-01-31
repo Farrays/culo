@@ -100,10 +100,10 @@ const AboutPage: React.FC = () => {
     { name: t('about_breadcrumb_current'), url: `/${locale}/sobre-nosotros`, isActive: true },
   ];
 
-  // Schema Markup - Organization (DanceSchool with LocalBusiness properties)
+  // Schema Markup - Organization (EducationalOrganization with LocalBusiness properties)
   const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'DanceSchool',
+    '@type': 'EducationalOrganization',
     '@id': 'https://www.farrayscenter.com/#organization',
     name: "Farray's International Dance Center",
     description: t('about_description'),
