@@ -20,7 +20,8 @@
     },
     "api/reservar.ts": {
       "memory": 512,
-      "maxDuration": 15
+      "maxDuration": 15,
+      "includeFiles": "api/lib/**"
     },
     "api/cron-reminders-24h.ts": {
       "memory": 512,
@@ -28,11 +29,27 @@
     },
     "api/cron-feedback.ts": {
       "memory": 512,
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "api/lib/**"
     },
     "api/feedback.ts": {
       "memory": 512,
       "maxDuration": 10
+    },
+    "api/preview-email.ts": {
+      "memory": 512,
+      "maxDuration": 10,
+      "includeFiles": "api/lib/**"
+    },
+    "api/attendance.ts": {
+      "memory": 512,
+      "maxDuration": 10,
+      "includeFiles": "api/lib/**"
+    },
+    "api/webhook-whatsapp.ts": {
+      "memory": 512,
+      "maxDuration": 10,
+      "includeFiles": "api/lib/**"
     },
     "api/*.ts": {
       "memory": 512,
@@ -1010,6 +1027,14 @@
     },
     {
       "source": "/:locale(es|en|ca|fr)/feedback-gracias",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/feedback-comentario",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/asistencia-confirmada",
       "destination": "/index.html"
     },
     {
