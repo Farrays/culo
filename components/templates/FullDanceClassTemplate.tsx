@@ -48,7 +48,6 @@ import {
   SpeakableSchema,
   DefinedTermSchema,
   EventSchema,
-  FAQPageSchema,
   // GEO & LLM Optimization Schemas
   WebPageSchema,
   LeadCaptureActionSchema,
@@ -1198,13 +1197,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         itemType="Course"
       />
 
-      {/* FAQPage Schema for rich snippets in search results */}
-      <FAQPageSchema
-        faqs={config.faqsConfig.map(faq => ({
-          question: t(faq.questionKey),
-          answer: t(faq.answerKey),
-        }))}
-      />
+      {/* FAQPage Schema is rendered by FAQSection component - no need for duplicate */}
 
       {config.howToSchema?.enabled && (
         <HowToSchema

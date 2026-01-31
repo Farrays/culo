@@ -113,19 +113,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
     })),
   };
 
-  // FAQPage Schema
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema is rendered by FAQSection component - no need for manual schema
 
   return (
     <>
@@ -160,13 +148,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* FAQPage Schema */}
-      {showFAQs && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      {/* FAQPage Schema is rendered by FAQSection component below */}
 
       {/* LocalBusiness Schema */}
       <LocalBusinessSchema

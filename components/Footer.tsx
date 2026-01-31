@@ -1,91 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { CookieSettingsButton } from './shared/CookieBanner';
 
-// Schema.org Organization for SEO - Created dynamically for i18n
-const createOrganizationSchema = (t: (key: string) => string) => ({
-  '@context': 'https://schema.org',
-  '@type': 'DanceSchool',
-  '@id': 'https://www.farrayscenter.com/#organization',
-  name: "Farray's International Dance Center",
-  alternateName: "Farray's Center",
-  url: 'https://www.farrayscenter.com',
-  logo: 'https://www.farrayscenter.com/images/logo/img/logo-fidc_512.png',
-  image: 'https://www.farrayscenter.com/images/logo/img/logo-fidc_512.png',
-  description: t('schema_org_description'),
-  telephone: '+34622247085',
-  email: 'info@farrayscenter.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: t('schema_streetAddress'),
-    addressLocality: 'Barcelona',
-    postalCode: '08015',
-    addressRegion: t('schema_addressRegion'),
-    addressCountry: 'ES',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 41.380421,
-    longitude: 2.148014,
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday'],
-      opens: '10:30',
-      closes: '12:30',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday'],
-      opens: '17:30',
-      closes: '23:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Tuesday'],
-      opens: '10:30',
-      closes: '13:30',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Tuesday'],
-      opens: '17:30',
-      closes: '23:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Wednesday', 'Thursday', 'Friday'],
-      opens: '17:30',
-      closes: '23:00',
-    },
-  ],
-  sameAs: [
-    'https://www.instagram.com/farrays_centerbcn/',
-    'https://www.tiktok.com/@farrays_centerbcn',
-    'https://www.facebook.com/farrayscenter/',
-    'https://www.youtube.com/@farraysinternationaldance',
-  ],
-  priceRange: '€€',
-  currenciesAccepted: 'EUR',
-  paymentAccepted: 'Cash, Credit Card',
-  areaServed: {
-    '@type': 'City',
-    name: 'Barcelona',
-  },
-  founder: {
-    '@type': 'Person',
-    name: 'Yunaisy Farray',
-    jobTitle: t('schema_founderJobTitle'),
-  },
-  memberOf: {
-    '@type': 'Organization',
-    name: 'CID-UNESCO',
-    url: 'https://cid-world.org/',
-  },
-});
+// DanceSchool schema is rendered globally by SEO.tsx via DanceSchoolWithRatingSchema component
 
 const SocialIcon: React.FC<{ href: string; ariaLabel: string; children: React.ReactNode }> = ({
   href,
@@ -157,13 +75,10 @@ const Footer: React.FC = () => {
   // Only load 'common' namespace - all footer translations are in common.json
   const { t, i18n } = useTranslation('common');
   const locale = i18n.language;
-  const organizationSchema = createOrganizationSchema(t);
+  // DanceSchool schema is rendered globally by SEO.tsx - no need for duplicate here
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
-      </Helmet>
       <footer
         className="bg-black border-t border-primary-dark/30 py-12"
         role="contentinfo"
