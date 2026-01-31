@@ -130,7 +130,6 @@ const AboutPage: React.FC = () => {
     telephone: '+34622247085',
     email: 'info@farrayscenter.com',
     areaServed: 'Barcelona',
-    numberOfEmployees: '20+',
     slogan: t('about_slogan'),
     sameAs: [
       'https://www.instagram.com/farrays_centerbcn/',
