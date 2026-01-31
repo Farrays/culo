@@ -134,6 +134,9 @@ const ProfesoresBaileBarcelonaPage = lazy(
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
 const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
+// ===== FEEDBACK PAGE =====
+const FeedbackGraciasPage = lazy(() => import('./components/FeedbackGraciasPage'));
+
 // ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
 const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
 
@@ -289,7 +292,9 @@ const AppContent: React.FC = () => {
 
   // Booking page without header/footer (clean funnel experience)
   const isBookingPage =
-    location.pathname.includes('/reservas') || location.pathname.includes('/mi-reserva');
+    location.pathname.includes('/reservas') ||
+    location.pathname.includes('/mi-reserva') ||
+    location.pathname.includes('/feedback-gracias');
 
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
@@ -783,6 +788,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <MyBookingPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/feedback-gracias"
+              element={
+                <>
+                  <LocaleSync />
+                  <FeedbackGraciasPage />
                 </>
               }
             />

@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 
-/* eslint-disable no-undef, no-console */
+/* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
 // Console logging is intentional for cron job monitoring
 

@@ -31,6 +31,13 @@ const BRAND_DARK = '#800020'; // Borgoña oscuro
 const BRAND_GRADIENT = `linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%)`;
 
 /**
+ * Estilos de botones (como en la web)
+ */
+const BUTTON_PRIMARY = `display: inline-block; background-color: ${BRAND_PRIMARY}; color: white; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-weight: bold; font-size: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);`;
+const BUTTON_SECONDARY = `display: inline-block; background-color: transparent; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 14px 38px; border-radius: 50px; font-weight: bold; font-size: 16px; border: 2px solid ${BRAND_PRIMARY};`;
+const BUTTON_BLUE = `display: inline-block; background-color: #4285f4; color: white; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-weight: bold; font-size: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);`;
+
+/**
  * URLs de producción
  */
 const BASE_URL = 'https://www.farrayscenter.com';
@@ -133,8 +140,7 @@ export interface FeedbackEmailData {
   to: string;
   firstName: string;
   className: string;
-  reviewUrl: string;
-  promoCode?: string;
+  feedbackToken: string; // Token para generar URLs de feedback
 }
 
 // ============================================================================
@@ -395,6 +401,20 @@ export function generateWhatToBringSection(category?: ClassCategory): string {
 // ============================================================================
 
 /**
+ * Genera el preheader (texto oculto que aparece en la preview del inbox)
+ * Aumenta el open rate mostrando info relevante antes de abrir
+ */
+function generatePreheader(text: string): string {
+  // El preheader debe ser invisible pero presente en el HTML
+  // Usamos espacios para evitar que el cliente de email muestre contenido adicional
+  const spacer = '&nbsp;'.repeat(150);
+  return `
+  <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+    ${text}${spacer}
+  </div>`;
+}
+
+/**
  * Header común para todos los emails
  */
 function generateHeader(): string {
@@ -412,7 +432,7 @@ function generateFooter(): string {
   <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
     <tr>
       <td style="padding: 30px; text-align: center;">
-        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="100" height="100" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
         <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
         <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
         <p style="margin: 0 0 20px 0;">
@@ -477,6 +497,7 @@ export async function sendBookingConfirmation(
       subject: `Reserva confirmada: ${data.className}`,
       html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} está confirmada para el ${data.classDate} a las ${data.classTime}. ¡Te esperamos!`)}
   ${generateHeader()}
   <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
@@ -488,14 +509,14 @@ export async function sendBookingConfirmation(
   </div>
   ${generateBookingDetails(data)}
   <div style="text-align: center; margin-bottom: 20px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
+    <a href="${data.managementUrl}" style="${BUTTON_PRIMARY} margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="${BUTTON_BLUE} margin: 5px;">Cómo llegar</a>` : ''}
   </div>
   ${calendarSection}
   ${generateWhatToBringSection(data.category)}
   <div style="text-align: center; padding: 25px 0;">
     <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
-    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
+    <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">Reprogramar / Cancelar Reserva</a>
   </div>
   ${generateFooter()}
 </body></html>`,
@@ -532,6 +553,7 @@ export async function sendCancellationEmail(
       subject: `Reserva cancelada: ${data.className}`,
       html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  ${generatePreheader(`Tu reserva ha sido cancelada. ¿Te arrepientes? Puedes reservar otra clase gratis cuando quieras.`)}
   ${generateHeader()}
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
@@ -543,7 +565,7 @@ export async function sendCancellationEmail(
     <p style="margin: 0;">Puedes reservar tu clase gratis cuando quieras, siempre que la promo siga activa y queden plazas.</p>
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.bookingUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="${data.bookingUrl}" style="${BUTTON_PRIMARY}">
       Reservar otra clase gratis
     </a>
   </div>
@@ -607,6 +629,7 @@ export async function sendReminderEmail(
       subject: `Recordatorio: Tu clase de ${data.className} es ${timeText}`,
       html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} es ${timeText} a las ${data.classTime}. ¡No olvides traer ropa cómoda!`)}
   ${generateHeader()}
   <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
@@ -618,8 +641,8 @@ export async function sendReminderEmail(
   </div>
   ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime })}
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
+    <a href="${data.managementUrl}" style="${BUTTON_PRIMARY} margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="${BUTTON_BLUE} margin: 5px;">Cómo llegar</a>` : ''}
   </div>
   ${calendarSection}
   ${data.category ? generateWhatToBringSection(data.category) : ''}
@@ -634,7 +657,7 @@ export async function sendReminderEmail(
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="${data.managementUrl}" style="${BUTTON_PRIMARY}">
       Cancelar/Reprogramar
     </a>
   </div>
@@ -657,12 +680,15 @@ export async function sendReminderEmail(
 }
 
 /**
- * Email de feedback post-clase
+ * Email de feedback post-clase con caritas clickeables
  */
 export async function sendFeedbackEmail(
   data: FeedbackEmailData
 ): Promise<{ success: boolean; id?: string; error?: string }> {
   const resend = getResend();
+
+  // Generar URLs para cada rating
+  const feedbackBaseUrl = `${BASE_URL}/api/feedback?token=${data.feedbackToken}`;
 
   try {
     const result = await resend.emails.send({
@@ -673,32 +699,47 @@ export async function sendFeedbackEmail(
       subject: `¿Qué tal tu clase de ${data.className}?`,
       html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  ${generatePreheader(`${data.firstName}, ¿qué tal tu clase? Cuéntanos con un click.`)}
   ${generateHeader()}
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
     <p style="margin: 0;">¿Qué tal tu clase de <strong>${data.className}</strong>?</p>
-    <p style="margin: 15px 0 0 0;">Nos encantaría conocer tu opinión.</p>
+    <p style="margin: 15px 0 0 0;">Cuéntanos con un click:</p>
   </div>
+
+  <!-- Caritas clickeables -->
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.reviewUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
-      Dejar mi opinión
-    </a>
+    <table align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+      <tr>
+        <td style="padding: 0 8px;">
+          <a href="${feedbackBaseUrl}&rating=1" style="text-decoration: none; font-size: 40px; display: block;">😡</a>
+        </td>
+        <td style="padding: 0 8px;">
+          <a href="${feedbackBaseUrl}&rating=2" style="text-decoration: none; font-size: 40px; display: block;">😟</a>
+        </td>
+        <td style="padding: 0 8px;">
+          <a href="${feedbackBaseUrl}&rating=3" style="text-decoration: none; font-size: 40px; display: block;">😐</a>
+        </td>
+        <td style="padding: 0 8px;">
+          <a href="${feedbackBaseUrl}&rating=4" style="text-decoration: none; font-size: 40px; display: block;">🙂</a>
+        </td>
+        <td style="padding: 0 8px;">
+          <a href="${feedbackBaseUrl}&rating=5" style="text-decoration: none; font-size: 40px; display: block;">🤩</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">1</td>
+        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">2</td>
+        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">3</td>
+        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">4</td>
+        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">5</td>
+      </tr>
+    </table>
+    <p style="color: #666; font-size: 14px; margin-top: 15px;">Haz click en la carita que mejor represente tu experiencia</p>
   </div>
-  ${
-    data.promoCode
-      ? `
-  <div style="background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); color: white; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 10px 0;">¡Oferta especial para ti!</h3>
-    <p style="margin: 0 0 15px 0;">20% de descuento en tu primera mensualidad</p>
-    <div style="background: white; color: #ff5722; padding: 10px 20px; border-radius: 8px; display: inline-block; font-weight: bold; font-size: 20px;">
-      ${data.promoCode}
-    </div>
-  </div>
-  `
-      : ''
-  }
+
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>¡Gracias por elegirnos!</p>
+    <p>¡Gracias por elegirnos! 💃🕺</p>
   </div>
   ${generateFooter()}
 </body></html>`,

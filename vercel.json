@@ -26,6 +26,14 @@
       "memory": 512,
       "maxDuration": 60
     },
+    "api/cron-feedback.ts": {
+      "memory": 512,
+      "maxDuration": 60
+    },
+    "api/feedback.ts": {
+      "memory": 512,
+      "maxDuration": 10
+    },
     "api/*.ts": {
       "memory": 512,
       "maxDuration": 10
@@ -39,6 +47,10 @@
     {
       "path": "/api/cron-reminders-24h",
       "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/cron-feedback",
+      "schedule": "30 * * * *"
     }
   ],
   "redirects": [
@@ -632,6 +644,7 @@
     { "source": "/:locale(es|en|ca|fr)/reservas", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/hazte-socio", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/mi-reserva", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/feedback-gracias", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/test/:path*", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/404", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/team-building-barcelona", "destination": "/index.html" },
