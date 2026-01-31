@@ -1,6 +1,6 @@
 {
   "generated": "2026-01-15T19:56:02.869Z",
-  "totalReviews": 377,
+  "totalReviews": 375,
   "averageRating": 5,
   "reviews": [
     {
@@ -1351,19 +1351,6 @@
       "sentiment": "positive"
     },
     {
-      "id": "review-carol-gomez-109",
-      "author": "Carol Gomez",
-      "authorInfo": "Local Guide·50 reseñas·30 fotos",
-      "rating": 5,
-      "date": "Hace 3 años",
-      "dateISO": "2023-01-15",
-      "text": "Cancelada la clase de prueba en 2 ocasiones. La primera 25 minutos antes del inicio, cuando me dirigía en el transporte público, y la segunda hoy, en mi cara. Entiendo la gran afluencia de gente. Pero si fallas a una persona una vez, intentas que no se repita. Y no ha sido así. Me vuelvo de vacío, tras el amable ofrecimiento de poder quedarme a una de las otras clases que había y que no me interesaban. Tendrá buenos profesores, como bien dicen las opiniones, pero un buen negocio son muchas cosas. Y cuando falla la organización y la comunicación, merece ser también mencionado.",
-      "isTranslated": false,
-      "categories": ["general"],
-      "teachers": [],
-      "sentiment": "positive"
-    },
-    {
       "id": "review-leslie-vazquez-hurta-110",
       "author": "Leslie Vazquez Hurtado",
       "authorInfo": "2 reseñas",
@@ -2125,18 +2112,6 @@
       "date": "Hace 4 años",
       "dateISO": "2022-01-15",
       "text": "Hemos ido para la clase de prueba y super bien. Fabio nos atendio muy amablemente, la clase fue genial. A ver que tal el curso!",
-      "isTranslated": false,
-      "categories": ["general"],
-      "teachers": [],
-      "sentiment": "positive"
-    },
-    {
-      "id": "review-aspectos-negativos-172",
-      "author": "Aspectos negativos",
-      "rating": 5,
-      "date": "Hace 3 años",
-      "dateISO": "2023-01-15",
-      "text": "Hola Chlo, Nos hubiese gustado que tu reseña fuera real y con fundamento, visto que primero, nunca has sido estudiante de la academia y nunca has frecuentado nuestras instalaciones y, segundo, tu reseña ha sido efectuada en período de vacaciones, cuando estabamos cerrados. Te invitamos a que vengas en persona a nuestra academia y ahí sí, podrás tener una idea más real y sincera sobre nosotros. Un saludo,",
       "isTranslated": false,
       "categories": ["general"],
       "teachers": [],
