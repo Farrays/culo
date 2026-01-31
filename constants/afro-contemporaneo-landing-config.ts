@@ -135,4 +135,23 @@ export const AFRO_CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingCon
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
   },
+
+  // =========================================================================
+  // VIDEO (Bunny.net) - Enterprise Mode
+  // =========================================================================
+  video: {
+    bunnyVideoId: '9f2604a0-fed7-4133-bc56-dc1e8cfe95fa',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16', // Reel vertical format
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/9f2604a0-fed7-4133-bc56-dc1e8cfe95fa/thumbnail_94c0fef4.jpg',
+  },
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'afrocontemporaneo', // Filtra solo clases de Afro Contemporáneo en el widget
+  },
 });

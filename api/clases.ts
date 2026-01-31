@@ -24,6 +24,7 @@ import Redis from 'ioredis';
 
 const MOMENCE_API_URL = 'https://api.momence.com';
 const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
+const MOMENCE_BUSINESS_SLUG = "Farray's-International-Dance-Center";
 
 // Cache TTL: 30 minutos (las clases no cambian muy frecuentemente)
 const CACHE_TTL_SECONDS = 30 * 60;
@@ -33,6 +34,22 @@ const TOKEN_TTL_SECONDS = 3500; // Token expira en 3600s, refrescamos antes
 
 // Timezone para España (hora de Madrid)
 const SPAIN_TIMEZONE = 'Europe/Madrid';
+
+// Convertir nombre de clase a slug para URL de Momence
+function slugify(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Quitar acentos
+    .replace(/[^a-zA-Z0-9\s-]/g, '') // Solo alfanuméricos, espacios y guiones
+    .trim()
+    .replace(/\s+/g, '-'); // Espacios a guiones
+}
+
+// Construir URL de checkout de Momence para una sesión específica
+function buildMomenceCheckoutUrl(sessionId: number, sessionName: string): string {
+  const nameSlug = slugify(sessionName);
+  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/${nameSlug}/${sessionId}`;
+}
 
 // Lazy Redis connection
 let redisClient: Redis | null = null;
@@ -87,6 +104,8 @@ interface NormalizedClass {
   rawStartsAt: string;
   description: string;
   duration: number;
+  /** URL directa al checkout de Momence para esta sesión */
+  checkoutUrl: string;
 }
 
 // Mapeo de estilos (normalización)
@@ -209,6 +228,7 @@ function normalizeSession(session: MomenceSession): NormalizedClass {
     rawStartsAt: session.startsAt,
     description: session.description || '',
     duration: durationMinutes > 0 ? durationMinutes : 60, // Default 60 min if invalid
+    checkoutUrl: buildMomenceCheckoutUrl(session.id, session.name),
   };
 }
 

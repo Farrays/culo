@@ -68,11 +68,6 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
   translationPrefix: 'jpaLanding',
 
   // =========================================================================
-  // WIDGET DE HORARIOS COMPLETO
-  // =========================================================================
-  showFullSchedule: true,
-
-  // =========================================================================
   // VALUE STACK - Lo que incluye la clase de bienvenida
   // =========================================================================
   valueStack: [
@@ -135,14 +130,21 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
   },
 
   // =========================================================================
-  // VIDEO (Bunny.net)
+  // VIDEO (Bunny.net) - Enterprise Mode
   // =========================================================================
   video: {
     bunnyVideoId: 'f9ad8f80-f1be-4c20-a40d-c6f007759db7',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: false,
-    // TODO: Añadir thumbnailUrl desde Bunny dashboard para optimizar LCP
-    // thumbnailUrl: 'https://vz-3d56a778-175.b-cdn.net/f9ad8f80-f1be-4c20-a40d-c6f007759db7/thumbnail_XXXXX.jpg',
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/f9ad8f80-f1be-4c20-a40d-c6f007759db7/thumbnail.jpg',
+  },
+
+  // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: '', // Sin filtro = muestra todas las clases (Jornada Puertas Abiertas)
   },
 });

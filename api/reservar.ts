@@ -1,6 +1,396 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
+import { Resend } from 'resend';
+
+// ============================================================================
+// TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
+// ============================================================================
+
+type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
+
+// ============================================================================
+// EMAIL HELPER INLINE
+// ============================================================================
+
+const EMAIL_FROM = "Farray's Center <onboarding@resend.dev>";
+const EMAIL_REPLY_TO = 'info@farrayscenter.com';
+const INSTAGRAM_URL = 'https://www.instagram.com/farrays_centerbcn/';
+
+// Colores corporativos
+const BRAND_PRIMARY = '#B01E3C'; // Rojo carmesí del logo
+const BRAND_DARK = '#800020';
+const LOGO_URL = 'https://farrayscenter.vercel.app/images/logo/img/logo-fidc_256.png';
+// TODO: Cambiar a farrayscenter.com cuando esté listo
+const BASE_URL = 'https://farrayscenter.vercel.app';
+const LOCATION_ADDRESS = "Farray's International Dance Center, C/ Entença 100, 08015 Barcelona";
+
+// Calendar URL generators
+const SPANISH_MONTHS: Record<string, number> = {
+  enero: 0,
+  febrero: 1,
+  marzo: 2,
+  abril: 3,
+  mayo: 4,
+  junio: 5,
+  julio: 6,
+  agosto: 7,
+  septiembre: 8,
+  octubre: 9,
+  noviembre: 10,
+  diciembre: 11,
+};
+
+function parseSpanishDate(classDate: string, classDateRaw?: string | null): Date {
+  if (classDateRaw) {
+    return new Date(classDateRaw);
+  }
+  // Parse from formatted date "Lunes, 27 de enero de 2026"
+  const match = classDate.match(/(\d{1,2}) de (\w+) de (\d{4})/);
+  if (match && match[1] && match[2] && match[3]) {
+    const day = parseInt(match[1], 10);
+    const monthName = match[2].toLowerCase();
+    const month = SPANISH_MONTHS[monthName] ?? 0;
+    const year = parseInt(match[3], 10);
+    return new Date(year, month, day);
+  }
+  return new Date();
+}
+
+function parseTime(timeStr: string, date: Date): void {
+  const timeMatch = timeStr.match(/(\d{1,2}):(\d{2})/);
+  if (timeMatch && timeMatch[1] && timeMatch[2]) {
+    date.setHours(parseInt(timeMatch[1], 10), parseInt(timeMatch[2], 10), 0, 0);
+  }
+}
+
+function formatCalendarDate(d: Date): string {
+  return d
+    .toISOString()
+    .replace(/[-:]/g, '')
+    .replace(/\.\d{3}/, '');
+}
+
+function generateGoogleCalendarUrl(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+}): string {
+  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
+  parseTime(data.classTime, startDate);
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+
+  const params = new globalThis.URLSearchParams({
+    action: 'TEMPLATE',
+    text: `${data.className} - Farray's Center`,
+    dates: `${formatCalendarDate(startDate)}/${formatCalendarDate(endDate)}`,
+    details: `Clase de prueba en Farray's International Dance Center.\n\nRecuerda llegar 10 minutos antes para cambiarte.\n\nMás info: ${BASE_URL}`,
+    location: LOCATION_ADDRESS,
+  });
+
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+function generateIcsDataUrl(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+}): string {
+  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
+  parseTime(data.classTime, startDate);
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+
+  const uid = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}@farrayscenter.com`;
+
+  const icsContent = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Farrays Center//Booking System//ES',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `UID:${uid}`,
+    `DTSTAMP:${formatCalendarDate(new Date())}`,
+    `DTSTART:${formatCalendarDate(startDate)}`,
+    `DTEND:${formatCalendarDate(endDate)}`,
+    `SUMMARY:${data.className} - Farray's Center`,
+    `DESCRIPTION:Clase de prueba en Farray's International Dance Center.\\nRecuerda llegar 10 minutos antes.`,
+    `LOCATION:${LOCATION_ADDRESS}`,
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n');
+
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
+}
+
+interface CategoryInstructions {
+  title: string;
+  items: string[];
+  color: string;
+}
+
+function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
+  const commonItems = [
+    '💧 Botella de agua',
+    '🧴 Toalla pequeña',
+    '🔐 Candado para taquilla (opcional)',
+  ];
+
+  switch (category) {
+    case 'bailes_sociales':
+      return {
+        title: '¿Qué traer a tu clase de Bailes Sociales?',
+        color: BRAND_PRIMARY,
+        items: [
+          '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
+          '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
+          '📝 <strong>Folklore:</strong> Sin calzado (se baila descalzo)',
+          ...commonItems,
+        ],
+      };
+    case 'danzas_urbanas':
+      return {
+        title: '¿Qué traer a tu clase de Danzas Urbanas?',
+        color: BRAND_PRIMARY,
+        items: [
+          '👟 Bambas cómodas (suela limpia)',
+          '👖 Leggings, pantalones cortos o chándal',
+          '👕 Ropa cómoda y ligera (tipo fitness)',
+          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto. Rodilleras recomendadas',
+          '🍑 <strong>Twerk:</strong> Rodilleras recomendadas',
+          ...commonItems,
+        ],
+      };
+    case 'danza':
+    case 'entrenamiento':
+      return {
+        title:
+          category === 'entrenamiento'
+            ? '¿Qué traer a tu Entrenamiento?'
+            : '¿Qué traer a tu clase de Danza?',
+        color: BRAND_PRIMARY,
+        items: [
+          '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
+          '🦵 Rodilleras recomendadas (especialmente para floorwork)',
+          '👖 Ropa ajustada que permita ver la línea del cuerpo',
+          ...commonItems,
+        ],
+      };
+    case 'heels':
+      return {
+        title: '¿Qué traer a tu clase de Heels?',
+        color: BRAND_PRIMARY,
+        items: [
+          '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
+          '💃 Ropa femenina y atrevida que te haga sentir poderosa',
+          '🎽 Top o body que permita libertad de movimiento',
+          ...commonItems,
+        ],
+      };
+    default:
+      return {
+        title: '¿Qué traer?',
+        color: BRAND_PRIMARY,
+        items: ['👟 Ropa cómoda para bailar', '👠 Calzado según el estilo', ...commonItems],
+      };
+  }
+}
+
+function generateWhatToBringSection(category?: ClassCategory): string {
+  const inst = getCategoryInstructions(category);
+  return `
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 15px 0; color: ${inst.color};">${inst.title}</h3>
+    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+      ${inst.items.map(item => `<li>${item}</li>`).join('')}
+    </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
+    </div>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>`;
+}
+
+async function sendBookingConfirmationEmail(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  managementUrl: string;
+  mapUrl?: string;
+  category?: ClassCategory;
+  classDateRaw?: string | null;
+}): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  // Generate calendar URLs
+  const googleCalUrl = generateGoogleCalendarUrl({
+    className: data.className,
+    classDate: data.classDate,
+    classTime: data.classTime,
+    classDateRaw: data.classDateRaw,
+  });
+
+  const icsUrl = generateIcsDataUrl({
+    className: data.className,
+    classDate: data.classDate,
+    classTime: data.classTime,
+    classDateRaw: data.classDateRaw,
+  });
+
+  const resend = new Resend(apiKey);
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: data.to,
+      replyTo: EMAIL_REPLY_TO,
+      subject: `Reserva confirmada: ${data.className}`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0;">Farray's International Dance Center</h1>
+  </div>
+  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
+    <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
+  </div>
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
+    <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
+  </div>
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
+    </table>
+  </div>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
+  </div>
+  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="${googleCalUrl}" target="_blank" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
+    <a href="${icsUrl}" download="farrays-clase.ics" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
+  </div>
+  ${generateWhatToBringSection(data.category)}
+  <div style="text-align: center; padding: 25px 0;">
+    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
+    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
+  </div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body></html>`,
+    });
+    if (result.error) return { success: false, error: result.error.message };
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// WHATSAPP HELPER INLINE
+// ============================================================================
+
+const WHATSAPP_API_VERSION = 'v23.0';
+const CATEGORY_TEMPLATES: Record<ClassCategory, string> = {
+  bailes_sociales: 'confirmacion_bailes_sociales',
+  danzas_urbanas: 'confirmacion_danzas_urbanas',
+  danza: 'confirmacion_danza',
+  entrenamiento: 'confirmacion_danza',
+  heels: 'confirmacion_heels',
+};
+
+function isWhatsAppConfigured(): boolean {
+  return !!(process.env['WHATSAPP_TOKEN'] && process.env['WHATSAPP_PHONE_ID']);
+}
+
+async function sendBookingConfirmationWhatsApp(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category: ClassCategory;
+}): Promise<{ success: boolean; error?: string }> {
+  const token = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+  if (!token || !phoneId) return { success: false, error: 'WhatsApp not configured' };
+
+  const templateName = CATEGORY_TEMPLATES[data.category];
+  const normalizedPhone = data.to.replace(/[\s\-+]/g, '');
+
+  try {
+    const response = await fetch(
+      `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          messaging_product: 'whatsapp',
+          to: normalizedPhone,
+          type: 'template',
+          template: {
+            name: templateName,
+            language: { code: 'es_ES' },
+            components: [
+              {
+                type: 'body',
+                parameters: [
+                  { type: 'text', text: data.firstName },
+                  { type: 'text', text: data.className },
+                  { type: 'text', text: data.classDate },
+                  { type: 'text', text: data.classTime },
+                ],
+              },
+            ],
+          },
+        }),
+      }
+    );
+
+    const result = await response.json();
+    if (!response.ok || result.error) {
+      return { success: false, error: result.error?.message || `HTTP ${response.status}` };
+    }
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
 
 /* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
@@ -48,16 +438,39 @@ let redisClient: Redis | null = null;
 
 function getRedisClient(): Redis | null {
   const redisUrl = process.env['STORAGE_REDIS_URL'];
-  if (!redisUrl) return null;
+  if (!redisUrl) {
+    console.warn('[Redis] STORAGE_REDIS_URL not configured');
+    return null;
+  }
 
   if (!redisClient) {
+    console.warn('[Redis] Creating new Redis client');
     redisClient = new Redis(redisUrl, {
-      maxRetriesPerRequest: 1,
-      connectTimeout: 5000,
+      maxRetriesPerRequest: 2,
+      connectTimeout: 10000,
       lazyConnect: true,
+      retryStrategy: times => {
+        if (times > 3) return null;
+        return Math.min(times * 100, 2000);
+      },
     });
   }
   return redisClient;
+}
+
+// Helper to ensure Redis is connected
+async function ensureRedisConnected(redis: Redis): Promise<boolean> {
+  try {
+    if (redis.status !== 'ready') {
+      await redis.connect();
+    }
+    // Quick ping to verify connection
+    await redis.ping();
+    return true;
+  } catch (e) {
+    console.error('[Redis] Connection check failed:', e);
+    return false;
+  }
 }
 
 function isRateLimited(ip: string): boolean {
@@ -427,6 +840,137 @@ async function createMomenceBooking(
 // Timezone de España para formatear fechas
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 
+// ============================================================================
+// CATEGORIZACIÓN DE CLASES
+// ============================================================================
+
+/**
+ * Determina la categoría de una clase basándose en su nombre o estilo
+ */
+function determineCategory(className: string, estilo?: string): ClassCategory {
+  const text = `${className} ${estilo || ''}`.toLowerCase();
+
+  // Heels / Femmology
+  if (text.includes('heel') || text.includes('femmology') || text.includes('stiletto')) {
+    return 'heels';
+  }
+
+  // Bailes Sociales
+  if (
+    text.includes('salsa') ||
+    text.includes('bachata') ||
+    text.includes('kizomba') ||
+    text.includes('zouk') ||
+    text.includes('merengue') ||
+    text.includes('rueda') ||
+    text.includes('casino') ||
+    text.includes('timba') ||
+    text.includes('son cubano') ||
+    text.includes('folklore')
+  ) {
+    return 'bailes_sociales';
+  }
+
+  // Danzas Urbanas
+  if (
+    text.includes('hip hop') ||
+    text.includes('hiphop') ||
+    text.includes('house') ||
+    text.includes('breaking') ||
+    text.includes('break') ||
+    text.includes('dancehall') ||
+    text.includes('afrobeat') ||
+    text.includes('twerk') ||
+    text.includes('sexy style') ||
+    text.includes('sexy reggaeton') ||
+    text.includes('reggaeton') ||
+    text.includes('k-pop') ||
+    text.includes('kpop') ||
+    text.includes('commercial')
+  ) {
+    return 'danzas_urbanas';
+  }
+
+  // Danza
+  if (
+    text.includes('ballet') ||
+    text.includes('contempor') ||
+    text.includes('jazz') ||
+    text.includes('modern') ||
+    text.includes('afro jazz') ||
+    text.includes('afro contempor')
+  ) {
+    return 'danza';
+  }
+
+  // Entrenamiento / Fitness
+  if (
+    text.includes('entrenamiento') ||
+    text.includes('training') ||
+    text.includes('fitness') ||
+    text.includes('stretch') ||
+    text.includes('cardio') ||
+    text.includes('bum bum') ||
+    text.includes('cuerpo fit')
+  ) {
+    return 'entrenamiento';
+  }
+
+  // Default: danzas urbanas (la más común)
+  return 'danzas_urbanas';
+}
+
+/**
+ * Formatea fecha ISO a formato legible
+ * Entrada: "2024-01-20T18:00:00.000Z"
+ * Salida: "Lunes 20 de Enero 2024"
+ */
+function formatDateReadable(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return isoDate;
+
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: SPAIN_TIMEZONE,
+    };
+
+    const formatted = new Intl.DateTimeFormat('es-ES', options).format(date);
+    // Capitalizar primera letra
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+  } catch {
+    return isoDate;
+  }
+}
+
+/**
+ * Extrae la hora de una fecha ISO
+ * Entrada: "2024-01-20T18:00:00.000Z"
+ * Salida: "19:00" (en hora de Madrid)
+ */
+function extractTime(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return '';
+
+    const options: Intl.DateTimeFormatOptions = {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: SPAIN_TIMEZONE,
+    };
+
+    return new Intl.DateTimeFormat('es-ES', options).format(date);
+  } catch {
+    return '';
+  }
+}
+
 // Formatear fecha ISO a formato ISO local de Madrid (para automatizaciones de Momence)
 // Entrada: "2024-01-20T18:00:00.000Z" (UTC)
 // Salida: "2024-01-20T19:00:00" (Madrid local, sin Z)
@@ -626,8 +1170,6 @@ export default async function handler(
       sessionId, // ID de la clase en Momence (opcional)
       className, // Nombre de la clase (para display)
       classDate, // Fecha de la clase
-      classTime, // Hora de la clase (e.g. "19:00")
-      category, // Categoría: bailes_sociales, danzas_urbanas, danza, entrenamiento, heels
       estilo, // Estilo de baile
       comoconoce, // Cómo nos conoció
       acceptsTerms, // UI checkbox (consolidates marketing, no-refund, image)
@@ -660,22 +1202,34 @@ export default async function handler(
     const normalizedEmail = sanitize(email).toLowerCase();
     const bookingKey = `${BOOKING_KEY_PREFIX}${normalizedEmail}`;
 
+    console.warn('[reservar] Deduplication check for:', { email: normalizedEmail, bookingKey });
+
     // Deduplicación con Redis
     const redis = getRedisClient();
     if (redis) {
-      try {
-        const existing = await redis.get(bookingKey);
-        if (existing) {
-          // Ya existe una reserva reciente
-          return res.status(200).json({
-            success: true,
-            status: 'existing',
-            message: 'Ya tienes una reserva registrada. ¡Te esperamos!',
-          });
+      const isConnected = await ensureRedisConnected(redis);
+      console.warn('[reservar] Redis connected:', isConnected);
+
+      if (isConnected) {
+        try {
+          const existing = await redis.get(bookingKey);
+          console.warn('[reservar] Existing booking found:', !!existing);
+
+          if (existing) {
+            // Ya existe una reserva reciente
+            console.warn('[reservar] DUPLICATE DETECTED! Returning existing status');
+            return res.status(200).json({
+              success: true,
+              status: 'existing',
+              message: 'Ya tienes una reserva registrada. ¡Te esperamos!',
+            });
+          }
+        } catch (e) {
+          console.error('[reservar] Redis lookup failed:', e);
         }
-      } catch (e) {
-        console.warn('Redis lookup failed:', e);
       }
+    } else {
+      console.warn('[reservar] Redis not available for deduplication');
     }
 
     // Generar eventId único si no viene del frontend
@@ -752,61 +1306,126 @@ export default async function handler(
       fbp,
     });
 
-    // 3. Guardar en Redis
+    // Variables comunes para Redis y notificaciones
+    const category = determineCategory(className || '', estilo);
+    const formattedDate = formatDateReadable(classDate || '');
+    const classTime = extractTime(classDate || '');
+    const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+
+    // 3. Guardar en Redis (datos completos para página mi-reserva)
     if (redis) {
-      try {
-        const bookingTimestamp = Date.now();
-        // Deduplication key (simple)
-        await redis.setex(
-          bookingKey,
-          BOOKING_TTL_SECONDS,
-          JSON.stringify({
+      const isConnected = await ensureRedisConnected(redis);
+      console.warn('[reservar] Redis connected for save:', isConnected);
+
+      if (isConnected) {
+        try {
+          const bookingTimestamp = Date.now();
+          const bookingData = {
             timestamp: bookingTimestamp,
             sessionId,
-            className,
-            classDate,
-            eventId: finalEventId,
-          })
-        );
-
-        // Full booking details for reminders/cancellation
-        const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
-        const normalizedPhone = normalizePhone(sanitize(phone));
-        const bookingDetailsKey = `booking_details:${finalEventId}`;
-        await redis.setex(
-          bookingDetailsKey,
-          BOOKING_TTL_SECONDS,
-          JSON.stringify({
-            eventId: finalEventId,
+            // Datos para MyBookingPage
             firstName: firstNameOnly,
             lastName: sanitize(lastName),
             email: normalizedEmail,
-            phone: normalizedPhone,
+            phone: phone || null,
             className: className || estilo || 'Clase de Prueba',
-            classDate: classDate || '',
-            classTime: classTime || '',
-            sessionId: sessionId || null,
+            classDate: formattedDate,
+            classTime: classTime || '19:00',
+            momenceEventId: finalEventId,
+            bookedAt: new Date().toISOString(),
+            category: category || null,
+            // Datos de Momence para cancelar/reprogramar
             momenceBookingId: momenceResult.bookingId || null,
-            category: category || 'bailes_sociales',
-            createdAt: new Date().toISOString(),
-            status: 'confirmed',
-          })
-        );
+            classDateRaw: classDate || null,
+          };
 
-        // Añadir a lista de reservas recientes para Social Proof Ticker
-        await redis.lpush(
-          'recent_bookings',
-          JSON.stringify({
-            firstName: firstNameOnly,
-            className: className || estilo || 'Clase de Prueba',
-            timestamp: bookingTimestamp,
-          })
-        );
-        // Mantener solo las últimas 50 reservas
-        await redis.ltrim('recent_bookings', 0, 49);
-      } catch (e) {
-        console.warn('Redis save failed:', e);
+          await redis.setex(bookingKey, BOOKING_TTL_SECONDS, JSON.stringify(bookingData));
+
+          // Verify the save worked
+          const saved = await redis.get(bookingKey);
+          console.warn('[reservar] Booking saved successfully:', {
+            key: bookingKey,
+            verified: !!saved,
+          });
+
+          // Añadir a lista de reservas recientes para Social Proof Ticker
+          await redis.lpush(
+            'recent_bookings',
+            JSON.stringify({
+              firstName: firstNameOnly,
+              className: className || estilo || 'Clase de Prueba',
+              timestamp: bookingTimestamp,
+            })
+          );
+          // Mantener solo las últimas 50 reservas
+          await redis.ltrim('recent_bookings', 0, 49);
+        } catch (e) {
+          console.error('[reservar] Redis save failed:', e);
+        }
       }
+    } else {
+      console.warn('[reservar] Redis not available for save');
+    }
+
+    // 4. Enviar notificaciones (Email + WhatsApp)
+
+    // 4a. Enviar email de confirmación
+    let emailResult: { success: boolean; error?: string } = {
+      success: false,
+      error: 'Not attempted',
+    };
+    console.warn('[reservar] Email attempt starting...');
+    console.warn('[reservar] RESEND_API_KEY configured:', !!process.env['RESEND_API_KEY']);
+    try {
+      // Generar URL de gestión con magic link (básico por ahora)
+      const managementUrl = `${BASE_URL}/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
+      const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
+
+      emailResult = await sendBookingConfirmationEmail({
+        to: normalizedEmail,
+        firstName: firstNameOnly,
+        className: className || estilo || 'Clase de Prueba',
+        classDate: formattedDate,
+        classTime: classTime || '19:00',
+        managementUrl,
+        mapUrl,
+        category,
+        classDateRaw: classDate || null,
+      });
+      console.warn('[reservar] Email result:', emailResult);
+    } catch (emailError) {
+      console.error('[reservar] Email error:', emailError);
+      emailResult = { success: false, error: String(emailError) };
+    }
+
+    // 4b. Enviar WhatsApp de confirmación
+    let whatsappResult: { success: boolean; error?: string } = {
+      success: false,
+      error: 'Not attempted',
+    };
+    console.warn('[reservar] WhatsApp config check:', {
+      hasToken: !!process.env['WHATSAPP_TOKEN'],
+      hasPhoneId: !!process.env['WHATSAPP_PHONE_ID'],
+      isConfigured: isWhatsAppConfigured(),
+      phoneToSend: phone ? phone.substring(0, 6) + '...' : 'none',
+    });
+    if (isWhatsAppConfigured()) {
+      try {
+        whatsappResult = await sendBookingConfirmationWhatsApp({
+          to: sanitize(phone),
+          firstName: firstNameOnly,
+          className: className || estilo || 'Clase de Prueba',
+          classDate: formattedDate,
+          classTime: classTime || '19:00',
+          category,
+        });
+        console.warn('[reservar] WhatsApp result:', whatsappResult);
+      } catch (whatsappError) {
+        console.error('[reservar] WhatsApp error:', whatsappError);
+        whatsappResult = { success: false, error: String(whatsappError) };
+      }
+    } else {
+      console.warn('[reservar] WhatsApp not configured, skipping');
     }
 
     // Respuesta
@@ -818,8 +1437,11 @@ export default async function handler(
         eventId: finalEventId,
         className: className || 'Clase de Prueba',
         classDate: classDate || '',
+        category,
         momenceSuccess: momenceResult.success,
         trackingSuccess: metaResult.success,
+        emailSuccess: emailResult.success,
+        whatsappSuccess: whatsappResult.success,
       },
     });
   } catch (error) {

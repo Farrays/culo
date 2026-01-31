@@ -44,11 +44,11 @@ const MetodoFarrayPage = lazy(() => import('./components/MetodoFarrayPage'));
 const RegalaBailePage = lazy(() => import('./components/RegalaBailePage'));
 const AlquilerSalasPage = lazy(() => import('./components/AlquilerSalasPage'));
 const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'));
+const UbicacionPage = lazy(() => import('./components/UbicacionPage'));
 const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPage'));
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
-const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
 const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
@@ -103,9 +103,20 @@ const BalletLanding = lazy(() => import('./components/landing/pages/BalletLandin
 const AfroContemporaneoLanding = lazy(
   () => import('./components/landing/pages/AfroContemporaneoLanding')
 );
-const JornadaPuertasAbiertasLanding = lazy(
-  () => import('./components/landing/pages/JornadaPuertasAbiertasLanding')
+const ClaseBienvenidaLanding = lazy(
+  () => import('./components/landing/pages/ClaseBienvenidaLanding')
 );
+const BachataVentaDirectaLanding = lazy(
+  () => import('./components/landing/pages/BachataVentaDirectaLanding')
+);
+const SalsaVentaDirectaLanding = lazy(
+  () => import('./components/landing/pages/SalsaVentaDirectaLanding')
+);
+// TEST: Pagina de prueba para el nuevo sistema de ofertas
+const OfferTestLanding = lazy(() => import('./components/landing/pages/OfferTestLanding'));
+const SalsaSimpleLanding = lazy(() => import('./components/landing/pages/SalsaSimpleLanding'));
+// TEST: Pagina de prueba para PaidClassSelector (clases de pago 10€/20€)
+const TestPaidSelector = lazy(() => import('./pages/TestPaidSelector'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
@@ -121,6 +132,10 @@ const ProfesoresBaileBarcelonaPage = lazy(
 
 // ===== BOOKING PAGE =====
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
+const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
+
+// ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
+const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
 
 // ===== LEGAL PAGES =====
 const TermsConditionsPage = lazy(() => import('./components/TermsConditionsPage'));
@@ -226,7 +241,11 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/salsa-cubana',
   '/ballet',
   '/afro-contemporaneo',
-  '/jornada-puertas-abiertas',
+  '/clase-bienvenida',
+  '/bachata-curso',
+  '/salsa-curso',
+  '/salsa-test',
+  '/hazte-socio',
 ];
 
 // Promotion configuration - easy to update
@@ -260,16 +279,24 @@ const AppContent: React.FC = () => {
       location.pathname.endsWith('/salsa-cubana') ||
       location.pathname.endsWith('/ballet') ||
       location.pathname.endsWith('/afro-contemporaneo') ||
-      location.pathname.endsWith('/jornada-puertas-abiertas'));
+      location.pathname.endsWith('/clase-bienvenida') ||
+      location.pathname.endsWith('/bachata-curso') ||
+      location.pathname.endsWith('/salsa-curso') ||
+      location.pathname.endsWith('/salsa-test'));
 
   // Legal pages without header/footer (accessed from landing modal links)
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
 
   // Booking page without header/footer (clean funnel experience)
-  const isBookingPage = location.pathname.includes('/reservas');
+  const isBookingPage =
+    location.pathname.includes('/reservas') || location.pathname.includes('/mi-reserva');
+
+  // Hazte socio page without header/footer (landing pura for maximum conversion)
+  const isHazteSocioPage = location.pathname.includes('/hazte-socio');
 
   // Combined check for hiding header/footer
-  const hideHeaderFooter = isPromoLanding || isMinimalLegalPage || isBookingPage;
+  const hideHeaderFooter =
+    isPromoLanding || isMinimalLegalPage || isBookingPage || isHazteSocioPage;
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
@@ -559,17 +586,6 @@ const AppContent: React.FC = () => {
               }
             />
 
-            {/* V2 Alternative - for A/B testing comparison */}
-            <Route
-              path="/:locale/clases/salsa-lady-style-v2"
-              element={
-                <>
-                  <LocaleSync />
-                  <SalsaLadyStylePageV2 />
-                </>
-              }
-            />
-
             <Route
               path="/:locale/clases/bachata-lady-style-barcelona"
               element={
@@ -750,6 +766,27 @@ const AppContent: React.FC = () => {
               }
             />
 
+            {/* ===== HAZTE SOCIO (Landing pura - sin header/footer) ===== */}
+            <Route
+              path="/:locale/hazte-socio"
+              element={
+                <>
+                  <LocaleSync />
+                  <HazteSocioPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/mi-reserva"
+              element={
+                <>
+                  <LocaleSync />
+                  <MyBookingPage />
+                </>
+              }
+            />
+
             <Route
               path="/:locale/terminos-y-condiciones"
               element={
@@ -861,6 +898,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/como-llegar-escuela-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <UbicacionPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/estudio-grabacion-barcelona"
               element={
                 <>
@@ -923,6 +970,24 @@ const AppContent: React.FC = () => {
             />
 
             {/* ===== TEST/EXPERIMENTAL ROUTES ===== */}
+            <Route
+              path="/:locale/offer-test"
+              element={
+                <>
+                  <LocaleSync />
+                  <OfferTestLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/test-paid-selector"
+              element={
+                <>
+                  <LocaleSync />
+                  <TestPaidSelector />
+                </>
+              }
+            />
 
             {/* ===== LANDING PAGES (Lazy-loaded with code splitting) ===== */}
             <Route
@@ -998,6 +1063,33 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
+              path="/:locale/bachata-curso"
+              element={
+                <>
+                  <LocaleSync />
+                  <BachataVentaDirectaLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/salsa-curso"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaVentaDirectaLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/salsa-test"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaSimpleLanding />
+                </>
+              }
+            />
+            <Route
               path="/:locale/hip-hop"
               element={
                 <>
@@ -1052,11 +1144,11 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
-              path="/:locale/jornada-puertas-abiertas"
+              path="/:locale/clase-bienvenida"
               element={
                 <>
                   <LocaleSync />
-                  <JornadaPuertasAbiertasLanding />
+                  <ClaseBienvenidaLanding />
                 </>
               }
             />

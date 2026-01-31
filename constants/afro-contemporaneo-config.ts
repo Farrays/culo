@@ -104,12 +104,12 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
   videoSection: {
     enabled: true,
     bunnyVideo: {
-      videoId: 'e5a3686f-1548-46bf-ba24-a46c4e053002',
-      libraryId: '570522',
+      videoId: '9f2604a0-fed7-4133-bc56-dc1e8cfe95fa',
+      libraryId: '571535',
       title: 'Clase de Afro Contemporáneo en Barcelona',
       aspectRatio: '9:16', // Formato vertical (Reel)
       thumbnailUrl:
-        'https://vz-c354d67e-cc3.b-cdn.net/e5a3686f-1548-46bf-ba24-a46c4e053002/thumbnail.jpg',
+        'https://vz-3d56a778-175.b-cdn.net/9f2604a0-fed7-4133-bc56-dc1e8cfe95fa/thumbnail_94c0fef4.jpg',
     },
   },
 

@@ -92,10 +92,13 @@
   "footerViewMap": "Ver en Google Maps",
   "footerSitemapTitle": "Mapa del Sitio",
   "footerCopyright": "© 2025 Farray's International Dance Center. Todos los Derechos Reservados.",
+  "sitemapUbicacion": "Cómo Llegar",
   "reviews_seeMore": "Ver más",
   "reviews_seeLess": "Ver menos",
   "reviews_starRating": "{rating} de 5 estrellas",
   "reviews_google": "Google",
+  "excellent": "EXCELENTE",
+  "basedOnReviews": "Basado en {count} reseñas",
   "reviews_category_salsa": "Salsa",
   "reviews_category_bachata": "Bachata",
   "reviews_category_heels": "Heels",
@@ -221,5 +224,9 @@
   "horarios_desc_social": "Salsa, Bachata, Folklore",
   "horarios_desc_urban": "Hip Hop, Dancehall, Afrobeat",
   "horarios_click_to_enlarge": "Click para ver en pantalla completa",
-  "horarios_tabs_label": "Categorías de horarios de clases"
+  "horarios_tabs_label": "Categorías de horarios de clases",
+  "offline_mode": "Sin conexión - Mostrando datos guardados",
+  "update_available": "Nueva versión disponible",
+  "update_description": "Actualiza para obtener las últimas mejoras",
+  "update_now": "Actualizar ahora"
 }

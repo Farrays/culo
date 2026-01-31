@@ -81,7 +81,8 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
   const theme = config.theme.classes;
 
   // Check if using direct booking flow (high conversion) vs lead capture
-  const useDirectBooking = !!bookingWidget?.styleFilter;
+  // Note: bookingWidget with empty styleFilter = show all classes (Jornada Puertas Abiertas)
+  const useDirectBooking = !!bookingWidget;
 
   // Form state
   const [formData, setFormData] = useState<FormData>({
@@ -358,7 +359,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-end md:items-center justify-center transition-all duration-300 motion-reduce:transition-none ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-300 motion-reduce:transition-none ${
         showContent ? 'opacity-100' : 'opacity-0'
       }`}
       role="dialog"

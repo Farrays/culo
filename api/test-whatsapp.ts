@@ -2,20 +2,25 @@
  * Test endpoint para verificar conexión con WhatsApp Cloud API
  *
  * GET /api/test-whatsapp?to=34612345678
- * GET /api/test-whatsapp?to=34612345678&category=bailes_sociales&name=Juan
+ * GET /api/test-whatsapp?to=34612345678&template=cancelar&firstName=Juan
+ * GET /api/test-whatsapp?to=34612345678&template=recordatorio_prueba_0&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00
  *
  * Query params:
  * - to: Número de teléfono con código de país (requerido)
- * - template: Nombre de la plantilla (opcional, default: hello_world)
- * - category: Categoría de clase para probar plantilla específica
- *   (bailes_sociales, danzas_urbanas, danza, entrenamiento, heels)
- * - name: Nombre para el mensaje de prueba (default: Test)
+ * - template: Plantilla a usar (opcional, default: hello_world)
+ *   - hello_world: Plantilla de prueba por defecto
+ *   - cancelar: Plantilla de cancelación (requiere firstName)
+ *   - recordatorio_prueba_0: Plantilla de recordatorio 48h (requiere firstName, className, dateTime)
+ * - firstName: Nombre para plantillas (default: Usuario)
+ * - className: Nombre de la clase para recordatorio (default: Clase)
+ * - dateTime: Fecha y hora para recordatorio (default: fecha actual + 48h)
  *
  * @note Este endpoint es solo para testing. Eliminar o proteger en producción.
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import type { ClassCategory } from './lib/whatsapp';
+
+const WHATSAPP_API_VERSION = 'v23.0';
 
 export default async function handler(
   req: VercelRequest,
@@ -26,15 +31,37 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { to, template, category, name } = req.query;
+  const { to, template, firstName, className, dateTime } = req.query;
 
   if (!to || typeof to !== 'string') {
     return res.status(400).json({
       error: 'Missing "to" query parameter',
       usage: '/api/test-whatsapp?to=34612345678',
+      templates: {
+        hello_world: '/api/test-whatsapp?to=34612345678',
+        cancelar: '/api/test-whatsapp?to=34612345678&template=cancelar&firstName=Juan',
+        recordatorio_prueba_0:
+          '/api/test-whatsapp?to=34612345678&template=recordatorio_prueba_0&firstName=Juan&className=Salsa&dateTime=30/01/2026,%2019:00',
+      },
       note: 'Phone number must include country code without + (e.g., 34 for Spain)',
     });
   }
+
+  const templateName = (template as string) || 'hello_world';
+  const userFirstName = (firstName as string) || 'Usuario';
+  const userClassName = (className as string) || 'Clase';
+
+  // Generar fecha/hora por defecto (48h desde ahora)
+  const defaultDateTime = (() => {
+    const date = new Date(Date.now() + 48 * 60 * 60 * 1000);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${day}/${month}/${year}, ${hours}:${minutes}`;
+  })();
+  const userDateTime = (dateTime as string) || defaultDateTime;
 
   // Validar formato de teléfono básico (solo números, min 10 dígitos)
   const phoneRegex = /^\d{10,15}$/;
@@ -49,113 +76,124 @@ export default async function handler(
     });
   }
 
+  const token = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+
   // Debug: Verificar variables de entorno
   const envCheck = {
-    hasToken: !!process.env['WHATSAPP_TOKEN'],
-    hasPhoneId: !!process.env['WHATSAPP_PHONE_ID'],
-    phoneId: process.env['WHATSAPP_PHONE_ID'],
+    hasToken: !!token,
+    hasPhoneId: !!phoneId,
+    phoneId,
   };
 
+  if (!token || !phoneId) {
+    return res.status(500).json({
+      success: false,
+      error: 'Missing WhatsApp environment variables',
+      envCheck,
+      hint: 'Set WHATSAPP_TOKEN and WHATSAPP_PHONE_ID in Vercel',
+    });
+  }
+
   try {
-    // Importar dinámicamente para capturar errores
-    const {
-      sendTestWhatsApp,
-      sendCustomTemplate,
-      sendBookingConfirmationWhatsApp,
-      getWhatsAppConfigInfo,
-      CLASS_CATEGORIES,
-      CATEGORY_LABELS,
-    } = await import('./lib/whatsapp');
+    const apiUrl = `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`;
 
-    const configInfo = getWhatsAppConfigInfo();
-
-    if (!configInfo.hasToken || !configInfo.hasPhoneId) {
-      return res.status(500).json({
-        success: false,
-        error: 'Missing WhatsApp environment variables',
-        envCheck,
-        hint: 'Set WHATSAPP_TOKEN and WHATSAPP_PHONE_ID in Vercel',
-      });
+    // Construir mensaje según plantilla
+    interface TemplateMessage {
+      messaging_product: 'whatsapp';
+      to: string;
+      type: 'template';
+      template: {
+        name: string;
+        language: { code: string };
+        components?: Array<{
+          type: 'body';
+          parameters: Array<{ type: 'text'; text: string }>;
+        }>;
+      };
     }
 
-    let result;
-    const templateName = typeof template === 'string' ? template : 'hello_world';
-    const testName = typeof name === 'string' ? name : 'Test';
+    let message: TemplateMessage;
 
-    // Si se especifica una categoría, probar la plantilla de confirmación
-    if (category && typeof category === 'string') {
-      const validCategories = CLASS_CATEGORIES as readonly string[];
-
-      if (!validCategories.includes(category)) {
-        return res.status(400).json({
-          error: 'Invalid category',
-          validCategories: CLASS_CATEGORIES,
-          categoryLabels: CATEGORY_LABELS,
-        });
-      }
-
-      // Probar plantilla de confirmación con datos de ejemplo
-      result = await sendBookingConfirmationWhatsApp({
+    if (templateName === 'cancelar') {
+      // Plantilla de cancelación con parámetro firstName
+      message = {
+        messaging_product: 'whatsapp',
         to: normalizedPhone,
-        firstName: testName,
-        className: `Clase de prueba (${CATEGORY_LABELS[category as ClassCategory]})`,
-        classDate: 'Lunes 28 de Enero',
-        classTime: '19:00',
-        category: category as ClassCategory,
-      });
-
-      if (!result.success) {
-        return res.status(500).json({
-          success: false,
-          error: result.error,
-          category,
-          to: normalizedPhone,
-          envCheck,
-        });
-      }
-
-      return res.status(200).json({
-        success: true,
-        message: `WhatsApp confirmation sent to ${normalizedPhone}`,
-        messageId: result.messageId,
-        category,
-        categoryLabel: CATEGORY_LABELS[category as ClassCategory],
-        testData: {
-          firstName: testName,
-          className: `Clase de prueba (${CATEGORY_LABELS[category as ClassCategory]})`,
-          classDate: 'Lunes 28 de Enero',
-          classTime: '19:00',
+        type: 'template',
+        template: {
+          name: 'cancelar',
+          language: { code: 'es_ES' },
+          components: [
+            {
+              type: 'body',
+              parameters: [{ type: 'text', text: userFirstName }],
+            },
+          ],
         },
-        envCheck,
-        timestamp: new Date().toISOString(),
-      });
-    }
-
-    // Si no hay categoría, usar hello_world o plantilla personalizada
-    if (templateName === 'hello_world') {
-      result = await sendTestWhatsApp(normalizedPhone);
+      };
+    } else if (templateName === 'recordatorio_prueba_0') {
+      // Plantilla de recordatorio 48h con firstName, className, dateTime
+      message = {
+        messaging_product: 'whatsapp',
+        to: normalizedPhone,
+        type: 'template',
+        template: {
+          name: 'recordatorio_prueba_0',
+          language: { code: 'es_ES' },
+          components: [
+            {
+              type: 'body',
+              parameters: [
+                { type: 'text', text: userFirstName },
+                { type: 'text', text: userClassName },
+                { type: 'text', text: userDateTime },
+              ],
+            },
+          ],
+        },
+      };
     } else {
-      result = await sendCustomTemplate(templateName, normalizedPhone, 'es_ES');
+      // Plantilla hello_world por defecto
+      message = {
+        messaging_product: 'whatsapp',
+        to: normalizedPhone,
+        type: 'template',
+        template: {
+          name: 'hello_world',
+          language: { code: 'en_US' },
+        },
+      };
     }
 
-    if (!result.success) {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(message),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || data.error) {
       return res.status(500).json({
         success: false,
-        error: result.error,
-        template: templateName,
-        to: normalizedPhone,
+        error: data.error?.message || `HTTP ${response.status}`,
+        details: data.error,
         envCheck,
       });
     }
 
     return res.status(200).json({
       success: true,
-      message: `WhatsApp message sent to ${normalizedPhone}`,
-      messageId: result.messageId,
+      message: `WhatsApp test message sent to ${normalizedPhone}`,
       template: templateName,
+      firstName: templateName === 'cancelar' ? userFirstName : undefined,
+      messageId: data.messages?.[0]?.id,
       envCheck,
       timestamp: new Date().toISOString(),
-      hint: 'Use ?category=bailes_sociales to test booking confirmation templates',
     });
   } catch (error) {
     console.error('Error sending WhatsApp test:', error);

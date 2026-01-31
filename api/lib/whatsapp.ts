@@ -80,9 +80,7 @@ export interface ReminderWhatsAppData {
   to: string;
   firstName: string;
   className: string;
-  classDate: string;
-  classTime: string;
-  category: ClassCategory;
+  classDateTime: string; // Fecha y hora combinadas: "17/07/2025, 19:00"
 }
 
 export interface CancellationWhatsAppData {
@@ -238,25 +236,22 @@ export async function sendBookingConfirmationWhatsApp(
 }
 
 /**
- * Envía recordatorio de clase por WhatsApp
+ * Envía recordatorio de clase por WhatsApp (48h antes)
  *
- * NOTA: Actualmente usa las plantillas de confirmación.
- * Si quieres plantillas específicas de recordatorio, créalas en Meta Business Suite
- * con nombres como: recordatorio_bailes_sociales, recordatorio_danzas_urbanas, etc.
+ * Plantilla: recordatorio_prueba_0
+ * Parámetros:
+ * - {{1}} firstName
+ * - {{2}} className
+ * - {{3}} dateTime (fecha y hora combinadas, ej: "17/07/2025, 19:00")
  */
 export async function sendReminderWhatsApp(data: ReminderWhatsAppData): Promise<WhatsAppResult> {
-  // TODO: Crear plantillas de recordatorio específicas si se desea
-  // Por ahora usa las plantillas de confirmación (mismo formato)
-  const templateName = CATEGORY_TEMPLATES[data.category];
-
-  return sendTemplate(templateName, data.to, 'es_ES', [
+  return sendTemplate('recordatorio_prueba_0', data.to, 'es_ES', [
     {
       type: 'body',
       parameters: [
         { type: 'text', text: data.firstName },
         { type: 'text', text: data.className },
-        { type: 'text', text: data.classDate },
-        { type: 'text', text: data.classTime },
+        { type: 'text', text: data.classDateTime },
       ],
     },
   ]);

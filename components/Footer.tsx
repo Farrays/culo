@@ -400,6 +400,10 @@ const Footer: React.FC = () => {
               />
               <FooterLink to={`/${locale}/regala-baile`} textKey="sitemapRegala" />
               <FooterLink to={`/${locale}/preguntas-frecuentes`} textKey="sitemapFAQ" />
+              <FooterLink
+                to={`/${locale}/como-llegar-escuela-baile-barcelona`}
+                textKey="sitemapUbicacion"
+              />
             </FooterSection>
           </div>
 

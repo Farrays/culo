@@ -895,7 +895,7 @@ export const es = {
   // FAQ - Location question
   classesFaqQ9: '¿Dónde están ubicadas las clases de baile en Barcelona?',
   classesFaqA9:
-    'Estamos en el corazón de Barcelona, cerca de Plaça Espanya y Estación de Sants. Nuestra dirección exacta es Carrer de Floridablanca 135, Barcelona. Fácilmente accesible en metro, autobús o a pie desde los barrios del Raval, Eixample, Gràcia, Sant Antoni, Ciutat Vella y toda el área metropolitana. Instalaciones profesionales con salas amplias, suelo de danza profesional, espejos y todo el equipamiento necesario.',
+    "Estamos en el corazón de Barcelona, cerca de Plaça Espanya y Estación de Sants. Nuestra dirección exacta es Carrer d'Entença 100, Barcelona. Fácilmente accesible en metro (L1/L3 - Plaça Espanya, L3/L5 - Sants Estació), autobús o a pie desde los barrios del Raval, Eixample, Gràcia, Sant Antoni, Ciutat Vella y toda el área metropolitana. Instalaciones profesionales con salas amplias, suelo de danza profesional, espejos y todo el equipamiento necesario.",
 
   // Dancehall Images
   dancehallImage1Alt:
@@ -1159,7 +1159,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   testimonialsNotRequested: 'Testimonios No Solicitados de Nuestros Socios',
   thankYouForLove: 'Gracias por Tanto Amor',
   excellent: 'EXCELENTE',
-  basedOnReviews: 'Basado en {{count}} reseñas',
+  basedOnReviews: 'Basado en {count} reseñas',
 
   // Reviews UI
   reviews_seeMore: 'Ver más',
