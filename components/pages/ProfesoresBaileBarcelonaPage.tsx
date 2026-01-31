@@ -257,19 +257,21 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                 <div className="bg-black/60 backdrop-blur-md border border-primary-accent/30 rounded-xl overflow-hidden hover:border-primary-accent transition-all">
                   <div className="flex flex-col md:flex-row">
                     {/* Director Photo - Rectangular */}
-                    <div className="md:w-2/5 flex-shrink-0">
+                    <div className="md:w-2/5 flex-shrink-0 [perspective:1000px]">
                       {DIRECTOR_INFO.image ? (
-                        <OptimizedImage
-                          src={DIRECTOR_INFO.image.replace('_320.webp', '')}
-                          altKey={`teachers.${DIRECTOR_INFO.id}.portrait`}
-                          alt={`${DIRECTOR_INFO.name} - Directora de Farray's International Dance Center Barcelona`}
-                          aspectRatio="3/4"
-                          sizes="(max-width: 768px) 100vw, 40vw"
-                          priority="high"
-                          breakpoints={[320, 640, 960]}
-                          className="w-full h-64 md:h-full"
-                          objectPosition={getImagePosition(DIRECTOR_INFO.id)}
-                        />
+                        <div className="group relative h-64 md:h-full [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                          <OptimizedImage
+                            src={DIRECTOR_INFO.image.replace('_320.webp', '')}
+                            altKey={`teachers.${DIRECTOR_INFO.id}.portrait`}
+                            alt={`${DIRECTOR_INFO.name} - Directora de Farray's International Dance Center Barcelona`}
+                            aspectRatio="3/4"
+                            sizes="(max-width: 768px) 100vw, 40vw"
+                            priority="high"
+                            breakpoints={[320, 640, 960]}
+                            className="w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+                            objectPosition={getImagePosition(DIRECTOR_INFO.id)}
+                          />
+                        </div>
                       ) : (
                         <div className="w-full h-64 md:h-full bg-gradient-to-br from-primary-accent to-primary-dark flex items-center justify-center">
                           <span className="text-6xl md:text-7xl font-bold text-white">
@@ -446,19 +448,23 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                     aria-labelledby={`teacher-name-${teacher.id}`}
                   >
                     {/* Photo/Avatar - Portrait 3:4 */}
-                    <div className="relative overflow-hidden">
+                    <div className="relative overflow-hidden [perspective:1000px]">
                       {teacher.image ? (
-                        <OptimizedImage
-                          src={teacher.image.replace('_320.webp', '')}
-                          altKey={`teachers.${teacher.id}.portrait`}
-                          alt={`${teacher.name} - Profesor de baile en Farray's Barcelona`}
-                          aspectRatio="3/4"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          priority={index < 3 ? 'high' : 'auto'}
-                          breakpoints={[320, 640, 960]}
-                          className="w-full group-hover:scale-105 transition-transform duration-500"
-                          objectPosition={getImagePosition(teacher.id)}
-                        />
+                        <div className="relative [transform-style:preserve-3d] transition-all duration-500 ease-in-out hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                          <OptimizedImage
+                            src={teacher.image.replace('_320.webp', '')}
+                            altKey={`teachers.${teacher.id}.portrait`}
+                            alt={`${teacher.name} - Profesor de baile en Farray's Barcelona`}
+                            aspectRatio="3/4"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            priority={index < 3 ? 'high' : 'auto'}
+                            breakpoints={[320, 640, 960]}
+                            className="w-full transition-transform duration-500 ease-in-out hover:scale-110"
+                            objectPosition={getImagePosition(teacher.id)}
+                          />
+                          {/* Overlay gradient */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                        </div>
                       ) : (
                         <div
                           className={`w-full bg-gradient-to-br ${AVATAR_COLORS[index % AVATAR_COLORS.length]} flex items-center justify-center`}
@@ -469,8 +475,6 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                           </span>
                         </div>
                       )}
-                      {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     {/* Info */}
