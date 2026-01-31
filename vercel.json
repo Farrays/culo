@@ -55,6 +55,11 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
       "source": "/classes",
       "destination": "/es/clases/baile-barcelona",
       "permanent": true
