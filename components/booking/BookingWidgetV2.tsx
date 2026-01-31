@@ -285,8 +285,8 @@ const BookingWidgetV2: React.FC = memo(() => {
   } = useBookingClasses({
     filters,
     weekOffset,
-    enablePagination: true,
-    fetchAllWeeks: hasActiveFilters,
+    enablePagination: false, // No pagination - show all classes of the week
+    fetchAllWeeks: false, // Show only current week (not all 4 weeks)
   });
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
@@ -754,7 +754,7 @@ const BookingWidgetV2: React.FC = memo(() => {
         hasMore={hasMore}
         isLoadingMore={loading && currentPage > 1}
         selectedClassId={selectedClass?.id ?? null}
-        showAllWeeks={hasActiveFilters}
+        showAllWeeks={false}
         allWeeksClasses={allWeeksClasses}
         allWeeksLoading={allWeeksLoading}
         hideFilters={filtersLocked}

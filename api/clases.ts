@@ -387,10 +387,11 @@ export default async function handler(
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
 
   try {
-    const { style } = req.query;
+    const { style, includeFull } = req.query;
     // Always fetch 28 days - frontend handles week filtering
     const daysAhead = 28;
     const styleFilter = style ? String(style).toLowerCase() : null;
+    const includeFullClasses = includeFull === 'true';
 
     // Simple cache key - all data for 28 days
     const redis = getRedisClient();
@@ -472,8 +473,8 @@ export default async function handler(
       classes = classes.filter(c => c.style === styleFilter);
     }
 
-    // Filtrar solo clases con plazas disponibles
-    const availableClasses = classes.filter(c => !c.isFull);
+    // Filtrar solo clases con plazas disponibles (a menos que includeFull=true)
+    const availableClasses = includeFullClasses ? classes : classes.filter(c => !c.isFull);
 
     // Agrupar por día para el frontend
     const byDay: Record<string, NormalizedClass[]> = {};

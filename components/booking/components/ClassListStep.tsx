@@ -750,10 +750,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
             </div>
           ) : showAllWeeks && weekGroups.length > 0 ? (
             // Acuity mode: Classes grouped by week with sticky headers
-            <div
-              ref={listContainerRef}
-              className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar rounded-xl border border-white/5"
-            >
+            <div ref={listContainerRef} className="pr-2 rounded-xl border border-white/5">
               {weekGroups.map((group, groupIndex) => (
                 <div key={group.weekStart.toISOString()} className="mb-2 last:mb-0">
                   {/* Week Header - Sticky */}
@@ -782,7 +779,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
             // Standard mode: Class list grouped by day with sticky headers
             <div
               ref={listContainerRef}
-              className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar"
+              className="pr-2"
               style={isVirtualizing ? { position: 'relative' } : undefined}
             >
               {isVirtualizing ? (

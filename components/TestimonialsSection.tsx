@@ -67,7 +67,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function Te
                   </svg>
                 ))}
               </div>
-              <div className="text-sm text-neutral/70">{t('basedOnReviews', { count: 509 })}</div>
+              <div className="text-sm text-neutral/70">
+                {t('pages:basedOnReviews', { count: 509 })}
+              </div>
               <div className="mt-2 text-xs text-neutral/70">Google</div>
             </div>
           </div>

@@ -49,6 +49,7 @@ const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPag
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
+// const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2')); // Removed - file doesn't exist
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
 const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
@@ -120,6 +121,7 @@ const TestPaidSelector = lazy(() => import('./pages/TestPaidSelector'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
+const MiReservaPage = lazy(() => import('./components/MiReservaPage'));
 
 // ===== BLOG PAGES =====
 const BlogListPage = lazy(() => import('./components/pages/BlogListPage'));
@@ -591,6 +593,18 @@ const AppContent: React.FC = () => {
               }
             />
 
+            {/* V2 Alternative - for A/B testing comparison - DISABLED (file doesn't exist)
+            <Route
+              path="/:locale/clases/salsa-lady-style-v2"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaLadyStylePageV2 />
+                </>
+              }
+            />
+            */}
+
             <Route
               path="/:locale/clases/bachata-lady-style-barcelona"
               element={
@@ -980,6 +994,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HorariosPageV2 />
+                </>
+              }
+            />
+
+            {/* Mi Reserva - Magic Link Management Page */}
+            <Route
+              path="/:locale/mi-reserva"
+              element={
+                <>
+                  <LocaleSync />
+                  <MiReservaPage />
                 </>
               }
             />
