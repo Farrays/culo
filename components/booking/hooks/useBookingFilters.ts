@@ -37,6 +37,8 @@ export interface UseBookingFiltersReturn {
   setWeekOffset: (week: number) => void;
   /** When true, filters UI should be hidden (user came from landing with pre-selected style) */
   filtersLocked: boolean;
+  /** When true, week was explicitly set via URL param (not auto-calculated) */
+  hasExplicitWeek: boolean;
 }
 
 export function useBookingFilters(): UseBookingFiltersReturn {
@@ -170,14 +172,11 @@ export function useBookingFilters(): UseBookingFiltersReturn {
   }, [setFilters]);
 
   // Set week offset (also syncs to URL)
+  // Always set the week param to make navigation explicit and predictable
   const setWeekOffset = useCallback(
     (week: number) => {
       const params = new URLSearchParams(searchParams);
-      if (week > 0) {
-        params.set('week', String(week));
-      } else {
-        params.delete('week');
-      }
+      params.set('week', String(week));
       setSearchParams(params, { replace: true });
     },
     [searchParams, setSearchParams]
@@ -186,9 +185,22 @@ export function useBookingFilters(): UseBookingFiltersReturn {
   // Check for direct classId navigation
   const directClassId = searchParams.get('classId');
 
+  // Calculate smart default week: if past Wednesday, show next week
+  // This ensures users see a full week of classes, not just 1-2 remaining days
+  const getSmartDefaultWeek = (): number => {
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0=Sunday, 1=Monday, ..., 6=Saturday
+    // If it's Thursday (4), Friday (5), Saturday (6), or Sunday (0), default to next week
+    // This means Mon-Wed = current week, Thu-Sun = next week
+    return dayOfWeek === 0 || dayOfWeek >= 4 ? 1 : 0;
+  };
+
   // Get week offset from URL (validated: 0-4 range)
-  const rawWeekOffset = parseInt(searchParams.get('week') || '0', 10);
-  const weekOffset = Math.min(4, Math.max(0, isNaN(rawWeekOffset) ? 0 : rawWeekOffset));
+  const weekParam = searchParams.get('week');
+  const hasExplicitWeek = weekParam !== null;
+  const smartDefault = getSmartDefaultWeek();
+  const rawWeekOffset = hasExplicitWeek ? parseInt(weekParam, 10) : smartDefault;
+  const weekOffset = Math.min(4, Math.max(0, isNaN(rawWeekOffset) ? smartDefault : rawWeekOffset));
 
   // Check if filters should be locked (hidden UI but filter still applied)
   const filtersLocked = searchParams.get('locked') === 'true';
@@ -210,5 +222,6 @@ export function useBookingFilters(): UseBookingFiltersReturn {
     weekOffset,
     setWeekOffset,
     filtersLocked,
+    hasExplicitWeek,
   };
 }

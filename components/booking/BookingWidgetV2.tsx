@@ -228,6 +228,7 @@ const BookingWidgetV2: React.FC = memo(() => {
     weekOffset,
     setWeekOffset,
     filtersLocked,
+    hasExplicitWeek,
   } = useBookingFilters();
 
   // CSRF protection (optional - gracefully handles missing backend endpoint)
@@ -271,6 +272,9 @@ const BookingWidgetV2: React.FC = memo(() => {
   // Detect if any filter is active (for Acuity mode)
   const hasActiveFilters = Object.values(filters).some(Boolean);
 
+  // Track if we've auto-selected the optimal week (only do once on mount)
+  const hasAutoSelectedWeekRef = useRef(false);
+
   const {
     classes,
     loading,
@@ -286,8 +290,54 @@ const BookingWidgetV2: React.FC = memo(() => {
     filters,
     weekOffset,
     enablePagination: true,
-    fetchAllWeeks: hasActiveFilters,
+    // Always fetch all weeks on initial load to find optimal week
+    fetchAllWeeks: hasActiveFilters || !hasExplicitWeek,
   });
+
+  // Auto-select optimal week based on first available class
+  // This ensures users see the next day with classes, not an empty week
+  useEffect(() => {
+    // Only auto-select if:
+    // 1. No explicit week in URL
+    // 2. Haven't already auto-selected
+    // 3. All weeks data is loaded
+    // 4. We have classes to analyze
+    if (
+      !hasExplicitWeek &&
+      !hasAutoSelectedWeekRef.current &&
+      !allWeeksLoading &&
+      allWeeksClasses.length > 0
+    ) {
+      hasAutoSelectedWeekRef.current = true;
+
+      // Find the first available class
+      const firstClass = allWeeksClasses[0];
+      if (firstClass) {
+        const classDate = new Date(firstClass.rawStartsAt);
+        const now = new Date();
+
+        // Calculate which weekOffset this class falls into
+        const dayOfWeek = now.getDay();
+        const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+        const currentWeekStart = new Date(now);
+        currentWeekStart.setDate(now.getDate() + mondayOffset);
+        currentWeekStart.setHours(0, 0, 0, 0);
+
+        // Calculate days from current week start to the class
+        const daysDiff = Math.floor(
+          (classDate.getTime() - currentWeekStart.getTime()) / (24 * 60 * 60 * 1000)
+        );
+
+        // Determine which week the class is in (0-4)
+        const optimalWeek = Math.min(4, Math.max(0, Math.floor(daysDiff / 7)));
+
+        // Only change week if different from current
+        if (optimalWeek !== weekOffset) {
+          setWeekOffset(optimalWeek);
+        }
+      }
+    }
+  }, [hasExplicitWeek, allWeeksLoading, allWeeksClasses, weekOffset, setWeekOffset]);
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
