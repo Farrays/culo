@@ -476,7 +476,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
 
   // Video
   video: {
-    id: 'C5sQnx-uNhI',
+    id: '', // Video coming soon - shows placeholder
     titleKey: 'salsaLadyVideoTitle',
     descKey: 'salsaLadyVideoDesc',
   },
