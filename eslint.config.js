@@ -37,6 +37,7 @@ const browserGlobals = {
   setInterval: 'readonly',
   clearInterval: 'readonly',
   URL: 'readonly',
+  URLSearchParams: 'readonly',
   HTMLVideoElement: 'readonly',
   HTMLAnchorElement: 'readonly',
   HTMLTextAreaElement: 'readonly',
@@ -122,6 +123,13 @@ export default [
     files: ['i18n/locales/*.ts'],
     rules: {
       'no-useless-escape': 'off',
+    },
+  },
+  {
+    // Allow console.log in API files (backend/cron jobs need logging)
+    files: ['api/**/*.ts', 'api/**/*.js'],
+    rules: {
+      'no-console': 'off',
     },
   },
   {

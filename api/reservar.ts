@@ -1,325 +1,15 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
-import { Resend } from 'resend';
 
 // ============================================================================
-// TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
+// IMPORTS CONSOLIDADOS - Fuente única de verdad
 // ============================================================================
 
-type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
+import { sendBookingConfirmation, EMAIL_CONFIG, type ClassCategory } from './lib/email';
 
 // ============================================================================
-// EMAIL HELPER INLINE
-// ============================================================================
-
-const EMAIL_FROM = "Farray's Center <onboarding@resend.dev>";
-const EMAIL_REPLY_TO = 'info@farrayscenter.com';
-const INSTAGRAM_URL = 'https://www.instagram.com/farrays_centerbcn/';
-
-// Colores corporativos
-const BRAND_PRIMARY = '#B01E3C'; // Rojo carmesí del logo
-const BRAND_DARK = '#800020';
-const LOGO_URL = 'https://farrayscenter.vercel.app/images/logo/img/logo-fidc_256.png';
-// TODO: Cambiar a farrayscenter.com cuando esté listo
-const BASE_URL = 'https://farrayscenter.vercel.app';
-const LOCATION_ADDRESS = "Farray's International Dance Center, C/ Entença 100, 08015 Barcelona";
-
-// Calendar URL generators
-const SPANISH_MONTHS: Record<string, number> = {
-  enero: 0,
-  febrero: 1,
-  marzo: 2,
-  abril: 3,
-  mayo: 4,
-  junio: 5,
-  julio: 6,
-  agosto: 7,
-  septiembre: 8,
-  octubre: 9,
-  noviembre: 10,
-  diciembre: 11,
-};
-
-function parseSpanishDate(classDate: string, classDateRaw?: string | null): Date {
-  if (classDateRaw) {
-    return new Date(classDateRaw);
-  }
-  // Parse from formatted date "Lunes, 27 de enero de 2026"
-  const match = classDate.match(/(\d{1,2}) de (\w+) de (\d{4})/);
-  if (match && match[1] && match[2] && match[3]) {
-    const day = parseInt(match[1], 10);
-    const monthName = match[2].toLowerCase();
-    const month = SPANISH_MONTHS[monthName] ?? 0;
-    const year = parseInt(match[3], 10);
-    return new Date(year, month, day);
-  }
-  return new Date();
-}
-
-function parseTime(timeStr: string, date: Date): void {
-  const timeMatch = timeStr.match(/(\d{1,2}):(\d{2})/);
-  if (timeMatch && timeMatch[1] && timeMatch[2]) {
-    date.setHours(parseInt(timeMatch[1], 10), parseInt(timeMatch[2], 10), 0, 0);
-  }
-}
-
-function formatCalendarDate(d: Date): string {
-  return d
-    .toISOString()
-    .replace(/[-:]/g, '')
-    .replace(/\.\d{3}/, '');
-}
-
-function generateGoogleCalendarUrl(data: {
-  className: string;
-  classDate: string;
-  classTime: string;
-  classDateRaw?: string | null;
-}): string {
-  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
-  parseTime(data.classTime, startDate);
-  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
-
-  const params = new globalThis.URLSearchParams({
-    action: 'TEMPLATE',
-    text: `${data.className} - Farray's Center`,
-    dates: `${formatCalendarDate(startDate)}/${formatCalendarDate(endDate)}`,
-    details: `Clase de prueba en Farray's International Dance Center.\n\nRecuerda llegar 10 minutos antes para cambiarte.\n\nMás info: ${BASE_URL}`,
-    location: LOCATION_ADDRESS,
-  });
-
-  return `https://calendar.google.com/calendar/render?${params.toString()}`;
-}
-
-function generateIcsDataUrl(data: {
-  className: string;
-  classDate: string;
-  classTime: string;
-  classDateRaw?: string | null;
-}): string {
-  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
-  parseTime(data.classTime, startDate);
-  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
-
-  const uid = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}@farrayscenter.com`;
-
-  const icsContent = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Farrays Center//Booking System//ES',
-    'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
-    'BEGIN:VEVENT',
-    `UID:${uid}`,
-    `DTSTAMP:${formatCalendarDate(new Date())}`,
-    `DTSTART:${formatCalendarDate(startDate)}`,
-    `DTEND:${formatCalendarDate(endDate)}`,
-    `SUMMARY:${data.className} - Farray's Center`,
-    `DESCRIPTION:Clase de prueba en Farray's International Dance Center.\\nRecuerda llegar 10 minutos antes.`,
-    `LOCATION:${LOCATION_ADDRESS}`,
-    'END:VEVENT',
-    'END:VCALENDAR',
-  ].join('\r\n');
-
-  return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
-}
-
-interface CategoryInstructions {
-  title: string;
-  items: string[];
-  color: string;
-}
-
-function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
-  const commonItems = [
-    '💧 Botella de agua',
-    '🧴 Toalla pequeña',
-    '🔐 Candado para taquilla (opcional)',
-  ];
-
-  switch (category) {
-    case 'bailes_sociales':
-      return {
-        title: '¿Qué traer a tu clase de Bailes Sociales?',
-        color: BRAND_PRIMARY,
-        items: [
-          '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
-          '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
-          '📝 <strong>Folklore:</strong> Sin calzado (se baila descalzo)',
-          ...commonItems,
-        ],
-      };
-    case 'danzas_urbanas':
-      return {
-        title: '¿Qué traer a tu clase de Danzas Urbanas?',
-        color: BRAND_PRIMARY,
-        items: [
-          '👟 Bambas cómodas (suela limpia)',
-          '👖 Leggings, pantalones cortos o chándal',
-          '👕 Ropa cómoda y ligera (tipo fitness)',
-          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto. Rodilleras recomendadas',
-          '🍑 <strong>Twerk:</strong> Rodilleras recomendadas',
-          ...commonItems,
-        ],
-      };
-    case 'danza':
-    case 'entrenamiento':
-      return {
-        title:
-          category === 'entrenamiento'
-            ? '¿Qué traer a tu Entrenamiento?'
-            : '¿Qué traer a tu clase de Danza?',
-        color: BRAND_PRIMARY,
-        items: [
-          '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
-          '🦵 Rodilleras recomendadas (especialmente para floorwork)',
-          '👖 Ropa ajustada que permita ver la línea del cuerpo',
-          ...commonItems,
-        ],
-      };
-    case 'heels':
-      return {
-        title: '¿Qué traer a tu clase de Heels?',
-        color: BRAND_PRIMARY,
-        items: [
-          '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
-          '💃 Ropa femenina y atrevida que te haga sentir poderosa',
-          '🎽 Top o body que permita libertad de movimiento',
-          ...commonItems,
-        ],
-      };
-    default:
-      return {
-        title: '¿Qué traer?',
-        color: BRAND_PRIMARY,
-        items: ['👟 Ropa cómoda para bailar', '👠 Calzado según el estilo', ...commonItems],
-      };
-  }
-}
-
-function generateWhatToBringSection(category?: ClassCategory): string {
-  const inst = getCategoryInstructions(category);
-  return `
-  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 15px 0; color: ${inst.color};">${inst.title}</h3>
-    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
-      ${inst.items.map(item => `<li>${item}</li>`).join('')}
-    </ul>
-    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
-      <strong style="color: #1976d2;">⏰ Importante:</strong>
-      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
-    </div>
-  </div>
-  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
-    <p style="margin: 0; color: #666;">
-      <strong>Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br><br>
-      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
-      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
-    </p>
-  </div>`;
-}
-
-async function sendBookingConfirmationEmail(data: {
-  to: string;
-  firstName: string;
-  className: string;
-  classDate: string;
-  classTime: string;
-  managementUrl: string;
-  mapUrl?: string;
-  category?: ClassCategory;
-  classDateRaw?: string | null;
-}): Promise<{ success: boolean; error?: string }> {
-  const apiKey = process.env['RESEND_API_KEY'];
-  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
-
-  // Generate calendar URLs
-  const googleCalUrl = generateGoogleCalendarUrl({
-    className: data.className,
-    classDate: data.classDate,
-    classTime: data.classTime,
-    classDateRaw: data.classDateRaw,
-  });
-
-  const icsUrl = generateIcsDataUrl({
-    className: data.className,
-    classDate: data.classDate,
-    classTime: data.classTime,
-    classDateRaw: data.classDateRaw,
-  });
-
-  const resend = new Resend(apiKey);
-  try {
-    const result = await resend.emails.send({
-      from: EMAIL_FROM,
-      to: data.to,
-      replyTo: EMAIL_REPLY_TO,
-      subject: `Reserva confirmada: ${data.className}`,
-      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: ${BRAND_PRIMARY}; margin: 0;">Farray's International Dance Center</h1>
-  </div>
-  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
-  </div>
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
-  </div>
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
-      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
-    </table>
-  </div>
-  <div style="text-align: center; margin-bottom: 20px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
-  </div>
-  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
-    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
-    <a href="${googleCalUrl}" target="_blank" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
-    <a href="${icsUrl}" download="farrays-clase.ics" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
-  </div>
-  ${generateWhatToBringSection(data.category)}
-  <div style="text-align: center; padding: 25px 0;">
-    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
-    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
-  </div>
-  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
-    <tr>
-      <td style="padding: 30px; text-align: center;">
-        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
-        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
-        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
-        <p style="margin: 0 0 20px 0;">
-          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
-        </p>
-        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
-          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
-          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
-        </p>
-      </td>
-    </tr>
-  </table>
-</body></html>`,
-    });
-    if (result.error) return { success: false, error: result.error.message };
-    return { success: true };
-  } catch (error) {
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
-  }
-}
-
-// ============================================================================
-// WHATSAPP HELPER INLINE
+// WHATSAPP HELPER
 // ============================================================================
 
 const WHATSAPP_API_VERSION = 'v23.0';
@@ -432,6 +122,9 @@ const TOKEN_TTL_SECONDS = 3500;
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000;
 const RATE_LIMIT_MAX = 3; // 3 reservas por minuto por IP (más estricto)
+
+// Timezone de España para formatear fechas
+const SPAIN_TIMEZONE = 'Europe/Madrid';
 
 // Lazy Redis
 let redisClient: Redis | null = null;
@@ -837,9 +530,6 @@ async function createMomenceBooking(
   }
 }
 
-// Timezone de España para formatear fechas
-const SPAIN_TIMEZONE = 'Europe/Madrid';
-
 // ============================================================================
 // CATEGORIZACIÓN DE CLASES
 // ============================================================================
@@ -1078,7 +768,7 @@ async function sendMetaConversionEvent(data: {
   }
 
   const timestamp = Math.floor(Date.now() / 1000);
-  const normalizedPhone = normalizePhone(data.phone);
+  const normalizedPhoneNum = normalizePhone(data.phone);
 
   const eventData = {
     data: [
@@ -1090,13 +780,13 @@ async function sendMetaConversionEvent(data: {
         action_source: 'website',
         user_data: {
           em: [hashForMeta(data.email)],
-          ph: [hashForMeta(normalizedPhone)],
+          ph: [hashForMeta(normalizedPhoneNum)],
           fn: [hashForMeta(data.firstName)],
           ln: [hashForMeta(data.lastName)],
           // Detectar país por prefijo telefónico
-          ...(normalizedPhone.startsWith('34') ? { country: [hashForMeta('es')] } : {}),
-          ...(normalizedPhone.startsWith('33') ? { country: [hashForMeta('fr')] } : {}),
-          ...(normalizedPhone.startsWith('34') ? { ct: [hashForMeta('barcelona')] } : {}),
+          ...(normalizedPhoneNum.startsWith('34') ? { country: [hashForMeta('es')] } : {}),
+          ...(normalizedPhoneNum.startsWith('33') ? { country: [hashForMeta('fr')] } : {}),
+          ...(normalizedPhoneNum.startsWith('34') ? { ct: [hashForMeta('barcelona')] } : {}),
           client_ip_address: data.clientIp,
           client_user_agent: data.userAgent,
           fbc: data.fbc || undefined,
@@ -1234,7 +924,7 @@ export default async function handler(
 
     // Generar eventId único si no viene del frontend
     const finalEventId =
-      eventId || `booking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      eventId || `booking_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 
     // 1. Crear booking en Momence o enviar a Customer Leads
     let momenceResult: { success: boolean; bookingId?: number; error?: string } = {
@@ -1369,7 +1059,7 @@ export default async function handler(
 
     // 4. Enviar notificaciones (Email + WhatsApp)
 
-    // 4a. Enviar email de confirmación
+    // 4a. Enviar email de confirmación usando módulo consolidado
     let emailResult: { success: boolean; error?: string } = {
       success: false,
       error: 'Not attempted',
@@ -1377,20 +1067,20 @@ export default async function handler(
     console.warn('[reservar] Email attempt starting...');
     console.warn('[reservar] RESEND_API_KEY configured:', !!process.env['RESEND_API_KEY']);
     try {
-      // Generar URL de gestión con magic link (básico por ahora)
-      const managementUrl = `${BASE_URL}/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
-      const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
+      // Generar URL de gestión con magic link
+      const managementUrl = `${EMAIL_CONFIG.BASE_URL}/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
 
-      emailResult = await sendBookingConfirmationEmail({
+      emailResult = await sendBookingConfirmation({
         to: normalizedEmail,
         firstName: firstNameOnly,
         className: className || estilo || 'Clase de Prueba',
         classDate: formattedDate,
         classTime: classTime || '19:00',
         managementUrl,
-        mapUrl,
+        mapUrl: EMAIL_CONFIG.GOOGLE_MAPS_URL,
         category,
         classDateRaw: classDate || null,
+        eventId: finalEventId,
       });
       console.warn('[reservar] Email result:', emailResult);
     } catch (emailError) {

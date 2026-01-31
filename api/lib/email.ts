@@ -1,8 +1,8 @@
 /**
  * Resend Email Helper - Enterprise Configuration
  *
- * Helper para envío de emails transaccionales del sistema de reservas.
- * Configuración enterprise con máxima entregabilidad.
+ * Sistema de emails transaccionales unificado para el sistema de reservas.
+ * Este archivo es la ÚNICA fuente de verdad para todos los emails.
  *
  * @see https://resend.com/docs
  *
@@ -19,19 +19,59 @@
 
 import { Resend } from 'resend';
 
-// Singleton
-let resendInstance: Resend | null = null;
+// ============================================================================
+// CONFIGURACIÓN ENTERPRISE
+// ============================================================================
 
 /**
- * Obtiene la instancia de Resend
+ * Colores corporativos de Farray's Center
  */
+const BRAND_PRIMARY = '#B01E3C'; // Rojo carmesí del logo
+const BRAND_DARK = '#800020'; // Borgoña oscuro
+const BRAND_GRADIENT = `linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%)`;
+
+/**
+ * URLs de producción
+ */
+const BASE_URL = 'https://www.farrayscenter.com';
+const LOGO_URL = 'https://www.farrayscenter.com/images/logo/img/logo-fidc_256.png';
+const INSTAGRAM_URL = 'https://www.instagram.com/farrays_centerbcn/';
+const WHATSAPP_NUMBER = '+34622247085';
+const WHATSAPP_URL = `https://wa.me/34622247085`;
+
+/**
+ * Ubicación del centro
+ */
+const LOCATION_ADDRESS = "Farray's International Dance Center";
+const LOCATION_STREET = 'C/ Entença 100, 08015 Barcelona';
+const LOCATION_FULL = `${LOCATION_ADDRESS}, ${LOCATION_STREET}`;
+const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
+
+/**
+ * Email addresses configurados:
+ * - FROM: Dirección verificada en Resend (dominio farrayscenter.com)
+ * - REPLY_TO: Dirección donde recibes respuestas
+ */
+const FROM_EMAIL = "Farray's Center <reservas@farrayscenter.com>";
+const REPLY_TO = 'info@farrayscenter.com';
+
+/**
+ * Headers adicionales para máxima entregabilidad
+ */
+const EMAIL_HEADERS = {
+  'X-Entity-Ref-ID': 'farrayscenter-booking-system',
+  'List-Unsubscribe': '<mailto:unsubscribe@farrayscenter.com>',
+};
+
+// Singleton Resend
+let resendInstance: Resend | null = null;
+
 function getResend(): Resend {
   if (resendInstance) {
     return resendInstance;
   }
 
   const apiKey = process.env['RESEND_API_KEY'];
-
   if (!apiKey) {
     throw new Error('Missing RESEND_API_KEY environment variable');
   }
@@ -51,7 +91,7 @@ export type ClassCategory =
   | 'bailes_sociales' // Salsa, Bachata, Kizomba, etc.
   | 'danzas_urbanas' // Hip Hop, House, Breaking, etc.
   | 'danza' // Ballet, Contemporáneo, Jazz, etc.
-  | 'entrenamiento' // Entrenamiento para bailarines (usa mismas instrucciones que danza)
+  | 'entrenamiento' // Entrenamiento para bailarines
   | 'heels'; // Heels Dance
 
 export interface BookingEmailData {
@@ -63,7 +103,9 @@ export interface BookingEmailData {
   instructor?: string;
   managementUrl: string; // URL con magic link
   mapUrl?: string;
-  category?: ClassCategory; // Categoría para instrucciones específicas
+  category?: ClassCategory;
+  classDateRaw?: string | null; // ISO date for calendar generation
+  eventId?: string; // Para ICS UID
 }
 
 export interface CancellationEmailData {
@@ -82,8 +124,9 @@ export interface ReminderEmailData {
   classTime: string;
   managementUrl: string;
   mapUrl?: string;
-  reminderType?: '48h' | '24h'; // Tipo de recordatorio (default: 24h)
-  eventId?: string; // For ICS UID
+  reminderType?: '48h' | '24h';
+  eventId?: string;
+  category?: ClassCategory;
 }
 
 export interface FeedbackEmailData {
@@ -95,31 +138,146 @@ export interface FeedbackEmailData {
 }
 
 // ============================================================================
-// EMAIL TEMPLATES
+// CALENDAR GENERATION
 // ============================================================================
 
-// ============================================================================
-// CONFIGURACIÓN DE EMAILS - ENTERPRISE
-// ============================================================================
+const SPANISH_MONTHS: Record<string, number> = {
+  enero: 0,
+  febrero: 1,
+  marzo: 2,
+  abril: 3,
+  mayo: 4,
+  junio: 5,
+  julio: 6,
+  agosto: 7,
+  septiembre: 8,
+  octubre: 9,
+  noviembre: 10,
+  diciembre: 11,
+};
 
 /**
- * Email addresses configurados:
- * - FROM: Dirección verificada en Resend (dominio farrayscenter.com)
- * - REPLY_TO: Dirección donde recibes respuestas
- *
- * Nomenclatura recomendada:
- * - reservas@ → Confirmaciones y recordatorios
- * - noreply@ → Emails automáticos sin respuesta esperada
- * - info@ → Respuestas generales
+ * Parsea fecha en español a Date
  */
-const FROM_EMAIL = "Farray's Center <reservas@farrayscenter.com>";
-const REPLY_TO = 'info@farrayscenter.com';
+function parseSpanishDate(classDate: string, classDateRaw?: string | null): Date {
+  if (classDateRaw) {
+    return new Date(classDateRaw);
+  }
+  // Parse from formatted date "Lunes, 27 de enero de 2026"
+  const match = classDate.match(/(\d{1,2}) de (\w+) de (\d{4})/);
+  if (match && match[1] && match[2] && match[3]) {
+    const day = parseInt(match[1], 10);
+    const monthName = match[2].toLowerCase();
+    const month = SPANISH_MONTHS[monthName] ?? 0;
+    const year = parseInt(match[3], 10);
+    return new Date(year, month, day);
+  }
+  return new Date();
+}
 
-// Headers adicionales para máxima entregabilidad
-const EMAIL_HEADERS = {
-  'X-Entity-Ref-ID': 'farrayscenter-booking-system',
-  'List-Unsubscribe': '<mailto:unsubscribe@farrayscenter.com>',
-};
+/**
+ * Parsea hora y la aplica a una fecha
+ */
+function parseTime(timeStr: string, date: Date): void {
+  const timeMatch = timeStr.match(/(\d{1,2}):(\d{2})/);
+  if (timeMatch && timeMatch[1] && timeMatch[2]) {
+    date.setHours(parseInt(timeMatch[1], 10), parseInt(timeMatch[2], 10), 0, 0);
+  }
+}
+
+/**
+ * Formatea fecha para calendarios (formato iCal)
+ */
+function formatCalendarDate(d: Date): string {
+  return d
+    .toISOString()
+    .replace(/[-:]/g, '')
+    .replace(/\.\d{3}/, '');
+}
+
+/**
+ * Genera URL de Google Calendar
+ */
+export function generateGoogleCalendarUrl(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+}): string {
+  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
+  parseTime(data.classTime, startDate);
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: `${data.className} - Farray's Center`,
+    dates: `${formatCalendarDate(startDate)}/${formatCalendarDate(endDate)}`,
+    details: `Clase de prueba en Farray's International Dance Center.\n\nRecuerda llegar 10 minutos antes para cambiarte.\n\nMás info: ${BASE_URL}`,
+    location: LOCATION_FULL,
+  });
+
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+/**
+ * Genera contenido ICS como Data URL
+ */
+export function generateIcsDataUrl(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+  eventId?: string;
+}): string {
+  const startDate = parseSpanishDate(data.classDate, data.classDateRaw);
+  parseTime(data.classTime, startDate);
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+
+  const uid =
+    data.eventId ||
+    `${Date.now()}-${Math.random().toString(36).substring(2, 11)}@farrayscenter.com`;
+
+  const icsContent = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Farrays Center//Booking System//ES',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `UID:${uid}`,
+    `DTSTAMP:${formatCalendarDate(new Date())}`,
+    `DTSTART:${formatCalendarDate(startDate)}`,
+    `DTEND:${formatCalendarDate(endDate)}`,
+    `SUMMARY:${data.className} - Farray's Center`,
+    `DESCRIPTION:Clase de prueba en Farray's International Dance Center.\\nRecuerda llegar 10 minutos antes.`,
+    `LOCATION:${LOCATION_FULL}`,
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n');
+
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
+}
+
+/**
+ * Genera sección HTML de botones de calendario
+ */
+function generateCalendarSection(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+  eventId?: string;
+}): string {
+  const googleCalUrl = generateGoogleCalendarUrl(data);
+  const icsUrl = generateIcsDataUrl(data);
+
+  return `
+  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="${googleCalUrl}" target="_blank" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
+    <a href="${icsUrl}" download="farrays-clase.ics" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
+  </div>`;
+}
 
 // ============================================================================
 // INSTRUCCIONES POR CATEGORÍA
@@ -128,13 +286,13 @@ const EMAIL_HEADERS = {
 interface CategoryInstructions {
   title: string;
   items: string[];
-  color: string; // Color del header de la sección
+  color: string;
 }
 
 /**
  * Obtiene las instrucciones específicas de "¿Qué traer?" según la categoría
  */
-function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
+export function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
   const commonItems = [
     '💧 Botella de agua',
     '🧴 Toalla pequeña',
@@ -145,7 +303,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     case 'bailes_sociales':
       return {
         title: '¿Qué traer a tu clase de Bailes Sociales?',
-        color: '#e91e63',
+        color: BRAND_PRIMARY,
         items: [
           '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
           '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
@@ -157,12 +315,12 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     case 'danzas_urbanas':
       return {
         title: '¿Qué traer a tu clase de Danzas Urbanas?',
-        color: '#673ab7',
+        color: BRAND_PRIMARY,
         items: [
           '👟 Bambas cómodas (suela limpia)',
           '👖 Leggings, pantalones cortos o chándal',
           '👕 Ropa cómoda y ligera (tipo fitness)',
-          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto con suela antideslizante. Rodilleras recomendadas',
+          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto. Rodilleras recomendadas',
           '🍑 <strong>Twerk:</strong> Rodilleras recomendadas',
           ...commonItems,
         ],
@@ -175,7 +333,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
           category === 'entrenamiento'
             ? '¿Qué traer a tu Entrenamiento?'
             : '¿Qué traer a tu clase de Danza?',
-        color: '#9c27b0',
+        color: BRAND_PRIMARY,
         items: [
           '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
           '🦵 Rodilleras recomendadas (especialmente para floorwork)',
@@ -187,7 +345,7 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     case 'heels':
       return {
         title: '¿Qué traer a tu clase de Heels?',
-        color: '#e91e63',
+        color: BRAND_PRIMARY,
         items: [
           '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
           '💃 Ropa femenina y atrevida que te haga sentir poderosa',
@@ -199,12 +357,8 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
     default:
       return {
         title: '¿Qué traer?',
-        color: '#e91e63',
-        items: [
-          '👟 Ropa cómoda para bailar',
-          '👠 Calzado según el estilo de baile',
-          ...commonItems,
-        ],
+        color: BRAND_PRIMARY,
+        items: ['👟 Ropa cómoda para bailar', '👠 Calzado según el estilo', ...commonItems],
       };
   }
 }
@@ -212,32 +366,91 @@ function getCategoryInstructions(category?: ClassCategory): CategoryInstructions
 /**
  * Genera el HTML de la sección "¿Qué traer?" personalizada por categoría
  */
-function generateWhatToBringSection(category?: ClassCategory): string {
-  const instructions = getCategoryInstructions(category);
-
+export function generateWhatToBringSection(category?: ClassCategory): string {
+  const inst = getCategoryInstructions(category);
   return `
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 15px 0; color: ${instructions.color};">${instructions.title}</h3>
+    <h3 style="margin: 0 0 15px 0; color: ${inst.color};">${inst.title}</h3>
     <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
-      ${instructions.items.map(item => `<li>${item}</li>`).join('\n      ')}
+      ${inst.items.map(item => `<li>${item}</li>`).join('')}
     </ul>
     <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
       <strong style="color: #1976d2;">⏰ Importante:</strong>
-      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte y prepararte.</p>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
     </div>
   </div>
-
   <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
     <p style="margin: 0; color: #666;">
-      <strong>Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br><br>
+      <strong>${LOCATION_ADDRESS}</strong><br>
+      ${LOCATION_STREET}<br><br>
       🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
       🚌 <strong>Bus:</strong> Líneas 41, 54, H8
     </p>
-  </div>
-  `;
+  </div>`;
 }
+
+// ============================================================================
+// COMPONENTES COMUNES
+// ============================================================================
+
+/**
+ * Header común para todos los emails
+ */
+function generateHeader(): string {
+  return `
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1>
+  </div>`;
+}
+
+/**
+ * Footer común para todos los emails
+ */
+function generateFooter(): string {
+  return `
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="${WHATSAPP_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>`;
+}
+
+/**
+ * Tabla de detalles de reserva
+ */
+function generateBookingDetails(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  instructor?: string;
+}): string {
+  return `
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
+      ${data.instructor ? `<tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Instructor</span><br><strong>${data.instructor}</strong></td></tr>` : ''}
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>${LOCATION_ADDRESS}</strong><br><span style="color: #666;">${LOCATION_STREET}</span></td></tr>
+    </table>
+  </div>`;
+}
+
+// ============================================================================
+// EMAIL TEMPLATES
+// ============================================================================
 
 /**
  * Email de confirmación de reserva
@@ -247,6 +460,14 @@ export async function sendBookingConfirmation(
 ): Promise<{ success: boolean; id?: string; error?: string }> {
   const resend = getResend();
 
+  const calendarSection = generateCalendarSection({
+    className: data.className,
+    classDate: data.classDate,
+    classTime: data.classTime,
+    classDateRaw: data.classDateRaw,
+    eventId: data.eventId,
+  });
+
   try {
     const result = await resend.emails.send({
       from: FROM_EMAIL,
@@ -254,107 +475,30 @@ export async function sendBookingConfirmation(
       replyTo: REPLY_TO,
       headers: EMAIL_HEADERS,
       subject: `Reserva confirmada: ${data.className}`,
-      html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
-  </div>
-
-  <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+  ${generateHeader()}
+  <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
     <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
   </div>
-
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
     <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
   </div>
-
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Clase</span><br>
-          <strong style="font-size: 18px;">${data.className}</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Fecha</span><br>
-          <strong>${data.classDate}</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Hora</span><br>
-          <strong>${data.classTime}</strong>
-        </td>
-      </tr>
-      ${
-        data.instructor
-          ? `
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Instructor</span><br>
-          <strong>${data.instructor}</strong>
-        </td>
-      </tr>
-      `
-          : ''
-      }
-      <tr>
-        <td style="padding: 10px 0;">
-          <span style="color: #666;">Ubicación</span><br>
-          <strong>Farray's International Dance Center</strong><br>
-          <span style="color: #666;">C/ Entença 100, 08015 Barcelona</span>
-        </td>
-      </tr>
-    </table>
+  ${generateBookingDetails(data)}
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
   </div>
-
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
-      Ver mi reserva
-    </a>
-    ${
-      data.mapUrl
-        ? `
-    <a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
-      Cómo llegar
-    </a>
-    `
-        : ''
-    }
-  </div>
-
+  ${calendarSection}
   ${generateWhatToBringSection(data.category)}
-
-  <div style="text-align: center; margin-bottom: 30px;">
-    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
-      Cancelar/Reprogramar
-    </a>
+  <div style="text-align: center; padding: 25px 0;">
+    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
+    <a href="${data.managementUrl}" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
   </div>
-
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>
-      `,
+  ${generateFooter()}
+</body></html>`,
     });
 
     if (result.error) {
@@ -386,63 +530,37 @@ export async function sendCancellationEmail(
       replyTo: REPLY_TO,
       headers: EMAIL_HEADERS,
       subject: `Reserva cancelada: ${data.className}`,
-      html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
-  </div>
-
+  ${generateHeader()}
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
     <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
     <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> ha sido cancelada ✅ y la plaza liberada para que otra persona pueda aprovecharla.</p>
   </div>
-
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
     <p style="margin: 0;">Puedes reservar tu clase gratis cuando quieras, siempre que la promo siga activa y queden plazas.</p>
   </div>
-
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.bookingUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="${data.bookingUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
       Reservar otra clase gratis
     </a>
   </div>
-
   <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>💡 ¿Sabías que...?</strong></p>
     <p style="margin: 0;">Las clases sueltas están desde <strong>20€</strong>. Y la clase gratis... ¡es una oferta top por tiempo limitado y las plazas vuelan!</p>
   </div>
-
   <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
     <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
-    <p style="margin: 0;">Escríbenos por WhatsApp al <strong>+34 622 247 085</strong><br>y te responderemos lo antes posible.</p>
+    <p style="margin: 0;">Escríbenos por WhatsApp al <strong>${WHATSAPP_NUMBER}</strong><br>y te responderemos lo antes posible.</p>
   </div>
-
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin: 10px 0;">¡Mil gracias por pensar en nosotros!</p>
     <p style="color: #666; margin: 10px 0;">Esperamos verte muy pronto para que vengas a vivir<br>la experiencia Farray's a tope. 💃🕺</p>
   </div>
-
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>
-      `,
+  ${generateFooter()}
+</body></html>`,
     });
 
     if (result.error) {
@@ -460,12 +578,25 @@ export async function sendCancellationEmail(
 }
 
 /**
- * Email de recordatorio (24h antes)
+ * Email de recordatorio (48h o 24h antes)
  */
 export async function sendReminderEmail(
   data: ReminderEmailData
 ): Promise<{ success: boolean; id?: string; error?: string }> {
   const resend = getResend();
+
+  const is48h = data.reminderType === '48h';
+  const timeText = is48h ? 'pasado mañana' : 'mañana';
+  const headerText = is48h ? 'en 48 horas' : 'mañana';
+
+  // Generate calendar section for reminders too
+  const calendarSection = generateCalendarSection({
+    className: data.className,
+    classDate: data.classDate,
+    classTime: data.classTime,
+    classDateRaw: data.classDateISO,
+    eventId: data.eventId,
+  });
 
   try {
     const result = await resend.emails.send({
@@ -473,104 +604,42 @@ export async function sendReminderEmail(
       to: data.to,
       replyTo: REPLY_TO,
       headers: EMAIL_HEADERS,
-      subject: `Recordatorio: Tu clase de ${data.className} es pasado mañana`,
-      html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      subject: `Recordatorio: Tu clase de ${data.className} es ${timeText}`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
-  </div>
-
+  ${generateHeader()}
   <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
+    <p style="margin: 0; opacity: 0.9;">Tu clase es ${headerText}</p>
   </div>
-
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
+    <p style="margin: 0;">Te recordamos que ${timeText} tienes tu clase de prueba:</p>
   </div>
-
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Clase</span><br>
-          <strong style="font-size: 18px;">${data.className}</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Fecha</span><br>
-          <strong>${data.classDate}</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Hora</span><br>
-          <strong>${data.classTime}</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0;">
-          <span style="color: #666;">Ubicación</span><br>
-          <strong>Farray's International Dance Center</strong><br>
-          <span style="color: #666;">C/ Entença 100, 08015 Barcelona</span>
-        </td>
-      </tr>
-    </table>
-  </div>
-
+  ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime })}
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
-      Ver mi reserva
-    </a>
-    ${
-      data.mapUrl
-        ? `
-    <a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
-      Cómo llegar
-    </a>
-    `
-        : ''
-    }
+    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
   </div>
-
+  ${calendarSection}
+  ${data.category ? generateWhatToBringSection(data.category) : ''}
   <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
     <p style="margin: 0; color: #666;">
-      <strong>Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br><br>
+      <strong>${LOCATION_ADDRESS}</strong><br>
+      ${LOCATION_STREET}<br><br>
       🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
       🚌 <strong>Bus:</strong> Líneas 41, 54, H8
     </p>
   </div>
-
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
       Cancelar/Reprogramar
     </a>
   </div>
-
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>
-      `,
+  ${generateFooter()}
+</body></html>`,
     });
 
     if (result.error) {
@@ -602,30 +671,19 @@ export async function sendFeedbackEmail(
       replyTo: REPLY_TO,
       headers: EMAIL_HEADERS,
       subject: `¿Qué tal tu clase de ${data.className}?`,
-      html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
-  </div>
-
+  ${generateHeader()}
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
     <p style="margin: 0;">¿Qué tal tu clase de <strong>${data.className}</strong>?</p>
     <p style="margin: 15px 0 0 0;">Nos encantaría conocer tu opinión.</p>
   </div>
-
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${data.reviewUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
+    <a href="${data.reviewUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
       Dejar mi opinión
     </a>
   </div>
-
   ${
     data.promoCode
       ? `
@@ -639,14 +697,11 @@ export async function sendFeedbackEmail(
   `
       : ''
   }
-
   <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
     <p>¡Gracias por elegirnos!</p>
-    <p>Farray's International Dance Center</p>
   </div>
-</body>
-</html>
-      `,
+  ${generateFooter()}
+</body></html>`,
     });
 
     if (result.error) {
@@ -664,7 +719,7 @@ export async function sendFeedbackEmail(
 }
 
 /**
- * Enviar email genérico (para testing)
+ * Enviar email de prueba
  */
 export async function sendTestEmail(
   to: string
@@ -678,16 +733,13 @@ export async function sendTestEmail(
       replyTo: REPLY_TO,
       headers: EMAIL_HEADERS,
       subject: "Test de conexión - Farray's Center",
-      html: `
-<!DOCTYPE html>
-<html>
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"></head>
 <body style="font-family: sans-serif; padding: 20px;">
-  <h1 style="color: #e91e63;">Test de Email</h1>
+  <h1 style="color: ${BRAND_PRIMARY};">Test de Email</h1>
   <p>Si recibes este email, la conexión con Resend funciona correctamente.</p>
   <p>Timestamp: ${new Date().toISOString()}</p>
-</body>
-</html>
-      `,
+  ${generateFooter()}
+</body></html>`,
     });
 
     if (result.error) {
@@ -703,3 +755,28 @@ export async function sendTestEmail(
     };
   }
 }
+
+// ============================================================================
+// UTILIDADES
+// ============================================================================
+
+/**
+ * Verifica si el email está configurado
+ */
+export function isEmailConfigured(): boolean {
+  return !!process.env['RESEND_API_KEY'];
+}
+
+/**
+ * Exportar constantes para uso externo
+ */
+export const EMAIL_CONFIG = {
+  FROM_EMAIL,
+  REPLY_TO,
+  BRAND_PRIMARY,
+  BRAND_DARK,
+  BASE_URL,
+  LOGO_URL,
+  LOCATION_FULL,
+  GOOGLE_MAPS_URL,
+};

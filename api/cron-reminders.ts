@@ -1,51 +1,22 @@
-/**
- * Cron endpoint para enviar recordatorios de clase 48h antes
- *
- * GET /api/cron-reminders
- *
- * Este endpoint debe ser llamado por un cron job (ej: Vercel Cron)
- * Se recomienda ejecutar cada hora para no perder ninguna ventana de 48h
- *
- * Flujo:
- * 1. Escanear todas las reservas en Redis (booking:*)
- * 2. Verificar si la clase es en ~48h (ventana de 47-49h)
- * 3. Verificar si ya se envió recordatorio (reminderSent flag)
- * 4. Enviar WhatsApp de recordatorio
- * 5. Marcar como enviado
- */
-
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 
-// Constantes
-const REMINDER_WINDOW_HOURS = 48; // Recordatorio 48h antes de la clase
-const REMINDER_TOLERANCE_HOURS = 1; // +/- 1 hora de tolerancia
-const WHATSAPP_API_VERSION = 'v23.0';
+/**
+ * API Route: /api/cron-reminders
+ *
+ * Cron job para enviar recordatorios automáticos de clases.
+ * - 48h antes: Primer recordatorio
+ * - 24h antes: Segundo recordatorio
+ *
+ * Ejecutar cada hora vía Vercel Cron.
+ *
+ * Headers requeridos:
+ * - Authorization: Bearer {CRON_SECRET}
+ */
 
-interface BookingData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string | null;
-  className: string;
-  classDate: string;
-  classTime: string;
-  classDateRaw: string | null;
-  momenceEventId: string;
-  bookedAt: string;
-  category?: string;
-  reminderSent?: boolean;
-}
-
-interface ReminderResult {
-  email: string;
-  phone: string;
-  className: string;
-  classDateTime: string;
-  whatsappSuccess: boolean;
-  emailSuccess: boolean;
-  error?: string;
-}
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+const BOOKING_MANAGEMENT_URL = 'https://www.farrayscenter.com/mi-reserva';
+const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/QwDZvqvz4uyVfSWq7';
 
 // Lazy Redis
 let redisClient: Redis | null = null;
@@ -64,338 +35,287 @@ function getRedisClient(): Redis | null {
   return redisClient;
 }
 
+interface BookingDetails {
+  eventId: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  sessionId: string | null;
+  momenceBookingId: number | null;
+  category: string;
+  managementToken: string;
+  createdAt: string;
+  status: 'confirmed' | 'cancelled';
+  reminder48hSent?: boolean;
+  reminder24hSent?: boolean;
+}
+
+interface ReminderResult {
+  eventId: string;
+  type: '48h' | '24h';
+  email: boolean;
+  whatsapp: boolean;
+  error?: string;
+}
+
 /**
- * Parsea la fecha de Momence (formato ISO o similar) y devuelve un Date
+ * Obtiene la fecha en formato YYYY-MM-DD para una zona horaria
  */
-function parseClassDate(classDateRaw: string | null, classTime: string): Date | null {
-  if (!classDateRaw) return null;
+function getDateInTimezone(date: Date, timezone: string): string {
+  return date.toLocaleDateString('en-CA', { timeZone: timezone });
+}
 
+/**
+ * Añade días a una fecha
+ */
+function addDays(date: Date, days: number): Date {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+/**
+ * Formatea fecha para emails/WhatsApp (ej: "Lunes 28 de Enero 2026")
+ */
+function formatDateSpanish(isoDate: string): string {
+  if (!isoDate) return '';
   try {
-    // Intentar parsear directamente como ISO
-    let date = new Date(classDateRaw);
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return isoDate;
 
-    // Si no es válido, intentar otros formatos
-    if (isNaN(date.getTime())) {
-      // Formato: "2026-01-30T19:00:00" o similar
-      const isoMatch = classDateRaw.match(/(\d{4})-(\d{2})-(\d{2})/);
-      if (isoMatch) {
-        const [, year, month, day] = isoMatch;
-        const [hours, minutes] = (classTime || '19:00').split(':').map(Number);
-        date = new Date(Number(year), Number(month) - 1, Number(day), hours, minutes);
-      }
-    }
+    const formatter = new Intl.DateTimeFormat('es-ES', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: SPAIN_TIMEZONE,
+    });
 
-    return isNaN(date.getTime()) ? null : date;
+    const formatted = formatter.format(date);
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
   } catch {
-    return null;
+    return isoDate;
   }
 }
 
 /**
- * Formatea fecha y hora para el parámetro {{3}} de la plantilla
- * Formato: "17/07/2025, 19:00"
+ * Procesa recordatorios para una fecha específica
  */
-function formatDateTimeForTemplate(date: Date): string {
-  const day = date.getDate().toString().padStart(2, '0');
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  const year = date.getFullYear();
-  const hours = date.getHours().toString().padStart(2, '0');
-  const minutes = date.getMinutes().toString().padStart(2, '0');
+async function processRemindersForDate(
+  redis: Redis,
+  targetDate: string,
+  reminderType: '48h' | '24h'
+): Promise<ReminderResult[]> {
+  const results: ReminderResult[] = [];
+  const reminderKey = `reminders:${targetDate}`;
 
-  return `${day}/${month}/${year}, ${hours}:${minutes}`;
-}
+  // Obtener todos los eventIds para esta fecha
+  const eventIds = await redis.smembers(reminderKey);
 
-/**
- * Verifica si una fecha está dentro de la ventana de recordatorio (48h +/- 1h)
- */
-function isInReminderWindow(classDate: Date): boolean {
-  const now = new Date();
-  const hoursUntilClass = (classDate.getTime() - now.getTime()) / (1000 * 60 * 60);
-
-  const minHours = REMINDER_WINDOW_HOURS - REMINDER_TOLERANCE_HOURS;
-  const maxHours = REMINDER_WINDOW_HOURS + REMINDER_TOLERANCE_HOURS;
-
-  return hoursUntilClass >= minHours && hoursUntilClass <= maxHours;
-}
-
-/**
- * Envía recordatorio de WhatsApp (inline para evitar problemas de imports en Vercel)
- */
-async function sendReminderWhatsApp(
-  to: string,
-  firstName: string,
-  className: string,
-  classDateTime: string
-): Promise<{ success: boolean; error?: string }> {
-  const token = process.env['WHATSAPP_TOKEN'];
-  const phoneId = process.env['WHATSAPP_PHONE_ID'];
-
-  if (!token || !phoneId) {
-    return { success: false, error: 'Missing WhatsApp credentials' };
+  if (eventIds.length === 0) {
+    console.log(`[cron-reminders] No bookings found for ${targetDate}`);
+    return results;
   }
 
-  const normalizedPhone = to.replace(/[\s\-+]/g, '');
-  const apiUrl = `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`;
+  console.log(`[cron-reminders] Found ${eventIds.length} bookings for ${targetDate}`);
 
-  try {
-    const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        messaging_product: 'whatsapp',
-        to: normalizedPhone,
-        type: 'template',
-        template: {
-          name: 'recordatorio_prueba_0',
-          language: { code: 'es_ES' },
-          components: [
-            {
-              type: 'body',
-              parameters: [
-                { type: 'text', text: firstName },
-                { type: 'text', text: className },
-                { type: 'text', text: classDateTime },
-              ],
-            },
-          ],
-        },
-      }),
-    });
+  // Importar funciones de notificación
+  const { sendReminderEmail } = await import('./lib/email');
+  const { sendReminderWhatsApp } = await import('./lib/whatsapp');
 
-    const data = await response.json();
-
-    if (!response.ok || data.error) {
-      return {
-        success: false,
-        error: data.error?.message || `HTTP ${response.status}`,
-      };
-    }
-
-    return { success: true };
-  } catch (error) {
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+  for (const eventId of eventIds) {
+    const result: ReminderResult = {
+      eventId,
+      type: reminderType,
+      email: false,
+      whatsapp: false,
     };
-  }
-}
 
-/**
- * Envía recordatorio por email (inline para evitar problemas de imports en Vercel)
- */
-async function sendReminderEmailInline(
-  to: string,
-  firstName: string,
-  className: string,
-  classDate: string,
-  classTime: string,
-  managementUrl: string
-): Promise<{ success: boolean; error?: string }> {
-  const { Resend } = await import('resend');
-  const apiKey = process.env['RESEND_API_KEY'];
+    try {
+      // Obtener detalles de la reserva
+      const bookingData = await redis.get(`booking_details:${eventId}`);
+      if (!bookingData) {
+        result.error = 'Booking not found';
+        results.push(result);
+        continue;
+      }
 
-  if (!apiKey) {
-    return { success: false, error: 'Missing Resend API key' };
-  }
+      const booking: BookingDetails = JSON.parse(bookingData);
 
-  const resend = new Resend(apiKey);
+      // Verificar si la reserva está cancelada
+      if (booking.status === 'cancelled') {
+        console.log(`[cron-reminders] Skipping cancelled booking ${eventId}`);
+        continue;
+      }
 
-  try {
-    const result = await resend.emails.send({
-      from: "Farray's Center <onboarding@resend.dev>",
-      to,
-      replyTo: 'info@farrayscenter.com',
-      subject: `Recordatorio: Tu clase de ${className} es pasado mañana`,
-      html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
-  </div>
-  <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
-  </div>
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${firstName}</strong>,</p>
-    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
-  </div>
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${className}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${classDate}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${classTime}</strong></td></tr>
-      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
-    </table>
-  </div>
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    <a href="https://maps.app.goo.gl/4AtNaEzTAhNUuFfJ6" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
-  </div>
-  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
-    <p style="margin: 0; color: #666;">
-      <strong>Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br><br>
-      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
-      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
-    </p>
-  </div>
-  <div style="text-align: center; margin-bottom: 30px;">
-    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
-      Cancelar/Reprogramar
-    </a>
-  </div>
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>
-      `,
-    });
+      // Verificar si ya se envió este recordatorio
+      const sentFlag = reminderType === '48h' ? 'reminder48hSent' : 'reminder24hSent';
+      if (booking[sentFlag]) {
+        console.log(`[cron-reminders] ${reminderType} already sent for ${eventId}`);
+        continue;
+      }
 
-    if (result.error) {
-      return { success: false, error: result.error.message };
+      console.log(`[cron-reminders] Sending ${reminderType} reminder for ${eventId}`);
+
+      const managementUrl = `${BOOKING_MANAGEMENT_URL}?token=${booking.managementToken}`;
+      const formattedDate = formatDateSpanish(booking.classDate);
+
+      // Extract ISO date for calendar generation (YYYY-MM-DD)
+      const classDateISOMatch = booking.classDate?.match(/\d{4}-\d{2}-\d{2}/);
+      const classDateISO = classDateISOMatch ? classDateISOMatch[0] : undefined;
+
+      // Enviar Email
+      try {
+        const emailResult = await sendReminderEmail({
+          to: booking.email,
+          firstName: booking.firstName,
+          className: booking.className,
+          classDate: formattedDate || booking.classDate,
+          classDateISO,
+          classTime: booking.classTime,
+          managementUrl,
+          mapUrl: GOOGLE_MAPS_URL,
+          reminderType,
+          eventId,
+          category: booking.category as
+            | 'bailes_sociales'
+            | 'danzas_urbanas'
+            | 'danza'
+            | 'entrenamiento'
+            | 'heels',
+        });
+        result.email = emailResult.success;
+        if (!emailResult.success) {
+          console.warn(`[cron-reminders] Email failed for ${eventId}:`, emailResult.error);
+        }
+      } catch (e) {
+        console.warn(`[cron-reminders] Email error for ${eventId}:`, e);
+      }
+
+      // Enviar WhatsApp
+      try {
+        const whatsappResult = await sendReminderWhatsApp({
+          to: booking.phone,
+          firstName: booking.firstName,
+          className: booking.className,
+          classDate: formattedDate || booking.classDate,
+          classTime: booking.classTime,
+          category: booking.category as
+            | 'bailes_sociales'
+            | 'danzas_urbanas'
+            | 'danza'
+            | 'entrenamiento'
+            | 'heels',
+          reminderType,
+        });
+        result.whatsapp = whatsappResult.success;
+        if (!whatsappResult.success) {
+          console.warn(`[cron-reminders] WhatsApp failed for ${eventId}:`, whatsappResult.error);
+        }
+      } catch (e) {
+        console.warn(`[cron-reminders] WhatsApp error for ${eventId}:`, e);
+      }
+
+      // Marcar como enviado si al menos uno tuvo éxito
+      if (result.email || result.whatsapp) {
+        const updatedBooking = { ...booking, [sentFlag]: true };
+        await redis.setex(
+          `booking_details:${eventId}`,
+          90 * 24 * 60 * 60, // 90 días TTL
+          JSON.stringify(updatedBooking)
+        );
+        console.log(`[cron-reminders] Marked ${sentFlag}=true for ${eventId}`);
+      }
+
+      results.push(result);
+    } catch (e) {
+      result.error = e instanceof Error ? e.message : 'Unknown error';
+      results.push(result);
+      console.error(`[cron-reminders] Error processing ${eventId}:`, e);
     }
-
-    return { success: true };
-  } catch (error) {
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
-    };
   }
+
+  return results;
 }
 
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ): Promise<VercelResponse> {
-  // Solo GET
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  // Verificar autorización
+  const authHeader = req.headers['authorization'];
+  const cronSecret = process.env['CRON_SECRET'];
+
+  // En desarrollo, permitir sin auth
+  const isDev =
+    process.env['NODE_ENV'] === 'development' || process.env['VERCEL_ENV'] === 'development';
+
+  if (!isDev && cronSecret) {
+    if (!authHeader || authHeader !== `Bearer ${cronSecret}`) {
+      console.error('[cron-reminders] Unauthorized request');
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
   }
 
-  // Verificar cron secret (opcional, para seguridad)
-  const cronSecret = process.env['CRON_SECRET'];
-  const authHeader = req.headers['authorization'];
-
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
-    return res.status(401).json({ error: 'Unauthorized' });
+  // Solo GET o POST
+  if (req.method !== 'GET' && req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   const redis = getRedisClient();
   if (!redis) {
+    console.error('[cron-reminders] Redis not configured');
     return res.status(500).json({ error: 'Redis not configured' });
   }
 
-  const results: ReminderResult[] = [];
-  const errors: string[] = [];
-
   try {
-    // Escanear todas las reservas
-    const bookingKeys = await redis.keys('booking:*');
-    console.warn(`[Reminders] Found ${bookingKeys.length} bookings to check`);
-    console.warn(`[Reminders] Keys:`, bookingKeys.slice(0, 5)); // Log first 5 keys
+    const now = new Date();
+    const results: {
+      timestamp: string;
+      results48h: ReminderResult[];
+      results24h: ReminderResult[];
+    } = {
+      timestamp: now.toISOString(),
+      results48h: [],
+      results24h: [],
+    };
 
-    for (const key of bookingKeys) {
-      try {
-        const bookingDataStr = await redis.get(key);
-        if (!bookingDataStr) continue;
+    // Calcular fechas objetivo en timezone de España
+    // Para 48h: clases que son pasado mañana
+    // Para 24h: clases que son mañana
+    const tomorrow = addDays(now, 1);
+    const dayAfterTomorrow = addDays(now, 2);
 
-        const booking: BookingData = JSON.parse(bookingDataStr);
+    const tomorrowStr = getDateInTimezone(tomorrow, SPAIN_TIMEZONE);
+    const dayAfterTomorrowStr = getDateInTimezone(dayAfterTomorrow, SPAIN_TIMEZONE);
 
-        // Saltar si ya se envió recordatorio
-        if (booking.reminderSent) {
-          continue;
-        }
+    console.log(`[cron-reminders] Processing reminders:`);
+    console.log(`  - 48h reminders for classes on: ${dayAfterTomorrowStr}`);
+    console.log(`  - 24h reminders for classes on: ${tomorrowStr}`);
 
-        // Saltar si no tiene teléfono
-        if (!booking.phone) {
-          continue;
-        }
+    // Procesar recordatorios de 48h (clases pasado mañana)
+    results.results48h = await processRemindersForDate(redis, dayAfterTomorrowStr, '48h');
 
-        // Parsear fecha de la clase
-        const classDate = parseClassDate(booking.classDateRaw, booking.classTime);
-        if (!classDate) {
-          console.warn(`[Reminders] Could not parse date for ${key}:`, booking.classDateRaw);
-          continue;
-        }
+    // Procesar recordatorios de 24h (clases mañana)
+    results.results24h = await processRemindersForDate(redis, tomorrowStr, '24h');
 
-        // Verificar si está en la ventana de 48h
-        if (!isInReminderWindow(classDate)) {
-          continue;
-        }
-
-        // Formatear fecha/hora para la plantilla
-        const classDateTime = formatDateTimeForTemplate(classDate);
-
-        console.warn(`[Reminders] Sending reminder to ${booking.email} for ${booking.className}`);
-
-        // Enviar WhatsApp y Email en paralelo
-        const [whatsappResult, emailResult] = await Promise.all([
-          sendReminderWhatsApp(booking.phone, booking.firstName, booking.className, classDateTime),
-          sendReminderEmailInline(
-            booking.email,
-            booking.firstName,
-            booking.className,
-            booking.classDate,
-            booking.classTime,
-            '' // TODO: Add management URL
-          ),
-        ]);
-
-        // Marcar como enviado si al menos uno tuvo éxito
-        if (whatsappResult.success || emailResult.success) {
-          booking.reminderSent = true;
-          await redis.set(key, JSON.stringify(booking), 'KEEPTTL');
-        }
-
-        results.push({
-          email: booking.email,
-          phone: booking.phone.slice(0, 4) + '***',
-          className: booking.className,
-          classDateTime,
-          whatsappSuccess: whatsappResult.success,
-          emailSuccess: emailResult.success,
-          error:
-            !whatsappResult.success || !emailResult.success
-              ? `WhatsApp: ${whatsappResult.error || 'OK'}, Email: ${emailResult.error || 'OK'}`
-              : undefined,
-        });
-      } catch (bookingError) {
-        errors.push(`Error processing ${key}: ${String(bookingError)}`);
-      }
-    }
+    const totalSent = results.results48h.length + results.results24h.length;
+    console.log(`[cron-reminders] Completed. Total reminders processed: ${totalSent}`);
 
     return res.status(200).json({
       success: true,
-      message: `Processed ${bookingKeys.length} bookings`,
-      reminders: results,
-      errors: errors.length > 0 ? errors : undefined,
-      timestamp: new Date().toISOString(),
+      message: `Processed ${totalSent} reminders`,
+      data: results,
     });
   } catch (error) {
-    console.error('[Reminders] Error:', error);
+    console.error('[cron-reminders] Error:', error);
     return res.status(500).json({
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: 'Internal server error',
+      details: error instanceof Error ? error.message : 'Unknown error',
     });
   }
 }

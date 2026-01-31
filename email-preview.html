@@ -3,61 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview de Emails - Farray's Center</title>
+  <title>Preview de Emails - Farray's Center (Enterprise)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #1a1a1a;
       padding: 20px;
       margin: 0;
     }
     .controls {
-      background: white;
+      background: #2a2a2a;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     .controls h2 {
+      margin: 0 0 5px 0;
+      color: #fff;
+    }
+    .controls p {
       margin: 0 0 15px 0;
+      color: #888;
+      font-size: 14px;
     }
     .controls button {
       padding: 10px 20px;
       margin: 5px;
       border: none;
       border-radius: 4px;
-      background: #e91e63;
+      background: #B01E3C;
       color: white;
       cursor: pointer;
       font-size: 14px;
       font-weight: bold;
     }
     .controls button:hover {
-      background: #c2185b;
+      background: #8a1830;
     }
     .controls button.active {
-      background: #9c27b0;
+      background: #800020;
+      box-shadow: 0 0 0 2px #B01E3C;
     }
     .preview-container {
       background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       overflow: hidden;
     }
     iframe {
       width: 100%;
-      height: 800px;
+      height: 900px;
       border: none;
+    }
+    .badge {
+      display: inline-block;
+      background: #4caf50;
+      color: white;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 10px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
   <div class="controls">
-    <h2>Preview de Emails</h2>
-    <button onclick="showEmail('confirmation')" id="btn-confirmation" class="active">Email de Confirmación</button>
-    <button onclick="showEmail('reminder')" id="btn-reminder">Email de Recordatorio 48h</button>
-    <button onclick="showEmail('reminder24h')" id="btn-reminder24h">Email de Recordatorio 24h</button>
-    <button onclick="showEmail('cancellation')" id="btn-cancellation">Email de Cancelación</button>
+    <h2>Preview de Emails <span class="badge">Enterprise v2</span></h2>
+    <p>Colores: #B01E3C / #800020 | Calendar Buttons | Headers Entregabilidad</p>
+    <button onclick="showEmail('confirmation')" id="btn-confirmation" class="active">Confirmación</button>
+    <button onclick="showEmail('reminder48h')" id="btn-reminder48h">Recordatorio 48h</button>
+    <button onclick="showEmail('reminder24h')" id="btn-reminder24h">Recordatorio 24h</button>
+    <button onclick="showEmail('cancellation')" id="btn-cancellation">Cancelación</button>
+    <button onclick="showEmail('feedback')" id="btn-feedback">Feedback</button>
   </div>
 
   <div class="preview-container">
@@ -65,211 +84,212 @@
   </div>
 
   <script>
+    const BRAND_PRIMARY = '#B01E3C';
+    const BRAND_DARK = '#800020';
+    const BRAND_GRADIENT = `linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%)`;
+    const LOGO_URL = 'https://www.farrayscenter.com/images/logo/img/logo-fidc_256.png';
+
     const emails = {
-      confirmation: `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      confirmation: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
-
-  <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+  <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
     <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
   </div>
-
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>Juan</strong>,</p>
+    <p style="margin: 0 0 15px 0;">Hola <strong>María</strong>,</p>
     <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
   </div>
-
   <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
     <table style="width: 100%; border-collapse: collapse;">
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Clase</span><br>
-          <strong style="font-size: 18px;">Salsa Principiantes</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Fecha</span><br>
-          <strong>Viernes 31 de Enero 2026</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
-          <span style="color: #666;">Hora</span><br>
-          <strong>19:00</strong>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0;">
-          <span style="color: #666;">Ubicación</span><br>
-          <strong>Farray's International Dance Center</strong><br>
-          <span style="color: #666;">C/ Entença 100, 08015 Barcelona</span>
-        </td>
-      </tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">Bachata Sensual Iniciación</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>Lunes 3 de Febrero 2026</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>19:00</strong></td></tr>
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
     </table>
   </div>
-
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
-      Ver mi reserva
-    </a>
-    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
-      Cómo llegar
-    </a>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
   </div>
-
+  <!-- CALENDAR BUTTONS - NEW -->
+  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
+    <a href="#" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
+  </div>
+  <!-- WHAT TO BRING -->
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 15px 0; color: #e91e63;">¿Qué traer a tu clase de Bailes Sociales?</h3>
+    <h3 style="margin: 0 0 15px 0; color: ${BRAND_PRIMARY};">¿Qué traer a tu clase de Bailes Sociales?</h3>
+    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+      <li>👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos</li>
+      <li>👞 <strong>Chicos:</strong> Bambas o zapatos de baile</li>
+      <li>📝 <strong>Folklore:</strong> Sin calzado (se baila descalzo)</li>
+      <li>💧 Botella de agua</li>
+      <li>🧴 Toalla pequeña</li>
+      <li>🔐 Candado para taquilla (opcional)</li>
+    </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
+    </div>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>
+  <div style="text-align: center; padding: 25px 0;">
+    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
+    <a href="#" style="display: inline-block; background: #ffffff; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid ${BRAND_PRIMARY};">Reprogramar / Cancelar Reserva</a>
+  </div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="https://www.farrayscenter.com" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body></html>`,
+
+      reminder48h: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1>
+  </div>
+  <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
+    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
+  </div>
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0;">Hola <strong>María</strong>,</p>
+    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
+  </div>
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">Bachata Sensual Iniciación</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>Lunes 3 de Febrero 2026</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>19:00</strong></td></tr>
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
+    </table>
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
+  </div>
+  <!-- CALENDAR BUTTONS -->
+  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
+    <a href="#" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
+  </div>
+  <!-- WHAT TO BRING -->
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 15px 0; color: ${BRAND_PRIMARY};">¿Qué traer a tu clase de Bailes Sociales?</h3>
     <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
       <li>👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos</li>
       <li>👞 <strong>Chicos:</strong> Bambas o zapatos de baile</li>
       <li>💧 Botella de agua</li>
       <li>🧴 Toalla pequeña</li>
     </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
+    </div>
   </div>
-
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
       Cancelar/Reprogramar
     </a>
   </div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="https://www.farrayscenter.com" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body></html>`,
 
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>`,
-
-      reminder: `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      reminder24h: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
-
   <div style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase es en 48 horas</p>
-  </div>
-
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>Juan</strong>,</p>
-    <p style="margin: 0;">Te recordamos que pasado mañana tienes tu clase de prueba:</p>
-  </div>
-
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">Salsa Principiantes</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>Viernes 31 de Enero 2026</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>19:00</strong></td></tr>
-      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
-    </table>
-  </div>
-
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    <a href="https://maps.app.goo.gl/4AtNaEzTAhNUuFfJ6" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
-  </div>
-
-  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
-    <p style="margin: 0; color: #666;">
-      <strong>Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br><br>
-      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
-      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
-    </p>
-  </div>
-
-  <div style="text-align: center; margin-bottom: 30px;">
-    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
-      Cancelar/Reprogramar
-    </a>
-  </div>
-
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>`,
-
-      reminder24h: `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
-  </div>
-  <div style="background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">⏰ ¡Tu clase es mañana!</h2>
-    <p style="margin: 0; opacity: 0.9; font-size: 18px;">Recordatorio de 24 horas</p>
-  </div>
-  <div style="background: #fff3cd; border-left: 4px solid #ff9800; padding: 20px; margin-bottom: 30px; border-radius: 8px;">
-    <h3 style="margin: 0 0 10px 0; color: #ff9800;">🎁 PROMOCIÓN ESPECIAL 24H</h3>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 16px;"><strong>👉 MATRÍCULA GRATIS</strong></p>
-    <p style="margin: 0 0 15px 0; color: #856404; font-size: 15px;">
-      <strong style="font-size: 18px;">🔝 ANTES 60€ — AHORA 0€</strong>
-    </p>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 14px;">
-      <strong>📜 Condiciones:</strong> promoción válida solo si te apuntas mañana después de tu clase de prueba y realizas el primer pago en efectivo.
-    </p>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 14px;">
-      Así tú te ahorras la matrícula… y nosotros las comisiones bancarias. <strong>¡Ganamos todos! 😉</strong>
-    </p>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 13px;">
-      Todo de forma transparente: recibirás tu recibo correspondiente al momento del alta. 💥
-    </p>
-    <p style="margin: 0; color: #856404; font-size: 14px;">
-      Aquí puedes ver todas las tarifas: <a href="https://www.farrayscenter.com/es/horarios-precios" style="color: #ff9800; font-weight: bold; text-decoration: none;">www.farrayscenter.com/horarios-precios</a>
-    </p>
+    <p style="margin: 0; opacity: 0.9;">Tu clase es mañana</p>
   </div>
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>Juan</strong>,</p>
-    <p style="margin: 0 0 15px 0;">¡Te esperamos mañana en tu clase de prueba!</p>
-    <p style="margin: 0; font-weight: bold; color: #333;">¿Nos confirmas tu asistencia? 🙏</p>
+    <p style="margin: 0 0 15px 0;">Hola <strong>María</strong>,</p>
+    <p style="margin: 0;">Te recordamos que mañana tienes tu clase de prueba:</p>
   </div>
   <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
     <table style="width: 100%; border-collapse: collapse;">
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">Salsa Principiantes</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>Viernes 31 de Enero 2026</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">Bachata Sensual Iniciación</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>Lunes 3 de Febrero 2026</strong></td></tr>
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>19:00</strong></td></tr>
       <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
     </table>
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    <a href="https://maps.app.goo.gl/4AtNaEzTAhNUuFfJ6" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
+  </div>
+  <!-- CALENDAR BUTTONS -->
+  <div style="background: #f0f7ff; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="#" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Google Calendar</a>
+    <a href="#" style="display: inline-block; background: #666; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px;">Descargar .ics</a>
+  </div>
+  <!-- WHAT TO BRING -->
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 15px 0; color: ${BRAND_PRIMARY};">¿Qué traer a tu clase de Bailes Sociales?</h3>
+    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+      <li>👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos</li>
+      <li>👞 <strong>Chicos:</strong> Bambas o zapatos de baile</li>
+      <li>💧 Botella de agua</li>
+      <li>🧴 Toalla pequeña</li>
+    </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
+    </div>
   </div>
   <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
@@ -282,67 +302,119 @@
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
       Cancelar/Reprogramar
     </a>
   </div>
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>`,
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="https://www.farrayscenter.com" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body></html>`,
 
-      cancellation: `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      cancellation: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
-
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>Juan</strong>!</p>
+    <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>María</strong>!</p>
     <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
-    <p style="margin: 0;">Tu clase de <strong>Salsa Principiantes</strong> ha sido cancelada ✅ y la plaza liberada para que otra persona pueda aprovecharla.</p>
+    <p style="margin: 0;">Tu clase de <strong>Bachata Sensual Iniciación</strong> ha sido cancelada ✅ y la plaza liberada para que otra persona pueda aprovecharla.</p>
   </div>
-
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
     <p style="margin: 0;">Puedes reservar tu clase gratis cuando quieras, siempre que la promo siga activa y queden plazas.</p>
   </div>
-
   <div style="text-align: center; margin-bottom: 30px;">
-    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
       Reservar otra clase gratis
     </a>
   </div>
-
+  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 10px 0;"><strong>💡 ¿Sabías que...?</strong></p>
+    <p style="margin: 0;">Las clases sueltas están desde <strong>20€</strong>. Y la clase gratis... ¡es una oferta top por tiempo limitado y las plazas vuelan!</p>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
+    <p style="margin: 0;">Escríbenos por WhatsApp al <strong>+34 622 247 085</strong><br>y te responderemos lo antes posible.</p>
+  </div>
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin: 10px 0;">¡Mil gracias por pensar en nosotros!</p>
     <p style="color: #666; margin: 10px 0;">Esperamos verte muy pronto para que vengas a vivir<br>la experiencia Farray's a tope. 💃🕺</p>
   </div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="https://www.farrayscenter.com" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body></html>`,
 
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
+      feedback: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1>
   </div>
-</body>
-</html>`
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0;">Hola <strong>María</strong>,</p>
+    <p style="margin: 0;">¿Qué tal tu clase de <strong>Bachata Sensual Iniciación</strong>?</p>
+    <p style="margin: 15px 0 0 0;">Nos encantaría conocer tu opinión.</p>
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="#" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
+      Dejar mi opinión
+    </a>
+  </div>
+  <div style="background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); color: white; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 10px 0;">¡Oferta especial para ti!</h3>
+    <p style="margin: 0 0 15px 0;">20% de descuento en tu primera mensualidad</p>
+    <div style="background: white; color: #ff5722; padding: 10px 20px; border-radius: 8px; display: inline-block; font-weight: bold; font-size: 20px;">
+      WELCOME20
+    </div>
+  </div>
+  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
+    <p>¡Gracias por elegirnos!</p>
+  </div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="70" height="70" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">C/ Entença 100, 08015 Barcelona</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="https://www.farrayscenter.com" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+        </p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="https://wa.me/34622247085" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body></html>`
     };
 
     function showEmail(type) {
