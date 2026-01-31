@@ -13,7 +13,7 @@ import Redis from 'ioredis';
  * - Authorization: Bearer {CRON_SECRET}
  */
 
-import { sendFeedbackEmail } from './lib/email';
+import { sendFeedbackEmail } from '../lib/email';
 
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 

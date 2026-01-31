@@ -6,7 +6,7 @@ import crypto from 'crypto';
 // IMPORTS CONSOLIDADOS - Fuente única de verdad
 // ============================================================================
 
-import { sendBookingConfirmation, EMAIL_CONFIG, type ClassCategory } from './lib/email';
+import { sendBookingConfirmation, EMAIL_CONFIG, type ClassCategory } from '../lib/email';
 
 // ============================================================================
 // WHATSAPP HELPER
