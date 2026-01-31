@@ -15,7 +15,7 @@
  * - noindex, nofollow (post-lead page)
  */
 
-import React, { useState, memo, useCallback, lazy, Suspense } from 'react';
+import React, { useState, memo, useCallback, lazy, Suspense, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -327,8 +327,15 @@ const HazteSocioPage: React.FC = () => {
   const [isMomenceOpen, setIsMomenceOpen] = useState(false);
 
   // Booking hooks (reusing existing infrastructure)
-  const { filters, setFilter, clearFilter, clearAllFilters, weekOffset, setWeekOffset } =
-    useBookingFilters();
+  const {
+    filters,
+    setFilter,
+    clearFilter,
+    clearAllFilters,
+    weekOffset,
+    setWeekOffset,
+    hasExplicitWeek,
+  } = useBookingFilters();
 
   const hasActiveFilters = Object.values(filters).some(Boolean);
 
@@ -347,8 +354,51 @@ const HazteSocioPage: React.FC = () => {
     filters,
     weekOffset,
     enablePagination: true,
-    fetchAllWeeks: hasActiveFilters,
+    // Fetch all weeks when no explicit week in URL to find optimal week
+    fetchAllWeeks: hasActiveFilters || !hasExplicitWeek,
   });
+
+  // Track if we've auto-selected the optimal week (only once on mount)
+  const hasAutoSelectedWeekRef = useRef(false);
+
+  // Auto-select optimal week based on first available class
+  // This ensures users see the next day with classes, not an empty week
+  useEffect(() => {
+    if (
+      !hasExplicitWeek &&
+      !hasAutoSelectedWeekRef.current &&
+      !allWeeksLoading &&
+      allWeeksClasses.length > 0
+    ) {
+      hasAutoSelectedWeekRef.current = true;
+
+      const firstClass = allWeeksClasses[0];
+      if (firstClass) {
+        const classDate = new Date(firstClass.rawStartsAt);
+        const now = new Date();
+
+        // Calculate which weekOffset this class falls into
+        const dayOfWeek = now.getDay();
+        const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+        const currentWeekStart = new Date(now);
+        currentWeekStart.setDate(now.getDate() + mondayOffset);
+        currentWeekStart.setHours(0, 0, 0, 0);
+
+        // Calculate days from current week start to the class
+        const daysDiff = Math.floor(
+          (classDate.getTime() - currentWeekStart.getTime()) / (24 * 60 * 60 * 1000)
+        );
+
+        // Determine which week the class is in (0-4)
+        const optimalWeek = Math.min(4, Math.max(0, Math.floor(daysDiff / 7)));
+
+        // Only change week if different from current
+        if (optimalWeek !== weekOffset) {
+          setWeekOffset(optimalWeek);
+        }
+      }
+    }
+  }, [hasExplicitWeek, allWeeksLoading, allWeeksClasses, weekOffset, setWeekOffset]);
 
   // Handle class selection - open MomenceModal with deeplink
   const handleClassSelect = useCallback((classData: ClassData) => {
