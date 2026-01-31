@@ -78,9 +78,12 @@ export interface ReminderEmailData {
   firstName: string;
   className: string;
   classDate: string;
+  classDateISO?: string; // "2026-01-28" - for calendar generation
   classTime: string;
   managementUrl: string;
   mapUrl?: string;
+  reminderType?: '48h' | '24h'; // Tipo de recordatorio (default: 24h)
+  eventId?: string; // For ICS UID
 }
 
 export interface FeedbackEmailData {

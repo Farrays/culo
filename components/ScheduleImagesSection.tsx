@@ -103,8 +103,10 @@ const ScheduleImagesSection: React.FC = () => {
   const tabsRef = useRef<HTMLDivElement>(null);
 
   // Get active category object (guaranteed to exist as we default to first category)
-  const activeCategory =
-    SCHEDULE_CATEGORIES.find(cat => cat.id === activeTab) || SCHEDULE_CATEGORIES[0];
+  // Using useMemo to ensure TypeScript understands this will never be undefined
+  const activeCategory = React.useMemo(() => {
+    return SCHEDULE_CATEGORIES.find(cat => cat.id === activeTab) || SCHEDULE_CATEGORIES[0];
+  }, [activeTab]) as ScheduleCategory;
 
   // Lightbox image (single image for active tab)
   const lightboxImages: LightboxImage[] = [
