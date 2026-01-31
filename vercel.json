@@ -302,6 +302,11 @@
       "permanent": true
     },
     {
+      "source": "/trainer/natalie-bryzhataya",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
       "source": "/trainer/cris-ag-crisag",
       "destination": "/es/profesores-baile-barcelona",
       "permanent": true
