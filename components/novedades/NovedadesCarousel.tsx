@@ -268,7 +268,7 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
             onKeyDown={novedades.length > 1 ? handleKeyDown : undefined}
             className={`flex gap-6 overflow-y-visible scrollbar-hide py-4 focus:outline-none focus:ring-2 focus:ring-primary-accent/30 rounded-lg ${
               novedades.length === 1
-                ? 'justify-center'
+                ? 'justify-center items-center'
                 : 'overflow-x-auto scroll-snap-x-mandatory -mx-6 px-6 md:mx-0 md:px-0'
             }`}
             style={
@@ -286,7 +286,11 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
             }
           >
             {novedades.map((novedad, index) => (
-              <div key={novedad.id} className="flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
+              <div
+                key={novedad.id}
+                className={novedades.length === 1 ? '' : 'flex-shrink-0'}
+                style={novedades.length === 1 ? undefined : { scrollSnapAlign: 'start' }}
+              >
                 <AnimateOnScroll delay={index * 100}>
                   <NovedadCard
                     novedad={novedad}
@@ -297,8 +301,10 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
                 </AnimateOnScroll>
               </div>
             ))}
-            {/* End spacer for mobile */}
-            <div className="flex-shrink-0 w-1 md:hidden" aria-hidden="true" />
+            {/* End spacer for mobile - only when multiple items */}
+            {novedades.length > 1 && (
+              <div className="flex-shrink-0 w-1 md:hidden" aria-hidden="true" />
+            )}
           </div>
 
           {/* Dot Indicators */}
