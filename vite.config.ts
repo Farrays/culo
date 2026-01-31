@@ -66,8 +66,8 @@ export default defineConfig({
             },
           },
         ],
-        // Pre-cache critical assets
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Pre-cache critical assets (exclude HTML to avoid hydration issues with stale cache)
+        globPatterns: ['**/*.{js,css,ico,png,svg,woff2}'],
         // Don't pre-cache everything to keep SW size small
         globIgnores: ['**/stats.html', '**/node_modules/**'],
       },
