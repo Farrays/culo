@@ -96,7 +96,7 @@ const HorariosScheduleSection = () => {
         </AnimateOnScroll>
 
         {/* BookingWidget - Full functionality */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-xl mx-auto">
           <AnimateOnScroll delay={100}>
             <BookingWidgetV2 />
           </AnimateOnScroll>
