@@ -361,7 +361,7 @@ const BookingWidgetV2: React.FC = memo(() => {
     }
   }, [step]);
 
-  // Scroll widget into view when entering form step
+  // Scroll widget into view when entering form step or after successful booking
   // This prevents the page from scrolling to an unexpected position
   useEffect(() => {
     if (step === 'form' && widgetContainerRef.current) {
@@ -375,6 +375,19 @@ const BookingWidgetV2: React.FC = memo(() => {
       return () => clearTimeout(timeoutId);
     }
   }, [step]);
+
+  // Scroll to show confirmation after successful booking
+  useEffect(() => {
+    if (status === 'success' && widgetContainerRef.current) {
+      const timeoutId = setTimeout(() => {
+        widgetContainerRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 100);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [status]);
 
   // Handle browser back button (popstate event)
   const handlePopState = useCallback(
