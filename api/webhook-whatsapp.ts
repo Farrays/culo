@@ -114,7 +114,7 @@ function getRedisClient(): Redis | null {
 // ============================================================================
 
 interface BookingDetails {
-  eventId: string;
+  eventId?: string; // Added for tracking
   firstName: string;
   lastName: string;
   email: string;
@@ -122,13 +122,10 @@ interface BookingDetails {
   className: string;
   classDate: string;
   classTime: string;
-  sessionId: string | null;
-  momenceBookingId: number | null;
   category: string;
-  managementToken: string;
+  calendarEventId?: string | null;
   createdAt: string;
-  status: 'confirmed' | 'cancelled';
-  calendarEventId?: string;
+  status?: 'confirmed' | 'cancelled';
   attendance?: 'pending' | 'confirmed' | 'not_attending';
   attendanceUpdatedAt?: string;
 }
@@ -369,12 +366,22 @@ async function handleAttendanceConfirmation(
     booking.attendance = status;
     booking.attendanceUpdatedAt = new Date().toISOString();
 
-    await redis.set(`booking_details:${booking.eventId}`, JSON.stringify(booking));
+    const eventId = booking.eventId || '';
+    await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
 
     console.log(`[webhook-whatsapp] Attendance updated: ${booking.firstName} - ${status}`);
 
-    // Nota: Google Calendar update se hace por separado si está configurado
-    // No lo incluimos aquí para evitar dependencias de googleapis
+    // Actualizar Google Calendar si está configurado
+    if (booking.calendarEventId) {
+      try {
+        const { updateEventAttendance } = await import('./lib/google-calendar');
+        const calendarStatus = status === 'confirmed' ? 'confirmed' : 'not_attending';
+        const calendarResult = await updateEventAttendance(booking.calendarEventId, calendarStatus);
+        console.log(`[webhook-whatsapp] Calendar updated: ${calendarResult.success}`);
+      } catch (calendarError) {
+        console.error('[webhook-whatsapp] Calendar update error:', calendarError);
+      }
+    }
 
     // Enviar respuesta automática
     if (status === 'confirmed') {
@@ -383,10 +390,8 @@ async function handleAttendanceConfirmation(
         `¡Perfecto ${booking.firstName}! 💃 Te esperamos en tu clase de ${booking.className}.\n\n📍 C/ Entença 100, Local 1, Barcelona\n⏰ Recuerda llegar 10 minutos antes.\n\n¡Nos vemos!`
       );
     } else {
-      // Incluir magic link para gestionar la reserva
-      const managementUrl = booking.managementToken
-        ? `farrayscenter.com/es/mi-reserva?token=${booking.managementToken}`
-        : 'farrayscenter.com/reservas';
+      // Magic link con email+event
+      const managementUrl = `farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
 
       await sendTextMessage(
         phone,
@@ -406,40 +411,44 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
   // Normalizar teléfono
   const normalizedPhone = phone.replace(/[\s\-+]/g, '');
 
-  // Buscar en índice de teléfonos si existe
-  const phoneIndex = await redis.get(`phone:${normalizedPhone}`);
-  if (phoneIndex) {
-    const bookingData = await redis.get(`booking_details:${phoneIndex}`);
+  // Buscar en índice de teléfonos (creado en reservar.ts)
+  const eventId = await redis.get(`phone:${normalizedPhone}`);
+  if (eventId) {
+    const bookingData = await redis.get(`booking_details:${eventId}`);
     if (bookingData) {
-      return JSON.parse(bookingData);
+      const booking: BookingDetails = JSON.parse(bookingData);
+      // Solo retornar si no está cancelada
+      if (booking.status !== 'cancelled') {
+        return booking;
+      }
     }
   }
 
-  // Fallback: buscar en bookings recientes (próximos 7 días)
+  // Fallback: buscar en reminders de próximos 7 días
   const today = new Date();
   for (let i = 0; i < 7; i++) {
     const date = new Date(today);
     date.setDate(date.getDate() + i);
     const dateKey = date.toISOString().split('T')[0];
 
-    const eventIds = await redis.smembers(`booking_index:${dateKey}`);
+    const eventIds = await redis.smembers(`reminders:${dateKey}`);
 
-    for (const eventId of eventIds) {
-      const bookingData = await redis.get(`booking_details:${eventId}`);
+    for (const evId of eventIds) {
+      const bookingData = await redis.get(`booking_details:${evId}`);
       if (bookingData) {
         const booking: BookingDetails = JSON.parse(bookingData);
         const bookingPhone = booking.phone.replace(/[\s\-+]/g, '');
 
-        // Comparar teléfonos (también últimos 9 dígitos por si hay diferencias de formato)
+        // Comparar teléfonos (también últimos 9 dígitos por diferencias de formato)
         if (
           bookingPhone === normalizedPhone ||
           bookingPhone.endsWith(normalizedPhone.slice(-9)) ||
           normalizedPhone.endsWith(bookingPhone.slice(-9))
         ) {
-          // Solo retornar si la reserva no está cancelada y tiene clase pendiente
-          if (booking.status === 'confirmed') {
+          // Solo retornar si no está cancelada
+          if (booking.status !== 'cancelled') {
             // Guardar índice para futuras búsquedas
-            await redis.set(`phone:${normalizedPhone}`, eventId, 'EX', 30 * 24 * 60 * 60);
+            await redis.set(`phone:${normalizedPhone}`, evId, 'EX', 30 * 24 * 60 * 60);
             return booking;
           }
         }

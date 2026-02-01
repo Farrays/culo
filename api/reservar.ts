@@ -1208,12 +1208,14 @@ export default async function handler(
     }
 
     // 7. Guardar booking_details para mi-reserva y cron-reminders
+    const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');
     if (redis) {
       try {
         await redis.setex(
           `booking_details:${finalEventId}`,
           BOOKING_TTL_SECONDS,
           JSON.stringify({
+            eventId: finalEventId,
             firstName: sanitize(firstName),
             lastName: sanitize(lastName),
             email: normalizedEmail,
@@ -1228,7 +1230,13 @@ export default async function handler(
         );
         console.warn('[reservar] Booking details saved');
 
-        // Añadir al índice de recordatorios por fecha (para cron-reminders)
+        // Índice por teléfono (para webhook-whatsapp)
+        if (normalizedPhone) {
+          await redis.setex(`phone:${normalizedPhone}`, BOOKING_TTL_SECONDS, finalEventId);
+          console.warn(`[reservar] Added phone index: phone:${normalizedPhone}`);
+        }
+
+        // Índice por fecha (para cron-reminders)
         if (calendarDateStr) {
           await redis.sadd(`reminders:${calendarDateStr}`, finalEventId);
           console.warn(`[reservar] Added to reminders:${calendarDateStr}`);
