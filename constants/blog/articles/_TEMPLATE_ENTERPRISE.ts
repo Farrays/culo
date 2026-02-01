@@ -1670,7 +1670,7 @@ export interface AuthorSchemaConfig {
   worksFor: {
     name: string;
     url: string;
-    type: 'EducationalOrganization' | 'Organization';
+    type: 'EducationalOrganization' | 'LocalBusiness' | 'Organization';
   };
   credentials?: string[]; // Certificaciones
   knowsAbout?: string[]; // Áreas de expertise

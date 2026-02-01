@@ -102,7 +102,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
     description: t(teacher.descriptionKey),
     knowsAbout: teacher.knowsAbout,
     worksFor: {
-      '@type': 'DanceGroup',
+      '@type': 'EducationalOrganization',
       name: "Farray's International Dance Center",
       url: baseUrl,
     },
