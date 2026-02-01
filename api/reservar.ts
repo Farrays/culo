@@ -207,10 +207,10 @@ async function sendAdminBookingNotificationEmail(data: {
   const resend = new Resend(apiKey);
   try {
     const result = await resend.emails.send({
-      from: EMAIL_FROM,
+      from: `"${data.firstName} ${data.lastName}" <noreply@farrayscenter.com>`,
       to: ADMIN_EMAIL,
       replyTo: data.email, // El admin puede responder directamente al cliente
-      subject: `🎉 Nueva reserva: ${data.firstName} ${data.lastName} - ${data.className}`,
+      subject: `Reserva Confirmada para ${data.className} (${data.firstName} ${data.lastName}) el ${data.classDate}`,
       html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
