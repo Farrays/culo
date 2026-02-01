@@ -337,6 +337,49 @@ async function processMessage(
 // CONFIRMACIÓN DE ASISTENCIA
 // ============================================================================
 
+/**
+ * Calcula si faltan más de X horas para la clase
+ * @param classDate - Fecha de la clase (puede ser ISO o formato español)
+ * @param classTime - Hora de la clase (HH:MM)
+ * @param hoursThreshold - Número de horas mínimas (default 1)
+ */
+function isMoreThanHoursBeforeClass(
+  classDate: string,
+  classTime: string,
+  hoursThreshold: number = 1
+): boolean {
+  try {
+    // Extraer fecha ISO (YYYY-MM-DD) del classDate
+    const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
+    if (!isoMatch) {
+      console.warn('[webhook-whatsapp] Could not parse classDate:', classDate);
+      return true; // Por defecto, permitir cancelación
+    }
+
+    const dateStr = isoMatch[0];
+    const [hours, minutes] = (classTime || '19:00').split(':').map(Number);
+
+    // Crear fecha de la clase en timezone de España
+    const classDateTime = new Date(
+      `${dateStr}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`
+    );
+
+    // Calcular diferencia en horas
+    const now = new Date();
+    const diffMs = classDateTime.getTime() - now.getTime();
+    const diffHours = diffMs / (1000 * 60 * 60);
+
+    console.log(
+      `[webhook-whatsapp] Time check: class at ${classDateTime.toISOString()}, now ${now.toISOString()}, diff ${diffHours.toFixed(2)}h`
+    );
+
+    return diffHours > hoursThreshold;
+  } catch (error) {
+    console.error('[webhook-whatsapp] Error checking time:', error);
+    return true; // Por defecto, permitir cancelación
+  }
+}
+
 async function handleAttendanceConfirmation(
   phone: string,
   status: 'confirmed' | 'not_attending'
@@ -362,40 +405,98 @@ async function handleAttendanceConfirmation(
       return;
     }
 
-    // Actualizar estado de asistencia
-    booking.attendance = status;
-    booking.attendanceUpdatedAt = new Date().toISOString();
-
     const eventId = booking.eventId || '';
-    await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
 
-    console.log(`[webhook-whatsapp] Attendance updated: ${booking.firstName} - ${status}`);
-
-    // Actualizar Google Calendar si está configurado
-    if (booking.calendarEventId) {
-      try {
-        const { updateEventAttendance } = await import('./lib/google-calendar');
-        const calendarStatus = status === 'confirmed' ? 'confirmed' : 'not_attending';
-        const calendarResult = await updateEventAttendance(booking.calendarEventId, calendarStatus);
-        console.log(`[webhook-whatsapp] Calendar updated: ${calendarResult.success}`);
-      } catch (calendarError) {
-        console.error('[webhook-whatsapp] Calendar update error:', calendarError);
-      }
-    }
-
-    // Enviar respuesta automática
+    // Si confirma asistencia
     if (status === 'confirmed') {
+      booking.attendance = 'confirmed';
+      booking.attendanceUpdatedAt = new Date().toISOString();
+
+      await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
+      console.log(`[webhook-whatsapp] Attendance confirmed: ${booking.firstName}`);
+
+      // Actualizar Google Calendar a verde
+      if (booking.calendarEventId) {
+        try {
+          const { updateEventAttendance } = await import('./lib/google-calendar');
+          await updateEventAttendance(booking.calendarEventId, 'confirmed');
+          console.log('[webhook-whatsapp] Calendar updated to confirmed (green)');
+        } catch (calendarError) {
+          console.error('[webhook-whatsapp] Calendar update error:', calendarError);
+        }
+      }
+
       await sendTextMessage(
         phone,
         `¡Perfecto ${booking.firstName}! 💃 Te esperamos en tu clase de ${booking.className}.\n\n📍 C/ Entença 100, Local 1, Barcelona\n⏰ Recuerda llegar 10 minutos antes.\n\n¡Nos vemos!`
       );
-    } else {
-      // Magic link con email+event
-      const managementUrl = `farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
+      return;
+    }
+
+    // Si NO puede asistir, verificar si puede cancelar (> 1 hora antes)
+    const canCancel = isMoreThanHoursBeforeClass(booking.classDate, booking.classTime, 1);
+
+    if (canCancel) {
+      // CANCELACIÓN COMPLETA: > 1 hora antes de la clase
+      booking.status = 'cancelled';
+      booking.attendance = 'not_attending';
+      booking.attendanceUpdatedAt = new Date().toISOString();
+
+      await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
+
+      // Eliminar deduplicación para que pueda reservar otro día
+      const normalizedEmail = booking.email.toLowerCase();
+      await redis.del(`booking:${normalizedEmail}`);
+      console.log(`[webhook-whatsapp] Deduplication removed for ${normalizedEmail}`);
+
+      // Eliminar del índice de teléfono
+      const normalizedPhone = phone.replace(/[\s\-+]/g, '');
+      await redis.del(`phone:${normalizedPhone}`);
+
+      console.log(`[webhook-whatsapp] Booking cancelled: ${booking.firstName}`);
+
+      // Actualizar Google Calendar a rojo (not_attending)
+      if (booking.calendarEventId) {
+        try {
+          const { updateEventAttendance } = await import('./lib/google-calendar');
+          await updateEventAttendance(booking.calendarEventId, 'not_attending');
+          console.log('[webhook-whatsapp] Calendar updated to not_attending (red)');
+        } catch (calendarError) {
+          console.error('[webhook-whatsapp] Calendar update error:', calendarError);
+        }
+      }
+
+      // Mensaje con opción de reprogramar
+      const reprogramUrl = `farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
 
       await sendTextMessage(
         phone,
-        `Entendido ${booking.firstName}. Lamentamos que no puedas venir. 😊\n\n¿Qué te gustaría hacer?\n\n📋 Gestionar reserva:\n👉 ${managementUrl}\n\n📅 Reservar otra fecha:\n👉 farrayscenter.com/reservas\n\n¡Te esperamos pronto!`
+        `Entendido ${booking.firstName}. Tu reserva ha sido cancelada. 😊\n\n📋 Reprogramar clase:\n👉 ${reprogramUrl}\n\n¡Te esperamos cuando puedas!`
+      );
+    } else {
+      // NO PUEDE CANCELAR: < 1 hora antes de la clase
+      booking.attendance = 'not_attending';
+      booking.attendanceUpdatedAt = new Date().toISOString();
+      // NO marcamos como cancelled, NO eliminamos deduplicación
+
+      await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
+
+      console.log(`[webhook-whatsapp] Late cancellation (no dedup removal): ${booking.firstName}`);
+
+      // Actualizar Google Calendar a rojo
+      if (booking.calendarEventId) {
+        try {
+          const { updateEventAttendance } = await import('./lib/google-calendar');
+          await updateEventAttendance(booking.calendarEventId, 'not_attending');
+          console.log('[webhook-whatsapp] Calendar updated to not_attending (red)');
+        } catch (calendarError) {
+          console.error('[webhook-whatsapp] Calendar update error:', calendarError);
+        }
+      }
+
+      await sendTextMessage(
+        phone,
+        `Entendido ${booking.firstName}. Lamentamos que no puedas venir.\n\n⚠️ Como faltan menos de 1 hora para la clase, no es posible reprogramar.\n\nSi tienes algún problema, contáctanos:\n📞 +34 622 247 085`
       );
     }
   } catch (error) {
