@@ -199,6 +199,7 @@ async function sendAdminBookingNotificationEmail(data: {
   classTime: string;
   category?: ClassCategory;
   sourceUrl?: string;
+  managementUrl?: string; // URL para gestionar/cancelar la reserva
 }): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env['RESEND_API_KEY'];
   if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
@@ -256,9 +257,16 @@ async function sendAdminBookingNotificationEmail(data: {
   ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
 
   <div style="text-align: center; margin-top: 20px;">
-    <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
+    <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
       Contactar por WhatsApp
     </a>
+    ${
+      data.managementUrl
+        ? `<a href="${data.managementUrl}" style="display: inline-block; background: #e91e63; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+      Gestionar Reserva
+    </a>`
+        : ''
+    }
   </div>
 
   <p style="color: #999; font-size: 11px; text-align: center; margin-top: 30px;">
@@ -1356,6 +1364,7 @@ export default async function handler(
         classTime: classTime || '19:00',
         category,
         sourceUrl: req.headers.referer || req.headers.origin || undefined,
+        managementUrl, // Para que el admin pueda gestionar/cancelar
       });
     } catch (adminEmailError) {
       // Solo logueamos, NO bloqueamos la reserva
