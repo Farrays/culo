@@ -532,6 +532,14 @@ export function generateConfirmationEmailHtml(data: ConfirmationHtmlData): strin
   ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime, instructor: data.instructor })}
   ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: GOOGLE_MAPS_URL, googleCalUrl: data.calendarUrl, icsUrl: data.icsUrl })}
   ${generateWhatToBringSection(data.category)}
+  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p style="margin: 0; color: #856404;">
+      <strong>⚠️ Política de cancelación:</strong><br>
+      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
+      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
+      como asistida y perderás el derecho a la clase de prueba gratuita.
+    </p>
+  </div>
   <div style="text-align: center; padding: 25px 0;">
     <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
     <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">Reprogramar / Cancelar Reserva</a>
@@ -566,6 +574,14 @@ export function generateReminderEmailHtml(data: ReminderHtmlData): string {
       ${LOCATION_STREET}<br><br>
       🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
       🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>
+  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p style="margin: 0; color: #856404;">
+      <strong>⚠️ Política de cancelación:</strong><br>
+      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
+      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
+      como asistida y perderás el derecho a la clase de prueba gratuita.
     </p>
   </div>
   <div style="text-align: center; margin-bottom: 30px;">
@@ -721,6 +737,14 @@ export async function sendBookingConfirmation(
   ${generateBookingDetails(data)}
   ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: data.mapUrl || GOOGLE_MAPS_URL, googleCalUrl, icsUrl })}
   ${generateWhatToBringSection(data.category)}
+  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p style="margin: 0; color: #856404;">
+      <strong>⚠️ Política de cancelación:</strong><br>
+      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
+      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
+      como asistida y perderás el derecho a la clase de prueba gratuita.
+    </p>
+  </div>
   <div style="text-align: center; padding: 25px 0;">
     <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
     <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">Reprogramar / Cancelar Reserva</a>
@@ -860,6 +884,18 @@ export async function sendReminderEmail(
       🚌 <strong>Bus:</strong> Líneas 41, 54, H8
     </p>
   </div>
+  ${
+    !is48h
+      ? `<div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p style="margin: 0; color: #856404;">
+      <strong>⚠️ Política de cancelación:</strong><br>
+      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
+      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
+      como asistida y perderás el derecho a la clase de prueba gratuita.
+    </p>
+  </div>`
+      : ''
+  }
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
     <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">
