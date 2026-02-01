@@ -2,17 +2,35 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
-import {
-  createBookingEvent,
-  isGoogleCalendarConfigured,
-  type BookingCalendarData,
-} from './lib/google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
 // ============================================================================
 
 type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
+
+// Tipo para Google Calendar (inline para evitar imports)
+interface BookingCalendarData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: string;
+  eventId?: string;
+  managementUrl?: string;
+}
+
+// Verificar si Google Calendar está configurado
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
 
 // ============================================================================
 // EMAIL HELPER INLINE
@@ -1180,6 +1198,9 @@ export default async function handler(
     let calendarEventId: string | undefined;
     if (isGoogleCalendarConfigured()) {
       try {
+        // Dynamic import para evitar errores de Vercel con imports de subdirectorios
+        const { createBookingEvent } = await import('./lib/google-calendar');
+
         const calendarData: BookingCalendarData = {
           firstName: sanitize(firstName),
           lastName: sanitize(lastName),
