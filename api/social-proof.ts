@@ -69,6 +69,7 @@ export default async function handler(
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
 
   // Cache: 30 segundos (para no sobrecargar Redis)
   res.setHeader('Cache-Control', 'public, s-maxage=30, stale-while-revalidate=60');
