@@ -61,11 +61,33 @@ const CulturalHistorySection: React.FC<CulturalHistorySectionProps> = memo(
                 const trimmed = para.trim();
                 if (!trimmed) return null;
 
+                // Check if this is a citable quote (starts and ends with quotes)
+                const isCitableQuote = trimmed.startsWith('"') && trimmed.endsWith('"');
+
                 // Replace **text** with <strong> tags
                 const parts = trimmed.split(/\*\*([^*]+)\*\*/);
+                const renderedContent = parts.map((part, i) =>
+                  i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+                );
+
+                if (isCitableQuote) {
+                  return (
+                    <aside
+                      key={idx}
+                      className="my-4 p-4 bg-primary-accent/10 border-l-4 border-primary-accent rounded-r-lg"
+                      data-citable="true"
+                      role="note"
+                    >
+                      <p className="text-sm font-medium text-neutral/90 italic leading-relaxed">
+                        {renderedContent}
+                      </p>
+                    </aside>
+                  );
+                }
+
                 return (
                   <p key={idx} className="text-neutral/90 leading-relaxed">
-                    {parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part))}
+                    {renderedContent}
                   </p>
                 );
               })}
