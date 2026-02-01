@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { updateEventAttendance } from './google-calendar';
 
 // Tipos inline (evitar imports de api/lib/ que fallan en Vercel)
 type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
@@ -226,8 +227,6 @@ async function updateAttendance(
     // Actualizar Google Calendar si está configurado
     if (isGoogleCalendarConfigured() && booking.calendarEventId) {
       try {
-        // Dynamic import para evitar errores de Vercel con imports de subdirectorios
-        const { updateEventAttendance } = await import('./google-calendar');
         const calendarResult = await updateEventAttendance(
           booking.calendarEventId,
           status as AttendanceStatus

@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
+import { createBookingEvent } from './google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -1198,9 +1199,6 @@ export default async function handler(
     let calendarEventId: string | undefined;
     if (isGoogleCalendarConfigured()) {
       try {
-        // Dynamic import para evitar errores de Vercel con imports de subdirectorios
-        const { createBookingEvent } = await import('./google-calendar');
-
         const calendarData: BookingCalendarData = {
           firstName: sanitize(firstName),
           lastName: sanitize(lastName),

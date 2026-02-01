@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { deleteBookingEvent } from './google-calendar';
 
 /**
  * API endpoint para cancelar una reserva
@@ -209,7 +210,6 @@ export default async function handler(
     let calendarDeleted = false;
     if (bookingData.calendarEventId) {
       try {
-        const { deleteBookingEvent } = await import('./google-calendar');
         const calendarResult = await deleteBookingEvent(bookingData.calendarEventId);
         calendarDeleted = calendarResult.success;
         if (!calendarResult.success) {
