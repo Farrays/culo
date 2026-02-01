@@ -180,6 +180,105 @@ async function sendBookingConfirmationEmail(data: {
 }
 
 // ============================================================================
+// ADMIN NOTIFICATION EMAIL INLINE
+// ============================================================================
+
+const ADMIN_EMAIL = 'info@farrayscenter.com';
+
+/**
+ * Envía notificación al admin cuando hay una nueva reserva.
+ * NO bloquea el flujo de reserva si falla.
+ */
+async function sendAdminBookingNotificationEmail(data: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: ClassCategory;
+  sourceUrl?: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  const resend = new Resend(apiKey);
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: ADMIN_EMAIL,
+      replyTo: data.email, // El admin puede responder directamente al cliente
+      subject: `🎉 Nueva reserva: ${data.firstName} ${data.lastName} - ${data.className}`,
+      html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+    <h2 style="margin: 0;">🎉 Nueva Reserva de Clase de Prueba</h2>
+  </div>
+
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0 0 15px 0; color: #e91e63;">👤 Datos del Cliente</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Nombre:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${data.firstName} ${data.lastName}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Email:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="mailto:${data.email}" style="color: #e91e63;">${data.email}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Teléfono:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="tel:${data.phone}" style="color: #e91e63;">${data.phone}</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0 0 15px 0; color: #2e7d32;">📅 Datos de la Clase</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Clase:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.className}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Fecha:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classDate}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Hora:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classTime}</td>
+      </tr>
+      ${data.category ? `<tr><td style="padding: 8px 0;"><strong>Categoría:</strong></td><td style="padding: 8px 0;">${data.category}</td></tr>` : ''}
+    </table>
+  </div>
+
+  ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
+
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold;">
+      Contactar por WhatsApp
+    </a>
+  </div>
+
+  <p style="color: #999; font-size: 11px; text-align: center; margin-top: 30px;">
+    Este email se genera automáticamente. Timestamp: ${new Date().toISOString()}
+  </p>
+</body></html>`,
+    });
+    if (result.error) {
+      console.warn('[reservar] Admin notification failed:', result.error.message);
+      return { success: false, error: result.error.message };
+    }
+    console.log('[reservar] Admin notification sent:', result.data?.id);
+    return { success: true };
+  } catch (error) {
+    console.error('[reservar] Error sending admin notification:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
 // WHATSAPP HELPER INLINE
 // ============================================================================
 
@@ -1243,6 +1342,24 @@ export default async function handler(
     } catch (emailError) {
       console.error('[reservar] Email error:', emailError);
       emailResult = { success: false, error: String(emailError) };
+    }
+
+    // 6a-bis. Notificar al admin de la nueva reserva (no bloquea si falla)
+    try {
+      await sendAdminBookingNotificationEmail({
+        firstName: firstNameOnly,
+        lastName: sanitize(lastName),
+        email: normalizedEmail,
+        phone: sanitize(phone),
+        className: className || estilo || 'Clase de Prueba',
+        classDate: formattedDate,
+        classTime: classTime || '19:00',
+        category,
+        sourceUrl: req.headers.referer || req.headers.origin || undefined,
+      });
+    } catch (adminEmailError) {
+      // Solo logueamos, NO bloqueamos la reserva
+      console.warn('[reservar] Admin notification failed (non-blocking):', adminEmailError);
     }
 
     // 6b. Enviar WhatsApp de confirmación
