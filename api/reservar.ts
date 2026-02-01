@@ -1172,14 +1172,14 @@ export default async function handler(
     const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
     const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
 
-    // 5. Crear evento en Google Calendar (Calendario Académico)
+    // 5. Extraer fecha ISO para índices y calendario
+    const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
+    const calendarDateStr = isoMatch ? isoMatch[0] : '';
+
+    // 6. Crear evento en Google Calendar (Calendario Académico)
     let calendarEventId: string | undefined;
     if (isGoogleCalendarConfigured()) {
       try {
-        // Extraer fecha ISO de classDate (puede venir como "2024-01-20T18:00:00.000Z")
-        const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
-        const calendarDateStr = isoMatch ? isoMatch[0] : classDate || '';
-
         const calendarData: BookingCalendarData = {
           firstName: sanitize(firstName),
           lastName: sanitize(lastName),
@@ -1198,31 +1198,6 @@ export default async function handler(
 
         if (calendarResult.success && calendarResult.calendarEventId) {
           calendarEventId = calendarResult.calendarEventId;
-
-          // Guardar detalles completos del booking con calendarEventId para attendance.ts
-          if (redis) {
-            try {
-              await redis.setex(
-                `booking_details:${finalEventId}`,
-                BOOKING_TTL_SECONDS,
-                JSON.stringify({
-                  firstName: sanitize(firstName),
-                  lastName: sanitize(lastName),
-                  email: normalizedEmail,
-                  phone: sanitize(phone),
-                  className: className || estilo || 'Clase de Prueba',
-                  classDate: classDate || '',
-                  classTime: classTime || '19:00',
-                  category,
-                  calendarEventId,
-                  createdAt: new Date().toISOString(),
-                })
-              );
-              console.warn('[reservar] Booking details saved with calendarEventId');
-            } catch (e) {
-              console.warn('[reservar] Failed to save booking details:', e);
-            }
-          }
         }
       } catch (calendarError) {
         console.error('[reservar] Google Calendar error:', calendarError);
@@ -1230,6 +1205,37 @@ export default async function handler(
       }
     } else {
       console.warn('[reservar] Google Calendar not configured, skipping');
+    }
+
+    // 7. Guardar booking_details para mi-reserva y cron-reminders
+    if (redis) {
+      try {
+        await redis.setex(
+          `booking_details:${finalEventId}`,
+          BOOKING_TTL_SECONDS,
+          JSON.stringify({
+            firstName: sanitize(firstName),
+            lastName: sanitize(lastName),
+            email: normalizedEmail,
+            phone: sanitize(phone),
+            className: className || estilo || 'Clase de Prueba',
+            classDate: classDate || '',
+            classTime: classTime || '19:00',
+            category,
+            calendarEventId: calendarEventId || null,
+            createdAt: new Date().toISOString(),
+          })
+        );
+        console.warn('[reservar] Booking details saved');
+
+        // Añadir al índice de recordatorios por fecha (para cron-reminders)
+        if (calendarDateStr) {
+          await redis.sadd(`reminders:${calendarDateStr}`, finalEventId);
+          console.warn(`[reservar] Added to reminders:${calendarDateStr}`);
+        }
+      } catch (e) {
+        console.warn('[reservar] Failed to save booking details:', e);
+      }
     }
 
     // 6. Enviar notificaciones (Email + WhatsApp)
