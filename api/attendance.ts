@@ -1,18 +1,11 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { updateEventAttendance } from '../lib/google-calendar';
+// Google Calendar disabled temporarily
+// import { updateEventAttendance } from '../lib/google-calendar';
 
-// Tipos inline (evitar imports de api/lib/ que fallan en Vercel)
-type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
-
-// Verificar si Google Calendar está configurado
-function isGoogleCalendarConfigured(): boolean {
-  return !!(
-    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
-    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
-    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
-  );
-}
+// Google Calendar types/functions disabled temporarily
+// type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+// function isGoogleCalendarConfigured(): boolean { ... }
 
 /**
  * API Route: /api/attendance
@@ -224,22 +217,8 @@ async function updateAttendance(
 
     console.log(`[attendance] Updated ${eventId}: ${booking.firstName} - ${status}`);
 
-    // Actualizar Google Calendar si está configurado
-    if (isGoogleCalendarConfigured() && booking.calendarEventId) {
-      try {
-        const calendarResult = await updateEventAttendance(
-          booking.calendarEventId,
-          status as AttendanceStatus
-        );
-
-        if (!calendarResult.success) {
-          console.warn('[attendance] Calendar update failed:', calendarResult.error);
-          // No fallar la operación por esto
-        }
-      } catch (calendarError) {
-        console.warn('[attendance] Calendar update error:', calendarError);
-      }
-    }
+    // Google Calendar disabled temporarily
+    // if (isGoogleCalendarConfigured() && booking.calendarEventId) { ... }
 
     return {
       success: true,

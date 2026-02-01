@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { deleteBookingEvent } from '../lib/google-calendar';
+// Google Calendar disabled temporarily
+// import { deleteBookingEvent } from '../lib/google-calendar';
 
 /**
  * API endpoint para cancelar una reserva
@@ -206,23 +207,9 @@ export default async function handler(
       console.warn('[Cancel] No momenceBookingId found, skipping Momence API');
     }
 
-    // 2b. Eliminar evento de Google Calendar si existe
-    let calendarDeleted = false;
-    if (bookingData.calendarEventId) {
-      try {
-        const calendarResult = await deleteBookingEvent(bookingData.calendarEventId);
-        calendarDeleted = calendarResult.success;
-        if (!calendarResult.success) {
-          console.warn('[Cancel] Google Calendar deletion failed:', calendarResult.error);
-        } else {
-          console.warn('[Cancel] Google Calendar event deleted:', bookingData.calendarEventId);
-        }
-      } catch (e) {
-        console.warn('[Cancel] Google Calendar error:', e);
-      }
-    } else {
-      console.warn('[Cancel] No calendarEventId found, skipping Google Calendar');
-    }
+    // 2b. Google Calendar disabled temporarily
+    const calendarDeleted = false;
+    console.warn('[Cancel] Google Calendar disabled temporarily');
 
     // 3. Eliminar de Redis
     await redis.del(bookingKey);

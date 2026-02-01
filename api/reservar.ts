@@ -2,7 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
-import { createBookingEvent } from '../lib/google-calendar';
+// Google Calendar disabled temporarily - Vercel import issues
+// import { createBookingEvent } from '../lib/google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -10,28 +11,9 @@ import { createBookingEvent } from '../lib/google-calendar';
 
 type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
 
-// Tipo para Google Calendar (inline para evitar imports)
-interface BookingCalendarData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  className: string;
-  classDate: string;
-  classTime: string;
-  category?: string;
-  eventId?: string;
-  managementUrl?: string;
-}
-
-// Verificar si Google Calendar está configurado
-function isGoogleCalendarConfigured(): boolean {
-  return !!(
-    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
-    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
-    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
-  );
-}
+// Google Calendar types/functions disabled temporarily
+// interface BookingCalendarData { ... }
+// function isGoogleCalendarConfigured(): boolean { ... }
 
 // ============================================================================
 // EMAIL HELPER INLINE
@@ -1195,36 +1177,10 @@ export default async function handler(
     const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
     const calendarDateStr = isoMatch ? isoMatch[0] : '';
 
-    // 6. Crear evento en Google Calendar (Calendario Académico)
-    let calendarEventId: string | undefined;
-    if (isGoogleCalendarConfigured()) {
-      try {
-        const calendarData: BookingCalendarData = {
-          firstName: sanitize(firstName),
-          lastName: sanitize(lastName),
-          email: normalizedEmail,
-          phone: sanitize(phone),
-          className: className || estilo || 'Clase de Prueba',
-          classDate: calendarDateStr,
-          classTime: classTime || '19:00',
-          category,
-          eventId: finalEventId,
-          managementUrl,
-        };
-
-        const calendarResult = await createBookingEvent(calendarData);
-        console.warn('[reservar] Google Calendar result:', calendarResult);
-
-        if (calendarResult.success && calendarResult.calendarEventId) {
-          calendarEventId = calendarResult.calendarEventId;
-        }
-      } catch (calendarError) {
-        console.error('[reservar] Google Calendar error:', calendarError);
-        // No bloquear la reserva si falla el calendario
-      }
-    } else {
-      console.warn('[reservar] Google Calendar not configured, skipping');
-    }
+    // 6. Google Calendar - DISABLED temporarily (Vercel import issues)
+    // TODO: Re-enable when Vercel bundling is fixed
+    const calendarEventId: string | undefined = undefined;
+    console.warn('[reservar] Google Calendar disabled temporarily');
 
     // 7. Guardar booking_details para mi-reserva y cron-reminders
     const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');
