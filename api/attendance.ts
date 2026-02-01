@@ -227,7 +227,7 @@ async function updateAttendance(
     if (isGoogleCalendarConfigured() && booking.calendarEventId) {
       try {
         // Dynamic import para evitar errores de Vercel con imports de subdirectorios
-        const { updateEventAttendance } = await import('./lib/google-calendar');
+        const { updateEventAttendance } = await import('./google-calendar');
         const calendarResult = await updateEventAttendance(
           booking.calendarEventId,
           status as AttendanceStatus

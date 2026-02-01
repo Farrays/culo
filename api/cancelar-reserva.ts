@@ -209,7 +209,7 @@ export default async function handler(
     let calendarDeleted = false;
     if (bookingData.calendarEventId) {
       try {
-        const { deleteBookingEvent } = await import('./lib/google-calendar');
+        const { deleteBookingEvent } = await import('./google-calendar');
         const calendarResult = await deleteBookingEvent(bookingData.calendarEventId);
         calendarDeleted = calendarResult.success;
         if (!calendarResult.success) {

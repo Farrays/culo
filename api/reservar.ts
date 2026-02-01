@@ -1199,7 +1199,7 @@ export default async function handler(
     if (isGoogleCalendarConfigured()) {
       try {
         // Dynamic import para evitar errores de Vercel con imports de subdirectorios
-        const { createBookingEvent } = await import('./lib/google-calendar');
+        const { createBookingEvent } = await import('./google-calendar');
 
         const calendarData: BookingCalendarData = {
           firstName: sanitize(firstName),

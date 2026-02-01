@@ -418,7 +418,7 @@ async function handleAttendanceConfirmation(
       // Actualizar Google Calendar a verde
       if (booking.calendarEventId) {
         try {
-          const { updateEventAttendance } = await import('./lib/google-calendar');
+          const { updateEventAttendance } = await import('./google-calendar');
           await updateEventAttendance(booking.calendarEventId, 'confirmed');
           console.log('[webhook-whatsapp] Calendar updated to confirmed (green)');
         } catch (calendarError) {
@@ -458,7 +458,7 @@ async function handleAttendanceConfirmation(
       // Actualizar Google Calendar a rojo (not_attending)
       if (booking.calendarEventId) {
         try {
-          const { updateEventAttendance } = await import('./lib/google-calendar');
+          const { updateEventAttendance } = await import('./google-calendar');
           await updateEventAttendance(booking.calendarEventId, 'not_attending');
           console.log('[webhook-whatsapp] Calendar updated to not_attending (red)');
         } catch (calendarError) {
@@ -486,7 +486,7 @@ async function handleAttendanceConfirmation(
       // Actualizar Google Calendar a rojo
       if (booking.calendarEventId) {
         try {
-          const { updateEventAttendance } = await import('./lib/google-calendar');
+          const { updateEventAttendance } = await import('./google-calendar');
           await updateEventAttendance(booking.calendarEventId, 'not_attending');
           console.log('[webhook-whatsapp] Calendar updated to not_attending (red)');
         } catch (calendarError) {
