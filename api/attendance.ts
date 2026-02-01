@@ -1,10 +1,17 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import {
-  updateEventAttendance,
-  isGoogleCalendarConfigured,
-  type AttendanceStatus,
-} from './lib/google-calendar';
+
+// Tipos inline (evitar imports de api/lib/ que fallan en Vercel)
+type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+
+// Verificar si Google Calendar está configurado
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
 
 /**
  * API Route: /api/attendance
@@ -218,14 +225,20 @@ async function updateAttendance(
 
     // Actualizar Google Calendar si está configurado
     if (isGoogleCalendarConfigured() && booking.calendarEventId) {
-      const calendarResult = await updateEventAttendance(
-        booking.calendarEventId,
-        status as AttendanceStatus
-      );
+      try {
+        // Dynamic import para evitar errores de Vercel con imports de subdirectorios
+        const { updateEventAttendance } = await import('./lib/google-calendar');
+        const calendarResult = await updateEventAttendance(
+          booking.calendarEventId,
+          status as AttendanceStatus
+        );
 
-      if (!calendarResult.success) {
-        console.warn('[attendance] Calendar update failed:', calendarResult.error);
-        // No fallar la operación por esto
+        if (!calendarResult.success) {
+          console.warn('[attendance] Calendar update failed:', calendarResult.error);
+          // No fallar la operación por esto
+        }
+      } catch (calendarError) {
+        console.warn('[attendance] Calendar update error:', calendarError);
       }
     }
 
