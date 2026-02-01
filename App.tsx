@@ -121,7 +121,6 @@ const TestPaidSelector = lazy(() => import('./pages/TestPaidSelector'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
-const MiReservaPage = lazy(() => import('./components/MiReservaPage'));
 
 // ===== BLOG PAGES =====
 const BlogListPage = lazy(() => import('./components/pages/BlogListPage'));
@@ -136,8 +135,12 @@ const ProfesoresBaileBarcelonaPage = lazy(
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
 const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
-// ===== FEEDBACK PAGE =====
+// ===== FEEDBACK PAGES =====
 const FeedbackGraciasPage = lazy(() => import('./components/FeedbackGraciasPage'));
+const FeedbackComentarioPage = lazy(() => import('./components/FeedbackComentarioPage'));
+
+// ===== ASISTENCIA PAGE =====
+const AsistenciaConfirmadaPage = lazy(() => import('./components/AsistenciaConfirmadaPage'));
 
 // ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
 const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
@@ -296,7 +299,9 @@ const AppContent: React.FC = () => {
   const isBookingPage =
     location.pathname.includes('/reservas') ||
     location.pathname.includes('/mi-reserva') ||
-    location.pathname.includes('/feedback-gracias');
+    location.pathname.includes('/feedback-gracias') ||
+    location.pathname.includes('/feedback-comentario') ||
+    location.pathname.includes('/asistencia-confirmada');
 
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
@@ -817,6 +822,26 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/feedback-comentario"
+              element={
+                <>
+                  <LocaleSync />
+                  <FeedbackComentarioPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/asistencia-confirmada"
+              element={
+                <>
+                  <LocaleSync />
+                  <AsistenciaConfirmadaPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/terminos-y-condiciones"
               element={
                 <>
@@ -994,17 +1019,6 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HorariosPageV2 />
-                </>
-              }
-            />
-
-            {/* Mi Reserva - Magic Link Management Page */}
-            <Route
-              path="/:locale/mi-reserva"
-              element={
-                <>
-                  <LocaleSync />
-                  <MiReservaPage />
                 </>
               }
             />
