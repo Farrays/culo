@@ -180,7 +180,7 @@ const ClasesParticularesPage: React.FC = () => {
     name: t('schema_particulares_serviceName'),
     description: t('particularesPage_description'),
     provider: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       name: "Farray's International Dance Center",
       url: 'https://www.farrayscenter.com',
       logo: 'https://www.farrayscenter.com/logo.png',

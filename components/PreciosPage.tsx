@@ -304,7 +304,7 @@ const PreciosPage: React.FC = () => {
       height: 630,
     },
     provider: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
       url: baseUrl,

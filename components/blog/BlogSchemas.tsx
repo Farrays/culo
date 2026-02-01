@@ -111,7 +111,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     description: t(author.bioKey),
     sameAs: author.sameAs,
     worksFor: {
-      '@type': 'DanceSchool',
+      '@type': 'EducationalOrganization',
       name: "Farray's International Dance Center",
       url: baseUrl,
     },
@@ -397,7 +397,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
                 }),
               },
               itemReviewed: {
-                '@type': 'DanceSchool',
+                '@type': 'LocalBusiness',
                 name: "Farray's International Dance Center",
                 '@id': `${baseUrl}/#organization`,
               },

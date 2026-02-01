@@ -1702,7 +1702,7 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
     worksFor: {
       name: "Farray's Dance Center",
       url: 'https://www.farrays.com',
-      type: 'DanceSchool',
+      type: 'EducationalOrganization',
     },
     credentials: [
       'CID-UNESCO',
@@ -1723,7 +1723,7 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
     worksFor: {
       name: "Farray's Dance Center",
       url: 'https://www.farrays.com',
-      type: 'DanceSchool',
+      type: 'EducationalOrganization',
     },
     knowsAbout: ['Salsa', 'Bachata', 'Heels', 'Danzas Urbanas', 'Hip Hop'],
   },
