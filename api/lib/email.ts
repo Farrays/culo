@@ -576,6 +576,26 @@ export function generateReminderEmailHtml(data: ReminderHtmlData): string {
       🚌 <strong>Bus:</strong> Líneas 41, 54, H8
     </p>
   </div>
+
+  <!-- PROMOCIÓN ESPECIAL 24H -->
+  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center;">
+    <p style="margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">💥 Promoción Especial 24h 💥</p>
+    <h3 style="margin: 0 0 15px 0; font-size: 24px;">MATRÍCULA GRATIS</h3>
+    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+      <p style="margin: 0; font-size: 14px;"><span style="text-decoration: line-through; opacity: 0.7;">ANTES 60€</span></p>
+      <p style="margin: 5px 0 0 0; font-size: 28px; font-weight: bold;">AHORA 0€</p>
+    </div>
+    <p style="margin: 0; font-size: 13px; opacity: 0.9; line-height: 1.5;">
+      Oferta exclusiva para nuevos estudiantes.<br>
+      Válida solo si te apuntas <strong>mañana después de tu clase de prueba</strong><br>
+      y realizas el primer pago en efectivo.
+    </p>
+    <p style="margin: 15px 0 0 0; font-size: 12px; opacity: 0.8;">
+      💡 Tú te ahorras la matrícula... y nosotros las comisiones bancarias.<br>
+      ¡Ganamos todos! Recibirás tu recibo al momento del alta.
+    </p>
+  </div>
+
   <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
     <p style="margin: 0; color: #856404;">
       <strong>⚠️ Política de cancelación:</strong><br>
@@ -886,7 +906,27 @@ export async function sendReminderEmail(
   </div>
   ${
     !is48h
-      ? `<div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+      ? `
+  <!-- PROMOCIÓN ESPECIAL 24H - Solo para recordatorio de mañana -->
+  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center;">
+    <p style="margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">💥 Promoción Especial 24h 💥</p>
+    <h3 style="margin: 0 0 15px 0; font-size: 24px;">MATRÍCULA GRATIS</h3>
+    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+      <p style="margin: 0; font-size: 14px;"><span style="text-decoration: line-through; opacity: 0.7;">ANTES 60€</span></p>
+      <p style="margin: 5px 0 0 0; font-size: 28px; font-weight: bold;">AHORA 0€</p>
+    </div>
+    <p style="margin: 0; font-size: 13px; opacity: 0.9; line-height: 1.5;">
+      Oferta exclusiva para nuevos estudiantes.<br>
+      Válida solo si te apuntas <strong>mañana después de tu clase de prueba</strong><br>
+      y realizas el primer pago en efectivo.
+    </p>
+    <p style="margin: 15px 0 0 0; font-size: 12px; opacity: 0.8;">
+      💡 Tú te ahorras la matrícula... y nosotros las comisiones bancarias.<br>
+      ¡Ganamos todos! Recibirás tu recibo al momento del alta.
+    </p>
+  </div>
+
+  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
     <p style="margin: 0; color: #856404;">
       <strong>⚠️ Política de cancelación:</strong><br>
       Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
