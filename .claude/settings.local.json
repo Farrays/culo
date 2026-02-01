@@ -259,7 +259,8 @@
       "Bash(for key in \"scheduleTitle\" \"scheduleSubtitle\" \"scheduleVacationMessage\" \"scheduleVacationCTA\" \"scheduleUsingCached\" \"classFull\" \"spotsAvailable\" \"retry\")",
       "Bash(do echo \"=== Checking $key ===\")",
       "Bash(for key in \"scheduleTitle\" \"scheduleSubtitle\")",
-      "Bash(do echo \"=== $key in ES ===\")"
+      "Bash(do echo \"=== $key in ES ===\")",
+      "WebFetch(domain:developers.google.com)"
     ],
     "deny": [],
     "ask": []

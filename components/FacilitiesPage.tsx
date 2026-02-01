@@ -177,7 +177,7 @@ const FacilitiesPage: React.FC = () => {
   // Place Schema for the facility
   const placeSchema = {
     '@context': 'https://schema.org',
-    '@type': 'DanceGroup',
+    '@type': 'LocalBusiness',
     name: "Farray's International Dance Center",
     description: t('facilitiesMetaDescription'),
     url: pageUrl,

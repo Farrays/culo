@@ -30,8 +30,9 @@ export const NOVEDADES_DATA: Novedad[] = [
     descriptionKey: 'novedades_inscripciones_desc',
     image: '/images/novedades/img/inscripciones-abiertas-2026',
     imageAltKey: 'novedades_inscripciones_alt',
-    date: '2026-01-13T10:00:00+01:00',
-    endDate: '2026-07-31T22:00:00+02:00',
+    // Event dates: Open enrollment period for 2026
+    date: '2026-01-07T10:00:00+01:00', // Start of enrollment period
+    endDate: '2026-06-30T22:00:00+02:00', // End of enrollment period (summer)
     location: FARRAYS_LOCATION,
     badge: {
       textKey: 'novedades_badge_inscripciones',

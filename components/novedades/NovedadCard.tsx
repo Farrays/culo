@@ -92,43 +92,47 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
   };
 
   // Schema.org structured data
-  const schemaData =
-    novedad.schema === 'Event' || novedad.schema === 'Course'
-      ? {
-          '@context': 'https://schema.org',
-          '@type': novedad.schema,
-          name: t(novedad.titleKey),
-          description: novedad.descriptionKey ? t(novedad.descriptionKey) : undefined,
-          startDate: novedad.date,
-          endDate: novedad.endDate || novedad.date,
-          location: novedad.location
-            ? {
-                '@type': 'Place',
-                name: novedad.location.name,
-                address: {
-                  '@type': 'PostalAddress',
-                  streetAddress: novedad.location.address?.split(',')[0],
-                  addressLocality: 'Barcelona',
-                  postalCode: '08011',
-                  addressCountry: 'ES',
-                },
-                geo: novedad.location.geo
-                  ? {
-                      '@type': 'GeoCoordinates',
-                      latitude: novedad.location.geo.lat,
-                      longitude: novedad.location.geo.lng,
-                    }
-                  : undefined,
-              }
-            : undefined,
-          image: `https://farrays.com${novedad.image}_1024.jpg`,
-          organizer: {
-            '@type': 'Organization',
-            name: "Farray's International Dance Center",
-            url: 'https://farrays.com',
-          },
-        }
-      : null;
+  // Only generate Event schema if date is present (required by Google)
+  // For Course schema, date is optional
+  const shouldGenerateSchema =
+    novedad.schema === 'Course' || (novedad.schema === 'Event' && novedad.date);
+
+  const schemaData = shouldGenerateSchema
+    ? {
+        '@context': 'https://schema.org',
+        '@type': novedad.schema,
+        name: t(novedad.titleKey),
+        description: novedad.descriptionKey ? t(novedad.descriptionKey) : undefined,
+        ...(novedad.date && { startDate: novedad.date }),
+        ...(novedad.date && { endDate: novedad.endDate || novedad.date }),
+        location: novedad.location
+          ? {
+              '@type': 'Place',
+              name: novedad.location.name,
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: novedad.location.address?.split(',')[0],
+                addressLocality: 'Barcelona',
+                postalCode: '08011',
+                addressCountry: 'ES',
+              },
+              geo: novedad.location.geo
+                ? {
+                    '@type': 'GeoCoordinates',
+                    latitude: novedad.location.geo.lat,
+                    longitude: novedad.location.geo.lng,
+                  }
+                : undefined,
+            }
+          : undefined,
+        image: `https://farrays.com${novedad.image}_1024.jpg`,
+        organizer: {
+          '@type': 'Organization',
+          name: "Farray's International Dance Center",
+          url: 'https://farrays.com',
+        },
+      }
+    : null;
 
   const isLinkCTA = novedad.cta?.link && !novedad.cta?.openModal;
 
