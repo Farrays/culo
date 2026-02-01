@@ -374,6 +374,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       }, 50);
       return () => clearTimeout(timeoutId);
     }
+    return undefined;
   }, [step]);
 
   // Scroll to show confirmation after successful booking
@@ -387,6 +388,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       }, 100);
       return () => clearTimeout(timeoutId);
     }
+    return undefined;
   }, [status]);
 
   // Handle browser back button (popstate event)

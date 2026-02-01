@@ -161,6 +161,8 @@ const OG_IMAGE_MAP = {
   reservas: 'og-home.jpg',
   miReserva: 'og-home.jpg',
   feedbackGracias: 'og-home.jpg',
+  feedbackComentario: 'og-home.jpg',
+  asistenciaConfirmada: 'og-home.jpg',
   calendario: 'og-horarios-clases-baile.jpg',
   serviciosBaile: 'og-classes.jpg',
 
@@ -299,6 +301,7 @@ const PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT = [
   'reservas',       // Widget interactivo con APIs del navegador - causa hydration mismatch
   'miReserva',      // Página dinámica con datos de Redis
   'feedbackGracias', // Página de agradecimiento de feedback
+  'asistenciaConfirmada', // Página de confirmación de asistencia
   'notFound',       // Ya tiene contenido
   // Páginas legales - ya tienen contenido manual
   'termsConditions',
@@ -381,6 +384,8 @@ const routes = [
 
   { path: 'es/mi-reserva', lang: 'es', page: 'miReserva' },
   { path: 'es/feedback-gracias', lang: 'es', page: 'feedbackGracias' },
+  { path: 'es/feedback-comentario', lang: 'es', page: 'feedbackComentario' },
+  { path: 'es/asistencia-confirmada', lang: 'es', page: 'asistenciaConfirmada' },
 
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
@@ -456,6 +461,8 @@ const routes = [
 
   { path: 'ca/mi-reserva', lang: 'ca', page: 'miReserva' },
   { path: 'ca/feedback-gracias', lang: 'ca', page: 'feedbackGracias' },
+  { path: 'ca/feedback-comentario', lang: 'ca', page: 'feedbackComentario' },
+  { path: 'ca/asistencia-confirmada', lang: 'ca', page: 'asistenciaConfirmada' },
 
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
@@ -531,6 +538,8 @@ const routes = [
 
   { path: 'en/mi-reserva', lang: 'en', page: 'miReserva' },
   { path: 'en/feedback-gracias', lang: 'en', page: 'feedbackGracias' },
+  { path: 'en/feedback-comentario', lang: 'en', page: 'feedbackComentario' },
+  { path: 'en/asistencia-confirmada', lang: 'en', page: 'asistenciaConfirmada' },
 
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
@@ -606,6 +615,8 @@ const routes = [
 
   { path: 'fr/mi-reserva', lang: 'fr', page: 'miReserva' },
   { path: 'fr/feedback-gracias', lang: 'fr', page: 'feedbackGracias' },
+  { path: 'fr/feedback-comentario', lang: 'fr', page: 'feedbackComentario' },
+  { path: 'fr/asistencia-confirmada', lang: 'fr', page: 'asistenciaConfirmada' },
 
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
@@ -901,6 +912,16 @@ const metadata = {
     feedbackGracias: {
       title: 'Gracias por tu opinión | Farray\'s Center Barcelona',
       description: 'Tu opinión nos ayuda a mejorar. Gracias por compartir tu experiencia con nosotros.',
+      robots: 'noindex, nofollow',
+    },
+    feedbackComentario: {
+      title: 'Deja tu Comentario | Farray\'s Center Barcelona',
+      description: 'Cuéntanos más sobre tu experiencia. Tu opinión nos ayuda a mejorar.',
+      robots: 'noindex, nofollow',
+    },
+    asistenciaConfirmada: {
+      title: 'Confirmación de Asistencia | Farray\'s Center Barcelona',
+      description: 'Confirmación de asistencia a tu clase de baile en Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
     blog: {
@@ -1247,6 +1268,16 @@ const metadata = {
       description: 'La teva opinió ens ajuda a millorar. Gràcies per compartir la teva experiència amb nosaltres.',
       robots: 'noindex, nofollow',
     },
+    feedbackComentario: {
+      title: 'Deixa el teu Comentari | Farray\'s Center Barcelona',
+      description: 'Explica\'ns més sobre la teva experiència. La teva opinió ens ajuda a millorar.',
+      robots: 'noindex, nofollow',
+    },
+    asistenciaConfirmada: {
+      title: 'Confirmació d\'Assistència | Farray\'s Center Barcelona',
+      description: 'Confirmació d\'assistència a la teva classe de ball a Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
       description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
@@ -1591,6 +1622,16 @@ const metadata = {
       description: 'Your feedback helps us improve. Thank you for sharing your experience with us.',
       robots: 'noindex, nofollow',
     },
+    feedbackComentario: {
+      title: 'Leave a Comment | Farray\'s Center Barcelona',
+      description: 'Tell us more about your experience. Your feedback helps us improve.',
+      robots: 'noindex, nofollow',
+    },
+    asistenciaConfirmada: {
+      title: 'Attendance Confirmation | Farray\'s Center Barcelona',
+      description: 'Attendance confirmation for your dance class at Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
     blog: {
       title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
       description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
@@ -1933,6 +1974,16 @@ const metadata = {
     feedbackGracias: {
       title: 'Merci pour Votre Avis | Farray\'s Center Barcelone',
       description: 'Votre avis nous aide à nous améliorer. Merci de partager votre expérience avec nous.',
+      robots: 'noindex, nofollow',
+    },
+    feedbackComentario: {
+      title: 'Laissez un Commentaire | Farray\'s Center Barcelone',
+      description: 'Dites-nous plus sur votre expérience. Votre avis nous aide à nous améliorer.',
+      robots: 'noindex, nofollow',
+    },
+    asistenciaConfirmada: {
+      title: 'Confirmation de Présence | Farray\'s Center Barcelone',
+      description: 'Confirmation de présence à votre cours de danse chez Farray\'s Center Barcelone.',
       robots: 'noindex, nofollow',
     },
     blog: {

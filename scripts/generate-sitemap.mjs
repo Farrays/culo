@@ -58,6 +58,7 @@ const LANDING_SLUGS = [
 // =============================================================================
 
 const BLOG_ARTICLES = [
+  // === LIFESTYLE ===
   {
     slug: 'beneficios-bailar-salsa',
     category: 'lifestyle',
@@ -66,67 +67,85 @@ const BLOG_ARTICLES = [
     image: '/images/blog/beneficios-salsa/og.jpg',
   },
   {
-    slug: 'salsa-ritmo-conquisto-mundo',
+    slug: 'clases-de-salsa-barcelona',
     category: 'lifestyle',
-    datePublished: '2025-01-20',
-    titleKey: 'Salsa: El Ritmo que Conquistó el Mundo',
-    image: '/images/blog/salsa-ritmo/og.jpg',
+    datePublished: '2019-04-24',
+    titleKey: 'Clases de Salsa en Barcelona',
+    image: '/images/blog/clases-salsa/og.jpg',
   },
   {
-    slug: 'historia-salsa-barcelona',
+    slug: 'como-perder-miedo-bailar',
     category: 'lifestyle',
+    datePublished: '2026-01-16',
+    titleKey: 'Cómo Perder el Miedo a Bailar',
+    image: '/images/blog/como-perder-miedo/og.jpg',
+  },
+  // === HISTORIA ===
+  {
+    slug: 'historia-salsa-barcelona',
+    category: 'historia',
     datePublished: '2025-01-20',
     titleKey: 'Historia de la Salsa en Barcelona',
     image: '/images/blog/historia-salsa/og.jpg',
   },
   {
     slug: 'historia-bachata-barcelona',
-    category: 'lifestyle',
+    category: 'historia',
     datePublished: '2025-01-20',
     titleKey: 'Historia de la Bachata en Barcelona',
     image: '/images/blog/historia-bachata/og.jpg',
   },
+  // === TUTORIALES ===
   {
-    slug: 'clases-baile-principiantes-barcelona',
-    category: 'clases',
+    slug: 'salsa-ritmo-conquisto-mundo',
+    category: 'tutoriales',
+    datePublished: '2025-01-20',
+    titleKey: 'Salsa: El Ritmo que Conquistó el Mundo',
+    image: '/images/blog/salsa-ritmo/og.jpg',
+  },
+  {
+    slug: 'salsa-vs-bachata-que-estilo-elegir',
+    category: 'tutoriales',
+    datePublished: '2026-01-16',
+    titleKey: 'Salsa vs Bachata: Diferencias y Cuál Elegir',
+    image: '/images/blog/salsa-vs-bachata/og.jpg',
+  },
+  // === TIPS ===
+  {
+    slug: 'clases-baile-principiantes-barcelona-farrays',
+    category: 'tips',
     datePublished: '2025-01-15',
     titleKey: 'Clases de Baile para Principiantes en Barcelona',
     image: '/images/blog/clases-principiantes/og.jpg',
   },
   {
-    slug: 'salsa-vs-bachata',
-    category: 'clases',
-    datePublished: '2026-01-16',
-    titleKey: 'Salsa vs Bachata: Diferencias y Cuál Elegir',
-    image: '/images/blog/salsa-vs-bachata/og.jpg',
-  },
-  {
-    slug: 'baile-salud-mental',
-    category: 'lifestyle',
-    datePublished: '2026-01-17',
-    titleKey: 'Baile y Salud Mental: Beneficios Científicos',
-    image: '/images/blog/baile-salud-mental/og.jpg',
-  },
-  {
-    slug: 'como-perder-miedo-bailar',
-    category: 'clases',
-    datePublished: '2026-01-16',
-    titleKey: 'Cómo Perder el Miedo a Bailar',
-    image: '/images/blog/como-perder-miedo/og.jpg',
-  },
-  {
-    slug: 'clases-de-salsa-barcelona',
-    category: 'clases',
-    datePublished: '2019-04-24',
-    titleKey: 'Clases de Salsa en Barcelona',
-    image: '/images/blog/clases-salsa/og.jpg',
-  },
-  {
-    slug: 'academia-de-danza-barcelona',
-    category: 'clases',
+    slug: 'academia-de-danza-barcelona-guia-completa',
+    category: 'tips',
     datePublished: '2026-01-29',
     titleKey: 'Academia de Danza en Barcelona',
     image: '/images/blog/academia-danza/og.jpg',
+  },
+  {
+    slug: 'ballet-para-adultos-barcelona',
+    category: 'tips',
+    datePublished: '2026-01-20',
+    titleKey: 'Ballet para Adultos en Barcelona',
+    image: '/images/blog/ballet-adultos/og.jpg',
+  },
+  {
+    slug: 'danza-contemporanea-vs-modern-jazz-vs-ballet',
+    category: 'tips',
+    datePublished: '2026-01-22',
+    titleKey: 'Danza Contemporánea vs Modern Jazz vs Ballet',
+    image: '/images/blog/danza-comparativa/og.jpg',
+  },
+  // === FITNESS ===
+  {
+    slug: 'baile-salud-mental',
+    category: 'fitness',
+    datePublished: '2026-01-17',
+    titleKey: 'Baile y Salud Mental: Beneficios Científicos',
+    image: '/images/blog/baile-salud-mental/og.jpg',
   },
 ];
 
@@ -263,18 +282,29 @@ const routes = [
   { path: 'es/calendario', lang: 'es', page: 'calendario' },
   { path: 'es/instalaciones-escuela-baile-barcelona', lang: 'es', page: 'facilities' },
   { path: 'es/blog', lang: 'es', page: 'blog' },
+  // Blog categories
   { path: 'es/blog/lifestyle', lang: 'es', page: 'blogLifestyle' },
-  { path: 'es/blog/clases', lang: 'es', page: 'blogClases' },
-  { path: 'es/blog/lifestyle/beneficios-bailar-salsa', lang: 'es', page: 'blogBeneficiosBailarSalsa' },
-  { path: 'es/blog/lifestyle/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsaBarcelona' },
-  { path: 'es/blog/lifestyle/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachataBarcelona' },
-  { path: 'es/blog/lifestyle/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmoConquistoMundo' },
-  { path: 'es/blog/clases/salsa-vs-bachata', lang: 'es', page: 'blogSalsaVsBachata' },
-  { path: 'es/blog/clases/clases-baile-principiantes-barcelona', lang: 'es', page: 'blogClasesBailePrincipiantesBarcelona' },
-  { path: 'es/blog/lifestyle/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
-  { path: 'es/blog/clases/como-perder-miedo-bailar', lang: 'es', page: 'blogComoPerderMiedoBailar' },
-  { path: 'es/blog/clases/clases-de-salsa-barcelona', lang: 'es', page: 'blogClasesSalsaBarcelona' },
-  { path: 'es/blog/clases/academia-de-danza-barcelona', lang: 'es', page: 'blogAcademiaDanzaBarcelona' },
+  { path: 'es/blog/historia', lang: 'es', page: 'blogHistoria' },
+  { path: 'es/blog/tutoriales', lang: 'es', page: 'blogTutoriales' },
+  { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
+  { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
+  // Blog articles - lifestyle
+  { path: 'es/blog/lifestyle/beneficios-bailar-salsa', lang: 'es', page: 'blogBeneficiosSalsa' },
+  { path: 'es/blog/lifestyle/clases-de-salsa-barcelona', lang: 'es', page: 'blogClasesSalsaBarcelona' },
+  { path: 'es/blog/lifestyle/como-perder-miedo-bailar', lang: 'es', page: 'blogPerderMiedoBailar' },
+  // Blog articles - historia
+  { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
+  { path: 'es/blog/historia/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachata' },
+  // Blog articles - tutoriales
+  { path: 'es/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
+  { path: 'es/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
+  // Blog articles - tips
+  { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
+  { path: 'es/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'es', page: 'blogAcademiaDanza' },
+  { path: 'es/blog/tips/ballet-para-adultos-barcelona', lang: 'es', page: 'blogBalletAdultos' },
+  { path: 'es/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'es', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  // Blog articles - fitness
+  { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
   // ===== CATALÁN (CA) =====
   { path: 'ca', lang: 'ca', page: 'home' },
@@ -336,18 +366,29 @@ const routes = [
   { path: 'ca/calendario', lang: 'ca', page: 'calendario' },
   { path: 'ca/instalaciones-escuela-baile-barcelona', lang: 'ca', page: 'facilities' },
   { path: 'ca/blog', lang: 'ca', page: 'blog' },
+  // Blog categories
   { path: 'ca/blog/lifestyle', lang: 'ca', page: 'blogLifestyle' },
-  { path: 'ca/blog/clases', lang: 'ca', page: 'blogClases' },
-  { path: 'ca/blog/lifestyle/beneficios-bailar-salsa', lang: 'ca', page: 'blogBeneficiosBailarSalsa' },
-  { path: 'ca/blog/lifestyle/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsaBarcelona' },
-  { path: 'ca/blog/lifestyle/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachataBarcelona' },
-  { path: 'ca/blog/lifestyle/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmoConquistoMundo' },
-  { path: 'ca/blog/clases/salsa-vs-bachata', lang: 'ca', page: 'blogSalsaVsBachata' },
-  { path: 'ca/blog/clases/clases-baile-principiantes-barcelona', lang: 'ca', page: 'blogClasesBailePrincipiantesBarcelona' },
-  { path: 'ca/blog/lifestyle/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
-  { path: 'ca/blog/clases/como-perder-miedo-bailar', lang: 'ca', page: 'blogComoPerderMiedoBailar' },
-  { path: 'ca/blog/clases/clases-de-salsa-barcelona', lang: 'ca', page: 'blogClasesSalsaBarcelona' },
-  { path: 'ca/blog/clases/academia-de-danza-barcelona', lang: 'ca', page: 'blogAcademiaDanzaBarcelona' },
+  { path: 'ca/blog/historia', lang: 'ca', page: 'blogHistoria' },
+  { path: 'ca/blog/tutoriales', lang: 'ca', page: 'blogTutoriales' },
+  { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
+  { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
+  // Blog articles - lifestyle
+  { path: 'ca/blog/lifestyle/beneficios-bailar-salsa', lang: 'ca', page: 'blogBeneficiosSalsa' },
+  { path: 'ca/blog/lifestyle/clases-de-salsa-barcelona', lang: 'ca', page: 'blogClasesSalsaBarcelona' },
+  { path: 'ca/blog/lifestyle/como-perder-miedo-bailar', lang: 'ca', page: 'blogPerderMiedoBailar' },
+  // Blog articles - historia
+  { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
+  { path: 'ca/blog/historia/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachata' },
+  // Blog articles - tutoriales
+  { path: 'ca/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
+  { path: 'ca/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
+  // Blog articles - tips
+  { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
+  { path: 'ca/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'ca', page: 'blogAcademiaDanza' },
+  { path: 'ca/blog/tips/ballet-para-adultos-barcelona', lang: 'ca', page: 'blogBalletAdultos' },
+  { path: 'ca/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'ca', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  // Blog articles - fitness
+  { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
   // ===== ENGLISH (EN) =====
   { path: 'en', lang: 'en', page: 'home' },
@@ -409,18 +450,29 @@ const routes = [
   { path: 'en/calendario', lang: 'en', page: 'calendario' },
   { path: 'en/instalaciones-escuela-baile-barcelona', lang: 'en', page: 'facilities' },
   { path: 'en/blog', lang: 'en', page: 'blog' },
+  // Blog categories
   { path: 'en/blog/lifestyle', lang: 'en', page: 'blogLifestyle' },
-  { path: 'en/blog/clases', lang: 'en', page: 'blogClases' },
-  { path: 'en/blog/lifestyle/beneficios-bailar-salsa', lang: 'en', page: 'blogBeneficiosBailarSalsa' },
-  { path: 'en/blog/lifestyle/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsaBarcelona' },
-  { path: 'en/blog/lifestyle/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachataBarcelona' },
-  { path: 'en/blog/lifestyle/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmoConquistoMundo' },
-  { path: 'en/blog/clases/salsa-vs-bachata', lang: 'en', page: 'blogSalsaVsBachata' },
-  { path: 'en/blog/clases/clases-baile-principiantes-barcelona', lang: 'en', page: 'blogClasesBailePrincipiantesBarcelona' },
-  { path: 'en/blog/lifestyle/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
-  { path: 'en/blog/clases/como-perder-miedo-bailar', lang: 'en', page: 'blogComoPerderMiedoBailar' },
-  { path: 'en/blog/clases/clases-de-salsa-barcelona', lang: 'en', page: 'blogClasesSalsaBarcelona' },
-  { path: 'en/blog/clases/academia-de-danza-barcelona', lang: 'en', page: 'blogAcademiaDanzaBarcelona' },
+  { path: 'en/blog/historia', lang: 'en', page: 'blogHistoria' },
+  { path: 'en/blog/tutoriales', lang: 'en', page: 'blogTutoriales' },
+  { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
+  { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
+  // Blog articles - lifestyle
+  { path: 'en/blog/lifestyle/beneficios-bailar-salsa', lang: 'en', page: 'blogBeneficiosSalsa' },
+  { path: 'en/blog/lifestyle/clases-de-salsa-barcelona', lang: 'en', page: 'blogClasesSalsaBarcelona' },
+  { path: 'en/blog/lifestyle/como-perder-miedo-bailar', lang: 'en', page: 'blogPerderMiedoBailar' },
+  // Blog articles - historia
+  { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
+  { path: 'en/blog/historia/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachata' },
+  // Blog articles - tutoriales
+  { path: 'en/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
+  { path: 'en/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
+  // Blog articles - tips
+  { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
+  { path: 'en/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'en', page: 'blogAcademiaDanza' },
+  { path: 'en/blog/tips/ballet-para-adultos-barcelona', lang: 'en', page: 'blogBalletAdultos' },
+  { path: 'en/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'en', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  // Blog articles - fitness
+  { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
   // ===== FRENCH (FR) =====
   { path: 'fr', lang: 'fr', page: 'home' },
@@ -482,18 +534,29 @@ const routes = [
   { path: 'fr/calendario', lang: 'fr', page: 'calendario' },
   { path: 'fr/instalaciones-escuela-baile-barcelona', lang: 'fr', page: 'facilities' },
   { path: 'fr/blog', lang: 'fr', page: 'blog' },
+  // Blog categories
   { path: 'fr/blog/lifestyle', lang: 'fr', page: 'blogLifestyle' },
-  { path: 'fr/blog/clases', lang: 'fr', page: 'blogClases' },
-  { path: 'fr/blog/lifestyle/beneficios-bailar-salsa', lang: 'fr', page: 'blogBeneficiosBailarSalsa' },
-  { path: 'fr/blog/lifestyle/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsaBarcelona' },
-  { path: 'fr/blog/lifestyle/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachataBarcelona' },
-  { path: 'fr/blog/lifestyle/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmoConquistoMundo' },
-  { path: 'fr/blog/clases/salsa-vs-bachata', lang: 'fr', page: 'blogSalsaVsBachata' },
-  { path: 'fr/blog/clases/clases-baile-principiantes-barcelona', lang: 'fr', page: 'blogClasesBailePrincipiantesBarcelona' },
-  { path: 'fr/blog/lifestyle/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
-  { path: 'fr/blog/clases/como-perder-miedo-bailar', lang: 'fr', page: 'blogComoPerderMiedoBailar' },
-  { path: 'fr/blog/clases/clases-de-salsa-barcelona', lang: 'fr', page: 'blogClasesSalsaBarcelona' },
-  { path: 'fr/blog/clases/academia-de-danza-barcelona', lang: 'fr', page: 'blogAcademiaDanzaBarcelona' },
+  { path: 'fr/blog/historia', lang: 'fr', page: 'blogHistoria' },
+  { path: 'fr/blog/tutoriales', lang: 'fr', page: 'blogTutoriales' },
+  { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
+  { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
+  // Blog articles - lifestyle
+  { path: 'fr/blog/lifestyle/beneficios-bailar-salsa', lang: 'fr', page: 'blogBeneficiosSalsa' },
+  { path: 'fr/blog/lifestyle/clases-de-salsa-barcelona', lang: 'fr', page: 'blogClasesSalsaBarcelona' },
+  { path: 'fr/blog/lifestyle/como-perder-miedo-bailar', lang: 'fr', page: 'blogPerderMiedoBailar' },
+  // Blog articles - historia
+  { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
+  { path: 'fr/blog/historia/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachata' },
+  // Blog articles - tutoriales
+  { path: 'fr/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
+  { path: 'fr/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
+  // Blog articles - tips
+  { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
+  { path: 'fr/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'fr', page: 'blogAcademiaDanza' },
+  { path: 'fr/blog/tips/ballet-para-adultos-barcelona', lang: 'fr', page: 'blogBalletAdultos' },
+  { path: 'fr/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'fr', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  // Blog articles - fitness
+  { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 ];
 
 // =============================================================================

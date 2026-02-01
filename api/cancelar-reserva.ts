@@ -136,6 +136,7 @@ interface BookingData {
   momenceBookingId?: number | null;
   bookedAt: string;
   category?: string;
+  calendarEventId?: string; // Google Calendar event ID
 }
 
 export default async function handler(
@@ -204,6 +205,25 @@ export default async function handler(
       console.warn('[Cancel] No momenceBookingId found, skipping Momence API');
     }
 
+    // 2b. Eliminar evento de Google Calendar si existe
+    let calendarDeleted = false;
+    if (bookingData.calendarEventId) {
+      try {
+        const { deleteBookingEvent } = await import('./lib/google-calendar');
+        const calendarResult = await deleteBookingEvent(bookingData.calendarEventId);
+        calendarDeleted = calendarResult.success;
+        if (!calendarResult.success) {
+          console.warn('[Cancel] Google Calendar deletion failed:', calendarResult.error);
+        } else {
+          console.warn('[Cancel] Google Calendar event deleted:', bookingData.calendarEventId);
+        }
+      } catch (e) {
+        console.warn('[Cancel] Google Calendar error:', e);
+      }
+    } else {
+      console.warn('[Cancel] No calendarEventId found, skipping Google Calendar');
+    }
+
     // 3. Eliminar de Redis
     await redis.del(bookingKey);
     console.warn('[Cancel] Redis key deleted:', bookingKey);
@@ -254,6 +274,7 @@ export default async function handler(
         className: bookingData.className,
         classDate: bookingData.classDate,
         momenceCancelled,
+        calendarDeleted,
         whatsappSent,
         emailSent,
       },
