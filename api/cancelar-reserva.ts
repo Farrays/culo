@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+// Google Calendar disabled temporarily
+// import { deleteBookingEvent } from '../lib/google-calendar';
 
 /**
  * API endpoint para cancelar una reserva
@@ -136,6 +138,7 @@ interface BookingData {
   momenceBookingId?: number | null;
   bookedAt: string;
   category?: string;
+  calendarEventId?: string; // Google Calendar event ID
 }
 
 export default async function handler(
@@ -204,6 +207,10 @@ export default async function handler(
       console.warn('[Cancel] No momenceBookingId found, skipping Momence API');
     }
 
+    // 2b. Google Calendar disabled temporarily
+    const calendarDeleted = false;
+    console.warn('[Cancel] Google Calendar disabled temporarily');
+
     // 3. Eliminar de Redis
     await redis.del(bookingKey);
     console.warn('[Cancel] Redis key deleted:', bookingKey);
@@ -254,6 +261,7 @@ export default async function handler(
         className: bookingData.className,
         classDate: bookingData.classDate,
         momenceCancelled,
+        calendarDeleted,
         whatsappSent,
         emailSent,
       },

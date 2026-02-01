@@ -1,0 +1,99 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Previews - Farray's Center</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 40px;
+    }
+    h1 {
+      color: #B01E3C;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(176, 30, 60, 0.3);
+    }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+    }
+    .card p {
+      color: #999;
+      margin: 0 0 20px 0;
+      font-size: 14px;
+    }
+    .card a {
+      display: inline-block;
+      background: #B01E3C;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .card a:hover {
+      background: #800020;
+    }
+    .emoji {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Email Previews - Farray's Center</h1>
+
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">✅</div>
+      <h2>Confirmacion</h2>
+      <p>Email enviado al confirmar una reserva</p>
+      <a href="confirmacion.html">Ver Preview</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">⏰</div>
+      <h2>Recordatorio</h2>
+      <p>Email de recordatorio 24h/48h antes</p>
+      <a href="recordatorio.html">Ver Preview</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">❌</div>
+      <h2>Cancelacion</h2>
+      <p>Email enviado al cancelar reserva</p>
+      <a href="cancelacion.html">Ver Preview</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">⭐</div>
+      <h2>Feedback</h2>
+      <p>Email para pedir valoracion post-clase</p>
+      <a href="feedback.html">Ver Preview</a>
+    </div>
+  </div>
+</body>
+</html>

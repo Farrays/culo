@@ -264,27 +264,23 @@ export function generateIcsDataUrl(data: {
 }
 
 /**
- * Genera sección unificada de 4 botones de acción
- * Usado en emails de confirmación y recordatorio
+ * Genera sección HTML de botones de calendario
  */
-function generateActionButtons(data: {
-  managementUrl: string;
-  mapUrl?: string;
-  googleCalUrl: string;
-  icsUrl: string;
+function generateCalendarSection(data: {
+  className: string;
+  classDate: string;
+  classTime: string;
+  classDateRaw?: string | null;
+  eventId?: string;
 }): string {
+  const googleCalUrl = generateGoogleCalendarUrl(data);
+  const icsUrl = generateIcsDataUrl(data);
+
   return `
-  <div style="text-align: center; margin-bottom: 30px;">
-    <table align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
-      <tr>
-        <td style="padding: 8px;"><a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">Ver mi reserva</a></td>
-        ${data.mapUrl ? `<td style="padding: 8px;"><a href="${data.mapUrl}" style="${BUTTON_SECONDARY}">Cómo llegar</a></td>` : ''}
-      </tr>
-      <tr>
-        <td style="padding: 8px;"><a href="${data.googleCalUrl}" target="_blank" style="${BUTTON_SECONDARY}">Google Calendar</a></td>
-        <td style="padding: 8px;"><a href="${data.icsUrl}" download="farrays-clase.ics" style="${BUTTON_SECONDARY}">Descargar .ics</a></td>
-      </tr>
-    </table>
+  <div style="background: #fdf2f4; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 15px 0; color: #333; font-weight: 600;">📅 Añadir a tu calendario</p>
+    <a href="${googleCalUrl}" target="_blank" style="display: inline-block; background: transparent; color: ${BRAND_PRIMARY}; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px; border: 2px solid ${BRAND_PRIMARY};">Google Calendar</a>
+    <a href="${icsUrl}" download="farrays-clase.ics" style="display: inline-block; background: transparent; color: #666; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; margin: 5px; font-size: 14px; border: 2px solid #666;">Descargar .ics</a>
   </div>`;
 }
 
@@ -439,7 +435,7 @@ function generateFooter(): string {
         <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
         <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
         <p style="margin: 0 0 20px 0;">
-          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">www.farrayscenter.com</a>
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
         </p>
         <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
           <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
@@ -472,236 +468,6 @@ function generateBookingDetails(data: {
 }
 
 // ============================================================================
-// HTML GENERATION FUNCTIONS (for preview-email.ts)
-// ============================================================================
-
-interface ConfirmationHtmlData {
-  firstName: string;
-  className: string;
-  classDate: string;
-  classTime: string;
-  managementUrl: string;
-  calendarUrl: string;
-  icsUrl: string;
-  instructor?: string;
-  category?: ClassCategory;
-}
-
-interface ReminderHtmlData {
-  firstName: string;
-  className: string;
-  classDate: string;
-  classTime: string;
-  timeframe: string;
-  managementUrl: string;
-  calendarUrl: string;
-  icsUrl: string;
-  category?: ClassCategory;
-}
-
-interface CancellationHtmlData {
-  firstName: string;
-  className: string;
-  classDate: string;
-  classTime: string;
-}
-
-interface FeedbackHtmlData {
-  firstName: string;
-  className: string;
-  classDate: string;
-  feedbackToken: string;
-}
-
-/**
- * Genera HTML del email de confirmación (sin enviarlo)
- */
-export function generateConfirmationEmailHtml(data: ConfirmationHtmlData): string {
-  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} está confirmada para el ${data.classDate} a las ${data.classTime}. ¡Te esperamos!`)}
-  ${generateHeader()}
-  <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
-  </div>
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
-  </div>
-  ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime, instructor: data.instructor })}
-  ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: GOOGLE_MAPS_URL, googleCalUrl: data.calendarUrl, icsUrl: data.icsUrl })}
-  ${generateWhatToBringSection(data.category)}
-  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-    <p style="margin: 0; color: #856404;">
-      <strong>⚠️ Política de cancelación:</strong><br>
-      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
-      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
-      como asistida y perderás el derecho a la clase de prueba gratuita.
-    </p>
-  </div>
-  <div style="text-align: center; padding: 25px 0;">
-    <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
-    <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">Reprogramar / Cancelar Reserva</a>
-  </div>
-  ${generateFooter()}
-</body></html>`;
-}
-
-/**
- * Genera HTML del email de recordatorio (sin enviarlo)
- */
-export function generateReminderEmailHtml(data: ReminderHtmlData): string {
-  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} es ${data.timeframe} a las ${data.classTime}. ¡No olvides traer ropa cómoda!`)}
-  ${generateHeader()}
-  <div style="background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">📅 Recordatorio de clase</h2>
-    <p style="margin: 0; opacity: 0.9;">Tu clase es ${data.timeframe}</p>
-  </div>
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">Te recordamos que ${data.timeframe} tienes tu clase de prueba:</p>
-  </div>
-  ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime })}
-
-  <!-- PROMOCIÓN ESPECIAL 24H - justo después de info de clase -->
-  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center;">
-    <p style="margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">💥 Promoción Especial 24h 💥</p>
-    <h3 style="margin: 0 0 15px 0; font-size: 24px;">MATRÍCULA GRATIS</h3>
-    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-      <p style="margin: 0; font-size: 14px;"><span style="text-decoration: line-through; opacity: 0.7;">ANTES 60€</span></p>
-      <p style="margin: 5px 0 0 0; font-size: 28px; font-weight: bold;">AHORA 0€</p>
-    </div>
-    <p style="margin: 0; font-size: 13px; opacity: 0.9; line-height: 1.5;">
-      Oferta exclusiva para nuevos estudiantes.<br>
-      Válida solo si te apuntas <strong>mañana después de tu clase de prueba</strong><br>
-      y realizas el primer pago en efectivo.
-    </p>
-    <p style="margin: 15px 0 0 0; font-size: 12px; opacity: 0.8;">
-      💡 Tú te ahorras la matrícula... y nosotros las comisiones bancarias.<br>
-      ¡Ganamos todos! Recibirás tu recibo al momento del alta.
-    </p>
-  </div>
-
-  ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: GOOGLE_MAPS_URL, googleCalUrl: data.calendarUrl, icsUrl: data.icsUrl })}
-  ${data.category ? generateWhatToBringSection(data.category) : ''}
-
-  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-    <p style="margin: 0; color: #856404;">
-      <strong>⚠️ Política de cancelación:</strong><br>
-      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
-      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
-      como asistida y perderás el derecho a la clase de prueba gratuita.
-    </p>
-  </div>
-  <div style="text-align: center; margin-bottom: 30px;">
-    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">
-      Cancelar/Reprogramar
-    </a>
-  </div>
-  ${generateFooter()}
-</body></html>`;
-}
-
-/**
- * Genera HTML del email de cancelación (sin enviarlo)
- */
-export function generateCancellationEmailHtml(data: CancellationHtmlData): string {
-  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`Tu reserva ha sido cancelada. ¿Te arrepientes? Puedes reservar otra clase gratis cuando quieras.`)}
-  ${generateHeader()}
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
-    <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
-    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> del ${data.classDate} a las ${data.classTime} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
-  </div>
-  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
-    <p style="margin: 0;">Puedes reservar tu clase gratis cuando quieras, siempre que la promo siga activa y queden plazas.</p>
-  </div>
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${BASE_URL}/es/reservas" style="${BUTTON_PRIMARY}">
-      Reprogramar Clase
-    </a>
-  </div>
-  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 10px 0;"><strong>💡 ¿Sabías que...?</strong></p>
-    <p style="margin: 0;">Las clases sueltas están desde <strong>20€</strong>. Y la clase gratis... ¡es una oferta top por tiempo limitado y las plazas vuelan!</p>
-  </div>
-  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
-    <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
-    <p style="margin: 0;">Escríbenos por WhatsApp al <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none;"><strong>${WHATSAPP_NUMBER}</strong></a><br>y te responderemos lo antes posible.</p>
-  </div>
-  ${generateFooter()}
-</body></html>`;
-}
-
-/**
- * Genera HTML del email de feedback (sin enviarlo)
- */
-export function generateFeedbackEmailHtml(data: FeedbackHtmlData): string {
-  const feedbackBaseUrl = `${BASE_URL}/api/feedback?token=${data.feedbackToken}`;
-
-  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`${data.firstName}, ¿qué tal tu clase? Cuéntanos con un click.`)}
-  ${generateHeader()}
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">¿Qué tal tu clase de <strong>${data.className}</strong> del ${data.classDate}?</p>
-    <p style="margin: 15px 0 0 0;">Cuéntanos con un click:</p>
-  </div>
-
-  <!-- Caritas clickeables -->
-  <div style="text-align: center; margin-bottom: 30px;">
-    <table align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
-      <tr>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=1" style="text-decoration: none; font-size: 40px; display: block;">😡</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=2" style="text-decoration: none; font-size: 40px; display: block;">😟</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=3" style="text-decoration: none; font-size: 40px; display: block;">😐</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=4" style="text-decoration: none; font-size: 40px; display: block;">🙂</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=5" style="text-decoration: none; font-size: 40px; display: block;">🤩</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">1</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">2</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">3</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">4</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">5</td>
-      </tr>
-    </table>
-    <p style="color: #666; font-size: 14px; margin-top: 15px;">Haz click en la carita que mejor represente tu experiencia</p>
-  </div>
-
-  <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-    <p style="color: #666; margin-bottom: 15px;">¿Quieres contarnos más?</p>
-    <a href="${BASE_URL}/es/feedback-comentario?token=${data.feedbackToken}" style="${BUTTON_SECONDARY}">
-      Dejar un comentario
-    </a>
-  </div>
-
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px; margin-top: 20px;">
-    <p>¡Gracias por elegirnos! 💃🕺</p>
-  </div>
-  ${generateFooter()}
-</body></html>`;
-}
-
-// ============================================================================
 // EMAIL TEMPLATES
 // ============================================================================
 
@@ -713,13 +479,7 @@ export async function sendBookingConfirmation(
 ): Promise<{ success: boolean; id?: string; error?: string }> {
   const resend = getResend();
 
-  const googleCalUrl = generateGoogleCalendarUrl({
-    className: data.className,
-    classDate: data.classDate,
-    classTime: data.classTime,
-    classDateRaw: data.classDateRaw,
-  });
-  const icsUrl = generateIcsDataUrl({
+  const calendarSection = generateCalendarSection({
     className: data.className,
     classDate: data.classDate,
     classTime: data.classTime,
@@ -747,16 +507,12 @@ export async function sendBookingConfirmation(
     <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
   </div>
   ${generateBookingDetails(data)}
-  ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: data.mapUrl || GOOGLE_MAPS_URL, googleCalUrl, icsUrl })}
-  ${generateWhatToBringSection(data.category)}
-  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-    <p style="margin: 0; color: #856404;">
-      <strong>⚠️ Política de cancelación:</strong><br>
-      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
-      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
-      como asistida y perderás el derecho a la clase de prueba gratuita.
-    </p>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="${data.managementUrl}" style="${BUTTON_PRIMARY} margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="${BUTTON_SECONDARY} margin: 5px;">Cómo llegar</a>` : ''}
   </div>
+  ${calendarSection}
+  ${generateWhatToBringSection(data.category)}
   <div style="text-align: center; padding: 25px 0;">
     <p style="color: #666; font-size: 14px; margin: 0 0 15px 0;">¿No puedes asistir?</p>
     <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">Reprogramar / Cancelar Reserva</a>
@@ -801,7 +557,7 @@ export async function sendCancellationEmail(
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
     <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
-    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
+    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> ha sido cancelada ✅ y la plaza liberada para que otra persona pueda aprovecharla.</p>
   </div>
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
@@ -818,7 +574,7 @@ export async function sendCancellationEmail(
   </div>
   <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
     <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
-    <p style="margin: 0;">Escríbenos por WhatsApp al <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none;"><strong>${WHATSAPP_NUMBER}</strong></a><br>y te responderemos lo antes posible.</p>
+    <p style="margin: 0;">Escríbenos por WhatsApp al <strong>${WHATSAPP_NUMBER}</strong><br>y te responderemos lo antes posible.</p>
   </div>
   ${generateFooter()}
 </body></html>`,
@@ -850,14 +606,8 @@ export async function sendReminderEmail(
   const timeText = is48h ? 'pasado mañana' : 'mañana';
   const headerText = is48h ? 'en 48 horas' : 'mañana';
 
-  // Generate calendar URLs
-  const googleCalUrl = generateGoogleCalendarUrl({
-    className: data.className,
-    classDate: data.classDate,
-    classTime: data.classTime,
-    classDateRaw: data.classDateISO,
-  });
-  const icsUrl = generateIcsDataUrl({
+  // Generate calendar section for reminders too
+  const calendarSection = generateCalendarSection({
     className: data.className,
     classDate: data.classDate,
     classTime: data.classTime,
@@ -885,47 +635,24 @@ export async function sendReminderEmail(
     <p style="margin: 0;">Te recordamos que ${timeText} tienes tu clase de prueba:</p>
   </div>
   ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime })}
-  ${
-    !is48h
-      ? `
-  <!-- PROMOCIÓN ESPECIAL 24H - justo después de info de clase -->
-  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center;">
-    <p style="margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">💥 Promoción Especial 24h 💥</p>
-    <h3 style="margin: 0 0 15px 0; font-size: 24px;">MATRÍCULA GRATIS</h3>
-    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-      <p style="margin: 0; font-size: 14px;"><span style="text-decoration: line-through; opacity: 0.7;">ANTES 60€</span></p>
-      <p style="margin: 5px 0 0 0; font-size: 28px; font-weight: bold;">AHORA 0€</p>
-    </div>
-    <p style="margin: 0; font-size: 13px; opacity: 0.9; line-height: 1.5;">
-      Oferta exclusiva para nuevos estudiantes.<br>
-      Válida solo si te apuntas <strong>mañana después de tu clase de prueba</strong><br>
-      y realizas el primer pago en efectivo.
-    </p>
-    <p style="margin: 15px 0 0 0; font-size: 12px; opacity: 0.8;">
-      💡 Tú te ahorras la matrícula... y nosotros las comisiones bancarias.<br>
-      ¡Ganamos todos! Recibirás tu recibo al momento del alta.
-    </p>
-  </div>`
-      : ''
-  }
-  ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: data.mapUrl || GOOGLE_MAPS_URL, googleCalUrl, icsUrl })}
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="${data.managementUrl}" style="${BUTTON_PRIMARY} margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="${BUTTON_SECONDARY} margin: 5px;">Cómo llegar</a>` : ''}
+  </div>
+  ${calendarSection}
   ${data.category ? generateWhatToBringSection(data.category) : ''}
-  ${
-    !is48h
-      ? `
-  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-    <p style="margin: 0; color: #856404;">
-      <strong>⚠️ Política de cancelación:</strong><br>
-      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
-      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
-      como asistida y perderás el derecho a la clase de prueba gratuita.
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>${LOCATION_ADDRESS}</strong><br>
+      ${LOCATION_STREET}<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
     </p>
-  </div>`
-      : ''
-  }
+  </div>
   <div style="text-align: center; margin-bottom: 30px;">
     <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${data.managementUrl}" style="${BUTTON_SECONDARY}">
+    <a href="${data.managementUrl}" style="${BUTTON_PRIMARY}">
       Cancelar/Reprogramar
     </a>
   </div>
@@ -1006,14 +733,7 @@ export async function sendFeedbackEmail(
     <p style="color: #666; font-size: 14px; margin-top: 15px;">Haz click en la carita que mejor represente tu experiencia</p>
   </div>
 
-  <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-    <p style="color: #666; margin-bottom: 15px;">¿Quieres contarnos más?</p>
-    <a href="${BASE_URL}/es/feedback-comentario?token=${data.feedbackToken}" style="${BUTTON_SECONDARY}">
-      Dejar un comentario
-    </a>
-  </div>
-
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px; margin-top: 20px;">
+  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
     <p>¡Gracias por elegirnos! 💃🕺</p>
   </div>
   ${generateFooter()}

@@ -100,7 +100,7 @@ const AboutPage: React.FC = () => {
     { name: t('about_breadcrumb_current'), url: `/${locale}/sobre-nosotros`, isActive: true },
   ];
 
-  // Schema Markup - Organization (LocalBusiness with EducationalOrganization properties)
+  // Schema Markup - Organization (LocalBusiness - valid Google type)
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -130,7 +130,6 @@ const AboutPage: React.FC = () => {
     telephone: '+34622247085',
     email: 'info@farrayscenter.com',
     areaServed: 'Barcelona',
-    numberOfEmployees: '20+',
     slogan: t('about_slogan'),
     sameAs: [
       'https://www.instagram.com/farrays_centerbcn/',

@@ -4,17 +4,19 @@ import Redis from 'ioredis';
 /**
  * API Route: /api/mi-reserva
  *
- * Obtiene los detalles de una reserva usando el magic link token.
+ * Obtiene los detalles de una reserva usando email + eventId (magic link).
  *
  * Query params:
- * - token: Token de gestión único (requerido)
+ * - email: Email del usuario (requerido)
+ * - event: Event ID de la reserva (requerido)
  *
  * Respuesta exitosa:
  * {
  *   success: true,
  *   booking: {
- *     eventId, firstName, className, classDate, classTime,
- *     status, createdAt
+ *     firstName, lastName, email, phone,
+ *     className, classDate, classTime,
+ *     momenceEventId, bookedAt, category
  *   }
  * }
  */
@@ -37,7 +39,6 @@ function getRedisClient(): Redis | null {
 }
 
 interface BookingDetails {
-  eventId: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -45,12 +46,9 @@ interface BookingDetails {
   className: string;
   classDate: string;
   classTime: string;
-  sessionId: string | null;
-  momenceBookingId: number | null;
   category: string;
-  managementToken: string;
+  calendarEventId?: string;
   createdAt: string;
-  status: 'confirmed' | 'cancelled';
 }
 
 export default async function handler(
@@ -68,15 +66,23 @@ export default async function handler(
 
   // Solo GET
   if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed. Use GET.' });
   }
 
-  const { token } = req.query;
+  const email = req.query['email'] as string;
+  const eventId = req.query['event'] as string;
 
-  if (!token || typeof token !== 'string') {
+  if (!email) {
     return res.status(400).json({
       success: false,
-      error: 'Token requerido',
+      error: 'Email parameter required',
+    });
+  }
+
+  if (!eventId) {
+    return res.status(400).json({
+      success: false,
+      error: 'Event parameter required',
     });
   }
 
@@ -90,70 +96,50 @@ export default async function handler(
   }
 
   try {
-    // 1. Buscar eventId por token
-    const eventId = await redis.get(`mgmt:${token}`);
+    // Buscar booking_details por eventId
+    const bookingDataStr = await redis.get(`booking_details:${eventId}`);
 
-    if (!eventId) {
+    if (!bookingDataStr) {
       return res.status(404).json({
         success: false,
-        error: 'Reserva no encontrada o enlace expirado',
+        error: 'Booking not found',
+        message: 'No se encontró ninguna reserva con este enlace',
       });
     }
 
-    // 2. Obtener detalles de la reserva
-    const bookingData = await redis.get(`booking_details:${eventId}`);
+    const booking: BookingDetails = JSON.parse(bookingDataStr);
 
-    if (!bookingData) {
+    // Verificar que el email coincide (seguridad)
+    if (booking.email.toLowerCase() !== email.toLowerCase()) {
       return res.status(404).json({
         success: false,
-        error: 'Datos de reserva no encontrados',
+        error: 'Booking mismatch',
+        message: 'El email no coincide con la reserva encontrada',
       });
     }
 
-    const booking: BookingDetails = JSON.parse(bookingData);
-
-    // Extract ISO date for calendar generation (YYYY-MM-DD)
-    const classDateISOMatch = booking.classDate?.match(/\d{4}-\d{2}-\d{2}/);
-    const classDateISO = classDateISOMatch ? classDateISOMatch[0] : undefined;
-
-    // 3. Devolver datos públicos (sin datos sensibles como phone/email completos)
+    // Devolver datos para MyBookingPage
+    // (enmascarar phone por privacidad)
     return res.status(200).json({
       success: true,
       booking: {
-        eventId: booking.eventId,
         firstName: booking.firstName,
+        lastName: booking.lastName,
+        email: booking.email,
+        phone: booking.phone ? booking.phone.slice(0, 4) + '***' + booking.phone.slice(-2) : null,
         className: booking.className,
         classDate: booking.classDate,
-        classDateISO, // For calendar generation
         classTime: booking.classTime,
+        momenceEventId: eventId,
+        bookedAt: booking.createdAt,
         category: booking.category,
-        status: booking.status,
-        createdAt: booking.createdAt,
-        // Para mostrar parcialmente
-        emailMasked: maskEmail(booking.email),
       },
     });
   } catch (error) {
     console.error('[mi-reserva] Error:', error);
     return res.status(500).json({
       success: false,
-      error: 'Error al obtener la reserva',
+      error: 'Server error',
     });
   }
-}
-
-/**
- * Enmascara un email para mostrar parcialmente
- * ejemplo@gmail.com → ej***@gmail.com
- */
-function maskEmail(email: string): string {
-  const parts = email.split('@');
-  const local = parts[0];
-  const domain = parts[1];
-  if (!local || !domain) return '***@***';
-
-  const visibleChars = Math.min(2, local.length);
-  const masked = local.substring(0, visibleChars) + '***';
-
-  return `${masked}@${domain}`;
 }

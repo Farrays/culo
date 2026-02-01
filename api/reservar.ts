@@ -1,15 +1,186 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
+import { Resend } from 'resend';
+// Google Calendar disabled temporarily - Vercel import issues
+// import { createBookingEvent } from '../lib/google-calendar';
 
 // ============================================================================
-// IMPORTS CONSOLIDADOS - Fuente única de verdad
+// TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
 // ============================================================================
 
-import { sendBookingConfirmation, EMAIL_CONFIG, type ClassCategory } from './lib/email';
+type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
+
+// Google Calendar types/functions disabled temporarily
+// interface BookingCalendarData { ... }
+// function isGoogleCalendarConfigured(): boolean { ... }
 
 // ============================================================================
-// WHATSAPP HELPER
+// EMAIL HELPER INLINE
+// ============================================================================
+
+const EMAIL_FROM = "Farray's Center <noreply@farrayscenter.com>";
+const EMAIL_REPLY_TO = 'info@farrayscenter.com';
+
+interface CategoryInstructions {
+  title: string;
+  items: string[];
+  color: string;
+}
+
+function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
+  const commonItems = [
+    '💧 Botella de agua',
+    '🧴 Toalla pequeña',
+    '🔐 Candado para taquilla (opcional)',
+  ];
+
+  switch (category) {
+    case 'bailes_sociales':
+      return {
+        title: '¿Qué traer a tu clase de Bailes Sociales?',
+        color: '#e91e63',
+        items: [
+          '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
+          '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
+          '📝 <strong>Folklore:</strong> Sin calzado (se baila descalzo)',
+          ...commonItems,
+        ],
+      };
+    case 'danzas_urbanas':
+      return {
+        title: '¿Qué traer a tu clase de Danzas Urbanas?',
+        color: '#673ab7',
+        items: [
+          '👟 Bambas cómodas (suela limpia)',
+          '👖 Leggings, pantalones cortos o chándal',
+          '👕 Ropa cómoda y ligera (tipo fitness)',
+          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto. Rodilleras recomendadas',
+          '🍑 <strong>Twerk:</strong> Rodilleras recomendadas',
+          ...commonItems,
+        ],
+      };
+    case 'danza':
+    case 'entrenamiento':
+      return {
+        title:
+          category === 'entrenamiento'
+            ? '¿Qué traer a tu Entrenamiento?'
+            : '¿Qué traer a tu clase de Danza?',
+        color: '#9c27b0',
+        items: [
+          '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
+          '🦵 Rodilleras recomendadas (especialmente para floorwork)',
+          '👖 Ropa ajustada que permita ver la línea del cuerpo',
+          ...commonItems,
+        ],
+      };
+    case 'heels':
+      return {
+        title: '¿Qué traer a tu clase de Heels?',
+        color: '#e91e63',
+        items: [
+          '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
+          '💃 Ropa femenina y atrevida que te haga sentir poderosa',
+          '🎽 Top o body que permita libertad de movimiento',
+          ...commonItems,
+        ],
+      };
+    default:
+      return {
+        title: '¿Qué traer?',
+        color: '#e91e63',
+        items: ['👟 Ropa cómoda para bailar', '👠 Calzado según el estilo', ...commonItems],
+      };
+  }
+}
+
+function generateWhatToBringSection(category?: ClassCategory): string {
+  const inst = getCategoryInstructions(category);
+  return `
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 15px 0; color: ${inst.color};">${inst.title}</h3>
+    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+      ${inst.items.map(item => `<li>${item}</li>`).join('')}
+    </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
+    </div>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>`;
+}
+
+async function sendBookingConfirmationEmail(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  managementUrl: string;
+  mapUrl?: string;
+  category?: ClassCategory;
+}): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  const resend = new Resend(apiKey);
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: data.to,
+      replyTo: EMAIL_REPLY_TO,
+      subject: `Reserva confirmada: ${data.className}`,
+      html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: #e91e63; margin: 0;">Farray's Center</h1>
+    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+  </div>
+  <div style="background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
+    <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
+  </div>
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
+    <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
+  </div>
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
+    </table>
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="${data.managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
+  </div>
+  ${generateWhatToBringSection(data.category)}
+  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
+    <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${data.managementUrl}" style="color: #e91e63;">Gestionar mi reserva</a></p>
+    <p style="margin-top: 20px;">Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="https://farrayscenter.com" style="color: #e91e63;">farrayscenter.com</a></p>
+  </div>
+</body></html>`,
+    });
+    if (result.error) return { success: false, error: result.error.message };
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// WHATSAPP HELPER INLINE
 // ============================================================================
 
 const WHATSAPP_API_VERSION = 'v23.0';
@@ -123,47 +294,21 @@ const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000;
 const RATE_LIMIT_MAX = 3; // 3 reservas por minuto por IP (más estricto)
 
-// Timezone de España para formatear fechas
-const SPAIN_TIMEZONE = 'Europe/Madrid';
-
 // Lazy Redis
 let redisClient: Redis | null = null;
 
 function getRedisClient(): Redis | null {
   const redisUrl = process.env['STORAGE_REDIS_URL'];
-  if (!redisUrl) {
-    console.warn('[Redis] STORAGE_REDIS_URL not configured');
-    return null;
-  }
+  if (!redisUrl) return null;
 
   if (!redisClient) {
-    console.warn('[Redis] Creating new Redis client');
     redisClient = new Redis(redisUrl, {
-      maxRetriesPerRequest: 2,
-      connectTimeout: 10000,
+      maxRetriesPerRequest: 1,
+      connectTimeout: 5000,
       lazyConnect: true,
-      retryStrategy: times => {
-        if (times > 3) return null;
-        return Math.min(times * 100, 2000);
-      },
     });
   }
   return redisClient;
-}
-
-// Helper to ensure Redis is connected
-async function ensureRedisConnected(redis: Redis): Promise<boolean> {
-  try {
-    if (redis.status !== 'ready') {
-      await redis.connect();
-    }
-    // Quick ping to verify connection
-    await redis.ping();
-    return true;
-  } catch (e) {
-    console.error('[Redis] Connection check failed:', e);
-    return false;
-  }
 }
 
 function isRateLimited(ip: string): boolean {
@@ -530,6 +675,9 @@ async function createMomenceBooking(
   }
 }
 
+// Timezone de España para formatear fechas
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+
 // ============================================================================
 // CATEGORIZACIÓN DE CLASES
 // ============================================================================
@@ -768,7 +916,7 @@ async function sendMetaConversionEvent(data: {
   }
 
   const timestamp = Math.floor(Date.now() / 1000);
-  const normalizedPhoneNum = normalizePhone(data.phone);
+  const normalizedPhone = normalizePhone(data.phone);
 
   const eventData = {
     data: [
@@ -780,13 +928,13 @@ async function sendMetaConversionEvent(data: {
         action_source: 'website',
         user_data: {
           em: [hashForMeta(data.email)],
-          ph: [hashForMeta(normalizedPhoneNum)],
+          ph: [hashForMeta(normalizedPhone)],
           fn: [hashForMeta(data.firstName)],
           ln: [hashForMeta(data.lastName)],
           // Detectar país por prefijo telefónico
-          ...(normalizedPhoneNum.startsWith('34') ? { country: [hashForMeta('es')] } : {}),
-          ...(normalizedPhoneNum.startsWith('33') ? { country: [hashForMeta('fr')] } : {}),
-          ...(normalizedPhoneNum.startsWith('34') ? { ct: [hashForMeta('barcelona')] } : {}),
+          ...(normalizedPhone.startsWith('34') ? { country: [hashForMeta('es')] } : {}),
+          ...(normalizedPhone.startsWith('33') ? { country: [hashForMeta('fr')] } : {}),
+          ...(normalizedPhone.startsWith('34') ? { ct: [hashForMeta('barcelona')] } : {}),
           client_ip_address: data.clientIp,
           client_user_agent: data.userAgent,
           fbc: data.fbc || undefined,
@@ -892,39 +1040,27 @@ export default async function handler(
     const normalizedEmail = sanitize(email).toLowerCase();
     const bookingKey = `${BOOKING_KEY_PREFIX}${normalizedEmail}`;
 
-    console.warn('[reservar] Deduplication check for:', { email: normalizedEmail, bookingKey });
-
     // Deduplicación con Redis
     const redis = getRedisClient();
     if (redis) {
-      const isConnected = await ensureRedisConnected(redis);
-      console.warn('[reservar] Redis connected:', isConnected);
-
-      if (isConnected) {
-        try {
-          const existing = await redis.get(bookingKey);
-          console.warn('[reservar] Existing booking found:', !!existing);
-
-          if (existing) {
-            // Ya existe una reserva reciente
-            console.warn('[reservar] DUPLICATE DETECTED! Returning existing status');
-            return res.status(200).json({
-              success: true,
-              status: 'existing',
-              message: 'Ya tienes una reserva registrada. ¡Te esperamos!',
-            });
-          }
-        } catch (e) {
-          console.error('[reservar] Redis lookup failed:', e);
+      try {
+        const existing = await redis.get(bookingKey);
+        if (existing) {
+          // Ya existe una reserva reciente
+          return res.status(200).json({
+            success: true,
+            status: 'existing',
+            message: 'Ya tienes una reserva registrada. ¡Te esperamos!',
+          });
         }
+      } catch (e) {
+        console.warn('Redis lookup failed:', e);
       }
-    } else {
-      console.warn('[reservar] Redis not available for deduplication');
     }
 
     // Generar eventId único si no viene del frontend
     const finalEventId =
-      eventId || `booking_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
+      eventId || `booking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
     // 1. Crear booking en Momence o enviar a Customer Leads
     let momenceResult: { success: boolean; bookingId?: number; error?: string } = {
@@ -996,91 +1132,112 @@ export default async function handler(
       fbp,
     });
 
-    // Variables comunes para Redis y notificaciones
+    // 3. Guardar en Redis
+    if (redis) {
+      try {
+        const bookingTimestamp = Date.now();
+        await redis.setex(
+          bookingKey,
+          BOOKING_TTL_SECONDS,
+          JSON.stringify({
+            timestamp: bookingTimestamp,
+            sessionId,
+            className,
+            classDate,
+            eventId: finalEventId,
+          })
+        );
+
+        // Añadir a lista de reservas recientes para Social Proof Ticker
+        const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+        await redis.lpush(
+          'recent_bookings',
+          JSON.stringify({
+            firstName: firstNameOnly,
+            className: className || estilo || 'Clase de Prueba',
+            timestamp: bookingTimestamp,
+          })
+        );
+        // Mantener solo las últimas 50 reservas
+        await redis.ltrim('recent_bookings', 0, 49);
+      } catch (e) {
+        console.warn('Redis save failed:', e);
+      }
+    }
+
+    // 4. Preparar datos comunes para notificaciones y calendario
     const category = determineCategory(className || '', estilo);
     const formattedDate = formatDateReadable(classDate || '');
     const classTime = extractTime(classDate || '');
     const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+    const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
+    const mapUrl = 'https://maps.app.goo.gl/YMTQFik7dB1ykdux9';
 
-    // 3. Guardar en Redis (datos completos para página mi-reserva)
+    // 5. Extraer fecha ISO para índices y calendario
+    const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
+    const calendarDateStr = isoMatch ? isoMatch[0] : '';
+
+    // 6. Google Calendar - DISABLED temporarily (Vercel import issues)
+    // TODO: Re-enable when Vercel bundling is fixed
+    const calendarEventId: string | undefined = undefined;
+    console.warn('[reservar] Google Calendar disabled temporarily');
+
+    // 7. Guardar booking_details para mi-reserva y cron-reminders
+    const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');
     if (redis) {
-      const isConnected = await ensureRedisConnected(redis);
-      console.warn('[reservar] Redis connected for save:', isConnected);
-
-      if (isConnected) {
-        try {
-          const bookingTimestamp = Date.now();
-          const bookingData = {
-            timestamp: bookingTimestamp,
-            sessionId,
-            // Datos para MyBookingPage
-            firstName: firstNameOnly,
+      try {
+        await redis.setex(
+          `booking_details:${finalEventId}`,
+          BOOKING_TTL_SECONDS,
+          JSON.stringify({
+            eventId: finalEventId,
+            firstName: sanitize(firstName),
             lastName: sanitize(lastName),
             email: normalizedEmail,
-            phone: phone || null,
+            phone: sanitize(phone),
             className: className || estilo || 'Clase de Prueba',
-            classDate: formattedDate,
+            classDate: classDate || '',
             classTime: classTime || '19:00',
-            momenceEventId: finalEventId,
-            bookedAt: new Date().toISOString(),
-            category: category || null,
-            // Datos de Momence para cancelar/reprogramar
-            momenceBookingId: momenceResult.bookingId || null,
-            classDateRaw: classDate || null,
-          };
+            category,
+            calendarEventId: calendarEventId || null,
+            createdAt: new Date().toISOString(),
+          })
+        );
+        console.warn('[reservar] Booking details saved');
 
-          await redis.setex(bookingKey, BOOKING_TTL_SECONDS, JSON.stringify(bookingData));
-
-          // Verify the save worked
-          const saved = await redis.get(bookingKey);
-          console.warn('[reservar] Booking saved successfully:', {
-            key: bookingKey,
-            verified: !!saved,
-          });
-
-          // Añadir a lista de reservas recientes para Social Proof Ticker
-          await redis.lpush(
-            'recent_bookings',
-            JSON.stringify({
-              firstName: firstNameOnly,
-              className: className || estilo || 'Clase de Prueba',
-              timestamp: bookingTimestamp,
-            })
-          );
-          // Mantener solo las últimas 50 reservas
-          await redis.ltrim('recent_bookings', 0, 49);
-        } catch (e) {
-          console.error('[reservar] Redis save failed:', e);
+        // Índice por teléfono (para webhook-whatsapp)
+        if (normalizedPhone) {
+          await redis.setex(`phone:${normalizedPhone}`, BOOKING_TTL_SECONDS, finalEventId);
+          console.warn(`[reservar] Added phone index: phone:${normalizedPhone}`);
         }
+
+        // Índice por fecha (para cron-reminders)
+        if (calendarDateStr) {
+          await redis.sadd(`reminders:${calendarDateStr}`, finalEventId);
+          console.warn(`[reservar] Added to reminders:${calendarDateStr}`);
+        }
+      } catch (e) {
+        console.warn('[reservar] Failed to save booking details:', e);
       }
-    } else {
-      console.warn('[reservar] Redis not available for save');
     }
 
-    // 4. Enviar notificaciones (Email + WhatsApp)
+    // 6. Enviar notificaciones (Email + WhatsApp)
 
-    // 4a. Enviar email de confirmación usando módulo consolidado
+    // 6a. Enviar email de confirmación
     let emailResult: { success: boolean; error?: string } = {
       success: false,
       error: 'Not attempted',
     };
-    console.warn('[reservar] Email attempt starting...');
-    console.warn('[reservar] RESEND_API_KEY configured:', !!process.env['RESEND_API_KEY']);
     try {
-      // Generar URL de gestión con magic link
-      const managementUrl = `${EMAIL_CONFIG.BASE_URL}/es/mi-reserva?email=${encodeURIComponent(normalizedEmail)}&event=${finalEventId}`;
-
-      emailResult = await sendBookingConfirmation({
+      emailResult = await sendBookingConfirmationEmail({
         to: normalizedEmail,
         firstName: firstNameOnly,
         className: className || estilo || 'Clase de Prueba',
         classDate: formattedDate,
         classTime: classTime || '19:00',
         managementUrl,
-        mapUrl: EMAIL_CONFIG.GOOGLE_MAPS_URL,
+        mapUrl,
         category,
-        classDateRaw: classDate || null,
-        eventId: finalEventId,
       });
       console.warn('[reservar] Email result:', emailResult);
     } catch (emailError) {
@@ -1088,17 +1245,11 @@ export default async function handler(
       emailResult = { success: false, error: String(emailError) };
     }
 
-    // 4b. Enviar WhatsApp de confirmación
+    // 6b. Enviar WhatsApp de confirmación
     let whatsappResult: { success: boolean; error?: string } = {
       success: false,
       error: 'Not attempted',
     };
-    console.warn('[reservar] WhatsApp config check:', {
-      hasToken: !!process.env['WHATSAPP_TOKEN'],
-      hasPhoneId: !!process.env['WHATSAPP_PHONE_ID'],
-      isConfigured: isWhatsAppConfigured(),
-      phoneToSend: phone ? phone.substring(0, 6) + '...' : 'none',
-    });
     if (isWhatsAppConfigured()) {
       try {
         whatsappResult = await sendBookingConfirmationWhatsApp({
@@ -1130,6 +1281,7 @@ export default async function handler(
         category,
         momenceSuccess: momenceResult.success,
         trackingSuccess: metaResult.success,
+        calendarSuccess: !!calendarEventId,
         emailSuccess: emailResult.success,
         whatsappSuccess: whatsappResult.success,
       },

@@ -83,7 +83,7 @@ export default async function handler(
     // Plantilla de confirmación (usa lib/email.ts directamente)
     if (templateName === 'confirmation') {
       const result = await resend.emails.send({
-        from: "Farray's Center <onboarding@resend.dev>",
+        from: "Farray's Center <noreply@farrayscenter.com>",
         to,
         replyTo: 'info@farrayscenter.com',
         subject: `Reserva confirmada: ${userClassName}`,
@@ -112,7 +112,7 @@ export default async function handler(
     // Plantilla de recordatorio
     if (templateName === 'reminder') {
       const result = await resend.emails.send({
-        from: "Farray's Center <onboarding@resend.dev>",
+        from: "Farray's Center <noreply@farrayscenter.com>",
         to,
         replyTo: 'info@farrayscenter.com',
         subject: `Recordatorio: Tu clase de ${userClassName} es pasado mañana`,
@@ -143,7 +143,7 @@ export default async function handler(
       const bookingUrl = 'https://farrayscenter.com/reservas';
 
       const result = await resend.emails.send({
-        from: "Farray's Center <onboarding@resend.dev>",
+        from: "Farray's Center <noreply@farrayscenter.com>",
         replyTo: 'info@farrayscenter.com',
         to,
         subject: `Reserva cancelada - ${userClassName}`,

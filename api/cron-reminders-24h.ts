@@ -208,7 +208,7 @@ async function sendReminder24hEmailInline(
 
   try {
     const result = await resend.emails.send({
-      from: "Farray's Center <onboarding@resend.dev>",
+      from: "Farray's Center <noreply@farrayscenter.com>",
       to,
       replyTo: 'info@farrayscenter.com',
       subject: `¡Tu clase de ${className} es mañana! 🎁 Promoción especial 24h`,

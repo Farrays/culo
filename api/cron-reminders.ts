@@ -15,7 +15,7 @@ import Redis from 'ioredis';
  */
 
 const SPAIN_TIMEZONE = 'Europe/Madrid';
-const BOOKING_MANAGEMENT_URL = 'https://www.farrayscenter.com/mi-reserva';
+const BOOKING_MANAGEMENT_URL = 'https://www.farrayscenter.com/es/mi-reserva';
 const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/QwDZvqvz4uyVfSWq7';
 
 // Lazy Redis
@@ -36,7 +36,6 @@ function getRedisClient(): Redis | null {
 }
 
 interface BookingDetails {
-  eventId: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -44,12 +43,10 @@ interface BookingDetails {
   className: string;
   classDate: string;
   classTime: string;
-  sessionId: string | null;
-  momenceBookingId: number | null;
   category: string;
-  managementToken: string;
+  calendarEventId?: string | null;
   createdAt: string;
-  status: 'confirmed' | 'cancelled';
+  status?: 'confirmed' | 'cancelled';
   reminder48hSent?: boolean;
   reminder24hSent?: boolean;
 }
@@ -125,7 +122,7 @@ async function processRemindersForDate(
 
   // Importar funciones de notificación
   const { sendReminderEmail } = await import('./lib/email');
-  const { sendReminderWhatsApp } = await import('./lib/whatsapp');
+  const { sendReminderWhatsApp, sendAttendanceReminderWhatsApp } = await import('./lib/whatsapp');
 
   for (const eventId of eventIds) {
     const result: ReminderResult = {
@@ -161,7 +158,7 @@ async function processRemindersForDate(
 
       console.log(`[cron-reminders] Sending ${reminderType} reminder for ${eventId}`);
 
-      const managementUrl = `${BOOKING_MANAGEMENT_URL}?token=${booking.managementToken}`;
+      const managementUrl = `${BOOKING_MANAGEMENT_URL}?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
       const formattedDate = formatDateSpanish(booking.classDate);
 
       // Extract ISO date for calendar generation (YYYY-MM-DD)
@@ -197,8 +194,10 @@ async function processRemindersForDate(
       }
 
       // Enviar WhatsApp
+      // 48h: recordatorio_prueba_0 (solo informativo, sin botones)
+      // 24h: recordatorio_prueba_2 (con botones de confirmación de asistencia)
       try {
-        const whatsappResult = await sendReminderWhatsApp({
+        const whatsappData = {
           to: booking.phone,
           firstName: booking.firstName,
           className: booking.className,
@@ -211,7 +210,14 @@ async function processRemindersForDate(
             | 'entrenamiento'
             | 'heels',
           reminderType,
-        });
+        };
+
+        // Usar función con botones para 24h, sin botones para 48h
+        const whatsappResult =
+          reminderType === '24h'
+            ? await sendAttendanceReminderWhatsApp(whatsappData)
+            : await sendReminderWhatsApp(whatsappData);
+
         result.whatsapp = whatsappResult.success;
         if (!whatsappResult.success) {
           console.warn(`[cron-reminders] WhatsApp failed for ${eventId}:`, whatsappResult.error);

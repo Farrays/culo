@@ -32,7 +32,7 @@ const CATEGORY_KEYS: Record<string, string> = {
 // Star rating component
 function StarRating({ rating = 5, ariaLabel }: { rating?: number; ariaLabel: string }) {
   return (
-    <div className="flex gap-0.5" aria-label={ariaLabel}>
+    <div className="flex gap-0.5" role="img" aria-label={ariaLabel}>
       {[1, 2, 3, 4, 5].map(star => (
         <svg
           key={star}

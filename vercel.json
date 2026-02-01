@@ -20,7 +20,8 @@
     },
     "api/reservar.ts": {
       "memory": 512,
-      "maxDuration": 15
+      "maxDuration": 15,
+      "includeFiles": "api/lib/**"
     },
     "api/cron-reminders-24h.ts": {
       "memory": 512,
@@ -28,11 +29,17 @@
     },
     "api/cron-feedback.ts": {
       "memory": 512,
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "api/lib/**"
     },
     "api/feedback.ts": {
       "memory": 512,
       "maxDuration": 10
+    },
+    "api/webhook-whatsapp.ts": {
+      "memory": 512,
+      "maxDuration": 30,
+      "includeFiles": "api/lib/**"
     },
     "api/*.ts": {
       "memory": 512,
@@ -54,6 +61,16 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/inicio",
+      "destination": "/es",
+      "permanent": true
+    },
     {
       "source": "/classes",
       "destination": "/es/clases/baile-barcelona",
@@ -260,6 +277,11 @@
       "permanent": true
     },
     {
+      "source": "/trainer/enric-bertran",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
       "source": "/trainer/fabio-pinto",
       "destination": "/es/profesores-baile-barcelona",
       "permanent": true
@@ -276,6 +298,11 @@
     },
     {
       "source": "/trainer/natalie-bryzhata",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/natalie-bryzhataya",
       "destination": "/es/profesores-baile-barcelona",
       "permanent": true
     },
@@ -366,37 +393,37 @@
     },
     {
       "source": "/blog-de-farrays",
-      "destination": "/es",
+      "destination": "/es/blog",
       "permanent": true
     },
     {
       "source": "/8-razones-para-ir-a-clases-de-salsa",
-      "destination": "/es",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
       "permanent": true
     },
     {
       "source": "/historia-de-la-salsa",
-      "destination": "/es",
+      "destination": "/es/blog/historia/historia-salsa-barcelona",
       "permanent": true
     },
     {
       "source": "/historia-de-la-bachata",
-      "destination": "/es",
+      "destination": "/es/blog/historia/historia-bachata-barcelona",
       "permanent": true
     },
     {
       "source": "/salsa-un-genero-bailable-singular",
-      "destination": "/es",
+      "destination": "/es/blog/historia/salsa-ritmo-conquisto-mundo",
       "permanent": true
     },
     {
       "source": "/hablemos-salsa",
-      "destination": "/es",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
       "permanent": true
     },
     {
       "source": "/empezar-a-bailar",
-      "destination": "/es",
+      "destination": "/es/blog/tips/clases-baile-principiantes-barcelona-farrays",
       "permanent": true
     },
     {
@@ -482,6 +509,11 @@
     {
       "source": "/bootcamp-salsa",
       "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/bootcamp-reggaeton",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
       "permanent": true
     },
     {
@@ -1005,6 +1037,14 @@
     },
     {
       "source": "/:locale(es|en|ca|fr)/feedback-gracias",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/feedback-comentario",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/asistencia-confirmada",
       "destination": "/index.html"
     },
     {

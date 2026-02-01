@@ -55,10 +55,10 @@ export type ClassCategory =
  */
 const CATEGORY_TEMPLATES: Record<ClassCategory, string> = {
   bailes_sociales: 'confirmacion_bailes_sociales',
-  danzas_urbanas: 'confirmacion_danzas_urbanas',
-  danza: 'confirmacion_danza',
-  entrenamiento: 'confirmacion_danza', // Usa misma plantilla que danza
-  heels: 'confirmacion_heels',
+  danzas_urbanas: 'confirmacion_danzas_urbanas_1',
+  danza: 'confirmacion_danza_1',
+  entrenamiento: 'confirmacion_danza_1', // Usa misma plantilla que danza
+  heels: 'confirmacion_heels_1',
 };
 
 export interface WhatsAppResult {
@@ -80,11 +80,10 @@ export interface ReminderWhatsAppData {
   to: string;
   firstName: string;
   className: string;
-  classDateTime?: string; // Fecha y hora combinadas: "17/07/2025, 19:00"
-  classDate?: string; // Alternative: separate date
-  classTime?: string; // Alternative: separate time
-  category?: 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels'; // For category-specific instructions
-  reminderType?: '48h' | '24h'; // Tipo de recordatorio
+  classDate: string; // Fecha formateada: "Lunes 28 de Enero"
+  classTime: string; // Hora: "19:00"
+  category?: 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
+  reminderType?: '48h' | '24h';
 }
 
 export interface CancellationWhatsAppData {
@@ -241,26 +240,60 @@ export async function sendBookingConfirmationWhatsApp(
 
 /**
  * Envía recordatorio de clase por WhatsApp (48h antes)
+ * Este recordatorio es SOLO INFORMATIVO, sin botones de confirmación.
  *
  * Plantilla: recordatorio_prueba_0
  * Parámetros:
  * - {{1}} firstName
  * - {{2}} className
- * - {{3}} dateTime (fecha y hora combinadas, ej: "17/07/2025, 19:00")
+ * - {{3}} classDate (ej: "Lunes 28 de Enero")
+ * - {{4}} classTime (ej: "19:00")
  */
 export async function sendReminderWhatsApp(data: ReminderWhatsAppData): Promise<WhatsAppResult> {
-  // Combinar classDate y classTime si classDateTime no está proporcionado
-  const classDateTime =
-    data.classDateTime ||
-    (data.classDate && data.classTime ? `${data.classDate}, ${data.classTime}` : '');
-
   return sendTemplate('recordatorio_prueba_0', data.to, 'es_ES', [
     {
       type: 'body',
       parameters: [
         { type: 'text', text: data.firstName },
         { type: 'text', text: data.className },
-        { type: 'text', text: classDateTime },
+        { type: 'text', text: data.classDate || '' },
+        { type: 'text', text: data.classTime || '' },
+      ],
+    },
+  ]);
+}
+
+/**
+ * Envía recordatorio de clase por WhatsApp (24h antes) CON BOTONES de confirmación
+ * Este recordatorio incluye 2 quick reply buttons para confirmar asistencia:
+ * - "Sí, asistiré" → El alumno confirma que asistirá
+ * - "No podré ir" → El alumno no podrá asistir
+ *
+ * Las respuestas se procesan en api/webhook-whatsapp.ts
+ *
+ * Plantilla: recordatorio_prueba_2
+ * Parámetros:
+ * - {{1}} firstName
+ * - {{2}} className
+ * - {{3}} classDate (ej: "Lunes 28 de Enero")
+ * - {{4}} classTime (ej: "19:00")
+ *
+ * Quick Reply Buttons:
+ * - Button 1: "Sí, asistiré" (payload = "Sí, asistiré")
+ * - Button 2: "No podré ir" (payload = "No podré ir")
+ */
+export async function sendAttendanceReminderWhatsApp(
+  data: ReminderWhatsAppData
+): Promise<WhatsAppResult> {
+  // Usar plantilla recordatorio_prueba_2 con botones de quick reply
+  return sendTemplate('recordatorio_prueba_2', data.to, 'es_ES', [
+    {
+      type: 'body',
+      parameters: [
+        { type: 'text', text: data.firstName },
+        { type: 'text', text: data.className },
+        { type: 'text', text: data.classDate || '' },
+        { type: 'text', text: data.classTime || '' },
       ],
     },
   ]);
@@ -314,6 +347,63 @@ export async function sendCustomTemplate(
     : undefined;
 
   return sendTemplate(templateName, to, languageCode, components);
+}
+
+// ============================================================================
+// MENSAJES DE TEXTO (RESPUESTAS AUTOMÁTICAS)
+// ============================================================================
+
+/**
+ * Envía un mensaje de texto libre por WhatsApp
+ * Usado para respuestas automáticas del webhook
+ *
+ * NOTA: Solo se puede enviar a usuarios que han iniciado conversación
+ * en las últimas 24 horas (ventana de servicio de WhatsApp)
+ */
+export async function sendTextMessage(to: string, text: string): Promise<WhatsAppResult> {
+  const config = getConfig();
+  const normalizedPhone = normalizePhone(to);
+
+  const message = {
+    messaging_product: 'whatsapp',
+    to: normalizedPhone,
+    type: 'text',
+    text: {
+      body: text,
+    },
+  };
+
+  try {
+    const response = await fetch(config.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${config.token}`,
+      },
+      body: JSON.stringify(message),
+    });
+
+    const data = (await response.json()) as WhatsAppApiResponse;
+
+    if (!response.ok || data.error) {
+      console.error('WhatsApp API error (text):', data.error);
+      return {
+        success: false,
+        error: data.error?.message || `HTTP ${response.status}`,
+      };
+    }
+
+    return {
+      success: true,
+      messageId: data.messages?.[0]?.id,
+    };
+  } catch (error) {
+    console.error('Error sending WhatsApp text message:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
 }
 
 // ============================================================================
