@@ -61,16 +61,9 @@ const CulturalHistorySection: React.FC<CulturalHistorySectionProps> = memo(
                 const trimmed = para.trim();
                 if (!trimmed) return null;
 
-                // Check if this is a citable quote (starts and ends with quotes)
-                const isCitableQuote = trimmed.startsWith('"') && trimmed.endsWith('"');
-
-                // Replace **text** with <strong> tags
-                const parts = trimmed.split(/\*\*([^*]+)\*\*/);
-                const renderedContent = parts.map((part, i) =>
-                  i % 2 === 1 ? <strong key={i}>{part}</strong> : part
-                );
-
-                if (isCitableQuote) {
+                // Check if this is a citable quote: **"texto"** format
+                const citableMatch = trimmed.match(/^\*\*"(.+)"\*\*$/);
+                if (citableMatch) {
                   return (
                     <aside
                       key={idx}
@@ -79,11 +72,17 @@ const CulturalHistorySection: React.FC<CulturalHistorySectionProps> = memo(
                       role="note"
                     >
                       <p className="text-sm font-medium text-neutral/90 italic leading-relaxed">
-                        {renderedContent}
+                        {`"${citableMatch[1]}"`}
                       </p>
                     </aside>
                   );
                 }
+
+                // Replace **text** with <strong> tags for regular paragraphs
+                const parts = trimmed.split(/\*\*([^*]+)\*\*/);
+                const renderedContent = parts.map((part, i) =>
+                  i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+                );
 
                 return (
                   <p key={idx} className="text-neutral/90 leading-relaxed">
