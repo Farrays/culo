@@ -163,7 +163,7 @@ export async function createBookingEvent(booking: BookingCalendarData): Promise<
       requestBody: event,
     });
 
-    console.log(`[google-calendar] Event created: ${result.data.id}`);
+    console.warn(`[google-calendar] Event created: ${result.data.id}`);
 
     return {
       success: true,
@@ -222,7 +222,7 @@ export async function updateEventAttendance(
       },
     });
 
-    console.log(`[google-calendar] Event ${calendarEventId} updated to ${status}`);
+    console.warn(`[google-calendar] Event ${calendarEventId} updated to ${status}`);
 
     return { success: true, calendarEventId };
   } catch (error) {
@@ -252,7 +252,7 @@ export async function deleteBookingEvent(calendarEventId: string): Promise<Calen
       eventId: calendarEventId,
     });
 
-    console.log(`[google-calendar] Event ${calendarEventId} deleted`);
+    console.warn(`[google-calendar] Event ${calendarEventId} deleted`);
 
     return { success: true };
   } catch (error) {

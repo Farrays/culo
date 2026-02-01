@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { updateEventAttendance } from './google-calendar';
+import { updateEventAttendance } from '../lib/google-calendar';
 
 // Tipos inline (evitar imports de api/lib/ que fallan en Vercel)
 type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';

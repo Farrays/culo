@@ -2,7 +2,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
-import { updateEventAttendance } from './google-calendar';
+import { updateEventAttendance } from '../lib/google-calendar';
 
 /**
  * API Route: /api/webhook-whatsapp

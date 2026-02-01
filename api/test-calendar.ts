@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createBookingEvent, deleteBookingEvent } from './google-calendar';
+import { createBookingEvent, deleteBookingEvent } from '../lib/google-calendar';
 
 /**
  * Test endpoint to verify Google Calendar configuration

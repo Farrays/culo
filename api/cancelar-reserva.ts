@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { deleteBookingEvent } from './google-calendar';
+import { deleteBookingEvent } from '../lib/google-calendar';
 
 /**
  * API endpoint para cancelar una reserva
