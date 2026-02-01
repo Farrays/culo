@@ -107,7 +107,7 @@ function generateFooter(): string {
         <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
         <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
         <p style="margin: 0 0 20px 0;">
-          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">farrayscenter.com</a>
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">www.farrayscenter.com</a>
         </p>
         <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
           <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
@@ -288,19 +288,8 @@ function generateReminderEmailHtml(data: ReminderHtmlData): string {
     <p style="margin: 0;">Te recordamos que ${data.timeframe} tienes tu clase de prueba:</p>
   </div>
   ${generateBookingDetails({ className: data.className, classDate: data.classDate, classTime: data.classTime })}
-  ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: GOOGLE_MAPS_URL, googleCalUrl: data.calendarUrl, icsUrl: data.icsUrl })}
-  ${data.category ? generateWhatToBringSection(data.category) : ''}
-  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
-    <p style="margin: 0; color: #666;">
-      <strong>${LOCATION_ADDRESS}</strong><br>
-      ${LOCATION_STREET}<br><br>
-      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
-      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
-    </p>
-  </div>
 
-  <!-- PROMOCIÓN ESPECIAL 24H -->
+  <!-- PROMOCIÓN ESPECIAL 24H - justo después de info de clase -->
   <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center;">
     <p style="margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">💥 Promoción Especial 24h 💥</p>
     <h3 style="margin: 0 0 15px 0; font-size: 24px;">MATRÍCULA GRATIS</h3>
@@ -318,6 +307,9 @@ function generateReminderEmailHtml(data: ReminderHtmlData): string {
       ¡Ganamos todos! Recibirás tu recibo al momento del alta.
     </p>
   </div>
+
+  ${generateActionButtons({ managementUrl: data.managementUrl, mapUrl: GOOGLE_MAPS_URL, googleCalUrl: data.calendarUrl, icsUrl: data.icsUrl })}
+  ${data.category ? generateWhatToBringSection(data.category) : ''}
 
   <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
     <p style="margin: 0; color: #856404;">
@@ -345,7 +337,7 @@ function generateCancellationEmailHtml(data: CancellationHtmlData): string {
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
     <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
-    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> del ${data.classDate} a las ${data.classTime} ha sido cancelada ✅ y la plaza liberada para que otra persona pueda aprovecharla.</p>
+    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> del ${data.classDate} a las ${data.classTime} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
   </div>
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
@@ -362,7 +354,7 @@ function generateCancellationEmailHtml(data: CancellationHtmlData): string {
   </div>
   <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
     <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
-    <p style="margin: 0;">Escríbenos por WhatsApp al <strong>${WHATSAPP_NUMBER}</strong><br>y te responderemos lo antes posible.</p>
+    <p style="margin: 0;">Escríbenos por WhatsApp al <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none;"><strong>${WHATSAPP_NUMBER}</strong></a><br>y te responderemos lo antes posible.</p>
   </div>
   ${generateFooter()}
 </body></html>`;
