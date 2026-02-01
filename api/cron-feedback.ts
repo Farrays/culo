@@ -11,9 +11,10 @@ import Redis from 'ioredis';
  *
  * Headers requeridos:
  * - Authorization: Bearer {CRON_SECRET}
+ *
+ * NOTE: Uses dynamic import for ./lib/email to avoid Vercel bundling issues.
+ * See BOOKING_WIDGET_ROADMAP_COMPLETE.md for pattern explanation.
  */
-
-import { sendFeedbackEmail } from '../lib/email';
 
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 
@@ -182,6 +183,8 @@ export default async function handler(
 
         // Enviar email de feedback
         try {
+          // Dynamic import to avoid Vercel bundling issues (ERR_MODULE_NOT_FOUND)
+          const { sendFeedbackEmail } = await import('./lib/email');
           const emailResult = await sendFeedbackEmail({
             to: booking.email,
             firstName: booking.firstName,
