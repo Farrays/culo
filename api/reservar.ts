@@ -36,7 +36,7 @@ function isGoogleCalendarConfigured(): boolean {
 // EMAIL HELPER INLINE
 // ============================================================================
 
-const EMAIL_FROM = "Farray's Center <onboarding@resend.dev>";
+const EMAIL_FROM = "Farray's Center <noreply@farrayscenter.com>";
 const EMAIL_REPLY_TO = 'info@farrayscenter.com';
 
 interface CategoryInstructions {
