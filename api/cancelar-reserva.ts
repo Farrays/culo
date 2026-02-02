@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { Resend } from 'resend';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINE (evita problemas de bundling de Vercel)
@@ -94,6 +95,147 @@ async function deleteCalendarEvent(calendarEventId: string): Promise<CalendarRes
   } catch (error) {
     console.error('[cancelar] Error deleting calendar event:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// WHATSAPP INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+const WHATSAPP_API_VERSION = 'v23.0';
+
+interface WhatsAppResult {
+  success: boolean;
+  messageId?: string;
+  error?: string;
+}
+
+function getWhatsAppConfig() {
+  const token = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+  if (!token || !phoneId) return null;
+  return {
+    token,
+    phoneId,
+    apiUrl: `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
+  };
+}
+
+function normalizePhone(phone: string): string {
+  let normalized = phone.replace(/[\s\-().]/g, '');
+  if (normalized.startsWith('+')) normalized = normalized.slice(1);
+  if (normalized.startsWith('00')) normalized = normalized.slice(2);
+  if (/^[67]\d{8}$/.test(normalized)) normalized = '34' + normalized;
+  return normalized;
+}
+
+async function sendCancellationWhatsAppInline(data: {
+  to: string;
+  firstName: string;
+}): Promise<WhatsAppResult> {
+  const config = getWhatsAppConfig();
+  if (!config) return { success: false, error: 'WhatsApp not configured' };
+
+  const message = {
+    messaging_product: 'whatsapp',
+    to: normalizePhone(data.to),
+    type: 'template',
+    template: {
+      name: 'cancelar',
+      language: { code: 'es_ES' },
+      components: [
+        {
+          type: 'body',
+          parameters: [{ type: 'text', text: data.firstName }],
+        },
+      ],
+    },
+  };
+
+  try {
+    const response = await fetch(config.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${config.token}`,
+      },
+      body: JSON.stringify(message),
+    });
+
+    const responseData = await response.json();
+    if (!response.ok || responseData.error) {
+      console.error('[cancelar] WhatsApp error:', responseData.error);
+      return { success: false, error: responseData.error?.message || `HTTP ${response.status}` };
+    }
+    return { success: true, messageId: responseData.messages?.[0]?.id };
+  } catch (error) {
+    console.error('[cancelar] WhatsApp error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown' };
+  }
+}
+
+// ============================================================================
+// EMAIL INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+const EMAIL_FROM = "Farray's Center <noreply@farrayscenter.com>";
+const EMAIL_REPLY_TO = 'info@farrayscenter.com';
+const BRAND_PRIMARY = '#B01E3C';
+
+interface EmailResult {
+  success: boolean;
+  id?: string;
+  error?: string;
+}
+
+async function sendCancellationEmailInline(data: {
+  to: string;
+  firstName: string;
+  className: string;
+}): Promise<EmailResult> {
+  const resendKey = process.env['RESEND_API_KEY'];
+  if (!resendKey) return { success: false, error: 'Resend not configured' };
+
+  const resend = new Resend(resendKey);
+
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: data.to,
+      replyTo: EMAIL_REPLY_TO,
+      subject: `Tu reserva de ${data.className} ha sido cancelada`,
+      html: `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="https://www.farrayscenter.com/images/logo.webp" alt="Farray's Center" style="height: 60px;">
+  </div>
+  <div style="background: #f8d7da; color: #721c24; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0;">Reserva Cancelada</h2>
+  </div>
+  <p>Hola <strong>${data.firstName}</strong>,</p>
+  <p>Tu reserva para <strong>${data.className}</strong> ha sido cancelada y la plaza ha quedado liberada.</p>
+  <p>Si quieres reservar otra clase, puedes hacerlo en nuestra web:</p>
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="https://www.farrayscenter.com/reservas" style="background: ${BRAND_PRIMARY}; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; display: inline-block;">
+      Reservar otra clase
+    </a>
+  </div>
+  <p>¿Tienes alguna pregunta? Escríbenos por WhatsApp al <a href="https://wa.me/34644702671" style="color: ${BRAND_PRIMARY};">644 702 671</a></p>
+  <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+  <p style="text-align: center; color: #666; font-size: 12px;">
+    Farray's International Dance Center<br>
+    C/ Entença 100, Barcelona
+  </p>
+</body></html>`,
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+    return { success: true, id: result.data?.id };
+  } catch (error) {
+    console.error('[cancelar] Email error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown' };
   }
 }
 
@@ -363,12 +505,11 @@ export default async function handler(
 
     // 4. Enviar notificaciones de cancelación
 
-    // 4a. WhatsApp de cancelación
+    // 4a. WhatsApp de cancelación (usando función inlineada)
     let whatsappSent = false;
     if (bookingData.phone) {
       try {
-        const { sendCancellationWhatsApp } = await import('./lib/whatsapp');
-        const whatsappResult = await sendCancellationWhatsApp({
+        const whatsappResult = await sendCancellationWhatsAppInline({
           to: bookingData.phone,
           firstName: bookingData.firstName,
         });
@@ -381,15 +522,13 @@ export default async function handler(
       }
     }
 
-    // 4b. Email de cancelación
+    // 4b. Email de cancelación (usando función inlineada)
     let emailSent = false;
     try {
-      const { sendCancellationEmail } = await import('./lib/email');
-      const emailResult = await sendCancellationEmail({
+      const emailResult = await sendCancellationEmailInline({
         to: bookingData.email,
         firstName: bookingData.firstName,
         className: bookingData.className,
-        bookingUrl: 'https://farrayscenter.com/reservas',
       });
       emailSent = emailResult.success;
       if (!emailResult.success) {
