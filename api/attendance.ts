@@ -1,10 +1,149 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-// Google Calendar disabled temporarily - Vercel bundler doesn't include non-npm dependencies
-// import { updateEventAttendance } from '../lib/google-calendar';
 
-// Type for attendance status (Google Calendar disabled temporarily)
-// type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+// ============================================================================
+// GOOGLE CALENDAR INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+
+const STATUS_COLORS: Record<AttendanceStatus, string> = {
+  pending: '8', // Graphite (gris)
+  confirmed: '10', // Basil (verde)
+  not_attending: '11', // Tomato (rojo)
+  cancelled: '5', // Banana (amarillo)
+};
+
+let cachedCalendarToken: string | null = null;
+let calendarTokenExpiry: number = 0;
+
+async function getCalendarAccessToken(): Promise<string | null> {
+  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+
+  if (!clientId || !clientSecret || !refreshToken) {
+    return null;
+  }
+
+  if (cachedCalendarToken && Date.now() < calendarTokenExpiry - 60000) {
+    return cachedCalendarToken;
+  }
+
+  try {
+    const response = await fetch(CALENDAR_TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    cachedCalendarToken = data.access_token;
+    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
+    return cachedCalendarToken;
+  } catch {
+    return null;
+  }
+}
+
+function getCalendarId(): string {
+  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+}
+
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
+
+function getStatusText(status: AttendanceStatus): string {
+  switch (status) {
+    case 'pending':
+      return '⚪ Pendiente de confirmación';
+    case 'confirmed':
+      return '🟢 Confirmado - Asistirá';
+    case 'not_attending':
+      return '🔴 No asistirá';
+    case 'cancelled':
+      return '⚫ Reserva cancelada';
+    default:
+      return '❓ Desconocido';
+  }
+}
+
+async function updateCalendarEventAttendance(
+  calendarEventId: string,
+  status: AttendanceStatus
+): Promise<{ success: boolean; error?: string }> {
+  const accessToken = await getCalendarAccessToken();
+  if (!accessToken) {
+    return { success: false, error: 'Failed to get access token' };
+  }
+
+  try {
+    // Get current event to preserve description
+    const getResponse = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+
+    if (!getResponse.ok) {
+      return { success: false, error: `Event not found: ${calendarEventId}` };
+    }
+
+    const currentEvent = await getResponse.json();
+    let description = currentEvent.description || '';
+
+    // Update status line
+    const statusText = getStatusText(status);
+    if (description.includes('Estado:')) {
+      description = description.replace(/Estado: .+/, `Estado: ${statusText}`);
+    } else {
+      description += `\n\n━━━━━━━━━━━━━━━━━━━━\nEstado: ${statusText}`;
+    }
+
+    // PATCH to update
+    const patchResponse = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          colorId: STATUS_COLORS[status],
+          description,
+        }),
+      }
+    );
+
+    if (!patchResponse.ok) {
+      const error = await patchResponse.text();
+      return { success: false, error: `HTTP ${patchResponse.status}: ${error}` };
+    }
+
+    console.log(`[attendance-calendar] Event ${calendarEventId} updated to ${status}`);
+    return { success: true };
+  } catch (error) {
+    console.error('[attendance-calendar] Error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
 
 /**
  * API Route: /api/attendance
@@ -216,8 +355,24 @@ async function updateAttendance(
 
     console.log(`[attendance] Updated ${eventId}: ${booking.firstName} - ${status}`);
 
-    // Google Calendar - DISABLED (Vercel bundler issue)
-    console.log('[attendance] Google Calendar disabled temporarily');
+    // Google Calendar - actualizar color del evento
+    if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+      try {
+        const calendarResult = await updateCalendarEventAttendance(
+          booking.calendarEventId,
+          status as AttendanceStatus
+        );
+        if (calendarResult.success) {
+          console.log(`[attendance] Calendar updated to ${status}`);
+        } else {
+          console.warn('[attendance] Calendar update failed:', calendarResult.error);
+        }
+      } catch (e) {
+        console.warn('[attendance] Calendar error (non-blocking):', e);
+      }
+    } else {
+      console.log('[attendance] Calendar skip - not configured or no calendarEventId');
+    }
 
     return {
       success: true,
