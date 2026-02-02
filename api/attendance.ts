@@ -1,11 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-// Google Calendar disabled temporarily
-// import { updateEventAttendance } from '../lib/google-calendar';
-
-// Google Calendar types/functions disabled temporarily
-// type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
-// function isGoogleCalendarConfigured(): boolean { ... }
+import {
+  updateEventAttendance,
+  isGoogleCalendarConfigured,
+  AttendanceStatus,
+} from './_lib/google-calendar';
 
 /**
  * API Route: /api/attendance
@@ -217,8 +216,22 @@ async function updateAttendance(
 
     console.log(`[attendance] Updated ${eventId}: ${booking.firstName} - ${status}`);
 
-    // Google Calendar disabled temporarily
-    // if (isGoogleCalendarConfigured() && booking.calendarEventId) { ... }
+    // Actualizar color en Google Calendar
+    if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+      try {
+        const calendarResult = await updateEventAttendance(
+          booking.calendarEventId,
+          status as AttendanceStatus
+        );
+        if (calendarResult.success) {
+          console.log(`[attendance] Calendar updated: ${booking.calendarEventId} -> ${status}`);
+        } else {
+          console.warn('[attendance] Calendar update failed:', calendarResult.error);
+        }
+      } catch (e) {
+        console.warn('[attendance] Calendar error (non-blocking):', e);
+      }
+    }
 
     return {
       success: true,

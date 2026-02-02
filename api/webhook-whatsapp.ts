@@ -2,8 +2,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
-// Google Calendar disabled temporarily
-// import { updateEventAttendance } from '../lib/google-calendar';
+import { updateEventAttendance, isGoogleCalendarConfigured } from './_lib/google-calendar';
 
 /**
  * API Route: /api/webhook-whatsapp
@@ -417,7 +416,17 @@ async function handleAttendanceConfirmation(
       await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
       console.log(`[webhook-whatsapp] Attendance confirmed: ${booking.firstName}`);
 
-      // Google Calendar disabled temporarily
+      // Actualizar Google Calendar a verde (confirmado)
+      if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+        try {
+          await updateEventAttendance(booking.calendarEventId, 'confirmed');
+          console.log(
+            `[webhook-whatsapp] Calendar updated to confirmed: ${booking.calendarEventId}`
+          );
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Calendar update error (non-blocking):', e);
+        }
+      }
 
       await sendTextMessage(
         phone,
@@ -448,7 +457,17 @@ async function handleAttendanceConfirmation(
 
       console.log(`[webhook-whatsapp] Booking cancelled: ${booking.firstName}`);
 
-      // Google Calendar disabled temporarily
+      // Actualizar Google Calendar a amarillo (cancelado)
+      if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+        try {
+          await updateEventAttendance(booking.calendarEventId, 'cancelled');
+          console.log(
+            `[webhook-whatsapp] Calendar updated to cancelled: ${booking.calendarEventId}`
+          );
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Calendar update error (non-blocking):', e);
+        }
+      }
 
       // Mensaje con opción de reprogramar
       const reprogramUrl = `farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
@@ -467,7 +486,17 @@ async function handleAttendanceConfirmation(
 
       console.log(`[webhook-whatsapp] Late cancellation (no dedup removal): ${booking.firstName}`);
 
-      // Google Calendar disabled temporarily
+      // Actualizar Google Calendar a rojo (no asistirá)
+      if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+        try {
+          await updateEventAttendance(booking.calendarEventId, 'not_attending');
+          console.log(
+            `[webhook-whatsapp] Calendar updated to not_attending: ${booking.calendarEventId}`
+          );
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Calendar update error (non-blocking):', e);
+        }
+      }
 
       await sendTextMessage(
         phone,
