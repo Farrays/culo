@@ -133,21 +133,24 @@ export default async function handler(
         },
       };
     } else if (templateName === 'recordatorio_prueba_0') {
-      // Plantilla de recordatorio 48h con firstName, className, dateTime
+      // Plantilla de recordatorio 48h con firstName, className, classDate, classTime
+      // dateTime format: "04/02/2026, 18:00" -> split into date and time
+      const [dateStr0, timeStr0] = userDateTime.split(',').map(s => s.trim());
       message = {
         messaging_product: 'whatsapp',
         to: normalizedPhone,
         type: 'template',
         template: {
           name: 'recordatorio_prueba_0',
-          language: { code: 'es_ES' },
+          language: { code: 'es' },
           components: [
             {
               type: 'body',
               parameters: [
                 { type: 'text', text: userFirstName },
                 { type: 'text', text: userClassName },
-                { type: 'text', text: userDateTime },
+                { type: 'text', text: dateStr0 || userDateTime },
+                { type: 'text', text: timeStr0 || '19:00' },
               ],
             },
           ],
