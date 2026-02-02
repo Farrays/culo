@@ -9,13 +9,30 @@ import LeadCaptureModal from './shared/LeadCaptureModal';
 import type { Locale } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 
-export type DropdownKey = 'lang' | 'classes' | 'services' | 'aboutUs';
+// Main dropdown keys + sub-dropdown keys for nested menus
+export type DropdownKey =
+  | 'lang'
+  | 'classes'
+  | 'services'
+  | 'aboutUs'
+  // Sub-dropdown keys for Classes menu
+  | 'danza'
+  | 'urban'
+  | 'salsa'
+  | 'prepfisica'
+  | 'heels';
 
 const DROPDOWN_CLASS_MAP: Record<DropdownKey, string> = {
   lang: '.language-dropdown',
   classes: '.classes-dropdown',
   services: '.services-dropdown',
   aboutUs: '.aboutus-dropdown',
+  // Sub-dropdowns
+  danza: '.danza-dropdown',
+  urban: '.urban-dropdown',
+  salsa: '.salsa-dropdown',
+  prepfisica: '.prepfisica-dropdown',
+  heels: '.heels-dropdown',
 };
 
 const Header: React.FC = () => {
