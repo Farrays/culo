@@ -194,6 +194,48 @@ export default async function handler(
     });
   }
 
+  // Listar eventos recientes
+  if (req.query['action'] === 'list') {
+    const accessToken = await getAccessToken();
+    if (!accessToken) {
+      return res.status(500).json({ error: 'Failed to get access token' });
+    }
+
+    try {
+      const now = new Date();
+      const timeMin = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(); // 7 days ago
+      const timeMax = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString(); // 30 days ahead
+
+      const response = await fetch(
+        `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?timeMin=${timeMin}&timeMax=${timeMax}&maxResults=20&orderBy=startTime&singleEvents=true`,
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+
+      if (!response.ok) {
+        const error = await response.text();
+        return res.status(response.status).json({ error });
+      }
+
+      const data = await response.json();
+      return res.status(200).json({
+        calendarId: getCalendarId(),
+        eventCount: data.items?.length || 0,
+        events: data.items?.map(
+          (e: { id: string; summary: string; start: { dateTime?: string }; colorId?: string }) => ({
+            id: e.id,
+            summary: e.summary,
+            start: e.start?.dateTime,
+            colorId: e.colorId,
+          })
+        ),
+      });
+    } catch (error) {
+      return res.status(500).json({ error: error instanceof Error ? error.message : 'Unknown' });
+    }
+  }
+
   // Test crear evento
   if (req.query['action'] === 'test') {
     if (!isGoogleCalendarConfigured()) {
