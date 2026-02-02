@@ -141,6 +141,11 @@ Reservado via: farrayscenter.com`;
       start: { dateTime: startDateTime.toISOString(), timeZone: TIMEZONE },
       end: { dateTime: endDateTime.toISOString(), timeZone: TIMEZONE },
       colorId: '8', // Graphite (pending)
+      // Deshabilitar notificaciones de Google Calendar
+      reminders: {
+        useDefault: false,
+        overrides: [],
+      },
     };
 
     const response = await fetch(

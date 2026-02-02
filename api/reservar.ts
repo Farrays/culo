@@ -452,6 +452,11 @@ async function createCalendarBookingEvent(booking: BookingCalendarData): Promise
           category: booking.category || '',
         },
       },
+      // Deshabilitar notificaciones de Google Calendar (usamos nuestros emails/WhatsApp)
+      reminders: {
+        useDefault: false,
+        overrides: [], // Sin recordatorios de Google
+      },
     };
 
     const response = await fetch(
