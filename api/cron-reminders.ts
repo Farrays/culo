@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { Resend } from 'resend';
 
 /**
  * API Route: /api/cron-reminders
@@ -12,11 +13,214 @@ import Redis from 'ioredis';
  *
  * Headers requeridos:
  * - Authorization: Bearer {CRON_SECRET}
+ *
+ * NOTA: Código de Email y WhatsApp inlineado para evitar problemas de bundling en Vercel
  */
 
 const SPAIN_TIMEZONE = 'Europe/Madrid';
+
+// ============================================================================
+// WHATSAPP INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+const WHATSAPP_API_VERSION = 'v23.0';
+
+interface WhatsAppResult {
+  success: boolean;
+  messageId?: string;
+  error?: string;
+}
+
+function getWhatsAppConfig() {
+  const token = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+  if (!token || !phoneId) return null;
+  return {
+    token,
+    phoneId,
+    apiUrl: `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
+  };
+}
+
+function normalizePhone(phone: string): string {
+  let normalized = phone.replace(/[\s\-().]/g, '');
+  if (normalized.startsWith('+')) normalized = normalized.slice(1);
+  if (normalized.startsWith('00')) normalized = normalized.slice(2);
+  if (/^[67]\d{8}$/.test(normalized)) normalized = '34' + normalized;
+  return normalized;
+}
+
+async function sendWhatsAppTemplate(
+  templateName: string,
+  to: string,
+  params: { type: string; text: string }[]
+): Promise<WhatsAppResult> {
+  const config = getWhatsAppConfig();
+  if (!config) return { success: false, error: 'WhatsApp not configured' };
+
+  const message = {
+    messaging_product: 'whatsapp',
+    to: normalizePhone(to),
+    type: 'template',
+    template: {
+      name: templateName,
+      language: { code: 'es_ES' },
+      components: [{ type: 'body', parameters: params }],
+    },
+  };
+
+  try {
+    const response = await fetch(config.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${config.token}`,
+      },
+      body: JSON.stringify(message),
+    });
+
+    const data = await response.json();
+    if (!response.ok || data.error) {
+      console.error('[cron] WhatsApp error:', data.error);
+      return { success: false, error: data.error?.message || `HTTP ${response.status}` };
+    }
+    return { success: true, messageId: data.messages?.[0]?.id };
+  } catch (error) {
+    console.error('[cron] WhatsApp error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown' };
+  }
+}
+
+// 48h: recordatorio_prueba_0 (sin botones)
+async function sendReminderWhatsAppInline(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+}): Promise<WhatsAppResult> {
+  return sendWhatsAppTemplate('recordatorio_prueba_0', data.to, [
+    { type: 'text', text: data.firstName },
+    { type: 'text', text: data.className },
+    { type: 'text', text: data.classDate || '' },
+    { type: 'text', text: data.classTime || '' },
+  ]);
+}
+
+// 24h: recordatorio_prueba_2 (con botones)
+async function sendAttendanceReminderWhatsAppInline(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+}): Promise<WhatsAppResult> {
+  return sendWhatsAppTemplate('recordatorio_prueba_2', data.to, [
+    { type: 'text', text: data.firstName },
+    { type: 'text', text: data.className },
+    { type: 'text', text: data.classDate || '' },
+    { type: 'text', text: data.classTime || '' },
+  ]);
+}
+
+// ============================================================================
+// EMAIL INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+const EMAIL_FROM = "Farray's Center <noreply@farrayscenter.com>";
+const EMAIL_REPLY_TO = 'info@farrayscenter.com';
+const BRAND_PRIMARY = '#B01E3C';
+
+interface EmailResult {
+  success: boolean;
+  id?: string;
+  error?: string;
+}
+
+async function sendReminderEmailInline(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  managementUrl: string;
+  reminderType: '48h' | '24h';
+}): Promise<EmailResult> {
+  const resendKey = process.env['RESEND_API_KEY'];
+  if (!resendKey) return { success: false, error: 'Resend not configured' };
+
+  const resend = new Resend(resendKey);
+  const is48h = data.reminderType === '48h';
+  const timeText = is48h ? 'pasado mañana' : 'mañana';
+
+  const promoSection = is48h
+    ? ''
+    : `
+  <div style="background: linear-gradient(135deg, ${BRAND_PRIMARY} 0%, #8B1730 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center;">
+    <p style="margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase;">💥 Promoción Especial 24h 💥</p>
+    <h3 style="margin: 0 0 15px 0; font-size: 24px;">MATRÍCULA GRATIS</h3>
+    <p style="margin: 0; font-size: 14px;"><span style="text-decoration: line-through;">ANTES 60€</span> → <strong style="font-size: 20px;">AHORA 0€</strong></p>
+    <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.9;">Válida solo si te apuntas mañana después de tu clase de prueba</p>
+  </div>`;
+
+  const cancelPolicy = is48h
+    ? ''
+    : `
+  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p style="margin: 0; color: #856404;">
+      <strong>⚠️ Política de cancelación:</strong><br>
+      Si no puedes asistir, tienes hasta <strong>1 hora antes</strong> para cancelar.
+    </p>
+  </div>`;
+
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: data.to,
+      replyTo: EMAIL_REPLY_TO,
+      subject: `Recordatorio: Tu clase de ${data.className} es ${timeText}`,
+      html: `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="https://www.farrayscenter.com/images/logo.webp" alt="Farray's Center" style="height: 60px;">
+  </div>
+  <div style="background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0;">📅 Recordatorio de clase</h2>
+    <p style="margin: 10px 0 0 0;">Tu clase es ${timeText}</p>
+  </div>
+  <p>Hola <strong>${data.firstName}</strong>,</p>
+  <p>Te recordamos que ${timeText} tienes tu clase de prueba:</p>
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 20px 0;">
+    <p style="margin: 0;"><strong>📚 Clase:</strong> ${data.className}</p>
+    <p style="margin: 10px 0 0 0;"><strong>📅 Fecha:</strong> ${data.classDate}</p>
+    <p style="margin: 10px 0 0 0;"><strong>⏰ Hora:</strong> ${data.classTime}</p>
+    <p style="margin: 10px 0 0 0;"><strong>📍 Lugar:</strong> C/ Entença 100, Barcelona</p>
+  </div>
+  ${promoSection}
+  ${cancelPolicy}
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="${data.managementUrl}" style="background: ${BRAND_PRIMARY}; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; display: inline-block;">
+      Ver mi reserva
+    </a>
+  </div>
+  <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+  <p style="text-align: center; color: #666; font-size: 12px;">
+    Farray's International Dance Center<br>
+    C/ Entença 100, Barcelona
+  </p>
+</body></html>`,
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+    return { success: true, id: result.data?.id };
+  } catch (error) {
+    console.error('[cron] Email error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown' };
+  }
+}
 const BOOKING_MANAGEMENT_URL = 'https://www.farrayscenter.com/es/mi-reserva';
-const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/QwDZvqvz4uyVfSWq7';
 
 // Lazy Redis
 let redisClient: Redis | null = null;
@@ -120,9 +324,7 @@ async function processRemindersForDate(
 
   console.log(`[cron-reminders] Found ${eventIds.length} bookings for ${targetDate}`);
 
-  // Importar funciones de notificación
-  const { sendReminderEmail } = await import('./lib/email');
-  const { sendReminderWhatsApp, sendAttendanceReminderWhatsApp } = await import('./lib/whatsapp');
+  // Usando funciones inlineadas (evita problemas de bundling en Vercel)
 
   for (const eventId of eventIds) {
     const result: ReminderResult = {
@@ -161,29 +363,16 @@ async function processRemindersForDate(
       const managementUrl = `${BOOKING_MANAGEMENT_URL}?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
       const formattedDate = formatDateSpanish(booking.classDate);
 
-      // Extract ISO date for calendar generation (YYYY-MM-DD)
-      const classDateISOMatch = booking.classDate?.match(/\d{4}-\d{2}-\d{2}/);
-      const classDateISO = classDateISOMatch ? classDateISOMatch[0] : undefined;
-
-      // Enviar Email
+      // Enviar Email (usando función inlineada)
       try {
-        const emailResult = await sendReminderEmail({
+        const emailResult = await sendReminderEmailInline({
           to: booking.email,
           firstName: booking.firstName,
           className: booking.className,
           classDate: formattedDate || booking.classDate,
-          classDateISO,
           classTime: booking.classTime,
           managementUrl,
-          mapUrl: GOOGLE_MAPS_URL,
           reminderType,
-          eventId,
-          category: booking.category as
-            | 'bailes_sociales'
-            | 'danzas_urbanas'
-            | 'danza'
-            | 'entrenamiento'
-            | 'heels',
         });
         result.email = emailResult.success;
         if (!emailResult.success) {
@@ -193,7 +382,7 @@ async function processRemindersForDate(
         console.warn(`[cron-reminders] Email error for ${eventId}:`, e);
       }
 
-      // Enviar WhatsApp
+      // Enviar WhatsApp (usando funciones inlineadas)
       // 48h: recordatorio_prueba_0 (solo informativo, sin botones)
       // 24h: recordatorio_prueba_2 (con botones de confirmación de asistencia)
       try {
@@ -203,20 +392,13 @@ async function processRemindersForDate(
           className: booking.className,
           classDate: formattedDate || booking.classDate,
           classTime: booking.classTime,
-          category: booking.category as
-            | 'bailes_sociales'
-            | 'danzas_urbanas'
-            | 'danza'
-            | 'entrenamiento'
-            | 'heels',
-          reminderType,
         };
 
         // Usar función con botones para 24h, sin botones para 48h
         const whatsappResult =
           reminderType === '24h'
-            ? await sendAttendanceReminderWhatsApp(whatsappData)
-            : await sendReminderWhatsApp(whatsappData);
+            ? await sendAttendanceReminderWhatsAppInline(whatsappData)
+            : await sendReminderWhatsAppInline(whatsappData);
 
         result.whatsapp = whatsappResult.success;
         if (!whatsappResult.success) {
