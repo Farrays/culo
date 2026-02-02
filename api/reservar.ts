@@ -2,8 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
-// Google Calendar disabled temporarily - Vercel bundler doesn't include non-npm dependencies
-// import { createBookingEvent } from '../lib/google-calendar';
+// Google Calendar: código inlineado directamente en este archivo
+// (El bundler de Vercel no incluye archivos sin dependencias npm)
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -278,6 +278,206 @@ async function sendAdminBookingNotificationEmail(data: {
     return { success: true };
   } catch (error) {
     console.error('[reservar] Error sending admin notification:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// GOOGLE CALENDAR INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+const CALENDAR_TIMEZONE = 'Europe/Madrid';
+const CALENDAR_CLASS_DURATION = 60; // minutos
+const CALENDAR_ACADEMY_LOCATION =
+  "Farray's International Dance Center, C/ Entença 100, Local 1, 08015 Barcelona";
+
+interface CalendarResult {
+  success: boolean;
+  calendarEventId?: string;
+  error?: string;
+}
+
+interface BookingCalendarData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: string;
+  eventId?: string;
+  managementUrl?: string;
+}
+
+let cachedCalendarToken: string | null = null;
+let calendarTokenExpiry: number = 0;
+
+async function getCalendarAccessToken(): Promise<string | null> {
+  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+
+  if (!clientId || !clientSecret || !refreshToken) {
+    console.warn('[reservar-calendar] Missing credentials');
+    return null;
+  }
+
+  // Return cached token if still valid (with 60s buffer)
+  if (cachedCalendarToken && Date.now() < calendarTokenExpiry - 60000) {
+    return cachedCalendarToken;
+  }
+
+  try {
+    const response = await fetch(CALENDAR_TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('[reservar-calendar] Token refresh failed:', error);
+      return null;
+    }
+
+    const data = await response.json();
+    cachedCalendarToken = data.access_token;
+    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
+
+    return cachedCalendarToken;
+  } catch (error) {
+    console.error('[reservar-calendar] Token refresh error:', error);
+    return null;
+  }
+}
+
+function getCalendarId(): string {
+  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+}
+
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
+
+function parseCalendarDateTime(classDate: string, classTime: string): Date {
+  const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
+  const dateStr = isoMatch ? isoMatch[0] : classDate;
+  const [hours, minutes] = classTime.split(':').map(Number);
+  const date = new Date(dateStr);
+  date.setHours(hours || 19, minutes || 0, 0, 0);
+  return date;
+}
+
+function formatCalendarDescription(booking: BookingCalendarData): string {
+  const phoneNormalized = booking.phone.replace(/[\s\-+]/g, '');
+  const whatsappUrl = `https://wa.me/${phoneNormalized}`;
+
+  const categoryLabels: Record<string, string> = {
+    bailes_sociales: 'Bailes Sociales',
+    danzas_urbanas: 'Danzas Urbanas',
+    danza: 'Danza',
+    entrenamiento: 'Entrenamiento',
+    heels: 'Heels',
+  };
+  const categoryLabel = categoryLabels[booking.category || ''] || booking.category || 'N/A';
+
+  let description = `🎫 Clase de Prueba Gratuita
+
+━━━━━━━━━━ CONTACTO ━━━━━━━━━━
+📧 ${booking.email}
+📱 ${booking.phone}
+💬 ${whatsappUrl}
+`;
+
+  if (booking.managementUrl) {
+    description += `
+━━━━━━━━━━ GESTIÓN ━━━━━━━━━━
+📋 ${booking.managementUrl}
+`;
+  }
+
+  description += `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎭 ${categoryLabel}`;
+
+  if (booking.eventId) {
+    description += `
+🆔 ${booking.eventId}`;
+  }
+
+  description += `
+
+Estado: ⚪ Pendiente de confirmación
+
+Reservado vía: farrayscenter.com`;
+
+  return description;
+}
+
+async function createCalendarBookingEvent(booking: BookingCalendarData): Promise<CalendarResult> {
+  const accessToken = await getCalendarAccessToken();
+
+  if (!accessToken) {
+    return { success: false, error: 'Failed to get access token' };
+  }
+
+  try {
+    const startDateTime = parseCalendarDateTime(booking.classDate, booking.classTime);
+    const endDateTime = new Date(startDateTime.getTime() + CALENDAR_CLASS_DURATION * 60 * 1000);
+
+    const event = {
+      summary: `${booking.firstName} ${booking.lastName} - ${booking.className}`,
+      description: formatCalendarDescription(booking),
+      location: CALENDAR_ACADEMY_LOCATION,
+      start: { dateTime: startDateTime.toISOString(), timeZone: CALENDAR_TIMEZONE },
+      end: { dateTime: endDateTime.toISOString(), timeZone: CALENDAR_TIMEZONE },
+      colorId: '8', // Graphite (pending)
+      extendedProperties: {
+        private: {
+          bookingEventId: booking.eventId || '',
+          email: booking.email,
+          phone: booking.phone,
+          category: booking.category || '',
+        },
+      },
+    };
+
+    const response = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(event),
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('[reservar-calendar] Create event failed:', error);
+      return { success: false, error: `HTTP ${response.status}: ${error}` };
+    }
+
+    const data = await response.json();
+    console.log(`[reservar-calendar] Event created: ${data.id}`);
+
+    return { success: true, calendarEventId: data.id };
+  } catch (error) {
+    console.error('[reservar-calendar] Error creating event:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 }
@@ -1280,10 +1480,35 @@ export default async function handler(
     const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
     const calendarDateStr = isoMatch ? isoMatch[0] : '';
 
-    // 6. Google Calendar - DISABLED (Vercel bundler issue)
-    // The bundler doesn't include files without npm dependencies
-    const calendarEventId: string | undefined = undefined;
-    console.log('[reservar] Google Calendar disabled temporarily');
+    // 6. Google Calendar (código inlineado para evitar problemas de bundling)
+    let calendarEventId: string | undefined = undefined;
+    if (isGoogleCalendarConfigured()) {
+      try {
+        const calendarResult = await createCalendarBookingEvent({
+          firstName: firstNameOnly,
+          lastName: sanitize(lastName) || '',
+          email: normalizedEmail,
+          phone: sanitize(phone),
+          className: className || estilo || 'Clase de Prueba',
+          classDate: calendarDateStr || classDate || '',
+          classTime: classTime || '19:00',
+          category,
+          eventId: finalEventId,
+          managementUrl,
+        });
+
+        if (calendarResult.success) {
+          calendarEventId = calendarResult.calendarEventId;
+          console.log(`[reservar] Calendar event created: ${calendarEventId}`);
+        } else {
+          console.warn('[reservar] Calendar event failed:', calendarResult.error);
+        }
+      } catch (e) {
+        console.warn('[reservar] Calendar error (non-blocking):', e);
+      }
+    } else {
+      console.log('[reservar] Google Calendar not configured - skipping');
+    }
 
     // 7. Guardar booking_details para mi-reserva y cron-reminders
     const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');
