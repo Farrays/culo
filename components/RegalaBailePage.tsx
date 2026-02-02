@@ -123,6 +123,7 @@ const RegalaBailePage: React.FC = () => {
     },
     offers: {
       '@type': 'Offer',
+      price: '50',
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
       seller: {

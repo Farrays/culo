@@ -26,7 +26,6 @@ const Teachers = lazy(() => import('./Teachers'));
 const ReviewsSection = lazy(() => import('./reviews/ReviewsSection'));
 const FAQSection = lazy(() => import('./FAQSection'));
 const HowToGetHere = lazy(() => import('./HowToGetHere'));
-const CalendarWidget = lazy(() => import('./CalendarWidget'));
 const ComparisonSection = lazy(() => import('./homev2/ComparisonSection'));
 
 // Skeleton loaders for better UX during lazy loading
@@ -109,7 +108,6 @@ const HomePage: React.FC = () => {
     'common',
     'booking',
     'schedule',
-    'calendar',
     'home',
     'classes',
     'blog',
@@ -286,7 +284,6 @@ const HomePage: React.FC = () => {
         <ComparisonSection config={HOMEPAGE_V2_CONFIG.comparison} />
         <Services />
         <Teachers />
-        <CalendarWidget />
         <ReviewsSection
           category="general"
           limit={6}

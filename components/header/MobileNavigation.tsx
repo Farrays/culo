@@ -440,107 +440,124 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           {/* Divider */}
           <div className="border-b border-white/10 my-2" />
 
-          {/* 3. Clases de Baile - Accordion */}
+          {/* 3. Clases de Baile - Accordion simplificado */}
           <div>
             <AccordionHeader
               label={t(menuStructure.classes.textKey)}
               isOpen={openSections['classes'] || false}
               onClick={() => toggleSection('classes')}
-              linkTo={menuStructure.classes.path}
               isPrimary
             />
 
             {openSections['classes'] && (
               <div className="ml-4 pl-3 space-y-2 border-l-2 border-primary-accent/40 animate-slideDown">
-                {menuStructure.classes.submenu?.map(item => (
-                  <div key={item.path}>
-                    {item.submenu ? (
-                      // Nested accordion for Urban Dances
-                      <div>
-                        <AccordionHeader
-                          label={t(item.textKey)}
-                          isOpen={openSections[item.textKey] || false}
-                          onClick={() => toggleSection(item.textKey)}
-                          linkTo={item.path}
-                        />
-                        {openSections[item.textKey] && (
-                          <div className="ml-4 pl-3 space-y-1 border-l-2 border-white/20 animate-slideDown">
-                            {item.submenu.map(subitem =>
-                              subitem.submenu ? (
-                                // Third level - Heels with Femmology & Sexy Style
-                                <div key={subitem.path}>
-                                  <AccordionHeader
-                                    label={t(subitem.textKey)}
-                                    isOpen={openSections[subitem.textKey] || false}
-                                    onClick={() => toggleSection(subitem.textKey)}
-                                    linkTo={subitem.path}
-                                  />
-                                  {openSections[subitem.textKey] && (
-                                    <div className="ml-4 pl-3 space-y-1 border-l-2 border-white/10 animate-slideDown">
-                                      {subitem.submenu.map(subsubitem => (
-                                        <Link
-                                          key={subsubitem.path}
-                                          to={subsubitem.path}
-                                          onClick={() => setIsMenuOpen(false)}
-                                          className={`flex items-center gap-2 py-2.5 px-2 text-sm sm:text-base font-medium rounded-lg transition-all duration-300 ${
-                                            location.pathname === subsubitem.path
-                                              ? 'text-primary-accent bg-primary-accent/10'
-                                              : 'text-white/70 hover:text-white hover:bg-white/5'
-                                          }`}
-                                        >
-                                          <span className="w-1 h-1 rounded-full bg-primary-accent/40" />
-                                          {t(subsubitem.textKey)}
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  )}
-                                </div>
-                              ) : (
-                                <Link
-                                  key={subitem.path}
-                                  to={subitem.path}
-                                  onClick={() => setIsMenuOpen(false)}
-                                  className={`flex items-center gap-2 py-2.5 px-2 text-sm sm:text-base font-medium rounded-lg transition-all duration-300 ${
-                                    location.pathname === subitem.path
-                                      ? 'text-primary-accent bg-primary-accent/10'
-                                      : 'text-white/70 hover:text-white hover:bg-white/5'
-                                  }`}
-                                >
-                                  <span className="w-1 h-1 rounded-full bg-primary-accent/40" />
-                                  {t(subitem.textKey)}
-                                </Link>
-                              )
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      // Simple link (Baile de Mañanas, Horarios, Precios) - same style as Salsa & Bachata
-                      <Link
-                        to={item.path}
-                        onClick={() => setIsMenuOpen(false)}
-                        className={`flex-1 flex items-center gap-3 py-3 px-3 text-base sm:text-lg font-bold tracking-wide transition-all duration-300 ${
-                          location.pathname === item.path
-                            ? 'text-primary-accent'
-                            : 'text-white hover:text-primary-accent'
-                        }`}
-                      >
-                        {t(item.textKey)}
-                      </Link>
-                    )}
-                  </div>
-                ))}
+                {/* Ver Todas las Clases - primera opción en rojo */}
+                <Link
+                  to={menuStructure.classes.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-2 py-2.5 px-3 text-base font-bold text-primary-accent"
+                >
+                  <span className="w-2 h-2 rounded-full bg-primary-accent" />
+                  {t('navAllClasses')}
+                </Link>
 
-                {/* Calendario Académico - Static link at end of Classes */}
+                {/* Categorías - links simples a hubs */}
+                <Link
+                  to={`/${locale}/clases/danza-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/clases/danza-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navDanza')}
+                </Link>
+                <Link
+                  to={`/${locale}/clases/danzas-urbanas-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/clases/danzas-urbanas-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navDanzasUrbanas')}
+                </Link>
+                <Link
+                  to={`/${locale}/clases/salsa-bachata-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/clases/salsa-bachata-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navSalsaBachata')}
+                </Link>
+                <Link
+                  to={`/${locale}/clases/entrenamiento-bailarines-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/clases/entrenamiento-bailarines-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navPrepFisica')}
+                </Link>
+
+                {/* Otros enlaces */}
+                <Link
+                  to={`/${locale}/clases/baile-mananas`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/clases/baile-mananas`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navBaileMananas')}
+                </Link>
+                <Link
+                  to={`/${locale}/horarios-clases-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/horarios-clases-baile-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navSchedule')}
+                </Link>
+                <Link
+                  to={`/${locale}/precios-clases-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/precios-clases-baile-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('navPricing')}
+                </Link>
                 <Link
                   to={`/${locale}/calendario`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-3 py-3 px-3 text-base sm:text-lg font-bold tracking-wide transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/calendario`
-                      ? 'text-primary-accent'
-                      : 'text-white hover:text-primary-accent'
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
                   }`}
                 >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
                   {t('navCalendar')}
                 </Link>
               </div>

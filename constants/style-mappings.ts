@@ -74,30 +74,41 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   // Hip Hop variants
   hipHopV2: 'hiphop',
   urbanDance: 'hiphop',
+  hiphop: 'hiphop', // Direct key from hip-hop-config.ts
 
   // Dancehall
   dancehallV2: 'dancehall',
+  dhV3: 'dancehall', // From dancehall-config.ts
 
   // Heels/Sexy Style/Femmology
   sexyStyle: 'sexystyle',
+  sexystyle: 'sexystyle', // Direct key from sexy-style-config.ts
   heels: 'heels',
   stiletto: 'heels',
   femmology: 'femmology',
+  fem: 'femmology', // From femmology-config.ts
 
   // Reggaeton variants
   reparto: 'reparto',
+  rcb: 'reparto', // From reggaeton-cubano-config.ts
   sexyReggaeton: 'sexyreggaeton',
+  sxr: 'sexyreggaeton', // From sexy-reggaeton-config.ts
   hipHopReggaeton: 'hiphopreggaeton',
+  hhr: 'hiphopreggaeton', // From hip-hop-reggaeton-config.ts
 
-  // Twerk
+  // Twerk / Bum Bum
   twerk: 'twerk',
-  bumBum: 'twerk',
+  bumBum: 'bumbum',
+  bumbum: 'bumbum', // From bum-bum-config.ts
 
   // Afro styles
   afrobeat: 'afro',
-  afroContemporaneo: 'afro',
-  afroContemporaneoV2: 'afro',
+  afro: 'afro', // Direct key from afrobeat-config.ts
+  afroContemporaneo: 'afrocontemporaneo',
+  afrocontemporaneo: 'afrocontemporaneo', // From afro-contemporaneo-config.ts
+  afroContemporaneoV2: 'afrocontemporaneo',
   afroJazz: 'afro',
+  afrojazz: 'afro', // From afro-jazz-config.ts
   afroDance: 'afro',
 
   // Ballet
@@ -107,6 +118,7 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   // Contemporary/Jazz
   contemporaneo: 'contemporaneo',
   modernJazz: 'jazz',
+  modernjazz: 'jazz', // From modern-jazz-config.ts
   jazz: 'jazz',
 
   // Girly Style
@@ -116,11 +128,13 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   stretching: 'stretching',
   stretchingV2: 'stretching',
   fullBodyCardio: 'fitness',
-  cuerpoFit: 'fitness',
+  cuerpoFit: 'cuerpofit',
+  cuerpofit: 'cuerpofit', // From cuerpo-fit-config.ts
   fitness: 'fitness',
 
   // Folklore
   folkloreCubano: 'folklore',
+  folklore: 'folklore', // Direct key from folklore-cubano-config.ts
 
   // Other urban
   kpop: 'kpop',
@@ -135,8 +149,10 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   yoga: 'yoga',
   pilates: 'pilates',
 
-  // Morning classes (maps to multiple, use 'otros' or specific)
+  // Morning classes / Special (maps to 'otros' until scheduled in Momence)
   baileMananas: 'otros',
+  bailemanananas: 'otros', // Typo variant from baile-mananas-config.ts
+  kizomba: 'otros', // From kizomba-config.ts (no Momence class yet)
 };
 
 /**

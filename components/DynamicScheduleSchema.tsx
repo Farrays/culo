@@ -162,6 +162,8 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
             : {
                 offers: {
                   '@type': 'Offer',
+                  price: '50',
+                  priceCurrency: 'EUR',
                   availability: 'https://schema.org/InStock',
                   availableAtOrFrom: {
                     '@type': 'Place',
@@ -281,6 +283,8 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
               ? {
                   offers: {
                     '@type': 'Offer',
+                    price: '50',
+                    priceCurrency: 'EUR',
                     availability: 'https://schema.org/SoldOut',
                     validFrom: session.rawStartsAt,
                   },
@@ -288,6 +292,8 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
               : {
                   offers: {
                     '@type': 'Offer',
+                    price: '50',
+                    priceCurrency: 'EUR',
                     availability: 'https://schema.org/InStock',
                     url: courseUrl,
                     validFrom: session.rawStartsAt,
@@ -395,6 +401,8 @@ export const VacationSchema: React.FC<{
     // No hasCourseInstance when on vacation
     offers: {
       '@type': 'Offer',
+      price: '50',
+      priceCurrency: 'EUR',
       availability: 'https://schema.org/OutOfStock',
       availabilityStarts: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // Estimate 1 week
     },

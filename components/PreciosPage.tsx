@@ -1032,80 +1032,23 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 8: TESTIMONIOS
+            SECTION: RESEÑAS REALES
         ================================================================ */}
-        <section className="py-12 md:py-16 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-10 max-w-4xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 holographic-text">
-                  {t('pricing_testimonials_title')}
-                </h2>
-                <div className="inline-block">
-                  <div className="mb-3 text-2xl font-black text-neutral">{t('excellent')}</div>
-                  <div className="flex items-center justify-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                    ))}
-                  </div>
-                  <div className="text-sm text-neutral/70">
-                    {t('pages:basedOnReviews', { count: 509 })}
-                  </div>
-                  <div className="mt-2 text-xs text-neutral/70">Google</div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {[
-                { id: 1, name: 'Ana Cid', city: 'Barcelona', quote: 'pricing_testimonial1_text' },
-                {
-                  id: 2,
-                  name: 'Maria Garcia',
-                  city: "L'Hospitalet",
-                  quote: 'pricing_testimonial2_text',
-                },
-                { id: 3, name: 'Carlos Ruiz', city: 'Gracia', quote: 'pricing_testimonial3_text' },
-                {
-                  id: 4,
-                  name: 'Laura Martinez',
-                  city: 'Eixample',
-                  quote: 'pricing_testimonial4_text',
-                },
-              ].map((testimonial, index) => (
-                <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-                  <div className="[perspective:1000px] h-full">
-                    <div className="flex flex-col h-full min-h-[180px] p-5 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg [transform-style:preserve-3d] transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)]">
-                      <div className="mb-3 flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                        ))}
-                      </div>
-                      <blockquote className="flex-grow text-neutral/90 mb-4">
-                        <p className="text-sm leading-relaxed">
-                          &ldquo;{t(testimonial.quote)}&rdquo;
-                        </p>
-                      </blockquote>
-                      <div className="flex items-center gap-3 mt-auto pt-3 border-t border-primary-dark/30">
-                        <div>
-                          <cite className="font-bold text-neutral not-italic text-sm">
-                            {testimonial.name}
-                          </cite>
-                          <p className="text-xs text-neutral/70">{testimonial.city}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION: REVIEWS
-        ================================================================ */}
-        <ReviewsSection category="general" limit={4} showGoogleBadge={true} layout="grid" />
+        <ReviewsSection
+          category="general"
+          limit={6}
+          showGoogleBadge={true}
+          layout="grid"
+          showCategory={false}
+          selectedAuthors={[
+            'Karina Indytska',
+            'Yosefin Cabeza Carrillo',
+            'Micaela Llull (MicaPower)',
+            'Michelle Lu',
+            'garcia lam',
+            'Montse Solís Solís',
+          ]}
+        />
 
         {/* ================================================================
             SECTION 8: FAQ

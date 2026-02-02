@@ -9,40 +9,30 @@ import LeadCaptureModal from './shared/LeadCaptureModal';
 import type { Locale } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 
+// Main dropdown keys + sub-dropdown keys for nested menus
 export type DropdownKey =
   | 'lang'
   | 'classes'
+  | 'services'
+  | 'aboutUs'
+  // Sub-dropdown keys for Classes menu
   | 'danza'
   | 'urban'
-  | 'heels'
   | 'salsa'
   | 'prepfisica'
-  | 'services'
-  | 'aboutUs';
+  | 'heels';
 
 const DROPDOWN_CLASS_MAP: Record<DropdownKey, string> = {
   lang: '.language-dropdown',
   classes: '.classes-dropdown',
-  danza: '.danza-dropdown',
-  urban: '.urban-dropdown',
-  heels: '.heels-dropdown',
-  salsa: '.salsa-dropdown',
-  prepfisica: '.prepfisica-dropdown',
   services: '.services-dropdown',
   aboutUs: '.aboutus-dropdown',
-};
-
-// Define parent-child relationships for nested dropdowns
-const NESTED_DROPDOWNS: Record<DropdownKey, DropdownKey[]> = {
-  classes: ['danza', 'urban', 'salsa', 'heels', 'prepfisica'],
-  danza: [],
-  urban: ['heels'],
-  heels: [],
-  salsa: [],
-  prepfisica: [],
-  services: [],
-  aboutUs: [],
-  lang: [],
+  // Sub-dropdowns
+  danza: '.danza-dropdown',
+  urban: '.urban-dropdown',
+  salsa: '.salsa-dropdown',
+  prepfisica: '.prepfisica-dropdown',
+  heels: '.heels-dropdown',
 };
 
 const Header: React.FC = () => {
@@ -60,27 +50,10 @@ const Header: React.FC = () => {
     setOpenDropdowns(prev => {
       const newSet = new Set(prev);
       if (newSet.has(key)) {
-        // Close this dropdown and all its children
         newSet.delete(key);
-        NESTED_DROPDOWNS[key].forEach(child => newSet.delete(child));
       } else {
-        // Close sibling dropdowns (same level) but keep parent open
-        const isSubDropdown = ['danza', 'urban', 'salsa', 'heels', 'prepfisica'].includes(key);
-        if (!isSubDropdown) {
-          // Top-level dropdown: close all others
-          newSet.clear();
-        } else if (key === 'heels') {
-          // heels is child of urban, keep urban and classes open
-        } else {
-          // Sub-dropdown: close siblings but keep 'classes' open
-          ['danza', 'urban', 'salsa', 'prepfisica'].forEach(sibling => {
-            if (sibling !== key) {
-              newSet.delete(sibling as DropdownKey);
-              // Also close heels if closing urban
-              if (sibling === 'urban') newSet.delete('heels');
-            }
-          });
-        }
+        // Close all other dropdowns when opening a new one
+        newSet.clear();
         newSet.add(key);
       }
       return newSet;
@@ -429,7 +402,7 @@ const Header: React.FC = () => {
                 )}
               </div>
 
-              {/* Clases de Baile - Dropdown */}
+              {/* Clases de Baile - Dropdown simplificado */}
               <div className="relative classes-dropdown">
                 <button
                   onClick={() => toggleDropdown('classes')}
@@ -447,6 +420,7 @@ const Header: React.FC = () => {
                 </button>
                 {isDropdownOpen('classes') && (
                   <div className="absolute top-full left-0 mt-3 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 min-w-[280px] py-2 z-50 animate-fadeIn">
+                    {/* Ver Todas las Clases - primera opción en rojo */}
                     <Link
                       to={`/${locale}/clases/baile-barcelona`}
                       onClick={closeAllDropdowns}
@@ -457,326 +431,73 @@ const Header: React.FC = () => {
                     </Link>
                     <div className="border-t border-white/10 my-2 mx-4"></div>
 
-                    {/* Danza - con submenú */}
-                    <div className="relative danza-dropdown group/danza">
-                      <button
-                        onClick={() => toggleDropdown('danza')}
-                        className="w-full flex items-center justify-between px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                      >
-                        {t('navDanza')}
-                        <ChevronDownIcon
-                          className={`w-3 h-3 transition-transform ${isDropdownOpen('danza') ? 'rotate-180' : '-rotate-90'}`}
-                        />
-                      </button>
-                      {isDropdownOpen('danza') && (
-                        <div className="absolute left-full top-0 ml-1 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[200px] py-2 z-50">
-                          <Link
-                            to={`/${locale}/clases/danza-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white font-semibold"
-                          >
-                            {t('navDanza')}
-                          </Link>
-                          <div className="border-t border-white/10 my-1"></div>
-                          <Link
-                            to={`/${locale}/clases/afro-contemporaneo-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navAfroContemporaneo')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/afro-jazz`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navAfroJazz')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/ballet-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navBallet')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/contemporaneo-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navContemporaneo')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/modern-jazz-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navModernJazz')}
-                          </Link>
-                        </div>
-                      )}
-                    </div>
+                    {/* Categorías - links simples a hubs */}
+                    <Link
+                      to={`/${locale}/clases/danza-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
+                      {t('navDanza')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/clases/danzas-urbanas-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
+                      {t('navDanzasUrbanas')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/clases/salsa-bachata-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
+                      {t('navSalsaBachata')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/clases/entrenamiento-bailarines-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
+                      {t('navPrepFisica')}
+                    </Link>
 
-                    {/* Danzas Urbanas - con submenú */}
-                    <div className="relative urban-dropdown group/urban">
-                      <button
-                        onClick={() => toggleDropdown('urban')}
-                        className="w-full flex items-center justify-between px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                      >
-                        {t('navDanzasUrbanas')}
-                        <ChevronDownIcon
-                          className={`w-3 h-3 transition-transform ${isDropdownOpen('urban') ? 'rotate-180' : '-rotate-90'}`}
-                        />
-                      </button>
-                      {isDropdownOpen('urban') && (
-                        <div className="absolute left-full top-0 ml-1 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[200px] py-2 z-50">
-                          <Link
-                            to={`/${locale}/clases/danzas-urbanas-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white font-semibold"
-                          >
-                            {t('navDanzasUrbanas')}
-                          </Link>
-                          <div className="border-t border-white/10 my-1"></div>
-                          <Link
-                            to={`/${locale}/clases/afrobeats-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navAfrobeat')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/dancehall-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navDancehall')}
-                          </Link>
-                          {/* Heels con submenú */}
-                          <div className="relative heels-dropdown">
-                            <button
-                              onClick={() => toggleDropdown('heels')}
-                              className="w-full flex items-center justify-between px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                            >
-                              {t('navHeels')}
-                              <ChevronDownIcon
-                                className={`w-3 h-3 transition-transform ${isDropdownOpen('heels') ? 'rotate-180' : '-rotate-90'}`}
-                              />
-                            </button>
-                            {isDropdownOpen('heels') && (
-                              <div className="absolute left-full top-0 ml-1 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[180px] py-2 z-50">
-                                <Link
-                                  to={`/${locale}/clases/heels-barcelona`}
-                                  onClick={closeAllDropdowns}
-                                  className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white font-semibold"
-                                >
-                                  {t('navHeels')}
-                                </Link>
-                                <div className="border-t border-white/10 my-1"></div>
-                                <Link
-                                  to={`/${locale}/clases/femmology`}
-                                  onClick={closeAllDropdowns}
-                                  className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                                >
-                                  {t('navFemmology')}
-                                </Link>
-                                <Link
-                                  to={`/${locale}/clases/sexy-style-barcelona`}
-                                  onClick={closeAllDropdowns}
-                                  className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                                >
-                                  {t('navSexyStyle')}
-                                </Link>
-                              </div>
-                            )}
-                          </div>
-                          <Link
-                            to={`/${locale}/clases/hip-hop-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navHipHop')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/hip-hop-reggaeton-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navHipHopReggaeton')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/reggaeton-cubano-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navReggaetonCubano')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/sexy-reggaeton-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navSexyReggaeton')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/twerk-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navTwerk')}
-                          </Link>
-                        </div>
-                      )}
-                    </div>
+                    <div className="border-t border-white/10 my-2 mx-4"></div>
 
-                    {/* Salsa & Bachata - con submenú */}
-                    <div className="relative salsa-dropdown group/salsa">
-                      <button
-                        onClick={() => toggleDropdown('salsa')}
-                        className="w-full flex items-center justify-between px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                      >
-                        {t('navSalsaBachata')}
-                        <ChevronDownIcon
-                          className={`w-3 h-3 transition-transform ${isDropdownOpen('salsa') ? 'rotate-180' : '-rotate-90'}`}
-                        />
-                      </button>
-                      {isDropdownOpen('salsa') && (
-                        <div className="absolute left-full top-0 ml-1 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[200px] py-2 z-50">
-                          <Link
-                            to={`/${locale}/clases/salsa-bachata-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white font-semibold"
-                          >
-                            {t('navSalsaBachata')}
-                          </Link>
-                          <div className="border-t border-white/10 my-1"></div>
-                          <Link
-                            to={`/${locale}/clases/salsa-cubana-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navSalsaCubana')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/salsa-lady-style-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navSalsaLadyStyle')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/bachata-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navBachataSensual')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/bachata-lady-style-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navBachataLadyStyle')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/timba-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navTimba')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/folklore-cubano`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navFolkloreCubano')}
-                          </Link>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Prep. Física - con submenú */}
-                    <div className="relative prepfisica-dropdown group/prepfisica">
-                      <button
-                        onClick={() => toggleDropdown('prepfisica')}
-                        className="w-full flex items-center justify-between px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                      >
-                        {t('navPrepFisica')}
-                        <ChevronDownIcon
-                          className={`w-3 h-3 transition-transform ${isDropdownOpen('prepfisica') ? 'rotate-180' : '-rotate-90'}`}
-                        />
-                      </button>
-                      {isDropdownOpen('prepfisica') && (
-                        <div className="absolute left-full top-0 ml-1 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[220px] py-2 z-50">
-                          <Link
-                            to={`/${locale}/clases/entrenamiento-bailarines-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white font-semibold"
-                          >
-                            {t('navPrepFisica')}
-                          </Link>
-                          <div className="border-t border-white/10 my-1"></div>
-                          <Link
-                            to={`/${locale}/clases/acondicionamiento-fisico-bailarines`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navBodyConditioning')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/cuerpo-fit`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navCuerpoFit')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/ejercicios-gluteos-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navBumBum')}
-                          </Link>
-                          <Link
-                            to={`/${locale}/clases/stretching-barcelona`}
-                            onClick={closeAllDropdowns}
-                            className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
-                          >
-                            {t('navStretching')}
-                          </Link>
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="border-t border-white/10 my-1"></div>
+                    {/* Otros enlaces */}
                     <Link
                       to={`/${locale}/clases/baile-mananas`}
                       onClick={closeAllDropdowns}
-                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
                       {t('navBaileMananas')}
                     </Link>
-                    <div className="border-t border-white/10 my-1"></div>
                     <Link
                       to={`/${locale}/horarios-clases-baile-barcelona`}
                       onClick={closeAllDropdowns}
-                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
                       {t('navSchedule')}
                     </Link>
                     <Link
                       to={`/${locale}/precios-clases-baile-barcelona`}
                       onClick={closeAllDropdowns}
-                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
                       {t('navPricing')}
                     </Link>
                     <Link
                       to={`/${locale}/calendario`}
                       onClick={closeAllDropdowns}
-                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
                       {t('navCalendar')}
                     </Link>
                   </div>
