@@ -1034,6 +1034,123 @@ export async function sendFeedbackEmail(
   }
 }
 
+// ============================================================================
+// NOTIFICACIÓN AL ADMIN
+// ============================================================================
+
+/**
+ * Email address del admin para notificaciones de reservas
+ */
+const ADMIN_EMAIL = 'info@farrayscenter.com';
+
+/**
+ * Datos necesarios para notificar al admin de una nueva reserva
+ */
+interface AdminBookingNotificationData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: string;
+  sourceUrl?: string;
+}
+
+/**
+ * Envía notificación al admin cuando hay una nueva reserva
+ *
+ * IMPORTANTE: Esta función está diseñada para NO bloquear el flujo de reserva.
+ * Si falla, solo se loguea el error pero la reserva continúa.
+ *
+ * @see BOOKING_WIDGET_ROADMAP_COMPLETE.md - Sección "Notificación de Reservas al Admin"
+ */
+export async function sendAdminBookingNotification(
+  data: AdminBookingNotificationData
+): Promise<{ success: boolean; id?: string; error?: string }> {
+  const resend = getResend();
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: ADMIN_EMAIL,
+      replyTo: data.email, // El admin puede responder directamente al cliente
+      headers: EMAIL_HEADERS,
+      subject: `🎉 Nueva reserva: ${data.firstName} ${data.lastName} - ${data.className}`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background: ${BRAND_GRADIENT}; color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+    <h2 style="margin: 0;">🎉 Nueva Reserva de Clase de Prueba</h2>
+  </div>
+
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0 0 15px 0; color: ${BRAND_PRIMARY};">👤 Datos del Cliente</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Nombre:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${data.firstName} ${data.lastName}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Email:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="mailto:${data.email}" style="color: ${BRAND_PRIMARY};">${data.email}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Teléfono:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="tel:${data.phone}" style="color: ${BRAND_PRIMARY};">${data.phone}</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0 0 15px 0; color: #2e7d32;">📅 Datos de la Clase</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Clase:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.className}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Fecha:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classDate}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Hora:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classTime}</td>
+      </tr>
+      ${data.category ? `<tr><td style="padding: 8px 0;"><strong>Categoría:</strong></td><td style="padding: 8px 0;">${data.category}</td></tr>` : ''}
+    </table>
+  </div>
+
+  ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
+
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="${BUTTON_PRIMARY}">
+      Contactar por WhatsApp
+    </a>
+  </div>
+
+  <p style="color: #999; font-size: 11px; text-align: center; margin-top: 30px;">
+    Este email se genera automáticamente. Timestamp: ${new Date().toISOString()}
+  </p>
+</body></html>`,
+    });
+
+    if (result.error) {
+      console.warn('[email] Admin notification failed:', result.error.message);
+      return { success: false, error: result.error.message };
+    }
+
+    console.log('[email] Admin notification sent:', result.data?.id);
+    return { success: true, id: result.data?.id };
+  } catch (error) {
+    console.error('[email] Error sending admin notification:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
 /**
  * Enviar email de prueba
  */
