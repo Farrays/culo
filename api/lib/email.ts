@@ -1213,3 +1213,16 @@ export const EMAIL_CONFIG = {
   LOCATION_FULL,
   GOOGLE_MAPS_URL,
 };
+
+// =============================================================================
+// RE-EXPORT GOOGLE CALENDAR (Bundler Compatibility)
+// =============================================================================
+/**
+ * Re-exportamos google-calendar desde aquí para forzar al bundler de Vercel
+ * a incluirlo. Sin esta re-exportación, google-calendar.ts no se incluye
+ * porque no tiene dependencias npm externas.
+ *
+ * Los archivos API pueden importar de ./lib/google-calendar directamente,
+ * pero gracias a esta re-exportación, el archivo se incluirá en el bundle.
+ */
+export * from './google-calendar';
