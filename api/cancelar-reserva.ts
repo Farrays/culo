@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { isGoogleCalendarConfigured, deleteBookingEvent } from './lib/google-calendar';
+// Import from email.ts (re-exports google-calendar) - bundler workaround
+import { isGoogleCalendarConfigured, deleteBookingEvent } from './lib/email';
 
 /**
  * API endpoint para cancelar una reserva

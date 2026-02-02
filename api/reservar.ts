@@ -2,7 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
-import { isGoogleCalendarConfigured, createBookingEvent } from './lib/google-calendar';
+// Import from email.ts (re-exports google-calendar) - bundler workaround
+import { isGoogleCalendarConfigured, createBookingEvent } from './lib/email';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)

@@ -1,9 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+// Import from email.ts which re-exports google-calendar functions
+// This is a bundler workaround: email.ts imports 'resend' (npm package),
+// so Vercel's bundler includes it. The re-export pulls in google-calendar.ts.
 import {
   isGoogleCalendarConfigured,
   getGoogleCalendarConfigInfo,
   createBookingEvent,
-} from './lib/google-calendar';
+} from './lib/email';
 
 /**
  * Test endpoint para verificar Google Calendar

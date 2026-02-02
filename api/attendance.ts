@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { isGoogleCalendarConfigured, updateEventAttendance } from './lib/google-calendar';
+// Import from email.ts (re-exports google-calendar) - bundler workaround
+import { isGoogleCalendarConfigured, updateEventAttendance } from './lib/email';
 
 // Type for attendance status (defined inline to avoid import issues)
 type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
