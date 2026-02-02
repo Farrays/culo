@@ -4,7 +4,7 @@ import {
   updateEventAttendance,
   isGoogleCalendarConfigured,
   AttendanceStatus,
-} from './_lib/google-calendar';
+} from './lib/google-calendar';
 
 /**
  * API Route: /api/attendance

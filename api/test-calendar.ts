@@ -3,7 +3,7 @@ import {
   isGoogleCalendarConfigured,
   getGoogleCalendarConfigInfo,
   createBookingEvent,
-} from './_lib/google-calendar';
+} from './lib/google-calendar';
 
 /**
  * Test endpoint para verificar Google Calendar
