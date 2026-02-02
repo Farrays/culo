@@ -253,6 +253,38 @@ export default async function handler(
       console.warn('[Cancel] Email error:', e);
     }
 
+    // 4c. Email de notificación al admin (non-blocking)
+    try {
+      const { Resend } = await import('resend');
+      const resendKey = process.env['RESEND_API_KEY'];
+      if (resendKey) {
+        const resend = new Resend(resendKey);
+        await resend.emails.send({
+          from: `"${bookingData.firstName} ${bookingData.lastName}" <noreply@farrayscenter.com>`,
+          to: 'info@farrayscenter.com',
+          replyTo: bookingData.email,
+          subject: `Cancelación de ${bookingData.className} (${bookingData.firstName} ${bookingData.lastName}) el ${bookingData.classDate}`,
+          html: `
+            <h2>Cancelación de Reserva</h2>
+            <p><strong>Alumno:</strong> ${bookingData.firstName} ${bookingData.lastName}</p>
+            <p><strong>Email:</strong> ${bookingData.email}</p>
+            <p><strong>Teléfono:</strong> ${bookingData.phone || 'No proporcionado'}</p>
+            <hr>
+            <p><strong>Clase:</strong> ${bookingData.className}</p>
+            <p><strong>Fecha:</strong> ${bookingData.classDate}</p>
+            <p><strong>Hora:</strong> ${bookingData.classTime}</p>
+            <hr>
+            <p style="color: #dc3545;"><strong>Estado:</strong> CANCELADA</p>
+            <p><em>Cancelado el ${new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}</em></p>
+          `,
+        });
+        console.log('[Cancel] Admin notification email sent');
+      }
+    } catch (adminError) {
+      // Non-blocking: solo log, no afecta la respuesta
+      console.warn('[Cancel] Admin notification failed:', adminError);
+    }
+
     // 5. Retornar confirmación
     return res.status(200).json({
       success: true,
