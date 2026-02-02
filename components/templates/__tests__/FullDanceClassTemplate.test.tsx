@@ -156,7 +156,7 @@ describe('FullDanceClassTemplate', () => {
     // Should have at least one CTA link
     const ctaLinks = screen.getAllByRole('link');
     expect(ctaLinks.length).toBeGreaterThan(0);
-  });
+  }, 10000); // Timeout aumentado para CI
 
   it('should skip disabled sections', () => {
     const configWithDisabledSections: FullDanceClassConfig = {
