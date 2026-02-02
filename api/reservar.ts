@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
+import { isGoogleCalendarConfigured, createBookingEvent } from './lib/google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -1280,9 +1281,6 @@ export default async function handler(
 
     // 6. Google Calendar - Crear evento si está configurado
     let calendarEventId: string | undefined = undefined;
-    // Dynamic import para evitar problemas de bundling en Vercel
-    const { isGoogleCalendarConfigured, createBookingEvent } =
-      await import('./lib/google-calendar');
     if (isGoogleCalendarConfigured()) {
       try {
         const calendarResult = await createBookingEvent({

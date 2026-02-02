@@ -2,6 +2,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
+import { isGoogleCalendarConfigured, updateEventAttendance } from './lib/google-calendar';
 
 /**
  * API Route: /api/webhook-whatsapp
@@ -406,10 +407,6 @@ async function handleAttendanceConfirmation(
     }
 
     const eventId = booking.eventId || '';
-
-    // Dynamic import para evitar problemas de bundling en Vercel
-    const { isGoogleCalendarConfigured, updateEventAttendance } =
-      await import('./lib/google-calendar');
 
     // Si confirma asistencia
     if (status === 'confirmed') {
