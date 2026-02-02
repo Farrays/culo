@@ -51,6 +51,40 @@ interface BookingDetails {
   createdAt: string;
 }
 
+/**
+ * Formatea fecha ISO a formato español legible
+ * "2026-02-26" → "26 de febrero de 2026"
+ */
+function formatDateSpanish(isoDate: string): string {
+  const months = [
+    'enero',
+    'febrero',
+    'marzo',
+    'abril',
+    'mayo',
+    'junio',
+    'julio',
+    'agosto',
+    'septiembre',
+    'octubre',
+    'noviembre',
+    'diciembre',
+  ];
+
+  // Intentar parsear como ISO date
+  const date = new Date(isoDate);
+  if (isNaN(date.getTime())) {
+    // Si no es parseable, devolver el original
+    return isoDate;
+  }
+
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${day} de ${month} de ${year}`;
+}
+
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -128,7 +162,7 @@ export default async function handler(
         email: booking.email,
         phone: booking.phone ? booking.phone.slice(0, 4) + '***' + booking.phone.slice(-2) : null,
         className: booking.className,
-        classDate: booking.classDate,
+        classDate: formatDateSpanish(booking.classDate),
         classTime: booking.classTime,
         momenceEventId: eventId,
         bookedAt: booking.createdAt,
