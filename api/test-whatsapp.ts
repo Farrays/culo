@@ -153,6 +153,30 @@ export default async function handler(
           ],
         },
       };
+    } else if (templateName === 'recordatorio_prueba_2') {
+      // Plantilla de recordatorio 24h con botones (firstName, className, classDate, classTime)
+      // dateTime format: "04/02/2026, 18:00" -> split into date and time
+      const [dateStr, timeStr] = userDateTime.split(',').map(s => s.trim());
+      message = {
+        messaging_product: 'whatsapp',
+        to: normalizedPhone,
+        type: 'template',
+        template: {
+          name: 'recordatorio_prueba_2',
+          language: { code: 'es' },
+          components: [
+            {
+              type: 'body',
+              parameters: [
+                { type: 'text', text: userFirstName },
+                { type: 'text', text: userClassName },
+                { type: 'text', text: dateStr || userDateTime },
+                { type: 'text', text: timeStr || '19:00' },
+              ],
+            },
+          ],
+        },
+      };
     } else {
       // Plantilla hello_world por defecto
       message = {
