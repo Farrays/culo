@@ -2,8 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
-// Import from email.ts (re-exports google-calendar) - bundler workaround
-import { isGoogleCalendarConfigured, createBookingEvent } from './lib/email';
+// Google Calendar disabled temporarily - Vercel bundler doesn't include non-npm dependencies
+// import { createBookingEvent } from '../lib/google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -1280,35 +1280,10 @@ export default async function handler(
     const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
     const calendarDateStr = isoMatch ? isoMatch[0] : '';
 
-    // 6. Google Calendar - Crear evento si está configurado
-    let calendarEventId: string | undefined = undefined;
-    if (isGoogleCalendarConfigured()) {
-      try {
-        const calendarResult = await createBookingEvent({
-          firstName: sanitize(firstName),
-          lastName: sanitize(lastName),
-          email: normalizedEmail,
-          phone: sanitize(phone),
-          className: className || estilo || 'Clase de Prueba',
-          classDate: calendarDateStr || classDate || '',
-          classTime: classTime || '19:00',
-          category,
-          eventId: finalEventId,
-          managementUrl,
-        });
-
-        if (calendarResult.success) {
-          calendarEventId = calendarResult.calendarEventId;
-          console.log(`[reservar] Calendar event created: ${calendarEventId}`);
-        } else {
-          console.warn('[reservar] Calendar event failed:', calendarResult.error);
-        }
-      } catch (e) {
-        console.warn('[reservar] Calendar error (non-blocking):', e);
-      }
-    } else {
-      console.warn('[reservar] Google Calendar not configured, skipping');
-    }
+    // 6. Google Calendar - DISABLED (Vercel bundler issue)
+    // The bundler doesn't include files without npm dependencies
+    const calendarEventId: string | undefined = undefined;
+    console.log('[reservar] Google Calendar disabled temporarily');
 
     // 7. Guardar booking_details para mi-reserva y cron-reminders
     const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');

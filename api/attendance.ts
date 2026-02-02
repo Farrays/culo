@@ -1,10 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-// Import from email.ts (re-exports google-calendar) - bundler workaround
-import { isGoogleCalendarConfigured, updateEventAttendance } from './lib/email';
+// Google Calendar disabled temporarily - Vercel bundler doesn't include non-npm dependencies
+// import { updateEventAttendance } from '../lib/google-calendar';
 
-// Type for attendance status (defined inline to avoid import issues)
-type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+// Type for attendance status (Google Calendar disabled temporarily)
+// type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
 
 /**
  * API Route: /api/attendance
@@ -216,22 +216,8 @@ async function updateAttendance(
 
     console.log(`[attendance] Updated ${eventId}: ${booking.firstName} - ${status}`);
 
-    // Actualizar color en Google Calendar
-    if (isGoogleCalendarConfigured() && booking.calendarEventId) {
-      try {
-        const calendarResult = await updateEventAttendance(
-          booking.calendarEventId,
-          status as AttendanceStatus
-        );
-        if (calendarResult.success) {
-          console.log(`[attendance] Calendar updated: ${booking.calendarEventId} -> ${status}`);
-        } else {
-          console.warn('[attendance] Calendar update failed:', calendarResult.error);
-        }
-      } catch (e) {
-        console.warn('[attendance] Calendar error (non-blocking):', e);
-      }
-    }
+    // Google Calendar - DISABLED (Vercel bundler issue)
+    console.log('[attendance] Google Calendar disabled temporarily');
 
     return {
       success: true,
