@@ -1,7 +1,101 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-// Google Calendar disabled temporarily - Vercel bundler doesn't include non-npm dependencies
-// import { deleteBookingEvent } from '../lib/google-calendar';
+
+// ============================================================================
+// GOOGLE CALENDAR INLINE (evita problemas de bundling de Vercel)
+// ============================================================================
+
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+
+interface CalendarResult {
+  success: boolean;
+  error?: string;
+}
+
+let cachedCalendarToken: string | null = null;
+let calendarTokenExpiry: number = 0;
+
+async function getCalendarAccessToken(): Promise<string | null> {
+  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+
+  if (!clientId || !clientSecret || !refreshToken) {
+    return null;
+  }
+
+  if (cachedCalendarToken && Date.now() < calendarTokenExpiry - 60000) {
+    return cachedCalendarToken;
+  }
+
+  try {
+    const response = await fetch(CALENDAR_TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('[cancelar] Calendar token refresh failed');
+      return null;
+    }
+
+    const data = await response.json();
+    cachedCalendarToken = data.access_token;
+    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
+    return cachedCalendarToken;
+  } catch (error) {
+    console.error('[cancelar] Calendar token error:', error);
+    return null;
+  }
+}
+
+function getCalendarId(): string {
+  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+}
+
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
+
+async function deleteCalendarEvent(calendarEventId: string): Promise<CalendarResult> {
+  const accessToken = await getCalendarAccessToken();
+  if (!accessToken) {
+    return { success: false, error: 'Failed to get access token' };
+  }
+
+  try {
+    const response = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${accessToken}` },
+      }
+    );
+
+    // 204 No Content = éxito, 404 = ya eliminado (también OK)
+    if (response.status === 204 || response.status === 404) {
+      console.log(`[cancelar] Calendar event ${calendarEventId} deleted`);
+      return { success: true };
+    }
+
+    const error = await response.text();
+    return { success: false, error: `HTTP ${response.status}: ${error}` };
+  } catch (error) {
+    console.error('[cancelar] Error deleting calendar event:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
 
 /**
  * API endpoint para cancelar una reserva
@@ -207,9 +301,21 @@ export default async function handler(
       console.warn('[Cancel] No momenceBookingId found, skipping Momence API');
     }
 
-    // 2b. Google Calendar - DISABLED (Vercel bundler issue)
-    const calendarDeleted = false;
-    console.log('[Cancel] Google Calendar disabled temporarily');
+    // 2b. Google Calendar - Eliminar evento
+    let calendarDeleted = false;
+    if (isGoogleCalendarConfigured() && bookingData.calendarEventId) {
+      try {
+        const calendarResult = await deleteCalendarEvent(bookingData.calendarEventId);
+        calendarDeleted = calendarResult.success;
+        if (!calendarResult.success) {
+          console.warn('[Cancel] Calendar delete failed:', calendarResult.error);
+        }
+      } catch (e) {
+        console.warn('[Cancel] Calendar error (non-blocking):', e);
+      }
+    } else {
+      console.log('[Cancel] No calendarEventId or Calendar not configured');
+    }
 
     // 3. Eliminar de Redis
     await redis.del(bookingKey);
