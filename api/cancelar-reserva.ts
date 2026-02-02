@@ -1,6 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import { deleteBookingEvent, isGoogleCalendarConfigured } from './lib/google-calendar';
 
 /**
  * API endpoint para cancelar una reserva
@@ -208,6 +207,9 @@ export default async function handler(
 
     // 2b. Google Calendar - Eliminar evento si está configurado
     let calendarDeleted = false;
+    // Dynamic import para evitar problemas de bundling en Vercel
+    const { isGoogleCalendarConfigured, deleteBookingEvent } =
+      await import('./lib/google-calendar');
     if (isGoogleCalendarConfigured() && bookingData.calendarEventId) {
       try {
         const calendarResult = await deleteBookingEvent(bookingData.calendarEventId);

@@ -1,10 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
-import {
-  updateEventAttendance,
-  isGoogleCalendarConfigured,
-  AttendanceStatus,
-} from './lib/google-calendar';
+
+// Type for attendance status (defined inline to avoid import issues)
+type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
 
 /**
  * API Route: /api/attendance
@@ -217,6 +215,9 @@ async function updateAttendance(
     console.log(`[attendance] Updated ${eventId}: ${booking.firstName} - ${status}`);
 
     // Actualizar color en Google Calendar
+    // Dynamic import para evitar problemas de bundling en Vercel
+    const { isGoogleCalendarConfigured, updateEventAttendance } =
+      await import('./lib/google-calendar');
     if (isGoogleCalendarConfigured() && booking.calendarEventId) {
       try {
         const calendarResult = await updateEventAttendance(

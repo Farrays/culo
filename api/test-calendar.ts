@@ -1,9 +1,4 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import {
-  isGoogleCalendarConfigured,
-  getGoogleCalendarConfigInfo,
-  createBookingEvent,
-} from './lib/google-calendar';
 
 /**
  * Test endpoint para verificar Google Calendar
@@ -19,6 +14,10 @@ export default async function handler(
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  // Dynamic import para evitar problemas de bundling en Vercel
+  const { isGoogleCalendarConfigured, getGoogleCalendarConfigInfo, createBookingEvent } =
+    await import('./lib/google-calendar');
 
   const configInfo = getGoogleCalendarConfigInfo();
 
@@ -59,7 +58,7 @@ export default async function handler(
     });
   }
 
-  return res.status(400).json({
+  return res.status(200).json({
     error: 'Use ?action=check or ?action=test',
     configured: isGoogleCalendarConfigured(),
   });
