@@ -264,23 +264,59 @@ export default async function handler(
 
   try {
     // 1. Buscar la reserva en Redis
-    const bookingDataStr = await redis.get(bookingKey);
+    // Primero intentar booking_details:eventId (datos completos)
+    // Si no, fallback a booking:email (datos básicos)
+    let bookingData: BookingData;
+    let bookingDataStr: string | null = null;
 
-    if (!bookingDataStr) {
-      return res.status(404).json({
-        error: 'Booking not found',
-        message: 'No se encontró ninguna reserva con este email',
-      });
+    if (eventId) {
+      // Buscar por eventId (más preciso, tiene todos los datos)
+      bookingDataStr = await redis.get(`booking_details:${eventId}`);
+      if (bookingDataStr) {
+        const details = JSON.parse(bookingDataStr);
+        // Verificar que el email coincide
+        if (details.email?.toLowerCase() !== normalizedEmail) {
+          return res.status(404).json({
+            error: 'Email mismatch',
+            message: 'El email no coincide con la reserva',
+          });
+        }
+        // Mapear campos de booking_details a BookingData
+        bookingData = {
+          firstName: details.firstName,
+          lastName: details.lastName || '',
+          email: details.email,
+          phone: details.phone,
+          className: details.className,
+          classDate: details.classDate,
+          classTime: details.classTime,
+          momenceEventId: details.eventId,
+          momenceBookingId: details.momenceBookingId,
+          bookedAt: details.bookedAt,
+          category: details.category,
+          calendarEventId: details.calendarEventId,
+        };
+      }
     }
 
-    const bookingData: BookingData = JSON.parse(bookingDataStr);
+    // Fallback: buscar por email (key antigua)
+    if (!bookingDataStr) {
+      bookingDataStr = await redis.get(bookingKey);
+      if (!bookingDataStr) {
+        return res.status(404).json({
+          error: 'Booking not found',
+          message: 'No se encontró ninguna reserva con este email',
+        });
+      }
+      bookingData = JSON.parse(bookingDataStr);
 
-    // Validar que el eventId coincida (si se proporciona)
-    if (eventId && bookingData.momenceEventId !== eventId) {
-      return res.status(404).json({
-        error: 'Booking mismatch',
-        message: 'El evento no coincide con la reserva encontrada',
-      });
+      // Validar que el eventId coincida (si se proporciona)
+      if (eventId && bookingData.momenceEventId !== eventId) {
+        return res.status(404).json({
+          error: 'Booking mismatch',
+          message: 'El evento no coincide con la reserva encontrada',
+        });
+      }
     }
 
     // 2. Cancelar en Momence si tenemos bookingId
@@ -317,9 +353,13 @@ export default async function handler(
       console.log('[Cancel] No calendarEventId or Calendar not configured');
     }
 
-    // 3. Eliminar de Redis
+    // 3. Eliminar de Redis (ambas keys)
     await redis.del(bookingKey);
     console.warn('[Cancel] Redis key deleted:', bookingKey);
+    if (bookingData.momenceEventId) {
+      await redis.del(`booking_details:${bookingData.momenceEventId}`);
+      console.warn('[Cancel] Redis booking_details deleted:', bookingData.momenceEventId);
+    }
 
     // 4. Enviar notificaciones de cancelación
 
