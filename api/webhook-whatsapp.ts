@@ -671,15 +671,36 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
   console.log(`[webhook-whatsapp] Checking phone index: phone:${normalizedPhone}`);
   let eventId: string | null = null;
   try {
-    console.log(`[webhook-whatsapp] About to call redis.get...`);
-    const result = await redis.get<string>(`phone:${normalizedPhone}`);
+    console.log(`[webhook-whatsapp] About to call redis.get with timeout...`);
+    // Add timeout to detect hanging calls
+    const timeoutPromise = new Promise<string | null>((_, reject) =>
+      setTimeout(() => reject(new Error('Redis timeout after 5s')), 5000)
+    );
+    const result = await Promise.race([
+      redis.get<string>(`phone:${normalizedPhone}`),
+      timeoutPromise,
+    ]);
     eventId = result;
     console.log(
       `[webhook-whatsapp] phone index result: ${eventId || 'null'} (type: ${typeof eventId})`
     );
   } catch (redisError) {
     console.error(`[webhook-whatsapp] Redis get error:`, redisError);
-    return null;
+    // Try creating a fresh Redis client
+    console.log(`[webhook-whatsapp] Trying fresh Redis client...`);
+    try {
+      const url = process.env['UPSTASH_REDIS_REST_URL'];
+      const token = process.env['UPSTASH_REDIS_REST_TOKEN'];
+      if (url && token) {
+        const freshRedis = new Redis({ url, token });
+        const freshResult = await freshRedis.get<string>(`phone:${normalizedPhone}`);
+        eventId = freshResult;
+        console.log(`[webhook-whatsapp] Fresh client result: ${eventId || 'null'}`);
+      }
+    } catch (freshError) {
+      console.error(`[webhook-whatsapp] Fresh Redis also failed:`, freshError);
+      return null;
+    }
   }
 
   if (eventId) {
