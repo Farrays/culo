@@ -925,8 +925,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Blog de Baile | Consejos, Tutoriales e Historia del Baile | Farray\'s Center',
-      description: 'Consejos, tutoriales e historia del baile. Asesoramiento experto de bailarines profesionales para mejorar técnica y disfrutar cada paso.',
+      title: 'Blog de Danza y Baile | Farray\'s Center Barcelona',
+      description: 'Blog de baile con consejos, tutoriales e historia. Artículos de profesionales cubanos sobre salsa, bachata, hip hop, ballet y más. Academia CID-UNESCO.',
     },
     blogLifestyle: {
       title: 'Lifestyle y Baile | Bienestar y Estilo de Vida | Farray\'s Center Blog',
@@ -941,11 +941,11 @@ const metadata = {
       description: 'Descubre la fascinante historia del baile: orígenes, evolución y cómo llegó a Barcelona. Artículos sobre salsa, dancehall y más.',
     },
     blogHistoriaSalsa: {
-      title: 'Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray\'s | Farray\'s Center',
+      title: 'Historia de la Salsa: del Caribe a Barcelona | Farray\'s Center',
       description: 'Historia de la salsa: orígenes en Caribe y Nueva York, llegada a Barcelona. 60+ años de ritmo que cambiaron el mundo. Raíces africanas y cubanas.',
     },
     blogHistoriaBachata: {
-      title: 'Historia de la Bachata: Del Barrio Dominicano a Barcelona | Farray\'s Center',
+      title: 'Historia de la Bachata: de RD a Barcelona | Farray\'s Center',
       description: 'Historia de la bachata: de República Dominicana a fenómeno mundial. Evolución, Romeo Santos, bachata sensual y llegada a Barcelona.',
     },
     blogTutoriales: {
@@ -957,7 +957,7 @@ const metadata = {
       description: 'Descubre los diferentes estilos de salsa: cubana, rueda de casino, salsa en línea y más. Guía completa para entender y bailar salsa en Barcelona.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata: ¿Qué Estilo Elegir? Guía Completa | Farray\'s Center',
+      title: 'Salsa vs Bachata: ¿Cuál Elegir? Guía 2025 | Farray\'s Center',
       description: 'Salsa vs bachata: diferencias en ritmo, pasos y expresión. Guía completa para elegir tu estilo de baile latino. Clases en Barcelona.',
     },
     blogClasesSalsaBarcelona: {
@@ -970,7 +970,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Clases de baile para principiantes en Barcelona | Farray\'s Center',
-      description: 'Guía completa para empezar a bailar desde cero en Barcelona. Desde 10€/clase, bonos desde 60€. +40 estilos, +15.000 alumnos. ¡Reserva!',
+      description: 'Guía completa para empezar a bailar desde cero en Barcelona. Desde 10€/clase, mensualidades desde 50€. +25 estilos, +15.000 alumnos.',
     },
     blogAcademiaDanza: {
       title: 'Academia de Danza en Barcelona: Cómo Elegir | Farray\'s Center',
@@ -981,7 +981,7 @@ const metadata = {
       description: 'Ballet para adultos en Barcelona con método seguro y progresivo. Descubre si puedes empezar de cero, beneficios reales y cómo elegir escuela en el Eixample.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Danza Contemporánea vs Modern Jazz vs Ballet: Guía Comparativa 2025 | Farray\'s',
+      title: 'Contemporánea vs Jazz vs Ballet: Guía 2025 | Farray\'s Center',
       description: 'Descubre las diferencias entre danza contemporánea, modern jazz y ballet clásico. Comparativa técnica, beneficios y cómo elegir el estilo que mejor se adapta a ti.',
     },
     blogPerderMiedoBailar: {
@@ -993,7 +993,7 @@ const metadata = {
       description: 'Artículos sobre los beneficios del baile para la salud física y mental. Consejos de fitness, bienestar y ejercicio a través del baile.',
     },
     blogBaileSaludMental: {
-      title: 'Baile y Salud Mental: Reduce Ansiedad, Depresión y Estrés | Farray\'s',
+      title: 'Baile y Salud Mental: Beneficios Científicos | Farray\'s Center',
       description: 'Descubre los beneficios científicos del baile para la salud mental. Reduce ansiedad 47%, menos demencia 76%. Estudios de Harvard, NEJM y más.',
     },
     promoClaseGratis: {
@@ -1279,8 +1279,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
-      description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
+      title: 'Blog de Dansa i Ball | Farray\'s Center Barcelona',
+      description: 'Blog de ball amb consells, tutorials i història. Articles de professionals cubans sobre salsa, bachata, hip hop, ballet i més. Acadèmia CID-UNESCO.',
     },
     blogLifestyle: {
       title: 'Lifestyle i Ball | Benestar i Estil de Vida | Farray\'s Center Blog',
@@ -1295,11 +1295,11 @@ const metadata = {
       description: 'Descobreix la fascinant història del ball: orígens, evolució i com va arribar a Barcelona. Articles sobre salsa, dancehall i més.',
     },
     blogHistoriaSalsa: {
-      title: 'Història de la Salsa a Barcelona: del Carib i Nova York a Farray\'s | Farray\'s Center',
+      title: 'Història de la Salsa: del Carib a Barcelona | Farray\'s Center',
       description: 'Història de la salsa: orígens al Carib i Nova York, arribada a Barcelona. 60+ anys de ritme que van canviar el món. Arrels africanes i cubanes.',
     },
     blogHistoriaBachata: {
-      title: 'Història de la Bachata: Del Barri Dominicà a Barcelona | Farray\'s Center',
+      title: 'Història de la Bachata: de RD a Barcelona | Farray\'s Center',
       description: 'Història de la bachata: de República Dominicana a fenomen mundial. Evolució, Romeo Santos, bachata sensual i arribada a Barcelona.',
     },
     blogTutoriales: {
@@ -1311,7 +1311,7 @@ const metadata = {
       description: 'Descobreix els diferents estils de salsa: cubana, roda de casino, salsa en línia i més. Guia completa per entendre i ballar salsa a Barcelona.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata: Quin Estil Triar? Guia Completa | Farray\'s Center',
+      title: 'Salsa vs Bachata: Quin Triar? Guia 2025 | Farray\'s Center',
       description: 'Salsa vs bachata: diferències en ritme, passos i expressió. Guia completa per triar el teu estil de ball llatí. Classes a Barcelona.',
     },
     blogClasesSalsaBarcelona: {
@@ -1324,7 +1324,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Classes de ball per a principiants a Barcelona | Farray\'s Center',
-      description: 'Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.',
+      description: 'Guia completa per començar a ballar des de zero a Barcelona. Des de 10€/classe, mensualitats des de 50€. +25 estils, +15.000 alumnes.',
     },
     blogAcademiaDanza: {
       title: 'Acadèmia de Dansa a Barcelona: Com Triar | Farray\'s Center',
@@ -1335,7 +1335,7 @@ const metadata = {
       description: 'Ballet per a adults a Barcelona amb mètode segur i progressiu. Descobreix si pots començar de zero, beneficis reals i com triar escola a l\'Eixample.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Dansa Contemporània vs Modern Jazz vs Ballet: Guia Comparativa 2025 | Farray\'s',
+      title: 'Contemporània vs Jazz vs Ballet: Guia 2025 | Farray\'s Center',
       description: 'Descobreix les diferències entre dansa contemporània, modern jazz i ballet clàssic. Comparativa tècnica, beneficis i com triar l\'estil que millor s\'adapta a tu.',
     },
     blogPerderMiedoBailar: {
@@ -1347,7 +1347,7 @@ const metadata = {
       description: 'Articles sobre els beneficis del ball per a la salut física i mental. Consells de fitness, benestar i exercici a través del ball.',
     },
     blogBaileSaludMental: {
-      title: 'Ball i Salut Mental: Redueix Ansietat, Depressió i Estrès | Farray\'s',
+      title: 'Ball i Salut Mental: Beneficis Científics | Farray\'s Center',
       description: 'Descobreix els beneficis científics del ball per a la salut mental. Redueix ansietat 47%, menys demència 76%. Estudis de Harvard, NEJM i més.',
     },
     promoClaseGratis: {
@@ -1633,8 +1633,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
-      description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
+      title: 'Dance & Ballet Blog | Farray\'s Center Barcelona',
+      description: 'Dance blog with tips, tutorials and history. Articles by Cuban professionals on salsa, bachata, hip hop, ballet and more. CID-UNESCO Academy.',
     },
     blogLifestyle: {
       title: 'Lifestyle & Dance | Wellbeing & Life Balance | Farray\'s Center Blog',
@@ -1649,11 +1649,11 @@ const metadata = {
       description: 'Fascinating dance history: origins, evolution in Barcelona. Articles on salsa, bachata, dancehall and more. Expert insights from professionals.',
     },
     blogHistoriaSalsa: {
-      title: 'History of Salsa in Barcelona: From the Caribbean and New York to Farray\'s | Farray\'s Center',
+      title: 'History of Salsa: From Caribbean to Barcelona | Farray\'s Center',
       description: 'History of salsa: origins in Caribbean and New York, arrival in Barcelona. 60+ years of rhythm that changed the world. African & Cuban roots.',
     },
     blogHistoriaBachata: {
-      title: 'History of Bachata: From Dominican Barrios to Barcelona | Farray\'s Center',
+      title: 'History of Bachata: From DR to Barcelona | Farray\'s Center',
       description: 'Discover the history of bachata: from its humble origins in the Dominican Republic to becoming a worldwide phenomenon. Romeo Santos, sensual bachata and more.',
     },
     blogTutoriales: {
@@ -1665,7 +1665,7 @@ const metadata = {
       description: 'Discover the different salsa styles: Cuban, rueda de casino, line salsa and more. Complete guide to understand and dance salsa in Barcelona.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata: Which Style to Choose? Complete Guide | Farray\'s Center',
+      title: 'Salsa vs Bachata: Which to Choose? 2025 Guide | Farray\'s Center',
       description: 'Salsa vs bachata: differences in rhythm, steps and expression. Complete guide to choose your Latin dance style. Classes in Barcelona.',
     },
     blogClasesSalsaBarcelona: {
@@ -1678,7 +1678,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Beginner Dance Classes in Barcelona | Farray\'s Center',
-      description: 'Complete guide to start dancing from scratch in Barcelona. From €10/class, passes from €60. +40 styles, +15,000 students. Book now!',
+      description: 'Complete guide to start dancing from scratch in Barcelona. From €10/class, monthly from €50. +25 styles, +15,000 students.',
     },
     blogAcademiaDanza: {
       title: 'Dance Academy in Barcelona: How to Choose | Farray\'s Center',
@@ -1689,7 +1689,7 @@ const metadata = {
       description: 'Adult ballet in Barcelona with safe and progressive method. Discover if you can start from scratch, real benefits, and how to choose a school in Eixample.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Contemporary Dance vs Modern Jazz vs Ballet: Complete Comparison Guide 2025 | Farray\'s',
+      title: 'Contemporary vs Jazz vs Ballet: 2025 Guide | Farray\'s Center',
       description: 'Discover the differences between contemporary dance, modern jazz and classical ballet. Technical comparison, benefits and how to choose the style that suits you best.',
     },
     blogPerderMiedoBailar: {
@@ -1701,7 +1701,7 @@ const metadata = {
       description: 'Scientifically proven benefits of dancing for physical and mental health. Fitness tips, wellness strategies and exercise through dance. Expert advice.',
     },
     blogBaileSaludMental: {
-      title: 'Dancing and Mental Health: Reduce Anxiety, Depression and Stress | Farray\'s',
+      title: 'Dancing and Mental Health: Scientific Benefits | Farray\'s Center',
       description: 'Discover the scientific benefits of dancing for mental health. Reduces anxiety 47%, dementia risk 76% lower. Studies from Harvard, NEJM and more.',
     },
     promoClaseGratis: {
@@ -1987,8 +1987,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Blog de Danse | Conseils, Tutoriels et Histoire de la Danse | Farray\'s Center',
-      description: 'Conseils, tutoriels et histoire de la danse. Astuces expertes de danseurs professionnels pour améliorer technique et profiter de chaque pas.',
+      title: 'Blog de Danse et Ballet | Farray\'s Center Barcelona',
+      description: 'Blog de danse avec conseils, tutoriels et histoire. Articles de professionnels cubains sur salsa, bachata, hip hop, ballet et plus. Académie CID-UNESCO.',
     },
     blogLifestyle: {
       title: 'Lifestyle et Danse | Bien-être et Art de Vivre | Farray\'s Center Blog',
@@ -2003,11 +2003,11 @@ const metadata = {
       description: 'Découvrez la fascinante histoire de la danse : origines, évolution et comment elle est arrivée à Barcelone. Articles sur la salsa, le dancehall et plus.',
     },
     blogHistoriaSalsa: {
-      title: 'Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray\'s | Farray\'s Center',
+      title: 'Histoire de la Salsa : des Caraïbes à Barcelone | Farray\'s Center',
       description: 'Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu\'à son arrivée à Barcelone. Plus de 60 ans de rythme qui ont changé le monde.',
     },
     blogHistoriaBachata: {
-      title: 'Histoire de la Bachata : Du Quartier Dominicain à Barcelone | Farray\'s Center',
+      title: 'Histoire de la Bachata : de RD à Barcelone | Farray\'s Center',
       description: 'Découvrez l\'histoire de la bachata : de ses humbles origines en République Dominicaine jusqu\'à devenir un phénomène mondial. Romeo Santos, bachata sensuelle et plus.',
     },
     blogTutoriales: {
@@ -2019,7 +2019,7 @@ const metadata = {
       description: 'Découvrez les différents styles de salsa : cubaine, rueda de casino, salsa en ligne et plus. Guide complet pour comprendre et danser la salsa à Barcelone.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata : Quel Style Choisir ? Guide Complet | Farray\'s Center',
+      title: 'Salsa vs Bachata : Lequel Choisir ? Guide 2025 | Farray\'s Center',
       description: 'Salsa vs bachata : différences de rythme, pas et expression. Guide complet pour choisir votre style de danse latine. Cours à Barcelone.',
     },
     blogClasesSalsaBarcelona: {
@@ -2032,7 +2032,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Cours de danse pour débutants à Barcelone | Farray\'s Center',
-      description: 'Guide complet pour commencer à danser à Barcelone. Dès 10€/cours, forfaits dès 60€. +40 styles, +15 000 élèves. Réservez maintenant!',
+      description: 'Guide complet pour commencer à danser à Barcelone. Dès 10€/cours, mensualités dès 50€. +25 styles, +15 000 élèves.',
     },
     blogAcademiaDanza: {
       title: 'Académie de Danse à Barcelone : Comment Choisir | Farray\'s Center',
@@ -2043,7 +2043,7 @@ const metadata = {
       description: 'Ballet pour adultes à Barcelone avec méthode sûre et progressive. Découvrez si vous pouvez commencer de zéro, les vrais bénéfices et comment choisir une école.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Danse Contemporaine vs Modern Jazz vs Ballet : Guide Comparatif 2025 | Farray\'s',
+      title: 'Contemporaine vs Jazz vs Ballet : Guide 2025 | Farray\'s Center',
       description: 'Découvrez les différences entre danse contemporaine, modern jazz et ballet classique. Comparaison technique, avantages et comment choisir le style qui vous convient le mieux.',
     },
     blogPerderMiedoBailar: {
@@ -2055,7 +2055,7 @@ const metadata = {
       description: 'Articles sur les bienfaits de la danse pour la santé physique et mentale. Conseils de fitness, bien-être et exercice à travers la danse.',
     },
     blogBaileSaludMental: {
-      title: 'Danse et Santé Mentale : Réduisez Anxiété, Dépression et Stress | Farray\'s',
+      title: 'Danse et Santé Mentale : Bienfaits Scientifiques | Farray\'s Center',
       description: 'Découvrez les bienfaits scientifiques de la danse pour la santé mentale. Réduit l\'anxiété 47%, risque de démence 76% moindre. Études de Harvard, NEJM et plus.',
     },
     promoClaseGratis: {
