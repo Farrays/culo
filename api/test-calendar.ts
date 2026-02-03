@@ -149,7 +149,7 @@ Reservado via: farrayscenter.com`;
     };
 
     const response = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
       {
         method: 'POST',
         headers: {

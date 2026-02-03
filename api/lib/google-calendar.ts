@@ -191,7 +191,7 @@ export async function createBookingEvent(booking: BookingCalendarData): Promise<
     };
 
     const response = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
       {
         method: 'POST',
         headers: {
@@ -267,7 +267,7 @@ export async function updateEventAttendance(
 
     // PATCH para actualizar
     const patchResponse = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
       {
         method: 'PATCH',
         headers: {
@@ -312,7 +312,7 @@ export async function deleteBookingEvent(calendarEventId: string): Promise<Calen
 
   try {
     const response = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
       {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${accessToken}` },

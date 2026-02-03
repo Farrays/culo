@@ -164,7 +164,7 @@ async function createBookingEvent(
     };
 
     const response = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
       {
         method: 'POST',
         headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },

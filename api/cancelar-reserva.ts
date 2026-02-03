@@ -218,7 +218,7 @@ async function deleteCalendarEvent(
 
   try {
     const response = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
       {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${accessToken}` },

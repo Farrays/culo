@@ -111,12 +111,17 @@ async function updateEventAttendance(
       description += `\n\n━━━━━━━━━━━━━━━━━━━━\nEstado: ${statusText}`;
     }
 
+    const colorId = STATUS_COLORS[status];
+    console.log(
+      `[google-calendar] Updating event ${calendarEventId}: status=${status}, colorId=${colorId}`
+    );
+
     const patchResponse = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
       {
         method: 'PATCH',
         headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ colorId: STATUS_COLORS[status], description }),
+        body: JSON.stringify({ colorId, description }),
       }
     );
 
@@ -660,6 +665,18 @@ async function handleAttendanceConfirmation(
       return;
     }
 
+    // Check if already processed (one-time buttons)
+    if (booking.attendance && booking.attendance !== 'pending') {
+      console.log(
+        `[webhook-whatsapp] Already processed: ${booking.firstName}, attendance=${booking.attendance}`
+      );
+      await sendTextMessage(
+        phone,
+        `Tu respuesta ya fue registrada anteriormente. Si necesitas cambiar algo, contacta con nosotros por WhatsApp al +34 622 247 085.`
+      );
+      return;
+    }
+
     const eventId = booking.eventId || '';
 
     // Si confirma asistencia
@@ -809,6 +826,24 @@ async function handleAttendanceConfirmation(
 // BÚSQUEDA DE BOOKING POR TELÉFONO
 // ============================================================================
 
+/**
+ * Verifica si la fecha de la clase es hoy o futura
+ */
+function isClassDateValid(classDate: string): boolean {
+  try {
+    const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
+    if (!isoMatch) return true; // Si no se puede parsear, asumir válida
+
+    const classDateObj = new Date(isoMatch[0]);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return classDateObj >= today;
+  } catch {
+    return true;
+  }
+}
+
 async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingDetails | null> {
   // Normalizar teléfono
   const normalizedPhone = phone.replace(/[\s\-+]/g, '');
@@ -835,12 +870,16 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
     );
     if (bookingData) {
       const booking: BookingDetails = JSON.parse(bookingData as string);
-      // Solo retornar si no está cancelada
-      if (booking.status !== 'cancelled') {
-        console.log(`[webhook-whatsapp] Found booking via phone index: ${booking.firstName}`);
+      // Solo retornar si no está cancelada Y la fecha es válida (hoy o futura)
+      if (booking.status !== 'cancelled' && isClassDateValid(booking.classDate)) {
+        console.log(
+          `[webhook-whatsapp] Found booking via phone index: ${booking.firstName} - ${booking.className}`
+        );
         return booking;
       }
-      console.log(`[webhook-whatsapp] Booking found but status = ${booking.status}`);
+      console.log(
+        `[webhook-whatsapp] Booking found but invalid: status=${booking.status}, classDate=${booking.classDate}`
+      );
     }
   }
 
@@ -867,8 +906,11 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
           bookingPhone.endsWith(normalizedPhone.slice(-9)) ||
           normalizedPhone.endsWith(bookingPhone.slice(-9))
         ) {
-          // Solo retornar si no está cancelada
-          if (booking.status !== 'cancelled') {
+          // Solo retornar si no está cancelada Y fecha válida
+          if (booking.status !== 'cancelled' && isClassDateValid(booking.classDate)) {
+            console.log(
+              `[webhook-whatsapp] Found via reminders fallback: ${booking.firstName} - ${booking.className}`
+            );
             // Guardar índice para futuras búsquedas (30 días TTL)
             await redis.setex(`phone:${normalizedPhone}`, 30 * 24 * 60 * 60, evId);
             return booking;
