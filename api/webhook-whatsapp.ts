@@ -7,7 +7,7 @@ import Redis from 'ioredis';
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
 // ============================================================================
 
-type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled' | 'cancelled_late';
 
 const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
 const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
@@ -16,7 +16,8 @@ const STATUS_COLORS: Record<AttendanceStatus, string> = {
   pending: '8', // Graphite (gris)
   confirmed: '10', // Basil (verde)
   not_attending: '11', // Tomato (rojo)
-  cancelled: '11', // Tomato (rojo) - para visibilidad de cancelaciones
+  cancelled: '6', // Tangerine (naranja) - cancelado A TIEMPO (puede reprogramar)
+  cancelled_late: '11', // Tomato (rojo) - cancelado TARDE (perdió derecho)
 };
 
 let cachedCalendarAccessToken: string | null = null;
@@ -77,7 +78,9 @@ function getStatusText(status: AttendanceStatus): string {
     case 'not_attending':
       return '🔴 No asistirá';
     case 'cancelled':
-      return '⚫ Reserva cancelada';
+      return '🟠 Cancelado a tiempo';
+    case 'cancelled_late':
+      return '🔴 Cancelado tarde (perdió derecho)';
     default:
       return '❓ Desconocido';
   }
@@ -727,11 +730,11 @@ async function handleAttendanceConfirmation(
         }
       }
 
-      // Google Calendar - Actualizar a cancelado (ROJO)
+      // Google Calendar - Actualizar a cancelado A TIEMPO (NARANJA)
       if (isGoogleCalendarConfigured() && booking.calendarEventId) {
         try {
           await updateEventAttendance(booking.calendarEventId, 'cancelled');
-          console.log(`[webhook-whatsapp] Calendar updated to cancelled`);
+          console.log(`[webhook-whatsapp] Calendar updated to cancelled (on-time - orange)`);
         } catch (e) {
           console.warn('[webhook-whatsapp] Calendar update failed:', e);
         }
@@ -782,11 +785,11 @@ async function handleAttendanceConfirmation(
         }
       }
 
-      // Google Calendar - Actualizar a cancelado (ROJO para visibilidad)
+      // Google Calendar - Actualizar a cancelado TARDE (ROJO - perdió derecho)
       if (isGoogleCalendarConfigured() && booking.calendarEventId) {
         try {
-          await updateEventAttendance(booking.calendarEventId, 'cancelled');
-          console.log(`[webhook-whatsapp] Calendar updated to cancelled`);
+          await updateEventAttendance(booking.calendarEventId, 'cancelled_late');
+          console.log(`[webhook-whatsapp] Calendar updated to cancelled_late (late - red)`);
         } catch (e) {
           console.warn('[webhook-whatsapp] Calendar update failed:', e);
         }
