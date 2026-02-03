@@ -161,7 +161,7 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
  * Convierte hora HH:MM a minutos desde medianoche
  */
 function horaAMinutos(hora: string): number {
-  const [h, m] = hora.split(':').map(Number);
+  const [h = 0, m = 0] = hora.split(':').map(Number);
   return h * 60 + m;
 }
 
@@ -195,11 +195,15 @@ function agruparEnBloques(
   );
 
   const bloques: BloqueClases[] = [];
-  let bloqueActual: MomenceSession[] = [ordenadas[0]];
+  const primeraClase = ordenadas[0];
+  if (!primeraClase) return [];
+
+  let bloqueActual: MomenceSession[] = [primeraClase];
 
   for (let i = 1; i < ordenadas.length; i++) {
     const claseAnterior = ordenadas[i - 1];
     const claseActual = ordenadas[i];
+    if (!claseAnterior || !claseActual) continue;
 
     // Calcular hueco entre FIN de clase anterior e INICIO de clase actual
     const finAnterior = new Date(claseAnterior.endsAt).getTime();
@@ -225,8 +229,9 @@ function agruparEnBloques(
 }
 
 function crearBloque(clases: MomenceSession[], profesor: Profesor): BloqueClases {
-  const primera = clases[0];
-  const ultima = clases[clases.length - 1];
+  // Safe to access - caller ensures clases is non-empty
+  const primera = clases[0] as MomenceSession;
+  const ultima = clases[clases.length - 1] as MomenceSession;
   const horaInicio = extraerHora(primera.startsAt);
   const horaFin = extraerHora(ultima.endsAt);
 
@@ -284,7 +289,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     };
 
     // 2. Obtener profesores activos
-    const { data: profesores } = await supabase.from('profesores').select('*').eq('activo', true);
+    const { data: profesoresData } = await supabase
+      .from('profesores')
+      .select('*')
+      .eq('activo', true);
+    const profesores = profesoresData as Profesor[] | null;
 
     if (!profesores || profesores.length === 0) {
       res.status(200).json({ ...result, message: 'No hay profesores activos' });
@@ -372,9 +381,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
         if (!fichajeExistente) {
           // Crear fichaje pendiente
+          const primeraClase = bloque.clases[0];
+
           const { error: insertError } = await supabase.from('fichajes').insert({
             profesor_id: profesor.id,
-            clase_momence_id: bloque.clases[0].id,
+            clase_momence_id: primeraClase?.id ?? null,
             clase_nombre: nombreClases.join(' + '),
             fecha: result.fecha,
             hora_inicio: bloque.horaInicio + ':00',
@@ -382,7 +393,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             estado: 'pendiente',
             modalidad: 'presencial',
             tipo_horas: 'ordinarias',
-          });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } as any);
 
           if (!insertError) {
             result.fichajesCreados++;
@@ -402,13 +414,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           minutosActuales < minutosParaEntrada + ventanaEntrada
         ) {
           // Verificar si ya se envió (usando estado del fichaje o campo específico)
-          const { data: fichaje } = await supabase
+          const { data: fichajeData } = await supabase
             .from('fichajes')
             .select('id, estado, whatsapp_msg_id_entrada')
             .eq('profesor_id', profesor.id)
             .eq('fecha', result.fecha)
             .eq('hora_inicio', bloque.horaInicio + ':00')
             .single();
+          const fichaje = fichajeData as {
+            id: string;
+            estado: string;
+            whatsapp_msg_id_entrada: string | null;
+          } | null;
 
           if (fichaje && !fichaje.whatsapp_msg_id_entrada && isWhatsAppConfigured()) {
             const waResult = await sendFichajeEntradaWhatsApp({
@@ -423,6 +440,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               // Marcar que se envió
               await supabase
                 .from('fichajes')
+                // @ts-expect-error - Supabase types are dynamic
                 .update({ whatsapp_msg_id_entrada: waResult.messageId || 'sent' })
                 .eq('id', fichaje.id);
             } else {
@@ -439,18 +457,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           minutosActuales >= minutosParaSalida &&
           minutosActuales < minutosParaSalida + ventanaSalida
         ) {
-          const { data: fichaje } = await supabase
+          const { data: fichajeSalidaData } = await supabase
             .from('fichajes')
             .select('id, estado, whatsapp_msg_id_salida')
             .eq('profesor_id', profesor.id)
             .eq('fecha', result.fecha)
             .eq('hora_inicio', bloque.horaInicio + ':00')
             .single();
+          const fichajeSalida = fichajeSalidaData as {
+            id: string;
+            estado: string;
+            whatsapp_msg_id_salida: string | null;
+          } | null;
 
           if (
-            fichaje &&
-            fichaje.estado === 'entrada_registrada' &&
-            !fichaje.whatsapp_msg_id_salida &&
+            fichajeSalida &&
+            fichajeSalida.estado === 'entrada_registrada' &&
+            !fichajeSalida.whatsapp_msg_id_salida &&
             isWhatsAppConfigured()
           ) {
             // Buscar si hay siguiente bloque
@@ -469,8 +492,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               result.notificacionesSalida++;
               await supabase
                 .from('fichajes')
+                // @ts-expect-error - Supabase types are dynamic
                 .update({ whatsapp_msg_id_salida: waResult.messageId || 'sent' })
-                .eq('id', fichaje.id);
+                .eq('id', fichajeSalida.id);
             } else {
               result.errores.push(`Error WhatsApp salida ${profesor.nombre}: ${waResult.error}`);
             }

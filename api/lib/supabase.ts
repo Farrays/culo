@@ -249,15 +249,15 @@ export function calcularMinutosTrabajados(
   pausaInicio?: string | null,
   pausaFin?: string | null
 ): number {
-  const [hiH, hiM] = horaInicio.split(':').map(Number);
-  const [hfH, hfM] = horaFin.split(':').map(Number);
+  const [hiH = 0, hiM = 0] = horaInicio.split(':').map(Number);
+  const [hfH = 0, hfM = 0] = horaFin.split(':').map(Number);
 
   let minutos = hfH * 60 + hfM - (hiH * 60 + hiM);
 
   // Restar pausas si existen
   if (pausaInicio && pausaFin) {
-    const [piH, piM] = pausaInicio.split(':').map(Number);
-    const [pfH, pfM] = pausaFin.split(':').map(Number);
+    const [piH = 0, piM = 0] = pausaInicio.split(':').map(Number);
+    const [pfH = 0, pfM = 0] = pausaFin.split(':').map(Number);
     const pausa = pfH * 60 + pfM - (piH * 60 + piM);
     minutos -= pausa;
   }

@@ -82,6 +82,7 @@ const FichajePage: React.FC = () => {
       }, 5000);
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [success, error]);
 
   const fetchProfesores = async () => {

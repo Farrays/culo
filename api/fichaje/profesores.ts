@@ -244,7 +244,8 @@ async function handlePost(req: VercelRequest, res: VercelResponse): Promise<void
       horas_semanales_contrato: body.horas_semanales_contrato || null,
       fecha_alta: body.fecha_alta || new Date().toISOString().split('T')[0],
       activo: true,
-    })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } as any)
     .select()
     .single();
 
@@ -297,18 +298,18 @@ async function handlePut(req: VercelRequest, res: VercelResponse): Promise<void>
   // Preparar datos de actualización
   const updateData: Record<string, unknown> = {};
 
-  if (body.nombre !== undefined) updateData.nombre = body.nombre.trim();
-  if (body.apellidos !== undefined) updateData.apellidos = body.apellidos?.trim() || null;
-  if (body.dni !== undefined) updateData.dni = body.dni?.trim() || null;
-  if (body.email !== undefined) updateData.email = body.email?.trim()?.toLowerCase() || null;
-  if (body.nombre_momence !== undefined) updateData.nombre_momence = body.nombre_momence.trim();
-  if (body.tipo_contrato !== undefined) updateData.tipo_contrato = body.tipo_contrato;
+  if (body.nombre !== undefined) updateData['nombre'] = body.nombre.trim();
+  if (body.apellidos !== undefined) updateData['apellidos'] = body.apellidos?.trim() || null;
+  if (body.dni !== undefined) updateData['dni'] = body.dni?.trim() || null;
+  if (body.email !== undefined) updateData['email'] = body.email?.trim()?.toLowerCase() || null;
+  if (body.nombre_momence !== undefined) updateData['nombre_momence'] = body.nombre_momence.trim();
+  if (body.tipo_contrato !== undefined) updateData['tipo_contrato'] = body.tipo_contrato;
   if (body.coeficiente_parcialidad !== undefined)
-    updateData.coeficiente_parcialidad = body.coeficiente_parcialidad;
+    updateData['coeficiente_parcialidad'] = body.coeficiente_parcialidad;
   if (body.horas_semanales_contrato !== undefined)
-    updateData.horas_semanales_contrato = body.horas_semanales_contrato;
-  if (body.activo !== undefined) updateData.activo = body.activo;
-  if (body.fecha_baja !== undefined) updateData.fecha_baja = body.fecha_baja;
+    updateData['horas_semanales_contrato'] = body.horas_semanales_contrato;
+  if (body.activo !== undefined) updateData['activo'] = body.activo;
+  if (body.fecha_baja !== undefined) updateData['fecha_baja'] = body.fecha_baja;
 
   // Formatear teléfono si se actualiza
   if (body.telefono_whatsapp !== undefined) {
@@ -321,12 +322,13 @@ async function handlePut(req: VercelRequest, res: VercelResponse): Promise<void>
         telefono = '+34' + telefono;
       }
     }
-    updateData.telefono_whatsapp = telefono;
+    updateData['telefono_whatsapp'] = telefono;
   }
 
   // Actualizar
   const { data, error } = await supabase
     .from('profesores')
+    // @ts-expect-error - Supabase types are dynamic
     .update(updateData)
     .eq('id', body.id)
     .select()
@@ -365,11 +367,12 @@ async function handleDelete(req: VercelRequest, res: VercelResponse): Promise<vo
   }
 
   // Verificar que existe
-  const { data: existing } = await supabase
+  const { data: existingData } = await supabase
     .from('profesores')
     .select('id, nombre')
     .eq('id', id)
     .single();
+  const existing = existingData as { id: string; nombre: string } | null;
 
   if (!existing) {
     res.status(404).json({
@@ -382,6 +385,7 @@ async function handleDelete(req: VercelRequest, res: VercelResponse): Promise<vo
   // Soft delete: marcar como inactivo con fecha de baja
   const { error } = await supabase
     .from('profesores')
+    // @ts-expect-error - Supabase types are dynamic
     .update({
       activo: false,
       fecha_baja: new Date().toISOString().split('T')[0],

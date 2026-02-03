@@ -144,6 +144,7 @@ const FichajesAdminPage: React.FC = () => {
       }, 5000);
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [success, error]);
 
   // Export CSV
