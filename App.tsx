@@ -135,6 +135,12 @@ const ProfesoresBaileBarcelonaPage = lazy(
 const BookingPage = lazy(() => import('./components/pages/BookingPage'));
 const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
+// ===== FICHAJE PAGE (PWA interna para profesores) =====
+const FichajePage = lazy(() => import('./components/fichaje/FichajePage'));
+
+// ===== ADMIN FICHAJES (Dashboard de gestión de fichajes) =====
+const FichajesAdminPage = lazy(() => import('./components/admin/FichajesAdminPage'));
+
 // ===== FEEDBACK PAGES =====
 const FeedbackGraciasPage = lazy(() => import('./components/FeedbackGraciasPage'));
 const FeedbackComentarioPage = lazy(() => import('./components/FeedbackComentarioPage'));
@@ -301,7 +307,9 @@ const AppContent: React.FC = () => {
     location.pathname.includes('/mi-reserva') ||
     location.pathname.includes('/feedback-gracias') ||
     location.pathname.includes('/feedback-comentario') ||
-    location.pathname.includes('/asistencia-confirmada');
+    location.pathname.includes('/asistencia-confirmada') ||
+    location.pathname.includes('/fichaje') ||
+    location.pathname.includes('/admin/fichajes');
 
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
@@ -797,6 +805,28 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HazteSocioPage />
+                </>
+              }
+            />
+
+            {/* ===== FICHAJE (PWA interna para profesores - sin header/footer) ===== */}
+            <Route
+              path="/:locale/fichaje"
+              element={
+                <>
+                  <LocaleSync />
+                  <FichajePage />
+                </>
+              }
+            />
+
+            {/* ===== ADMIN FICHAJES (Dashboard de gestión - sin header/footer) ===== */}
+            <Route
+              path="/:locale/admin/fichajes"
+              element={
+                <>
+                  <LocaleSync />
+                  <FichajesAdminPage />
                 </>
               }
             />
