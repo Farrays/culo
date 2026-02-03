@@ -665,21 +665,31 @@ async function handleAttendanceConfirmation(
 async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingDetails | null> {
   // Normalizar teléfono
   const normalizedPhone = phone.replace(/[\s\-+]/g, '');
+  console.log(`[webhook-whatsapp] findBookingByPhone: normalized phone = ${normalizedPhone}`);
 
   // Buscar en índice de teléfonos (creado en reservar.ts)
+  console.log(`[webhook-whatsapp] Checking phone index: phone:${normalizedPhone}`);
   const eventId = await redis.get(`phone:${normalizedPhone}`);
+  console.log(`[webhook-whatsapp] phone index result: ${eventId || 'null'}`);
+
   if (eventId) {
     const bookingData = await redis.get(`booking_details:${eventId}`);
+    console.log(
+      `[webhook-whatsapp] booking_details:${eventId} = ${bookingData ? 'found' : 'not found'}`
+    );
     if (bookingData) {
       const booking: BookingDetails = JSON.parse(bookingData);
       // Solo retornar si no está cancelada
       if (booking.status !== 'cancelled') {
+        console.log(`[webhook-whatsapp] Found booking via phone index: ${booking.firstName}`);
         return booking;
       }
+      console.log(`[webhook-whatsapp] Booking found but status = ${booking.status}`);
     }
   }
 
   // Fallback: buscar en reminders de próximos 7 días
+  console.log(`[webhook-whatsapp] Phone index not found, trying reminders fallback...`);
   const today = new Date();
   for (let i = 0; i < 7; i++) {
     const date = new Date(today);
@@ -687,6 +697,7 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
     const dateKey = date.toISOString().split('T')[0];
 
     const eventIds = await redis.smembers(`reminders:${dateKey}`);
+    console.log(`[webhook-whatsapp] reminders:${dateKey} = ${eventIds.length} events`);
 
     for (const evId of eventIds) {
       const bookingData = await redis.get(`booking_details:${evId}`);
