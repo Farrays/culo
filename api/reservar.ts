@@ -82,13 +82,33 @@ function isGoogleCalendarConfigured(): boolean {
   );
 }
 
-function parseClassDateTime(classDate: string, classTime: string): Date {
+/**
+ * Parsea fecha y hora de clase a string en formato Google Calendar
+ * Retorna formato "YYYY-MM-DDTHH:MM:00" (sin Z, hora local)
+ */
+function parseClassDateTime(classDate: string, classTime: string): string {
   const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
   const dateStr = isoMatch ? isoMatch[0] : classDate;
   const [hours, minutes] = classTime.split(':').map(Number);
-  const date = new Date(dateStr);
-  date.setHours(hours || 19, minutes || 0, 0, 0);
-  return date;
+  const h = String(hours || 19).padStart(2, '0');
+  const m = String(minutes || 0).padStart(2, '0');
+  return `${dateStr}T${h}:${m}:00`;
+}
+
+/**
+ * Calcula la hora de fin añadiendo minutos a la hora de inicio
+ */
+function calculateEndTime(startTime: string, durationMinutes: number): string {
+  const parts = startTime.split('T');
+  const datePart = parts[0] || '';
+  const timePart = parts[1] || '19:00:00';
+  const timeParts = timePart.split(':').map(Number);
+  const h = timeParts[0] || 19;
+  const m = timeParts[1] || 0;
+  const totalMinutes = h * 60 + m + durationMinutes;
+  const newHours = Math.floor(totalMinutes / 60) % 24;
+  const newMinutes = totalMinutes % 60;
+  return `${datePart}T${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}:00`;
 }
 
 function formatCalendarEventDescription(booking: BookingCalendarData): string {
@@ -143,15 +163,15 @@ async function createBookingEvent(
   if (!accessToken) return { success: false, error: 'Failed to get access token' };
 
   try {
-    const startDateTime = parseClassDateTime(booking.classDate, booking.classTime);
-    const endDateTime = new Date(startDateTime.getTime() + DEFAULT_CLASS_DURATION * 60 * 1000);
+    const startDateTimeStr = parseClassDateTime(booking.classDate, booking.classTime);
+    const endDateTimeStr = calculateEndTime(startDateTimeStr, DEFAULT_CLASS_DURATION);
 
     const event = {
       summary: `${booking.firstName} ${booking.lastName} - ${booking.className}`,
       description: formatCalendarEventDescription(booking),
       location: ACADEMY_LOCATION,
-      start: { dateTime: startDateTime.toISOString(), timeZone: CALENDAR_TIMEZONE },
-      end: { dateTime: endDateTime.toISOString(), timeZone: CALENDAR_TIMEZONE },
+      start: { dateTime: startDateTimeStr, timeZone: CALENDAR_TIMEZONE },
+      end: { dateTime: endDateTimeStr, timeZone: CALENDAR_TIMEZONE },
       colorId: '8', // Graphite (pending)
       extendedProperties: {
         private: {
