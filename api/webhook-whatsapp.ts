@@ -16,7 +16,7 @@ const STATUS_COLORS: Record<AttendanceStatus, string> = {
   pending: '8', // Graphite (gris)
   confirmed: '10', // Basil (verde)
   not_attending: '11', // Tomato (rojo)
-  cancelled: '5', // Banana (amarillo)
+  cancelled: '11', // Tomato (rojo) - para visibilidad de cancelaciones
 };
 
 let cachedCalendarAccessToken: string | null = null;
@@ -132,6 +132,95 @@ async function updateEventAttendance(
 
 // ============================================================================
 // END GOOGLE CALENDAR INLINED
+// ============================================================================
+
+// ============================================================================
+// MOMENCE API (para cancelación de reservas)
+// ============================================================================
+
+const MOMENCE_API_URL = 'https://api.momence.com';
+const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
+const MOMENCE_TOKEN_CACHE_KEY = 'momence:access_token';
+const MOMENCE_TOKEN_TTL_SECONDS = 3500;
+
+async function getMomenceAccessToken(redis: Redis): Promise<string | null> {
+  const { MOMENCE_CLIENT_ID, MOMENCE_CLIENT_SECRET, MOMENCE_USERNAME, MOMENCE_PASSWORD } =
+    process.env;
+  if (!MOMENCE_CLIENT_ID || !MOMENCE_CLIENT_SECRET || !MOMENCE_USERNAME || !MOMENCE_PASSWORD) {
+    return null;
+  }
+
+  // Check cache
+  try {
+    const cached = await redis.get(MOMENCE_TOKEN_CACHE_KEY);
+    if (cached) return cached;
+  } catch (e) {
+    console.warn('[webhook-whatsapp] Momence token cache lookup failed:', e);
+  }
+
+  const basicAuth = Buffer.from(`${MOMENCE_CLIENT_ID}:${MOMENCE_CLIENT_SECRET}`).toString('base64');
+
+  try {
+    const response = await fetch(MOMENCE_AUTH_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Basic ${basicAuth}`,
+      },
+      body: new URLSearchParams({
+        grant_type: 'password',
+        username: MOMENCE_USERNAME,
+        password: MOMENCE_PASSWORD,
+      }),
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    const token = data.access_token;
+
+    if (token) {
+      try {
+        await redis.setex(MOMENCE_TOKEN_CACHE_KEY, MOMENCE_TOKEN_TTL_SECONDS, token);
+      } catch (e) {
+        console.warn('[webhook-whatsapp] Momence token cache save failed:', e);
+      }
+    }
+
+    return token;
+  } catch (error) {
+    console.error('[webhook-whatsapp] Momence auth error:', error);
+    return null;
+  }
+}
+
+async function cancelMomenceBooking(
+  accessToken: string,
+  bookingId: number
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    console.log('[webhook-whatsapp] Cancelling Momence booking:', bookingId);
+    const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('[webhook-whatsapp] Momence cancel failed:', response.status, errorText);
+      return { success: false, error: `HTTP ${response.status}: ${errorText}` };
+    }
+
+    console.log('[webhook-whatsapp] Momence booking cancelled successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('[webhook-whatsapp] Momence cancel error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// END MOMENCE API
 // ============================================================================
 
 /**
@@ -259,6 +348,7 @@ interface BookingDetails {
   classTime: string;
   category: string;
   calendarEventId?: string | null;
+  momenceBookingId?: number | null; // For Momence API cancellation
   createdAt: string;
   status?: 'confirmed' | 'cancelled';
   attendance?: 'pending' | 'confirmed' | 'not_attending';
@@ -599,6 +689,7 @@ async function handleAttendanceConfirmation(
 
     if (canCancel) {
       // CANCELACIÓN COMPLETA: > 1 hora antes de la clase
+      // Puede reprogramar para otro día
       booking.status = 'cancelled';
       booking.attendance = 'not_attending';
       booking.attendanceUpdatedAt = new Date().toISOString();
@@ -614,9 +705,29 @@ async function handleAttendanceConfirmation(
       const normalizedPhone = phone.replace(/[\s\-+]/g, '');
       await redis.del(`phone:${normalizedPhone}`);
 
-      console.log(`[webhook-whatsapp] Booking cancelled: ${booking.firstName}`);
+      console.log(`[webhook-whatsapp] Booking cancelled (> 1h): ${booking.firstName}`);
 
-      // Google Calendar - Actualizar a cancelado
+      // Cancelar en Momence si existe
+      if (booking.momenceBookingId) {
+        try {
+          const momenceToken = await getMomenceAccessToken(redis);
+          if (momenceToken) {
+            const momenceResult = await cancelMomenceBooking(
+              momenceToken,
+              booking.momenceBookingId
+            );
+            if (momenceResult.success) {
+              console.log(`[webhook-whatsapp] Momence booking cancelled`);
+            } else {
+              console.warn(`[webhook-whatsapp] Momence cancel failed:`, momenceResult.error);
+            }
+          }
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Momence cancel exception:', e);
+        }
+      }
+
+      // Google Calendar - Actualizar a cancelado (ROJO)
       if (isGoogleCalendarConfigured() && booking.calendarEventId) {
         try {
           await updateEventAttendance(booking.calendarEventId, 'cancelled');
@@ -634,20 +745,48 @@ async function handleAttendanceConfirmation(
         `Entendido ${booking.firstName}. Tu reserva ha sido cancelada. 😊\n\n📋 Reprogramar clase:\n👉 ${reprogramUrl}\n\n¡Te esperamos cuando puedas!`
       );
     } else {
-      // NO PUEDE CANCELAR: < 1 hora antes de la clase
+      // CANCELACIÓN TARDÍA: < 1 hora antes de la clase
+      // Pierde derecho a clase de prueba, NO puede reprogramar
+      booking.status = 'cancelled';
       booking.attendance = 'not_attending';
       booking.attendanceUpdatedAt = new Date().toISOString();
-      // NO marcamos como cancelled, NO eliminamos deduplicación
 
       await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
 
-      console.log(`[webhook-whatsapp] Late cancellation (no dedup removal): ${booking.firstName}`);
+      // NO eliminar deduplicación - no puede reservar de nuevo
+      console.log(
+        `[webhook-whatsapp] Late cancellation (< 1h) - deduplication KEPT: ${booking.firstName}`
+      );
 
-      // Google Calendar - Actualizar a not_attending
+      // Eliminar del índice de teléfono
+      const normalizedPhone = phone.replace(/[\s\-+]/g, '');
+      await redis.del(`phone:${normalizedPhone}`);
+
+      // Cancelar en Momence si existe
+      if (booking.momenceBookingId) {
+        try {
+          const momenceToken = await getMomenceAccessToken(redis);
+          if (momenceToken) {
+            const momenceResult = await cancelMomenceBooking(
+              momenceToken,
+              booking.momenceBookingId
+            );
+            if (momenceResult.success) {
+              console.log(`[webhook-whatsapp] Momence booking cancelled`);
+            } else {
+              console.warn(`[webhook-whatsapp] Momence cancel failed:`, momenceResult.error);
+            }
+          }
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Momence cancel exception:', e);
+        }
+      }
+
+      // Google Calendar - Actualizar a cancelado (ROJO para visibilidad)
       if (isGoogleCalendarConfigured() && booking.calendarEventId) {
         try {
-          await updateEventAttendance(booking.calendarEventId, 'not_attending');
-          console.log(`[webhook-whatsapp] Calendar updated to not_attending`);
+          await updateEventAttendance(booking.calendarEventId, 'cancelled');
+          console.log(`[webhook-whatsapp] Calendar updated to cancelled`);
         } catch (e) {
           console.warn('[webhook-whatsapp] Calendar update failed:', e);
         }
@@ -655,7 +794,7 @@ async function handleAttendanceConfirmation(
 
       await sendTextMessage(
         phone,
-        `Entendido ${booking.firstName}. Lamentamos que no puedas venir.\n\n⚠️ Como faltan menos de 1 hora para la clase, no es posible reprogramar.\n\nSi tienes algún problema, contáctanos:\n📞 +34 622 247 085`
+        `Entendido ${booking.firstName}. Tu reserva ha sido cancelada.\n\n⚠️ Al cancelar con menos de 1 hora de antelación, has perdido el derecho a la clase de prueba gratuita según nuestra política de cancelación.\n\n💃 Si deseas hacer una clase otro día, puedes coger una clase suelta en:\n👉 www.farrayscenter.com/es/hazte-socio\n\n¡Gracias por tu comprensión!`
       );
     }
   } catch (error) {
