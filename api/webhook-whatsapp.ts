@@ -428,12 +428,28 @@ async function processMessage(
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '');
 
+    console.log(`[webhook-whatsapp] Normalized payload: "${normalizedPayload}"`);
+
     if (normalizedPayload.includes('si') && normalizedPayload.includes('asistir')) {
       // "Sí, asistiré" o variaciones
-      await handleAttendanceConfirmation(phone, 'confirmed');
+      console.log(
+        `[webhook-whatsapp] Matched: Sí, asistiré - calling handleAttendanceConfirmation`
+      );
+      try {
+        await handleAttendanceConfirmation(phone, 'confirmed');
+      } catch (e) {
+        console.error(`[webhook-whatsapp] Error in handleAttendanceConfirmation:`, e);
+      }
     } else if (normalizedPayload.includes('no') && normalizedPayload.includes('podr')) {
       // "No podré ir" o variaciones
-      await handleAttendanceConfirmation(phone, 'not_attending');
+      console.log(`[webhook-whatsapp] Matched: No podré ir - calling handleAttendanceConfirmation`);
+      try {
+        await handleAttendanceConfirmation(phone, 'not_attending');
+      } catch (e) {
+        console.error(`[webhook-whatsapp] Error in handleAttendanceConfirmation:`, e);
+      }
+    } else {
+      console.log(`[webhook-whatsapp] No match for payload: "${normalizedPayload}"`);
     }
   }
 
@@ -513,16 +529,28 @@ async function handleAttendanceConfirmation(
   phone: string,
   status: 'confirmed' | 'not_attending'
 ): Promise<void> {
+  console.log(
+    `[webhook-whatsapp] handleAttendanceConfirmation called: phone=${phone}, status=${status}`
+  );
+
   const redis = getRedisClient();
 
   if (!redis) {
-    console.error('[webhook-whatsapp] Redis not configured');
+    console.error(
+      '[webhook-whatsapp] Redis not configured - missing UPSTASH_REDIS_REST_URL or TOKEN'
+    );
     return;
   }
+
+  console.log(`[webhook-whatsapp] Redis client obtained, searching for booking...`);
 
   try {
     // Buscar booking por teléfono
     const booking = await findBookingByPhone(redis, phone);
+    console.log(
+      `[webhook-whatsapp] findBookingByPhone result:`,
+      booking ? `Found: ${booking.firstName}` : 'Not found'
+    );
 
     if (!booking) {
       console.warn(`[webhook-whatsapp] No booking found for phone ${phone}`);
