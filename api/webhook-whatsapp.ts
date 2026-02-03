@@ -2,8 +2,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
-// Google Calendar disabled temporarily - Vercel bundler doesn't include non-npm dependencies
-// import { updateEventAttendance } from '../lib/google-calendar';
+import { updateEventAttendance, isGoogleCalendarConfigured } from './lib/email';
 
 /**
  * API Route: /api/webhook-whatsapp
@@ -417,8 +416,15 @@ async function handleAttendanceConfirmation(
       await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
       console.log(`[webhook-whatsapp] Attendance confirmed: ${booking.firstName}`);
 
-      // Google Calendar - DISABLED (Vercel bundler issue)
-      console.log('[webhook-whatsapp] Google Calendar disabled temporarily');
+      // Google Calendar - Actualizar a confirmado
+      if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+        try {
+          await updateEventAttendance(booking.calendarEventId, 'confirmed');
+          console.log(`[webhook-whatsapp] Calendar updated to confirmed`);
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Calendar update failed:', e);
+        }
+      }
 
       await sendTextMessage(
         phone,
@@ -449,8 +455,15 @@ async function handleAttendanceConfirmation(
 
       console.log(`[webhook-whatsapp] Booking cancelled: ${booking.firstName}`);
 
-      // Google Calendar - DISABLED (Vercel bundler issue)
-      console.log('[webhook-whatsapp] Google Calendar disabled temporarily');
+      // Google Calendar - Actualizar a cancelado
+      if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+        try {
+          await updateEventAttendance(booking.calendarEventId, 'cancelled');
+          console.log(`[webhook-whatsapp] Calendar updated to cancelled`);
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Calendar update failed:', e);
+        }
+      }
 
       // Mensaje con opción de reprogramar
       const reprogramUrl = `farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${eventId}`;
@@ -469,8 +482,15 @@ async function handleAttendanceConfirmation(
 
       console.log(`[webhook-whatsapp] Late cancellation (no dedup removal): ${booking.firstName}`);
 
-      // Google Calendar - DISABLED (Vercel bundler issue)
-      console.log('[webhook-whatsapp] Google Calendar disabled temporarily');
+      // Google Calendar - Actualizar a not_attending
+      if (isGoogleCalendarConfigured() && booking.calendarEventId) {
+        try {
+          await updateEventAttendance(booking.calendarEventId, 'not_attending');
+          console.log(`[webhook-whatsapp] Calendar updated to not_attending`);
+        } catch (e) {
+          console.warn('[webhook-whatsapp] Calendar update failed:', e);
+        }
+      }
 
       await sendTextMessage(
         phone,

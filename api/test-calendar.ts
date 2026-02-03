@@ -256,7 +256,8 @@ export default async function handler(
       email: 'test@example.com',
       phone: '+34600000000',
       className: 'TEST - Bachata Sensual',
-      classDate: new Date().toISOString().split('T')[0],
+      classDate:
+        new Date().toISOString().split('T')[0] || new Date().toISOString().substring(0, 10),
       classTime: '19:00',
       category: 'bailes_sociales',
       eventId: `test-${Date.now()}`,

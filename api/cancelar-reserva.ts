@@ -1,243 +1,7 @@
+/* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import { Resend } from 'resend';
-
-// ============================================================================
-// GOOGLE CALENDAR INLINE (evita problemas de bundling de Vercel)
-// ============================================================================
-
-const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
-const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
-
-interface CalendarResult {
-  success: boolean;
-  error?: string;
-}
-
-let cachedCalendarToken: string | null = null;
-let calendarTokenExpiry: number = 0;
-
-async function getCalendarAccessToken(): Promise<string | null> {
-  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
-  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
-  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
-
-  if (!clientId || !clientSecret || !refreshToken) {
-    return null;
-  }
-
-  if (cachedCalendarToken && Date.now() < calendarTokenExpiry - 60000) {
-    return cachedCalendarToken;
-  }
-
-  try {
-    const response = await fetch(CALENDAR_TOKEN_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        client_id: clientId,
-        client_secret: clientSecret,
-        refresh_token: refreshToken,
-        grant_type: 'refresh_token',
-      }),
-    });
-
-    if (!response.ok) {
-      console.error('[cancelar] Calendar token refresh failed');
-      return null;
-    }
-
-    const data = await response.json();
-    cachedCalendarToken = data.access_token;
-    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
-    return cachedCalendarToken;
-  } catch (error) {
-    console.error('[cancelar] Calendar token error:', error);
-    return null;
-  }
-}
-
-function getCalendarId(): string {
-  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
-}
-
-function isGoogleCalendarConfigured(): boolean {
-  return !!(
-    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
-    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
-    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
-  );
-}
-
-async function deleteCalendarEvent(calendarEventId: string): Promise<CalendarResult> {
-  const accessToken = await getCalendarAccessToken();
-  if (!accessToken) {
-    return { success: false, error: 'Failed to get access token' };
-  }
-
-  try {
-    const response = await fetch(
-      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
-      {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${accessToken}` },
-      }
-    );
-
-    // 204 No Content = éxito, 404 = ya eliminado (también OK)
-    if (response.status === 204 || response.status === 404) {
-      console.log(`[cancelar] Calendar event ${calendarEventId} deleted`);
-      return { success: true };
-    }
-
-    const error = await response.text();
-    return { success: false, error: `HTTP ${response.status}: ${error}` };
-  } catch (error) {
-    console.error('[cancelar] Error deleting calendar event:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
-  }
-}
-
-// ============================================================================
-// WHATSAPP INLINE (evita problemas de bundling de Vercel)
-// ============================================================================
-
-const WHATSAPP_API_VERSION = 'v23.0';
-
-interface WhatsAppResult {
-  success: boolean;
-  messageId?: string;
-  error?: string;
-}
-
-function getWhatsAppConfig() {
-  const token = process.env['WHATSAPP_TOKEN'];
-  const phoneId = process.env['WHATSAPP_PHONE_ID'];
-  if (!token || !phoneId) return null;
-  return {
-    token,
-    phoneId,
-    apiUrl: `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
-  };
-}
-
-function normalizePhone(phone: string): string {
-  let normalized = phone.replace(/[\s\-().]/g, '');
-  if (normalized.startsWith('+')) normalized = normalized.slice(1);
-  if (normalized.startsWith('00')) normalized = normalized.slice(2);
-  if (/^[67]\d{8}$/.test(normalized)) normalized = '34' + normalized;
-  return normalized;
-}
-
-async function sendCancellationWhatsAppInline(data: {
-  to: string;
-  firstName: string;
-}): Promise<WhatsAppResult> {
-  const config = getWhatsAppConfig();
-  if (!config) return { success: false, error: 'WhatsApp not configured' };
-
-  const message = {
-    messaging_product: 'whatsapp',
-    to: normalizePhone(data.to),
-    type: 'template',
-    template: {
-      name: 'cancelar',
-      language: { code: 'es_ES' },
-      components: [
-        {
-          type: 'body',
-          parameters: [{ type: 'text', text: data.firstName }],
-        },
-      ],
-    },
-  };
-
-  try {
-    const response = await fetch(config.apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${config.token}`,
-      },
-      body: JSON.stringify(message),
-    });
-
-    const responseData = await response.json();
-    if (!response.ok || responseData.error) {
-      console.error('[cancelar] WhatsApp error:', responseData.error);
-      return { success: false, error: responseData.error?.message || `HTTP ${response.status}` };
-    }
-    return { success: true, messageId: responseData.messages?.[0]?.id };
-  } catch (error) {
-    console.error('[cancelar] WhatsApp error:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown' };
-  }
-}
-
-// ============================================================================
-// EMAIL INLINE (evita problemas de bundling de Vercel)
-// ============================================================================
-
-const EMAIL_FROM = "Farray's Center <noreply@farrayscenter.com>";
-const EMAIL_REPLY_TO = 'info@farrayscenter.com';
-const BRAND_PRIMARY = '#B01E3C';
-
-interface EmailResult {
-  success: boolean;
-  id?: string;
-  error?: string;
-}
-
-async function sendCancellationEmailInline(data: {
-  to: string;
-  firstName: string;
-  className: string;
-}): Promise<EmailResult> {
-  const resendKey = process.env['RESEND_API_KEY'];
-  if (!resendKey) return { success: false, error: 'Resend not configured' };
-
-  const resend = new Resend(resendKey);
-
-  try {
-    const result = await resend.emails.send({
-      from: EMAIL_FROM,
-      to: data.to,
-      replyTo: EMAIL_REPLY_TO,
-      subject: `Tu reserva de ${data.className} ha sido cancelada`,
-      html: `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
-<body style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 20px;">
-    <img src="https://www.farrayscenter.com/images/logo.webp" alt="Farray's Center" style="height: 60px;">
-  </div>
-  <div style="background: #f8d7da; color: #721c24; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0;">Reserva Cancelada</h2>
-  </div>
-  <p>Hola <strong>${data.firstName}</strong>,</p>
-  <p>Tu reserva para <strong>${data.className}</strong> ha sido cancelada y la plaza ha quedado liberada.</p>
-  <p>Si quieres reservar otra clase, puedes hacerlo en nuestra web:</p>
-  <div style="text-align: center; margin: 30px 0;">
-    <a href="https://www.farrayscenter.com/reservas" style="background: ${BRAND_PRIMARY}; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; display: inline-block;">
-      Reservar otra clase
-    </a>
-  </div>
-  <p>¿Tienes alguna pregunta? Escríbenos por WhatsApp al <a href="https://wa.me/34644702671" style="color: ${BRAND_PRIMARY};">644 702 671</a></p>
-  <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-  <p style="text-align: center; color: #666; font-size: 12px;">
-    Farray's International Dance Center<br>
-    C/ Entença 100, Barcelona
-  </p>
-</body></html>`,
-    });
-
-    if (result.error) {
-      return { success: false, error: result.error.message };
-    }
-    return { success: true, id: result.data?.id };
-  } catch (error) {
-    console.error('[cancelar] Email error:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown' };
-  }
-}
 
 /**
  * API endpoint para cancelar una reserva
@@ -245,12 +9,13 @@ async function sendCancellationEmailInline(data: {
  *
  * Body: { email: string, eventId: string }
  *
- * Flujo:
- * 1. Buscar datos de la reserva en Redis
- * 2. Cancelar el booking en Momence (si existe bookingId)
- * 3. Eliminar de Redis
- * 4. Retornar confirmación
+ * NOTA: Este archivo tiene las plantillas de email/WhatsApp y Google Calendar
+ * inlineadas para evitar problemas de bundling en Vercel serverless functions.
  */
+
+// ============================================================================
+// CONSTANTES
+// ============================================================================
 
 const MOMENCE_API_URL = 'https://api.momence.com';
 const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
@@ -258,9 +23,42 @@ const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 const BOOKING_KEY_PREFIX = 'booking:';
 
-/* eslint-disable no-undef */
+// Brand colors
+const BRAND_PRIMARY = '#B01E3C';
 
-// Lazy Redis
+// Button styles
+const BUTTON_PRIMARY = `display: inline-block; background-color: ${BRAND_PRIMARY}; color: white; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-weight: bold; font-size: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);`;
+
+// URLs
+const BASE_URL = 'https://www.farrayscenter.com';
+const LOGO_URL = 'https://www.farrayscenter.com/images/logo/img/logo-fidc_256.png';
+const INSTAGRAM_URL = 'https://www.instagram.com/farrays_centerbcn/';
+const WHATSAPP_NUMBER = '+34622247085';
+const WHATSAPP_URL = `https://wa.me/34622247085`;
+
+// Location
+const LOCATION_STREET = 'C/ Entença 100, 08015 Barcelona';
+
+// Email config
+const FROM_EMAIL = "Farray's Center <reservas@farrayscenter.com>";
+const REPLY_TO = 'info@farrayscenter.com';
+const EMAIL_HEADERS = {
+  'X-Entity-Ref-ID': 'farrayscenter-booking-system',
+  'List-Unsubscribe': '<mailto:unsubscribe@farrayscenter.com>',
+};
+
+// WhatsApp Cloud API
+const WHATSAPP_API_URL = 'https://graph.facebook.com/v21.0';
+const WHATSAPP_PHONE_NUMBER_ID = '576045082';
+
+// Google Calendar API
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const TOKEN_URL = 'https://oauth2.googleapis.com/token';
+
+// ============================================================================
+// REDIS CLIENT
+// ============================================================================
+
 let redisClient: Redis | null = null;
 
 function getRedisClient(): Redis | null {
@@ -277,14 +75,15 @@ function getRedisClient(): Redis | null {
   return redisClient;
 }
 
-// Obtener access token de Momence
+// ============================================================================
+// MOMENCE API
+// ============================================================================
+
 async function getAccessToken(): Promise<string | null> {
   const { MOMENCE_CLIENT_ID, MOMENCE_CLIENT_SECRET, MOMENCE_USERNAME, MOMENCE_PASSWORD } =
     process.env;
-
-  if (!MOMENCE_CLIENT_ID || !MOMENCE_CLIENT_SECRET || !MOMENCE_USERNAME || !MOMENCE_PASSWORD) {
+  if (!MOMENCE_CLIENT_ID || !MOMENCE_CLIENT_SECRET || !MOMENCE_USERNAME || !MOMENCE_PASSWORD)
     return null;
-  }
 
   const redis = getRedisClient();
   if (redis) {
@@ -332,20 +131,15 @@ async function getAccessToken(): Promise<string | null> {
   }
 }
 
-// Cancelar booking en Momence
 async function cancelMomenceBooking(
   accessToken: string,
   bookingId: number
 ): Promise<{ success: boolean; error?: string }> {
   try {
     console.warn('[Momence Cancel] Cancelling booking:', bookingId);
-
     const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`, {
       method: 'DELETE',
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
-      },
+      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
     });
 
     if (!response.ok) {
@@ -362,6 +156,227 @@ async function cancelMomenceBooking(
   }
 }
 
+// ============================================================================
+// GOOGLE CALENDAR API (INLINED)
+// ============================================================================
+
+let cachedCalendarAccessToken: string | null = null;
+let calendarTokenExpiry: number = 0;
+
+async function getCalendarAccessToken(): Promise<string | null> {
+  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+
+  if (!clientId || !clientSecret || !refreshToken) return null;
+
+  if (cachedCalendarAccessToken && Date.now() < calendarTokenExpiry - 60000) {
+    return cachedCalendarAccessToken;
+  }
+
+  try {
+    const response = await fetch(TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    cachedCalendarAccessToken = data.access_token;
+    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
+    return cachedCalendarAccessToken;
+  } catch (error) {
+    console.error('[google-calendar] Token refresh error:', error);
+    return null;
+  }
+}
+
+function getCalendarId(): string {
+  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+}
+
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
+
+async function deleteCalendarEvent(
+  calendarEventId: string
+): Promise<{ success: boolean; error?: string }> {
+  const accessToken = await getCalendarAccessToken();
+  if (!accessToken) return { success: false, error: 'Failed to get access token' };
+
+  try {
+    const response = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${accessToken}` },
+      }
+    );
+
+    if (response.status === 204 || response.status === 404) {
+      console.log(`[google-calendar] Event ${calendarEventId} deleted`);
+      return { success: true };
+    }
+
+    const error = await response.text();
+    return { success: false, error: `HTTP ${response.status}: ${error}` };
+  } catch (error) {
+    console.error('[google-calendar] Error deleting event:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// EMAIL HTML COMPONENTS (INLINED)
+// ============================================================================
+
+function generatePreheader(text: string): string {
+  const spacer = '&nbsp;'.repeat(150);
+  return `<div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">${text}${spacer}</div>`;
+}
+
+function generateHeader(): string {
+  return `<div style="text-align: center; margin-bottom: 30px;"><h1 style="color: ${BRAND_PRIMARY}; margin: 0; font-size: 24px; font-weight: bold;">Farray's International Dance Center</h1></div>`;
+}
+
+function generateFooter(): string {
+  return `
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #1a1a1a; margin-top: 30px;">
+    <tr>
+      <td style="padding: 30px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="120" height="120" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
+        <p style="margin: 0 0 20px 0;"><a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">www.farrayscenter.com</a></p>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="${WHATSAPP_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
+        </p>
+      </td>
+    </tr>
+  </table>`;
+}
+
+// ============================================================================
+// INLINED EMAIL FUNCTION
+// ============================================================================
+
+async function sendCancellationEmailInline(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate?: string;
+  classTime?: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  const resend = new Resend(apiKey);
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: data.to,
+      replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
+      subject: `Reserva cancelada: ${data.className}`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  ${generatePreheader(`Tu reserva ha sido cancelada. ¿Te arrepientes? Puedes reservar otra clase gratis cuando quieras.`)}
+  ${generateHeader()}
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
+    <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
+    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong>${data.classDate ? ` del ${data.classDate}` : ''}${data.classTime ? ` a las ${data.classTime}` : ''} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
+  </div>
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
+    <p style="margin: 0;">Puedes reservar tu clase gratis cuando quieras, siempre que la promo siga activa y queden plazas.</p>
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="${BASE_URL}/es/reservas" style="${BUTTON_PRIMARY}">Reprogramar Clase</a>
+  </div>
+  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 10px 0;"><strong>💡 ¿Sabías que...?</strong></p>
+    <p style="margin: 0;">Las clases sueltas están desde <strong>20€</strong>. Y la clase gratis... ¡es una oferta top por tiempo limitado y las plazas vuelan!</p>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0 0 10px 0;"><strong>¿Tienes dudas? 💬</strong></p>
+    <p style="margin: 0;">Escríbenos por WhatsApp al <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none;"><strong>${WHATSAPP_NUMBER}</strong></a><br>y te responderemos lo antes posible.</p>
+  </div>
+  ${generateFooter()}
+</body></html>`,
+    });
+
+    if (result.error) return { success: false, error: result.error.message };
+    return { success: true };
+  } catch (error) {
+    console.error('[Cancel] Error sending email:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// INLINED WHATSAPP FUNCTION
+// ============================================================================
+
+function normalizePhoneNumber(phone: string): string {
+  let cleaned = phone.replace(/[\s\-().]/g, '');
+  if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
+  if (cleaned.startsWith('00')) cleaned = cleaned.substring(2);
+  if (/^[67]\d{8}$/.test(cleaned)) cleaned = '34' + cleaned;
+  return cleaned;
+}
+
+async function sendCancellationWhatsAppInline(data: {
+  to: string;
+  firstName: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const accessToken = process.env['WHATSAPP_ACCESS_TOKEN'];
+  if (!accessToken) return { success: false, error: 'Missing WHATSAPP_ACCESS_TOKEN' };
+
+  try {
+    const response = await fetch(`${WHATSAPP_API_URL}/${WHATSAPP_PHONE_NUMBER_ID}/messages`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messaging_product: 'whatsapp',
+        to: normalizePhoneNumber(data.to),
+        type: 'template',
+        template: {
+          name: 'cancelar',
+          language: { code: 'es' },
+          components: [{ type: 'body', parameters: [{ type: 'text', text: data.firstName }] }],
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      return { success: false, error: `HTTP ${response.status}: ${errorText}` };
+    }
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// TYPES
+// ============================================================================
+
 interface BookingData {
   firstName: string;
   lastName: string;
@@ -374,19 +389,35 @@ interface BookingData {
   momenceBookingId?: number | null;
   bookedAt: string;
   category?: string;
-  calendarEventId?: string; // Google Calendar event ID
+  calendarEventId?: string;
 }
+
+interface BookingDetailsData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: string;
+  calendarEventId?: string | null;
+  momenceEventId?: string;
+  momenceBookingId?: number | null;
+}
+
+// ============================================================================
+// HANDLER
+// ============================================================================
 
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ): Promise<VercelResponse> {
-  // Solo POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed. Use POST.' });
   }
 
-  // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
 
@@ -405,73 +436,72 @@ export default async function handler(
   }
 
   try {
-    // 1. Buscar la reserva en Redis
-    // Primero intentar booking_details:eventId (datos completos)
-    // Si no, fallback a booking:email (datos básicos)
-    let bookingData: BookingData;
-    let bookingDataStr: string | null = null;
+    let bookingData: BookingData | null = null;
+    let bookingDetailsKey: string | null = null;
 
+    // STRATEGY 1: If eventId provided, search booking_details:eventId first
     if (eventId) {
-      // Buscar por eventId (más preciso, tiene todos los datos)
-      bookingDataStr = await redis.get(`booking_details:${eventId}`);
-      if (bookingDataStr) {
-        const details = JSON.parse(bookingDataStr);
-        // Verificar que el email coincide
+      const detailsKey = `booking_details:${eventId}`;
+      const detailsStr = await redis.get(detailsKey);
+      if (detailsStr) {
+        const details: BookingDetailsData = JSON.parse(detailsStr);
         if (details.email?.toLowerCase() !== normalizedEmail) {
           return res.status(404).json({
             error: 'Email mismatch',
-            message: 'El email no coincide con la reserva',
+            message: 'El email no coincide con la reserva encontrada',
           });
         }
-        // Mapear campos de booking_details a BookingData
         bookingData = {
           firstName: details.firstName,
-          lastName: details.lastName || '',
+          lastName: details.lastName,
           email: details.email,
           phone: details.phone,
           className: details.className,
           classDate: details.classDate,
           classTime: details.classTime,
-          momenceEventId: details.eventId,
+          momenceEventId: details.momenceEventId || eventId,
           momenceBookingId: details.momenceBookingId,
-          bookedAt: details.bookedAt,
+          bookedAt: new Date().toISOString(),
           category: details.category,
-          calendarEventId: details.calendarEventId,
+          calendarEventId: details.calendarEventId || undefined,
         };
+        bookingDetailsKey = detailsKey;
+        console.log(`[Cancel] Found booking in booking_details:${eventId}`);
       }
     }
 
-    // Fallback: buscar por email (key antigua)
-    if (!bookingDataStr) {
-      bookingDataStr = await redis.get(bookingKey);
-      if (!bookingDataStr) {
-        return res.status(404).json({
-          error: 'Booking not found',
-          message: 'No se encontró ninguna reserva con este email',
-        });
-      }
-      bookingData = JSON.parse(bookingDataStr);
-
-      // Validar que el eventId coincida (si se proporciona)
-      if (eventId && bookingData.momenceEventId !== eventId) {
-        return res.status(404).json({
-          error: 'Booking mismatch',
-          message: 'El evento no coincide con la reserva encontrada',
-        });
+    // STRATEGY 2: Fallback to booking:email
+    if (!bookingData) {
+      const bookingDataStr = await redis.get(bookingKey);
+      if (bookingDataStr) {
+        bookingData = JSON.parse(bookingDataStr);
+        console.log(`[Cancel] Found booking in booking:${normalizedEmail}`);
       }
     }
 
-    // 2. Cancelar en Momence si tenemos bookingId
+    if (!bookingData) {
+      return res.status(404).json({
+        error: 'Booking not found',
+        message: 'No se encontró ninguna reserva con este email',
+      });
+    }
+
+    if (eventId && !bookingDetailsKey && bookingData.momenceEventId !== eventId) {
+      return res.status(404).json({
+        error: 'Booking mismatch',
+        message: 'El evento no coincide con la reserva encontrada',
+      });
+    }
+
+    // 2. Cancelar en Momence
     let momenceCancelled = false;
     if (bookingData.momenceBookingId) {
       const accessToken = await getAccessToken();
       if (accessToken) {
         const cancelResult = await cancelMomenceBooking(accessToken, bookingData.momenceBookingId);
         momenceCancelled = cancelResult.success;
-        if (!cancelResult.success) {
+        if (!cancelResult.success)
           console.warn('[Cancel] Momence cancellation failed:', cancelResult.error);
-          // Continuamos de todos modos para limpiar Redis
-        }
       } else {
         console.warn('[Cancel] Could not get Momence access token');
       }
@@ -479,33 +509,43 @@ export default async function handler(
       console.warn('[Cancel] No momenceBookingId found, skipping Momence API');
     }
 
-    // 2b. Google Calendar - Eliminar evento
+    // 2b. Eliminar evento de Google Calendar
     let calendarDeleted = false;
     if (isGoogleCalendarConfigured() && bookingData.calendarEventId) {
       try {
         const calendarResult = await deleteCalendarEvent(bookingData.calendarEventId);
         calendarDeleted = calendarResult.success;
-        if (!calendarResult.success) {
+        if (!calendarResult.success)
           console.warn('[Cancel] Calendar delete failed:', calendarResult.error);
-        }
       } catch (e) {
         console.warn('[Cancel] Calendar error (non-blocking):', e);
       }
     } else {
-      console.log('[Cancel] No calendarEventId or Calendar not configured');
+      console.log('[Cancel] Google Calendar not configured or no calendarEventId');
     }
 
-    // 3. Eliminar de Redis (ambas keys)
+    // 3. Eliminar de Redis
     await redis.del(bookingKey);
     console.warn('[Cancel] Redis key deleted:', bookingKey);
-    if (bookingData.momenceEventId) {
-      await redis.del(`booking_details:${bookingData.momenceEventId}`);
-      console.warn('[Cancel] Redis booking_details deleted:', bookingData.momenceEventId);
+
+    if (bookingDetailsKey) {
+      await redis.del(bookingDetailsKey);
+      console.warn('[Cancel] Redis key deleted:', bookingDetailsKey);
     }
 
-    // 4. Enviar notificaciones de cancelación
+    // También eliminar del set de reminders
+    if (bookingData.classDate) {
+      const dateMatch = bookingData.classDate.match(/\d{4}-\d{2}-\d{2}/);
+      if (dateMatch) {
+        const reminderKey = `reminders:${dateMatch[0]}`;
+        await redis.srem(reminderKey, eventId || bookingData.momenceEventId);
+        console.log(`[Cancel] Removed from ${reminderKey}`);
+      }
+    }
 
-    // 4a. WhatsApp de cancelación (usando función inlineada)
+    // 4. Enviar notificaciones
+
+    // 4a. WhatsApp (INLINED)
     let whatsappSent = false;
     if (bookingData.phone) {
       try {
@@ -514,43 +554,40 @@ export default async function handler(
           firstName: bookingData.firstName,
         });
         whatsappSent = whatsappResult.success;
-        if (!whatsappResult.success) {
+        if (!whatsappResult.success)
           console.warn('[Cancel] WhatsApp failed:', whatsappResult.error);
-        }
       } catch (e) {
         console.warn('[Cancel] WhatsApp error:', e);
       }
     }
 
-    // 4b. Email de cancelación (usando función inlineada)
+    // 4b. Email (INLINED)
     let emailSent = false;
     try {
       const emailResult = await sendCancellationEmailInline({
         to: bookingData.email,
         firstName: bookingData.firstName,
         className: bookingData.className,
+        classDate: bookingData.classDate,
+        classTime: bookingData.classTime,
       });
       emailSent = emailResult.success;
-      if (!emailResult.success) {
-        console.warn('[Cancel] Email failed:', emailResult.error);
-      }
+      if (!emailResult.success) console.warn('[Cancel] Email failed:', emailResult.error);
     } catch (e) {
       console.warn('[Cancel] Email error:', e);
     }
 
-    // 4c. Email de notificación al admin (non-blocking)
+    // 4c. Email admin (non-blocking)
     try {
-      const { Resend } = await import('resend');
-      const resendKey = process.env['RESEND_API_KEY'];
-      if (resendKey) {
-        const resend = new Resend(resendKey);
+      const apiKey = process.env['RESEND_API_KEY'];
+      if (apiKey) {
+        const resend = new Resend(apiKey);
         await resend.emails.send({
           from: `"${bookingData.firstName} ${bookingData.lastName}" <noreply@farrayscenter.com>`,
           to: 'info@farrayscenter.com',
           replyTo: bookingData.email,
           subject: `Cancelación de ${bookingData.className} (${bookingData.firstName} ${bookingData.lastName}) el ${bookingData.classDate}`,
-          html: `
-            <h2>Cancelación de Reserva</h2>
+          html: `<h2>Cancelación de Reserva</h2>
             <p><strong>Alumno:</strong> ${bookingData.firstName} ${bookingData.lastName}</p>
             <p><strong>Email:</strong> ${bookingData.email}</p>
             <p><strong>Teléfono:</strong> ${bookingData.phone || 'No proporcionado'}</p>
@@ -560,17 +597,14 @@ export default async function handler(
             <p><strong>Hora:</strong> ${bookingData.classTime}</p>
             <hr>
             <p style="color: #dc3545;"><strong>Estado:</strong> CANCELADA</p>
-            <p><em>Cancelado el ${new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}</em></p>
-          `,
+            <p><em>Cancelado el ${new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}</em></p>`,
         });
         console.log('[Cancel] Admin notification email sent');
       }
     } catch (adminError) {
-      // Non-blocking: solo log, no afecta la respuesta
       console.warn('[Cancel] Admin notification failed:', adminError);
     }
 
-    // 5. Retornar confirmación
     return res.status(200).json({
       success: true,
       message: 'Reserva cancelada correctamente',
