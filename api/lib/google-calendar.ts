@@ -376,10 +376,10 @@ function parseClassDateTime(classDate: string, classTime: string): string {
 function calculateEndTime(startTime: string, durationMinutes: number): string {
   // Parsear "2026-01-31T19:00:00"
   const [datePart, timePart] = startTime.split('T');
-  const [h, m] = timePart.split(':').map(Number);
+  const [h, m] = (timePart ?? '19:00:00').split(':').map(Number);
 
   // Calcular nueva hora
-  const totalMinutes = h * 60 + m + durationMinutes;
+  const totalMinutes = (h ?? 19) * 60 + (m ?? 0) + durationMinutes;
   const newHours = Math.floor(totalMinutes / 60) % 24;
   const newMinutes = totalMinutes % 60;
 
