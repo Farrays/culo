@@ -364,17 +364,18 @@ async function handleWebhook(req: VercelRequest, res: VercelResponse): Promise<V
 
   const payload = req.body as WhatsAppWebhookPayload;
 
-  // Siempre responder 200 rápido (Meta requiere respuesta en <20s)
-  res.status(200).json({ status: 'received' });
-
-  // Procesar en background
+  // IMPORTANTE: Procesar ANTES de responder para evitar que Vercel termine la función
+  // Meta permite hasta 20 segundos para responder, nuestro procesamiento es < 5s
   try {
+    console.log('[webhook-whatsapp] Processing payload before response...');
     await processWebhookPayload(payload);
+    console.log('[webhook-whatsapp] Payload processing completed');
   } catch (error) {
     console.error('[webhook-whatsapp] Error processing payload:', error);
   }
 
-  return res;
+  // Responder 200 DESPUÉS de procesar (Meta requiere respuesta en <20s)
+  return res.status(200).json({ status: 'received' });
 }
 
 // ============================================================================
