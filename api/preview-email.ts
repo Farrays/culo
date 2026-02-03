@@ -361,59 +361,28 @@ function generateCancellationEmailHtml(data: CancellationHtmlData): string {
 }
 
 function generateFeedbackEmailHtml(data: FeedbackHtmlData): string {
-  const feedbackBaseUrl = `${BASE_URL}/api/feedback?token=${data.feedbackToken}`;
-
   return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`${data.firstName}, ¿qué tal tu clase? Cuéntanos con un click.`)}
+  ${generatePreheader(`${data.firstName}, ¿qué tal tu primera clase? Cuéntanos respondiendo a este email.`)}
   ${generateHeader()}
+
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
-    <p style="margin: 0;">¿Qué tal tu clase de <strong>${data.className}</strong> del ${data.classDate}?</p>
-    <p style="margin: 15px 0 0 0;">Cuéntanos con un click:</p>
+    <p style="margin: 0 0 20px 0; font-size: 18px;">Hola <strong>${data.firstName}</strong>,</p>
+    <p style="margin: 0 0 20px 0;">¿Cómo fue tu primera clase?</p>
+    <p style="margin: 0;">Responde a este email con lo que quieras contarnos - lo que te gustó, lo que podemos mejorar, o simplemente un "todo bien" 😊</p>
   </div>
 
-  <!-- Caritas clickeables -->
-  <div style="text-align: center; margin-bottom: 30px;">
-    <table align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
-      <tr>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=1" style="text-decoration: none; font-size: 40px; display: block;">😡</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=2" style="text-decoration: none; font-size: 40px; display: block;">😟</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=3" style="text-decoration: none; font-size: 40px; display: block;">😐</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=4" style="text-decoration: none; font-size: 40px; display: block;">🙂</a>
-        </td>
-        <td style="padding: 0 8px;">
-          <a href="${feedbackBaseUrl}&rating=5" style="text-decoration: none; font-size: 40px; display: block;">🤩</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">1</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">2</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">3</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">4</td>
-        <td style="text-align: center; font-size: 12px; color: #999; padding-top: 5px;">5</td>
-      </tr>
-    </table>
-    <p style="color: #666; font-size: 14px; margin-top: 15px;">Haz click en la carita que mejor represente tu experiencia</p>
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+    <p style="margin: 0; color: #e65100; font-style: italic;">
+      "Leo personalmente todos los mensajes"
+    </p>
   </div>
 
-  <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-    <p style="color: #666; margin-bottom: 15px;">¿Quieres contarnos más?</p>
-    <a href="${BASE_URL}/es/feedback-comentario?token=${data.feedbackToken}" style="${BUTTON_SECONDARY}">
-      Dejar un comentario
-    </a>
+  <div style="margin-bottom: 30px;">
+    <p style="margin: 0;">Un abrazo,</p>
+    <p style="margin: 10px 0 0 0;"><strong>El Director, Fábio</strong></p>
   </div>
 
-  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px; margin-top: 20px;">
-    <p>¡Gracias por elegirnos! 💃🕺</p>
-  </div>
   ${generateFooter()}
 </body></html>`;
 }
@@ -470,7 +439,7 @@ export default async function handler(
     <li><a href="?type=confirmation"><span class="emoji">✅</span> Confirmación de Reserva</a></li>
     <li><a href="?type=reminder"><span class="emoji">⏰</span> Recordatorio 24h</a></li>
     <li><a href="?type=cancellation"><span class="emoji">❌</span> Cancelación</a></li>
-    <li><a href="?type=feedback"><span class="emoji">⭐</span> Feedback (caritas)</a></li>
+    <li><a href="?type=feedback"><span class="emoji">💬</span> Feedback</a></li>
   </ul>
 </body>
 </html>
