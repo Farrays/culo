@@ -460,3 +460,121 @@ export const CATEGORY_LABELS: Record<ClassCategory, string> = {
   entrenamiento: 'Entrenamiento para Bailarines',
   heels: 'Heels',
 };
+
+// ============================================================================
+// MENSAJES DE FICHAJE (Sistema de Control de Jornada)
+// ============================================================================
+
+/**
+ * Datos para notificación de fichaje de entrada
+ */
+export interface FichajeEntradaData {
+  to: string;
+  nombreProfesor: string;
+  clases: string[];
+  horaInicio: string;
+}
+
+/**
+ * Datos para notificación de fichaje de salida
+ */
+export interface FichajeSalidaData {
+  to: string;
+  nombreProfesor: string;
+  clases: string[];
+  siguienteBloqueHora?: string;
+}
+
+/**
+ * Datos para confirmación de fichaje
+ */
+export interface FichajeConfirmacionData {
+  to: string;
+  nombreProfesor: string;
+  tipo: 'entrada' | 'salida';
+  hora: string;
+  clases: string[];
+  duracion?: string;
+  siguienteBloqueHora?: string;
+}
+
+/**
+ * Envía notificación de fichaje de entrada
+ * Plantilla: fichaje_entrada (crear en Meta Business)
+ */
+export async function sendFichajeEntradaWhatsApp(
+  data: FichajeEntradaData
+): Promise<WhatsAppResult> {
+  return sendTemplate('fichaje_entrada', data.to, 'es_ES', [
+    {
+      type: 'body',
+      parameters: [
+        { type: 'text', text: data.nombreProfesor },
+        { type: 'text', text: data.horaInicio },
+        { type: 'text', text: data.clases.join(', ') },
+      ],
+    },
+  ]);
+}
+
+/**
+ * Envía notificación de fichaje de salida
+ * Plantilla: fichaje_salida (crear en Meta Business)
+ */
+export async function sendFichajeSalidaWhatsApp(data: FichajeSalidaData): Promise<WhatsAppResult> {
+  const siguienteInfo = data.siguienteBloqueHora
+    ? `Tienes pausa hasta las ${data.siguienteBloqueHora}.`
+    : '';
+
+  return sendTemplate('fichaje_salida', data.to, 'es_ES', [
+    {
+      type: 'body',
+      parameters: [
+        { type: 'text', text: data.nombreProfesor },
+        { type: 'text', text: data.clases.join(', ') },
+        { type: 'text', text: siguienteInfo },
+      ],
+    },
+  ]);
+}
+
+/**
+ * Envía confirmación de fichaje registrado
+ * Plantilla: fichaje_confirmacion (crear en Meta Business)
+ */
+export async function sendFichajeConfirmacionWhatsApp(
+  data: FichajeConfirmacionData
+): Promise<WhatsAppResult> {
+  const tipoTexto = data.tipo === 'entrada' ? 'Entrada' : 'Salida';
+  const infoAdicional =
+    data.tipo === 'salida' && data.duracion
+      ? `Tiempo trabajado: ${data.duracion}`
+      : data.siguienteBloqueHora
+        ? `Siguiente bloque: ${data.siguienteBloqueHora}`
+        : '';
+
+  return sendTemplate('fichaje_confirmacion', data.to, 'es_ES', [
+    {
+      type: 'body',
+      parameters: [
+        { type: 'text', text: tipoTexto },
+        { type: 'text', text: data.hora },
+        { type: 'text', text: data.clases.join(', ') },
+        { type: 'text', text: infoAdicional },
+      ],
+    },
+  ]);
+}
+
+/**
+ * Payloads de respuesta de fichaje para el webhook
+ */
+export const FICHAJE_PAYLOADS = {
+  ENTRADA: 'FICHAJE_ENTRADA',
+  EN_CAMINO: 'FICHAJE_EN_CAMINO',
+  SALIDA: 'FICHAJE_SALIDA',
+  EXTENDER: 'FICHAJE_EXTENDER',
+  AUSENCIA: 'FICHAJE_AUSENCIA',
+} as const;
+
+export type FichajePayload = (typeof FICHAJE_PAYLOADS)[keyof typeof FICHAJE_PAYLOADS];

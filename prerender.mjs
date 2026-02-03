@@ -824,23 +824,23 @@ const metadata = {
     },
     sexyReggaeton: {
       title: 'Clases de Sexy Reggaeton en Barcelona | Farray\'s Center',
-      description: 'Aprende Sexy Reggaeton en Barcelona con Yunaisy Farray. Perreo, body roll y sensualidad. Clases todos niveles Plaza España y Sants.',
+      description: 'Sexy Reggaeton en Barcelona. Perreo, body roll y expresión corporal. Todos los niveles. Academia CID-UNESCO. ¡Reserva tu clase!',
     },
     reggaetonCubano: {
-      title: 'Clases de Reggaeton Cubano en Barcelona | Reparto y Cubatón | Farray\'s Center',
-      description: 'Aprende Reggaeton Cubano auténtico en Barcelona con Yunaisy Farray. Reparto, Cubatón, improvisación y disociación corporal. Clases Todos niveles.',
+      title: 'Clases de Reggaeton Cubano en Barcelona | Farray\'s Center',
+      description: 'Reggaeton Cubano auténtico en Barcelona. Reparto, Cubatón e improvisación. Ritmo y disociación corporal. CID-UNESCO. ¡Reserva tu clase!',
     },
     heelsBarcelona: {
-      title: 'Clases de Heels en Barcelona | Femmology y Sexy Style | Farray\'s Center',
-      description: 'Baila en tacones con elegancia en Barcelona. Femmology Heels y Sexy Style con Yunaisy Farray. CID-UNESCO. Todos niveles.',
+      title: 'Clases de Heels en Barcelona | Farray\'s Center',
+      description: 'Baile en tacones en Barcelona: Femmology y Sexy Style. Elegancia, expresión y confianza. Todos los niveles. Academia CID-UNESCO. ¡Reserva!',
     },
     femmology: {
-      title: 'Clases de Femmology en Barcelona | Danza Terapéutica y Feminidad | Farray\'s Center',
-      description: 'Femmology Barcelona: danzaterapia en tacones by Yunaisy Farray. Feminidad, autoestima y sensualidad. Método Farray®. ¡Reserva!',
+      title: 'Clases de Femmology en Barcelona | Farray\'s Center',
+      description: 'Femmology en Barcelona: danzaterapia en tacones. Feminidad, autoestima y empoderamiento. Método Farray® exclusivo. CID-UNESCO. ¡Reserva tu clase!',
     },
     sexyStyle: {
-      title: 'Clases de Sexy Style en Barcelona | Aprende Bailar con Sensualidad | Farray\'s Center',
-      description: 'Sexy Style en Barcelona con Yasmina Fernández. Expresa tu sensualidad, confianza y movimiento. Todos los niveles. Academia CID-UNESCO. ¡Reserva tu clase!',
+      title: 'Clases de Sexy Style en Barcelona | Farray\'s Center',
+      description: 'Sexy Style en Barcelona. Expresa sensualidad, confianza y movimiento. Todos los niveles. Academia CID-UNESCO. ¡Reserva tu clase!',
     },
     modernJazz: {
       title: 'Clases de Modern Jazz en Barcelona | Técnica y Expresión con Alejandro Miñoso | Farray\'s Center',
@@ -851,20 +851,20 @@ const metadata = {
       description: 'Ballet clásico en Barcelona para adultos. Técnica, postura y elegancia con maestros formados en ENA. Academia acreditada CID-UNESCO. Plaza España. ¡Reserva!',
     },
     cuerpoFit: {
-      title: 'Cuerpo-Fit Barcelona | Cardio Dance y Entrenamiento Full Body | Farray\'s Center',
-      description: 'Quema 400-500 calorías bailando con Cuerpo-Fit en Barcelona. Entrenamiento full body con danza. Cardio y tonificación. Lunes 20h cerca Plaza España.',
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance | Farray\'s Center',
+      description: 'Cuerpo-Fit en Barcelona: quema 400-500 calorías bailando. Entrenamiento full body con danza, cardio y tonificación. CID-UNESCO. ¡Reserva tu clase!',
     },
     baileManananas: {
-      title: 'Clases de Baile por las Mañanas en Barcelona | 13 Estilos de 10h a 13h | Farray\'s Center',
-      description: 'Baile por las mañanas en Barcelona: Contemporáneo, Ballet, Jazz, Sexy Style, Reggaeton. 10h a 13h. Ideal turnos tarde. Cerca Plaza España.',
+      title: 'Clases de Baile por las Mañanas en Barcelona | Farray\'s Center',
+      description: 'Baile por las mañanas en Barcelona de 10h a 13h. Contemporáneo, Ballet, Jazz y más. Ideal para turnos tarde. Academia CID-UNESCO. ¡Reserva!',
     },
     clasesParticulares: {
-      title: 'Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center',
-      description: 'Clases particulares de baile en Barcelona 100% personalizadas. Profesor exclusivo, horarios flexibles, todos los estilos. Aprende 3x más rápido. Bonos.',
+      title: 'Clases Particulares de Baile en Barcelona | Farray\'s Center',
+      description: 'Clases particulares de baile en Barcelona 100% personalizadas. Profesor exclusivo, horarios flexibles, +25 estilos. Academia CID-UNESCO. ¡Reserva!',
     },
     teamBuilding: {
-      title: 'Team Building con Baile en Barcelona | Para Empresas que No Creen en Team Building | Farray\'s',
-      description: 'Team building baile Barcelona para empresas. Cuerpo, emoción, presencia real. CID-UNESCO. +500 eventos. Sin dinámicas vacías.',
+      title: 'Team Building con Baile en Barcelona | Farray\'s Center',
+      description: 'Team building con baile en Barcelona para empresas. +500 eventos realizados. Experiencia única, sin dinámicas vacías. Academia CID-UNESCO.',
     },
     about: {
       title: 'Sobre Nosotros | Farray\'s International Dance Center Barcelona',
@@ -872,23 +872,23 @@ const metadata = {
     },
     yunaisy: {
       title: 'Yunaisy Farray | Fundadora y Directora | Farray\'s Center',
-      description: 'Conoce a Yunaisy Farray, bailarina profesional cubana y fundadora de Farray\'s International Dance Center. Más de 20 años de experiencia en danza.',
+      description: 'Yunaisy Farray: bailarina cubana formada en ENA, fundadora de Farray\'s Center. Got Talent España, The Dancer. Creadora del Método Farray®. +20 años en danza.',
     },
     metodoFarray: {
-      title: 'Método Farray® | Sistema Pedagógico Exclusivo de Danza | Farray\'s Center',
-      description: 'Método Farray®: sistema exclusivo que fusiona técnica cubana, ritmo afrocaribeño e innovación. Certificación CID-UNESCO. Aprende de verdad.',
+      title: 'Método Farray® | Sistema Exclusivo de Danza | Farray\'s Center',
+      description: 'Método Farray®: sistema pedagógico que fusiona técnica cubana, ritmo afrocaribeño e innovación. Certificado CID-UNESCO. Diseñado para adultos europeos.',
     },
     merchandising: {
-      title: 'Merchandising | Camisetas, Sudaderas y Accesorios | Farray\'s Center',
-      description: 'Compra merchandising oficial de Farray\'s Center: camisetas, sudaderas, bolsas y más. Lleva tu pasión por el baile contigo.',
+      title: 'Merchandising Oficial | Farray\'s Center',
+      description: 'Merchandising oficial de Farray\'s Center: camisetas, sudaderas y accesorios. Lleva tu pasión por el baile contigo. ¡Compra ahora!',
     },
     regalaBaile: {
-      title: 'Regala Baile | Tarjetas Regalo para Clases de Baile | Farray\'s Center',
-      description: 'Regala clases de baile con nuestras tarjetas regalo. El regalo perfecto para amantes del baile. Válido para todas las clases y niveles.',
+      title: 'Regala Baile | Tarjetas Regalo | Farray\'s Center',
+      description: 'Regala clases de baile en Barcelona. Tarjetas regalo para +25 estilos. El regalo perfecto para amantes del baile. Academia CID-UNESCO.',
     },
     facilities: {
-      title: 'Instalaciones | Salas de Baile Profesionales en Barcelona | Farray\'s Center',
-      description: 'Descubre nuestras instalaciones: 3 salas de baile equipadas con espejos, barras, suelo profesional y vestuarios. Ubicación céntrica en Barcelona.',
+      title: 'Instalaciones | Salas de Baile Barcelona | Farray\'s Center',
+      description: '700m² con 4 salas de baile profesionales en Barcelona. Espejos, barras, suelo técnico y vestuarios. Eixample, cerca de Plaza España.',
     },
     contact: {
       title: 'Contacto | Farray\'s International Dance Center Barcelona',
@@ -896,7 +896,7 @@ const metadata = {
     },
     reservas: {
       title: 'Reserva tu Clase de Bienvenida | Farray\'s Center Barcelona',
-      description: 'Reserva tu clase de bienvenida en la escuela de baile de Barcelona. Más de 25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo.',
+      description: 'Reserva tu clase de bienvenida en Farray\'s Center Barcelona. +25 estilos de baile. Método Farray® exclusivo. Academia CID-UNESCO. ¡Primera clase!',
     },
 
     hazteSocio: {
@@ -925,8 +925,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Blog de Baile | Consejos, Tutoriales e Historia del Baile | Farray\'s Center',
-      description: 'Consejos, tutoriales e historia del baile. Asesoramiento experto de bailarines profesionales para mejorar técnica y disfrutar cada paso.',
+      title: 'Blog de Danza y Baile | Farray\'s Center Barcelona',
+      description: 'Blog de baile con consejos, tutoriales e historia. Artículos de profesionales cubanos sobre salsa, bachata, hip hop, ballet y más. Academia CID-UNESCO.',
     },
     blogLifestyle: {
       title: 'Lifestyle y Baile | Bienestar y Estilo de Vida | Farray\'s Center Blog',
@@ -941,11 +941,11 @@ const metadata = {
       description: 'Descubre la fascinante historia del baile: orígenes, evolución y cómo llegó a Barcelona. Artículos sobre salsa, dancehall y más.',
     },
     blogHistoriaSalsa: {
-      title: 'Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray\'s | Farray\'s Center',
+      title: 'Historia de la Salsa: del Caribe a Barcelona | Farray\'s Center',
       description: 'Historia de la salsa: orígenes en Caribe y Nueva York, llegada a Barcelona. 60+ años de ritmo que cambiaron el mundo. Raíces africanas y cubanas.',
     },
     blogHistoriaBachata: {
-      title: 'Historia de la Bachata: Del Barrio Dominicano a Barcelona | Farray\'s Center',
+      title: 'Historia de la Bachata: de RD a Barcelona | Farray\'s Center',
       description: 'Historia de la bachata: de República Dominicana a fenómeno mundial. Evolución, Romeo Santos, bachata sensual y llegada a Barcelona.',
     },
     blogTutoriales: {
@@ -957,7 +957,7 @@ const metadata = {
       description: 'Descubre los diferentes estilos de salsa: cubana, rueda de casino, salsa en línea y más. Guía completa para entender y bailar salsa en Barcelona.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata: ¿Qué Estilo Elegir? Guía Completa | Farray\'s Center',
+      title: 'Salsa vs Bachata: ¿Cuál Elegir? Guía 2025 | Farray\'s Center',
       description: 'Salsa vs bachata: diferencias en ritmo, pasos y expresión. Guía completa para elegir tu estilo de baile latino. Clases en Barcelona.',
     },
     blogClasesSalsaBarcelona: {
@@ -970,7 +970,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Clases de baile para principiantes en Barcelona | Farray\'s Center',
-      description: 'Guía completa para empezar a bailar desde cero en Barcelona. Desde 10€/clase, bonos desde 60€. +40 estilos, +15.000 alumnos. ¡Reserva!',
+      description: 'Guía completa para empezar a bailar desde cero en Barcelona. Desde 10€/clase, mensualidades desde 50€. +25 estilos, +15.000 alumnos.',
     },
     blogAcademiaDanza: {
       title: 'Academia de Danza en Barcelona: Cómo Elegir | Farray\'s Center',
@@ -981,7 +981,7 @@ const metadata = {
       description: 'Ballet para adultos en Barcelona con método seguro y progresivo. Descubre si puedes empezar de cero, beneficios reales y cómo elegir escuela en el Eixample.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Danza Contemporánea vs Modern Jazz vs Ballet: Guía Comparativa 2025 | Farray\'s',
+      title: 'Contemporánea vs Jazz vs Ballet: Guía 2025 | Farray\'s Center',
       description: 'Descubre las diferencias entre danza contemporánea, modern jazz y ballet clásico. Comparativa técnica, beneficios y cómo elegir el estilo que mejor se adapta a ti.',
     },
     blogPerderMiedoBailar: {
@@ -993,7 +993,7 @@ const metadata = {
       description: 'Artículos sobre los beneficios del baile para la salud física y mental. Consejos de fitness, bienestar y ejercicio a través del baile.',
     },
     blogBaileSaludMental: {
-      title: 'Baile y Salud Mental: Reduce Ansiedad, Depresión y Estrés | Farray\'s',
+      title: 'Baile y Salud Mental: Beneficios Científicos | Farray\'s Center',
       description: 'Descubre los beneficios científicos del baile para la salud mental. Reduce ansiedad 47%, menos demencia 76%. Estudios de Harvard, NEJM y más.',
     },
     promoClaseGratis: {
@@ -1178,23 +1178,23 @@ const metadata = {
     },
     sexyReggaeton: {
       title: 'Classes de Sexy Reggaeton a Barcelona | Farray\'s Center',
-      description: 'Aprèn Sexy Reggaeton a Barcelona amb Yunaisy Farray. Perreo, body roll i sensualitat. Classes per a tots els nivells a prop de Plaça Espanya i Sants.',
+      description: 'Sexy Reggaeton a Barcelona. Perreo, body roll i expressió corporal. Tots els nivells. Acadèmia CID-UNESCO. Reserva la teva classe!',
     },
     reggaetonCubano: {
-      title: 'Classes de Reggaeton Cubà a Barcelona | Reparto i Cubatón | Farray\'s Center',
-      description: 'Aprèn Reggaeton Cubà autèntic a Barcelona amb Yunaisy Farray. Reparto, Cubatón, improvisació i disociació corporal. Classes Tots nivells.',
+      title: 'Classes de Reggaeton Cubà a Barcelona | Farray\'s Center',
+      description: 'Reggaeton Cubà autèntic a Barcelona. Reparto, Cubatón i improvisació. Ritme i disociació corporal. CID-UNESCO. Reserva la teva classe!',
     },
     heelsBarcelona: {
-      title: 'Classes de Heels a Barcelona | Femmology i Sexy Style | Farray\'s Center',
-      description: 'Ball amb talons a Barcelona: Femmology Heels i Sexy Style amb Yunaisy Farray. Elegància i sensualitat. CID-UNESCO. Tots nivells. Reserva!',
+      title: 'Classes de Heels a Barcelona | Farray\'s Center',
+      description: 'Ball amb talons a Barcelona: Femmology i Sexy Style. Elegància, expressió i confiança. Tots els nivells. Acadèmia CID-UNESCO. Reserva!',
     },
     femmology: {
-      title: 'Classes de Femmology a Barcelona | Dansa Terapèutica i Feminitat | Farray\'s Center',
-      description: 'Femmology Barcelona: dansateràpia talons by Yunaisy Farray. Feminitat, autoestima, sensualitat. Mètode Farray® CID-UNESCO. Reserva classe!',
+      title: 'Classes de Femmology a Barcelona | Farray\'s Center',
+      description: 'Femmology a Barcelona: dansateràpia amb talons. Feminitat, autoestima i empoderament. Mètode Farray® exclusiu. CID-UNESCO. Reserva la teva classe!',
     },
     sexyStyle: {
-      title: 'Classes de Sexy Style a Barcelona | Aprèn a Ballar amb Sensualitat | Farray\'s Center',
-      description: 'Sexy Style Barcelona amb Yasmina Fernández. Sensualitat, confiança i moviment. Tots nivells. Acadèmia CID-UNESCO. Reserva classe!',
+      title: 'Classes de Sexy Style a Barcelona | Farray\'s Center',
+      description: 'Sexy Style a Barcelona. Expressa sensualitat, confiança i moviment. Tots els nivells. Acadèmia CID-UNESCO. Reserva la teva classe!',
     },
     modernJazz: {
       title: 'Classes de Modern Jazz a Barcelona | Tècnica i Expressió amb Alejandro Miñoso | Farray\'s Center',
@@ -1205,20 +1205,20 @@ const metadata = {
       description: "Classes de ballet clàssic a Barcelona per a adults. Aprèn tècnica, postura i elegància amb mestres formats a l'ENA. Acadèmia CID-UNESCO entre Plaça Espanya i Sants.",
     },
     cuerpoFit: {
-      title: 'Cuerpo-Fit Barcelona | Cardio Dance i Entrenament Full Body | Farray\'s Center',
-      description: 'Crema 400-500 calories ballant amb Cuerpo-Fit a Barcelona. Entrenament full body amb dansa. Cardio i tonificació. Dilluns 20h prop Plaça Espanya.',
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance | Farray\'s Center',
+      description: 'Cuerpo-Fit a Barcelona: crema 400-500 calories ballant. Entrenament full body amb dansa, cardio i tonificació. CID-UNESCO. Reserva la teva classe!',
     },
     baileManananas: {
-      title: 'Classes de Ball pel Matí a Barcelona | 13 Estils de 10h a 13h | Farray\'s Center',
-      description: 'Ball pel matí Barcelona: Contemporani, Ballet, Jazz, Reggaeton. 10h-13h. Ideal torns tarda. Prop Plaça Espanya. Acadèmia CID-UNESCO.',
+      title: 'Classes de Ball pel Matí a Barcelona | Farray\'s Center',
+      description: 'Ball pel matí a Barcelona de 10h a 13h. Contemporani, Ballet, Jazz i més. Ideal per a torns tarda. Acadèmia CID-UNESCO. Reserva!',
     },
     clasesParticulares: {
-      title: 'Classes Particulars de Ball a Barcelona | Personalitzat i al Teu Ritme | Farray\'s Center',
-      description: 'Classes particulars ball Barcelona 100% personalitzades. Professor exclusiu, horaris flexibles. Aprèn 3x més ràpid. Bonos disponibles. Reserva!',
+      title: 'Classes Particulars de Ball a Barcelona | Farray\'s Center',
+      description: 'Classes particulars de ball a Barcelona 100% personalitzades. Professor exclusiu, horaris flexibles, +25 estils. Acadèmia CID-UNESCO. Reserva!',
     },
     teamBuilding: {
-      title: 'Team Building amb Ball a Barcelona | Per a Empreses que Ja No Creuen en Team Building | Farray\'s',
-      description: 'Team building ball Barcelona per empreses. Cos, emoció, presència real. CID-UNESCO. +500 esdeveniments realitzats. Sense dinàmiques buides.',
+      title: 'Team Building amb Ball a Barcelona | Farray\'s Center',
+      description: 'Team building amb ball a Barcelona per a empreses. +500 esdeveniments realitzats. Experiència única, sense dinàmiques buides. Acadèmia CID-UNESCO.',
     },
     about: {
       title: 'Sobre Nosaltres | Farray\'s International Dance Center Barcelona',
@@ -1226,23 +1226,23 @@ const metadata = {
     },
     yunaisy: {
       title: 'Yunaisy Farray | Fundadora i Directora | Farray\'s Center',
-      description: 'Coneix Yunaisy Farray, ballarina professional cubana i fundadora de Farray\'s International Dance Center. Més de 20 anys d\'experiència en dansa.',
+      description: 'Yunaisy Farray: ballarina cubana formada a ENA, fundadora de Farray\'s Center. Got Talent España, The Dancer. Creadora del Mètode Farray®. +20 anys en dansa.',
     },
     metodoFarray: {
-      title: 'Mètode Farray® | Sistema Pedagògic Exclusiu de Dansa | Farray\'s Center',
-      description: 'Mètode Farray®: sistema pedagògic exclusiu que fusiona tècnica cubana, ritme afrocaribeny i innovació. Certificació CID-UNESCO. Aprèn a ballar de debò.',
+      title: 'Mètode Farray® | Sistema Exclusiu de Dansa | Farray\'s Center',
+      description: 'Mètode Farray®: sistema pedagògic que fusiona tècnica cubana, ritme afrocaribeny i innovació. Certificat CID-UNESCO. Dissenyat per a adults europeus.',
     },
     merchandising: {
-      title: 'Merchandising | Samarretes, Dessuadores i Accessoris | Farray\'s Center',
-      description: 'Compra merchandising oficial de Farray\'s Center: samarretes, dessuadores, bosses i més. Porta la teva passió pel ball amb tu.',
+      title: 'Merchandising Oficial | Farray\'s Center',
+      description: 'Merchandising oficial de Farray\'s Center: samarretes, dessuadores i accessoris. Porta la teva passió pel ball amb tu. Compra ara!',
     },
     regalaBaile: {
-      title: 'Regala Ball | Targetes Regal per a Classes de Ball | Farray\'s Center',
-      description: 'Regala classes de ball amb targetes regal. Regal perfecte per amants del ball. Vàlid totes classes i nivells. Acadèmia CID-UNESCO Barcelona.',
+      title: 'Regala Ball | Targetes Regal | Farray\'s Center',
+      description: 'Regala classes de ball a Barcelona. Targetes regal per a +25 estils. El regal perfecte per amants del ball. Acadèmia CID-UNESCO.',
     },
     facilities: {
-      title: 'Instal·lacions | Sales de Ball Professionals a Barcelona | Farray\'s Center',
-      description: 'Descobreix les nostres instal·lacions: 3 sales de ball equipades amb miralls, barres, terra professional i vestidors. Ubicació cèntrica a Barcelona.',
+      title: 'Instal·lacions | Sales de Ball Barcelona | Farray\'s Center',
+      description: '700m² amb 4 sales de ball professionals a Barcelona. Miralls, barres, terra tècnic i vestidors. Eixample, prop de Plaça Espanya.',
     },
     contact: {
       title: 'Contacte | Farray\'s International Dance Center Barcelona',
@@ -1250,7 +1250,7 @@ const metadata = {
     },
     reservas: {
       title: 'Reserva la teva Classe de Benvinguda | Farray\'s Center Barcelona',
-      description: 'Reserva la teva classe de benvinguda a l\'escola de ball de Barcelona. Més de 25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu.',
+      description: 'Reserva la teva classe de benvinguda a Farray\'s Center Barcelona. +25 estils de ball. Mètode Farray® exclusiu. Acadèmia CID-UNESCO. Primera classe!',
     },
 
     hazteSocio: {
@@ -1279,8 +1279,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
-      description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
+      title: 'Blog de Dansa i Ball | Farray\'s Center Barcelona',
+      description: 'Blog de ball amb consells, tutorials i història. Articles de professionals cubans sobre salsa, bachata, hip hop, ballet i més. Acadèmia CID-UNESCO.',
     },
     blogLifestyle: {
       title: 'Lifestyle i Ball | Benestar i Estil de Vida | Farray\'s Center Blog',
@@ -1295,11 +1295,11 @@ const metadata = {
       description: 'Descobreix la fascinant història del ball: orígens, evolució i com va arribar a Barcelona. Articles sobre salsa, dancehall i més.',
     },
     blogHistoriaSalsa: {
-      title: 'Història de la Salsa a Barcelona: del Carib i Nova York a Farray\'s | Farray\'s Center',
+      title: 'Història de la Salsa: del Carib a Barcelona | Farray\'s Center',
       description: 'Història de la salsa: orígens al Carib i Nova York, arribada a Barcelona. 60+ anys de ritme que van canviar el món. Arrels africanes i cubanes.',
     },
     blogHistoriaBachata: {
-      title: 'Història de la Bachata: Del Barri Dominicà a Barcelona | Farray\'s Center',
+      title: 'Història de la Bachata: de RD a Barcelona | Farray\'s Center',
       description: 'Història de la bachata: de República Dominicana a fenomen mundial. Evolució, Romeo Santos, bachata sensual i arribada a Barcelona.',
     },
     blogTutoriales: {
@@ -1311,7 +1311,7 @@ const metadata = {
       description: 'Descobreix els diferents estils de salsa: cubana, roda de casino, salsa en línia i més. Guia completa per entendre i ballar salsa a Barcelona.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata: Quin Estil Triar? Guia Completa | Farray\'s Center',
+      title: 'Salsa vs Bachata: Quin Triar? Guia 2025 | Farray\'s Center',
       description: 'Salsa vs bachata: diferències en ritme, passos i expressió. Guia completa per triar el teu estil de ball llatí. Classes a Barcelona.',
     },
     blogClasesSalsaBarcelona: {
@@ -1324,7 +1324,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Classes de ball per a principiants a Barcelona | Farray\'s Center',
-      description: 'Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.',
+      description: 'Guia completa per començar a ballar des de zero a Barcelona. Des de 10€/classe, mensualitats des de 50€. +25 estils, +15.000 alumnes.',
     },
     blogAcademiaDanza: {
       title: 'Acadèmia de Dansa a Barcelona: Com Triar | Farray\'s Center',
@@ -1335,7 +1335,7 @@ const metadata = {
       description: 'Ballet per a adults a Barcelona amb mètode segur i progressiu. Descobreix si pots començar de zero, beneficis reals i com triar escola a l\'Eixample.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Dansa Contemporània vs Modern Jazz vs Ballet: Guia Comparativa 2025 | Farray\'s',
+      title: 'Contemporània vs Jazz vs Ballet: Guia 2025 | Farray\'s Center',
       description: 'Descobreix les diferències entre dansa contemporània, modern jazz i ballet clàssic. Comparativa tècnica, beneficis i com triar l\'estil que millor s\'adapta a tu.',
     },
     blogPerderMiedoBailar: {
@@ -1347,7 +1347,7 @@ const metadata = {
       description: 'Articles sobre els beneficis del ball per a la salut física i mental. Consells de fitness, benestar i exercici a través del ball.',
     },
     blogBaileSaludMental: {
-      title: 'Ball i Salut Mental: Redueix Ansietat, Depressió i Estrès | Farray\'s',
+      title: 'Ball i Salut Mental: Beneficis Científics | Farray\'s Center',
       description: 'Descobreix els beneficis científics del ball per a la salut mental. Redueix ansietat 47%, menys demència 76%. Estudis de Harvard, NEJM i més.',
     },
     promoClaseGratis: {
@@ -1532,23 +1532,23 @@ const metadata = {
     },
     sexyReggaeton: {
       title: 'Sexy Reggaeton Classes in Barcelona | Farray\'s Center',
-      description: 'Learn Sexy Reggaeton in Barcelona with Yunaisy Farray. Perreo, body roll and sensuality. Classes for all levels near Plaza España and Sants.',
+      description: 'Sexy Reggaeton in Barcelona. Perreo, body roll and body expression. All levels. CID-UNESCO Academy. Book your class!',
     },
     reggaetonCubano: {
-      title: 'Cuban Reggaeton Classes in Barcelona | Reparto & Cubatón | Farray\'s Center',
-      description: 'Learn authentic Cuban Reggaeton in Barcelona with Yunaisy Farray. Reparto, Cubatón, improvisation and body isolation. Classes All levels.',
+      title: 'Cuban Reggaeton Classes in Barcelona | Farray\'s Center',
+      description: 'Authentic Cuban Reggaeton in Barcelona. Reparto, Cubatón and improvisation. Rhythm and body isolation. CID-UNESCO. Book your class!',
     },
     heelsBarcelona: {
-      title: 'Heels Dance Classes in Barcelona | Femmology & Sexy Style | Farray\'s Center',
-      description: 'Dance in heels Barcelona: Femmology Heels & Sexy Style with Yunaisy Farray. Elegance and sensuality. CID-UNESCO certified. All levels. Book!',
+      title: 'Heels Dance Classes in Barcelona | Farray\'s Center',
+      description: 'Dance in heels in Barcelona: Femmology and Sexy Style. Elegance, expression and confidence. All levels. CID-UNESCO Academy. Book now!',
     },
     femmology: {
-      title: 'Femmology Classes in Barcelona | Dance Therapy and Femininity | Farray\'s Center',
-      description: 'Femmology Barcelona: dance therapy in heels by Yunaisy Farray. Femininity, self-esteem & sensuality. Farray Method® CID-UNESCO. Book class!',
+      title: 'Femmology Classes in Barcelona | Farray\'s Center',
+      description: 'Femmology in Barcelona: dance therapy in heels. Femininity, self-esteem and empowerment. Exclusive Farray Method®. CID-UNESCO. Book your class!',
     },
     sexyStyle: {
-      title: 'Sexy Style Classes in Barcelona | Learn to Dance with Sensuality | Farray\'s Center',
-      description: 'Sexy Style classes in Barcelona with Yasmina Fernández. Learn to express yourself with sensuality, confidence and movement. All levels. Book your trial class!',
+      title: 'Sexy Style Classes in Barcelona | Farray\'s Center',
+      description: 'Sexy Style in Barcelona. Express sensuality, confidence and movement. All levels. CID-UNESCO Academy. Book your class!',
     },
     modernJazz: {
       title: 'Modern Jazz Classes in Barcelona | Technique and Expression with Alejandro Miñoso | Farray\'s Center',
@@ -1559,20 +1559,20 @@ const metadata = {
       description: 'Classical ballet Barcelona for adults. Technique, posture and elegance with ENA-trained masters. CID-UNESCO Academy. Plaza España. Book!',
     },
     cuerpoFit: {
-      title: 'Cuerpo-Fit Barcelona | Cardio Dance & Full Body Training | Farray\'s Center',
-      description: 'Burn 400-500 calories with Cuerpo-Fit Barcelona. Full body dance workout, cardio & toning. Mondays 8pm near Plaza España. CID-UNESCO. Book!',
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance | Farray\'s Center',
+      description: 'Cuerpo-Fit in Barcelona: burn 400-500 calories dancing. Full body workout with dance, cardio and toning. CID-UNESCO. Book your class!',
     },
     baileManananas: {
-      title: 'Morning Dance Classes in Barcelona | 13 Styles from 10am to 1pm | Farray\'s Center',
-      description: 'Morning dance Barcelona: Contemporary, Ballet, Jazz, Reggaeton. 10am-1pm. Ideal afternoon shifts. Near Plaza España.',
+      title: 'Morning Dance Classes in Barcelona | Farray\'s Center',
+      description: 'Morning dance classes in Barcelona from 10am to 1pm. Contemporary, Ballet, Jazz and more. Ideal for afternoon shifts. CID-UNESCO Academy. Book now!',
     },
     clasesParticulares: {
-      title: 'Private Dance Classes in Barcelona | Personalized and At Your Pace | Farray\'s Center',
-      description: 'Private dance classes in Barcelona with 100% dedicated teacher. Personalized teaching, flexible schedules, all styles. Learn 3x faster. Reserve now!',
+      title: 'Private Dance Classes in Barcelona | Farray\'s Center',
+      description: 'Private dance classes in Barcelona 100% personalized. Dedicated instructor, flexible schedules, +25 styles. CID-UNESCO Academy. Book now!',
     },
     teamBuilding: {
-      title: 'Dance Team Building Barcelona | For Companies That No Longer Believe in Team Building | Farray\'s',
-      description: 'Dance team building Barcelona for companies. Body, emotion, real presence. CID-UNESCO. +500 events. No empty dynamics. Book now!',
+      title: 'Dance Team Building in Barcelona | Farray\'s Center',
+      description: 'Dance team building in Barcelona for companies. +500 events completed. Unique experience, no empty dynamics. CID-UNESCO Academy.',
     },
     about: {
       title: 'About Us | Farray\'s International Dance Center Barcelona',
@@ -1580,23 +1580,23 @@ const metadata = {
     },
     yunaisy: {
       title: 'Yunaisy Farray | Founder and Director | Farray\'s Center',
-      description: 'Meet Yunaisy Farray, Cuban professional dancer and founder of Farray\'s International Dance Center. Over 20 years of experience in dance.',
+      description: 'Yunaisy Farray: Cuban dancer trained at ENA, founder of Farray\'s Center. Got Talent España, The Dancer. Creator of Farray Method®. +20 years in dance.',
     },
     metodoFarray: {
-      title: 'Farray Method® | Exclusive Dance Pedagogical System | Farray\'s Center',
-      description: 'Farray Method®: exclusive system combining Cuban technique, Afro-Caribbean rhythm & innovation. CID-UNESCO certified.',
+      title: 'Farray Method® | Exclusive Dance System | Farray\'s Center',
+      description: 'Farray Method®: pedagogical system combining Cuban technique, Afro-Caribbean rhythm & innovation. CID-UNESCO certified. Designed for European adults.',
     },
     merchandising: {
-      title: 'Merchandising | T-Shirts, Hoodies and Accessories | Farray\'s Center',
-      description: 'Buy official Farray\'s Center merchandise: t-shirts, hoodies, bags and more. Take your passion for dance with you.',
+      title: 'Official Merchandising | Farray\'s Center',
+      description: 'Official Farray\'s Center merchandise: t-shirts, hoodies and accessories. Take your passion for dance with you. Shop now!',
     },
     regalaBaile: {
-      title: 'Gift Dance | Gift Cards for Dance Classes | Farray\'s Center',
-      description: 'Gift dance classes with our gift cards. The perfect gift for dance lovers. Valid for all classes and levels.',
+      title: 'Gift Dance | Gift Cards | Farray\'s Center',
+      description: 'Gift dance classes in Barcelona. Gift cards for +25 styles. The perfect gift for dance lovers. CID-UNESCO Academy.',
     },
     facilities: {
-      title: 'Facilities | Professional Dance Studios in Barcelona | Farray\'s Center',
-      description: 'Discover our facilities: 3 dance studios equipped with mirrors, bars, professional flooring and dressing rooms. Central location in Barcelona.',
+      title: 'Facilities | Dance Studios Barcelona | Farray\'s Center',
+      description: '700m² with 4 professional dance studios in Barcelona. Mirrors, bars, technical flooring and dressing rooms. Eixample, near Plaza España.',
     },
     contact: {
       title: 'Contact | Farray\'s International Dance Center Barcelona',
@@ -1604,7 +1604,7 @@ const metadata = {
     },
     reservas: {
       title: 'Book Your Welcome Class | Farray\'s Center Barcelona',
-      description: 'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
+      description: 'Book your welcome class at Farray\'s Center Barcelona. +25 dance styles. Exclusive Farray Method®. CID-UNESCO Academy. First class!',
     },
 
     hazteSocio: {
@@ -1633,8 +1633,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
-      description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
+      title: 'Dance & Ballet Blog | Farray\'s Center Barcelona',
+      description: 'Dance blog with tips, tutorials and history. Articles by Cuban professionals on salsa, bachata, hip hop, ballet and more. CID-UNESCO Academy.',
     },
     blogLifestyle: {
       title: 'Lifestyle & Dance | Wellbeing & Life Balance | Farray\'s Center Blog',
@@ -1649,11 +1649,11 @@ const metadata = {
       description: 'Fascinating dance history: origins, evolution in Barcelona. Articles on salsa, bachata, dancehall and more. Expert insights from professionals.',
     },
     blogHistoriaSalsa: {
-      title: 'History of Salsa in Barcelona: From the Caribbean and New York to Farray\'s | Farray\'s Center',
+      title: 'History of Salsa: From Caribbean to Barcelona | Farray\'s Center',
       description: 'History of salsa: origins in Caribbean and New York, arrival in Barcelona. 60+ years of rhythm that changed the world. African & Cuban roots.',
     },
     blogHistoriaBachata: {
-      title: 'History of Bachata: From Dominican Barrios to Barcelona | Farray\'s Center',
+      title: 'History of Bachata: From DR to Barcelona | Farray\'s Center',
       description: 'Discover the history of bachata: from its humble origins in the Dominican Republic to becoming a worldwide phenomenon. Romeo Santos, sensual bachata and more.',
     },
     blogTutoriales: {
@@ -1665,7 +1665,7 @@ const metadata = {
       description: 'Discover the different salsa styles: Cuban, rueda de casino, line salsa and more. Complete guide to understand and dance salsa in Barcelona.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata: Which Style to Choose? Complete Guide | Farray\'s Center',
+      title: 'Salsa vs Bachata: Which to Choose? 2025 Guide | Farray\'s Center',
       description: 'Salsa vs bachata: differences in rhythm, steps and expression. Complete guide to choose your Latin dance style. Classes in Barcelona.',
     },
     blogClasesSalsaBarcelona: {
@@ -1678,7 +1678,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Beginner Dance Classes in Barcelona | Farray\'s Center',
-      description: 'Complete guide to start dancing from scratch in Barcelona. From €10/class, passes from €60. +40 styles, +15,000 students. Book now!',
+      description: 'Complete guide to start dancing from scratch in Barcelona. From €10/class, monthly from €50. +25 styles, +15,000 students.',
     },
     blogAcademiaDanza: {
       title: 'Dance Academy in Barcelona: How to Choose | Farray\'s Center',
@@ -1689,7 +1689,7 @@ const metadata = {
       description: 'Adult ballet in Barcelona with safe and progressive method. Discover if you can start from scratch, real benefits, and how to choose a school in Eixample.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Contemporary Dance vs Modern Jazz vs Ballet: Complete Comparison Guide 2025 | Farray\'s',
+      title: 'Contemporary vs Jazz vs Ballet: 2025 Guide | Farray\'s Center',
       description: 'Discover the differences between contemporary dance, modern jazz and classical ballet. Technical comparison, benefits and how to choose the style that suits you best.',
     },
     blogPerderMiedoBailar: {
@@ -1701,7 +1701,7 @@ const metadata = {
       description: 'Scientifically proven benefits of dancing for physical and mental health. Fitness tips, wellness strategies and exercise through dance. Expert advice.',
     },
     blogBaileSaludMental: {
-      title: 'Dancing and Mental Health: Reduce Anxiety, Depression and Stress | Farray\'s',
+      title: 'Dancing and Mental Health: Scientific Benefits | Farray\'s Center',
       description: 'Discover the scientific benefits of dancing for mental health. Reduces anxiety 47%, dementia risk 76% lower. Studies from Harvard, NEJM and more.',
     },
     promoClaseGratis: {
@@ -1886,23 +1886,23 @@ const metadata = {
     },
     sexyReggaeton: {
       title: 'Cours de Sexy Reggaeton à Barcelone | Farray\'s Center',
-      description: 'Apprenez le Sexy Reggaeton à Barcelone avec Yunaisy Farray. Perreo, body roll et sensualité. Cours pour tous les niveaux près Plaza España et Sants.',
+      description: 'Sexy Reggaeton à Barcelone. Perreo, body roll et expression corporelle. Tous niveaux. Académie CID-UNESCO. Réservez votre cours!',
     },
     reggaetonCubano: {
-      title: 'Cours de Reggaeton Cubain à Barcelone | Reparto et Cubatón | Farray\'s Center',
-      description: 'Apprenez le Reggaeton Cubain authentique à Barcelone avec Yunaisy Farray. Reparto, Cubatón, improvisation et isolation corporelle. Cours Tous niveaux.',
+      title: 'Cours de Reggaeton Cubain à Barcelone | Farray\'s Center',
+      description: 'Reggaeton Cubain authentique à Barcelone. Reparto, Cubatón et improvisation. Rythme et isolation corporelle. CID-UNESCO. Réservez votre cours!',
     },
     heelsBarcelona: {
-      title: 'Cours de Heels à Barcelone | Femmology et Sexy Style | Farray\'s Center',
-      description: 'Danse en talons Barcelone: Femmology Heels et Sexy Style avec Yunaisy Farray. Élégance et sensualité. CID-UNESCO. Tous niveaux. Réservez!',
+      title: 'Cours de Heels à Barcelone | Farray\'s Center',
+      description: 'Danse en talons à Barcelone : Femmology et Sexy Style. Élégance, expression et confiance. Tous niveaux. Académie CID-UNESCO. Réservez!',
     },
     femmology: {
-      title: 'Cours de Femmology à Barcelone | Danse-Thérapie et Féminité | Farray\'s Center',
-      description: 'Femmology Barcelone: danse-thérapie talons by Yunaisy Farray. Féminité, estime & sensualité. Méthode Farray®.',
+      title: 'Cours de Femmology à Barcelone | Farray\'s Center',
+      description: 'Femmology à Barcelone : danse-thérapie en talons. Féminité, estime de soi et empowerment. Méthode Farray® exclusive. CID-UNESCO. Réservez!',
     },
     sexyStyle: {
-      title: 'Cours de Sexy Style à Barcelone | Apprenez à Danser avec Sensualité | Farray\'s Center',
-      description: 'Cours de Sexy Style à Barcelone avec Yasmina Fernández. Apprenez à vous exprimer avec sensualité, confiance et mouvement. Tous niveaux. Réservez votre cours d\'essai!',
+      title: 'Cours de Sexy Style à Barcelone | Farray\'s Center',
+      description: 'Sexy Style à Barcelone. Exprimez sensualité, confiance et mouvement. Tous niveaux. Académie CID-UNESCO. Réservez votre cours!',
     },
     modernJazz: {
       title: 'Cours de Modern Jazz à Barcelone | Technique et Expression avec Alejandro Miñoso | Farray\'s Center',
@@ -1913,20 +1913,20 @@ const metadata = {
       description: "Cours de ballet classique à Barcelone pour adultes. Apprenez la technique, la posture et l'élégance avec des maîtres formés à l'ENA. Académie CID-UNESCO entre Plaza España et Sants.",
     },
     cuerpoFit: {
-      title: 'Cuerpo-Fit Barcelone | Cardio Dance et Entraînement Full Body | Farray\'s Center',
-      description: 'Brûlez 400-500 calories avec Cuerpo-Fit Barcelone. Full body danse, cardio et tonification. Lundis 20h près Plaza España. Académie CID-UNESCO. Réservez!',
+      title: 'Cuerpo-Fit Barcelone | Cardio Dance | Farray\'s Center',
+      description: 'Cuerpo-Fit à Barcelone : brûlez 400-500 calories en dansant. Entraînement full body avec danse, cardio et tonification. CID-UNESCO. Réservez!',
     },
     baileManananas: {
-      title: 'Cours de Danse le Matin à Barcelone | 13 Styles de 10h à 13h | Farray\'s Center',
-      description: 'Cours de danse matin Barcelone: Contemporain, Ballet, Jazz, Sexy Style, Reggaeton. 10h-13h près Plaza España. Idéal équipes après-midi. CID-UNESCO. Réservez!',
+      title: 'Cours de Danse le Matin à Barcelone | Farray\'s Center',
+      description: 'Danse le matin à Barcelone de 10h à 13h. Contemporain, Ballet, Jazz et plus. Idéal pour équipes après-midi. Académie CID-UNESCO. Réservez!',
     },
     clasesParticulares: {
-      title: 'Cours Particuliers de Danse à Barcelone | Personnalisé et à Votre Rythme | Farray\'s Center',
-      description: 'Cours particuliers de danse à Barcelone avec professeur 100% dédié. Enseignement personnalisé, horaires flexibles, tous styles. Apprenez 3x plus vite!',
+      title: 'Cours Particuliers de Danse à Barcelone | Farray\'s Center',
+      description: 'Cours particuliers de danse à Barcelone 100% personnalisés. Professeur dédié, horaires flexibles, +25 styles. Académie CID-UNESCO. Réservez!',
     },
     teamBuilding: {
-      title: 'Team Building Danse Barcelone | Pour les Entreprises qui Ne Croient Plus au Team Building | Farray\'s',
-      description: 'Team building danse Barcelone pour entreprises. Corps, émotion, présence réelle. CID-UNESCO. +500 événements.',
+      title: 'Team Building Danse à Barcelone | Farray\'s Center',
+      description: 'Team building danse à Barcelone pour entreprises. +500 événements réalisés. Expérience unique, sans dynamiques vides. Académie CID-UNESCO.',
     },
     about: {
       title: 'À Propos | Farray\'s International Dance Center Barcelone',
@@ -1934,23 +1934,23 @@ const metadata = {
     },
     yunaisy: {
       title: 'Yunaisy Farray | Fondatrice et Directrice | Farray\'s Center',
-      description: 'Rencontrez Yunaisy Farray, danseuse professionnelle cubaine et fondatrice de Farray\'s International Dance Center. Plus de 20 ans d\'expérience en danse.',
+      description: 'Yunaisy Farray : danseuse cubaine formée à l\'ENA, fondatrice de Farray\'s Center. Got Talent España, The Dancer. Créatrice de la Méthode Farray®. +20 ans de danse.',
     },
     metodoFarray: {
-      title: 'Méthode Farray® | Système Pédagogique Exclusif de Danse | Farray\'s Center',
-      description: 'Méthode Farray®: système exclusif fusionnant technique cubaine, rythme afro-caribéen et innovation. Certification CID-UNESCO. Apprenez à danser vraiment.',
+      title: 'Méthode Farray® | Système de Danse Exclusif | Farray\'s Center',
+      description: 'Méthode Farray® : système pédagogique fusionnant technique cubaine, rythme afro-caribéen et innovation. Certifié CID-UNESCO. Conçu pour adultes européens.',
     },
     merchandising: {
-      title: 'Merchandising | T-Shirts, Sweats et Accessoires | Farray\'s Center',
-      description: 'Achetez le merchandising officiel de Farray\'s Center : t-shirts, sweats, sacs et plus. Portez votre passion pour la danse avec vous.',
+      title: 'Merchandising Officiel | Farray\'s Center',
+      description: 'Merchandising officiel de Farray\'s Center : t-shirts, sweats et accessoires. Portez votre passion pour la danse. Achetez maintenant!',
     },
     regalaBaile: {
-      title: 'Offrez la Danse | Cartes Cadeaux pour Cours de Danse | Farray\'s Center',
-      description: 'Offrez des cours de danse avec nos cartes cadeaux. Le cadeau parfait pour les amoureux de la danse. Valable pour tous les cours et niveaux.',
+      title: 'Offrez la Danse | Cartes Cadeaux | Farray\'s Center',
+      description: 'Offrez des cours de danse à Barcelone. Cartes cadeaux pour +25 styles. Le cadeau parfait pour les amoureux de danse. Académie CID-UNESCO.',
     },
     facilities: {
-      title: 'Installations | Studios de Danse Professionnels à Barcelone | Farray\'s Center',
-      description: 'Découvrez nos installations : 3 studios de danse équipés de miroirs, barres, sol professionnel et vestiaires. Emplacement central à Barcelone.',
+      title: 'Installations | Studios de Danse Barcelone | Farray\'s Center',
+      description: '700m² avec 4 studios de danse professionnels à Barcelone. Miroirs, barres, sol technique et vestiaires. Eixample, près de Plaza España.',
     },
     contact: {
       title: 'Contact | Farray\'s International Dance Center Barcelone',
@@ -1958,7 +1958,7 @@ const metadata = {
     },
     reservas: {
       title: 'Réservez votre Cours de Bienvenue | Farray\'s Center Barcelone',
-      description: 'Réservez votre cours de bienvenue à l\'école de danse de Barcelone. Plus de 25 styles : salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive.',
+      description: 'Réservez votre cours de bienvenue au Farray\'s Center Barcelone. +25 styles de danse. Méthode Farray® exclusive. Académie CID-UNESCO. Premier cours!',
     },
 
     hazteSocio: {
@@ -1987,8 +1987,8 @@ const metadata = {
       robots: 'noindex, nofollow',
     },
     blog: {
-      title: 'Blog de Danse | Conseils, Tutoriels et Histoire de la Danse | Farray\'s Center',
-      description: 'Conseils, tutoriels et histoire de la danse. Astuces expertes de danseurs professionnels pour améliorer technique et profiter de chaque pas.',
+      title: 'Blog de Danse et Ballet | Farray\'s Center Barcelona',
+      description: 'Blog de danse avec conseils, tutoriels et histoire. Articles de professionnels cubains sur salsa, bachata, hip hop, ballet et plus. Académie CID-UNESCO.',
     },
     blogLifestyle: {
       title: 'Lifestyle et Danse | Bien-être et Art de Vivre | Farray\'s Center Blog',
@@ -2003,11 +2003,11 @@ const metadata = {
       description: 'Découvrez la fascinante histoire de la danse : origines, évolution et comment elle est arrivée à Barcelone. Articles sur la salsa, le dancehall et plus.',
     },
     blogHistoriaSalsa: {
-      title: 'Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray\'s | Farray\'s Center',
+      title: 'Histoire de la Salsa : des Caraïbes à Barcelone | Farray\'s Center',
       description: 'Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu\'à son arrivée à Barcelone. Plus de 60 ans de rythme qui ont changé le monde.',
     },
     blogHistoriaBachata: {
-      title: 'Histoire de la Bachata : Du Quartier Dominicain à Barcelone | Farray\'s Center',
+      title: 'Histoire de la Bachata : de RD à Barcelone | Farray\'s Center',
       description: 'Découvrez l\'histoire de la bachata : de ses humbles origines en République Dominicaine jusqu\'à devenir un phénomène mondial. Romeo Santos, bachata sensuelle et plus.',
     },
     blogTutoriales: {
@@ -2019,7 +2019,7 @@ const metadata = {
       description: 'Découvrez les différents styles de salsa : cubaine, rueda de casino, salsa en ligne et plus. Guide complet pour comprendre et danser la salsa à Barcelone.',
     },
     blogSalsaVsBachata: {
-      title: 'Salsa vs Bachata : Quel Style Choisir ? Guide Complet | Farray\'s Center',
+      title: 'Salsa vs Bachata : Lequel Choisir ? Guide 2025 | Farray\'s Center',
       description: 'Salsa vs bachata : différences de rythme, pas et expression. Guide complet pour choisir votre style de danse latine. Cours à Barcelone.',
     },
     blogClasesSalsaBarcelona: {
@@ -2032,7 +2032,7 @@ const metadata = {
     },
     blogClasesPrincipiantes: {
       title: 'Cours de danse pour débutants à Barcelone | Farray\'s Center',
-      description: 'Guide complet pour commencer à danser à Barcelone. Dès 10€/cours, forfaits dès 60€. +40 styles, +15 000 élèves. Réservez maintenant!',
+      description: 'Guide complet pour commencer à danser à Barcelone. Dès 10€/cours, mensualités dès 50€. +25 styles, +15 000 élèves.',
     },
     blogAcademiaDanza: {
       title: 'Académie de Danse à Barcelone : Comment Choisir | Farray\'s Center',
@@ -2043,7 +2043,7 @@ const metadata = {
       description: 'Ballet pour adultes à Barcelone avec méthode sûre et progressive. Découvrez si vous pouvez commencer de zéro, les vrais bénéfices et comment choisir une école.',
     },
     blogDanzaContemporaneaVsJazzBallet: {
-      title: 'Danse Contemporaine vs Modern Jazz vs Ballet : Guide Comparatif 2025 | Farray\'s',
+      title: 'Contemporaine vs Jazz vs Ballet : Guide 2025 | Farray\'s Center',
       description: 'Découvrez les différences entre danse contemporaine, modern jazz et ballet classique. Comparaison technique, avantages et comment choisir le style qui vous convient le mieux.',
     },
     blogPerderMiedoBailar: {
@@ -2055,7 +2055,7 @@ const metadata = {
       description: 'Articles sur les bienfaits de la danse pour la santé physique et mentale. Conseils de fitness, bien-être et exercice à travers la danse.',
     },
     blogBaileSaludMental: {
-      title: 'Danse et Santé Mentale : Réduisez Anxiété, Dépression et Stress | Farray\'s',
+      title: 'Danse et Santé Mentale : Bienfaits Scientifiques | Farray\'s Center',
       description: 'Découvrez les bienfaits scientifiques de la danse pour la santé mentale. Réduit l\'anxiété 47%, risque de démence 76% moindre. Études de Harvard, NEJM et plus.',
     },
     promoClaseGratis: {

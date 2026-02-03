@@ -57,9 +57,9 @@
       "maxDuration": 60,
       "includeFiles": "api/lib/**"
     },
-    "api/*.ts": {
+    "api/**/*.ts": {
       "memory": 512,
-      "maxDuration": 10,
+      "maxDuration": 60,
       "includeFiles": "api/lib/**"
     }
   },
@@ -75,6 +75,10 @@
     {
       "path": "/api/cron-feedback",
       "schedule": "30 * * * *"
+    },
+    {
+      "path": "/api/cron-fichaje",
+      "schedule": "*/5 * * * *"
     }
   ],
   "redirects": [
@@ -986,6 +990,14 @@
     },
     {
       "source": "/:locale(es|en|ca|fr)/mi-reserva",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/fichaje",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/admin/fichajes",
       "destination": "/index.html"
     },
     {

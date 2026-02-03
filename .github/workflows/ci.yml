@@ -237,6 +237,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Audit dependencies (BLOCKING for moderate+)
-        run: npm audit --audit-level=moderate
-        # Removed continue-on-error to make it blocking
+      - name: Audit dependencies (BLOCKING for high+)
+        # Using high level to allow moderate vulnerabilities in dev dependencies (pa11y-ci)
+        # jsonpath vulnerability (GHSA-6c59-mwgh-r2x6) has no fix and only affects dev tools
+        run: npm audit --audit-level=high
