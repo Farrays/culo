@@ -489,10 +489,10 @@ async function sendAdminBookingNotificationEmail(data: {
 const WHATSAPP_API_VERSION = 'v23.0';
 const CATEGORY_TEMPLATES: Record<ClassCategory, string> = {
   bailes_sociales: 'confirmacion_bailes_sociales',
-  danzas_urbanas: 'confirmacion_danzas_urbanas',
-  danza: 'confirmacion_danza',
-  entrenamiento: 'confirmacion_danza',
-  heels: 'confirmacion_heels',
+  danzas_urbanas: 'confirmacion_danzas_urbanas_1',
+  danza: 'confirmacion_danza_1',
+  entrenamiento: 'confirmacion_danza_1',
+  heels: 'confirmacion_heels_1',
 };
 
 function isWhatsAppConfigured(): boolean {
