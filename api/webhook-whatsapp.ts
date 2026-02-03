@@ -669,8 +669,18 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
 
   // Buscar en índice de teléfonos (creado en reservar.ts)
   console.log(`[webhook-whatsapp] Checking phone index: phone:${normalizedPhone}`);
-  const eventId = await redis.get(`phone:${normalizedPhone}`);
-  console.log(`[webhook-whatsapp] phone index result: ${eventId || 'null'}`);
+  let eventId: string | null = null;
+  try {
+    console.log(`[webhook-whatsapp] About to call redis.get...`);
+    const result = await redis.get<string>(`phone:${normalizedPhone}`);
+    eventId = result;
+    console.log(
+      `[webhook-whatsapp] phone index result: ${eventId || 'null'} (type: ${typeof eventId})`
+    );
+  } catch (redisError) {
+    console.error(`[webhook-whatsapp] Redis get error:`, redisError);
+    return null;
+  }
 
   if (eventId) {
     const bookingData = await redis.get(`booking_details:${eventId}`);
