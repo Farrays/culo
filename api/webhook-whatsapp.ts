@@ -1,7 +1,7 @@
 /* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import Redis from 'ioredis';
+import { Redis } from '@upstash/redis';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -221,21 +221,19 @@ async function sendTextMessage(
 }
 
 // ============================================================================
-// LAZY REDIS
+// LAZY REDIS (HTTP-based @upstash/redis - more reliable in serverless)
 // ============================================================================
 
 let redisClient: Redis | null = null;
 
 function getRedisClient(): Redis | null {
-  const redisUrl = process.env['STORAGE_REDIS_URL'];
-  if (!redisUrl) return null;
+  const url = process.env['UPSTASH_REDIS_REST_URL'];
+  const token = process.env['UPSTASH_REDIS_REST_TOKEN'];
+
+  if (!url || !token) return null;
 
   if (!redisClient) {
-    redisClient = new Redis(redisUrl, {
-      maxRetriesPerRequest: 1,
-      connectTimeout: 5000,
-      lazyConnect: true,
-    });
+    redisClient = new Redis({ url, token });
   }
   return redisClient;
 }
@@ -677,7 +675,7 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
           // Solo retornar si no está cancelada
           if (booking.status !== 'cancelled') {
             // Guardar índice para futuras búsquedas
-            await redis.set(`phone:${normalizedPhone}`, evId, 'EX', 30 * 24 * 60 * 60);
+            await redis.set(`phone:${normalizedPhone}`, evId, { ex: 30 * 24 * 60 * 60 });
             return booking;
           }
         }
