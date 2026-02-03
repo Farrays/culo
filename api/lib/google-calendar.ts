@@ -161,9 +161,10 @@ export async function createBookingEvent(booking: BookingCalendarData): Promise<
   }
 
   try {
-    // Calcular fecha/hora de inicio y fin
-    const startDateTime = parseClassDateTime(booking.classDate, booking.classTime);
-    const endDateTime = new Date(startDateTime.getTime() + DEFAULT_CLASS_DURATION * 60 * 1000);
+    // Calcular fecha/hora de inicio y fin (formato local sin Z)
+    const startDateTimeStr = parseClassDateTime(booking.classDate, booking.classTime);
+    // Para el fin, añadimos la duración de la clase (60 min por defecto)
+    const endDateTimeStr = calculateEndTime(startDateTimeStr, DEFAULT_CLASS_DURATION);
 
     // Crear evento
     const event = {
@@ -171,11 +172,11 @@ export async function createBookingEvent(booking: BookingCalendarData): Promise<
       description: formatEventDescription(booking),
       location: ACADEMY_LOCATION,
       start: {
-        dateTime: startDateTime.toISOString(),
+        dateTime: startDateTimeStr,
         timeZone: TIMEZONE,
       },
       end: {
-        dateTime: endDateTime.toISOString(),
+        dateTime: endDateTimeStr,
         timeZone: TIMEZONE,
       },
       colorId: STATUS_COLORS.pending,
@@ -341,20 +342,44 @@ export async function deleteBookingEvent(calendarEventId: string): Promise<Calen
 // ============================================================================
 
 /**
- * Parsea fecha y hora de clase a Date object
+ * Parsea fecha y hora de clase a string en formato Google Calendar
+ * Retorna formato "YYYY-MM-DDTHH:MM:00" (sin Z, hora local)
+ *
+ * IMPORTANTE: Google Calendar espera hora local SIN sufijo Z cuando
+ * se especifica timeZone. Si usamos toISOString() (con Z), Google
+ * interpreta mal la hora y añade/quita offset incorrectamente.
  */
-function parseClassDateTime(classDate: string, classTime: string): Date {
+function parseClassDateTime(classDate: string, classTime: string): string {
   // classDate puede ser "2026-01-31" o "Lunes 28 de Enero (2026-01-28)"
   const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
   const dateStr = isoMatch ? isoMatch[0] : classDate;
 
   // classTime: "19:00"
   const [hours, minutes] = classTime.split(':').map(Number);
+  const h = String(hours || 19).padStart(2, '0');
+  const m = String(minutes || 0).padStart(2, '0');
 
-  const date = new Date(dateStr);
-  date.setHours(hours || 19, minutes || 0, 0, 0);
+  // Formato Google Calendar: "2026-01-31T19:00:00" (hora local, sin Z)
+  return `${dateStr}T${h}:${m}:00`;
+}
 
-  return date;
+/**
+ * Calcula la hora de fin añadiendo minutos a la hora de inicio
+ * @param startTime - Hora de inicio en formato "YYYY-MM-DDTHH:MM:SS"
+ * @param durationMinutes - Duración en minutos
+ * @returns Hora de fin en formato "YYYY-MM-DDTHH:MM:SS"
+ */
+function calculateEndTime(startTime: string, durationMinutes: number): string {
+  // Parsear "2026-01-31T19:00:00"
+  const [datePart, timePart] = startTime.split('T');
+  const [h, m] = timePart.split(':').map(Number);
+
+  // Calcular nueva hora
+  const totalMinutes = h * 60 + m + durationMinutes;
+  const newHours = Math.floor(totalMinutes / 60) % 24;
+  const newMinutes = totalMinutes % 60;
+
+  return `${datePart}T${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}:00`;
 }
 
 /**
