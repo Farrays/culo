@@ -663,6 +663,13 @@ function normalizePhone(phone: string): string {
   return cleaned;
 }
 
+// Formatear teléfono para Momence API (E.164 con + prefix: +34622247085)
+function formatPhoneForMomence(phone: string): string {
+  const normalized = normalizePhone(phone);
+  // Momence API requiere formato E.164 con + prefix
+  return '+' + normalized;
+}
+
 // Obtener access token de Momence
 async function getAccessToken(): Promise<string | null> {
   const { MOMENCE_CLIENT_ID, MOMENCE_CLIENT_SECRET, MOMENCE_USERNAME, MOMENCE_PASSWORD } =
@@ -840,7 +847,7 @@ async function createMomenceBooking(
           email: customerData.email,
           firstName: customerData.firstName,
           lastName: customerData.lastName,
-          phoneNumber: customerData.phone,
+          phoneNumber: formatPhoneForMomence(customerData.phone),
           homeLocationId: hostLocationId,
         }),
       });
