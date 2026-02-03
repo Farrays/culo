@@ -189,6 +189,10 @@ export async function createBookingEvent(booking: BookingCalendarData): Promise<
           category: booking.category || '',
         },
       },
+      // Deshabilitar notificaciones por defecto de Google Calendar
+      reminders: {
+        useDefault: false,
+      },
     };
 
     const response = await fetch(
