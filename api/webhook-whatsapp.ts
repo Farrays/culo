@@ -1,7 +1,7 @@
 /* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import { Redis } from '@upstash/redis';
+import Redis from 'ioredis';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -221,19 +221,25 @@ async function sendTextMessage(
 }
 
 // ============================================================================
-// LAZY REDIS (HTTP-based @upstash/redis - more reliable in serverless)
+// LAZY REDIS (ioredis TCP - same instance as reservar.ts uses)
 // ============================================================================
 
 let redisClient: Redis | null = null;
 
 function getRedisClient(): Redis | null {
-  const url = process.env['UPSTASH_REDIS_REST_URL'];
-  const token = process.env['UPSTASH_REDIS_REST_TOKEN'];
+  const redisUrl = process.env['STORAGE_REDIS_URL'];
 
-  if (!url || !token) return null;
+  if (!redisUrl) {
+    console.error('[webhook-whatsapp] STORAGE_REDIS_URL not configured');
+    return null;
+  }
 
   if (!redisClient) {
-    redisClient = new Redis({ url, token });
+    redisClient = new Redis(redisUrl, {
+      maxRetriesPerRequest: 1,
+      connectTimeout: 5000,
+      lazyConnect: true,
+    });
   }
   return redisClient;
 }
@@ -537,9 +543,7 @@ async function handleAttendanceConfirmation(
   const redis = getRedisClient();
 
   if (!redis) {
-    console.error(
-      '[webhook-whatsapp] Redis not configured - missing UPSTASH_REDIS_REST_URL or TOKEN'
-    );
+    console.error('[webhook-whatsapp] Redis not configured - missing STORAGE_REDIS_URL');
     return;
   }
 
@@ -668,40 +672,18 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
   const normalizedPhone = phone.replace(/[\s\-+]/g, '');
   console.log(`[webhook-whatsapp] findBookingByPhone: normalized phone = ${normalizedPhone}`);
 
-  // Buscar en índice de teléfonos (creado en reservar.ts)
+  // Buscar en índice de teléfonos (creado en reservar.ts en STORAGE_REDIS_URL)
   console.log(`[webhook-whatsapp] Checking phone index: phone:${normalizedPhone}`);
   let eventId: string | null = null;
   try {
-    console.log(`[webhook-whatsapp] About to call redis.get with timeout...`);
-    // Add timeout to detect hanging calls
-    const timeoutPromise = new Promise<string | null>((_, reject) =>
-      setTimeout(() => reject(new Error('Redis timeout after 5s')), 5000)
-    );
-    const result = await Promise.race([
-      redis.get<string>(`phone:${normalizedPhone}`),
-      timeoutPromise,
-    ]);
+    const result = await redis.get(`phone:${normalizedPhone}`);
     eventId = result;
     console.log(
       `[webhook-whatsapp] phone index result: ${eventId || 'null'} (type: ${typeof eventId})`
     );
   } catch (redisError) {
     console.error(`[webhook-whatsapp] Redis get error:`, redisError);
-    // Try creating a fresh Redis client
-    console.log(`[webhook-whatsapp] Trying fresh Redis client...`);
-    try {
-      const url = process.env['UPSTASH_REDIS_REST_URL'];
-      const token = process.env['UPSTASH_REDIS_REST_TOKEN'];
-      if (url && token) {
-        const freshRedis = new Redis({ url, token });
-        const freshResult = await freshRedis.get<string>(`phone:${normalizedPhone}`);
-        eventId = freshResult;
-        console.log(`[webhook-whatsapp] Fresh client result: ${eventId || 'null'}`);
-      }
-    } catch (freshError) {
-      console.error(`[webhook-whatsapp] Fresh Redis also failed:`, freshError);
-      return null;
-    }
+    return null;
   }
 
   if (eventId) {
@@ -710,7 +692,7 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
       `[webhook-whatsapp] booking_details:${eventId} = ${bookingData ? 'found' : 'not found'}`
     );
     if (bookingData) {
-      const booking: BookingDetails = JSON.parse(bookingData);
+      const booking: BookingDetails = JSON.parse(bookingData as string);
       // Solo retornar si no está cancelada
       if (booking.status !== 'cancelled') {
         console.log(`[webhook-whatsapp] Found booking via phone index: ${booking.firstName}`);
@@ -734,7 +716,7 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
     for (const evId of eventIds) {
       const bookingData = await redis.get(`booking_details:${evId}`);
       if (bookingData) {
-        const booking: BookingDetails = JSON.parse(bookingData);
+        const booking: BookingDetails = JSON.parse(bookingData as string);
         const bookingPhone = booking.phone.replace(/[\s\-+]/g, '');
 
         // Comparar teléfonos (también últimos 9 dígitos por diferencias de formato)
@@ -745,8 +727,8 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
         ) {
           // Solo retornar si no está cancelada
           if (booking.status !== 'cancelled') {
-            // Guardar índice para futuras búsquedas
-            await redis.set(`phone:${normalizedPhone}`, evId, { ex: 30 * 24 * 60 * 60 });
+            // Guardar índice para futuras búsquedas (30 días TTL)
+            await redis.setex(`phone:${normalizedPhone}`, 30 * 24 * 60 * 60, evId);
             return booking;
           }
         }
