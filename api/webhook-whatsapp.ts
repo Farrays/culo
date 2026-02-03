@@ -2,7 +2,137 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
-import { updateEventAttendance, isGoogleCalendarConfigured } from './lib/email';
+
+// ============================================================================
+// GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
+// ============================================================================
+
+type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled';
+
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+
+const STATUS_COLORS: Record<AttendanceStatus, string> = {
+  pending: '8', // Graphite (gris)
+  confirmed: '10', // Basil (verde)
+  not_attending: '11', // Tomato (rojo)
+  cancelled: '5', // Banana (amarillo)
+};
+
+let cachedCalendarAccessToken: string | null = null;
+let calendarTokenExpiry: number = 0;
+
+async function getCalendarAccessToken(): Promise<string | null> {
+  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+
+  if (!clientId || !clientSecret || !refreshToken) return null;
+
+  if (cachedCalendarAccessToken && Date.now() < calendarTokenExpiry - 60000) {
+    return cachedCalendarAccessToken;
+  }
+
+  try {
+    const response = await fetch(CALENDAR_TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    cachedCalendarAccessToken = data.access_token;
+    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
+    return cachedCalendarAccessToken;
+  } catch {
+    return null;
+  }
+}
+
+function getCalendarId(): string {
+  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+}
+
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
+
+function getStatusText(status: AttendanceStatus): string {
+  switch (status) {
+    case 'pending':
+      return '⚪ Pendiente de confirmación';
+    case 'confirmed':
+      return '🟢 Confirmado - Asistirá';
+    case 'not_attending':
+      return '🔴 No asistirá';
+    case 'cancelled':
+      return '⚫ Reserva cancelada';
+    default:
+      return '❓ Desconocido';
+  }
+}
+
+async function updateEventAttendance(
+  calendarEventId: string,
+  status: AttendanceStatus
+): Promise<{ success: boolean; error?: string; calendarEventId?: string }> {
+  const accessToken = await getCalendarAccessToken();
+  if (!accessToken) return { success: false, error: 'Failed to get access token' };
+
+  try {
+    const getResponse = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+
+    if (!getResponse.ok) return { success: false, error: `Event not found: ${calendarEventId}` };
+
+    const currentEvent = await getResponse.json();
+    let description = currentEvent.description || '';
+
+    const statusText = getStatusText(status);
+    if (description.includes('Estado:')) {
+      description = description.replace(/Estado: .+/, `Estado: ${statusText}`);
+    } else {
+      description += `\n\n━━━━━━━━━━━━━━━━━━━━\nEstado: ${statusText}`;
+    }
+
+    const patchResponse = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      {
+        method: 'PATCH',
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ colorId: STATUS_COLORS[status], description }),
+      }
+    );
+
+    if (!patchResponse.ok) {
+      const error = await patchResponse.text();
+      return { success: false, error: `HTTP ${patchResponse.status}: ${error}` };
+    }
+
+    console.log(`[google-calendar] Event ${calendarEventId} updated to ${status}`);
+    return { success: true, calendarEventId };
+  } catch (error) {
+    console.error('[google-calendar] Error updating event:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// END GOOGLE CALENDAR INLINED
+// ============================================================================
 
 /**
  * API Route: /api/webhook-whatsapp
