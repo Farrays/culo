@@ -2,8 +2,6 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
-// Google Calendar disabled temporarily - Vercel import issues
-// import { createBookingEvent } from '../lib/google-calendar';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -11,9 +9,211 @@ import { Resend } from 'resend';
 
 type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
 
-// Google Calendar types/functions disabled temporarily
-// interface BookingCalendarData { ... }
-// function isGoogleCalendarConfigured(): boolean { ... }
+// ============================================================================
+// GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
+// ============================================================================
+
+interface BookingCalendarData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: string;
+  eventId?: string;
+  managementUrl?: string;
+}
+
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+const CALENDAR_TIMEZONE = 'Europe/Madrid';
+const DEFAULT_CLASS_DURATION = 60;
+const ACADEMY_LOCATION =
+  "Farray's International Dance Center, C/ Entença 100, Local 1, 08015 Barcelona";
+
+let cachedCalendarAccessToken: string | null = null;
+let calendarTokenExpiry: number = 0;
+
+async function getCalendarAccessToken(): Promise<string | null> {
+  const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+  const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+  const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+
+  if (!clientId || !clientSecret || !refreshToken) return null;
+
+  if (cachedCalendarAccessToken && Date.now() < calendarTokenExpiry - 60000) {
+    return cachedCalendarAccessToken;
+  }
+
+  try {
+    const response = await fetch(CALENDAR_TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    cachedCalendarAccessToken = data.access_token;
+    calendarTokenExpiry = Date.now() + data.expires_in * 1000;
+    return cachedCalendarAccessToken;
+  } catch {
+    return null;
+  }
+}
+
+function getCalendarId(): string {
+  return process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+}
+
+function isGoogleCalendarConfigured(): boolean {
+  return !!(
+    process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
+    process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
+    process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
+  );
+}
+
+/**
+ * Parsea fecha y hora de clase a string en formato Google Calendar
+ * Retorna formato "YYYY-MM-DDTHH:MM:00" (sin Z, hora local)
+ */
+function parseClassDateTime(classDate: string, classTime: string): string {
+  const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
+  const dateStr = isoMatch ? isoMatch[0] : classDate;
+  const [hours, minutes] = classTime.split(':').map(Number);
+  const h = String(hours || 19).padStart(2, '0');
+  const m = String(minutes || 0).padStart(2, '0');
+  return `${dateStr}T${h}:${m}:00`;
+}
+
+/**
+ * Calcula la hora de fin añadiendo minutos a la hora de inicio
+ */
+function calculateEndTime(startTime: string, durationMinutes: number): string {
+  const parts = startTime.split('T');
+  const datePart = parts[0] || '';
+  const timePart = parts[1] || '19:00:00';
+  const timeParts = timePart.split(':').map(Number);
+  const h = timeParts[0] || 19;
+  const m = timeParts[1] || 0;
+  const totalMinutes = h * 60 + m + durationMinutes;
+  const newHours = Math.floor(totalMinutes / 60) % 24;
+  const newMinutes = totalMinutes % 60;
+  return `${datePart}T${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}:00`;
+}
+
+function formatCalendarEventDescription(booking: BookingCalendarData): string {
+  const phoneNormalized = booking.phone.replace(/[\s\-+]/g, '');
+  const whatsappUrl = `https://wa.me/${phoneNormalized}`;
+  const categoryLabels: Record<string, string> = {
+    bailes_sociales: 'Bailes Sociales',
+    danzas_urbanas: 'Danzas Urbanas',
+    danza: 'Danza',
+    entrenamiento: 'Entrenamiento',
+    heels: 'Heels',
+  };
+  const categoryLabel = categoryLabels[booking.category || ''] || booking.category || 'N/A';
+
+  let description = `🎫 Clase de Prueba Gratuita
+
+━━━━━━━━━━ CONTACTO ━━━━━━━━━━
+📧 ${booking.email}
+📱 ${booking.phone}
+💬 ${whatsappUrl}
+`;
+
+  if (booking.managementUrl) {
+    description += `
+━━━━━━━━━━ GESTIÓN ━━━━━━━━━━
+📋 ${booking.managementUrl}
+`;
+  }
+
+  description += `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎭 ${categoryLabel}`;
+
+  if (booking.eventId) {
+    description += `
+🆔 ${booking.eventId}`;
+  }
+
+  description += `
+
+Estado: ⚪ Pendiente de confirmación
+
+Reservado vía: farrayscenter.com`;
+
+  return description;
+}
+
+async function createBookingEvent(
+  booking: BookingCalendarData
+): Promise<{ success: boolean; calendarEventId?: string; error?: string }> {
+  const accessToken = await getCalendarAccessToken();
+  if (!accessToken) return { success: false, error: 'Failed to get access token' };
+
+  try {
+    const startDateTimeStr = parseClassDateTime(booking.classDate, booking.classTime);
+    const endDateTimeStr = calculateEndTime(startDateTimeStr, DEFAULT_CLASS_DURATION);
+
+    const event = {
+      summary: `${booking.firstName} ${booking.lastName} - ${booking.className}`,
+      description: formatCalendarEventDescription(booking),
+      location: ACADEMY_LOCATION,
+      start: { dateTime: startDateTimeStr, timeZone: CALENDAR_TIMEZONE },
+      end: { dateTime: endDateTimeStr, timeZone: CALENDAR_TIMEZONE },
+      colorId: '8', // Graphite (pending)
+      extendedProperties: {
+        private: {
+          bookingEventId: booking.eventId || '',
+          email: booking.email,
+          phone: booking.phone,
+          category: booking.category || '',
+        },
+      },
+      // Deshabilitar notificaciones por defecto de Google Calendar
+      reminders: {
+        useDefault: false,
+      },
+    };
+
+    const response = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
+      {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(event),
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('[google-calendar] Create event failed:', error);
+      return { success: false, error: `HTTP ${response.status}: ${error}` };
+    }
+
+    const data = await response.json();
+    console.log(`[google-calendar] Event created: ${data.id}`);
+    return { success: true, calendarEventId: data.id };
+  } catch (error) {
+    console.error('[google-calendar] Error creating event:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// END GOOGLE CALENDAR INLINED
+// ============================================================================
 
 // ============================================================================
 // EMAIL HELPER INLINE
@@ -293,10 +493,10 @@ async function sendAdminBookingNotificationEmail(data: {
 const WHATSAPP_API_VERSION = 'v23.0';
 const CATEGORY_TEMPLATES: Record<ClassCategory, string> = {
   bailes_sociales: 'confirmacion_bailes_sociales',
-  danzas_urbanas: 'confirmacion_danzas_urbanas',
-  danza: 'confirmacion_danza',
-  entrenamiento: 'confirmacion_danza',
-  heels: 'confirmacion_heels',
+  danzas_urbanas: 'confirmacion_danzas_urbanas_1',
+  danza: 'confirmacion_danza_1',
+  entrenamiento: 'confirmacion_danza_1',
+  heels: 'confirmacion_heels_1',
 };
 
 function isWhatsAppConfigured(): boolean {
@@ -487,6 +687,13 @@ function normalizePhone(phone: string): string {
   return cleaned;
 }
 
+// Formatear teléfono para Momence API (E.164 con + prefix: +34622247085)
+function formatPhoneForMomence(phone: string): string {
+  const normalized = normalizePhone(phone);
+  // Momence API requiere formato E.164 con + prefix
+  return '+' + normalized;
+}
+
 // Obtener access token de Momence
 async function getAccessToken(): Promise<string | null> {
   const { MOMENCE_CLIENT_ID, MOMENCE_CLIENT_SECRET, MOMENCE_USERNAME, MOMENCE_PASSWORD } =
@@ -664,7 +871,7 @@ async function createMomenceBooking(
           email: customerData.email,
           firstName: customerData.firstName,
           lastName: customerData.lastName,
-          phoneNumber: customerData.phone,
+          phoneNumber: formatPhoneForMomence(customerData.phone),
           homeLocationId: hostLocationId,
         }),
       });
@@ -1284,10 +1491,34 @@ export default async function handler(
     const isoMatch = (classDate || '').match(/\d{4}-\d{2}-\d{2}/);
     const calendarDateStr = isoMatch ? isoMatch[0] : '';
 
-    // 6. Google Calendar - DISABLED temporarily (Vercel import issues)
-    // TODO: Re-enable when Vercel bundling is fixed
-    const calendarEventId: string | undefined = undefined;
-    console.warn('[reservar] Google Calendar disabled temporarily');
+    // 6. Google Calendar - Crear evento
+    let calendarEventId: string | undefined = undefined;
+    if (isGoogleCalendarConfigured()) {
+      try {
+        const calendarResult = await createBookingEvent({
+          firstName: sanitize(firstName),
+          lastName: sanitize(lastName),
+          email: normalizedEmail,
+          phone: sanitize(phone),
+          className: className || estilo || 'Clase de Prueba',
+          classDate: calendarDateStr,
+          classTime: classTime || '19:00',
+          category,
+          eventId: finalEventId,
+          managementUrl,
+        });
+        if (calendarResult.success) {
+          calendarEventId = calendarResult.calendarEventId;
+          console.log(`[reservar] Calendar event created: ${calendarEventId}`);
+        } else {
+          console.warn('[reservar] Calendar event failed:', calendarResult.error);
+        }
+      } catch (e) {
+        console.warn('[reservar] Calendar error (non-blocking):', e);
+      }
+    } else {
+      console.log('[reservar] Google Calendar not configured');
+    }
 
     // 7. Guardar booking_details para mi-reserva y cron-reminders
     const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');

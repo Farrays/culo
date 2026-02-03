@@ -1,9 +1,19 @@
 /**
- * Google Calendar API Helper
+ * Google Calendar REST API Helper
  *
  * Integración con Google Calendar para el Calendario Académico.
  * Las reservas aparecen automáticamente en el calendario de la academia
  * con colores según estado de asistencia.
+ *
+ * IMPORTANTE - Por qué usamos REST API en lugar de googleapis:
+ * ============================================================
+ * El paquete `googleapis` de npm (~50MB) NO es compatible con Vercel serverless functions.
+ * Causa errores de bundling tipo ERR_MODULE_NOT_FOUND en producción.
+ * Después de 6 intentos fallidos (commits 36b1610 → a285e54), se decidió
+ * reescribir usando fetch() nativo que funciona perfectamente en Vercel (~0KB overhead).
+ *
+ * @see https://developers.google.com/calendar/api/v3/reference
+ * @see Commits fallidos: 36b1610, 8c7d3a2, f1e9b4c, 2a8d5e1, 7c3f6b9, a285e54
  *
  * Colores Google Calendar:
  * - 8 (Graphite/Gris): Pendiente
@@ -18,8 +28,6 @@
  * - GOOGLE_CALENDAR_ID (opcional, default: 'primary')
  */
 
-import { google, calendar_v3 } from 'googleapis';
-
 // ============================================================================
 // TIPOS
 // ============================================================================
@@ -32,7 +40,7 @@ export interface BookingCalendarData {
   email: string;
   phone: string;
   className: string;
-  classDate: string; // ISO date: YYYY-MM-DD
+  classDate: string; // ISO date: YYYY-MM-DD o "Lunes 28 de Enero (2026-01-28)"
   classTime: string; // HH:MM
   category?: string;
   eventId?: string; // Internal booking ID
@@ -49,6 +57,14 @@ export interface CalendarResult {
 // CONFIGURACIÓN
 // ============================================================================
 
+const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
+const TOKEN_URL = 'https://oauth2.googleapis.com/token';
+const TIMEZONE = 'Europe/Madrid';
+const DEFAULT_CLASS_DURATION = 60; // minutos
+
+const ACADEMY_LOCATION =
+  "Farray's International Dance Center, C/ Entença 100, Local 1, 08015 Barcelona";
+
 // Colores de Google Calendar por estado
 const STATUS_COLORS: Record<AttendanceStatus, string> = {
   pending: '8', // Graphite (gris)
@@ -57,23 +73,18 @@ const STATUS_COLORS: Record<AttendanceStatus, string> = {
   cancelled: '5', // Banana (amarillo)
 };
 
-// Duración por defecto de clase (en minutos)
-const DEFAULT_CLASS_DURATION = 60;
-
-// Ubicación de la academia
-const ACADEMY_LOCATION =
-  "Farray's International Dance Center, C/ Entença 100, Local 1, 08015 Barcelona";
-
-// Timezone
-const TIMEZONE = 'Europe/Madrid';
-
 // ============================================================================
-// CLIENTE GOOGLE CALENDAR (LAZY)
+// TOKEN MANAGEMENT (OAuth2 refresh token flow)
 // ============================================================================
 
-let calendarClient: calendar_v3.Calendar | null = null;
+let cachedAccessToken: string | null = null;
+let tokenExpiry: number = 0;
 
-function getCalendarClient(): calendar_v3.Calendar | null {
+/**
+ * Obtiene un access token válido usando el refresh token.
+ * Cachea el token en memoria para evitar llamadas innecesarias.
+ */
+async function getAccessToken(): Promise<string | null> {
   const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
   const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
   const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
@@ -83,17 +94,38 @@ function getCalendarClient(): calendar_v3.Calendar | null {
     return null;
   }
 
-  if (!calendarClient) {
-    const oauth2Client = new google.auth.OAuth2(clientId, clientSecret);
-
-    oauth2Client.setCredentials({
-      refresh_token: refreshToken,
-    });
-
-    calendarClient = google.calendar({ version: 'v3', auth: oauth2Client });
+  // Return cached token if still valid (with 60s buffer)
+  if (cachedAccessToken && Date.now() < tokenExpiry - 60000) {
+    return cachedAccessToken;
   }
 
-  return calendarClient;
+  try {
+    const response = await fetch(TOKEN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('[google-calendar] Token refresh failed:', error);
+      return null;
+    }
+
+    const data = await response.json();
+    cachedAccessToken = data.access_token;
+    tokenExpiry = Date.now() + data.expires_in * 1000;
+
+    return cachedAccessToken;
+  } catch (error) {
+    console.error('[google-calendar] Token refresh error:', error);
+    return null;
+  }
 }
 
 function getCalendarId(): string {
@@ -122,28 +154,29 @@ export function isGoogleCalendarConfigured(): boolean {
  * @returns ID del evento creado en Google Calendar
  */
 export async function createBookingEvent(booking: BookingCalendarData): Promise<CalendarResult> {
-  const calendar = getCalendarClient();
+  const accessToken = await getAccessToken();
 
-  if (!calendar) {
-    return { success: false, error: 'Google Calendar not configured' };
+  if (!accessToken) {
+    return { success: false, error: 'Failed to get access token' };
   }
 
   try {
-    // Calcular fecha/hora de inicio y fin
-    const startDateTime = parseClassDateTime(booking.classDate, booking.classTime);
-    const endDateTime = new Date(startDateTime.getTime() + DEFAULT_CLASS_DURATION * 60 * 1000);
+    // Calcular fecha/hora de inicio y fin (formato local sin Z)
+    const startDateTimeStr = parseClassDateTime(booking.classDate, booking.classTime);
+    // Para el fin, añadimos la duración de la clase (60 min por defecto)
+    const endDateTimeStr = calculateEndTime(startDateTimeStr, DEFAULT_CLASS_DURATION);
 
     // Crear evento
-    const event: calendar_v3.Schema$Event = {
+    const event = {
       summary: `${booking.firstName} ${booking.lastName} - ${booking.className}`,
       description: formatEventDescription(booking),
       location: ACADEMY_LOCATION,
       start: {
-        dateTime: startDateTime.toISOString(),
+        dateTime: startDateTimeStr,
         timeZone: TIMEZONE,
       },
       end: {
-        dateTime: endDateTime.toISOString(),
+        dateTime: endDateTimeStr,
         timeZone: TIMEZONE,
       },
       colorId: STATUS_COLORS.pending,
@@ -156,18 +189,36 @@ export async function createBookingEvent(booking: BookingCalendarData): Promise<
           category: booking.category || '',
         },
       },
+      // Deshabilitar notificaciones por defecto de Google Calendar
+      reminders: {
+        useDefault: false,
+      },
     };
 
-    const result = await calendar.events.insert({
-      calendarId: getCalendarId(),
-      requestBody: event,
-    });
+    const response = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(event),
+      }
+    );
 
-    console.warn(`[google-calendar] Event created: ${result.data.id}`);
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('[google-calendar] Create event failed:', error);
+      return { success: false, error: `HTTP ${response.status}: ${error}` };
+    }
+
+    const data = await response.json();
+    console.log(`[google-calendar] Event created: ${data.id}`);
 
     return {
       success: true,
-      calendarEventId: result.data.id || undefined,
+      calendarEventId: data.id,
     };
   } catch (error) {
     console.error('[google-calendar] Error creating event:', error);
@@ -189,40 +240,58 @@ export async function updateEventAttendance(
   calendarEventId: string,
   status: AttendanceStatus
 ): Promise<CalendarResult> {
-  const calendar = getCalendarClient();
+  const accessToken = await getAccessToken();
 
-  if (!calendar) {
-    return { success: false, error: 'Google Calendar not configured' };
+  if (!accessToken) {
+    return { success: false, error: 'Failed to get access token' };
   }
 
   try {
     // Obtener evento actual para preservar descripción
-    const currentEvent = await calendar.events.get({
-      calendarId: getCalendarId(),
-      eventId: calendarEventId,
-    });
+    const getResponse = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}`,
+      {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      }
+    );
 
-    // Actualizar descripción con estado
-    const statusText = getStatusText(status);
-    let description = currentEvent.data.description || '';
+    if (!getResponse.ok) {
+      return { success: false, error: `Event not found: ${calendarEventId}` };
+    }
+
+    const currentEvent = await getResponse.json();
+    let description = currentEvent.description || '';
 
     // Actualizar o añadir línea de estado
+    const statusText = getStatusText(status);
     if (description.includes('Estado:')) {
       description = description.replace(/Estado: .+/, `Estado: ${statusText}`);
     } else {
       description += `\n\n━━━━━━━━━━━━━━━━━━━━\nEstado: ${statusText}`;
     }
 
-    await calendar.events.patch({
-      calendarId: getCalendarId(),
-      eventId: calendarEventId,
-      requestBody: {
-        colorId: STATUS_COLORS[status],
-        description,
-      },
-    });
+    // PATCH para actualizar
+    const patchResponse = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
+      {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          colorId: STATUS_COLORS[status],
+          description,
+        }),
+      }
+    );
 
-    console.warn(`[google-calendar] Event ${calendarEventId} updated to ${status}`);
+    if (!patchResponse.ok) {
+      const error = await patchResponse.text();
+      return { success: false, error: `HTTP ${patchResponse.status}: ${error}` };
+    }
+
+    console.log(`[google-calendar] Event ${calendarEventId} updated to ${status}`);
 
     return { success: true, calendarEventId };
   } catch (error) {
@@ -240,28 +309,30 @@ export async function updateEventAttendance(
  * @param calendarEventId - ID del evento en Google Calendar
  */
 export async function deleteBookingEvent(calendarEventId: string): Promise<CalendarResult> {
-  const calendar = getCalendarClient();
+  const accessToken = await getAccessToken();
 
-  if (!calendar) {
-    return { success: false, error: 'Google Calendar not configured' };
+  if (!accessToken) {
+    return { success: false, error: 'Failed to get access token' };
   }
 
   try {
-    await calendar.events.delete({
-      calendarId: getCalendarId(),
-      eventId: calendarEventId,
-    });
+    const response = await fetch(
+      `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
+      {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${accessToken}` },
+      }
+    );
 
-    console.warn(`[google-calendar] Event ${calendarEventId} deleted`);
-
-    return { success: true };
-  } catch (error) {
-    // Si el evento no existe, considerarlo como éxito
-    if (error instanceof Error && error.message.includes('404')) {
-      console.warn(`[google-calendar] Event ${calendarEventId} not found (already deleted?)`);
+    // 204 No Content = éxito, 404 = ya eliminado (también OK)
+    if (response.status === 204 || response.status === 404) {
+      console.log(`[google-calendar] Event ${calendarEventId} deleted`);
       return { success: true };
     }
 
+    const error = await response.text();
+    return { success: false, error: `HTTP ${response.status}: ${error}` };
+  } catch (error) {
     console.error('[google-calendar] Error deleting event:', error);
     return {
       success: false,
@@ -275,20 +346,44 @@ export async function deleteBookingEvent(calendarEventId: string): Promise<Calen
 // ============================================================================
 
 /**
- * Parsea fecha y hora de clase a Date object
+ * Parsea fecha y hora de clase a string en formato Google Calendar
+ * Retorna formato "YYYY-MM-DDTHH:MM:00" (sin Z, hora local)
+ *
+ * IMPORTANTE: Google Calendar espera hora local SIN sufijo Z cuando
+ * se especifica timeZone. Si usamos toISOString() (con Z), Google
+ * interpreta mal la hora y añade/quita offset incorrectamente.
  */
-function parseClassDateTime(classDate: string, classTime: string): Date {
+function parseClassDateTime(classDate: string, classTime: string): string {
   // classDate puede ser "2026-01-31" o "Lunes 28 de Enero (2026-01-28)"
   const isoMatch = classDate.match(/\d{4}-\d{2}-\d{2}/);
   const dateStr = isoMatch ? isoMatch[0] : classDate;
 
   // classTime: "19:00"
   const [hours, minutes] = classTime.split(':').map(Number);
+  const h = String(hours || 19).padStart(2, '0');
+  const m = String(minutes || 0).padStart(2, '0');
 
-  const date = new Date(dateStr);
-  date.setHours(hours || 19, minutes || 0, 0, 0);
+  // Formato Google Calendar: "2026-01-31T19:00:00" (hora local, sin Z)
+  return `${dateStr}T${h}:${m}:00`;
+}
 
-  return date;
+/**
+ * Calcula la hora de fin añadiendo minutos a la hora de inicio
+ * @param startTime - Hora de inicio en formato "YYYY-MM-DDTHH:MM:SS"
+ * @param durationMinutes - Duración en minutos
+ * @returns Hora de fin en formato "YYYY-MM-DDTHH:MM:SS"
+ */
+function calculateEndTime(startTime: string, durationMinutes: number): string {
+  // Parsear "2026-01-31T19:00:00"
+  const [datePart, timePart] = startTime.split('T');
+  const [h, m] = (timePart ?? '19:00:00').split(':').map(Number);
+
+  // Calcular nueva hora
+  const totalMinutes = (h ?? 19) * 60 + (m ?? 0) + durationMinutes;
+  const newHours = Math.floor(totalMinutes / 60) % 24;
+  const newMinutes = totalMinutes % 60;
+
+  return `${datePart}T${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}:00`;
 }
 
 /**

@@ -196,6 +196,18 @@ export default async function handler(
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Momence API error:', response.status, errorText);
+      // Intentar parsear el error de Momence para mostrar mensaje más útil
+      try {
+        const momenceError = JSON.parse(errorText);
+        if (momenceError.error?.phoneNumber) {
+          return res.status(400).json({
+            error: 'Invalid phone number format',
+            details: momenceError.error.phoneNumber,
+          });
+        }
+      } catch {
+        // Si no se puede parsear, devolver error genérico
+      }
       return res.status(502).json({ error: 'Failed to submit lead' });
     }
 

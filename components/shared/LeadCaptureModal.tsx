@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
+import { CountryPhoneInput } from '../booking/components/CountryPhoneInput';
+import { getDefaultCountry, findCountryByCode } from '../booking/constants/countries';
+import type { CountryCode } from 'libphonenumber-js';
 
 // ============================================================================
 // TYPES
@@ -109,6 +112,8 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [showContent, setShowContent] = useState(false);
+  const [countryCode, setCountryCode] = useState<CountryCode>(() => getDefaultCountry(locale).code);
+  const [isPhoneValid, setIsPhoneValid] = useState(false);
 
   // Refs
   const modalRef = useRef<HTMLDivElement>(null);
@@ -194,12 +199,14 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           });
           setStatus('idle');
           setErrorMessage('');
+          setCountryCode(getDefaultCountry(locale).code);
+          setIsPhoneValid(false);
         });
       }, 300);
       return () => window.clearTimeout(timer);
     }
     return undefined;
-  }, [isOpen, defaultValues, startTransition]);
+  }, [isOpen, defaultValues, startTransition, locale]);
 
   // ============================================================================
   // BLOQUEAR SCROLL
@@ -299,7 +306,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       setErrorMessage(t('leadModal_error_email'));
       return false;
     }
-    if (!formData.phoneNumber.trim()) {
+    if (!formData.phoneNumber.trim() || !isPhoneValid) {
       setErrorMessage(t('leadModal_error_phone'));
       return false;
     }
@@ -327,12 +334,18 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
     setStatus('loading');
 
     try {
+      // Format phone: Momence leads endpoint expects format like "34612345678" (no + sign)
+      const country = findCountryByCode(countryCode);
+      const cleanedPhone = formData.phoneNumber.trim().replace(/\D/g, '');
+      const dialCodeDigits = country?.dialCode.replace('+', '') ?? '34';
+      const formattedPhone = `${dialCodeDigits}${cleanedPhone}`;
+
       // El token y sourceId se anaden en el backend (api/lead.ts)
       const payload = {
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
         email: formData.email.trim().toLowerCase(),
-        phoneNumber: formData.phoneNumber.trim(),
+        phoneNumber: formattedPhone,
         discoveryAnswer: formData.discoveryAnswer || 'Not specified',
         estilo: formData.estilo || 'Not specified',
         acceptsMarketing: formData.acceptsMarketing,
@@ -660,7 +673,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                     />
                   </div>
 
-                  {/* Phone */}
+                  {/* Phone with country selector */}
                   <div>
                     <label
                       htmlFor="phoneNumber"
@@ -668,16 +681,22 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                     >
                       {t('leadModal_field_phone')} <span className="text-red-400">*</span>
                     </label>
-                    <input
-                      type="tel"
+                    <CountryPhoneInput
+                      value={formData.phoneNumber}
+                      countryCode={countryCode}
+                      onChange={(phone, newCountryCode, valid) => {
+                        setFormData(prev => ({ ...prev, phoneNumber: phone }));
+                        setCountryCode(newCountryCode);
+                        setIsPhoneValid(valid);
+                        if (errorMessage) setErrorMessage('');
+                      }}
+                      disabled={status === 'loading'}
+                      isInvalid={
+                        !!errorMessage && errorMessage.includes(t('leadModal_error_phone'))
+                      }
+                      placeholder={t('booking_placeholder_phone_number')}
                       id="phoneNumber"
                       name="phoneNumber"
-                      value={formData.phoneNumber}
-                      onChange={handleInputChange}
-                      disabled={status === 'loading'}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20 transition-all disabled:opacity-50"
-                      placeholder={t('leadModal_placeholder_phone')}
-                      autoComplete="tel"
                     />
                   </div>
 
