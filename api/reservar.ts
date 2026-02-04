@@ -1027,13 +1027,13 @@ async function sendToCustomerLeads(data: {
   estilo?: string; // Estilo normalizado (legacy, como fallback)
   date?: string;
   comoconoce?: string;
-}): Promise<{ success: boolean }> {
+}): Promise<{ success: boolean; error?: string }> {
   const MOMENCE_LEADS_URL = process.env['MOMENCE_API_URL'];
   const MOMENCE_TOKEN = process.env['MOMENCE_TOKEN'];
 
   if (!MOMENCE_LEADS_URL || !MOMENCE_TOKEN) {
     console.error('Missing Customer Leads credentials');
-    return { success: false };
+    return { success: false, error: 'Missing Customer Leads credentials' };
   }
 
   try {
@@ -1065,10 +1065,13 @@ async function sendToCustomerLeads(data: {
     console.warn('[Customer Leads] Response status:', response.status);
     console.warn('[Customer Leads] Response body:', responseText);
 
-    return { success: response.ok };
+    return {
+      success: response.ok,
+      error: response.ok ? undefined : `HTTP ${response.status}: ${responseText.slice(0, 100)}`,
+    };
   } catch (error) {
     console.error('[Customer Leads] Error:', error);
-    return { success: false };
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 }
 
@@ -1385,6 +1388,25 @@ export default async function handler(
           } else {
             await recordMomenceFailure(redis);
           }
+
+          // Record audit event for Momence attempt
+          try {
+            const { recordAuditEvent } = await import('./lib/audit');
+            await recordAuditEvent(redis, {
+              action: momenceResult.success ? 'booking_confirmed' : 'booking_failed',
+              channel: 'momence_api',
+              eventId: finalEventId,
+              email: redactEmail(normalizedEmail),
+              phone: redactPhone(phone),
+              className: className || estilo,
+              classDate,
+              success: momenceResult.success,
+              errorMessage: momenceResult.error,
+              metadata: { bookingId: momenceResult.bookingId },
+            });
+          } catch {
+            // Audit is non-critical
+          }
         }
       } else {
         console.error('[reservar] Failed to get Momence access token - check OAuth credentials');
@@ -1422,6 +1444,27 @@ export default async function handler(
       });
       console.warn('[reservar] Customer Leads result:', leadsResult);
       momenceResult = { success: leadsResult.success };
+
+      // Record audit event for Customer Leads attempt
+      if (redis) {
+        try {
+          const { recordAuditEvent } = await import('./lib/audit');
+          await recordAuditEvent(redis, {
+            action: leadsResult.success ? 'booking_confirmed' : 'booking_failed',
+            channel: 'customer_leads',
+            eventId: finalEventId,
+            email: redactEmail(normalizedEmail),
+            phone: redactPhone(phone),
+            className: className || estilo,
+            classDate,
+            success: leadsResult.success,
+            errorMessage: leadsResult.error,
+            metadata: { fallbackReason: reason },
+          });
+        } catch {
+          // Audit is non-critical
+        }
+      }
     }
 
     // CRITICAL: If BOTH Momence AND Customer Leads failed, don't send confirmation

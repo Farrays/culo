@@ -456,6 +456,14 @@ function redactEmail(email: string | null | undefined): string {
   return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
 }
 
+/** Redact phone for GDPR-compliant logging */
+function redactPhone(phone: string | null | undefined): string {
+  if (!phone) return 'N/A';
+  const cleaned = phone.replace(/\s/g, '');
+  if (cleaned.length < 6) return '***';
+  return `${cleaned.slice(0, 4)}***${cleaned.slice(-2)}`;
+}
+
 // ============================================================================
 // TYPES
 // ============================================================================
@@ -751,6 +759,28 @@ export default async function handler(
       }
     } catch (adminError) {
       console.warn('[Cancel] Admin notification failed:', adminError);
+    }
+
+    // Record audit event for cancellation
+    try {
+      const { recordAuditEvent } = await import('./lib/audit');
+      await recordAuditEvent(redis, {
+        action: 'booking_cancelled',
+        eventId: eventId || bookingData.momenceEventId,
+        email: redactEmail(bookingData.email),
+        phone: redactPhone(bookingData.phone),
+        className: bookingData.className,
+        classDate: bookingData.classDate,
+        success: true,
+        metadata: {
+          momenceCancelled,
+          calendarDeleted,
+          whatsappSent,
+          emailSent,
+        },
+      });
+    } catch {
+      // Audit is non-critical
     }
 
     return res.status(200).json({
