@@ -186,125 +186,9 @@ async function sendReminder24hWhatsApp(
   }
 }
 
-/**
- * Envía recordatorio 24h por email
- */
-async function sendReminder24hEmailInline(
-  to: string,
-  firstName: string,
-  className: string,
-  classDate: string,
-  classTime: string,
-  managementUrl: string
-): Promise<{ success: boolean; error?: string }> {
-  const { Resend } = await import('resend');
-  const apiKey = process.env['RESEND_API_KEY'];
-
-  if (!apiKey) {
-    return { success: false, error: 'Missing Resend API key' };
-  }
-
-  const resend = new Resend(apiKey);
-
-  try {
-    const result = await resend.emails.send({
-      from: "Farray's Center <noreply@farrayscenter.com>",
-      to,
-      replyTo: 'info@farrayscenter.com',
-      subject: `¡Tu clase de ${className} es mañana! 🎁 Promoción especial 24h`,
-      html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="color: #e91e63; margin: 0; font-size: 26px; font-weight: bold;">Farray's International Dance Center</h1>
-  </div>
-  <div style="background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px 0;">⏰ ¡Tu clase es mañana!</h2>
-    <p style="margin: 0; opacity: 0.9; font-size: 18px;">Recordatorio de 24 horas</p>
-  </div>
-  <div style="background: #fff3cd; border-left: 4px solid #ff9800; padding: 20px; margin-bottom: 30px; border-radius: 8px;">
-    <h3 style="margin: 0 0 10px 0; color: #ff9800;">🎁 PROMOCIÓN ESPECIAL 24H</h3>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 16px;"><strong>👉 MATRÍCULA GRATIS</strong></p>
-    <p style="margin: 0 0 15px 0; color: #856404; font-size: 15px;">
-      <strong style="font-size: 18px;">🔝 ANTES 60€ — AHORA 0€</strong>
-    </p>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 14px;">
-      <strong>📜 Condiciones:</strong> promoción válida solo si te apuntas mañana después de tu clase de prueba y realizas el primer pago en efectivo.
-    </p>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 14px;">
-      Así tú te ahorras la matrícula… y nosotros las comisiones bancarias. <strong>¡Ganamos todos! 😉</strong>
-    </p>
-    <p style="margin: 0 0 10px 0; color: #856404; font-size: 13px;">
-      Todo de forma transparente: recibirás tu recibo correspondiente al momento del alta. 💥
-    </p>
-    <p style="margin: 0; color: #856404; font-size: 14px;">
-      Aquí puedes ver todas las tarifas: <a href="https://www.farrayscenter.com/es/horarios-precios" style="color: #ff9800; font-weight: bold; text-decoration: none;">www.farrayscenter.com/horarios-precios</a>
-    </p>
-  </div>
-  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-    <p style="margin: 0 0 15px 0;">Hola <strong>${firstName}</strong>,</p>
-    <p style="margin: 0 0 15px 0;">¡Te esperamos mañana en tu clase de prueba!</p>
-    <p style="margin: 0; font-weight: bold; color: #333;">¿Nos confirmas tu asistencia? 🙏</p>
-  </div>
-  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${className}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${classDate}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${classTime}</strong></td></tr>
-      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
-    </table>
-  </div>
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
-    <a href="https://maps.app.goo.gl/4AtNaEzTAhNUuFfJ6" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>
-  </div>
-  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
-    <p style="margin: 0; color: #666;">
-      <strong>Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br><br>
-      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
-      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
-    </p>
-  </div>
-  <div style="text-align: center; margin-bottom: 30px;">
-    <p style="color: #666; margin-bottom: 15px;">¿Necesitas cambiar la fecha?</p>
-    <a href="${managementUrl}" style="display: inline-block; background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px;">
-      Cancelar/Reprogramar
-    </a>
-  </div>
-  <div style="background: #1a1a1a; color: #fff; text-align: center; padding: 30px 20px; border-top: 1px solid #333;">
-    <img src="https://farrayscenter.com/images/logo/img/logo-fidc_512.png" alt="Farray's International Dance Center" style="max-width: 200px; height: auto; margin-bottom: 20px;">
-    <p style="margin: 10px 0; color: #ccc; font-size: 14px;">
-      <strong style="color: #fff;">Farray's International Dance Center</strong><br>
-      C/ Entença 100, 08015 Barcelona<br>
-      <a href="tel:+34622247085" style="color: #e91e63; text-decoration: none;">+34 622 247 085</a> (WhatsApp)<br>
-      <a href="https://farrayscenter.com" style="color: #e91e63; text-decoration: none;">farrayscenter.com</a> |
-      <a href="https://www.instagram.com/farrays_centerbcn/" style="color: #e91e63; text-decoration: none;">Instagram</a>
-    </p>
-  </div>
-</body>
-</html>
-      `,
-    });
-
-    if (result.error) {
-      return { success: false, error: result.error.message };
-    }
-
-    return { success: true };
-  } catch (error) {
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
-    };
-  }
-}
+// NOTE: sendReminder24hEmailInline removed - now using dynamic import from ./lib/email.ts
+// The modern sendReminderEmail function uses proper brand colors (#B01E3C) and includes
+// the 24h promotion when reminderType: '24h' is specified
 
 export default async function handler(
   req: VercelRequest,
@@ -373,6 +257,10 @@ export default async function handler(
         );
 
         // Enviar WhatsApp y Email en paralelo
+        // Dynamic import to use modern email template from lib/email.ts
+        const { sendReminderEmail } = await import('./lib/email');
+        const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${booking.momenceEventId || ''}`;
+
         const [whatsappResult, emailResult] = await Promise.all([
           sendReminder24hWhatsApp(
             booking.phone,
@@ -380,14 +268,23 @@ export default async function handler(
             booking.className,
             classDateTime
           ),
-          sendReminder24hEmailInline(
-            booking.email,
-            booking.firstName,
-            booking.className,
-            booking.classDate,
-            booking.classTime,
-            '' // TODO: Add management URL
-          ),
+          sendReminderEmail({
+            to: booking.email,
+            firstName: booking.firstName,
+            className: booking.className,
+            classDate: booking.classDate,
+            classTime: booking.classTime,
+            managementUrl,
+            reminderType: '24h', // Incluye promoción especial
+            category: booking.category as
+              | 'bailes_sociales'
+              | 'danzas_urbanas'
+              | 'danza'
+              | 'entrenamiento'
+              | 'heels'
+              | undefined,
+            classDateISO: booking.classDateRaw || undefined,
+          }),
         ]);
 
         // Marcar como enviado si al menos uno tuvo éxito
