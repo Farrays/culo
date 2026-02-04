@@ -29,7 +29,13 @@ interface Fichaje {
   fecha: string;
   hora_inicio: string | null;
   hora_fin: string | null;
-  estado: 'pendiente' | 'entrada_registrada' | 'completado' | 'no_fichado' | 'editado_admin';
+  estado:
+    | 'pendiente'
+    | 'entrada_registrada'
+    | 'completado'
+    | 'no_fichado'
+    | 'editado_admin'
+    | 'clase_cancelada';
   minutos_trabajados: number | null;
 }
 
@@ -328,14 +334,18 @@ const FichajePage: React.FC = () => {
                             ? 'bg-green-500/20 text-green-300'
                             : f.estado === 'entrada_registrada'
                               ? 'bg-yellow-500/20 text-yellow-300'
-                              : 'bg-gray-500/20 text-gray-300'
+                              : f.estado === 'clase_cancelada'
+                                ? 'bg-purple-500/20 text-purple-300 line-through'
+                                : 'bg-gray-500/20 text-gray-300'
                         }`}
                       >
                         {f.estado === 'completado'
                           ? 'Completado'
                           : f.estado === 'entrada_registrada'
                             ? 'En curso'
-                            : 'Pendiente'}
+                            : f.estado === 'clase_cancelada'
+                              ? 'Cancelada'
+                              : 'Pendiente'}
                       </span>
                       {f.minutos_trabajados && (
                         <p className="text-brand-300/70 text-xs mt-1">
