@@ -7,7 +7,7 @@
 
 export type NovedadType = 'event' | 'workshop' | 'news' | 'promo' | 'course';
 export type BadgeVariant = 'accent' | 'gold' | 'green' | 'red' | 'blue';
-export type SchemaType = 'Event' | 'Course' | 'Article';
+export type SchemaType = 'Event' | 'Course' | 'Article' | 'DanceEvent';
 
 export interface NovedadLocation {
   name: string;

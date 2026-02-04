@@ -1094,6 +1094,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/yr-project",
+      "destination": "/index.html"
+    },
+    {
       "source": "/:locale(es|en|ca|fr)/:path*",
       "destination": "/index.html"
     }
