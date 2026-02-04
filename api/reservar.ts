@@ -1075,17 +1075,60 @@ async function createMomenceBooking(
       redactEmail(customerData.email)
     );
 
-    // Get hostLocationId from env variable or use hardcoded fallback
-    // NOTE: Farray's Center only has ONE location (26485), so no need for complex logic
-    const FARRAY_LOCATION_ID = 26485;
-    const envLocationId = process.env['MOMENCE_LOCATION_ID'];
-    const hostLocationId = envLocationId ? parseInt(envLocationId, 10) : FARRAY_LOCATION_ID;
+    // Get hostLocationId - priority: session API > env variable > hardcoded fallback
+    let hostLocationId: number | null = null;
+    let locationSource: 'session' | 'env' | 'hardcoded' = 'hardcoded';
 
-    console.warn(
-      '[Momence Booking] Location ID:',
-      hostLocationId,
-      envLocationId ? '(from env)' : '(hardcoded fallback)'
-    );
+    // Farray's Center location ID in Momence (from dashboard URL: /locations/26485)
+    // WARNING: This is a last resort fallback - should be configured via MOMENCE_LOCATION_ID env var
+    const FARRAY_LOCATION_ID = 26485;
+
+    // 1. FIRST: Try to get location from the session itself (most accurate)
+    try {
+      const sessionResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (sessionResponse.ok) {
+        const sessionData = await sessionResponse.json();
+        const session = sessionData.payload || sessionData;
+        const sessionLocationId =
+          session.hostLocationId || session.locationId || session.location?.id;
+        if (sessionLocationId && typeof sessionLocationId === 'number') {
+          hostLocationId = sessionLocationId;
+          locationSource = 'session';
+          console.warn('[Momence Booking] ✅ Using location ID from session:', hostLocationId);
+        }
+      }
+    } catch (err) {
+      console.warn('[Momence Booking] Could not fetch session details:', err);
+    }
+
+    // 2. SECOND: Fall back to environment variable
+    if (!hostLocationId) {
+      const envLocationId = process.env['MOMENCE_LOCATION_ID'];
+      if (envLocationId) {
+        hostLocationId = parseInt(envLocationId, 10);
+        locationSource = 'env';
+        console.warn('[Momence Booking] Using MOMENCE_LOCATION_ID from env:', hostLocationId);
+      }
+    }
+
+    // 3. LAST RESORT: Hardcoded fallback (log warning - this should be configured!)
+    if (!hostLocationId) {
+      hostLocationId = FARRAY_LOCATION_ID;
+      locationSource = 'hardcoded';
+      console.warn(
+        '[Momence Booking] ⚠️ WARNING: Using HARDCODED location ID:',
+        hostLocationId,
+        '- Please set MOMENCE_LOCATION_ID env variable!'
+      );
+    }
+
+    console.warn(`[Momence Booking] Location ID: ${hostLocationId} (source: ${locationSource})`);
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
