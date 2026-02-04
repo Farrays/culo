@@ -47,7 +47,7 @@ interface FichajeResponse {
 }
 
 // API base URL
-const API_BASE = '/api/fichaje';
+const API_BASE = '/api/fichaje-';
 
 const FichajePage: React.FC = () => {
   // State

@@ -5,10 +5,10 @@ import {
   getFechaHoyEspana,
   getHoraAhoraEspana,
   type Fichaje,
-} from '../lib/supabase.js';
+} from './lib/supabase.js';
 
 /**
- * API Route: /api/fichaje/fichajes
+ * API Route: /api/fichaje-fichajes
  *
  * CRUD y operaciones de fichaje para el sistema de control de jornada.
  * Cumple con legislación española: RD-ley 8/2019, Art. 34.9 ET

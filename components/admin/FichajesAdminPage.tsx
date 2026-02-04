@@ -61,7 +61,7 @@ interface FichajesResponse {
 }
 
 // API base
-const API_BASE = '/api/fichaje';
+const API_BASE = '/api/fichaje-';
 
 // Tabs
 type Tab = 'dashboard' | 'profesores' | 'fichajes';

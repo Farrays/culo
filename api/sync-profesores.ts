@@ -4,12 +4,12 @@
  * Endpoint para sincronizar profesores desde Momence a Supabase.
  * Extrae todos los instructores únicos de las clases y los añade a la tabla profesores.
  *
- * GET /api/fichaje/sync-profesores - Lista instructores de Momence (sin insertar)
- * POST /api/fichaje/sync-profesores - Inserta instructores faltantes en Supabase
+ * GET /api/sync-profesores - Lista instructores de Momence (sin insertar)
+ * POST /api/sync-profesores - Inserta instructores faltantes en Supabase
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSupabaseAdmin } from '../lib/supabase';
+import { getSupabaseAdmin } from './lib/supabase';
 
 // Momence API types
 interface MomenceTeacher {
