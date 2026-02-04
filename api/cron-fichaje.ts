@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+// Note: Buffer is a Node.js global available in Vercel serverless functions
+
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import {
   getSupabaseAdmin,
@@ -96,15 +99,17 @@ async function getMomenceToken(): Promise<string> {
     throw new Error('Missing Momence credentials');
   }
 
+  // Use Basic Auth header like clases.ts does (not body params)
+  const basicAuth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+
   const response = await fetch(MOMENCE_AUTH_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${basicAuth}`,
     },
     body: new URLSearchParams({
       grant_type: 'password',
-      client_id: clientId,
-      client_secret: clientSecret,
       username,
       password,
     }),
@@ -148,6 +153,7 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
     },
   });
 
