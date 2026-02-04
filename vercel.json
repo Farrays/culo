@@ -369,12 +369,12 @@
     },
     {
       "source": "/horarios",
-      "destination": "/es/horarios-precios",
+      "destination": "/es/horarios-clases-baile-barcelona",
       "permanent": true
     },
     {
       "source": "/precios",
-      "destination": "/es/horarios-precios",
+      "destination": "/es/precios-clases-baile-barcelona",
       "permanent": true
     },
     {
