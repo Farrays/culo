@@ -990,19 +990,19 @@
   ],
   "rewrites": [
     {
-      "source": "/:locale(es|en|ca|fr)/horarios-precios",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/:locale(es|en|ca|fr)/mi-reserva",
-      "destination": "/index.html"
-    },
-    {
       "source": "/:locale(es|en|ca|fr)/fichaje",
       "destination": "/index.html"
     },
     {
       "source": "/:locale(es|en|ca|fr)/admin/fichajes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/horarios-precios",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/mi-reserva",
       "destination": "/index.html"
     },
     {
