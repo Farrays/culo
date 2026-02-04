@@ -182,17 +182,17 @@ const FichajePage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-brand-900 to-gray-900 pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black pt-28">
         {/* Header interno del fichaje */}
-        <header className="bg-black/50 backdrop-blur-sm border-b border-brand-600/30 py-4 px-6">
+        <header className="bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 shadow-lg">
           <div className="max-w-md mx-auto flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-white">Fichaje</h1>
-              <p className="text-brand-300 text-sm">Farray&apos;s Center</p>
+              <p className="text-gray-400 text-sm">Farray&apos;s Center</p>
             </div>
             <div className="text-right">
               <div className="text-3xl font-mono text-white">{formatTime(currentTime)}</div>
-              <div className="text-brand-300 text-sm capitalize">{formatDate(currentTime)}</div>
+              <div className="text-gray-400 text-sm capitalize">{formatDate(currentTime)}</div>
             </div>
           </div>
         </header>

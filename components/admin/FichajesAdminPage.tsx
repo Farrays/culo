@@ -184,13 +184,13 @@ const FichajesAdminPage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-100 pt-20">
+      <div className="min-h-screen bg-gray-100 pt-28">
         {/* Header */}
-        <header className="bg-brand-900 text-white py-4 px-6 shadow-lg">
+        <header className="bg-black/95 backdrop-blur-xl text-white py-4 px-6 shadow-lg border-b border-white/10">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold">Admin Fichajes</h1>
-              <p className="text-brand-200 text-sm">Farray&apos;s Center</p>
+              <p className="text-gray-400 text-sm">Farray&apos;s Center</p>
             </div>
             <nav className="flex gap-2">
               {(['dashboard', 'fichajes', 'profesores'] as Tab[]).map(tab => (
@@ -199,8 +199,8 @@ const FichajesAdminPage: React.FC = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     activeTab === tab
-                      ? 'bg-white text-brand-900'
-                      : 'bg-brand-700 text-white hover:bg-brand-600'
+                      ? 'bg-white text-gray-900'
+                      : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
                 >
                   {tab === 'dashboard'
