@@ -36,23 +36,30 @@ async function getMomenceToken(): Promise<string> {
 
   const clientId = process.env['MOMENCE_CLIENT_ID'];
   const clientSecret = process.env['MOMENCE_CLIENT_SECRET'];
+  const username = process.env['MOMENCE_USERNAME'];
+  const password = process.env['MOMENCE_PASSWORD'];
 
-  if (!clientId || !clientSecret) {
-    throw new Error('Missing MOMENCE_CLIENT_ID or MOMENCE_CLIENT_SECRET');
+  if (!clientId || !clientSecret || !username || !password) {
+    throw new Error('Missing Momence credentials (CLIENT_ID, CLIENT_SECRET, USERNAME, PASSWORD)');
   }
 
-  const res = await fetch('https://api.momence.com/v2/oauth/token', {
+  const res = await fetch('https://api.momence.com/api/v2/auth/token', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      grant_type: 'client_credentials',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      grant_type: 'password',
       client_id: clientId,
       client_secret: clientSecret,
+      username,
+      password,
     }),
   });
 
   if (!res.ok) {
-    throw new Error(`Momence auth failed: ${res.status}`);
+    const errorText = await res.text().catch(() => '');
+    throw new Error(`Momence auth failed: ${res.status} - ${errorText}`);
   }
 
   const data = await res.json();
@@ -72,17 +79,19 @@ async function getMomenceInstructors(): Promise<Map<string, MomenceTeacher>> {
   const endDate = new Date();
   endDate.setDate(endDate.getDate() + 30);
 
-  const url = new URL('https://api.momence.com/v2/host/sessions');
-  url.searchParams.set('startsAtFrom', startDate.toISOString());
-  url.searchParams.set('startsAtTo', endDate.toISOString());
-  url.searchParams.set('limit', '500');
+  const url = new URL('https://api.momence.com/api/v2/host/sessions');
+  url.searchParams.set('startAfter', startDate.toISOString());
+  url.searchParams.set('startBefore', endDate.toISOString());
+  url.searchParams.set('pageSize', '100');
+  url.searchParams.set('sortBy', 'startsAt');
 
   const res = await fetch(url.toString(), {
     headers: { Authorization: `Bearer ${token}` },
   });
 
   if (!res.ok) {
-    throw new Error(`Momence sessions fetch failed: ${res.status}`);
+    const errorText = await res.text().catch(() => '');
+    throw new Error(`Momence sessions fetch failed: ${res.status} - ${errorText}`);
   }
 
   const data = await res.json();

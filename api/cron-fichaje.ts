@@ -33,7 +33,6 @@ import {
 
 const MOMENCE_API_URL = 'https://api.momence.com';
 const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
-const MOMENCE_BUSINESS_SLUG = "Farray's-International-Dance-Center";
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 
 // ============================================================================
@@ -133,25 +132,40 @@ async function getMomenceToken(): Promise<string> {
 
 async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   const token = await getMomenceToken();
-  const today = getFechaHoyEspana();
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const tomorrowStr = tomorrow.toISOString().split('T')[0];
 
-  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?businessSlug=${MOMENCE_BUSINESS_SLUG}&startDate=${today}&endDate=${tomorrowStr}`;
+  // Get today's date range in Spain timezone
+  const now = new Date();
+  const spainFormatter = new Intl.DateTimeFormat('sv-SE', {
+    timeZone: SPAIN_TIMEZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+  const todayStr = spainFormatter.format(now);
 
-  const response = await fetch(url, {
+  // Start of today and end of today in ISO format
+  const startAfter = `${todayStr}T00:00:00.000Z`;
+  const startBefore = `${todayStr}T23:59:59.999Z`;
+
+  const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+  url.searchParams.set('startAfter', startAfter);
+  url.searchParams.set('startBefore', startBefore);
+  url.searchParams.set('pageSize', '100');
+  url.searchParams.set('sortBy', 'startsAt');
+
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
   if (!response.ok) {
-    throw new Error(`Momence sessions fetch failed: ${response.status}`);
+    const errorText = await response.text().catch(() => '');
+    throw new Error(`Momence sessions fetch failed: ${response.status} - ${errorText}`);
   }
 
   const data = await response.json();
-  return data.sessions || [];
+  return data.data || [];
 }
 
 // ============================================================================
