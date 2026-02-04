@@ -493,6 +493,65 @@ export default async function handler(
       });
     }
 
+    // 1b. Validar política de cancelación: no se puede cancelar menos de 1 hora antes
+    const MIN_HOURS_BEFORE_CANCELLATION = 1;
+    if (bookingData.classDate && bookingData.classTime) {
+      try {
+        // Parse class date and time
+        const dateMatch = bookingData.classDate.match(/(\d{4})-(\d{2})-(\d{2})/);
+        const timeMatch = bookingData.classTime.match(/(\d{1,2}):(\d{2})/);
+
+        if (
+          dateMatch &&
+          timeMatch &&
+          dateMatch[1] &&
+          dateMatch[2] &&
+          dateMatch[3] &&
+          timeMatch[1] &&
+          timeMatch[2]
+        ) {
+          const year = dateMatch[1];
+          const month = dateMatch[2];
+          const day = dateMatch[3];
+          const hours = timeMatch[1];
+          const minutes = timeMatch[2];
+
+          // Create date in Spain timezone
+          const classDateTime = new Date(
+            parseInt(year, 10),
+            parseInt(month, 10) - 1,
+            parseInt(day, 10),
+            parseInt(hours, 10),
+            parseInt(minutes, 10)
+          );
+
+          const now = new Date();
+          const hoursUntilClass = (classDateTime.getTime() - now.getTime()) / (1000 * 60 * 60);
+
+          console.warn(
+            `[Cancel] Time check: class at ${classDateTime.toISOString()}, now ${now.toISOString()}, hours until: ${hoursUntilClass.toFixed(2)}`
+          );
+
+          if (hoursUntilClass < MIN_HOURS_BEFORE_CANCELLATION && hoursUntilClass > -24) {
+            // Only block if class is in the future (within 1 hour) or just started (within last 24h)
+            // Allow cancellation of old classes (more than 24h ago)
+            return res.status(400).json({
+              error: 'Cancellation window closed',
+              message: `No se puede cancelar con menos de ${MIN_HOURS_BEFORE_CANCELLATION} hora de antelación. Por favor, contacta con nosotros por WhatsApp.`,
+              hoursUntilClass: hoursUntilClass.toFixed(2),
+              whatsappUrl: WHATSAPP_URL,
+            });
+          }
+        }
+      } catch (dateError) {
+        console.warn(
+          '[Cancel] Could not parse class date/time for cancellation policy check:',
+          dateError
+        );
+        // Continue with cancellation if we can't parse the date
+      }
+    }
+
     // 2. Cancelar en Momence
     let momenceCancelled = false;
     if (bookingData.momenceBookingId) {
