@@ -1170,6 +1170,109 @@ export function isEmailConfigured(): boolean {
   return !!process.env['RESEND_API_KEY'];
 }
 
+// ============================================================================
+// SYSTEM ALERTS
+// ============================================================================
+
+/**
+ * Rate limiting for alerts to prevent spam
+ * Max 1 alert per error type per 5 minutes
+ */
+const alertCooldowns = new Map<string, number>();
+const ALERT_COOLDOWN_MS = 5 * 60 * 1000; // 5 minutes
+
+/**
+ * Send critical error alert to admin
+ * Used for system errors that need immediate attention.
+ *
+ * Features:
+ * - Rate limited: max 1 alert per error type every 5 minutes
+ * - Non-blocking: failures don't affect the main flow
+ * - Includes timestamp and error details
+ *
+ * @example
+ * await sendSystemAlert({
+ *   type: 'MOMENCE_API_DOWN',
+ *   message: 'Momence API is not responding',
+ *   details: { lastError: error.message, failureCount: 3 }
+ * });
+ */
+export async function sendSystemAlert(data: {
+  type: string;
+  message: string;
+  details?: Record<string, unknown>;
+  severity?: 'warning' | 'critical';
+}): Promise<{ success: boolean; skipped?: boolean; error?: string }> {
+  // Check cooldown to prevent alert spam
+  const lastAlert = alertCooldowns.get(data.type);
+  const now = Date.now();
+
+  if (lastAlert && now - lastAlert < ALERT_COOLDOWN_MS) {
+    console.log(`[Alert] Skipped (cooldown): ${data.type}`);
+    return { success: true, skipped: true };
+  }
+
+  try {
+    const resend = getResend();
+    const severity = data.severity || 'warning';
+    const emoji = severity === 'critical' ? '🚨' : '⚠️';
+    const bgColor = severity === 'critical' ? '#dc3545' : '#ffc107';
+    const textColor = severity === 'critical' ? 'white' : '#333';
+
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: ADMIN_EMAIL,
+      headers: EMAIL_HEADERS,
+      subject: `${emoji} [${severity.toUpperCase()}] ${data.type} - Farray's System`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background: ${bgColor}; color: ${textColor}; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+    <h2 style="margin: 0;">${emoji} System Alert: ${data.type}</h2>
+  </div>
+
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <p style="margin: 0 0 15px 0; font-size: 16px;"><strong>Mensaje:</strong></p>
+    <p style="margin: 0; background: white; padding: 15px; border-radius: 8px; border-left: 4px solid ${bgColor};">
+      ${data.message}
+    </p>
+  </div>
+
+  ${
+    data.details
+      ? `
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <p style="margin: 0 0 15px 0; font-size: 16px;"><strong>Detalles:</strong></p>
+    <pre style="margin: 0; background: white; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 12px;">${JSON.stringify(data.details, null, 2)}</pre>
+  </div>
+  `
+      : ''
+  }
+
+  <p style="color: #999; font-size: 11px; text-align: center; margin-top: 30px;">
+    Timestamp: ${new Date().toISOString()}<br>
+    Environment: ${process.env['VERCEL_ENV'] || 'development'}
+  </p>
+</body></html>`,
+    });
+
+    if (result.error) {
+      console.error('[Alert] Failed to send:', result.error.message);
+      return { success: false, error: result.error.message };
+    }
+
+    // Update cooldown
+    alertCooldowns.set(data.type, now);
+    console.log(`[Alert] Sent: ${data.type}`);
+    return { success: true };
+  } catch (error) {
+    console.error('[Alert] Error sending alert:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
 /**
  * Exportar constantes para uso externo
  */

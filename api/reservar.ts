@@ -440,6 +440,23 @@ async function recordMomenceFailure(redis: Redis): Promise<void> {
       console.warn(
         `[Circuit Breaker] 🔴 OPEN - Momence failed ${failures} times in ${CIRCUIT_BREAKER_WINDOW_SECONDS}s, cooling down for ${CIRCUIT_BREAKER_COOLDOWN_SECONDS}s`
       );
+
+      // Send alert to admin (non-blocking)
+      try {
+        const { sendSystemAlert } = await import('./lib/email');
+        sendSystemAlert({
+          type: 'MOMENCE_CIRCUIT_OPEN',
+          message: `Momence API ha fallado ${failures} veces en ${CIRCUIT_BREAKER_WINDOW_SECONDS / 60} minutos. Las reservas van directamente a Customer Leads.`,
+          details: {
+            failures,
+            windowSeconds: CIRCUIT_BREAKER_WINDOW_SECONDS,
+            cooldownSeconds: CIRCUIT_BREAKER_COOLDOWN_SECONDS,
+          },
+          severity: 'critical',
+        }).catch(() => {}); // Fire and forget
+      } catch {
+        // Alert is non-critical, ignore errors
+      }
     }
   } catch (e) {
     console.warn('[Circuit Breaker] Failed to record failure:', e);
