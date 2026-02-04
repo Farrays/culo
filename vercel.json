@@ -57,11 +57,6 @@
       "maxDuration": 60,
       "includeFiles": "api/lib/**"
     },
-    "api/fichaje/*.ts": {
-      "memory": 512,
-      "maxDuration": 60,
-      "includeFiles": "api/lib/**"
-    },
     "api/cron-fichaje.ts": {
       "memory": 512,
       "maxDuration": 60,

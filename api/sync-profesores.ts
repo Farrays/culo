@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+// Note: Buffer is a Node.js global available in Vercel serverless functions
+
 /**
  * Sync Profesores from Momence
  *
@@ -43,15 +46,17 @@ async function getMomenceToken(): Promise<string> {
     throw new Error('Missing Momence credentials (CLIENT_ID, CLIENT_SECRET, USERNAME, PASSWORD)');
   }
 
+  // Use Basic Auth header like clases.ts does (not body params)
+  const basicAuth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+
   const res = await fetch('https://api.momence.com/api/v2/auth/token', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${basicAuth}`,
     },
     body: new URLSearchParams({
       grant_type: 'password',
-      client_id: clientId,
-      client_secret: clientSecret,
       username,
       password,
     }),
@@ -90,7 +95,10 @@ async function getMomenceInstructors(): Promise<Map<string, MomenceTeacher>> {
   url.searchParams.set('sortOrder', 'ASC');
 
   const res = await fetch(url.toString(), {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
   });
 
   if (!res.ok) {
@@ -99,7 +107,7 @@ async function getMomenceInstructors(): Promise<Map<string, MomenceTeacher>> {
   }
 
   const data = await res.json();
-  const sessions: MomenceSession[] = data.data || [];
+  const sessions: MomenceSession[] = data.payload || [];
 
   // Extract unique instructors
   const instructors = new Map<string, MomenceTeacher>();
