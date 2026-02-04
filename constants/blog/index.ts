@@ -13,6 +13,7 @@ export {
   AUTHOR_MAR_GUERRERO,
   AUTHOR_DANIEL_SENE,
   AUTHOR_ALEJANDRO_MINOSO,
+  AUTHOR_MARCOS_MARTINEZ,
   DEFAULT_AUTHOR,
 } from './author';
 
@@ -38,6 +39,7 @@ export { BAILE_SALUD_MENTAL_CONFIG } from './articles/baile-salud-mental';
 export { ACADEMIA_DANZA_BARCELONA_CONFIG } from './articles/academia-de-danza-barcelona';
 export { BALLET_ADULTOS_BARCELONA_CONFIG } from './articles/ballet-para-adultos-barcelona';
 export { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from './articles/danza-contemporanea-vs-modern-jazz-vs-ballet';
+export { DANZAS_URBANAS_BARCELONA_CONFIG } from './articles/danzas-urbanas-barcelona';
 
 // Template Enterprise (Reference - Do not use in production routes)
 export { TEMPLATE_ENTERPRISE_CONFIG } from './articles/_TEMPLATE_ENTERPRISE';

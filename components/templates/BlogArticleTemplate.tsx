@@ -30,6 +30,7 @@ import {
   AUTHOR_MAR_GUERRERO,
   AUTHOR_DANIEL_SENE,
   AUTHOR_ALEJANDRO_MINOSO,
+  AUTHOR_MARCOS_MARTINEZ,
 } from '../../constants/blog/author';
 
 // Author registry - add new authors here
@@ -38,6 +39,7 @@ const AUTHORS: Record<string, AuthorConfig> = {
   'mar-guerrero': AUTHOR_MAR_GUERRERO,
   'daniel-sene': AUTHOR_DANIEL_SENE,
   'alejandro-minoso': AUTHOR_ALEJANDRO_MINOSO,
+  'marcos-martinez': AUTHOR_MARCOS_MARTINEZ,
 };
 
 // Blog Components
