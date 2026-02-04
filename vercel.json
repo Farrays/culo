@@ -309,7 +309,12 @@
     },
     {
       "source": "/trainer/yunaisy-farray",
-      "destination": "/es/profesores-baile-barcelona",
+      "destination": "/es/yunaisy-farray",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/yunaisy-farray/yunaisy-2",
+      "destination": "/es/yunaisy-farray",
       "permanent": true
     },
     {
