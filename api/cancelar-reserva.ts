@@ -23,6 +23,30 @@ const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 const BOOKING_KEY_PREFIX = 'booking:';
 
+// Fetch timeout
+const DEFAULT_FETCH_TIMEOUT_MS = 8000; // 8 seconds
+
+/**
+ * Fetch with automatic timeout to prevent hanging requests
+ */
+async function fetchWithTimeout(
+  url: string,
+  options: Record<string, unknown> = {},
+  timeoutMs: number = DEFAULT_FETCH_TIMEOUT_MS
+): Promise<globalThis.Response> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    } as globalThis.RequestInit);
+    return response;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 // Brand colors
 const BRAND_PRIMARY = '#B01E3C';
 
@@ -98,7 +122,7 @@ async function getAccessToken(): Promise<string | null> {
   const basicAuth = Buffer.from(`${MOMENCE_CLIENT_ID}:${MOMENCE_CLIENT_SECRET}`).toString('base64');
 
   try {
-    const response = await fetch(MOMENCE_AUTH_URL, {
+    const response = await fetchWithTimeout(MOMENCE_AUTH_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -137,10 +161,13 @@ async function cancelMomenceBooking(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     console.warn('[Momence Cancel] Cancelling booking:', bookingId);
-    const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`, {
-      method: 'DELETE',
-      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-    });
+    const response = await fetchWithTimeout(
+      `${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`,
+      {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -175,7 +202,7 @@ async function getCalendarAccessToken(): Promise<string | null> {
   }
 
   try {
-    const response = await fetch(TOKEN_URL, {
+    const response = await fetchWithTimeout(TOKEN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -217,7 +244,7 @@ async function deleteCalendarEvent(
   if (!accessToken) return { success: false, error: 'Failed to get access token' };
 
   try {
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
       {
         method: 'DELETE',
@@ -348,20 +375,23 @@ async function sendCancellationWhatsAppInline(data: {
   if (!accessToken) return { success: false, error: 'Missing WHATSAPP_ACCESS_TOKEN' };
 
   try {
-    const response = await fetch(`${WHATSAPP_API_URL}/${WHATSAPP_PHONE_NUMBER_ID}/messages`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        messaging_product: 'whatsapp',
-        to: normalizePhoneNumber(data.to),
-        type: 'template',
-        template: {
-          name: 'cancelar',
-          language: { code: 'es' },
-          components: [{ type: 'body', parameters: [{ type: 'text', text: data.firstName }] }],
-        },
-      }),
-    });
+    const response = await fetchWithTimeout(
+      `${WHATSAPP_API_URL}/${WHATSAPP_PHONE_NUMBER_ID}/messages`,
+      {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messaging_product: 'whatsapp',
+          to: normalizePhoneNumber(data.to),
+          type: 'template',
+          template: {
+            name: 'cancelar',
+            language: { code: 'es' },
+            components: [{ type: 'body', parameters: [{ type: 'text', text: data.firstName }] }],
+          },
+        }),
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();

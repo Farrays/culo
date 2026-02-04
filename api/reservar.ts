@@ -30,6 +30,37 @@ function redactPhone(phone: string | null | undefined): string {
 }
 
 // ============================================================================
+// FETCH WITH TIMEOUT (prevent hanging requests)
+// ============================================================================
+
+const DEFAULT_FETCH_TIMEOUT_MS = 8000; // 8 seconds (Vercel has 10s limit)
+
+/**
+ * Fetch with automatic timeout to prevent hanging requests
+ * @param url - URL to fetch
+ * @param options - Fetch options
+ * @param timeoutMs - Timeout in milliseconds (default 8000)
+ */
+async function fetchWithTimeout(
+  url: string,
+  options: Record<string, unknown> = {},
+  timeoutMs: number = DEFAULT_FETCH_TIMEOUT_MS
+): Promise<globalThis.Response> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    } as globalThis.RequestInit);
+    return response;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+// ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
 // ============================================================================
 
@@ -68,7 +99,7 @@ async function getCalendarAccessToken(): Promise<string | null> {
   }
 
   try {
-    const response = await fetch(CALENDAR_TOKEN_URL, {
+    const response = await fetchWithTimeout(CALENDAR_TOKEN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -207,7 +238,7 @@ async function createBookingEvent(
       },
     };
 
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
       {
         method: 'POST',
@@ -272,7 +303,7 @@ async function sendBookingConfirmationWhatsApp(data: {
   const normalizedPhone = data.to.replace(/[\s\-+]/g, '');
 
   try {
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
       {
         method: 'POST',
@@ -557,7 +588,7 @@ async function getAccessToken(): Promise<string | null> {
   const basicAuth = Buffer.from(`${MOMENCE_CLIENT_ID}:${MOMENCE_CLIENT_SECRET}`).toString('base64');
 
   try {
-    const response = await fetch(MOMENCE_AUTH_URL, {
+    const response = await fetchWithTimeout(MOMENCE_AUTH_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -623,7 +654,7 @@ async function createMomenceBooking(
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
-    const memberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
+    const memberResponse = await fetchWithTimeout(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -672,20 +703,23 @@ async function createMomenceBooking(
         return { success: false, error: 'Missing hostLocationId for member creation' };
       }
       console.warn('[Momence Booking] Creating new member with homeLocationId:', hostLocationId);
-      const createMemberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: customerData.email,
-          firstName: customerData.firstName,
-          lastName: customerData.lastName,
-          phoneNumber: formatPhoneForMomence(customerData.phone),
-          homeLocationId: hostLocationId,
-        }),
-      });
+      const createMemberResponse = await fetchWithTimeout(
+        `${MOMENCE_API_URL}/api/v2/host/members`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: customerData.email,
+            firstName: customerData.firstName,
+            lastName: customerData.lastName,
+            phoneNumber: formatPhoneForMomence(customerData.phone),
+            homeLocationId: hostLocationId,
+          }),
+        }
+      );
 
       if (createMemberResponse.ok) {
         const newMember = await createMemberResponse.json();
@@ -718,7 +752,7 @@ async function createMomenceBooking(
       'sessionId:',
       sessionId
     );
-    const bookingResponse = await fetch(
+    const bookingResponse = await fetchWithTimeout(
       `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings/free`,
       {
         method: 'POST',
@@ -759,7 +793,7 @@ async function createMomenceBooking(
     // CRITICAL: If booking not found, we MUST fail - user should not think they have a booking
     let bookingVerified = false;
     try {
-      const verifyResponse = await fetch(
+      const verifyResponse = await fetchWithTimeout(
         `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings`,
         {
           method: 'GET',
@@ -1019,7 +1053,7 @@ async function sendToCustomerLeads(data: {
     console.warn('[Customer Leads] Sending to:', MOMENCE_LEADS_URL);
     console.warn('[Customer Leads] Payload:', { ...payload, token: '[REDACTED]' });
 
-    const response = await fetch(MOMENCE_LEADS_URL, {
+    const response = await fetchWithTimeout(MOMENCE_LEADS_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1096,7 +1130,7 @@ async function sendMetaConversionEvent(data: {
   };
 
   try {
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${META_CAPI_URL}/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
       {
         method: 'POST',
@@ -1180,6 +1214,37 @@ export default async function handler(
 
     if (!isValidPhone(phone)) {
       return res.status(400).json({ error: 'Teléfono no válido' });
+    }
+
+    // Validate classDate if provided (not in past, not more than 1 year future)
+    if (classDate) {
+      const dateMatch = classDate.match(/(\d{4})-(\d{2})-(\d{2})/);
+      if (dateMatch && dateMatch[1] && dateMatch[2] && dateMatch[3]) {
+        const bookingDate = new Date(
+          parseInt(dateMatch[1], 10),
+          parseInt(dateMatch[2], 10) - 1,
+          parseInt(dateMatch[3], 10)
+        );
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const oneYearFromNow = new Date(today);
+        oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+
+        if (bookingDate < today) {
+          return res.status(400).json({
+            error: 'Fecha no válida',
+            message: 'La fecha de la clase no puede ser en el pasado',
+          });
+        }
+
+        if (bookingDate > oneYearFromNow) {
+          return res.status(400).json({
+            error: 'Fecha no válida',
+            message: 'La fecha de la clase no puede ser más de un año en el futuro',
+          });
+        }
+      }
     }
 
     const normalizedEmail = sanitize(email).toLowerCase();
@@ -1293,6 +1358,37 @@ export default async function handler(
       });
       console.warn('[reservar] Customer Leads result:', leadsResult);
       momenceResult = { success: leadsResult.success };
+    }
+
+    // CRITICAL: If BOTH Momence AND Customer Leads failed, don't send confirmation
+    if (!momenceResult.success) {
+      console.error('[reservar] ❌ BOOKING FAILED - Both Momence and Customer Leads failed');
+
+      // Send alert to admin
+      try {
+        const { sendSystemAlert } = await import('./lib/email');
+        sendSystemAlert({
+          type: 'BOOKING_TOTAL_FAILURE',
+          message: `Una reserva no pudo ser registrada en ningún sistema. El usuario NO ha recibido confirmación.`,
+          details: {
+            email: redactEmail(normalizedEmail),
+            className: className || estilo,
+            classDate,
+            sessionId,
+          },
+          severity: 'critical',
+        }).catch(() => {}); // Fire and forget
+      } catch {
+        // Alert is non-critical
+      }
+
+      return res.status(500).json({
+        success: false,
+        error: 'No pudimos procesar tu reserva',
+        message:
+          'Ha ocurrido un error técnico. Por favor, contacta con nosotros por WhatsApp para completar tu reserva.',
+        whatsappUrl: 'https://wa.me/34622247085',
+      });
     }
 
     // 2. Enviar evento a Meta CAPI (siempre, independiente de Momence)
