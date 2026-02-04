@@ -1266,6 +1266,40 @@ export default async function handler(
       } catch (e) {
         console.warn('Redis lookup failed:', e);
       }
+
+      // Check for potential duplicate by phone (same phone, different email)
+      // This helps detect users creating multiple accounts
+      try {
+        const phoneForCheck = normalizePhone(phone);
+        if (phoneForCheck) {
+          const existingEmailForPhone = await redis.get(`phone_email:${phoneForCheck}`);
+          if (existingEmailForPhone && existingEmailForPhone !== normalizedEmail) {
+            console.warn(
+              `[reservar] ⚠️ Duplicate phone detected: ${redactPhone(phone)} used with different email`
+            );
+            // Send alert to admin (non-blocking)
+            try {
+              const { sendSystemAlert } = await import('./lib/email');
+              sendSystemAlert({
+                type: 'DUPLICATE_PHONE',
+                message: `El mismo teléfono se está usando con diferentes emails. Posible usuario duplicado.`,
+                details: {
+                  phone: redactPhone(phone),
+                  newEmail: redactEmail(normalizedEmail),
+                  existingEmail: redactEmail(existingEmailForPhone),
+                  className: className || estilo,
+                },
+                severity: 'warning',
+              }).catch(() => {});
+            } catch {
+              // Alert is non-critical
+            }
+            // Note: We still allow the booking to proceed
+          }
+        }
+      } catch (e) {
+        console.warn('[reservar] Phone duplicate check failed (non-blocking):', e);
+      }
     }
 
     // Generar eventId único si no viene del frontend
@@ -1300,13 +1334,43 @@ export default async function handler(
       }
     }
 
-    if (sessionId && !circuitOpen) {
+    // Validate sessionId format if provided
+    // Use a new variable since sessionId is const from destructuring
+    let validatedSessionId: string | undefined = sessionId;
+    if (validatedSessionId) {
+      const parsedSessionId = parseInt(validatedSessionId, 10);
+      if (isNaN(parsedSessionId) || parsedSessionId <= 0) {
+        console.warn(`[reservar] ⚠️ Invalid sessionId format: ${validatedSessionId}`);
+
+        // Send alert for invalid sessionId (might indicate frontend bug or manipulation)
+        try {
+          const { sendSystemAlert } = await import('./lib/email');
+          sendSystemAlert({
+            type: 'INVALID_SESSION_ID',
+            message: `Se recibió un sessionId inválido: "${validatedSessionId}". Esto puede indicar un problema en el frontend o manipulación.`,
+            details: {
+              sessionId: validatedSessionId,
+              className: className || estilo,
+              email: redactEmail(normalizedEmail),
+            },
+            severity: 'warning',
+          }).catch(() => {});
+        } catch {
+          // Alert is non-critical
+        }
+
+        // Clear sessionId to fall back to Customer Leads
+        validatedSessionId = undefined;
+      }
+    }
+
+    if (validatedSessionId && !circuitOpen) {
       // Si tenemos sessionId y circuit está cerrado, crear booking real
       const accessToken = await getAccessToken();
       console.warn('[reservar] Got access token:', !!accessToken);
 
       if (accessToken) {
-        momenceResult = await createMomenceBooking(accessToken, parseInt(sessionId), {
+        momenceResult = await createMomenceBooking(accessToken, parseInt(validatedSessionId), {
           email: normalizedEmail,
           firstName: sanitize(firstName),
           lastName: sanitize(lastName),
@@ -1329,7 +1393,7 @@ export default async function handler(
           await recordMomenceFailure(redis);
         }
       }
-    } else if (!sessionId) {
+    } else if (!validatedSessionId) {
       console.warn('[reservar] No sessionId provided, will use Customer Leads');
     }
 
@@ -1337,7 +1401,7 @@ export default async function handler(
     if (!momenceResult.success) {
       const reason = circuitOpen
         ? 'Circuit open (Momence unhealthy)'
-        : !sessionId
+        : !validatedSessionId
           ? 'No sessionId'
           : 'Momence booking failed';
       console.warn(`[reservar] ${reason}, trying Customer Leads...`);
@@ -1511,6 +1575,15 @@ export default async function handler(
         if (normalizedPhone) {
           await redis.setex(`phone:${normalizedPhone}`, BOOKING_TTL_SECONDS, finalEventId);
           console.warn(`[reservar] Added phone index: phone:${redactPhone(normalizedPhone)}`);
+
+          // Store phone → email mapping for duplicate detection (90 days TTL)
+          // This helps identify users creating multiple accounts with same phone
+          const PHONE_EMAIL_TTL_SECONDS = 90 * 24 * 60 * 60; // 90 days
+          await redis.setex(
+            `phone_email:${normalizedPhone}`,
+            PHONE_EMAIL_TTL_SECONDS,
+            normalizedEmail
+          );
         }
 
         // Índice por fecha (para cron-reminders)
