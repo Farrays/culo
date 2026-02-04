@@ -547,7 +547,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         author: testimonial.name,
         reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
         reviewBody: testimonial.quote[locale as Locale],
-        datePublished: new Date().toISOString().split('T')[0],
+        datePublished: new Date().toISOString(),
       }));
 
   // VideoObject Schema
@@ -557,7 +557,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
     name: t(config.video.titleKey),
     description: t(config.video.descKey),
     thumbnailUrl: `https://img.youtube.com/vi/${config.video.id}/maxresdefault.jpg`,
-    uploadDate: '2025-01-01',
+    uploadDate: '2025-01-01T00:00:00+01:00',
     contentUrl: `https://www.youtube.com/watch?v=${config.video.id}`,
     embedUrl: `https://www.youtube.com/embed/${config.video.id}`,
   };

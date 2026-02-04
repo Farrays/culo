@@ -927,7 +927,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         thumbnailUrl:
           config.videoSchema.thumbnailUrl ||
           `${baseUrl}/images/classes/${config.stylePath}/video-thumbnail.jpg`,
-        uploadDate: '2025-01-01',
+        uploadDate: '2025-01-01T00:00:00+01:00',
         contentUrl: config.videoSchema.videoId
           ? `https://www.youtube.com/watch?v=${config.videoSchema.videoId}`
           : `${baseUrl}/videos/${config.stylePath}-class-experience.mp4`,
@@ -945,7 +945,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         name: t(config.bunnyVideoSchema.titleKey),
         description: t(config.bunnyVideoSchema.descKey),
         thumbnailUrl: config.bunnyVideoSchema.thumbnailUrl,
-        uploadDate: config.bunnyVideoSchema.uploadDate || '2025-01-01',
+        uploadDate: config.bunnyVideoSchema.uploadDate || '2025-01-01T00:00:00+01:00',
         duration: config.bunnyVideoSchema.duration || 'PT1M',
         contentUrl: `https://iframe.mediadelivery.net/play/${config.bunnyVideoSchema.libraryId}/${config.bunnyVideoSchema.videoId}`,
         embedUrl: `https://iframe.mediadelivery.net/embed/${config.bunnyVideoSchema.libraryId}/${config.bunnyVideoSchema.videoId}`,
@@ -981,7 +981,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           thumbnailUrl:
             config.videoSection.bunnyVideo.thumbnailUrl ||
             `${baseUrl}/images/classes/${config.stylePath}/video-thumbnail.jpg`,
-          uploadDate: '2025-01-01',
+          uploadDate: '2025-01-01T00:00:00+01:00',
           duration: 'PT1M',
           contentUrl: `https://iframe.mediadelivery.net/play/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`,
           embedUrl: `https://iframe.mediadelivery.net/embed/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`,
