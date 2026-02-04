@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSupabaseAdmin, type Profesor } from '../lib/supabase';
+import { getSupabaseAdmin, type Profesor } from '../lib/supabase.js';
 
 /**
  * API Route: /api/fichaje/profesores

@@ -5,7 +5,7 @@ import {
   getFechaHoyEspana,
   getHoraAhoraEspana,
   type Fichaje,
-} from '../lib/supabase';
+} from '../lib/supabase.js';
 
 /**
  * API Route: /api/fichaje/fichajes
