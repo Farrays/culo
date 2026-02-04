@@ -12,7 +12,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSupabaseAdmin } from './lib/supabase';
+import { getSupabaseAdmin } from './lib/supabase.js';
 
 // Momence API types
 interface MomenceTeacher {
@@ -88,9 +88,10 @@ async function getMomenceInstructors(): Promise<Map<string, MomenceTeacher>> {
   const startBefore = futureLimit.toISOString();
 
   const url = new URL('https://api.momence.com/api/v2/host/sessions');
+  url.searchParams.set('page', '0');
+  url.searchParams.set('pageSize', '100');
   url.searchParams.set('startAfter', startAfter);
   url.searchParams.set('startBefore', startBefore);
-  url.searchParams.set('pageSize', '100');
   url.searchParams.set('sortBy', 'startsAt');
   url.searchParams.set('sortOrder', 'ASC');
 
