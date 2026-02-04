@@ -155,9 +155,10 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   const startBefore = endOfDay.toISOString();
 
   const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+  url.searchParams.set('page', '0');
+  url.searchParams.set('pageSize', '100');
   url.searchParams.set('startAfter', startAfter);
   url.searchParams.set('startBefore', startBefore);
-  url.searchParams.set('pageSize', '100');
   url.searchParams.set('sortBy', 'startsAt');
   url.searchParams.set('sortOrder', 'ASC');
 
