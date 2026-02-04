@@ -10,6 +10,26 @@ import crypto from 'crypto';
 type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
 
 // ============================================================================
+// PII REDACTION (GDPR-compliant logging)
+// ============================================================================
+
+/** Redact email for logging: "john@example.com" → "joh***@example.com" */
+function redactEmail(email: string | null | undefined): string {
+  if (!email) return 'N/A';
+  const [local, domain] = email.split('@');
+  if (!domain) return '***@invalid';
+  return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
+/** Redact phone for logging: "+34612345678" → "+346***78" */
+function redactPhone(phone: string | null | undefined): string {
+  if (!phone) return 'N/A';
+  const cleaned = phone.replace(/\s/g, '');
+  if (cleaned.length < 6) return '***';
+  return `${cleaned.slice(0, 4)}***${cleaned.slice(-2)}`;
+}
+
+// ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
 // ============================================================================
 
@@ -498,7 +518,7 @@ async function createMomenceBooking(
       '[Momence Booking] Starting for sessionId:',
       sessionId,
       'email:',
-      customerData.email
+      redactEmail(customerData.email)
     );
 
     // Get hostLocationId from env variable or use hardcoded fallback
@@ -1278,7 +1298,7 @@ export default async function handler(
         // Índice por teléfono (para webhook-whatsapp)
         if (normalizedPhone) {
           await redis.setex(`phone:${normalizedPhone}`, BOOKING_TTL_SECONDS, finalEventId);
-          console.warn(`[reservar] Added phone index: phone:${normalizedPhone}`);
+          console.warn(`[reservar] Added phone index: phone:${redactPhone(normalizedPhone)}`);
         }
 
         // Índice por fecha (para cron-reminders)

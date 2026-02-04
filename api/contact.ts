@@ -1,5 +1,13 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+/** Redact email for GDPR-compliant logging */
+function redactEmail(email: string | null | undefined): string {
+  if (!email) return 'N/A';
+  const [local, domain] = email.split('@');
+  if (!domain) return '***@invalid';
+  return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
 /**
  * API Route: /api/contact
  *
@@ -177,7 +185,9 @@ export default async function handler(
     }
 
     // Log para monitoring (use warn to pass linter, info not allowed)
-    console.warn(`Contact form submitted: ${payload.email} - Subject: ${payload.Asunto}`);
+    console.warn(
+      `Contact form submitted: ${redactEmail(payload.email)} - Subject: ${payload.Asunto}`
+    );
 
     // Exito
     return res.status(200).json({

@@ -374,6 +374,18 @@ async function sendCancellationWhatsAppInline(data: {
 }
 
 // ============================================================================
+// PII REDACTION (GDPR-compliant logging)
+// ============================================================================
+
+/** Redact email for logging */
+function redactEmail(email: string | null | undefined): string {
+  if (!email) return 'N/A';
+  const [local, domain] = email.split('@');
+  if (!domain) return '***@invalid';
+  return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
+// ============================================================================
 // TYPES
 // ============================================================================
 
@@ -475,7 +487,7 @@ export default async function handler(
       const bookingDataStr = await redis.get(bookingKey);
       if (bookingDataStr) {
         bookingData = JSON.parse(bookingDataStr);
-        console.log(`[Cancel] Found booking in booking:${normalizedEmail}`);
+        console.log(`[Cancel] Found booking in booking:${redactEmail(normalizedEmail)}`);
       }
     }
 

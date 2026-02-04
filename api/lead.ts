@@ -1,6 +1,14 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 
+/** Redact email for GDPR-compliant logging */
+function redactEmail(email: string | null | undefined): string {
+  if (!email) return 'N/A';
+  const [local, domain] = email.split('@');
+  if (!domain) return '***@invalid';
+  return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
 /**
  * API Route: /api/lead
  *
@@ -220,7 +228,7 @@ export default async function handler(
           estilo: sanitize(estilo || 'Not specified'),
         });
         await redis.setex(kvKey, LEAD_TTL_SECONDS, leadData); // TTL de 90 días
-        console.warn(`Lead guardado en Redis: ${normalizedEmail} (TTL: 90 días)`);
+        console.warn(`Lead guardado en Redis: ${redactEmail(normalizedEmail)} (TTL: 90 días)`);
       } catch (redisError) {
         // Si Redis falla al guardar, solo logear (el lead ya se envió a Momence)
         console.warn('Redis save failed:', redisError);
