@@ -151,6 +151,9 @@ const AsistenciaConfirmadaPage = lazy(() => import('./components/AsistenciaConfi
 // ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
 const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
 
+// ===== Y&R PROJECT PAGE (Linktree-style - sin header/footer) =====
+const YRProjectPage = lazy(() => import('./components/pages/YRProjectPage'));
+
 // ===== LEGAL PAGES =====
 const TermsConditionsPage = lazy(() => import('./components/TermsConditionsPage'));
 const LegalNoticePage = lazy(() => import('./components/LegalNoticePage'));
@@ -260,6 +263,7 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/salsa-curso',
   '/salsa-test',
   '/hazte-socio',
+  '/yr-project',
 ];
 
 // Promotion configuration - easy to update
@@ -314,9 +318,12 @@ const AppContent: React.FC = () => {
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
 
+  // Y&R Project page without header/footer (Linktree-style artist page)
+  const isYRProjectPage = location.pathname.includes('/yr-project');
+
   // Combined check for hiding header/footer
   const hideHeaderFooter =
-    isPromoLanding || isMinimalLegalPage || isBookingPage || isHazteSocioPage;
+    isPromoLanding || isMinimalLegalPage || isBookingPage || isHazteSocioPage || isYRProjectPage;
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
@@ -808,6 +815,9 @@ const AppContent: React.FC = () => {
                 </>
               }
             />
+
+            {/* ===== Y&R PROJECT (Linktree-style artist page - sin header/footer) ===== */}
+            <Route path="/yr-project" element={<YRProjectPage />} />
 
             {/* ===== FICHAJE (PWA interna para profesores - sin header/footer) ===== */}
             <Route

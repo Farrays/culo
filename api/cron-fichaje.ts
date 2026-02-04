@@ -72,6 +72,7 @@ interface CronResult {
   notificacionesEntrada: number;
   notificacionesSalida: number;
   fichajesCreados: number;
+  fichajesCancelados: number;
   errores: string[];
 }
 
@@ -246,6 +247,62 @@ function crearBloque(clases: MomenceSession[], profesor: Profesor): BloqueClases
 }
 
 // ============================================================================
+// SINCRONIZACIÓN DE CLASES CANCELADAS
+// ============================================================================
+
+/**
+ * Detecta fichajes pendientes cuya clase ya no existe en Momence y los marca como cancelados.
+ * Esto ocurre cuando una clase se cancela en Momence después de crear el fichaje.
+ *
+ * @param supabase - Cliente Supabase
+ * @param fecha - Fecha actual (YYYY-MM-DD)
+ * @param clasesActivasMomence - Set con IDs de clases activas en Momence
+ * @returns Número de fichajes marcados como cancelados
+ */
+async function sincronizarClasesCanceladas(
+  supabase: ReturnType<typeof getSupabaseAdmin>,
+  fecha: string,
+  clasesActivasMomence: Set<number>
+): Promise<number> {
+  // Obtener fichajes pendientes de hoy que tienen clase_momence_id
+  const { data: fichajesPendientes } = await supabase
+    .from('fichajes')
+    .select('id, clase_momence_id, clase_nombre, profesor_id')
+    .eq('fecha', fecha)
+    .eq('estado', 'pendiente')
+    .not('clase_momence_id', 'is', null);
+
+  if (!fichajesPendientes || fichajesPendientes.length === 0) {
+    return 0;
+  }
+
+  let cancelados = 0;
+
+  for (const fichaje of fichajesPendientes) {
+    // Si la clase ya no existe en Momence, marcar como cancelada
+    if (fichaje.clase_momence_id && !clasesActivasMomence.has(fichaje.clase_momence_id)) {
+      const { error } = await supabase
+        .from('fichajes')
+        // @ts-expect-error - Supabase types are dynamic
+        .update({
+          estado: 'clase_cancelada',
+          motivo_edicion: 'Clase cancelada en Momence - sincronización automática',
+        })
+        .eq('id', fichaje.id);
+
+      if (!error) {
+        cancelados++;
+        console.log(
+          `[cron-fichaje] Fichaje ${fichaje.id} marcado como cancelado (clase ${fichaje.clase_nombre})`
+        );
+      }
+    }
+  }
+
+  return cancelados;
+}
+
+// ============================================================================
 // MAIN HANDLER
 // ============================================================================
 
@@ -265,6 +322,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     notificacionesEntrada: 0,
     notificacionesSalida: 0,
     fichajesCreados: 0,
+    fichajesCancelados: 0,
     errores: [],
   };
 
@@ -313,6 +371,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // 3. Obtener clases de hoy de Momence
     const sesiones = await getMomenceSessionsToday();
     result.clases = sesiones.length;
+
+    // Crear Set de IDs de clases activas en Momence para sincronización
+    const clasesActivasMomence = new Set<number>(sesiones.map(s => s.id));
+
+    // 3b. Sincronizar clases canceladas - marcar fichajes huérfanos
+    const fichajesCancelados = await sincronizarClasesCanceladas(
+      supabase,
+      result.fecha,
+      clasesActivasMomence
+    );
+    result.fichajesCancelados = fichajesCancelados;
 
     if (sesiones.length === 0) {
       res.status(200).json({ ...result, message: 'No hay clases hoy' });

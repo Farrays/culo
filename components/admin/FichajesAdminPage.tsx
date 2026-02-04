@@ -32,7 +32,13 @@ interface Fichaje {
   fecha: string;
   hora_inicio: string | null;
   hora_fin: string | null;
-  estado: 'pendiente' | 'entrada_registrada' | 'completado' | 'no_fichado' | 'editado_admin';
+  estado:
+    | 'pendiente'
+    | 'entrada_registrada'
+    | 'completado'
+    | 'no_fichado'
+    | 'editado_admin'
+    | 'clase_cancelada';
   minutos_trabajados: number | null;
   metodo_entrada: string | null;
   metodo_salida: string | null;
@@ -321,7 +327,11 @@ const FichajesAdminPage: React.FC = () => {
                                       ? 'bg-yellow-100 text-yellow-700'
                                       : f.estado === 'no_fichado'
                                         ? 'bg-red-100 text-red-700'
-                                        : 'bg-gray-100 text-gray-700'
+                                        : f.estado === 'clase_cancelada'
+                                          ? 'bg-purple-100 text-purple-700 line-through'
+                                          : f.estado === 'editado_admin'
+                                            ? 'bg-blue-100 text-blue-700'
+                                            : 'bg-gray-100 text-gray-700'
                                 }`}
                               >
                                 {f.estado === 'completado'
@@ -330,7 +340,11 @@ const FichajesAdminPage: React.FC = () => {
                                     ? 'En curso'
                                     : f.estado === 'no_fichado'
                                       ? 'No fichado'
-                                      : 'Pendiente'}
+                                      : f.estado === 'clase_cancelada'
+                                        ? 'Cancelada'
+                                        : f.estado === 'editado_admin'
+                                          ? 'Editado'
+                                          : 'Pendiente'}
                               </span>
                             </td>
                           </tr>
@@ -386,6 +400,8 @@ const FichajesAdminPage: React.FC = () => {
                     <option value="entrada_registrada">En curso</option>
                     <option value="pendiente">Pendiente</option>
                     <option value="no_fichado">No fichado</option>
+                    <option value="clase_cancelada">Cancelada</option>
+                    <option value="editado_admin">Editado</option>
                   </select>
                 </div>
                 <div className="flex items-end">
@@ -441,10 +457,24 @@ const FichajesAdminPage: React.FC = () => {
                                       ? 'bg-yellow-100 text-yellow-700'
                                       : f.estado === 'no_fichado'
                                         ? 'bg-red-100 text-red-700'
-                                        : 'bg-gray-100 text-gray-700'
+                                        : f.estado === 'clase_cancelada'
+                                          ? 'bg-purple-100 text-purple-700 line-through'
+                                          : f.estado === 'editado_admin'
+                                            ? 'bg-blue-100 text-blue-700'
+                                            : 'bg-gray-100 text-gray-700'
                                 }`}
                               >
-                                {f.estado}
+                                {f.estado === 'completado'
+                                  ? 'Completado'
+                                  : f.estado === 'entrada_registrada'
+                                    ? 'En curso'
+                                    : f.estado === 'no_fichado'
+                                      ? 'No fichado'
+                                      : f.estado === 'clase_cancelada'
+                                        ? 'Cancelada'
+                                        : f.estado === 'editado_admin'
+                                          ? 'Editado'
+                                          : 'Pendiente'}
                               </span>
                             </td>
                             <td className="px-4 py-3 text-sm text-gray-500">
