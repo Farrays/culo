@@ -334,6 +334,14 @@ const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000;
 const RATE_LIMIT_MAX = 3; // 3 reservas por minuto por IP (más estricto)
 
+// Circuit Breaker for Momence API
+// If Momence fails too many times, skip it and go directly to Customer Leads
+const CIRCUIT_BREAKER_KEY = 'momence:circuit:failures';
+const CIRCUIT_BREAKER_THRESHOLD = 3; // 3 failures to open circuit
+const CIRCUIT_BREAKER_WINDOW_SECONDS = 300; // 5 minute window
+const CIRCUIT_BREAKER_COOLDOWN_KEY = 'momence:circuit:cooldown';
+const CIRCUIT_BREAKER_COOLDOWN_SECONDS = 60; // 1 minute cooldown before retry
+
 // Lazy Redis
 let redisClient: Redis | null = null;
 
@@ -366,6 +374,69 @@ function isRateLimited(ip: string): boolean {
 
   record.count++;
   return false;
+}
+
+// ============================================================================
+// CIRCUIT BREAKER (Momence API resilience)
+// ============================================================================
+
+/**
+ * Check if Momence API circuit is open (too many failures)
+ * Returns true if we should skip Momence and go directly to Customer Leads
+ */
+async function isCircuitOpen(redis: Redis): Promise<boolean> {
+  try {
+    // Check if in cooldown (circuit was open, waiting to test)
+    const cooldown = await redis.get(CIRCUIT_BREAKER_COOLDOWN_KEY);
+    if (cooldown) {
+      // Still in cooldown - circuit is open
+      return true;
+    }
+
+    // Check failure count
+    const failures = parseInt((await redis.get(CIRCUIT_BREAKER_KEY)) || '0', 10);
+    return failures >= CIRCUIT_BREAKER_THRESHOLD;
+  } catch {
+    // If Redis fails, assume circuit is closed (try Momence)
+    return false;
+  }
+}
+
+/**
+ * Record a Momence API failure
+ * If threshold reached, opens circuit and sets cooldown
+ */
+async function recordMomenceFailure(redis: Redis): Promise<void> {
+  try {
+    const failures = await redis.incr(CIRCUIT_BREAKER_KEY);
+    if (failures === 1) {
+      // First failure, set expiry for the window
+      await redis.expire(CIRCUIT_BREAKER_KEY, CIRCUIT_BREAKER_WINDOW_SECONDS);
+    }
+
+    if (failures >= CIRCUIT_BREAKER_THRESHOLD) {
+      // Threshold reached - set cooldown period
+      await redis.setex(CIRCUIT_BREAKER_COOLDOWN_KEY, CIRCUIT_BREAKER_COOLDOWN_SECONDS, '1');
+      console.warn(
+        `[Circuit Breaker] 🔴 OPEN - Momence failed ${failures} times in ${CIRCUIT_BREAKER_WINDOW_SECONDS}s, cooling down for ${CIRCUIT_BREAKER_COOLDOWN_SECONDS}s`
+      );
+    }
+  } catch (e) {
+    console.warn('[Circuit Breaker] Failed to record failure:', e);
+  }
+}
+
+/**
+ * Record a Momence API success - resets circuit
+ */
+async function recordMomenceSuccess(redis: Redis): Promise<void> {
+  try {
+    // Clear failures and cooldown
+    await redis.del(CIRCUIT_BREAKER_KEY, CIRCUIT_BREAKER_COOLDOWN_KEY);
+    console.log('[Circuit Breaker] 🟢 CLOSED - Momence is healthy');
+  } catch (e) {
+    console.warn('[Circuit Breaker] Failed to record success:', e);
+  }
 }
 
 function isValidEmail(email: string): boolean {
@@ -1156,12 +1227,22 @@ export default async function handler(
     console.warn('[reservar] Starting booking process:', {
       hasSessionId: !!sessionId,
       sessionId,
-      email: normalizedEmail,
       className,
     });
 
-    if (sessionId) {
-      // Si tenemos sessionId, crear booking real
+    // Check circuit breaker before trying Momence
+    let circuitOpen = false;
+    if (redis && sessionId) {
+      circuitOpen = await isCircuitOpen(redis);
+      if (circuitOpen) {
+        console.warn(
+          '[reservar] ⚡ Circuit OPEN - skipping Momence, going directly to Customer Leads'
+        );
+      }
+    }
+
+    if (sessionId && !circuitOpen) {
+      // Si tenemos sessionId y circuit está cerrado, crear booking real
       const accessToken = await getAccessToken();
       console.warn('[reservar] Got access token:', !!accessToken);
 
@@ -1173,16 +1254,34 @@ export default async function handler(
           phone: sanitize(phone),
         });
         console.warn('[reservar] Momence booking result:', momenceResult);
+
+        // Update circuit breaker based on result
+        if (redis) {
+          if (momenceResult.success) {
+            await recordMomenceSuccess(redis);
+          } else {
+            await recordMomenceFailure(redis);
+          }
+        }
       } else {
         console.error('[reservar] Failed to get Momence access token - check OAuth credentials');
+        // Auth failure counts as Momence failure for circuit breaker
+        if (redis) {
+          await recordMomenceFailure(redis);
+        }
       }
-    } else {
+    } else if (!sessionId) {
       console.warn('[reservar] No sessionId provided, will use Customer Leads');
     }
 
-    // Si no hay sessionId o el booking falló, enviar a Customer Leads
+    // Si no hay sessionId, circuit está abierto, o el booking falló → Customer Leads
     if (!momenceResult.success) {
-      console.warn('[reservar] Booking failed or no sessionId, trying Customer Leads...');
+      const reason = circuitOpen
+        ? 'Circuit open (Momence unhealthy)'
+        : !sessionId
+          ? 'No sessionId'
+          : 'Momence booking failed';
+      console.warn(`[reservar] ${reason}, trying Customer Leads...`);
       console.warn('[reservar] Customer Leads env check:', {
         hasLeadsUrl: !!process.env['MOMENCE_API_URL'],
         hasToken: !!process.env['MOMENCE_TOKEN'],
