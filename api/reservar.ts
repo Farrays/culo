@@ -1269,8 +1269,8 @@ export default async function handler(
     }
 
     // Generar eventId único si no viene del frontend
-    const finalEventId =
-      eventId || `booking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Using crypto.randomUUID() for secure, non-guessable IDs (prevents enumeration attacks)
+    const finalEventId = eventId || `booking_${crypto.randomUUID()}`;
 
     // 1. Crear booking en Momence o enviar a Customer Leads
     let momenceResult: {

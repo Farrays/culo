@@ -132,11 +132,17 @@ interface WhatsAppApiResponse {
 // ============================================================================
 
 /**
- * Normaliza número de teléfono para WhatsApp
- * Elimina espacios, guiones y el + inicial
+ * Normaliza número de teléfono para WhatsApp (E.164 sin +)
+ * Añade código de país si es necesario (ES: 34, FR: 33)
  */
 function normalizePhone(phone: string): string {
-  return phone.replace(/[\s\-+]/g, '');
+  let cleaned = phone.replace(/[\s\-().]/g, '');
+  if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
+  // Spanish: 9 digits starting with 6,7,8,9
+  if (cleaned.length === 9 && /^[6789]/.test(cleaned)) cleaned = '34' + cleaned;
+  // French: 10 digits starting with 0
+  if (cleaned.length === 10 && cleaned.startsWith('0')) cleaned = '33' + cleaned.substring(1);
+  return cleaned;
 }
 
 /**

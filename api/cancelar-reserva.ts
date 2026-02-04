@@ -80,6 +80,44 @@ const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 
 // ============================================================================
+// TIMEZONE UTILITIES
+// ============================================================================
+
+/**
+ * Get Madrid timezone offset in hours for a given date
+ * Returns 1 for winter (CET) or 2 for summer (CEST)
+ *
+ * DST in Spain:
+ * - Starts: Last Sunday of March at 02:00 → 03:00
+ * - Ends: Last Sunday of October at 03:00 → 02:00
+ */
+function getMadridOffset(date: Date): number {
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth();
+  const day = date.getUTCDate();
+
+  // Find last Sunday of March
+  const marchLast = new Date(Date.UTC(year, 2, 31)); // March 31
+  const marchLastSunday = 31 - marchLast.getUTCDay();
+
+  // Find last Sunday of October
+  const octLast = new Date(Date.UTC(year, 9, 31)); // October 31
+  const octLastSunday = 31 - octLast.getUTCDay();
+
+  // Check if date is in DST (summer time)
+  // DST is active from last Sunday of March 02:00 UTC+1 (01:00 UTC)
+  // to last Sunday of October 03:00 UTC+2 (01:00 UTC)
+  const isDST =
+    (month > 2 && month < 9) || // April to September
+    (month === 2 && day > marchLastSunday) || // After last Sunday of March
+    (month === 2 && day === marchLastSunday && date.getUTCHours() >= 1) || // On last Sunday after 01:00 UTC
+    (month === 9 && day < octLastSunday) || // Before last Sunday of October
+    (month === 9 && day === octLastSunday && date.getUTCHours() < 1); // On last Sunday before 01:00 UTC
+
+  return isDST ? 2 : 1;
+}
+
+// ============================================================================
 // REDIS CLIENT
 // ============================================================================
 
@@ -363,7 +401,10 @@ function normalizePhoneNumber(phone: string): string {
   let cleaned = phone.replace(/[\s\-().]/g, '');
   if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
   if (cleaned.startsWith('00')) cleaned = cleaned.substring(2);
-  if (/^[67]\d{8}$/.test(cleaned)) cleaned = '34' + cleaned;
+  // Spanish: 9 digits starting with 6,7,8,9
+  if (cleaned.length === 9 && /^[6789]/.test(cleaned)) cleaned = '34' + cleaned;
+  // French: 10 digits starting with 0
+  if (cleaned.length === 10 && cleaned.startsWith('0')) cleaned = '33' + cleaned.substring(1);
   return cleaned;
 }
 
@@ -552,26 +593,32 @@ export default async function handler(
           timeMatch[1] &&
           timeMatch[2]
         ) {
-          const year = dateMatch[1];
-          const month = dateMatch[2];
-          const day = dateMatch[3];
-          const hours = timeMatch[1];
-          const minutes = timeMatch[2];
+          const year = parseInt(dateMatch[1], 10);
+          const month = parseInt(dateMatch[2], 10) - 1;
+          const day = parseInt(dateMatch[3], 10);
+          const hours = parseInt(timeMatch[1], 10);
+          const minutes = parseInt(timeMatch[2], 10);
 
-          // Create date in Spain timezone
-          const classDateTime = new Date(
-            parseInt(year, 10),
-            parseInt(month, 10) - 1,
-            parseInt(day, 10),
-            parseInt(hours, 10),
-            parseInt(minutes, 10)
-          );
+          // Create class datetime as ISO string in Madrid timezone, then parse
+          // Format: "2026-01-28T19:00:00+01:00" (winter) or "+02:00" (summer)
+          // We use a simplified approach: create the date and adjust for Madrid offset
+          const classDateTimeUTC = Date.UTC(year, month, day, hours, minutes, 0);
 
-          const now = new Date();
-          const hoursUntilClass = (classDateTime.getTime() - now.getTime()) / (1000 * 60 * 60);
+          // Get Madrid offset for this specific date (handles DST automatically)
+          // Madrid is UTC+1 in winter, UTC+2 in summer
+          const testDate = new Date(classDateTimeUTC);
+          const madridOffset = getMadridOffset(testDate);
+
+          // Class time is stored in Madrid local time, so we need to convert to UTC
+          // by subtracting the Madrid offset
+          const classDateTimeInUTC = classDateTimeUTC - madridOffset * 60 * 60 * 1000;
+
+          const now = Date.now();
+          const hoursUntilClass = (classDateTimeInUTC - now) / (1000 * 60 * 60);
 
           console.warn(
-            `[Cancel] Time check: class at ${classDateTime.toISOString()}, now ${now.toISOString()}, hours until: ${hoursUntilClass.toFixed(2)}`
+            `[Cancel] Time check: class at ${new Date(classDateTimeInUTC).toISOString()} (Madrid: ${hours}:${String(minutes).padStart(2, '0')}), ` +
+              `now ${new Date(now).toISOString()}, hours until: ${hoursUntilClass.toFixed(2)}, Madrid offset: UTC+${madridOffset}`
           );
 
           if (hoursUntilClass < MIN_HOURS_BEFORE_CANCELLATION && hoursUntilClass > -24) {

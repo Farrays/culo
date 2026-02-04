@@ -513,7 +513,10 @@ function normalizePhoneNumber(phone: string): string {
   let cleaned = phone.replace(/[\s\-().]/g, '');
   if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
   if (cleaned.startsWith('00')) cleaned = cleaned.substring(2);
-  if (/^[67]\d{8}$/.test(cleaned)) cleaned = '34' + cleaned;
+  // Spanish: 9 digits starting with 6,7,8,9
+  if (cleaned.length === 9 && /^[6789]/.test(cleaned)) cleaned = '34' + cleaned;
+  // French: 10 digits starting with 0
+  if (cleaned.length === 10 && cleaned.startsWith('0')) cleaned = '33' + cleaned.substring(1);
   return cleaned;
 }
 

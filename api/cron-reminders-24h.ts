@@ -216,8 +216,16 @@ export default async function handler(
   const errors: string[] = [];
 
   try {
-    // Escanear todas las reservas
-    const bookingKeys = await redis.keys('booking:*');
+    // Escanear todas las reservas usando SCAN (más eficiente que KEYS para datasets grandes)
+    // SCAN es non-blocking y devuelve resultados en batches
+    const bookingKeys: string[] = [];
+    let cursor = '0';
+    do {
+      const [newCursor, keys] = await redis.scan(cursor, 'MATCH', 'booking:*', 'COUNT', 100);
+      cursor = newCursor;
+      bookingKeys.push(...keys);
+    } while (cursor !== '0');
+
     console.warn(`[Reminders24h] Found ${bookingKeys.length} bookings to check`);
 
     for (const key of bookingKeys) {
