@@ -133,25 +133,28 @@ async function getMomenceToken(): Promise<string> {
 async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   const token = await getMomenceToken();
 
-  // Get today's date range in Spain timezone
+  // Get today's sessions - use same approach as clases.ts
+  // Start from beginning of today (UTC) and end at end of today (UTC)
   const now = new Date();
-  const spainFormatter = new Intl.DateTimeFormat('sv-SE', {
-    timeZone: SPAIN_TIMEZONE,
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  });
-  const todayStr = spainFormatter.format(now);
 
-  // Start of today and end of today in ISO format
-  const startAfter = `${todayStr}T00:00:00.000Z`;
-  const startBefore = `${todayStr}T23:59:59.999Z`;
+  // Create start of day (00:00:00 today in UTC)
+  const startOfDay = new Date(now);
+  startOfDay.setUTCHours(0, 0, 0, 0);
+
+  // Create end of day (23:59:59 today in UTC)
+  const endOfDay = new Date(now);
+  endOfDay.setUTCHours(23, 59, 59, 999);
+
+  // Use toISOString() like clases.ts does
+  const startAfter = startOfDay.toISOString();
+  const startBefore = endOfDay.toISOString();
 
   const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
   url.searchParams.set('startAfter', startAfter);
   url.searchParams.set('startBefore', startBefore);
   url.searchParams.set('pageSize', '100');
   url.searchParams.set('sortBy', 'startsAt');
+  url.searchParams.set('sortOrder', 'ASC');
 
   const response = await fetch(url.toString(), {
     headers: {

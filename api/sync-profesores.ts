@@ -75,15 +75,19 @@ async function getMomenceInstructors(): Promise<Map<string, MomenceTeacher>> {
   const token = await getMomenceToken();
 
   // Get sessions for the next 30 days to capture all active instructors
-  const startDate = new Date();
-  const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 30);
+  const now = new Date();
+  const futureLimit = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+
+  // Use toISOString() like clases.ts does
+  const startAfter = now.toISOString();
+  const startBefore = futureLimit.toISOString();
 
   const url = new URL('https://api.momence.com/api/v2/host/sessions');
-  url.searchParams.set('startAfter', startDate.toISOString());
-  url.searchParams.set('startBefore', endDate.toISOString());
+  url.searchParams.set('startAfter', startAfter);
+  url.searchParams.set('startBefore', startBefore);
   url.searchParams.set('pageSize', '100');
   url.searchParams.set('sortBy', 'startsAt');
+  url.searchParams.set('sortOrder', 'ASC');
 
   const res = await fetch(url.toString(), {
     headers: { Authorization: `Bearer ${token}` },
