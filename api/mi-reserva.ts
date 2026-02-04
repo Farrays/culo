@@ -85,6 +85,36 @@ function formatDateSpanish(isoDate: string): string {
   return `${day} de ${month} de ${year}`;
 }
 
+// Rate limiting constants
+const RATE_LIMIT_WINDOW_SECONDS = 60; // 1 minute window
+const RATE_LIMIT_MAX_REQUESTS = 20; // 20 requests per minute per IP (viewing booking)
+const RATE_LIMIT_MAX_FAILURES = 5; // 5 failed lookups per minute per IP (brute-force detection)
+
+/**
+ * Check and increment rate limit using Redis
+ * Returns true if rate limited, false if allowed
+ */
+async function checkRateLimit(
+  redis: Redis,
+  ip: string,
+  type: 'requests' | 'failures'
+): Promise<{ limited: boolean; current: number; max: number }> {
+  const key = `ratelimit:mi-reserva:${type}:${ip}`;
+  const max = type === 'requests' ? RATE_LIMIT_MAX_REQUESTS : RATE_LIMIT_MAX_FAILURES;
+
+  try {
+    const current = await redis.incr(key);
+    if (current === 1) {
+      // First request, set expiry
+      await redis.expire(key, RATE_LIMIT_WINDOW_SECONDS);
+    }
+    return { limited: current > max, current, max };
+  } catch {
+    // If Redis fails, allow the request (fail open)
+    return { limited: false, current: 0, max };
+  }
+}
+
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -121,6 +151,45 @@ export default async function handler(
   }
 
   const redis = getRedisClient();
+
+  // Get client IP for rate limiting
+  const forwardedFor = req.headers['x-forwarded-for'];
+  const realIp = req.headers['x-real-ip'];
+  const clientIp =
+    (typeof forwardedFor === 'string' ? forwardedFor.split(',')[0]?.trim() : forwardedFor?.[0]) ||
+    (typeof realIp === 'string' ? realIp : realIp?.[0]) ||
+    'unknown';
+
+  // Check rate limit (requests per minute)
+  if (redis) {
+    const rateCheck = await checkRateLimit(redis, clientIp, 'requests');
+    if (rateCheck.limited) {
+      console.warn(
+        `[mi-reserva] Rate limited IP: ${clientIp} (${rateCheck.current}/${rateCheck.max})`
+      );
+      return res.status(429).json({
+        success: false,
+        error: 'Too many requests',
+        message: 'Demasiadas solicitudes. Por favor espera un momento.',
+        retryAfter: RATE_LIMIT_WINDOW_SECONDS,
+      });
+    }
+
+    // Check if this IP has too many failed lookups (brute-force protection)
+    const failureKey = `ratelimit:mi-reserva:failures:${clientIp}`;
+    const currentFailures = parseInt((await redis.get(failureKey)) || '0', 10);
+    if (currentFailures >= RATE_LIMIT_MAX_FAILURES) {
+      console.warn(
+        `[mi-reserva] 🚫 Blocked IP due to too many failures: ${clientIp} (${currentFailures} failures)`
+      );
+      return res.status(429).json({
+        success: false,
+        error: 'Too many failed attempts',
+        message: 'Demasiados intentos fallidos. Por favor espera un momento.',
+        retryAfter: RATE_LIMIT_WINDOW_SECONDS,
+      });
+    }
+  }
   if (!redis) {
     console.error('[mi-reserva] Redis not configured');
     return res.status(500).json({
@@ -134,6 +203,13 @@ export default async function handler(
     const bookingDataStr = await redis.get(`booking_details:${eventId}`);
 
     if (!bookingDataStr) {
+      // Track failed lookup (potential brute-force)
+      const failCheck = await checkRateLimit(redis, clientIp, 'failures');
+      if (failCheck.limited) {
+        console.warn(
+          `[mi-reserva] ⚠️ Brute-force detected from IP: ${clientIp} (${failCheck.current} failures)`
+        );
+      }
       return res.status(404).json({
         success: false,
         error: 'Booking not found',
@@ -145,6 +221,13 @@ export default async function handler(
 
     // Verificar que el email coincide (seguridad)
     if (booking.email.toLowerCase() !== email.toLowerCase()) {
+      // Track failed lookup (potential brute-force - found booking but wrong email)
+      const failCheck = await checkRateLimit(redis, clientIp, 'failures');
+      if (failCheck.limited) {
+        console.warn(
+          `[mi-reserva] ⚠️ Email enumeration detected from IP: ${clientIp} (${failCheck.current} failures)`
+        );
+      }
       return res.status(404).json({
         success: false,
         error: 'Booking mismatch',
