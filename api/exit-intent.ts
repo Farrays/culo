@@ -1,6 +1,14 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { kv } from '@vercel/kv';
 
+/** Redact email for GDPR-compliant logging */
+function redactEmail(email: string | null | undefined): string {
+  if (!email) return 'N/A';
+  const [local, domain] = email.split('@');
+  if (!local || !domain) return '***@invalid';
+  return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
 /**
  * API Route: /api/exit-intent
  *
@@ -174,7 +182,7 @@ export default async function handler(
         },
         { ex: EXIT_INTENT_TTL_SECONDS }
       );
-      console.warn(`Exit intent guardado en KV: ${normalizedEmail} (TTL: 90 días)`);
+      console.warn(`Exit intent guardado en KV: ${redactEmail(normalizedEmail)} (TTL: 90 días)`);
     } catch (kvError) {
       console.warn('KV save failed for exit-intent:', kvError);
     }

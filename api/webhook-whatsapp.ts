@@ -9,6 +9,26 @@ import Redis from 'ioredis';
 
 type AttendanceStatus = 'pending' | 'confirmed' | 'not_attending' | 'cancelled' | 'cancelled_late';
 
+// ============================================================================
+// PII REDACTION (GDPR-compliant logging)
+// ============================================================================
+
+/** Redact phone for logging: "+34612345678" → "+346***78" */
+function redactPhone(phone: string | null | undefined): string {
+  if (!phone) return 'N/A';
+  const cleaned = phone.replace(/\s/g, '');
+  if (cleaned.length < 6) return '***';
+  return `${cleaned.slice(0, 4)}***${cleaned.slice(-2)}`;
+}
+
+/** Redact email for logging */
+function redactEmail(email: string | null | undefined): string {
+  if (!email) return 'N/A';
+  const [local, domain] = email.split('@');
+  if (!local || !domain) return '***@invalid';
+  return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
 const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
 const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
 
@@ -520,7 +540,9 @@ async function processMessage(
   const phone = message.from;
   const contactName = contact?.profile?.name || 'Usuario';
 
-  console.log(`[webhook-whatsapp] Message from ${phone} (${contactName}): type=${message.type}`);
+  console.log(
+    `[webhook-whatsapp] Message from ${redactPhone(phone)} (${contactName}): type=${message.type}`
+  );
 
   // Procesar quick reply buttons
   if (message.type === 'button' && message.button) {
@@ -656,7 +678,7 @@ async function handleAttendanceConfirmation(
     );
 
     if (!booking) {
-      console.warn(`[webhook-whatsapp] No booking found for phone ${phone}`);
+      console.warn(`[webhook-whatsapp] No booking found for phone ${redactPhone(phone)}`);
       // Enviar mensaje de error amigable
       await sendTextMessage(
         phone,
@@ -719,7 +741,7 @@ async function handleAttendanceConfirmation(
       // Eliminar deduplicación para que pueda reservar otro día
       const normalizedEmail = booking.email.toLowerCase();
       await redis.del(`booking:${normalizedEmail}`);
-      console.log(`[webhook-whatsapp] Deduplication removed for ${normalizedEmail}`);
+      console.log(`[webhook-whatsapp] Deduplication removed for ${redactEmail(normalizedEmail)}`);
 
       // Eliminar del índice de teléfono
       const normalizedPhone = phone.replace(/[\s\-+]/g, '');
@@ -847,10 +869,12 @@ function isClassDateValid(classDate: string): boolean {
 async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingDetails | null> {
   // Normalizar teléfono
   const normalizedPhone = phone.replace(/[\s\-+]/g, '');
-  console.log(`[webhook-whatsapp] findBookingByPhone: normalized phone = ${normalizedPhone}`);
+  console.log(
+    `[webhook-whatsapp] findBookingByPhone: normalized phone = ${redactPhone(normalizedPhone)}`
+  );
 
   // Buscar en índice de teléfonos (creado en reservar.ts en STORAGE_REDIS_URL)
-  console.log(`[webhook-whatsapp] Checking phone index: phone:${normalizedPhone}`);
+  console.log(`[webhook-whatsapp] Checking phone index: phone:${redactPhone(normalizedPhone)}`);
   let eventId: string | null = null;
   try {
     const result = await redis.get(`phone:${normalizedPhone}`);
