@@ -99,6 +99,30 @@ export const AUTHOR_ALEJANDRO_MINOSO: AuthorConfig = {
 };
 
 /**
+ * Marcos Martínez - Urban Dance & Hip-Hop Expert
+ *
+ * Guest author for urban dance and hip-hop articles.
+ * 20+ years teaching hip-hop old school, new style, popping and locking.
+ */
+export const AUTHOR_MARCOS_MARTINEZ: AuthorConfig = {
+  id: 'marcos-martinez',
+  name: 'Marcos Martínez',
+  roleKey: 'blog_authorRoleMarcos',
+  bioKey: 'blog_authorBioMarcos',
+  image: '/images/teachers/img/profesor-marcos-martinez_320.webp',
+  imageSrcSet:
+    '/images/teachers/img/profesor-marcos-martinez_320.webp 320w, /images/teachers/img/profesor-marcos-martinez_640.webp 640w',
+  profileUrl: '/es/profesores-baile-barcelona',
+  credentials: [
+    'blog_credential_hipHopOldSchool',
+    'blog_credential_poppingLocking',
+    'blog_credential_20anosExperiencia',
+    'blog_credential_juezCompeticiones',
+  ],
+  sameAs: [],
+};
+
+/**
  * Default author for all blog articles
  */
 export const DEFAULT_AUTHOR = AUTHOR_YUNAISY;

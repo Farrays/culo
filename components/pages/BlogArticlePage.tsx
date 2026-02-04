@@ -25,6 +25,7 @@ import { BAILE_SALUD_MENTAL_CONFIG } from '../../constants/blog/articles/baile-s
 import { ACADEMIA_DANZA_BARCELONA_CONFIG } from '../../constants/blog/articles/academia-de-danza-barcelona';
 import { BALLET_ADULTOS_BARCELONA_CONFIG } from '../../constants/blog/articles/ballet-para-adultos-barcelona';
 import { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from '../../constants/blog/articles/danza-contemporanea-vs-modern-jazz-vs-ballet';
+import { DANZAS_URBANAS_BARCELONA_CONFIG } from '../../constants/blog/articles/danzas-urbanas-barcelona';
 
 // Map of slug -> config for all articles
 const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
@@ -40,6 +41,7 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
   'academia-de-danza-barcelona-guia-completa': ACADEMIA_DANZA_BARCELONA_CONFIG,
   'ballet-para-adultos-barcelona': BALLET_ADULTOS_BARCELONA_CONFIG,
   'danza-contemporanea-vs-modern-jazz-vs-ballet': DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG,
+  'danzas-urbanas-barcelona-guia-completa': DANZAS_URBANAS_BARCELONA_CONFIG,
 };
 
 const BlogArticlePage: React.FC = () => {
