@@ -5,12 +5,12 @@ import {
   getHoraAhoraEspana,
   type Profesor,
   type ConfiguracionFichaje,
-} from './lib/supabase';
+} from './lib/supabase.js';
 import {
   sendFichajeEntradaWhatsApp,
   sendFichajeSalidaWhatsApp,
   isWhatsAppConfigured,
-} from './lib/whatsapp';
+} from './lib/whatsapp.js';
 
 /**
  * API Route: /api/cron-fichaje
