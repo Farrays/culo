@@ -62,7 +62,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   return (
     <nav
       aria-label="Breadcrumb"
-      className={className}
+      className={`${className} hidden md:block`}
       itemScope
       itemType="https://schema.org/BreadcrumbList"
     >
