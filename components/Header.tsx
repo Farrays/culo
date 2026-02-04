@@ -398,6 +398,14 @@ const Header: React.FC = () => {
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
                       {t('navFAQ')}
                     </Link>
+                    <Link
+                      to={`/${locale}/como-llegar-escuela-baile-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-white/80 hover:bg-primary-accent/20 hover:text-white transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/60" />
+                      {t('sitemapUbicacion')}
+                    </Link>
                   </div>
                 )}
               </div>

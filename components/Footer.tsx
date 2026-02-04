@@ -303,6 +303,10 @@ const Footer: React.FC = () => {
                 to={`/${locale}/instalaciones-escuela-baile-barcelona`}
                 textKey="sitemapInstalaciones"
               />
+              <FooterLink
+                to={`/${locale}/como-llegar-escuela-baile-barcelona`}
+                textKey="sitemapUbicacion"
+              />
               <FooterLink to={`/${locale}/yunaisy-farray`} textKey="sitemapYunaisy" />
               <FooterLink to={`/${locale}/blog`} textKey="sitemapBlog" />
               <FooterLink to={`/${locale}/calendario`} textKey="sitemapCalendar" />

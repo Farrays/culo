@@ -92,10 +92,10 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
   };
 
   // Schema.org structured data
-  // Only generate Event schema if date is present (required by Google)
-  // For Course schema, date is optional
-  const shouldGenerateSchema =
-    novedad.schema === 'Course' || (novedad.schema === 'Event' && novedad.date);
+  // Only generate schema for explicitly defined schema types (Course, DanceEvent, etc.)
+  // Generic 'event' type novedades (like "Inscripciones Abiertas") should NOT generate Event schema
+  // as they are not real events with performers, offers, etc.
+  const shouldGenerateSchema = novedad.schema === 'Course' || novedad.schema === 'DanceEvent';
 
   const schemaData = shouldGenerateSchema
     ? {
@@ -144,8 +144,10 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
         aria-setsize={total}
         aria-posinset={index + 1}
         aria-label={`${t(novedad.titleKey)}${novedad.date ? `, ${formatDate(novedad.date, locale)}` : ''}`}
-        itemScope
-        itemType={`https://schema.org/${novedad.schema || 'Event'}`}
+        {...(shouldGenerateSchema && {
+          itemScope: true,
+          itemType: `https://schema.org/${novedad.schema}`,
+        })}
       >
         {/* Schema.org JSON-LD */}
         {schemaData && (
@@ -186,7 +188,7 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
                 <time
                   dateTime={novedad.date}
                   className="text-sm font-bold text-white"
-                  itemProp="startDate"
+                  {...(shouldGenerateSchema && { itemProp: 'startDate' })}
                 >
                   {formatDateRange(novedad.date, novedad.endDate, locale)}
                 </time>
@@ -209,7 +211,7 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
             {/* Title */}
             <h3
               className="text-xl font-bold text-white mb-2 line-clamp-2 group-hover:text-primary-accent transition-colors duration-300"
-              itemProp="name"
+              {...(shouldGenerateSchema && { itemProp: 'name' })}
             >
               {t(novedad.titleKey)}
             </h3>
@@ -225,9 +227,11 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
             {novedad.location && (
               <p
                 className="text-neutral/70 text-sm mb-3 flex items-center gap-1.5"
-                itemProp="location"
-                itemScope
-                itemType="https://schema.org/Place"
+                {...(shouldGenerateSchema && {
+                  itemProp: 'location',
+                  itemScope: true,
+                  itemType: 'https://schema.org/Place',
+                })}
               >
                 <svg
                   className="w-4 h-4 text-primary-accent flex-shrink-0"
@@ -248,8 +252,10 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span itemProp="name">{novedad.location.room || novedad.location.name}</span>
-                {novedad.location.geo && (
+                <span {...(shouldGenerateSchema && { itemProp: 'name' })}>
+                  {novedad.location.room || novedad.location.name}
+                </span>
+                {shouldGenerateSchema && novedad.location.geo && (
                   <>
                     <meta itemProp="latitude" content={String(novedad.location.geo.lat)} />
                     <meta itemProp="longitude" content={String(novedad.location.geo.lng)} />

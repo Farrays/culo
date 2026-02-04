@@ -433,6 +433,19 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                   <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
                   {t('navFAQ')}
                 </Link>
+
+                <Link
+                  to={`/${locale}/como-llegar-escuela-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center gap-2 py-2.5 px-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                    location.pathname === `/${locale}/como-llegar-escuela-baile-barcelona`
+                      ? 'text-primary-accent bg-primary-accent/10'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
+                  {t('sitemapUbicacion')}
+                </Link>
               </div>
             )}
           </div>
