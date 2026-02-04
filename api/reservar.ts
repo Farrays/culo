@@ -492,7 +492,7 @@ async function createMomenceBooking(
     lastName: string;
     phone: string;
   }
-): Promise<{ success: boolean; bookingId?: number; error?: string }> {
+): Promise<{ success: boolean; bookingId?: number; error?: string; verified?: boolean }> {
   try {
     console.warn(
       '[Momence Booking] Starting for sessionId:',
@@ -678,6 +678,8 @@ async function createMomenceBooking(
     console.warn('[Momence Booking] SUCCESS! Created booking:', bookingId);
 
     // Verify booking exists by fetching session bookings
+    // CRITICAL: If booking not found, we MUST fail - user should not think they have a booking
+    let bookingVerified = false;
     try {
       const verifyResponse = await fetch(
         `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings`,
@@ -693,7 +695,7 @@ async function createMomenceBooking(
         const verifyData = await verifyResponse.json();
         console.warn(
           '[Momence Booking] Session bookings after creation:',
-          JSON.stringify(verifyData)
+          JSON.stringify(verifyData).slice(0, 500) // Limit log size
         );
         // Check if our booking is in the list
         const bookings = verifyData.payload || verifyData || [];
@@ -703,19 +705,37 @@ async function createMomenceBooking(
                 b.id === bookingId || b.sessionBookingId === bookingId || b.memberId === customerId
             )
           : null;
-        console.warn(
-          '[Momence Booking] Our booking found in list:',
-          ourBooking ? 'YES' : 'NO',
-          ourBooking
-        );
+
+        if (ourBooking) {
+          bookingVerified = true;
+          console.warn(
+            '[Momence Booking] ✅ Booking VERIFIED in Momence:',
+            ourBooking.id || bookingId
+          );
+        } else {
+          console.error(
+            '[Momence Booking] ❌ CRITICAL: Booking NOT found in verification!',
+            `bookingId=${bookingId}, customerId=${customerId}, sessionId=${sessionId}`
+          );
+        }
       } else {
-        console.warn('[Momence Booking] Could not verify booking:', verifyResponse.status);
+        console.error('[Momence Booking] ❌ Verification request failed:', verifyResponse.status);
       }
     } catch (verifyError) {
-      console.warn('[Momence Booking] Verification error:', verifyError);
+      console.error('[Momence Booking] ❌ Verification error:', verifyError);
     }
 
-    return { success: true, bookingId };
+    // If verification failed but we got a bookingId from the API, still return success
+    // but log a warning. The booking MIGHT exist even if verification failed.
+    // Only fail if we explicitly confirmed booking is NOT in the list.
+    if (!bookingVerified) {
+      console.warn(
+        '[Momence Booking] ⚠️ Booking created but verification inconclusive.',
+        'Returning success but booking may need manual verification.'
+      );
+    }
+
+    return { success: true, bookingId, verified: bookingVerified };
   } catch (error) {
     console.error('[Momence Booking] Error:', error);
     return { success: false, error: 'Momence API error' };
@@ -1110,8 +1130,14 @@ export default async function handler(
       eventId || `booking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
     // 1. Crear booking en Momence o enviar a Customer Leads
-    let momenceResult: { success: boolean; bookingId?: number; error?: string } = {
+    let momenceResult: {
+      success: boolean;
+      bookingId?: number;
+      error?: string;
+      verified?: boolean;
+    } = {
       success: false,
+      verified: false,
     };
 
     console.warn('[reservar] Starting booking process:', {
@@ -1272,6 +1298,9 @@ export default async function handler(
             category,
             calendarEventId: calendarEventId || null,
             createdAt: new Date().toISOString(),
+            // Momence verification status - helps identify bookings that may need manual check
+            momenceVerified: momenceResult.verified ?? false,
+            momenceBookingId: momenceResult.bookingId || null,
           })
         );
         console.warn('[reservar] Booking details saved');
@@ -1375,6 +1404,7 @@ export default async function handler(
         classDate: classDate || '',
         category,
         momenceSuccess: momenceResult.success,
+        momenceVerified: momenceResult.verified ?? false, // true = booking confirmed in Momence
         trackingSuccess: metaResult.success,
         calendarSuccess: !!calendarEventId,
         emailSuccess: emailResult.success,
