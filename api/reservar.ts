@@ -501,47 +501,17 @@ async function createMomenceBooking(
       customerData.email
     );
 
-    // Get hostLocationId from environment variable or use hardcoded fallback
-    let hostLocationId: number | null = null;
-
-    // Farray's Center location ID in Momence (from dashboard URL: /locations/26485)
+    // Get hostLocationId from env variable or use hardcoded fallback
+    // NOTE: Farray's Center only has ONE location (26485), so no need for complex logic
     const FARRAY_LOCATION_ID = 26485;
-
-    // First check environment variable, then use hardcoded fallback
     const envLocationId = process.env['MOMENCE_LOCATION_ID'];
-    if (envLocationId) {
-      hostLocationId = parseInt(envLocationId, 10);
-      console.warn('[Momence Booking] Using MOMENCE_LOCATION_ID from env:', hostLocationId);
-    } else {
-      hostLocationId = FARRAY_LOCATION_ID;
-      console.warn('[Momence Booking] Using hardcoded location ID:', hostLocationId);
-    }
+    const hostLocationId = envLocationId ? parseInt(envLocationId, 10) : FARRAY_LOCATION_ID;
 
-    // If not in env, try to get it from the session
-    if (!hostLocationId) {
-      try {
-        const sessionResponse = await fetch(
-          `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`,
-          {
-            method: 'GET',
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-              'Content-Type': 'application/json',
-            },
-          }
-        );
-        if (sessionResponse.ok) {
-          const sessionData = await sessionResponse.json();
-          console.warn('[Momence Booking] Session data:', JSON.stringify(sessionData));
-          // Try different field names
-          const session = sessionData.payload || sessionData;
-          hostLocationId = session.hostLocationId || session.locationId || session.location?.id;
-          console.warn('[Momence Booking] hostLocationId from session:', hostLocationId);
-        }
-      } catch (err) {
-        console.warn('[Momence Booking] Could not fetch session details:', err);
-      }
-    }
+    console.warn(
+      '[Momence Booking] Location ID:',
+      hostLocationId,
+      envLocationId ? '(from env)' : '(hardcoded fallback)'
+    );
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
