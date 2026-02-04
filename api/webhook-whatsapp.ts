@@ -25,7 +25,7 @@ function redactPhone(phone: string | null | undefined): string {
 function redactEmail(email: string | null | undefined): string {
   if (!email) return 'N/A';
   const [local, domain] = email.split('@');
-  if (!domain) return '***@invalid';
+  if (!local || !domain) return '***@invalid';
   return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
 }
 
