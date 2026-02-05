@@ -118,6 +118,16 @@
       "permanent": true
     },
     {
+      "source": "/:locale(es|ca|en|fr)/blog/lifestyle/historia-salsa-barcelona",
+      "destination": "/:locale/blog/historia/historia-salsa-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/lifestyle/historia-bachata-barcelona",
+      "destination": "/:locale/blog/historia/historia-bachata-barcelona",
+      "permanent": true
+    },
+    {
       "source": "/:locale(es|ca|en|fr)/blog/clases/:slug*",
       "destination": "/:locale/blog/lifestyle/:slug*",
       "permanent": true
