@@ -39,6 +39,31 @@ export default async function handler(
       });
     }
 
+    // Si action=bookings, lista todas las reservas
+    if (action === 'bookings') {
+      const bookingKeys = await redis.keys('booking:*');
+      return res.status(200).json({
+        success: true,
+        count: bookingKeys.length,
+        bookings: bookingKeys.map(k => k.replace('booking:', '')),
+      });
+    }
+
+    // Si action=delete-booking&email=xxx, elimina una reserva específica
+    if (action === 'delete-booking') {
+      const email = req.query['email'] as string;
+      if (!email) {
+        return res.status(400).json({ success: false, error: 'Missing email parameter' });
+      }
+      const key = `booking:${email.toLowerCase()}`;
+      const deleted = await redis.del(key);
+      return res.status(200).json({
+        success: true,
+        deleted: deleted > 0,
+        key,
+      });
+    }
+
     // Por defecto, muestra las keys de momence
     const momenceToken = await redis.get('momence:access_token');
     const sessionsCache = await redis.get('momence:sessions:cache:28');
