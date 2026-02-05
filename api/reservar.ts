@@ -385,6 +385,14 @@ const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000;
 const RATE_LIMIT_MAX = 3; // 3 reservas por minuto por IP (más estricto)
 
+// Emails que bypasan la deduplicación (admin/testing)
+// Estos emails pueden hacer reservas múltiples sin ser bloqueados
+const DEDUP_BYPASS_EMAILS = new Set([
+  'annafarrays@gmail.com',
+  'fabiopinto1984@gmail.com',
+  'farrayyunaisy@gmail.com',
+]);
+
 // Circuit Breaker for Momence API
 // If Momence fails too many times, skip it and go directly to Customer Leads
 const CIRCUIT_BREAKER_KEY = 'momence:circuit:failures';
@@ -1287,9 +1295,14 @@ export default async function handler(
     const normalizedEmail = sanitize(email).toLowerCase();
     const bookingKey = `${BOOKING_KEY_PREFIX}${normalizedEmail}`;
 
-    // Deduplicación con Redis
+    // Deduplicación con Redis (skip para emails de admin/testing)
     const redis = getRedisClient();
-    if (redis) {
+    const bypassDedup = DEDUP_BYPASS_EMAILS.has(normalizedEmail);
+    if (bypassDedup) {
+      console.log(`[reservar] Bypass dedup for admin email: ${redactEmail(normalizedEmail)}`);
+    }
+
+    if (redis && !bypassDedup) {
       try {
         const existing = await redis.get(bookingKey);
         if (existing) {

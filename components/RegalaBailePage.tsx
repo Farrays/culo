@@ -207,7 +207,7 @@ const RegalaBailePage: React.FC = () => {
                 {/* Hero CTA */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
-                    href="https://farrayscenter.momence.com/m/230682"
+                    href="https://momence.com/gcc/36148"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-accent-glow animate-glow min-w-[280px]"
@@ -442,7 +442,7 @@ const RegalaBailePage: React.FC = () => {
             <AnimateOnScroll delay={200}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="https://farrayscenter.momence.com/m/230682"
+                  href="https://momence.com/gcc/36148"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-accent-glow animate-glow min-w-[280px]"
