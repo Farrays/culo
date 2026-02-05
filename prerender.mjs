@@ -147,6 +147,8 @@ const OG_IMAGE_MAP = {
   classesHub: 'og-classes.jpg',
   classes: 'og-classes.jpg',
   horariosPrecio: 'og-horarios-clases-baile.jpg',
+  horariosClases: 'og-horarios-clases-baile.jpg',
+  preciosClases: 'og-horarios-clases-baile.jpg',
 
   // === Páginas de información ===
   about: 'og-home.jpg', // Usa home como fallback
@@ -418,8 +420,8 @@ const routes = [
   { path: 'es/calendario', lang: 'es', page: 'calendario' },
   // URL aliases (same content, different URL for SEO)
   { path: 'es/instalaciones-escuela-baile-barcelona', lang: 'es', page: 'facilities' },
-  { path: 'es/horarios-clases-baile-barcelona', lang: 'es', page: 'horariosPrecio' },
-  { path: 'es/precios-clases-baile-barcelona', lang: 'es', page: 'horariosPrecio' },
+  { path: 'es/horarios-clases-baile-barcelona', lang: 'es', page: 'horariosClases' },
+  { path: 'es/precios-clases-baile-barcelona', lang: 'es', page: 'preciosClases' },
   // 404 page
   { path: 'es/404', lang: 'es', page: 'notFound' },
 
@@ -495,8 +497,8 @@ const routes = [
   { path: 'ca/calendario', lang: 'ca', page: 'calendario' },
   // URL aliases (same content, different URL for SEO)
   { path: 'ca/instalaciones-escuela-baile-barcelona', lang: 'ca', page: 'facilities' },
-  { path: 'ca/horarios-clases-baile-barcelona', lang: 'ca', page: 'horariosPrecio' },
-  { path: 'ca/precios-clases-baile-barcelona', lang: 'ca', page: 'horariosPrecio' },
+  { path: 'ca/horarios-clases-baile-barcelona', lang: 'ca', page: 'horariosClases' },
+  { path: 'ca/precios-clases-baile-barcelona', lang: 'ca', page: 'preciosClases' },
   // 404 page
   { path: 'ca/404', lang: 'ca', page: 'notFound' },
 
@@ -572,8 +574,8 @@ const routes = [
   { path: 'en/calendario', lang: 'en', page: 'calendario' },
   // URL aliases (same content, different URL for SEO)
   { path: 'en/instalaciones-escuela-baile-barcelona', lang: 'en', page: 'facilities' },
-  { path: 'en/horarios-clases-baile-barcelona', lang: 'en', page: 'horariosPrecio' },
-  { path: 'en/precios-clases-baile-barcelona', lang: 'en', page: 'horariosPrecio' },
+  { path: 'en/horarios-clases-baile-barcelona', lang: 'en', page: 'horariosClases' },
+  { path: 'en/precios-clases-baile-barcelona', lang: 'en', page: 'preciosClases' },
   // 404 page
   { path: 'en/404', lang: 'en', page: 'notFound' },
 
@@ -649,8 +651,8 @@ const routes = [
   { path: 'fr/calendario', lang: 'fr', page: 'calendario' },
   // URL aliases (same content, different URL for SEO)
   { path: 'fr/instalaciones-escuela-baile-barcelona', lang: 'fr', page: 'facilities' },
-  { path: 'fr/horarios-clases-baile-barcelona', lang: 'fr', page: 'horariosPrecio' },
-  { path: 'fr/precios-clases-baile-barcelona', lang: 'fr', page: 'horariosPrecio' },
+  { path: 'fr/horarios-clases-baile-barcelona', lang: 'fr', page: 'horariosClases' },
+  { path: 'fr/precios-clases-baile-barcelona', lang: 'fr', page: 'preciosClases' },
   // 404 page
   { path: 'fr/404', lang: 'fr', page: 'notFound' },
 
@@ -766,6 +768,14 @@ const metadata = {
       title: 'Horarios y Precios | Clases de Baile Barcelona | Farray\'s Center',
       description: 'Consulta los horarios y precios de nuestras clases de baile en Barcelona. Bonos mensuales, clases sueltas y packs especiales. Escuela cerca Plaza España.',
       robots: 'noindex, nofollow',
+    },
+    horariosClases: {
+      title: 'Horarios Clases de Baile Barcelona 2026 | Farray\'s Center',
+      description: 'Horarios actualizados de clases de baile en Barcelona. Mañanas, tardes y fines de semana. Salsa, Bachata, Hip Hop, Dancehall y +40 estilos. Plaza España.',
+    },
+    preciosClases: {
+      title: 'Precios Clases de Baile Barcelona | Bonos y Tarifas | Farray\'s Center',
+      description: 'Precios y tarifas de clases de baile en Barcelona. Bonos mensuales desde 45€, clases sueltas y packs. Primera clase de prueba. Farray\'s Center Plaza España.',
     },
     danza: {
       title: 'Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray\'s Center',
@@ -1129,6 +1139,14 @@ const metadata = {
       description: 'Consulta els horaris i preus de les nostres classes de ball a Barcelona. Bonos mensuals, classes soltes i packs especials. Escola a prop de Plaça Espanya.',
       robots: 'noindex, nofollow',
     },
+    horariosClases: {
+      title: 'Horaris Classes de Ball Barcelona 2026 | Farray\'s Center',
+      description: 'Horaris actualitzats de classes de ball a Barcelona. Matins, tardes i caps de setmana. Salsa, Bachata, Hip Hop, Dancehall i +40 estils. Plaça Espanya.',
+    },
+    preciosClases: {
+      title: 'Preus Classes de Ball Barcelona | Bonos i Tarifes | Farray\'s Center',
+      description: 'Preus i tarifes de classes de ball a Barcelona. Bonos mensuals des de 45€, classes soltes i packs. Primera classe de prova. Farray\'s Center Plaça Espanya.',
+    },
     danza: {
       title: 'Classes de Dansa a Barcelona | Ballet, Contemporani i Jazz | Farray\'s Center',
       description: 'Classes de dansa a Barcelona: Ballet Cubà, Dansa Contemporània, Modern Jazz, Afro Jazz i més. Acadèmia acreditada CID-UNESCO. Tots els nivells. Reserva classe!',
@@ -1491,6 +1509,14 @@ const metadata = {
       description: 'Check our dance class schedules and prices in Barcelona. Monthly passes, single classes and special packs. School near Plaza España.',
       robots: 'noindex, nofollow',
     },
+    horariosClases: {
+      title: 'Dance Class Schedule Barcelona 2026 | Farray\'s Center',
+      description: 'Updated dance class schedules in Barcelona. Mornings, evenings and weekends. Salsa, Bachata, Hip Hop, Dancehall and +40 styles. Plaza España.',
+    },
+    preciosClases: {
+      title: 'Dance Class Prices Barcelona | Passes & Rates | Farray\'s Center',
+      description: 'Dance class prices and rates in Barcelona. Monthly passes from €45, single classes and packs. First trial class available. Farray\'s Center Plaza España.',
+    },
     danza: {
       title: 'Dance Classes in Barcelona | Ballet, Contemporary & Jazz | Farray\'s Center',
       description: 'Dance classes Barcelona: Cuban Ballet, Contemporary, Modern Jazz, Afro Jazz. CID-UNESCO accredited academy. +40 styles. Book your class!',
@@ -1852,6 +1878,14 @@ const metadata = {
       title: 'Horaires et Tarifs | Cours de Danse Barcelone | Farray\'s Center',
       description: 'Consultez les horaires et tarifs de nos cours de danse à Barcelone. Abonnements mensuels, cours à l\'unité et packs spéciaux. École près Plaza España.',
       robots: 'noindex, nofollow',
+    },
+    horariosClases: {
+      title: 'Horaires Cours de Danse Barcelone 2026 | Farray\'s Center',
+      description: 'Horaires actualisés des cours de danse à Barcelone. Matins, après-midis et week-ends. Salsa, Bachata, Hip Hop, Dancehall et +40 styles. Plaza España.',
+    },
+    preciosClases: {
+      title: 'Tarifs Cours de Danse Barcelone | Abonnements et Prix | Farray\'s Center',
+      description: 'Tarifs et prix des cours de danse à Barcelone. Abonnements mensuels dès 45€, cours à l\'unité et packs. Premier cours d\'essai. Farray\'s Center Plaza España.',
     },
     danza: {
       title: 'Cours de Danse à Barcelone | Ballet, Contemporain et Jazz | Farray\'s Center',
