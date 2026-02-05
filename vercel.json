@@ -93,6 +93,86 @@
       "permanent": true
     },
     {
+      "source": "/yunaisy-farray",
+      "destination": "/es/yunaisy-farray",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/glosario",
+      "destination": "/:locale",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/clases/afro-jazz-barcelona",
+      "destination": "/:locale/clases/afro-jazz",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/lifestyle/baile-salud-mental",
+      "destination": "/:locale/blog/fitness/baile-salud-mental",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/lifestyle/salsa-ritmo-conquisto-mundo",
+      "destination": "/:locale/blog/tutoriales/salsa-ritmo-conquisto-mundo",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/:slug*",
+      "destination": "/:locale/blog/lifestyle/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/tips/salsa-vs-bachata-que-estilo-elegir",
+      "destination": "/:locale/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir",
+      "permanent": true
+    },
+    {
+      "source": "/home/:path*",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/sem",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/alta/:path*",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/producto/:path*",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/que-quieres-hacer/:path*",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/14871-2/:path*",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/classes/:slug/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/:slug/:path*",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
       "source": "/classes",
       "destination": "/es/clases/baile-barcelona",
       "permanent": true
