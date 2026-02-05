@@ -198,12 +198,17 @@ async function cancelMomenceBooking(
   bookingId: number
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    console.warn('[Momence Cancel] Cancelling booking:', bookingId);
+    console.warn('[Momence Cancel] Cancelling session-booking:', bookingId);
     const response = await fetchWithTimeout(
-      `${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`,
+      `${MOMENCE_API_URL}/api/v2/host/session-bookings/${bookingId}`,
       {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          refund: false,
+          disableNotifications: true,
+          isLateCancellation: false,
+        }),
       }
     );
 
