@@ -33,7 +33,6 @@ import {
 
 const MOMENCE_API_URL = 'https://api.momence.com';
 const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
-const MOMENCE_BUSINESS_SLUG = "Farray's-International-Dance-Center";
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 
 // ============================================================================
@@ -132,12 +131,18 @@ async function getMomenceToken(): Promise<string> {
 
 async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   const token = await getMomenceToken();
-  const today = getFechaHoyEspana();
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const tomorrowStr = tomorrow.toISOString().split('T')[0];
+  const today = getFechaHoyEspana(); // YYYY-MM-DD en timezone España
 
-  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?businessSlug=${encodeURIComponent(MOMENCE_BUSINESS_SLUG)}&startDate=${today}&endDate=${tomorrowStr}`;
+  // Calcular mañana en timezone España
+  const todayDate = new Date(`${today}T00:00:00+01:00`); // España UTC+1 (o +2 en verano)
+  const tomorrowDate = new Date(todayDate);
+  tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+  const tomorrowStr = tomorrowDate.toISOString().split('T')[0];
+
+  // Momence API v2 requiere: page, pageSize, y usa startAfter/startBefore para filtrar
+  // startAfter: devuelve sesiones que EMPIEZAN después de esta fecha
+  // startBefore: devuelve sesiones que EMPIEZAN antes de esta fecha
+  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?page=0&pageSize=200&startAfter=${today}T00:00:00&startBefore=${tomorrowStr}T00:00:00`;
 
   const response = await fetch(url, {
     headers: {
@@ -146,11 +151,14 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   });
 
   if (!response.ok) {
+    const errorText = await response.text();
+    console.error(`[cron-fichaje] Momence API error: ${response.status}`, errorText);
     throw new Error(`Momence sessions fetch failed: ${response.status}`);
   }
 
   const data = await response.json();
-  return data.sessions || [];
+  // La respuesta puede ser un array directo o { sessions: [...] }
+  return Array.isArray(data) ? data : data.sessions || data.data || [];
 }
 
 // ============================================================================
