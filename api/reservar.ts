@@ -335,6 +335,7 @@ async function sendAdminBookingNotification(data: {
   classTime: string;
   category?: ClassCategory;
   sourceUrl?: string;
+  eventId?: string;
 }): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env['RESEND_API_KEY'];
   if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
@@ -391,6 +392,13 @@ async function sendAdminBookingNotification(data: {
   ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
 
   <div style="text-align: center; margin-top: 20px;">
+    ${
+      data.eventId
+        ? `<a href="https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(data.email)}&event=${data.eventId}" style="display: inline-block; background: ${BRAND_PRIMARY}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+      Gestionar Reserva
+    </a>`
+        : ''
+    }
     <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
       Contactar por WhatsApp
     </a>
@@ -2142,6 +2150,7 @@ export default async function handler(
         classTime: classTime || '19:00',
         category,
         sourceUrl: req.headers.referer || req.headers.origin || undefined,
+        eventId: finalEventId,
       });
 
       if (adminResult.success) {
