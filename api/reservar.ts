@@ -1,13 +1,13 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
-// Email functions - using static imports (dynamic imports cause Vercel bundler issues)
+// Email functions - using static imports with .js extension (ESM requires explicit extensions)
 import {
   sendBookingConfirmation,
   sendAdminBookingNotification,
   sendSystemAlert,
-} from './lib/email';
-import { validateEmail } from './lib/email-validation';
+} from './lib/email.js';
+import { validateEmail } from './lib/email-validation.js';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
