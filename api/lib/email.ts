@@ -1111,9 +1111,16 @@ export async function sendFeedbackEmail(
 // ============================================================================
 
 /**
- * Email address del admin para notificaciones de reservas
+ * Email addresses del admin para notificaciones de reservas
+ * Se puede configurar via env var ADMIN_NOTIFICATION_EMAILS (comma-separated)
+ * Default: info@farrayscenter.com
  */
-const ADMIN_EMAIL = 'info@farrayscenter.com';
+const ADMIN_EMAIL = process.env['ADMIN_NOTIFICATION_EMAILS'] || 'info@farrayscenter.com';
+
+// Parse multiple emails if comma-separated
+const ADMIN_EMAILS = ADMIN_EMAIL.split(',')
+  .map(e => e.trim())
+  .filter(Boolean);
 
 /**
  * Datos necesarios para notificar al admin de una nueva reserva
@@ -1143,13 +1150,18 @@ export async function sendAdminBookingNotification(
 ): Promise<{ success: boolean; id?: string; error?: string }> {
   const resend = getResend();
 
+  // Log attempt for debugging
+  console.log('[email] Attempting admin notification to:', ADMIN_EMAILS);
+
   try {
+    // Don't use replyTo with potentially fake/invalid emails - can cause deliverability issues
+    // Instead, include the email in the body where admin can copy it
     const result = await resend.emails.send({
       from: FROM_EMAIL,
-      to: ADMIN_EMAIL,
-      replyTo: data.email, // El admin puede responder directamente al cliente
+      to: ADMIN_EMAILS, // Supports multiple emails
+      // replyTo removed - fake emails in replyTo can cause spam/rejection issues
       headers: EMAIL_HEADERS,
-      subject: `🎉 Nueva reserva: ${data.firstName} ${data.lastName} - ${data.className}`,
+      subject: `Nueva reserva: ${data.firstName} ${data.lastName} - ${data.className}`,
       html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="background: ${BRAND_GRADIENT}; color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
@@ -1208,14 +1220,26 @@ export async function sendAdminBookingNotification(
     });
 
     if (result.error) {
-      console.warn('[email] Admin notification failed:', result.error.message);
+      console.error('[email] ❌ Admin notification RESEND ERROR:', {
+        error: result.error.message,
+        name: result.error.name,
+        to: ADMIN_EMAILS,
+        from: FROM_EMAIL,
+      });
       return { success: false, error: result.error.message };
     }
 
-    console.log('[email] Admin notification sent:', result.data?.id);
+    console.log('[email] ✅ Admin notification sent successfully:', {
+      id: result.data?.id,
+      to: ADMIN_EMAILS,
+      subject: `Nueva reserva: ${data.firstName} - ${data.className}`,
+    });
     return { success: true, id: result.data?.id };
   } catch (error) {
-    console.error('[email] Error sending admin notification:', error);
+    console.error('[email] ❌ Admin notification EXCEPTION:', {
+      error: error instanceof Error ? error.message : String(error),
+      stack: error instanceof Error ? error.stack : undefined,
+    });
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error',
