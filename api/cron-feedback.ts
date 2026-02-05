@@ -106,6 +106,31 @@ export default async function handler(
     return res.status(500).json({ error: 'Redis not configured' });
   }
 
+  // Distributed lock to prevent concurrent executions
+  const LOCK_KEY = 'cron:lock:feedback';
+  const LOCK_TTL_SECONDS = 300; // 5 minutes max execution time
+
+  try {
+    const lockAcquired = await redis.set(
+      LOCK_KEY,
+      Date.now().toString(),
+      'EX',
+      LOCK_TTL_SECONDS,
+      'NX'
+    );
+
+    if (!lockAcquired) {
+      console.warn('[cron-feedback] Another instance is already running, skipping');
+      return res.status(200).json({
+        success: true,
+        skipped: true,
+        reason: 'Another instance is already running',
+      });
+    }
+  } catch (lockError) {
+    console.error('[cron-feedback] Failed to acquire lock:', lockError);
+  }
+
   try {
     const now = new Date();
     const todayISO = getDateInTimezone(now, SPAIN_TIMEZONE);
@@ -216,6 +241,9 @@ export default async function handler(
       `[cron-feedback] Completed: ${processed} sent, ${skipped} skipped, ${results.length} processed`
     );
 
+    // Release lock before returning
+    await redis.del(LOCK_KEY).catch(() => {});
+
     return res.status(200).json({
       success: true,
       timestamp: now.toISOString(),
@@ -226,6 +254,10 @@ export default async function handler(
     });
   } catch (error) {
     console.error('[cron-feedback] Error:', error);
+
+    // Release lock on error
+    await redis.del(LOCK_KEY).catch(() => {});
+
     return res.status(500).json({
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error',

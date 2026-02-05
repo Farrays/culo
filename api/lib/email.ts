@@ -87,6 +87,95 @@ function getResend(): Resend {
 }
 
 // ============================================================================
+// EMAIL RETRY QUEUE (Redis-based)
+// ============================================================================
+
+const EMAIL_RETRY_QUEUE_KEY = 'email:retry:queue';
+const EMAIL_RETRY_TTL_SECONDS = 24 * 60 * 60; // 24 hours
+
+interface QueuedEmail {
+  type: 'booking_confirmation' | 'reminder' | 'cancellation' | 'feedback';
+  data: Record<string, unknown>;
+  attempts: number;
+  createdAt: number;
+  lastError?: string;
+}
+
+/**
+ * Queue a failed email for retry
+ * Emails are stored in Redis and auto-expire after 24 hours
+ */
+export async function queueEmailForRetry(
+  type: QueuedEmail['type'],
+  data: Record<string, unknown>,
+  error: string
+): Promise<void> {
+  try {
+    const Redis = (await import('ioredis')).default;
+    const redisUrl = process.env['STORAGE_REDIS_URL'];
+    if (!redisUrl) {
+      console.warn('[EmailRetry] Redis not configured, cannot queue email');
+      return;
+    }
+
+    const redis = new Redis(redisUrl, { maxRetriesPerRequest: 1, connectTimeout: 3000 });
+
+    const queuedEmail: QueuedEmail = {
+      type,
+      data,
+      attempts: 1,
+      createdAt: Date.now(),
+      lastError: error,
+    };
+
+    // Use email + timestamp as unique key
+    const emailKey = `${EMAIL_RETRY_QUEUE_KEY}:${Date.now()}:${Math.random().toString(36).slice(2)}`;
+    await redis.setex(emailKey, EMAIL_RETRY_TTL_SECONDS, JSON.stringify(queuedEmail));
+
+    console.warn(`[EmailRetry] Queued ${type} email for retry:`, {
+      to: (data as { to?: string }).to,
+      error,
+    });
+
+    await redis.quit();
+  } catch (e) {
+    console.error('[EmailRetry] Failed to queue email:', e);
+  }
+}
+
+/**
+ * Get count of emails pending retry
+ */
+export async function getRetryQueueCount(): Promise<number> {
+  try {
+    const Redis = (await import('ioredis')).default;
+    const redisUrl = process.env['STORAGE_REDIS_URL'];
+    if (!redisUrl) return 0;
+
+    const redis = new Redis(redisUrl, { maxRetriesPerRequest: 1, connectTimeout: 3000 });
+
+    let count = 0;
+    let cursor = '0';
+    do {
+      const [newCursor, keys] = await redis.scan(
+        cursor,
+        'MATCH',
+        `${EMAIL_RETRY_QUEUE_KEY}:*`,
+        'COUNT',
+        100
+      );
+      cursor = newCursor;
+      count += keys.length;
+    } while (cursor !== '0');
+
+    await redis.quit();
+    return count;
+  } catch {
+    return 0;
+  }
+}
+
+// ============================================================================
 // TIPOS
 // ============================================================================
 
@@ -766,15 +855,28 @@ export async function sendBookingConfirmation(
     });
 
     if (result.error) {
+      // Queue for retry on API error
+      queueEmailForRetry(
+        'booking_confirmation',
+        data as unknown as Record<string, unknown>,
+        result.error.message
+      ).catch(() => {});
       return { success: false, error: result.error.message };
     }
 
     return { success: true, id: result.data?.id };
   } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Unknown error';
     console.error('Error sending booking confirmation email:', error);
+    // Queue for retry on exception
+    queueEmailForRetry(
+      'booking_confirmation',
+      data as unknown as Record<string, unknown>,
+      errorMsg
+    ).catch(() => {});
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: errorMsg,
     };
   }
 }

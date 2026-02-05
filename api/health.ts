@@ -57,6 +57,9 @@ interface HealthResponse {
     resend: HealthCheck;
     momenceApi: HealthCheck;
   };
+  queues: {
+    emailRetryPending: number;
+  };
   timestamp: string;
   environment: string;
 }
@@ -150,6 +153,27 @@ export default async function handler(
     configured: hasMomenceOAuth || hasMomenceLeads,
   };
 
+  // 5. Check email retry queue
+  let emailRetryPending = 0;
+  if (redis && checks.redis.status !== 'error') {
+    try {
+      let cursor = '0';
+      do {
+        const [newCursor, keys] = await redis.scan(
+          cursor,
+          'MATCH',
+          'email:retry:queue:*',
+          'COUNT',
+          100
+        );
+        cursor = newCursor;
+        emailRetryPending += keys.length;
+      } while (cursor !== '0');
+    } catch {
+      // Non-critical, ignore errors
+    }
+  }
+
   // Determine overall status
   const checkValues = Object.values(checks);
   let overallStatus: HealthResponse['status'] = 'healthy';
@@ -168,6 +192,9 @@ export default async function handler(
   const response: HealthResponse = {
     status: overallStatus,
     checks,
+    queues: {
+      emailRetryPending,
+    },
     timestamp: new Date().toISOString(),
     environment: process.env['VERCEL_ENV'] || 'development',
   };

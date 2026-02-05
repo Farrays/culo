@@ -513,7 +513,10 @@ function normalizePhoneNumber(phone: string): string {
   let cleaned = phone.replace(/[\s\-().]/g, '');
   if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
   if (cleaned.startsWith('00')) cleaned = cleaned.substring(2);
-  if (/^[67]\d{8}$/.test(cleaned)) cleaned = '34' + cleaned;
+  // Spanish: 9 digits starting with 6,7,8,9
+  if (cleaned.length === 9 && /^[6789]/.test(cleaned)) cleaned = '34' + cleaned;
+  // French: 10 digits starting with 0
+  if (cleaned.length === 10 && cleaned.startsWith('0')) cleaned = '33' + cleaned.substring(1);
   return cleaned;
 }
 
@@ -735,6 +738,35 @@ export default async function handler(
     return res.status(500).json({ error: 'Redis not configured' });
   }
 
+  // Distributed lock to prevent concurrent executions
+  const LOCK_KEY = 'cron:lock:reminders';
+  const LOCK_TTL_SECONDS = 300; // 5 minutes max execution time
+
+  try {
+    // Try to acquire lock (SETNX pattern)
+    const lockAcquired = await redis.set(
+      LOCK_KEY,
+      Date.now().toString(),
+      'EX',
+      LOCK_TTL_SECONDS,
+      'NX'
+    );
+
+    if (!lockAcquired) {
+      console.warn('[cron-reminders] Another instance is already running, skipping');
+      return res.status(200).json({
+        success: true,
+        skipped: true,
+        reason: 'Another instance is already running',
+      });
+    }
+
+    console.log('[cron-reminders] Lock acquired, starting execution');
+  } catch (lockError) {
+    console.error('[cron-reminders] Failed to acquire lock:', lockError);
+    // Continue anyway if lock check fails
+  }
+
   try {
     const now = new Date();
     const results = {
@@ -758,11 +790,18 @@ export default async function handler(
     const totalSent = results.results48h.length + results.results24h.length;
     console.log(`[cron-reminders] Completed. Total reminders processed: ${totalSent}`);
 
+    // Release lock before returning
+    await redis.del(LOCK_KEY).catch(() => {});
+
     return res
       .status(200)
       .json({ success: true, message: `Processed ${totalSent} reminders`, data: results });
   } catch (error) {
     console.error('[cron-reminders] Error:', error);
+
+    // Release lock on error
+    await redis.del(LOCK_KEY).catch(() => {});
+
     return res.status(500).json({
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error',

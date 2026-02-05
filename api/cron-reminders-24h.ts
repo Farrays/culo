@@ -212,12 +212,49 @@ export default async function handler(
     return res.status(500).json({ error: 'Redis not configured' });
   }
 
+  // Distributed lock to prevent concurrent executions
+  const LOCK_KEY = 'cron:lock:reminders-24h';
+  const LOCK_TTL_SECONDS = 300; // 5 minutes max execution time
+
+  try {
+    // Try to acquire lock (SETNX pattern)
+    const lockAcquired = await redis.set(
+      LOCK_KEY,
+      Date.now().toString(),
+      'EX',
+      LOCK_TTL_SECONDS,
+      'NX'
+    );
+
+    if (!lockAcquired) {
+      console.warn('[Reminders24h] Another instance is already running, skipping');
+      return res.status(200).json({
+        success: true,
+        skipped: true,
+        reason: 'Another instance is already running',
+      });
+    }
+
+    console.warn('[Reminders24h] Lock acquired, starting execution');
+  } catch (lockError) {
+    console.error('[Reminders24h] Failed to acquire lock:', lockError);
+    // Continue anyway if lock check fails - better to risk duplicates than skip entirely
+  }
+
   const results: ReminderResult[] = [];
   const errors: string[] = [];
 
   try {
-    // Escanear todas las reservas
-    const bookingKeys = await redis.keys('booking:*');
+    // Escanear todas las reservas usando SCAN (más eficiente que KEYS para datasets grandes)
+    // SCAN es non-blocking y devuelve resultados en batches
+    const bookingKeys: string[] = [];
+    let cursor = '0';
+    do {
+      const [newCursor, keys] = await redis.scan(cursor, 'MATCH', 'booking:*', 'COUNT', 100);
+      cursor = newCursor;
+      bookingKeys.push(...keys);
+    } while (cursor !== '0');
+
     console.warn(`[Reminders24h] Found ${bookingKeys.length} bookings to check`);
 
     for (const key of bookingKeys) {
@@ -310,6 +347,9 @@ export default async function handler(
       }
     }
 
+    // Release lock before returning
+    await redis.del(LOCK_KEY).catch(() => {});
+
     return res.status(200).json({
       success: true,
       message: `Processed ${bookingKeys.length} bookings`,
@@ -319,6 +359,10 @@ export default async function handler(
     });
   } catch (error) {
     console.error('[Reminders24h] Error:', error);
+
+    // Release lock on error
+    await redis.del(LOCK_KEY).catch(() => {});
+
     return res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error',

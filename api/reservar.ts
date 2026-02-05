@@ -30,6 +30,37 @@ function redactPhone(phone: string | null | undefined): string {
 }
 
 // ============================================================================
+// FETCH WITH TIMEOUT (prevent hanging requests)
+// ============================================================================
+
+const DEFAULT_FETCH_TIMEOUT_MS = 8000; // 8 seconds (Vercel has 10s limit)
+
+/**
+ * Fetch with automatic timeout to prevent hanging requests
+ * @param url - URL to fetch
+ * @param options - Fetch options
+ * @param timeoutMs - Timeout in milliseconds (default 8000)
+ */
+async function fetchWithTimeout(
+  url: string,
+  options: Record<string, unknown> = {},
+  timeoutMs: number = DEFAULT_FETCH_TIMEOUT_MS
+): Promise<globalThis.Response> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    } as globalThis.RequestInit);
+    return response;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+// ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
 // ============================================================================
 
@@ -68,7 +99,7 @@ async function getCalendarAccessToken(): Promise<string | null> {
   }
 
   try {
-    const response = await fetch(CALENDAR_TOKEN_URL, {
+    const response = await fetchWithTimeout(CALENDAR_TOKEN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -207,7 +238,7 @@ async function createBookingEvent(
       },
     };
 
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events?sendUpdates=none`,
       {
         method: 'POST',
@@ -272,7 +303,7 @@ async function sendBookingConfirmationWhatsApp(data: {
   const normalizedPhone = data.to.replace(/[\s\-+]/g, '');
 
   try {
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneId}/messages`,
       {
         method: 'POST',
@@ -557,7 +588,7 @@ async function getAccessToken(): Promise<string | null> {
   const basicAuth = Buffer.from(`${MOMENCE_CLIENT_ID}:${MOMENCE_CLIENT_SECRET}`).toString('base64');
 
   try {
-    const response = await fetch(MOMENCE_AUTH_URL, {
+    const response = await fetchWithTimeout(MOMENCE_AUTH_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -623,7 +654,7 @@ async function createMomenceBooking(
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
-    const memberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
+    const memberResponse = await fetchWithTimeout(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -672,20 +703,23 @@ async function createMomenceBooking(
         return { success: false, error: 'Missing hostLocationId for member creation' };
       }
       console.warn('[Momence Booking] Creating new member with homeLocationId:', hostLocationId);
-      const createMemberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: customerData.email,
-          firstName: customerData.firstName,
-          lastName: customerData.lastName,
-          phoneNumber: formatPhoneForMomence(customerData.phone),
-          homeLocationId: hostLocationId,
-        }),
-      });
+      const createMemberResponse = await fetchWithTimeout(
+        `${MOMENCE_API_URL}/api/v2/host/members`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: customerData.email,
+            firstName: customerData.firstName,
+            lastName: customerData.lastName,
+            phoneNumber: formatPhoneForMomence(customerData.phone),
+            homeLocationId: hostLocationId,
+          }),
+        }
+      );
 
       if (createMemberResponse.ok) {
         const newMember = await createMemberResponse.json();
@@ -718,7 +752,7 @@ async function createMomenceBooking(
       'sessionId:',
       sessionId
     );
-    const bookingResponse = await fetch(
+    const bookingResponse = await fetchWithTimeout(
       `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings/free`,
       {
         method: 'POST',
@@ -759,7 +793,7 @@ async function createMomenceBooking(
     // CRITICAL: If booking not found, we MUST fail - user should not think they have a booking
     let bookingVerified = false;
     try {
-      const verifyResponse = await fetch(
+      const verifyResponse = await fetchWithTimeout(
         `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings`,
         {
           method: 'GET',
@@ -993,13 +1027,13 @@ async function sendToCustomerLeads(data: {
   estilo?: string; // Estilo normalizado (legacy, como fallback)
   date?: string;
   comoconoce?: string;
-}): Promise<{ success: boolean }> {
+}): Promise<{ success: boolean; error?: string }> {
   const MOMENCE_LEADS_URL = process.env['MOMENCE_API_URL'];
   const MOMENCE_TOKEN = process.env['MOMENCE_TOKEN'];
 
   if (!MOMENCE_LEADS_URL || !MOMENCE_TOKEN) {
     console.error('Missing Customer Leads credentials');
-    return { success: false };
+    return { success: false, error: 'Missing Customer Leads credentials' };
   }
 
   try {
@@ -1019,7 +1053,7 @@ async function sendToCustomerLeads(data: {
     console.warn('[Customer Leads] Sending to:', MOMENCE_LEADS_URL);
     console.warn('[Customer Leads] Payload:', { ...payload, token: '[REDACTED]' });
 
-    const response = await fetch(MOMENCE_LEADS_URL, {
+    const response = await fetchWithTimeout(MOMENCE_LEADS_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1031,10 +1065,13 @@ async function sendToCustomerLeads(data: {
     console.warn('[Customer Leads] Response status:', response.status);
     console.warn('[Customer Leads] Response body:', responseText);
 
-    return { success: response.ok };
+    return {
+      success: response.ok,
+      error: response.ok ? undefined : `HTTP ${response.status}: ${responseText.slice(0, 100)}`,
+    };
   } catch (error) {
     console.error('[Customer Leads] Error:', error);
-    return { success: false };
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 }
 
@@ -1096,7 +1133,7 @@ async function sendMetaConversionEvent(data: {
   };
 
   try {
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${META_CAPI_URL}/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
       {
         method: 'POST',
@@ -1178,8 +1215,73 @@ export default async function handler(
       return res.status(400).json({ error: 'Email no válido' });
     }
 
+    // Enhanced email validation: check for disposable emails and MX records
+    try {
+      const { validateEmail } = await import('./lib/email-validation');
+      const emailValidation = await validateEmail(email, {
+        checkMx: true,
+        blockDisposable: true,
+        checkSuspicious: false, // Don't block, just warn
+      });
+
+      if (!emailValidation.valid) {
+        const errorMessages: Record<string, string> = {
+          invalid_format: 'El formato del email no es válido',
+          disposable_email: 'No se permiten emails temporales. Por favor usa tu email personal.',
+          no_mx_records:
+            'El dominio del email no puede recibir correos. Verifica que sea correcto.',
+          invalid_domain: 'El dominio del email no existe',
+        };
+
+        console.warn(`[reservar] Email validation failed: ${emailValidation.reason}`, {
+          email: redactEmail(email),
+          reason: emailValidation.reason,
+          details: emailValidation.details,
+        });
+
+        return res.status(400).json({
+          error: errorMessages[emailValidation.reason || 'invalid_format'] || 'Email no válido',
+          code: emailValidation.reason,
+        });
+      }
+    } catch (validationError) {
+      // If validation fails (e.g., DNS timeout), log but don't block the user
+      console.warn('[reservar] Email validation error (non-blocking):', validationError);
+    }
+
     if (!isValidPhone(phone)) {
       return res.status(400).json({ error: 'Teléfono no válido' });
+    }
+
+    // Validate classDate if provided (not in past, not more than 1 year future)
+    if (classDate) {
+      const dateMatch = classDate.match(/(\d{4})-(\d{2})-(\d{2})/);
+      if (dateMatch && dateMatch[1] && dateMatch[2] && dateMatch[3]) {
+        const bookingDate = new Date(
+          parseInt(dateMatch[1], 10),
+          parseInt(dateMatch[2], 10) - 1,
+          parseInt(dateMatch[3], 10)
+        );
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const oneYearFromNow = new Date(today);
+        oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+
+        if (bookingDate < today) {
+          return res.status(400).json({
+            error: 'Fecha no válida',
+            message: 'La fecha de la clase no puede ser en el pasado',
+          });
+        }
+
+        if (bookingDate > oneYearFromNow) {
+          return res.status(400).json({
+            error: 'Fecha no válida',
+            message: 'La fecha de la clase no puede ser más de un año en el futuro',
+          });
+        }
+      }
     }
 
     const normalizedEmail = sanitize(email).toLowerCase();
@@ -1201,11 +1303,45 @@ export default async function handler(
       } catch (e) {
         console.warn('Redis lookup failed:', e);
       }
+
+      // Check for potential duplicate by phone (same phone, different email)
+      // This helps detect users creating multiple accounts
+      try {
+        const phoneForCheck = normalizePhone(phone);
+        if (phoneForCheck) {
+          const existingEmailForPhone = await redis.get(`phone_email:${phoneForCheck}`);
+          if (existingEmailForPhone && existingEmailForPhone !== normalizedEmail) {
+            console.warn(
+              `[reservar] ⚠️ Duplicate phone detected: ${redactPhone(phone)} used with different email`
+            );
+            // Send alert to admin (non-blocking)
+            try {
+              const { sendSystemAlert } = await import('./lib/email');
+              sendSystemAlert({
+                type: 'DUPLICATE_PHONE',
+                message: `El mismo teléfono se está usando con diferentes emails. Posible usuario duplicado.`,
+                details: {
+                  phone: redactPhone(phone),
+                  newEmail: redactEmail(normalizedEmail),
+                  existingEmail: redactEmail(existingEmailForPhone),
+                  className: className || estilo,
+                },
+                severity: 'warning',
+              }).catch(() => {});
+            } catch {
+              // Alert is non-critical
+            }
+            // Note: We still allow the booking to proceed
+          }
+        }
+      } catch (e) {
+        console.warn('[reservar] Phone duplicate check failed (non-blocking):', e);
+      }
     }
 
     // Generar eventId único si no viene del frontend
-    const finalEventId =
-      eventId || `booking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Using crypto.randomUUID() for secure, non-guessable IDs (prevents enumeration attacks)
+    const finalEventId = eventId || `booking_${crypto.randomUUID()}`;
 
     // 1. Crear booking en Momence o enviar a Customer Leads
     let momenceResult: {
@@ -1235,13 +1371,43 @@ export default async function handler(
       }
     }
 
-    if (sessionId && !circuitOpen) {
+    // Validate sessionId format if provided
+    // Use a new variable since sessionId is const from destructuring
+    let validatedSessionId: string | undefined = sessionId;
+    if (validatedSessionId) {
+      const parsedSessionId = parseInt(validatedSessionId, 10);
+      if (isNaN(parsedSessionId) || parsedSessionId <= 0) {
+        console.warn(`[reservar] ⚠️ Invalid sessionId format: ${validatedSessionId}`);
+
+        // Send alert for invalid sessionId (might indicate frontend bug or manipulation)
+        try {
+          const { sendSystemAlert } = await import('./lib/email');
+          sendSystemAlert({
+            type: 'INVALID_SESSION_ID',
+            message: `Se recibió un sessionId inválido: "${validatedSessionId}". Esto puede indicar un problema en el frontend o manipulación.`,
+            details: {
+              sessionId: validatedSessionId,
+              className: className || estilo,
+              email: redactEmail(normalizedEmail),
+            },
+            severity: 'warning',
+          }).catch(() => {});
+        } catch {
+          // Alert is non-critical
+        }
+
+        // Clear sessionId to fall back to Customer Leads
+        validatedSessionId = undefined;
+      }
+    }
+
+    if (validatedSessionId && !circuitOpen) {
       // Si tenemos sessionId y circuit está cerrado, crear booking real
       const accessToken = await getAccessToken();
       console.warn('[reservar] Got access token:', !!accessToken);
 
       if (accessToken) {
-        momenceResult = await createMomenceBooking(accessToken, parseInt(sessionId), {
+        momenceResult = await createMomenceBooking(accessToken, parseInt(validatedSessionId), {
           email: normalizedEmail,
           firstName: sanitize(firstName),
           lastName: sanitize(lastName),
@@ -1256,6 +1422,25 @@ export default async function handler(
           } else {
             await recordMomenceFailure(redis);
           }
+
+          // Record audit event for Momence attempt
+          try {
+            const { recordAuditEvent } = await import('./lib/audit');
+            await recordAuditEvent(redis, {
+              action: momenceResult.success ? 'booking_confirmed' : 'booking_failed',
+              channel: 'momence_api',
+              eventId: finalEventId,
+              email: redactEmail(normalizedEmail),
+              phone: redactPhone(phone),
+              className: className || estilo,
+              classDate,
+              success: momenceResult.success,
+              errorMessage: momenceResult.error,
+              metadata: { bookingId: momenceResult.bookingId },
+            });
+          } catch {
+            // Audit is non-critical
+          }
         }
       } else {
         console.error('[reservar] Failed to get Momence access token - check OAuth credentials');
@@ -1264,7 +1449,7 @@ export default async function handler(
           await recordMomenceFailure(redis);
         }
       }
-    } else if (!sessionId) {
+    } else if (!validatedSessionId) {
       console.warn('[reservar] No sessionId provided, will use Customer Leads');
     }
 
@@ -1272,7 +1457,7 @@ export default async function handler(
     if (!momenceResult.success) {
       const reason = circuitOpen
         ? 'Circuit open (Momence unhealthy)'
-        : !sessionId
+        : !validatedSessionId
           ? 'No sessionId'
           : 'Momence booking failed';
       console.warn(`[reservar] ${reason}, trying Customer Leads...`);
@@ -1293,6 +1478,58 @@ export default async function handler(
       });
       console.warn('[reservar] Customer Leads result:', leadsResult);
       momenceResult = { success: leadsResult.success };
+
+      // Record audit event for Customer Leads attempt
+      if (redis) {
+        try {
+          const { recordAuditEvent } = await import('./lib/audit');
+          await recordAuditEvent(redis, {
+            action: leadsResult.success ? 'booking_confirmed' : 'booking_failed',
+            channel: 'customer_leads',
+            eventId: finalEventId,
+            email: redactEmail(normalizedEmail),
+            phone: redactPhone(phone),
+            className: className || estilo,
+            classDate,
+            success: leadsResult.success,
+            errorMessage: leadsResult.error,
+            metadata: { fallbackReason: reason },
+          });
+        } catch {
+          // Audit is non-critical
+        }
+      }
+    }
+
+    // CRITICAL: If BOTH Momence AND Customer Leads failed, don't send confirmation
+    if (!momenceResult.success) {
+      console.error('[reservar] ❌ BOOKING FAILED - Both Momence and Customer Leads failed');
+
+      // Send alert to admin
+      try {
+        const { sendSystemAlert } = await import('./lib/email');
+        sendSystemAlert({
+          type: 'BOOKING_TOTAL_FAILURE',
+          message: `Una reserva no pudo ser registrada en ningún sistema. El usuario NO ha recibido confirmación.`,
+          details: {
+            email: redactEmail(normalizedEmail),
+            className: className || estilo,
+            classDate,
+            sessionId,
+          },
+          severity: 'critical',
+        }).catch(() => {}); // Fire and forget
+      } catch {
+        // Alert is non-critical
+      }
+
+      return res.status(500).json({
+        success: false,
+        error: 'No pudimos procesar tu reserva',
+        message:
+          'Ha ocurrido un error técnico. Por favor, contacta con nosotros por WhatsApp para completar tu reserva.',
+        whatsappUrl: 'https://wa.me/34622247085',
+      });
     }
 
     // 2. Enviar evento a Meta CAPI (siempre, independiente de Momence)
@@ -1415,6 +1652,15 @@ export default async function handler(
         if (normalizedPhone) {
           await redis.setex(`phone:${normalizedPhone}`, BOOKING_TTL_SECONDS, finalEventId);
           console.warn(`[reservar] Added phone index: phone:${redactPhone(normalizedPhone)}`);
+
+          // Store phone → email mapping for duplicate detection (90 days TTL)
+          // This helps identify users creating multiple accounts with same phone
+          const PHONE_EMAIL_TTL_SECONDS = 90 * 24 * 60 * 60; // 90 days
+          await redis.setex(
+            `phone_email:${normalizedPhone}`,
+            PHONE_EMAIL_TTL_SECONDS,
+            normalizedEmail
+          );
         }
 
         // Índice por fecha (para cron-reminders)
@@ -1459,7 +1705,7 @@ export default async function handler(
     try {
       // Dynamic import to avoid Vercel bundling issues
       const { sendAdminBookingNotification } = await import('./lib/email');
-      await sendAdminBookingNotification({
+      const adminResult = await sendAdminBookingNotification({
         firstName: firstNameOnly,
         lastName: sanitize(lastName),
         email: normalizedEmail,
@@ -1470,9 +1716,22 @@ export default async function handler(
         category,
         sourceUrl: req.headers.referer || req.headers.origin || undefined,
       });
+
+      if (adminResult.success) {
+        console.log('[reservar] ✅ Admin notification sent to info@farrayscenter.com');
+      } else {
+        console.error('[reservar] ❌ Admin notification FAILED:', {
+          error: adminResult.error,
+          booking: {
+            email: redactEmail(normalizedEmail),
+            className: className || estilo,
+            classDate: formattedDate,
+          },
+        });
+      }
     } catch (adminEmailError) {
       // Solo logueamos, NO bloqueamos la reserva
-      console.warn('[reservar] Admin notification failed (non-blocking):', adminEmailError);
+      console.error('[reservar] ❌ Admin notification EXCEPTION:', adminEmailError);
     }
 
     // 6b. Enviar WhatsApp de confirmación

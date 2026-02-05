@@ -23,6 +23,30 @@ const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 const BOOKING_KEY_PREFIX = 'booking:';
 
+// Fetch timeout
+const DEFAULT_FETCH_TIMEOUT_MS = 8000; // 8 seconds
+
+/**
+ * Fetch with automatic timeout to prevent hanging requests
+ */
+async function fetchWithTimeout(
+  url: string,
+  options: Record<string, unknown> = {},
+  timeoutMs: number = DEFAULT_FETCH_TIMEOUT_MS
+): Promise<globalThis.Response> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    } as globalThis.RequestInit);
+    return response;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 // Brand colors
 const BRAND_PRIMARY = '#B01E3C';
 
@@ -54,6 +78,44 @@ const WHATSAPP_PHONE_NUMBER_ID = '576045082';
 // Google Calendar API
 const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
+
+// ============================================================================
+// TIMEZONE UTILITIES
+// ============================================================================
+
+/**
+ * Get Madrid timezone offset in hours for a given date
+ * Returns 1 for winter (CET) or 2 for summer (CEST)
+ *
+ * DST in Spain:
+ * - Starts: Last Sunday of March at 02:00 → 03:00
+ * - Ends: Last Sunday of October at 03:00 → 02:00
+ */
+function getMadridOffset(date: Date): number {
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth();
+  const day = date.getUTCDate();
+
+  // Find last Sunday of March
+  const marchLast = new Date(Date.UTC(year, 2, 31)); // March 31
+  const marchLastSunday = 31 - marchLast.getUTCDay();
+
+  // Find last Sunday of October
+  const octLast = new Date(Date.UTC(year, 9, 31)); // October 31
+  const octLastSunday = 31 - octLast.getUTCDay();
+
+  // Check if date is in DST (summer time)
+  // DST is active from last Sunday of March 02:00 UTC+1 (01:00 UTC)
+  // to last Sunday of October 03:00 UTC+2 (01:00 UTC)
+  const isDST =
+    (month > 2 && month < 9) || // April to September
+    (month === 2 && day > marchLastSunday) || // After last Sunday of March
+    (month === 2 && day === marchLastSunday && date.getUTCHours() >= 1) || // On last Sunday after 01:00 UTC
+    (month === 9 && day < octLastSunday) || // Before last Sunday of October
+    (month === 9 && day === octLastSunday && date.getUTCHours() < 1); // On last Sunday before 01:00 UTC
+
+  return isDST ? 2 : 1;
+}
 
 // ============================================================================
 // REDIS CLIENT
@@ -98,7 +160,7 @@ async function getAccessToken(): Promise<string | null> {
   const basicAuth = Buffer.from(`${MOMENCE_CLIENT_ID}:${MOMENCE_CLIENT_SECRET}`).toString('base64');
 
   try {
-    const response = await fetch(MOMENCE_AUTH_URL, {
+    const response = await fetchWithTimeout(MOMENCE_AUTH_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -137,10 +199,13 @@ async function cancelMomenceBooking(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     console.warn('[Momence Cancel] Cancelling booking:', bookingId);
-    const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`, {
-      method: 'DELETE',
-      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-    });
+    const response = await fetchWithTimeout(
+      `${MOMENCE_API_URL}/api/v2/host/bookings/${bookingId}`,
+      {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -175,7 +240,7 @@ async function getCalendarAccessToken(): Promise<string | null> {
   }
 
   try {
-    const response = await fetch(TOKEN_URL, {
+    const response = await fetchWithTimeout(TOKEN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -217,7 +282,7 @@ async function deleteCalendarEvent(
   if (!accessToken) return { success: false, error: 'Failed to get access token' };
 
   try {
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${calendarEventId}?sendUpdates=none`,
       {
         method: 'DELETE',
@@ -336,7 +401,10 @@ function normalizePhoneNumber(phone: string): string {
   let cleaned = phone.replace(/[\s\-().]/g, '');
   if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
   if (cleaned.startsWith('00')) cleaned = cleaned.substring(2);
-  if (/^[67]\d{8}$/.test(cleaned)) cleaned = '34' + cleaned;
+  // Spanish: 9 digits starting with 6,7,8,9
+  if (cleaned.length === 9 && /^[6789]/.test(cleaned)) cleaned = '34' + cleaned;
+  // French: 10 digits starting with 0
+  if (cleaned.length === 10 && cleaned.startsWith('0')) cleaned = '33' + cleaned.substring(1);
   return cleaned;
 }
 
@@ -348,20 +416,23 @@ async function sendCancellationWhatsAppInline(data: {
   if (!accessToken) return { success: false, error: 'Missing WHATSAPP_ACCESS_TOKEN' };
 
   try {
-    const response = await fetch(`${WHATSAPP_API_URL}/${WHATSAPP_PHONE_NUMBER_ID}/messages`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        messaging_product: 'whatsapp',
-        to: normalizePhoneNumber(data.to),
-        type: 'template',
-        template: {
-          name: 'cancelar',
-          language: { code: 'es' },
-          components: [{ type: 'body', parameters: [{ type: 'text', text: data.firstName }] }],
-        },
-      }),
-    });
+    const response = await fetchWithTimeout(
+      `${WHATSAPP_API_URL}/${WHATSAPP_PHONE_NUMBER_ID}/messages`,
+      {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messaging_product: 'whatsapp',
+          to: normalizePhoneNumber(data.to),
+          type: 'template',
+          template: {
+            name: 'cancelar',
+            language: { code: 'es' },
+            components: [{ type: 'body', parameters: [{ type: 'text', text: data.firstName }] }],
+          },
+        }),
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -383,6 +454,14 @@ function redactEmail(email: string | null | undefined): string {
   const [local, domain] = email.split('@');
   if (!local || !domain) return '***@invalid';
   return `${local.length > 3 ? local.slice(0, 3) + '***' : '***'}@${domain}`;
+}
+
+/** Redact phone for GDPR-compliant logging */
+function redactPhone(phone: string | null | undefined): string {
+  if (!phone) return 'N/A';
+  const cleaned = phone.replace(/\s/g, '');
+  if (cleaned.length < 6) return '***';
+  return `${cleaned.slice(0, 4)}***${cleaned.slice(-2)}`;
 }
 
 // ============================================================================
@@ -522,26 +601,32 @@ export default async function handler(
           timeMatch[1] &&
           timeMatch[2]
         ) {
-          const year = dateMatch[1];
-          const month = dateMatch[2];
-          const day = dateMatch[3];
-          const hours = timeMatch[1];
-          const minutes = timeMatch[2];
+          const year = parseInt(dateMatch[1], 10);
+          const month = parseInt(dateMatch[2], 10) - 1;
+          const day = parseInt(dateMatch[3], 10);
+          const hours = parseInt(timeMatch[1], 10);
+          const minutes = parseInt(timeMatch[2], 10);
 
-          // Create date in Spain timezone
-          const classDateTime = new Date(
-            parseInt(year, 10),
-            parseInt(month, 10) - 1,
-            parseInt(day, 10),
-            parseInt(hours, 10),
-            parseInt(minutes, 10)
-          );
+          // Create class datetime as ISO string in Madrid timezone, then parse
+          // Format: "2026-01-28T19:00:00+01:00" (winter) or "+02:00" (summer)
+          // We use a simplified approach: create the date and adjust for Madrid offset
+          const classDateTimeUTC = Date.UTC(year, month, day, hours, minutes, 0);
 
-          const now = new Date();
-          const hoursUntilClass = (classDateTime.getTime() - now.getTime()) / (1000 * 60 * 60);
+          // Get Madrid offset for this specific date (handles DST automatically)
+          // Madrid is UTC+1 in winter, UTC+2 in summer
+          const testDate = new Date(classDateTimeUTC);
+          const madridOffset = getMadridOffset(testDate);
+
+          // Class time is stored in Madrid local time, so we need to convert to UTC
+          // by subtracting the Madrid offset
+          const classDateTimeInUTC = classDateTimeUTC - madridOffset * 60 * 60 * 1000;
+
+          const now = Date.now();
+          const hoursUntilClass = (classDateTimeInUTC - now) / (1000 * 60 * 60);
 
           console.warn(
-            `[Cancel] Time check: class at ${classDateTime.toISOString()}, now ${now.toISOString()}, hours until: ${hoursUntilClass.toFixed(2)}`
+            `[Cancel] Time check: class at ${new Date(classDateTimeInUTC).toISOString()} (Madrid: ${hours}:${String(minutes).padStart(2, '0')}), ` +
+              `now ${new Date(now).toISOString()}, hours until: ${hoursUntilClass.toFixed(2)}, Madrid offset: UTC+${madridOffset}`
           );
 
           if (hoursUntilClass < MIN_HOURS_BEFORE_CANCELLATION && hoursUntilClass > -24) {
@@ -674,6 +759,28 @@ export default async function handler(
       }
     } catch (adminError) {
       console.warn('[Cancel] Admin notification failed:', adminError);
+    }
+
+    // Record audit event for cancellation
+    try {
+      const { recordAuditEvent } = await import('./lib/audit');
+      await recordAuditEvent(redis, {
+        action: 'booking_cancelled',
+        eventId: eventId || bookingData.momenceEventId,
+        email: redactEmail(bookingData.email),
+        phone: redactPhone(bookingData.phone),
+        className: bookingData.className,
+        classDate: bookingData.classDate,
+        success: true,
+        metadata: {
+          momenceCancelled,
+          calendarDeleted,
+          whatsappSent,
+          emailSent,
+        },
+      });
+    } catch {
+      // Audit is non-critical
     }
 
     return res.status(200).json({
