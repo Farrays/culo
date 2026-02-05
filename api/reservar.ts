@@ -1,19 +1,335 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
-// Email functions - using static imports with .js extension (ESM requires explicit extensions)
-import {
-  sendBookingConfirmation,
-  sendAdminBookingNotification,
-  sendSystemAlert,
-} from './lib/email.js';
-import { validateEmail } from './lib/email-validation.js';
+import { Resend } from 'resend';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
 // ============================================================================
 
 type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
+
+// ============================================================================
+// EMAIL CONFIGURATION INLINE (Vercel bundler fails with api/lib/ imports)
+// ============================================================================
+
+// Colores corporativos ACTUALIZADOS (#B01E3C - Rojo carmesí)
+const BRAND_PRIMARY = '#B01E3C';
+const BRAND_DARK = '#800020';
+const BRAND_GRADIENT = `linear-gradient(135deg, ${BRAND_PRIMARY} 0%, ${BRAND_DARK} 100%)`;
+const EMAIL_FROM = "Farray's Center <reservas@farrayscenter.com>";
+const EMAIL_REPLY_TO = 'info@farrayscenter.com';
+const ADMIN_EMAIL_ADDRESS = process.env['ADMIN_NOTIFICATION_EMAILS'] || 'info@farrayscenter.com';
+
+// Validación de email simple (sin MX records para evitar timeouts)
+function isValidEmailFormat(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 254;
+}
+
+// Lista de dominios de email temporales comunes
+const DISPOSABLE_DOMAINS = [
+  'tempmail.com',
+  'throwaway.email',
+  'guerrillamail.com',
+  'mailinator.com',
+  'temp-mail.org',
+  '10minutemail.com',
+  'fakeinbox.com',
+  'trashmail.com',
+];
+
+// Wrapper para validateEmail que hace validación de formato y dominios temporales
+async function validateEmail(
+  email: string,
+  _options?: { checkMx?: boolean; blockDisposable?: boolean; checkSuspicious?: boolean }
+): Promise<{ valid: boolean; reason?: string; details?: string }> {
+  if (!isValidEmailFormat(email)) {
+    return { valid: false, reason: 'invalid_format' };
+  }
+
+  // Check disposable domains
+  const domain = email.split('@')[1]?.toLowerCase();
+  if (domain && DISPOSABLE_DOMAINS.some(d => domain.includes(d))) {
+    return { valid: false, reason: 'disposable_email', details: `Disposable domain: ${domain}` };
+  }
+
+  return { valid: true };
+}
+
+// Instrucciones por categoría de clase
+interface CategoryInstructions {
+  title: string;
+  items: string[];
+  color: string;
+}
+
+function getCategoryInstructions(category?: ClassCategory): CategoryInstructions {
+  const commonItems = [
+    '💧 Botella de agua',
+    '🧴 Toalla pequeña',
+    '🔐 Candado para taquilla (opcional)',
+  ];
+
+  switch (category) {
+    case 'bailes_sociales':
+      return {
+        title: '¿Qué traer a tu clase de Bailes Sociales?',
+        color: BRAND_PRIMARY,
+        items: [
+          '👠 <strong>Chicas:</strong> Bambas o zapatos de tacón cómodos',
+          '👞 <strong>Chicos:</strong> Bambas o zapatos de baile',
+          '📝 <strong>Folklore:</strong> Sin calzado (se baila descalzo)',
+          ...commonItems,
+        ],
+      };
+    case 'danzas_urbanas':
+      return {
+        title: '¿Qué traer a tu clase de Danzas Urbanas?',
+        color: '#673ab7',
+        items: [
+          '👟 Bambas cómodas (suela limpia)',
+          '👖 Leggings, pantalones cortos o chándal',
+          '👕 Ropa cómoda y ligera (tipo fitness)',
+          '💃 <strong>Sexy Style:</strong> Bambas o tacones Stiletto. Rodilleras recomendadas',
+          '🍑 <strong>Twerk:</strong> Rodilleras recomendadas',
+          ...commonItems,
+        ],
+      };
+    case 'danza':
+    case 'entrenamiento':
+      return {
+        title:
+          category === 'entrenamiento'
+            ? '¿Qué traer a tu Entrenamiento?'
+            : '¿Qué traer a tu clase de Danza?',
+        color: '#9c27b0',
+        items: [
+          '🦶 <strong>Sin calzado</strong> o calcetines antideslizantes',
+          '🦵 Rodilleras recomendadas (especialmente para floorwork)',
+          '👖 Ropa ajustada que permita ver la línea del cuerpo',
+          ...commonItems,
+        ],
+      };
+    case 'heels':
+      return {
+        title: '¿Qué traer a tu clase de Heels?',
+        color: BRAND_PRIMARY,
+        items: [
+          '👠 <strong>Tacones Stiletto</strong> (obligatorios)',
+          '💃 Ropa femenina y atrevida que te haga sentir poderosa',
+          '🎽 Top o body que permita libertad de movimiento',
+          ...commonItems,
+        ],
+      };
+    default:
+      return {
+        title: '¿Qué traer?',
+        color: BRAND_PRIMARY,
+        items: ['👟 Ropa cómoda para bailar', '👠 Calzado según el estilo', ...commonItems],
+      };
+  }
+}
+
+function generateWhatToBringSection(category?: ClassCategory): string {
+  const inst = getCategoryInstructions(category);
+  return `
+  <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 15px 0; color: ${inst.color};">${inst.title}</h3>
+    <ul style="margin: 0; padding-left: 20px; color: #555; line-height: 1.8;">
+      ${inst.items.map(item => `<li>${item}</li>`).join('')}
+    </ul>
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+      <strong style="color: #1976d2;">⏰ Importante:</strong>
+      <p style="margin: 5px 0 0 0; color: #666;">Llega <strong>10 minutos antes</strong> para cambiarte.</p>
+    </div>
+  </div>
+  <div style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">📍 Cómo llegar</h4>
+    <p style="margin: 0; color: #666;">
+      <strong>Farray's International Dance Center</strong><br>
+      C/ Entença 100, 08015 Barcelona<br><br>
+      🚇 <strong>Metro:</strong> Rocafort (L1) o Entença (L5)<br>
+      🚌 <strong>Bus:</strong> Líneas 41, 54, H8
+    </p>
+  </div>`;
+}
+
+// Email de confirmación de reserva INLINED
+async function sendBookingConfirmation(data: {
+  to: string;
+  firstName: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  managementUrl: string;
+  mapUrl?: string;
+  category?: ClassCategory;
+  classDateRaw?: string;
+  eventId?: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  const resend = new Resend(apiKey);
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: data.to,
+      replyTo: EMAIL_REPLY_TO,
+      subject: `Reserva confirmada: ${data.className}`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h1 style="color: ${BRAND_PRIMARY}; margin: 0;">Farray's Center</h1>
+    <p style="color: #666; margin: 5px 0;">International Dance Center</p>
+  </div>
+  <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
+    <p style="margin: 0; opacity: 0.9;">Tu clase de prueba está lista</p>
+  </div>
+  <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+    <p style="margin: 0 0 15px 0;">Hola <strong>${data.firstName}</strong>,</p>
+    <p style="margin: 0;">Tu reserva ha sido confirmada. Aquí están los detalles:</p>
+  </div>
+  <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
+      <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>Farray's International Dance Center</strong><br><span style="color: #666;">C/ Entença 100, 08015 Barcelona</span></td></tr>
+    </table>
+  </div>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="${data.managementUrl}" style="display: inline-block; background: ${BRAND_GRADIENT}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Ver mi reserva</a>
+    ${data.mapUrl ? `<a href="${data.mapUrl}" style="display: inline-block; background: #4285f4; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">Cómo llegar</a>` : ''}
+  </div>
+  ${generateWhatToBringSection(data.category)}
+  <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p style="margin: 0; color: #856404;">
+      <strong>⚠️ Política de cancelación:</strong><br>
+      Recuerda que si no puedes asistir, tienes hasta <strong>1 hora antes</strong> del inicio
+      de la clase para cancelar y reprogramar para otro día. Pasado ese tiempo, la clase contará
+      como asistida y perderás el derecho a la clase de prueba gratuita.
+    </p>
+  </div>
+  <div style="text-align: center; color: #666; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px;">
+    <p>¿Necesitas cambiar o cancelar tu reserva?<br><a href="${data.managementUrl}" style="color: ${BRAND_PRIMARY};">Gestionar mi reserva</a></p>
+    <p style="margin-top: 20px;">Farray's International Dance Center<br>C/ Entença 100, 08015 Barcelona<br><a href="https://farrayscenter.com" style="color: ${BRAND_PRIMARY};">farrayscenter.com</a></p>
+  </div>
+</body></html>`,
+    });
+    if (result.error) return { success: false, error: result.error.message };
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// Email de notificación al admin INLINED
+async function sendAdminBookingNotification(data: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  className: string;
+  classDate: string;
+  classTime: string;
+  category?: ClassCategory;
+  sourceUrl?: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env['RESEND_API_KEY'];
+  if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
+
+  const resend = new Resend(apiKey);
+  try {
+    const result = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: ADMIN_EMAIL_ADDRESS,
+      subject: `Nueva reserva: ${data.firstName} ${data.lastName} - ${data.className}`,
+      html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background: ${BRAND_GRADIENT}; color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+    <h2 style="margin: 0;">🎉 Nueva Reserva de Clase de Prueba</h2>
+  </div>
+
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0 0 15px 0; color: ${BRAND_PRIMARY};">👤 Datos del Cliente</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Nombre:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${data.firstName} ${data.lastName}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Email:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="mailto:${data.email}" style="color: ${BRAND_PRIMARY};">${data.email}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Teléfono:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="tel:${data.phone}" style="color: ${BRAND_PRIMARY};">${data.phone}</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0 0 15px 0; color: #2e7d32;">📅 Datos de la Clase</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Clase:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.className}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Fecha:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classDate}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Hora:</strong></td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classTime}</td>
+      </tr>
+      ${data.category ? `<tr><td style="padding: 8px 0;"><strong>Categoría:</strong></td><td style="padding: 8px 0;">${data.category}</td></tr>` : ''}
+    </table>
+  </div>
+
+  ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
+
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+      Contactar por WhatsApp
+    </a>
+  </div>
+
+  <p style="color: #999; font-size: 11px; text-align: center; margin-top: 30px;">
+    Este email se genera automáticamente. Timestamp: ${new Date().toISOString()}
+  </p>
+</body></html>`,
+    });
+    if (result.error) {
+      console.warn('[reservar] Admin notification failed:', result.error.message);
+      return { success: false, error: result.error.message };
+    }
+    console.log('[reservar] Admin notification sent:', result.data?.id);
+    return { success: true };
+  } catch (error) {
+    console.error('[reservar] Error sending admin notification:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// Sistema de alertas simplificado (solo logs, no crítico)
+function sendSystemAlert(data: {
+  type: string;
+  message: string;
+  details?: Record<string, unknown>;
+  severity?: 'warning' | 'critical';
+}): Promise<{ success: boolean }> {
+  // Solo log - no enviar email para alertas del sistema (no crítico)
+  console.warn(
+    `[SystemAlert] ${data.severity || 'warning'}: ${data.type}`,
+    data.message,
+    data.details
+  );
+  return Promise.resolve({ success: true });
+}
 
 // ============================================================================
 // PII REDACTION (GDPR-compliant logging)
