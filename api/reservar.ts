@@ -1,7 +1,13 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
-// Note: Resend import removed - now using dynamic imports from ./lib/email
+// Email functions - using static imports (dynamic imports cause Vercel bundler issues)
+import {
+  sendBookingConfirmation,
+  sendAdminBookingNotification,
+  sendSystemAlert,
+} from './lib/email';
+import { validateEmail } from './lib/email-validation';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -482,7 +488,6 @@ async function recordMomenceFailure(redis: Redis): Promise<void> {
 
       // Send alert to admin (non-blocking)
       try {
-        const { sendSystemAlert } = await import('./lib/email');
         sendSystemAlert({
           type: 'MOMENCE_CIRCUIT_OPEN',
           message: `Momence API ha fallado ${failures} veces en ${CIRCUIT_BREAKER_WINDOW_SECONDS / 60} minutos. Las reservas van directamente a Customer Leads.`,
@@ -1225,7 +1230,6 @@ export default async function handler(
 
     // Enhanced email validation: check for disposable emails and MX records
     try {
-      const { validateEmail } = await import('./lib/email-validation');
       const emailValidation = await validateEmail(email, {
         checkMx: true,
         blockDisposable: true,
@@ -1329,7 +1333,6 @@ export default async function handler(
             );
             // Send alert to admin (non-blocking)
             try {
-              const { sendSystemAlert } = await import('./lib/email');
               sendSystemAlert({
                 type: 'DUPLICATE_PHONE',
                 message: `El mismo teléfono se está usando con diferentes emails. Posible usuario duplicado.`,
@@ -1394,7 +1397,6 @@ export default async function handler(
 
         // Send alert for invalid sessionId (might indicate frontend bug or manipulation)
         try {
-          const { sendSystemAlert } = await import('./lib/email');
           sendSystemAlert({
             type: 'INVALID_SESSION_ID',
             message: `Se recibió un sessionId inválido: "${validatedSessionId}". Esto puede indicar un problema en el frontend o manipulación.`,
@@ -1520,7 +1522,6 @@ export default async function handler(
 
       // Send alert to admin
       try {
-        const { sendSystemAlert } = await import('./lib/email');
         sendSystemAlert({
           type: 'BOOKING_TOTAL_FAILURE',
           message: `Una reserva no pudo ser registrada en ningún sistema. El usuario NO ha recibido confirmación.`,
@@ -1694,8 +1695,6 @@ export default async function handler(
       error: 'Not attempted',
     };
     try {
-      // Dynamic import to avoid Vercel bundling issues
-      const { sendBookingConfirmation } = await import('./lib/email');
       emailResult = await sendBookingConfirmation({
         to: normalizedEmail,
         firstName: firstNameOnly,
@@ -1716,8 +1715,6 @@ export default async function handler(
 
     // 6a-bis. Notificar al admin de la nueva reserva (no bloquea si falla)
     try {
-      // Dynamic import to avoid Vercel bundling issues
-      const { sendAdminBookingNotification } = await import('./lib/email');
       const adminResult = await sendAdminBookingNotification({
         firstName: firstNameOnly,
         lastName: sanitize(lastName),
