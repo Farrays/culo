@@ -1215,6 +1215,40 @@ export default async function handler(
       return res.status(400).json({ error: 'Email no válido' });
     }
 
+    // Enhanced email validation: check for disposable emails and MX records
+    try {
+      const { validateEmail } = await import('./lib/email-validation');
+      const emailValidation = await validateEmail(email, {
+        checkMx: true,
+        blockDisposable: true,
+        checkSuspicious: false, // Don't block, just warn
+      });
+
+      if (!emailValidation.valid) {
+        const errorMessages: Record<string, string> = {
+          invalid_format: 'El formato del email no es válido',
+          disposable_email: 'No se permiten emails temporales. Por favor usa tu email personal.',
+          no_mx_records:
+            'El dominio del email no puede recibir correos. Verifica que sea correcto.',
+          invalid_domain: 'El dominio del email no existe',
+        };
+
+        console.warn(`[reservar] Email validation failed: ${emailValidation.reason}`, {
+          email: redactEmail(email),
+          reason: emailValidation.reason,
+          details: emailValidation.details,
+        });
+
+        return res.status(400).json({
+          error: errorMessages[emailValidation.reason || 'invalid_format'] || 'Email no válido',
+          code: emailValidation.reason,
+        });
+      }
+    } catch (validationError) {
+      // If validation fails (e.g., DNS timeout), log but don't block the user
+      console.warn('[reservar] Email validation error (non-blocking):', validationError);
+    }
+
     if (!isValidPhone(phone)) {
       return res.status(400).json({ error: 'Teléfono no válido' });
     }
@@ -1671,7 +1705,7 @@ export default async function handler(
     try {
       // Dynamic import to avoid Vercel bundling issues
       const { sendAdminBookingNotification } = await import('./lib/email');
-      await sendAdminBookingNotification({
+      const adminResult = await sendAdminBookingNotification({
         firstName: firstNameOnly,
         lastName: sanitize(lastName),
         email: normalizedEmail,
@@ -1682,9 +1716,22 @@ export default async function handler(
         category,
         sourceUrl: req.headers.referer || req.headers.origin || undefined,
       });
+
+      if (adminResult.success) {
+        console.log('[reservar] ✅ Admin notification sent to info@farrayscenter.com');
+      } else {
+        console.error('[reservar] ❌ Admin notification FAILED:', {
+          error: adminResult.error,
+          booking: {
+            email: redactEmail(normalizedEmail),
+            className: className || estilo,
+            classDate: formattedDate,
+          },
+        });
+      }
     } catch (adminEmailError) {
       // Solo logueamos, NO bloqueamos la reserva
-      console.warn('[reservar] Admin notification failed (non-blocking):', adminEmailError);
+      console.error('[reservar] ❌ Admin notification EXCEPTION:', adminEmailError);
     }
 
     // 6b. Enviar WhatsApp de confirmación
