@@ -577,6 +577,11 @@ export default async function handler(
       });
     }
 
+    console.warn(
+      '[Cancel] Booking data found, momenceBookingId:',
+      bookingData.momenceBookingId || 'NULL'
+    );
+
     if (eventId && !bookingDetailsKey && bookingData.momenceEventId !== eventId) {
       return res.status(404).json({
         error: 'Booking mismatch',

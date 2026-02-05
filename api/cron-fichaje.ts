@@ -137,7 +137,7 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   tomorrow.setDate(tomorrow.getDate() + 1);
   const tomorrowStr = tomorrow.toISOString().split('T')[0];
 
-  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?businessSlug=${MOMENCE_BUSINESS_SLUG}&startDate=${today}&endDate=${tomorrowStr}`;
+  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?businessSlug=${encodeURIComponent(MOMENCE_BUSINESS_SLUG)}&startDate=${today}&endDate=${tomorrowStr}`;
 
   const response = await fetch(url, {
     headers: {

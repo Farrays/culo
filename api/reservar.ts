@@ -2074,7 +2074,10 @@ export default async function handler(
             momenceBookingId: momenceResult.bookingId || null,
           })
         );
-        console.warn('[reservar] Booking details saved');
+        console.warn(
+          '[reservar] Booking details saved with momenceBookingId:',
+          momenceResult.bookingId || 'NULL'
+        );
 
         // Índice por teléfono (para webhook-whatsapp)
         if (normalizedPhone) {
