@@ -411,51 +411,64 @@ export class SalesAgent {
   }
 
   /**
-   * Fetch available classes for a style (connects to /api/clases)
+   * Fetch available classes for a style from Momence via /api/clases
    */
   private async fetchAvailableClasses(style: string): Promise<ClassOption[]> {
     try {
-      // In production, this would call the Momence API or internal /api/clases endpoint
-      // For now, return mock data for testing
-      // TODO: Implement actual Momence API integration
-
       console.log(`[agent] Fetching classes for style: ${style}`);
 
-      // Mock classes for development
-      const mockClasses: ClassOption[] = [
-        {
-          id: 1001,
-          name: `${style.charAt(0).toUpperCase() + style.slice(1)} Iniciación`,
-          date: this.getNextWeekday('Monday'),
-          time: '19:00',
-          dayOfWeek: 'Lunes',
-          spotsAvailable: 8,
-          instructor: 'Laura',
-          style,
-        },
-        {
-          id: 1002,
-          name: `${style.charAt(0).toUpperCase() + style.slice(1)} Nivel 1`,
-          date: this.getNextWeekday('Wednesday'),
-          time: '20:00',
-          dayOfWeek: 'Miércoles',
-          spotsAvailable: 5,
-          instructor: 'Carlos',
-          style,
-        },
-        {
-          id: 1003,
-          name: `${style.charAt(0).toUpperCase() + style.slice(1)} Open Level`,
-          date: this.getNextWeekday('Friday'),
-          time: '18:30',
-          dayOfWeek: 'Viernes',
-          spotsAvailable: 12,
-          instructor: 'María',
-          style,
-        },
-      ];
+      // Build API URL - use VERCEL_URL in production, localhost in dev
+      const baseUrl = process.env['VERCEL_URL']
+        ? `https://${process.env['VERCEL_URL']}`
+        : process.env['NEXT_PUBLIC_BASE_URL'] || 'https://www.farrayscenter.com';
 
-      return mockClasses;
+      const apiUrl = `${baseUrl}/api/clases?style=${encodeURIComponent(style)}&days=14`;
+
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (!response.ok) {
+        console.error(`[agent] Classes API error: ${response.status}`);
+        return [];
+      }
+
+      const data = await response.json();
+
+      if (!data.success || !data.data?.classes) {
+        console.error('[agent] Invalid classes API response:', data);
+        return [];
+      }
+
+      // Map API response to ClassOption format (already matches)
+      const classes: ClassOption[] = data.data.classes
+        .filter((c: { spotsAvailable: number }) => c.spotsAvailable > 0)
+        .slice(0, 5) // Limit to 5 options for WhatsApp readability
+        .map(
+          (c: {
+            id: number;
+            name: string;
+            date: string;
+            time: string;
+            dayOfWeek: string;
+            spotsAvailable: number;
+            instructor: string;
+            style: string;
+          }) => ({
+            id: c.id,
+            name: c.name,
+            date: c.date,
+            time: c.time,
+            dayOfWeek: c.dayOfWeek,
+            spotsAvailable: c.spotsAvailable,
+            instructor: c.instructor,
+            style: c.style,
+          })
+        );
+
+      console.log(`[agent] Found ${classes.length} classes for ${style}`);
+      return classes;
     } catch (error) {
       console.error('[agent] Error fetching classes:', error);
       return [];
@@ -463,54 +476,62 @@ export class SalesAgent {
   }
 
   /**
-   * Create booking in Momence system
+   * Create booking in Momence system via /api/reservar
    */
   private async createMomenceBooking(
     bookingData: NonNullable<import('./booking-flow').BookingFlowResult['bookingData']>
   ): Promise<boolean> {
     try {
-      // TODO: Implement actual Momence API integration
-      // For now, simulate success
       console.log('[agent] Creating Momence booking:', {
         classId: bookingData.selectedClassId,
         name: `${bookingData.firstName} ${bookingData.lastName}`,
         email: bookingData.email,
-        phone: bookingData.phone,
+        phone: bookingData.phone?.slice(-4),
       });
 
-      // In production:
-      // const response = await fetch('/api/booking/create', {
-      //   method: 'POST',
-      //   body: JSON.stringify(bookingData),
-      // });
-      // return response.ok;
+      // Build API URL
+      const baseUrl = process.env['VERCEL_URL']
+        ? `https://${process.env['VERCEL_URL']}`
+        : process.env['NEXT_PUBLIC_BASE_URL'] || 'https://www.farrayscenter.com';
 
+      const apiUrl = `${baseUrl}/api/reservar`;
+
+      // Call the reservar endpoint with booking data
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId: bookingData.selectedClassId,
+          firstName: bookingData.firstName,
+          lastName: bookingData.lastName,
+          email: bookingData.email,
+          phone: bookingData.phone,
+          className: bookingData.selectedClassName,
+          // Consent flags
+          acceptsTerms: bookingData.acceptsTerms,
+          acceptsPrivacy: bookingData.acceptsPrivacy,
+          acceptsMarketing: bookingData.acceptsMarketing,
+          // Source tracking
+          source: 'whatsapp_agent',
+          utmSource: 'whatsapp',
+          utmMedium: 'agent',
+          utmCampaign: 'laura_ai',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        console.error('[agent] Booking API error:', result.error || response.status);
+        return false;
+      }
+
+      console.log('[agent] Booking created successfully:', result.data?.eventId);
       return true;
     } catch (error) {
       console.error('[agent] Error creating Momence booking:', error);
       return false;
     }
-  }
-
-  /**
-   * Get next occurrence of a weekday
-   */
-  private getNextWeekday(day: string): string {
-    const days: Record<string, number> = {
-      Sunday: 0,
-      Monday: 1,
-      Tuesday: 2,
-      Wednesday: 3,
-      Thursday: 4,
-      Friday: 5,
-      Saturday: 6,
-    };
-    const today = new Date();
-    const targetDay = days[day] || 1;
-    const daysUntil = (targetDay - today.getDay() + 7) % 7 || 7;
-    const nextDate = new Date(today);
-    nextDate.setDate(today.getDate() + daysUntil);
-    return nextDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit' });
   }
 
   /**
