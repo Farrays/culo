@@ -188,17 +188,30 @@ const FichajePage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black pt-28">
-        {/* Header interno del fichaje */}
-        <header className="bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 shadow-lg">
-          <div className="max-w-md mx-auto flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-white">Fichaje</h1>
-              <p className="text-gray-400 text-sm">Farray&apos;s Center</p>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black pt-20">
+        {/* Header con logo */}
+        <header className="bg-black/95 backdrop-blur-xl border-b border-brand-600/30 py-4 px-6 shadow-lg">
+          <div className="max-w-md mx-auto">
+            {/* Logo y título */}
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/logo/img/logo-fidc_256.webp"
+                  alt="Farray's Center"
+                  className="h-12 w-auto"
+                />
+                <div>
+                  <h1 className="text-xl font-bold text-white">Control de Jornada</h1>
+                  <p className="text-brand-400 text-xs">Registro de entrada/salida</p>
+                </div>
+              </div>
             </div>
-            <div className="text-right">
-              <div className="text-3xl font-mono text-white">{formatTime(currentTime)}</div>
-              <div className="text-gray-400 text-sm capitalize">{formatDate(currentTime)}</div>
+            {/* Reloj */}
+            <div className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-2">
+              <div className="text-brand-300 text-sm capitalize">{formatDate(currentTime)}</div>
+              <div className="text-2xl font-mono text-white font-bold">
+                {formatTime(currentTime)}
+              </div>
             </div>
           </div>
         </header>
@@ -368,11 +381,16 @@ const FichajePage: React.FC = () => {
           )}
         </main>
 
-        {/* Footer */}
-        <footer className="fixed bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm border-t border-brand-600/30 py-3 px-6">
-          <p className="text-center text-brand-300/50 text-sm">
-            Sistema de fichaje - Farray&apos;s International Dance Center
-          </p>
+        {/* Footer con info legal */}
+        <footer className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm border-t border-brand-600/30 py-3 px-4">
+          <div className="max-w-md mx-auto text-center">
+            <p className="text-brand-300/70 text-xs">
+              Sistema de registro de jornada conforme al Art. 34.9 ET y RD-ley 8/2019
+            </p>
+            <p className="text-brand-300/50 text-xs mt-1">
+              Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
+            </p>
+          </div>
         </footer>
       </div>
     </>

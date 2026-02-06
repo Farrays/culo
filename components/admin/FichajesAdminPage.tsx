@@ -249,33 +249,42 @@ const FichajesAdminPage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-100 pt-28">
-        {/* Header */}
-        <header className="bg-black/95 backdrop-blur-xl text-white py-4 px-6 shadow-lg border-b border-white/10">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold">Admin Fichajes</h1>
-              <p className="text-gray-400 text-sm">Farray&apos;s Center</p>
+      <div className="min-h-screen bg-gray-100 pt-20">
+        {/* Header con logo */}
+        <header className="bg-black/95 backdrop-blur-xl text-white py-4 px-6 shadow-lg border-b border-brand-600/30">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/logo/img/logo-fidc_256.webp"
+                  alt="Farray's Center"
+                  className="h-10 w-auto"
+                />
+                <div>
+                  <h1 className="text-xl font-bold">Gestión de Fichajes</h1>
+                  <p className="text-brand-400 text-xs">Panel de administración</p>
+                </div>
+              </div>
+              <nav className="flex gap-2">
+                {(['dashboard', 'fichajes', 'profesores'] as Tab[]).map(tab => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      activeTab === tab
+                        ? 'bg-brand-600 text-white'
+                        : 'bg-white/10 text-white hover:bg-white/20'
+                    }`}
+                  >
+                    {tab === 'dashboard'
+                      ? 'Dashboard'
+                      : tab === 'fichajes'
+                        ? 'Fichajes'
+                        : 'Profesores'}
+                  </button>
+                ))}
+              </nav>
             </div>
-            <nav className="flex gap-2">
-              {(['dashboard', 'fichajes', 'profesores'] as Tab[]).map(tab => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                    activeTab === tab
-                      ? 'bg-white text-gray-900'
-                      : 'bg-white/10 text-white hover:bg-white/20'
-                  }`}
-                >
-                  {tab === 'dashboard'
-                    ? 'Dashboard'
-                    : tab === 'fichajes'
-                      ? 'Fichajes'
-                      : 'Profesores'}
-                </button>
-              ))}
-            </nav>
           </div>
         </header>
 
@@ -629,6 +638,23 @@ const FichajesAdminPage: React.FC = () => {
             </div>
           )}
         </main>
+
+        {/* Footer con info legal */}
+        <footer className="mt-8 py-4 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <p className="text-gray-500 text-xs">
+              Sistema de registro de jornada conforme al Art. 34.9 del Estatuto de los Trabajadores
+              y RD-ley 8/2019
+            </p>
+            <p className="text-gray-400 text-xs mt-1">
+              Los registros se conservan durante 4 años y están disponibles para los trabajadores,
+              sus representantes legales y la Inspección de Trabajo.
+            </p>
+            <p className="text-gray-400 text-xs mt-2">
+              Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
+            </p>
+          </div>
+        </footer>
 
         {/* Edit Modal */}
         {editingFichaje && (

@@ -176,6 +176,21 @@ const ResumenFirmaPage: React.FC = () => {
 
       <div className="min-h-screen bg-gray-50 py-8 px-4">
         <div className="max-w-2xl mx-auto">
+          {/* Logo header */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <img
+              src="/images/logo/img/logo-fidc_256.webp"
+              alt="Farray's Center"
+              className="h-12 w-auto"
+            />
+            <div className="text-center">
+              <p className="text-gray-600 text-sm font-medium">
+                Farray&apos;s International Dance Center
+              </p>
+              <p className="text-gray-400 text-xs">Control de Jornada Laboral</p>
+            </div>
+          </div>
+
           {/* Header */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
             <div className="bg-gradient-to-r from-brand-600 to-brand-700 px-6 py-8 text-white">
@@ -343,12 +358,16 @@ const ResumenFirmaPage: React.FC = () => {
           </div>
 
           {/* Aviso legal */}
-          <div className="mt-6 text-center text-xs text-gray-500">
+          <div className="mt-6 text-center text-xs text-gray-500 space-y-1">
             <p>
               Este documento cumple con el Art. 12.4.c del Estatuto de los Trabajadores para
-              contratos a tiempo parcial.
+              contratos a tiempo parcial y el Art. 34.9 ET (RD-ley 8/2019).
             </p>
-            <p className="mt-1">
+            <p>
+              La empresa conservará los registros durante 4 años, quedando a disposición del
+              trabajador, sus representantes legales y la Inspección de Trabajo.
+            </p>
+            <p className="mt-2 text-gray-400">
               Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
             </p>
           </div>
