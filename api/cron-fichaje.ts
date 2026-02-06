@@ -459,8 +459,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       const clasesPorProfesor = new Map<string, MomenceSession[]>();
 
       // Función helper para asignar sesión a un profesor
-      const asignarSesionAProfesor = (teacher: MomenceTeacher, sesion: MomenceSession) => {
+      const asignarSesionAProfesor = (
+        teacher: MomenceTeacher,
+        sesion: MomenceSession,
+        esAsistente: boolean = false
+      ) => {
         const nombreInstructor = `${teacher.firstName} ${teacher.lastName}`.toLowerCase().trim();
+
+        // Log para debugging
+        console.log(
+          `[cron-fichaje] Buscando profesor: "${nombreInstructor}" (${esAsistente ? 'asistente' : 'principal'}) para clase "${sesion.name}"`
+        );
 
         // Buscar profesor por nombre exacto
         let profesor = profesorPorNombre.get(nombreInstructor);
@@ -470,9 +479,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           for (const [nombre, p] of profesorPorNombre) {
             if (nombreInstructor.includes(nombre) || nombre.includes(nombreInstructor)) {
               profesor = p;
+              console.log(`[cron-fichaje] Match parcial: "${nombreInstructor}" → "${nombre}"`);
               break;
             }
           }
+        }
+
+        if (!profesor) {
+          console.log(
+            `[cron-fichaje] ⚠️ Profesor NO encontrado: "${nombreInstructor}". Nombres disponibles: ${Array.from(profesorPorNombre.keys()).join(', ')}`
+          );
         }
 
         if (profesor) {
@@ -488,13 +504,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       for (const sesion of sesiones) {
         // Procesar profesor principal
         if (sesion.teacher) {
-          asignarSesionAProfesor(sesion.teacher, sesion);
+          asignarSesionAProfesor(sesion.teacher, sesion, false);
         }
 
         // Procesar profesores asistentes (additionalTeachers)
         if (sesion.additionalTeachers && sesion.additionalTeachers.length > 0) {
+          console.log(
+            `[cron-fichaje] Clase "${sesion.name}" tiene ${sesion.additionalTeachers.length} asistente(s)`
+          );
           for (const asistente of sesion.additionalTeachers) {
-            asignarSesionAProfesor(asistente, sesion);
+            asignarSesionAProfesor(asistente, sesion, true);
           }
         }
       }
