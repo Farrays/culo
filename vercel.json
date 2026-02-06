@@ -1117,7 +1117,7 @@
       "destination": "/index.html"
     },
     {
-      "source": "/:locale(es|en|ca|fr)/fichaje/resumen/:token",
+      "source": "/:locale(es|en|ca|fr)/fichaje/:path*",
       "destination": "/index.html"
     },
     {
