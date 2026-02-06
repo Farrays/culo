@@ -205,6 +205,67 @@ async function getMomenceSessionsForDate(fecha?: string): Promise<MomenceSession
   return Array.isArray(data) ? data : data.payload || data.sessions || data.data || [];
 }
 
+/**
+ * Obtiene los detalles completos de una sesión individual.
+ * El endpoint individual devuelve additionalTeachers que el listado no incluye.
+ */
+async function getMomenceSessionDetails(sessionId: number): Promise<MomenceSession | null> {
+  try {
+    const token = await getMomenceToken();
+    const url = `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`;
+
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      console.warn(
+        `[cron-fichaje] Error obteniendo detalles sesión ${sessionId}: ${response.status}`
+      );
+      return null;
+    }
+
+    const data = await response.json();
+    return data.payload || data;
+  } catch (error) {
+    console.error(`[cron-fichaje] Error en getMomenceSessionDetails(${sessionId}):`, error);
+    return null;
+  }
+}
+
+/**
+ * Enriquece las sesiones con additionalTeachers haciendo llamadas individuales.
+ * Solo hace la llamada individual si la sesión tiene nombre de clase "pair" (parejas).
+ */
+async function enrichSessionsWithAdditionalTeachers(
+  sessions: MomenceSession[],
+  debugLog: (msg: string) => void
+): Promise<MomenceSession[]> {
+  const enrichedSessions: MomenceSession[] = [];
+
+  for (const session of sessions) {
+    // Intentar obtener detalles completos para cada clase
+    const details = await getMomenceSessionDetails(session.id);
+
+    if (details && details.additionalTeachers && details.additionalTeachers.length > 0) {
+      debugLog(
+        `[cron-fichaje] 🎓 Clase "${session.name}" tiene ${details.additionalTeachers.length} profesor(es) adicional(es): ${details.additionalTeachers.map(t => `${t.firstName} ${t.lastName}`).join(', ')}`
+      );
+      enrichedSessions.push({
+        ...session,
+        additionalTeachers: details.additionalTeachers,
+      });
+    } else {
+      enrichedSessions.push(session);
+    }
+  }
+
+  return enrichedSessions;
+}
+
 // ============================================================================
 // HELPERS
 // ============================================================================
@@ -463,8 +524,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     }
 
     // 3. Obtener clases de Momence para la fecha especificada
-    const sesiones = await getMomenceSessionsForDate(result.fecha);
+    let sesiones = await getMomenceSessionsForDate(result.fecha);
     result.clases = sesiones.length;
+
+    // 3a. Enriquecer sesiones con additionalTeachers (requiere llamadas individuales)
+    if (sesiones.length > 0) {
+      debugLog(`[cron-fichaje] Obteniendo additionalTeachers para ${sesiones.length} clases...`);
+      sesiones = await enrichSessionsWithAdditionalTeachers(sesiones, debugLog);
+    }
 
     // Crear Set de IDs de clases activas en Momence para sincronización
     const clasesActivasMomence = new Set<number>(sesiones.map((s: MomenceSession) => s.id));
@@ -484,6 +551,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // 4. Agrupar clases por profesor (solo si hay clases de Momence)
     // INCLUYE profesor principal + additionalTeachers (asistentes)
     if (sesiones.length > 0) {
+      // Debug: mostrar estructura completa de una sesión para ver campos disponibles
+      if (debugMode && sesiones.length > 0) {
+        const bachataClass = sesiones.find(s => s.name.toLowerCase().includes('bachata'));
+        if (bachataClass) {
+          debugLog(
+            `[cron-fichaje] 📋 Estructura clase Bachata: ${JSON.stringify(bachataClass, null, 2)}`
+          );
+        } else {
+          const primeraClase = sesiones[0];
+          debugLog(
+            `[cron-fichaje] 📋 Estructura primera clase: ${JSON.stringify(primeraClase, null, 2)}`
+          );
+        }
+      }
+
       const clasesPorProfesor = new Map<string, MomenceSession[]>();
 
       // Función helper para asignar sesión a un profesor
