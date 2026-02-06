@@ -148,9 +148,9 @@ async function getMomenceToken(): Promise<string> {
 // MOMENCE SESSIONS
 // ============================================================================
 
-async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
+async function getMomenceSessionsForDate(fecha?: string): Promise<MomenceSession[]> {
   const token = await getMomenceToken();
-  const today = getFechaHoyEspana(); // YYYY-MM-DD en timezone España
+  const today = fecha || getFechaHoyEspana(); // YYYY-MM-DD en timezone España
 
   // Calcular mañana en timezone España
   const todayDate = new Date(`${today}T00:00:00+01:00`); // España UTC+1 (o +2 en verano)
@@ -349,8 +349,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
 
+  // Permitir fecha personalizada para testing (formato: YYYY-MM-DD)
+  const fechaParam = req.query['fecha'] as string | undefined;
+  const fechaEjecucion =
+    fechaParam && /^\d{4}-\d{2}-\d{2}$/.test(fechaParam) ? fechaParam : getFechaHoyEspana();
+
   const result: CronResult = {
-    fecha: getFechaHoyEspana(),
+    fecha: fechaEjecucion,
     hora: getHoraAhoraEspana(),
     profesores: 0,
     clases: 0,
@@ -405,12 +410,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       profesorPorNombre.set(nombreNormalizado, p);
     }
 
-    // 3. Obtener clases de hoy de Momence
-    const sesiones = await getMomenceSessionsToday();
+    // 3. Obtener clases de Momence para la fecha especificada
+    const sesiones = await getMomenceSessionsForDate(result.fecha);
     result.clases = sesiones.length;
 
     // Crear Set de IDs de clases activas en Momence para sincronización
-    const clasesActivasMomence = new Set<number>(sesiones.map(s => s.id));
+    const clasesActivasMomence = new Set<number>(sesiones.map((s: MomenceSession) => s.id));
 
     // 3b. Sincronizar clases canceladas - marcar fichajes huérfanos
     const fichajesCancelados = await sincronizarClasesCanceladas(
