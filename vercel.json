@@ -1113,11 +1113,11 @@
       "destination": "/index.html"
     },
     {
-      "source": "/:locale(es|en|ca|fr)/fichaje",
+      "source": "/:locale(es|en|ca|fr)/fichaje/(.*)",
       "destination": "/index.html"
     },
     {
-      "source": "/:locale(es|en|ca|fr)/fichaje/:path*",
+      "source": "/:locale(es|en|ca|fr)/fichaje",
       "destination": "/index.html"
     },
     {
