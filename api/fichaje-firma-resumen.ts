@@ -111,13 +111,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       return;
     }
 
-    // Obtener IP y User-Agent
+    // Obtener IP del cliente
     const forwarded = req.headers['x-forwarded-for'];
     const ip =
       typeof forwarded === 'string'
         ? forwarded.split(',')[0]?.trim()
         : req.headers['x-real-ip'] || 'unknown';
-    const userAgent = req.headers['user-agent'] || 'unknown';
     const timestampFirma = new Date().toISOString();
 
     // Registrar firma
@@ -128,7 +127,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         firmado: true,
         fecha_firma: timestampFirma,
         ip_firma: ip,
-        user_agent_firma: userAgent,
       })
       .eq('id', resumen.id);
 
