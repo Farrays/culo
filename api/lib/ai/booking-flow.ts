@@ -868,7 +868,7 @@ export function isInBookingFlow(step: BookingStep): boolean {
 // MEMBER INTENT DETECTION (Fase 6)
 // ============================================================================
 
-export type MemberIntent = 'credits' | 'cancel' | 'history' | 'none';
+export type MemberIntent = 'credits' | 'cancel' | 'history' | 'update' | 'none';
 
 /**
  * Detect member-specific intents (only relevant for existing members)
@@ -929,6 +929,30 @@ export function detectMemberIntent(text: string): MemberIntent {
 
   if (historyKeywords.some(kw => normalizedText.includes(kw))) {
     return 'history';
+  }
+
+  // Update profile: "cambiar email", "actualizar datos", etc.
+  const updateKeywords = [
+    'cambiar email',
+    'cambiar mi email',
+    'actualizar email',
+    'actualizar datos',
+    'cambiar nombre',
+    'actualizar nombre',
+    'change email',
+    'update email',
+    'change my email',
+    'changer email',
+    'canviar email',
+    'actualitzar email',
+    'mis datos',
+    'my data',
+    'my profile',
+    'mi perfil',
+  ];
+
+  if (updateKeywords.some(kw => normalizedText.includes(kw))) {
+    return 'update';
   }
 
   return 'none';

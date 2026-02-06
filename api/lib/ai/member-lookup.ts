@@ -38,6 +38,33 @@ export interface MemberLookupResult {
   source: 'cache' | 'momence' | 'not_found';
 }
 
+export interface MemberVisit {
+  className: string;
+  date: string;
+  instructorName?: string;
+}
+
+export interface MemberBooking {
+  bookingId: number;
+  sessionId: number;
+  className: string;
+  date: string;
+  instructorName?: string;
+  canCancel: boolean;
+}
+
+// Internal type for Momence API response
+interface MomenceVisit {
+  sessionName?: string;
+  className?: string;
+  name?: string;
+  date?: string;
+  startTime?: string;
+  checkinTime?: string;
+  instructorName?: string;
+  trainerName?: string;
+}
+
 // ============================================================================
 // CONSTANTS
 // ============================================================================
@@ -279,6 +306,245 @@ export class MemberLookupService {
     } catch (error) {
       console.error('[member-lookup] Membership fetch error:', error);
       return { hasActiveMembership: false, creditsAvailable: 0 };
+    }
+  }
+
+  /**
+   * Fetch member's visit history from Momence
+   * Returns recent class visits
+   */
+  async fetchMemberVisits(memberId: number): Promise<MemberVisit[]> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        return [];
+      }
+
+      // GET /api/v2/host/members/{memberId} includes visits field
+      const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/${memberId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        console.warn(`[member-lookup] Member fetch failed: ${response.status}`);
+        return [];
+      }
+
+      const data = await response.json();
+      const member = data.payload || data;
+
+      // Extract visits from member profile
+      const visits = member.visits || member.classVisits || [];
+
+      return visits.slice(0, 10).map((visit: MomenceVisit) => ({
+        className: visit.sessionName || visit.className || visit.name || 'Clase',
+        date: visit.date || visit.startTime || visit.checkinTime,
+        instructorName: visit.instructorName || visit.trainerName,
+      }));
+    } catch (error) {
+      console.error('[member-lookup] Visits fetch error:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Fetch member's upcoming bookings from Momence
+   * Returns bookings that can be cancelled
+   */
+  async fetchMemberUpcomingBookings(memberId: number): Promise<MemberBooking[]> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        return [];
+      }
+
+      // Get upcoming sessions and filter for this member's bookings
+      // First, get sessions for the next 14 days
+      const now = new Date();
+      const twoWeeksLater = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
+
+      const response = await fetch(
+        `${MOMENCE_API_URL}/api/v2/host/sessions?` +
+          new URLSearchParams({
+            startTime: now.toISOString(),
+            endTime: twoWeeksLater.toISOString(),
+          }),
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (!response.ok) {
+        console.warn(`[member-lookup] Sessions fetch failed: ${response.status}`);
+        return [];
+      }
+
+      const sessionsData = await response.json();
+      const sessions = sessionsData.payload || sessionsData || [];
+
+      const bookings: MemberBooking[] = [];
+
+      // Check each session for this member's bookings
+      for (const session of sessions.slice(0, 30)) {
+        // Limit API calls
+        try {
+          const bookingsResponse = await fetch(
+            `${MOMENCE_API_URL}/api/v2/host/sessions/${session.id}/bookings`,
+            {
+              method: 'GET',
+              headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+
+          if (bookingsResponse.ok) {
+            const bookingsData = await bookingsResponse.json();
+            const sessionBookings = bookingsData.payload || bookingsData || [];
+
+            // Find this member's booking
+            const memberBooking = sessionBookings.find(
+              (b: { memberId?: number; member?: { id: number } }) =>
+                b.memberId === memberId || b.member?.id === memberId
+            );
+
+            if (memberBooking) {
+              bookings.push({
+                bookingId: memberBooking.id,
+                sessionId: session.id,
+                className: session.name || session.sessionName || 'Clase',
+                date: session.startTime || session.date,
+                instructorName: session.instructorName || session.trainerName,
+                canCancel: true, // Could check cancellation policy
+              });
+            }
+          }
+        } catch {
+          // Continue to next session
+        }
+      }
+
+      return bookings;
+    } catch (error) {
+      console.error('[member-lookup] Bookings fetch error:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Cancel a booking in Momence
+   */
+  async cancelBooking(bookingId: number): Promise<{ success: boolean; error?: string }> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        return { success: false, error: 'No authentication token' };
+      }
+
+      const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/session-bookings/${bookingId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        return {
+          success: false,
+          error: (errorData as { message?: string }).message || `HTTP ${response.status}`,
+        };
+      }
+
+      return { success: true };
+    } catch (error) {
+      console.error('[member-lookup] Cancel booking error:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    }
+  }
+
+  /**
+   * Update member's email in Momence
+   */
+  async updateMemberEmail(
+    memberId: number,
+    newEmail: string
+  ): Promise<{ success: boolean; error?: string }> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        return { success: false, error: 'No authentication token' };
+      }
+
+      const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/${memberId}/email`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: newEmail }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        return {
+          success: false,
+          error: (errorData as { message?: string }).message || `HTTP ${response.status}`,
+        };
+      }
+
+      return { success: true };
+    } catch (error) {
+      console.error('[member-lookup] Update email error:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    }
+  }
+
+  /**
+   * Update member's name in Momence
+   */
+  async updateMemberName(
+    memberId: number,
+    firstName: string,
+    lastName: string
+  ): Promise<{ success: boolean; error?: string }> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        return { success: false, error: 'No authentication token' };
+      }
+
+      const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/${memberId}/name`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ firstName, lastName }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        return {
+          success: false,
+          error: (errorData as { message?: string }).message || `HTTP ${response.status}`,
+        };
+      }
+
+      return { success: true };
+    } catch (error) {
+      console.error('[member-lookup] Update name error:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
     }
   }
 

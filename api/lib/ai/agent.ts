@@ -39,7 +39,7 @@ import { getConsentManager, createConsentRecord } from './consent-flow';
 import { LeadScorer, detectSignalsFromMessage, isLocalPhone } from './lead-scorer';
 import { ObjectionHandler, getObjectionResponse } from './objection-handler';
 import { getAgentMetrics } from './agent-metrics';
-import { getMemberLookup } from './member-lookup';
+import { getMemberLookup, type MemberBooking } from './member-lookup';
 
 // ============================================================================
 // TYPES
@@ -416,9 +416,11 @@ export class SalesAgent {
       case 'credits':
         return this.handleCreditsInquiry(conversation);
       case 'cancel':
-        return this.handleCancelIntent(conversation);
+        return await this.handleCancelIntent(conversation);
       case 'history':
-        return this.handleHistoryIntent(conversation);
+        return await this.handleHistoryIntent(conversation);
+      case 'update':
+        return this.handleUpdateIntent(conversation);
       default:
         return this.generateAIResponse(conversation, 'whatsapp');
     }
@@ -459,40 +461,137 @@ export class SalesAgent {
 
   /**
    * Handle cancel intent: "Quiero cancelar mi reserva"
+   * Fetches upcoming bookings and shows them for cancellation
    */
-  private handleCancelIntent(conversation: ConversationState): string {
+  private async handleCancelIntent(conversation: ConversationState): Promise<string> {
     const lang = conversation.language;
     const firstName = conversation.memberInfo?.firstName || '';
-
-    // For now, guide them to use the cancellation link or provide details
-    // TODO: Fetch member's upcoming bookings from Momence and show them
-    const responses: Record<SupportedLanguage, string> = {
-      es: `${firstName ? firstName + ', p' : 'P'}ara cancelar tienes dos opciones:\n\n1️⃣ Usa el enlace de cancelación que te enviamos por email cuando reservaste\n\n2️⃣ Dime qué clase quieres cancelar (día y nombre) y lo gestiono yo\n\n¿Cuál prefieres?`,
-      ca: `${firstName ? firstName + ', p' : 'P'}er cancel·lar tens dues opcions:\n\n1️⃣ Usa l'enllaç de cancel·lació que et vam enviar per email\n\n2️⃣ Digues-me quina classe vols cancel·lar (dia i nom) i ho gestiono jo\n\nQuina prefereixes?`,
-      en: `${firstName ? firstName + ', t' : 'T'}o cancel you have two options:\n\n1️⃣ Use the cancellation link we sent you by email\n\n2️⃣ Tell me which class you want to cancel (day and name) and I'll handle it\n\nWhich do you prefer?`,
-      fr: `${firstName ? firstName + ', p' : 'P'}our annuler tu as deux options:\n\n1️⃣ Utilise le lien d'annulation qu'on t'a envoyé par email\n\n2️⃣ Dis-moi quel cours tu veux annuler (jour et nom) et je m'en occupe\n\nQuelle option préfères-tu?`,
-    };
+    const memberId = conversation.memberInfo?.memberId;
 
     conversation.intent = 'support';
+
+    // If we have a member ID, try to fetch their upcoming bookings
+    if (memberId) {
+      try {
+        const memberLookup = getMemberLookup(this.redis);
+        const bookings = await memberLookup.fetchMemberUpcomingBookings(memberId);
+
+        if (bookings.length > 0) {
+          // Store bookings in conversation for follow-up
+          (
+            conversation as ConversationState & { pendingBookings?: MemberBooking[] }
+          ).pendingBookings = bookings;
+
+          const bookingsList = bookings
+            .map((b, i) => {
+              const date = new Date(b.date);
+              const formattedDate = date.toLocaleDateString(lang === 'en' ? 'en-GB' : 'es-ES', {
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short',
+                hour: '2-digit',
+                minute: '2-digit',
+              });
+              return `${i + 1}️⃣ *${b.className}* - ${formattedDate}`;
+            })
+            .join('\n');
+
+          const responses: Record<SupportedLanguage, string> = {
+            es: `${firstName ? firstName + ', t' : 'T'}ienes estas reservas próximas:\n\n${bookingsList}\n\n¿Cuál quieres cancelar? Dime el número.`,
+            ca: `${firstName ? firstName + ', t' : 'T'}ens aquestes reserves properes:\n\n${bookingsList}\n\nQuina vols cancel·lar? Digues-me el número.`,
+            en: `${firstName ? firstName + ', y' : 'Y'}ou have these upcoming bookings:\n\n${bookingsList}\n\nWhich one do you want to cancel? Tell me the number.`,
+            fr: `${firstName ? firstName + ', t' : 'T'}u as ces réservations à venir:\n\n${bookingsList}\n\nLaquelle veux-tu annuler? Dis-moi le numéro.`,
+          };
+          return responses[lang];
+        }
+      } catch (error) {
+        console.error('[agent] Error fetching bookings:', error);
+      }
+    }
+
+    // Fallback: guide them to check their email
+    const responses: Record<SupportedLanguage, string> = {
+      es: `${firstName ? firstName + ', n' : 'N'}o encuentro reservas próximas tuyas. Si tienes una, puedes usar el enlace de cancelación que te enviamos por email cuando reservaste 📧`,
+      ca: `${firstName ? firstName + ', n' : 'N'}o trobo reserves properes teves. Si en tens alguna, pots usar l'enllaç de cancel·lació que et vam enviar per email 📧`,
+      en: `${firstName ? firstName + ', I' : 'I'} don't see any upcoming bookings for you. If you have one, you can use the cancellation link we sent by email 📧`,
+      fr: `${firstName ? firstName + ', j' : 'J'}e ne trouve pas de réservations à venir. Si tu en as une, utilise le lien d'annulation envoyé par email 📧`,
+    };
     return responses[lang];
   }
 
   /**
-   * Handle history intent: "Mis reservas"
+   * Handle history intent: "Mis reservas" / "Mi historial"
+   * Fetches member's recent class visits from Momence
    */
-  private handleHistoryIntent(conversation: ConversationState): string {
+  private async handleHistoryIntent(conversation: ConversationState): Promise<string> {
     const lang = conversation.language;
-
-    // TODO: Fetch member's recent visits from Momence
-    // For now, acknowledge and explain
-    const responses: Record<SupportedLanguage, string> = {
-      es: 'Dame un momento que miro tus clases... 🔍\n\n(Esta función está en desarrollo, pronto podrás ver tu historial aquí)',
-      ca: "Dona'm un moment que miro les teves classes... 🔍\n\n(Aquesta funció està en desenvolupament)",
-      en: 'Let me check your classes... 🔍\n\n(This feature is coming soon!)',
-      fr: 'Laisse-moi vérifier tes cours... 🔍\n\n(Cette fonction arrive bientôt!)',
-    };
+    const firstName = conversation.memberInfo?.firstName || '';
+    const memberId = conversation.memberInfo?.memberId;
 
     conversation.intent = 'info';
+
+    // If we have a member ID, fetch their visit history
+    if (memberId) {
+      try {
+        const memberLookup = getMemberLookup(this.redis);
+        const visits = await memberLookup.fetchMemberVisits(memberId);
+
+        if (visits.length > 0) {
+          const visitsList = visits
+            .slice(0, 5) // Show last 5 visits
+            .map(v => {
+              const date = new Date(v.date);
+              const formattedDate = date.toLocaleDateString(lang === 'en' ? 'en-GB' : 'es-ES', {
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short',
+              });
+              return `• *${v.className}* - ${formattedDate}${v.instructorName ? ` (${v.instructorName})` : ''}`;
+            })
+            .join('\n');
+
+          const responses: Record<SupportedLanguage, string> = {
+            es: `${firstName ? firstName + ', a' : 'A'}quí tienes tus últimas clases 💃\n\n${visitsList}\n\n¿Quieres reservar otra?`,
+            ca: `${firstName ? firstName + ', a' : 'A'}quí tens les teves últimes classes 💃\n\n${visitsList}\n\nVols reservar una altra?`,
+            en: `${firstName ? firstName + ', h' : 'H'}ere are your recent classes 💃\n\n${visitsList}\n\nWant to book another?`,
+            fr: `${firstName ? firstName + ', v' : 'V'}oici tes derniers cours 💃\n\n${visitsList}\n\nTu veux en réserver un autre?`,
+          };
+          return responses[lang];
+        }
+      } catch (error) {
+        console.error('[agent] Error fetching visits:', error);
+      }
+    }
+
+    // Fallback: no visits found
+    const responses: Record<SupportedLanguage, string> = {
+      es: `${firstName ? firstName + ', a' : 'A'}ún no tienes clases registradas. ¿Quieres reservar tu primera clase? 💃`,
+      ca: `${firstName ? firstName + ', e' : 'E'}ncara no tens classes registrades. Vols reservar la teva primera classe? 💃`,
+      en: `${firstName ? firstName + ', y' : 'Y'}ou don't have any classes registered yet. Want to book your first one? 💃`,
+      fr: `${firstName ? firstName + ', t' : 'T'}u n'as pas encore de cours enregistrés. Tu veux réserver ton premier? 💃`,
+    };
+    return responses[lang];
+  }
+
+  /**
+   * Handle update intent: "Cambiar mi email", "Actualizar datos"
+   * Guides the user to provide new email or name
+   */
+  private handleUpdateIntent(conversation: ConversationState): string {
+    const lang = conversation.language;
+    const firstName = conversation.memberInfo?.firstName || '';
+    const email = conversation.memberInfo?.email || '';
+
+    conversation.intent = 'support';
+
+    // Show current data and ask what they want to update
+    const responses: Record<SupportedLanguage, string> = {
+      es: `${firstName ? firstName + ', t' : 'T'}us datos actuales son:\n\n📧 Email: ${email || 'No registrado'}\n👤 Nombre: ${firstName || 'No registrado'}\n\n¿Qué quieres actualizar?\n1️⃣ Email\n2️⃣ Nombre\n\nDime el número o escríbeme directamente el nuevo dato.`,
+      ca: `${firstName ? firstName + ', l' : 'L'}es teves dades actuals són:\n\n📧 Email: ${email || 'No registrat'}\n👤 Nom: ${firstName || 'No registrat'}\n\nQuè vols actualitzar?\n1️⃣ Email\n2️⃣ Nom\n\nDigues-me el número o escriu-me directament la nova dada.`,
+      en: `${firstName ? firstName + ', y' : 'Y'}our current info:\n\n📧 Email: ${email || 'Not set'}\n👤 Name: ${firstName || 'Not set'}\n\nWhat would you like to update?\n1️⃣ Email\n2️⃣ Name\n\nTell me the number or write the new info directly.`,
+      fr: `${firstName ? firstName + ', t' : 'T'}es infos actuelles:\n\n📧 Email: ${email || 'Non défini'}\n👤 Nom: ${firstName || 'Non défini'}\n\nQue veux-tu mettre à jour?\n1️⃣ Email\n2️⃣ Nom\n\nDis-moi le numéro ou écris directement la nouvelle info.`,
+    };
+
     return responses[lang];
   }
 

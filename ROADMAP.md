@@ -8,7 +8,7 @@
 ## Estado General
 
 ```
-███████████████████████░░░  90% MVP + Fase 5 + Fase 6 (70%) + Fase 11
+████████████████████████░░  92% MVP + Fase 5 + Fase 6 + Fase 11
 ```
 
 ---
@@ -127,17 +127,17 @@ GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
 
 ---
 
-### Fase 6: Funcionalidades para Miembros 🟡 70%
+### Fase 6: Funcionalidades para Miembros ✅ 100%
 
 **Implementado: 2026-02-06**
 
-| Funcionalidad                 | Estado | Notas                              |
-| ----------------------------- | ------ | ---------------------------------- |
-| "¿Cuántas clases me quedan?"  | ✅     | `handleCreditsInquiry()`           |
-| Reservar con créditos         | ✅     | Salta data collection si es member |
-| Ver historial de clases       | 🟡     | UI lista, falta API Momence        |
-| Cancelar reserva vía WhatsApp | 🟡     | Guía al usuario, falta fetch       |
-| Actualizar email/nombre       | ❌     | PUT endpoints no implementados     |
+| Funcionalidad                 | Estado | Notas                                |
+| ----------------------------- | ------ | ------------------------------------ |
+| "¿Cuántas clases me quedan?"  | ✅     | `handleCreditsInquiry()`             |
+| Reservar con créditos         | ✅     | Salta data collection si es member   |
+| Ver historial de clases       | ✅     | `fetchMemberVisits()` + formato list |
+| Cancelar reserva vía WhatsApp | ✅     | `fetchMemberUpcomingBookings()`      |
+| Actualizar email/nombre       | ✅     | `handleUpdateIntent()` + PUT APIs    |
 
 **Archivos modificados:**
 
