@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { kv } from '@vercel/kv';
+import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -37,27 +38,7 @@ const EXIT_INTENT_KEY_PREFIX = 'exit:';
 // Tipos de estado
 type ExitIntentStatus = 'new' | 'existing';
 
-// Rate limiting simple (en memoria - se resetea en cada cold start)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minuto
-const RATE_LIMIT_MAX = 5; // 5 requests por minuto por IP
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-
-  if (record.count >= RATE_LIMIT_MAX) {
-    return true;
-  }
-
-  record.count++;
-  return false;
-}
+// Rate limiting con Redis (persistente entre cold starts)
 
 // Validacion de email
 function isValidEmail(email: string): boolean {
@@ -85,7 +66,7 @@ export default async function handler(
     req.socket?.remoteAddress ||
     'unknown';
 
-  if (isRateLimited(clientIp)) {
+  if (await isRateLimitedRedis('/api/exit-intent', clientIp)) {
     return res.status(429).json({ error: 'Too many requests. Please wait a minute.' });
   }
 
