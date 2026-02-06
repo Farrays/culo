@@ -162,6 +162,8 @@ const OG_IMAGE_MAP = {
   regalaBaile: 'og-home.jpg',
   reservas: 'og-home.jpg',
   miReserva: 'og-home.jpg',
+  fichaje: 'og-home.jpg',
+  adminFichajes: 'og-home.jpg',
   feedbackGracias: 'og-home.jpg',
   feedbackComentario: 'og-home.jpg',
   asistenciaConfirmada: 'og-home.jpg',
@@ -240,6 +242,7 @@ const OG_IMAGE_MAP = {
   blogBalletAdultos: 'blog/ballet-adultos/og.jpg',
   blogDanzaContemporaneaVsJazzBallet: 'blog/danza-contemporanea-vs-jazz-ballet/og.jpg',
   blogBaileSaludMental: 'blog/beneficios-salsa/og.jpg', // Reutiliza beneficios
+  blogDanzasUrbanas: 'blog/danzas-urbanas/og.jpg',
 
   // === Páginas legales ===
   termsConditions: 'og-home.jpg',
@@ -389,7 +392,12 @@ const routes = [
 
   { path: 'es/hazte-socio', lang: 'es', page: 'hazteSocio' },
 
+  // Y&R Project - Linktree-style artist page (no locale prefix for short URL)
+  { path: 'yr-project', lang: 'es', page: 'yrProject' },
+
   { path: 'es/mi-reserva', lang: 'es', page: 'miReserva' },
+  { path: 'es/fichaje', lang: 'es', page: 'fichaje' },
+  { path: 'es/admin/fichajes', lang: 'es', page: 'adminFichajes' },
   { path: 'es/feedback-gracias', lang: 'es', page: 'feedbackGracias' },
   { path: 'es/feedback-comentario', lang: 'es', page: 'feedbackComentario' },
   { path: 'es/asistencia-confirmada', lang: 'es', page: 'asistenciaConfirmada' },
@@ -467,6 +475,8 @@ const routes = [
   { path: 'ca/hazte-socio', lang: 'ca', page: 'hazteSocio' },
 
   { path: 'ca/mi-reserva', lang: 'ca', page: 'miReserva' },
+  { path: 'ca/fichaje', lang: 'ca', page: 'fichaje' },
+  { path: 'ca/admin/fichajes', lang: 'ca', page: 'adminFichajes' },
   { path: 'ca/feedback-gracias', lang: 'ca', page: 'feedbackGracias' },
   { path: 'ca/feedback-comentario', lang: 'ca', page: 'feedbackComentario' },
   { path: 'ca/asistencia-confirmada', lang: 'ca', page: 'asistenciaConfirmada' },
@@ -544,6 +554,8 @@ const routes = [
   { path: 'en/hazte-socio', lang: 'en', page: 'hazteSocio' },
 
   { path: 'en/mi-reserva', lang: 'en', page: 'miReserva' },
+  { path: 'en/fichaje', lang: 'en', page: 'fichaje' },
+  { path: 'en/admin/fichajes', lang: 'en', page: 'adminFichajes' },
   { path: 'en/feedback-gracias', lang: 'en', page: 'feedbackGracias' },
   { path: 'en/feedback-comentario', lang: 'en', page: 'feedbackComentario' },
   { path: 'en/asistencia-confirmada', lang: 'en', page: 'asistenciaConfirmada' },
@@ -621,6 +633,8 @@ const routes = [
   { path: 'fr/hazte-socio', lang: 'fr', page: 'hazteSocio' },
 
   { path: 'fr/mi-reserva', lang: 'fr', page: 'miReserva' },
+  { path: 'fr/fichaje', lang: 'fr', page: 'fichaje' },
+  { path: 'fr/admin/fichajes', lang: 'fr', page: 'adminFichajes' },
   { path: 'fr/feedback-gracias', lang: 'fr', page: 'feedbackGracias' },
   { path: 'fr/feedback-comentario', lang: 'fr', page: 'feedbackComentario' },
   { path: 'fr/asistencia-confirmada', lang: 'fr', page: 'asistenciaConfirmada' },
@@ -673,6 +687,7 @@ const routes = [
   { path: 'es/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'es', page: 'blogAcademiaDanza' },
   { path: 'es/blog/tips/ballet-para-adultos-barcelona', lang: 'es', page: 'blogBalletAdultos' },
   { path: 'es/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'es', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  { path: 'es/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'es', page: 'blogDanzasUrbanas' },
   { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
   { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
@@ -692,6 +707,7 @@ const routes = [
   { path: 'ca/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'ca', page: 'blogAcademiaDanza' },
   { path: 'ca/blog/tips/ballet-para-adultos-barcelona', lang: 'ca', page: 'blogBalletAdultos' },
   { path: 'ca/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'ca', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  { path: 'ca/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'ca', page: 'blogDanzasUrbanas' },
   { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
   { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
@@ -711,6 +727,7 @@ const routes = [
   { path: 'en/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'en', page: 'blogAcademiaDanza' },
   { path: 'en/blog/tips/ballet-para-adultos-barcelona', lang: 'en', page: 'blogBalletAdultos' },
   { path: 'en/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'en', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  { path: 'en/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'en', page: 'blogDanzasUrbanas' },
   { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
   { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
@@ -730,6 +747,7 @@ const routes = [
   { path: 'fr/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'fr', page: 'blogAcademiaDanza' },
   { path: 'fr/blog/tips/ballet-para-adultos-barcelona', lang: 'fr', page: 'blogBalletAdultos' },
   { path: 'fr/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'fr', page: 'blogDanzaContemporaneaVsJazzBallet' },
+  { path: 'fr/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'fr', page: 'blogDanzasUrbanas' },
   { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
   { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 
@@ -919,17 +937,24 @@ const metadata = {
       description: 'Únete a Farray\'s. Desde 50€/mes. +80 clases semanales, +25 estilos. Sin permanencia. App para reservar. ¡Empieza hoy!',
       robots: 'noindex, nofollow',
     },
-
-
     yrProject: {
       title: 'Y&R | Yunaisy & Reynier - Artistas de Baile',
       description: 'Contacta con Y&R (Yunaisy & Reynier). Artistas de baile, shows y clases en Barcelona. WhatsApp e Instagram.',
       robots: 'noindex, nofollow',
     },
-
     miReserva: {
       title: 'Mi Reserva | Farray\'s Center Barcelona',
       description: 'Gestiona tu reserva de clase en Farray\'s Center Barcelona. Reprograma o cancela tu clase.',
+      robots: 'noindex, nofollow',
+    },
+    fichaje: {
+      title: 'Fichaje Profesores | Farray\'s Center',
+      description: 'Sistema de fichaje para profesores de Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
+    adminFichajes: {
+      title: 'Dashboard Fichajes | Farray\'s Center',
+      description: 'Panel de administración de fichajes para Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
     feedbackGracias: {
@@ -1006,6 +1031,10 @@ const metadata = {
     blogDanzaContemporaneaVsJazzBallet: {
       title: 'Contemporánea vs Jazz vs Ballet: Guía 2025 | Farray\'s Center',
       description: 'Descubre las diferencias entre danza contemporánea, modern jazz y ballet clásico. Comparativa técnica, beneficios y cómo elegir el estilo que mejor se adapta a ti.',
+    },
+    blogDanzasUrbanas: {
+      title: 'Danzas Urbanas Barcelona: Guía Completa Hip-Hop 2026 | Farray\'s',
+      description: '20 años enseñando danzas urbanas en Barcelona. Breaking, popping, locking y hip-hop con un profesor veterano. Guía definitiva para empezar.',
     },
     blogPerderMiedoBailar: {
       title: 'Cómo Perder el Miedo a Bailar: Guía Práctica 2025 | Farray\'s Center',
@@ -1289,17 +1318,24 @@ const metadata = {
       description: 'Uneix-te a Farray\'s. Des de 50€/mes. +80 classes setmanals, +25 estils. Sense permanència. App per reservar. Comença avui!',
       robots: 'noindex, nofollow',
     },
-
-
     yrProject: {
       title: 'Y&R | Yunaisy & Reynier - Artistes de Ball',
       description: 'Contacta amb Y&R (Yunaisy & Reynier). Artistes de ball, shows i classes a Barcelona. WhatsApp i Instagram.',
       robots: 'noindex, nofollow',
     },
-
     miReserva: {
       title: 'La Meva Reserva | Farray\'s Center Barcelona',
       description: 'Gestiona la teva reserva de classe a Farray\'s Center Barcelona. Reprograma o cancel·la la teva classe.',
+      robots: 'noindex, nofollow',
+    },
+    fichaje: {
+      title: 'Fitxatge Professors | Farray\'s Center',
+      description: 'Sistema de fitxatge per a professors de Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
+    adminFichajes: {
+      title: 'Dashboard Fitxatges | Farray\'s Center',
+      description: 'Panell d\'administració de fitxatges per a Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
     feedbackGracias: {
@@ -1376,6 +1412,10 @@ const metadata = {
     blogDanzaContemporaneaVsJazzBallet: {
       title: 'Contemporània vs Jazz vs Ballet: Guia 2025 | Farray\'s Center',
       description: 'Descobreix les diferències entre dansa contemporània, modern jazz i ballet clàssic. Comparativa tècnica, beneficis i com triar l\'estil que millor s\'adapta a tu.',
+    },
+    blogDanzasUrbanas: {
+      title: 'Danses Urbanes Barcelona: Guia Completa Hip-Hop 2026 | Farray\'s',
+      description: '20 anys ensenyant danses urbanes a Barcelona. Breaking, popping, locking i hip-hop amb un professor veterà. Guia definitiva per començar.',
     },
     blogPerderMiedoBailar: {
       title: 'Com Perdre la Por a Ballar: Guia Pràctica 2025 | Farray\'s Center',
@@ -1659,17 +1699,24 @@ const metadata = {
       description: 'Join Farray\'s. From 50€/month. +80 weekly classes, +25 styles. No commitment. App to book. Start today!',
       robots: 'noindex, nofollow',
     },
-
-
     yrProject: {
       title: 'Y&R | Yunaisy & Reynier - Dance Artists',
       description: 'Contact Y&R (Yunaisy & Reynier). Dance artists, shows and classes in Barcelona. WhatsApp and Instagram.',
       robots: 'noindex, nofollow',
     },
-
     miReserva: {
       title: 'My Booking | Farray\'s Center Barcelona',
       description: 'Manage your class booking at Farray\'s Center Barcelona. Reschedule or cancel your class.',
+      robots: 'noindex, nofollow',
+    },
+    fichaje: {
+      title: 'Teacher Clock-In | Farray\'s Center',
+      description: 'Clock-in system for Farray\'s Center Barcelona teachers.',
+      robots: 'noindex, nofollow',
+    },
+    adminFichajes: {
+      title: 'Clock-In Dashboard | Farray\'s Center',
+      description: 'Clock-in administration panel for Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
     feedbackGracias: {
@@ -1746,6 +1793,10 @@ const metadata = {
     blogDanzaContemporaneaVsJazzBallet: {
       title: 'Contemporary vs Jazz vs Ballet: 2025 Guide | Farray\'s Center',
       description: 'Discover the differences between contemporary dance, modern jazz and classical ballet. Technical comparison, benefits and how to choose the style that suits you best.',
+    },
+    blogDanzasUrbanas: {
+      title: 'Urban Dance Barcelona: Complete Hip-Hop Guide 2026 | Farray\'s',
+      description: '20 years teaching urban dance in Barcelona. Breaking, popping, locking and hip-hop with a veteran teacher. The definitive guide to get started.',
     },
     blogPerderMiedoBailar: {
       title: 'How to Overcome Fear of Dancing: Practical Guide 2025 | Farray\'s Center',
@@ -2029,17 +2080,24 @@ const metadata = {
       description: 'Rejoignez Farray\'s. À partir de 50€/mois. +80 cours par semaine, +25 styles. Sans engagement. App pour réserver. Commencez aujourd\'hui!',
       robots: 'noindex, nofollow',
     },
-
-
     yrProject: {
       title: 'Y&R | Yunaisy & Reynier - Artistes de Danse',
       description: 'Contactez Y&R (Yunaisy & Reynier). Artistes de danse, spectacles et cours à Barcelone. WhatsApp et Instagram.',
       robots: 'noindex, nofollow',
     },
-
     miReserva: {
       title: 'Ma Réservation | Farray\'s Center Barcelone',
       description: 'Gérez votre réservation de cours chez Farray\'s Center Barcelone. Reprogrammez ou annulez votre cours.',
+      robots: 'noindex, nofollow',
+    },
+    fichaje: {
+      title: 'Pointage Professeurs | Farray\'s Center',
+      description: 'Système de pointage pour les professeurs de Farray\'s Center Barcelone.',
+      robots: 'noindex, nofollow',
+    },
+    adminFichajes: {
+      title: 'Tableau de Bord Pointages | Farray\'s Center',
+      description: 'Panneau d\'administration des pointages pour Farray\'s Center Barcelone.',
       robots: 'noindex, nofollow',
     },
     feedbackGracias: {
@@ -2116,6 +2174,10 @@ const metadata = {
     blogDanzaContemporaneaVsJazzBallet: {
       title: 'Contemporaine vs Jazz vs Ballet : Guide 2025 | Farray\'s Center',
       description: 'Découvrez les différences entre danse contemporaine, modern jazz et ballet classique. Comparaison technique, avantages et comment choisir le style qui vous convient le mieux.',
+    },
+    blogDanzasUrbanas: {
+      title: 'Danses Urbaines Barcelone : Guide Complet Hip-Hop 2026 | Farray\'s',
+      description: '20 ans d\'enseignement des danses urbaines à Barcelone. Breaking, popping, locking et hip-hop avec un professeur vétéran. Le guide définitif pour commencer.',
     },
     blogPerderMiedoBailar: {
       title: 'Comment Vaincre la Peur de Danser : Guide Pratique 2025 | Farray\'s Center',
@@ -2269,10 +2331,7 @@ const generateInitialContentForLang = (lang, manualOverrides) => {
 const manualOverrides = {
   es: {
     // home excluded - causes hydration error #418 because React renders complex components
-
-
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
-
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Términos y Condiciones</h1><p>Información legal sobre inscripciones, pagos y políticas de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Aviso Legal</h1><p>Información sobre la empresa, propiedad intelectual y condiciones de uso.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacidad</h1><p>Información sobre el tratamiento de datos personales según el RGPD.</p></main>`,
@@ -2284,10 +2343,7 @@ const manualOverrides = {
   },
   ca: {
     // home excluded - causes hydration error #418 because React renders complex components
-
-
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
-
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Termes i Condicions</h1><p>Informació legal sobre inscripcions, pagaments i polítiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Avís Legal</h1><p>Informació sobre l'empresa, propietat intel·lectual i condicions d'ús.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacitat</h1><p>Informació sobre el tractament de dades personals segons el RGPD.</p></main>`,
@@ -2299,10 +2355,7 @@ const manualOverrides = {
   },
   en: {
     // home excluded - causes hydration error #418 because React renders complex components
-
-
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
-
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Terms and Conditions</h1><p>Legal information about registration, payments and policies at Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Legal Notice</h1><p>Information about the company, intellectual property and terms of use.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Privacy Policy</h1><p>Information about personal data processing in accordance with GDPR.</p></main>`,
@@ -2314,10 +2367,7 @@ const manualOverrides = {
   },
   fr: {
     // home excluded - causes hydration error #418 because React renders complex components
-
-
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
-
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditions Générales</h1><p>Informations légales sur les inscriptions, paiements et politiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Mentions Légales</h1><p>Informations sur l'entreprise, propriété intellectuelle et conditions d'utilisation.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Confidentialité</h1><p>Informations sur le traitement des données personnelles conformément au RGPD.</p></main>`,
@@ -2482,6 +2532,8 @@ routes.forEach(route => {
     pagePath = 'blog/tips/ballet-para-adultos-barcelona';
   } else if (page === 'blogDanzaContemporaneaVsJazzBallet') {
     pagePath = 'blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet';
+  } else if (page === 'blogDanzasUrbanas') {
+    pagePath = 'blog/tips/danzas-urbanas-barcelona-guia-completa';
   } else if (page === 'blogPerderMiedoBailar') {
     pagePath = 'blog/lifestyle/como-perder-miedo-bailar';
   } else if (page === 'blogFitness') {

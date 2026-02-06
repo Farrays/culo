@@ -57,6 +57,11 @@
       "maxDuration": 60,
       "includeFiles": "api/lib/**"
     },
+    "api/cron-fichaje.ts": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "api/lib/**"
+    },
     "api/**/*.ts": {
       "memory": 512,
       "maxDuration": 60,
@@ -1079,6 +1084,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/yr-project",
+      "destination": "/index.html"
+    },
     {
       "source": "/:locale(es|en|ca|fr)/horarios-precios",
       "destination": "/index.html"

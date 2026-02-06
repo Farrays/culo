@@ -29,7 +29,13 @@ interface Fichaje {
   fecha: string;
   hora_inicio: string | null;
   hora_fin: string | null;
-  estado: 'pendiente' | 'entrada_registrada' | 'completado' | 'no_fichado' | 'editado_admin';
+  estado:
+    | 'pendiente'
+    | 'entrada_registrada'
+    | 'completado'
+    | 'no_fichado'
+    | 'editado_admin'
+    | 'clase_cancelada';
   minutos_trabajados: number | null;
 }
 
@@ -41,7 +47,7 @@ interface FichajeResponse {
 }
 
 // API base URL
-const API_BASE = '/api/fichaje';
+const API_BASE = '/api/fichaje-';
 
 const FichajePage: React.FC = () => {
   // State
@@ -182,26 +188,26 @@ const FichajePage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-        {/* Header */}
-        <header className="bg-black/50 backdrop-blur-sm border-b border-purple-500/30 py-4 px-6">
-          <div className="max-w-2xl mx-auto flex items-center justify-between">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black pt-28">
+        {/* Header interno del fichaje */}
+        <header className="bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 shadow-lg">
+          <div className="max-w-md mx-auto flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-white">Fichaje</h1>
-              <p className="text-purple-300 text-sm">Farray&apos;s Center</p>
+              <p className="text-gray-400 text-sm">Farray&apos;s Center</p>
             </div>
             <div className="text-right">
               <div className="text-3xl font-mono text-white">{formatTime(currentTime)}</div>
-              <div className="text-purple-300 text-sm capitalize">{formatDate(currentTime)}</div>
+              <div className="text-gray-400 text-sm capitalize">{formatDate(currentTime)}</div>
             </div>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="max-w-2xl mx-auto p-6">
+        <main className="max-w-md mx-auto p-6 pb-24">
           {/* Selector de Profesor */}
-          <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-purple-500/30">
-            <label className="block text-purple-200 text-sm font-medium mb-2">
+          <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-brand-600/30">
+            <label className="block text-brand-200 text-sm font-medium mb-2">
               Selecciona tu nombre:
             </label>
             <select
@@ -210,7 +216,7 @@ const FichajePage: React.FC = () => {
                 const prof = profesores.find(p => p.id === e.target.value);
                 setSelectedProfesor(prof || null);
               }}
-              className="w-full bg-white/10 border border-purple-500/50 rounded-xl px-4 py-3 text-white text-lg focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/50"
+              className="w-full bg-white/10 border border-brand-600/50 rounded-xl px-4 py-3 text-white text-lg focus:outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-600/50"
             >
               <option value="" className="bg-gray-800">
                 -- Selecciona profesor --
@@ -225,7 +231,7 @@ const FichajePage: React.FC = () => {
 
           {/* Estado y Botones */}
           {selectedProfesor && (
-            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-purple-500/30">
+            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-brand-600/30">
               <h2 className="text-xl font-semibold text-white mb-4">
                 Hola, {selectedProfesor.nombre}
               </h2>
@@ -297,7 +303,7 @@ const FichajePage: React.FC = () => {
               </div>
 
               {/* Instrucciones */}
-              <p className="text-purple-300/70 text-sm text-center mt-4">
+              <p className="text-brand-300/70 text-sm text-center mt-4">
                 {puedeEntrar
                   ? 'Pulsa ENTRADA al llegar al centro'
                   : 'Pulsa SALIDA al terminar tus clases'}
@@ -307,7 +313,7 @@ const FichajePage: React.FC = () => {
 
           {/* Historial del día */}
           {selectedProfesor && fichajesHoy.length > 0 && (
-            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30">
+            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-brand-600/30">
               <h3 className="text-lg font-semibold text-white mb-4">Fichajes de hoy</h3>
               <div className="space-y-3">
                 {fichajesHoy.map(f => (
@@ -317,7 +323,7 @@ const FichajePage: React.FC = () => {
                   >
                     <div>
                       <p className="text-white font-medium">{f.clase_nombre}</p>
-                      <p className="text-purple-300/70 text-sm">
+                      <p className="text-brand-300/70 text-sm">
                         {f.hora_inicio || '--:--'} - {f.hora_fin || '--:--'}
                       </p>
                     </div>
@@ -328,17 +334,21 @@ const FichajePage: React.FC = () => {
                             ? 'bg-green-500/20 text-green-300'
                             : f.estado === 'entrada_registrada'
                               ? 'bg-yellow-500/20 text-yellow-300'
-                              : 'bg-gray-500/20 text-gray-300'
+                              : f.estado === 'clase_cancelada'
+                                ? 'bg-purple-500/20 text-purple-300 line-through'
+                                : 'bg-gray-500/20 text-gray-300'
                         }`}
                       >
                         {f.estado === 'completado'
                           ? 'Completado'
                           : f.estado === 'entrada_registrada'
                             ? 'En curso'
-                            : 'Pendiente'}
+                            : f.estado === 'clase_cancelada'
+                              ? 'Cancelada'
+                              : 'Pendiente'}
                       </span>
                       {f.minutos_trabajados && (
-                        <p className="text-purple-300/70 text-xs mt-1">
+                        <p className="text-brand-300/70 text-xs mt-1">
                           {Math.floor(f.minutos_trabajados / 60)}h {f.minutos_trabajados % 60}min
                         </p>
                       )}
@@ -353,14 +363,14 @@ const FichajePage: React.FC = () => {
           {!selectedProfesor && (
             <div className="text-center py-12">
               <div className="text-6xl mb-4">👆</div>
-              <p className="text-purple-300 text-lg">Selecciona tu nombre para fichar</p>
+              <p className="text-brand-300 text-lg">Selecciona tu nombre para fichar</p>
             </div>
           )}
         </main>
 
         {/* Footer */}
-        <footer className="fixed bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm border-t border-purple-500/30 py-3 px-6">
-          <p className="text-center text-purple-300/50 text-sm">
+        <footer className="fixed bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm border-t border-brand-600/30 py-3 px-6">
+          <p className="text-center text-brand-300/50 text-sm">
             Sistema de fichaje - Farray&apos;s International Dance Center
           </p>
         </footer>

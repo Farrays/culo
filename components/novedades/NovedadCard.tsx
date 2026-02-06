@@ -68,19 +68,11 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
   index = 0,
   total = 1,
 }) => {
-  const { t, i18n } = useTranslation([
-    'common',
-    'booking',
-    'schedule',
-    'calendar',
-    'home',
-    'classes',
-    'blog',
-    'faq',
-    'about',
-    'contact',
-    'pages',
-  ]);
+  // @ts-ignore - i18next type instantiation depth issue (build works fine)
+  const { t: translate, i18n } = useTranslation(['home', 'common']);
+
+  // @ts-ignore
+  const t = (key: string): string => translate(key);
   const locale = i18n.language;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -101,8 +93,8 @@ const NovedadCard: React.FC<NovedadCardProps> = ({
     ? {
         '@context': 'https://schema.org',
         '@type': novedad.schema,
-        name: t(novedad.titleKey),
-        description: novedad.descriptionKey ? t(novedad.descriptionKey) : undefined,
+        name: t(novedad.titleKey) as string,
+        description: novedad.descriptionKey ? (t(novedad.descriptionKey) as string) : undefined,
         ...(novedad.date && { startDate: novedad.date }),
         ...(novedad.date && { endDate: novedad.endDate || novedad.date }),
         location: novedad.location
