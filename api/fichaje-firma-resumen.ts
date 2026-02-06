@@ -119,18 +119,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         : req.headers['x-real-ip'] || 'unknown';
     const timestampFirma = new Date().toISOString();
 
-    // Registrar firma
+    // Registrar firma (solo campos que existen en la tabla)
     const { error: updateError } = await supabase
       .from('resumen_mensual')
       // @ts-expect-error - Supabase types are dynamic
       .update({
         firmado: true,
         fecha_firma: timestampFirma,
-        ip_firma: ip,
       })
       .eq('id', resumen.id);
 
     if (updateError) {
+      console.error('[firma-resumen] Update error:', JSON.stringify(updateError));
       throw updateError;
     }
 
