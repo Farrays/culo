@@ -152,20 +152,40 @@ async function getMomenceSessionsForDate(fecha?: string): Promise<MomenceSession
   const token = await getMomenceToken();
   const today = fecha || getFechaHoyEspana(); // YYYY-MM-DD en timezone España
 
-  // Crear timestamps ISO completos (igual que schedule.ts)
-  // startAfter: inicio del día en UTC
-  // startBefore: inicio del día siguiente en UTC
-  const startOfDay = new Date(`${today}T00:00:00.000Z`);
-  const endOfDay = new Date(`${today}T23:59:59.999Z`);
+  // Convertir fecha de Madrid a UTC correctamente
+  // Ejemplo: "2026-02-13" en Madrid (UTC+1) =
+  //   startAfter: 2026-02-12T23:00:00.000Z (00:00 Madrid)
+  //   startBefore: 2026-02-13T22:59:59.999Z (23:59 Madrid)
+
+  // Crear fecha en timezone Madrid y obtener offset correcto
+  const startMadrid = new Date(`${today}T00:00:00`);
+  const endMadrid = new Date(`${today}T23:59:59`);
+
+  // Calcular offset de Madrid (puede ser +1 o +2 dependiendo de DST)
+  const getMadridOffset = (date: Date): number => {
+    const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
+    const madridDate = new Date(date.toLocaleString('en-US', { timeZone: SPAIN_TIMEZONE }));
+    return (madridDate.getTime() - utcDate.getTime()) / (1000 * 60 * 60);
+  };
+
+  const offsetHours = getMadridOffset(startMadrid);
+
+  // Ajustar a UTC restando el offset de Madrid
+  const startOfDayUTC = new Date(startMadrid.getTime() - offsetHours * 60 * 60 * 1000);
+  const endOfDayUTC = new Date(endMadrid.getTime() - offsetHours * 60 * 60 * 1000);
 
   // Usar URL con searchParams para codificación correcta (igual que schedule.ts)
   const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
   url.searchParams.set('page', '0');
   url.searchParams.set('pageSize', '200');
-  url.searchParams.set('startAfter', startOfDay.toISOString());
-  url.searchParams.set('startBefore', endOfDay.toISOString());
+  url.searchParams.set('startAfter', startOfDayUTC.toISOString());
+  url.searchParams.set('startBefore', endOfDayUTC.toISOString());
   url.searchParams.set('sortBy', 'startsAt');
   url.searchParams.set('sortOrder', 'ASC');
+
+  console.log(
+    `[cron-fichaje] Consultando Momence para ${today} Madrid → UTC: ${startOfDayUTC.toISOString()} a ${endOfDayUTC.toISOString()}`
+  );
 
   const response = await fetch(url.toString(), {
     headers: {
