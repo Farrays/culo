@@ -249,42 +249,42 @@ const FichajesAdminPage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-100 pt-20">
-        {/* Header con logo */}
-        <header className="bg-black/95 backdrop-blur-xl text-white py-4 px-6 shadow-lg border-b border-brand-600/30">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-gray-900 to-black">
+        {/* Header con logo - centrado */}
+        <header className="bg-black/95 backdrop-blur-xl text-white py-6 px-6 shadow-lg border-b border-brand-600/30">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/images/logo/img/logo-fidc_256.webp"
-                  alt="Farray's Center"
-                  className="h-10 w-auto"
-                />
-                <div>
-                  <h1 className="text-xl font-bold">Gestión de Fichajes</h1>
-                  <p className="text-brand-400 text-xs">Panel de administración</p>
-                </div>
+            {/* Logo centrado */}
+            <div className="flex flex-col items-center justify-center mb-4">
+              <img
+                src="/images/logo/img/logo-fidc_512.webp"
+                alt="Farray's Center"
+                className="h-20 w-auto mb-2"
+              />
+              <div className="text-center">
+                <h1 className="text-2xl font-bold">Gestión de Fichajes</h1>
+                <p className="text-brand-400 text-sm">Panel de administración</p>
               </div>
-              <nav className="flex gap-2">
-                {(['dashboard', 'fichajes', 'profesores'] as Tab[]).map(tab => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                      activeTab === tab
-                        ? 'bg-brand-600 text-white'
-                        : 'bg-white/10 text-white hover:bg-white/20'
-                    }`}
-                  >
-                    {tab === 'dashboard'
-                      ? 'Dashboard'
-                      : tab === 'fichajes'
-                        ? 'Fichajes'
-                        : 'Profesores'}
-                  </button>
-                ))}
-              </nav>
             </div>
+            {/* Navegación */}
+            <nav className="flex justify-center gap-2">
+              {(['dashboard', 'fichajes', 'profesores'] as Tab[]).map(tab => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    activeTab === tab
+                      ? 'bg-brand-600 text-white'
+                      : 'bg-white/10 text-white hover:bg-white/20'
+                  }`}
+                >
+                  {tab === 'dashboard'
+                    ? 'Dashboard'
+                    : tab === 'fichajes'
+                      ? 'Fichajes'
+                      : 'Profesores'}
+                </button>
+              ))}
+            </nav>
           </div>
         </header>
 
@@ -292,12 +292,12 @@ const FichajesAdminPage: React.FC = () => {
         <main className="max-w-7xl mx-auto p-6">
           {/* Messages */}
           {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-xl mb-4">
               {error}
             </div>
           )}
           {success && (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            <div className="bg-green-500/20 border border-green-500/50 text-green-200 px-4 py-3 rounded-xl mb-4">
               {success}
             </div>
           )}
@@ -305,102 +305,104 @@ const FichajesAdminPage: React.FC = () => {
           {/* Dashboard Tab */}
           {activeTab === 'dashboard' && (
             <div className="space-y-6">
-              {/* Stats Cards */}
+              {/* Stats Cards - fondo oscuro */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div className="bg-white rounded-xl p-4 shadow">
-                  <p className="text-gray-500 text-sm">Total Fichajes</p>
-                  <p className="text-3xl font-bold text-brand-600">{stats.totalFichajes}</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-brand-600/30">
+                  <p className="text-brand-300 text-sm">Total Fichajes</p>
+                  <p className="text-3xl font-bold text-white">{stats.totalFichajes}</p>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow">
-                  <p className="text-gray-500 text-sm">Completados</p>
-                  <p className="text-3xl font-bold text-green-600">{stats.completados}</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-green-500/30">
+                  <p className="text-green-300 text-sm">Completados</p>
+                  <p className="text-3xl font-bold text-green-400">{stats.completados}</p>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow">
-                  <p className="text-gray-500 text-sm">En Curso</p>
-                  <p className="text-3xl font-bold text-yellow-600">{stats.enCurso}</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-yellow-500/30">
+                  <p className="text-yellow-300 text-sm">En Curso</p>
+                  <p className="text-3xl font-bold text-yellow-400">{stats.enCurso}</p>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow">
-                  <p className="text-gray-500 text-sm">Pendientes</p>
-                  <p className="text-3xl font-bold text-gray-600">{stats.pendientes}</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-500/30">
+                  <p className="text-gray-300 text-sm">Pendientes</p>
+                  <p className="text-3xl font-bold text-gray-200">{stats.pendientes}</p>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow">
-                  <p className="text-gray-500 text-sm">Total Horas</p>
-                  <p className="text-3xl font-bold text-blue-600">{stats.totalHoras.toFixed(1)}h</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-blue-500/30">
+                  <p className="text-blue-300 text-sm">Total Horas</p>
+                  <p className="text-3xl font-bold text-blue-400">{stats.totalHoras.toFixed(1)}h</p>
                 </div>
               </div>
 
-              {/* Date filter */}
-              <div className="bg-white rounded-xl p-4 shadow">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Fecha</label>
+              {/* Date filter - fondo oscuro */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-brand-600/30">
+                <label className="block text-sm font-medium text-brand-200 mb-2">Fecha</label>
                 <input
                   type="date"
                   value={fechaFiltro}
                   onChange={e => setFechaFiltro(e.target.value)}
-                  className="border rounded-lg px-3 py-2"
+                  className="bg-white/10 border border-brand-600/50 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-400"
                 />
               </div>
 
-              {/* Today's fichajes */}
-              <div className="bg-white rounded-xl shadow overflow-hidden">
-                <div className="px-4 py-3 border-b bg-gray-50 flex justify-between items-center">
-                  <h2 className="font-semibold text-gray-800">Fichajes del día</h2>
+              {/* Today's fichajes - tema oscuro */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-brand-600/30 overflow-hidden">
+                <div className="px-4 py-3 border-b border-brand-600/30 flex justify-between items-center">
+                  <h2 className="font-semibold text-white">Fichajes del día</h2>
                   <button
                     onClick={exportCSV}
-                    className="text-sm bg-brand-100 text-brand-700 px-3 py-1 rounded hover:bg-brand-200"
+                    className="text-sm bg-brand-600 text-white px-3 py-1 rounded-lg hover:bg-brand-500"
                   >
                     Exportar CSV
                   </button>
                 </div>
                 {loading ? (
-                  <div className="p-8 text-center text-gray-500">Cargando...</div>
+                  <div className="p-8 text-center text-brand-300">Cargando...</div>
                 ) : fichajes.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">
+                  <div className="p-8 text-center text-brand-300">
                     No hay fichajes para esta fecha
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full">
-                      <thead className="bg-gray-50 text-left">
+                      <thead className="bg-black/30 text-left">
                         <tr>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Profesor</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Clase</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Entrada</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Salida</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Tiempo</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Estado</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600"></th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Profesor</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Clase</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Entrada</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Salida</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Tiempo</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Estado</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300"></th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y">
+                      <tbody className="divide-y divide-white/10">
                         {fichajes.map(f => (
-                          <tr key={f.id} className="hover:bg-gray-50">
+                          <tr key={f.id} className="hover:bg-white/5">
                             <td className="px-4 py-3">
-                              <span className="font-medium">
+                              <span className="font-medium text-white">
                                 {f.profesor?.nombre} {f.profesor?.apellidos}
                               </span>
                             </td>
-                            <td className="px-4 py-3 text-gray-600">{f.clase_nombre}</td>
+                            <td className="px-4 py-3 text-brand-200">{f.clase_nombre}</td>
                             <td className="px-4 py-3">
-                              <span className="font-mono">{f.hora_inicio || '-'}</span>
+                              <span className="font-mono text-white">{f.hora_inicio || '-'}</span>
                             </td>
                             <td className="px-4 py-3">
-                              <span className="font-mono">{f.hora_fin || '-'}</span>
+                              <span className="font-mono text-white">{f.hora_fin || '-'}</span>
                             </td>
-                            <td className="px-4 py-3">{formatMinutes(f.minutos_trabajados)}</td>
+                            <td className="px-4 py-3 text-white">
+                              {formatMinutes(f.minutos_trabajados)}
+                            </td>
                             <td className="px-4 py-3">
                               <span
                                 className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
                                   f.estado === 'completado'
-                                    ? 'bg-green-100 text-green-700'
+                                    ? 'bg-green-500/20 text-green-300'
                                     : f.estado === 'entrada_registrada'
-                                      ? 'bg-yellow-100 text-yellow-700'
+                                      ? 'bg-yellow-500/20 text-yellow-300'
                                       : f.estado === 'no_fichado'
-                                        ? 'bg-red-100 text-red-700'
+                                        ? 'bg-red-500/20 text-red-300'
                                         : f.estado === 'clase_cancelada'
-                                          ? 'bg-purple-100 text-purple-700 line-through'
+                                          ? 'bg-purple-500/20 text-purple-300 line-through'
                                           : f.estado === 'editado_admin'
-                                            ? 'bg-blue-100 text-blue-700'
-                                            : 'bg-gray-100 text-gray-700'
+                                            ? 'bg-blue-500/20 text-blue-300'
+                                            : 'bg-gray-500/20 text-gray-300'
                                 }`}
                               >
                                 {f.estado === 'completado'
@@ -419,7 +421,7 @@ const FichajesAdminPage: React.FC = () => {
                             <td className="px-4 py-3">
                               <button
                                 onClick={() => openEditModal(f)}
-                                className="text-brand-600 hover:text-brand-800 text-sm font-medium"
+                                className="text-brand-400 hover:text-brand-300 text-sm font-medium"
                               >
                                 Editar
                               </button>
@@ -437,109 +439,129 @@ const FichajesAdminPage: React.FC = () => {
           {/* Fichajes Tab */}
           {activeTab === 'fichajes' && (
             <div className="space-y-6">
-              {/* Filters */}
-              <div className="bg-white rounded-xl p-4 shadow flex flex-wrap gap-4">
+              {/* Filters - tema oscuro */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-brand-600/30 flex flex-wrap gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Fecha</label>
+                  <label className="block text-sm font-medium text-brand-200 mb-1">Fecha</label>
                   <input
                     type="date"
                     value={fechaFiltro}
                     onChange={e => setFechaFiltro(e.target.value)}
-                    className="border rounded-lg px-3 py-2"
+                    className="bg-white/10 border border-brand-600/50 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Profesor</label>
+                  <label className="block text-sm font-medium text-brand-200 mb-1">Profesor</label>
                   <select
                     value={profesorFiltro}
                     onChange={e => setProfesorFiltro(e.target.value)}
-                    className="border rounded-lg px-3 py-2 min-w-[200px]"
+                    className="bg-white/10 border border-brand-600/50 rounded-lg px-3 py-2 min-w-[200px] text-white focus:outline-none focus:border-brand-400"
                   >
-                    <option value="">Todos</option>
+                    <option value="" className="bg-gray-800">
+                      Todos
+                    </option>
                     {profesores
                       .filter(p => p.activo)
                       .map(p => (
-                        <option key={p.id} value={p.id}>
+                        <option key={p.id} value={p.id} className="bg-gray-800">
                           {p.nombre} {p.apellidos}
                         </option>
                       ))}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Estado</label>
+                  <label className="block text-sm font-medium text-brand-200 mb-1">Estado</label>
                   <select
                     value={estadoFiltro}
                     onChange={e => setEstadoFiltro(e.target.value)}
-                    className="border rounded-lg px-3 py-2"
+                    className="bg-white/10 border border-brand-600/50 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-400"
                   >
-                    <option value="">Todos</option>
-                    <option value="completado">Completado</option>
-                    <option value="entrada_registrada">En curso</option>
-                    <option value="pendiente">Pendiente</option>
-                    <option value="no_fichado">No fichado</option>
-                    <option value="clase_cancelada">Cancelada</option>
-                    <option value="editado_admin">Editado</option>
+                    <option value="" className="bg-gray-800">
+                      Todos
+                    </option>
+                    <option value="completado" className="bg-gray-800">
+                      Completado
+                    </option>
+                    <option value="entrada_registrada" className="bg-gray-800">
+                      En curso
+                    </option>
+                    <option value="pendiente" className="bg-gray-800">
+                      Pendiente
+                    </option>
+                    <option value="no_fichado" className="bg-gray-800">
+                      No fichado
+                    </option>
+                    <option value="clase_cancelada" className="bg-gray-800">
+                      Cancelada
+                    </option>
+                    <option value="editado_admin" className="bg-gray-800">
+                      Editado
+                    </option>
                   </select>
                 </div>
                 <div className="flex items-end">
                   <button
                     onClick={exportCSV}
-                    className="bg-brand-600 text-white px-4 py-2 rounded-lg hover:bg-brand-700"
+                    className="bg-brand-600 text-white px-4 py-2 rounded-lg hover:bg-brand-500"
                   >
                     Exportar CSV
                   </button>
                 </div>
               </div>
 
-              {/* Table */}
-              <div className="bg-white rounded-xl shadow overflow-hidden">
+              {/* Table - tema oscuro */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-brand-600/30 overflow-hidden">
                 {loading ? (
-                  <div className="p-8 text-center text-gray-500">Cargando...</div>
+                  <div className="p-8 text-center text-brand-300">Cargando...</div>
                 ) : fichajes.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">
+                  <div className="p-8 text-center text-brand-300">
                     No hay fichajes con estos filtros
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full">
-                      <thead className="bg-gray-50 text-left">
+                      <thead className="bg-black/30 text-left">
                         <tr>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Profesor</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Clase</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Fecha</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Entrada</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Salida</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Tiempo</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Estado</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600">Método</th>
-                          <th className="px-4 py-3 text-sm font-medium text-gray-600"></th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Profesor</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Clase</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Fecha</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Entrada</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Salida</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Tiempo</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Estado</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300">Método</th>
+                          <th className="px-4 py-3 text-sm font-medium text-brand-300"></th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y">
+                      <tbody className="divide-y divide-white/10">
                         {fichajes.map(f => (
-                          <tr key={f.id} className="hover:bg-gray-50">
-                            <td className="px-4 py-3 font-medium">
+                          <tr key={f.id} className="hover:bg-white/5">
+                            <td className="px-4 py-3 font-medium text-white">
                               {f.profesor?.nombre} {f.profesor?.apellidos}
                             </td>
-                            <td className="px-4 py-3 text-gray-600">{f.clase_nombre}</td>
-                            <td className="px-4 py-3">{f.fecha}</td>
-                            <td className="px-4 py-3 font-mono">{f.hora_inicio || '-'}</td>
-                            <td className="px-4 py-3 font-mono">{f.hora_fin || '-'}</td>
-                            <td className="px-4 py-3">{formatMinutes(f.minutos_trabajados)}</td>
+                            <td className="px-4 py-3 text-brand-200">{f.clase_nombre}</td>
+                            <td className="px-4 py-3 text-white">{f.fecha}</td>
+                            <td className="px-4 py-3 font-mono text-white">
+                              {f.hora_inicio || '-'}
+                            </td>
+                            <td className="px-4 py-3 font-mono text-white">{f.hora_fin || '-'}</td>
+                            <td className="px-4 py-3 text-white">
+                              {formatMinutes(f.minutos_trabajados)}
+                            </td>
                             <td className="px-4 py-3">
                               <span
                                 className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
                                   f.estado === 'completado'
-                                    ? 'bg-green-100 text-green-700'
+                                    ? 'bg-green-500/20 text-green-300'
                                     : f.estado === 'entrada_registrada'
-                                      ? 'bg-yellow-100 text-yellow-700'
+                                      ? 'bg-yellow-500/20 text-yellow-300'
                                       : f.estado === 'no_fichado'
-                                        ? 'bg-red-100 text-red-700'
+                                        ? 'bg-red-500/20 text-red-300'
                                         : f.estado === 'clase_cancelada'
-                                          ? 'bg-purple-100 text-purple-700 line-through'
+                                          ? 'bg-purple-500/20 text-purple-300 line-through'
                                           : f.estado === 'editado_admin'
-                                            ? 'bg-blue-100 text-blue-700'
-                                            : 'bg-gray-100 text-gray-700'
+                                            ? 'bg-blue-500/20 text-blue-300'
+                                            : 'bg-gray-500/20 text-gray-300'
                                 }`}
                               >
                                 {f.estado === 'completado'
@@ -555,13 +577,13 @@ const FichajesAdminPage: React.FC = () => {
                                           : 'Pendiente'}
                               </span>
                             </td>
-                            <td className="px-4 py-3 text-sm text-gray-500">
+                            <td className="px-4 py-3 text-sm text-brand-300">
                               {f.metodo_entrada || '-'}
                             </td>
                             <td className="px-4 py-3">
                               <button
                                 onClick={() => openEditModal(f)}
-                                className="text-brand-600 hover:text-brand-800 text-sm font-medium"
+                                className="text-brand-400 hover:text-brand-300 text-sm font-medium"
                               >
                                 Editar
                               </button>
@@ -576,40 +598,40 @@ const FichajesAdminPage: React.FC = () => {
             </div>
           )}
 
-          {/* Profesores Tab */}
+          {/* Profesores Tab - tema oscuro */}
           {activeTab === 'profesores' && (
             <div className="space-y-6">
-              <div className="bg-white rounded-xl shadow overflow-hidden">
-                <div className="px-4 py-3 border-b bg-gray-50">
-                  <h2 className="font-semibold text-gray-800">Profesores</h2>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-brand-600/30 overflow-hidden">
+                <div className="px-4 py-3 border-b border-brand-600/30">
+                  <h2 className="font-semibold text-white">Profesores</h2>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-gray-50 text-left">
+                    <thead className="bg-black/30 text-left">
                       <tr>
-                        <th className="px-4 py-3 text-sm font-medium text-gray-600">Nombre</th>
-                        <th className="px-4 py-3 text-sm font-medium text-gray-600">WhatsApp</th>
-                        <th className="px-4 py-3 text-sm font-medium text-gray-600">
+                        <th className="px-4 py-3 text-sm font-medium text-brand-300">Nombre</th>
+                        <th className="px-4 py-3 text-sm font-medium text-brand-300">WhatsApp</th>
+                        <th className="px-4 py-3 text-sm font-medium text-brand-300">
                           Nombre Momence
                         </th>
-                        <th className="px-4 py-3 text-sm font-medium text-gray-600">Contrato</th>
-                        <th className="px-4 py-3 text-sm font-medium text-gray-600">Estado</th>
+                        <th className="px-4 py-3 text-sm font-medium text-brand-300">Contrato</th>
+                        <th className="px-4 py-3 text-sm font-medium text-brand-300">Estado</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y">
+                    <tbody className="divide-y divide-white/10">
                       {profesores.map(p => (
-                        <tr key={p.id} className="hover:bg-gray-50">
-                          <td className="px-4 py-3 font-medium">
+                        <tr key={p.id} className="hover:bg-white/5">
+                          <td className="px-4 py-3 font-medium text-white">
                             {p.nombre} {p.apellidos}
                           </td>
-                          <td className="px-4 py-3 text-gray-600">{p.telefono_whatsapp}</td>
-                          <td className="px-4 py-3 text-gray-600">{p.nombre_momence}</td>
+                          <td className="px-4 py-3 text-brand-200">{p.telefono_whatsapp}</td>
+                          <td className="px-4 py-3 text-brand-200">{p.nombre_momence}</td>
                           <td className="px-4 py-3">
                             <span
                               className={`inline-block px-2 py-1 rounded-full text-xs ${
                                 p.tipo_contrato === 'completo'
-                                  ? 'bg-blue-100 text-blue-700'
-                                  : 'bg-brand-100 text-brand-700'
+                                  ? 'bg-blue-500/20 text-blue-300'
+                                  : 'bg-brand-500/20 text-brand-300'
                               }`}
                             >
                               {p.tipo_contrato === 'completo' ? 'Completo' : 'Parcial'}
@@ -618,7 +640,9 @@ const FichajesAdminPage: React.FC = () => {
                           <td className="px-4 py-3">
                             <span
                               className={`inline-block px-2 py-1 rounded-full text-xs ${
-                                p.activo ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                                p.activo
+                                  ? 'bg-green-500/20 text-green-300'
+                                  : 'bg-red-500/20 text-red-300'
                               }`}
                             >
                               {p.activo ? 'Activo' : 'Inactivo'}
@@ -631,7 +655,7 @@ const FichajesAdminPage: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-brand-300/70">
                 Para añadir o modificar profesores, usa la API directamente o contacta con el
                 administrador del sistema.
               </p>
@@ -639,18 +663,18 @@ const FichajesAdminPage: React.FC = () => {
           )}
         </main>
 
-        {/* Footer con info legal */}
-        <footer className="mt-8 py-4 border-t border-gray-200">
+        {/* Footer con info legal - tema oscuro */}
+        <footer className="mt-8 py-4 border-t border-brand-600/30">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-gray-500 text-xs">
+            <p className="text-brand-300/70 text-xs">
               Sistema de registro de jornada conforme al Art. 34.9 del Estatuto de los Trabajadores
               y RD-ley 8/2019
             </p>
-            <p className="text-gray-400 text-xs mt-1">
+            <p className="text-brand-300/50 text-xs mt-1">
               Los registros se conservan durante 4 años y están disponibles para los trabajadores,
               sus representantes legales y la Inspección de Trabajo.
             </p>
-            <p className="text-gray-400 text-xs mt-2">
+            <p className="text-brand-300/50 text-xs mt-2">
               Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
             </p>
           </div>

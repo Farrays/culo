@@ -188,36 +188,34 @@ const FichajePage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-gray-900 to-black flex flex-col">
         {/* Header con logo */}
-        <header className="bg-black/95 backdrop-blur-xl border-b border-brand-600/30 py-4 px-6 shadow-lg">
+        <header className="bg-black/95 backdrop-blur-xl border-b border-brand-600/30 py-6 px-6 shadow-lg">
           <div className="max-w-md mx-auto">
-            {/* Logo y título */}
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-3">
-                <img
-                  src="/images/logo/img/logo-fidc_256.webp"
-                  alt="Farray's Center"
-                  className="h-12 w-auto"
-                />
-                <div>
-                  <h1 className="text-xl font-bold text-white">Control de Jornada</h1>
-                  <p className="text-brand-400 text-xs">Registro de entrada/salida</p>
-                </div>
+            {/* Logo y título - centrado */}
+            <div className="flex flex-col items-center justify-center mb-4">
+              <img
+                src="/images/logo/img/logo-fidc_512.webp"
+                alt="Farray's Center"
+                className="h-24 w-auto mb-3"
+              />
+              <div className="text-center">
+                <h1 className="text-2xl font-bold text-white">Control de Jornada</h1>
+                <p className="text-brand-400 text-sm">Registro de entrada/salida</p>
               </div>
             </div>
             {/* Reloj */}
-            <div className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-2">
+            <div className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-3">
               <div className="text-brand-300 text-sm capitalize">{formatDate(currentTime)}</div>
-              <div className="text-2xl font-mono text-white font-bold">
+              <div className="text-3xl font-mono text-white font-bold">
                 {formatTime(currentTime)}
               </div>
             </div>
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="max-w-md mx-auto p-6 pb-24">
+        {/* Main Content - centrado vertical */}
+        <main className="flex-1 flex flex-col justify-center max-w-md mx-auto w-full p-6 pb-24">
           {/* Selector de Profesor */}
           <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-brand-600/30">
             <label className="block text-brand-200 text-sm font-medium mb-2">
