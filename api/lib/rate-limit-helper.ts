@@ -66,7 +66,9 @@ export async function isRateLimitedRedis(endpoint: string, identifier: string): 
     return false;
   }
 
-  const config = RATE_LIMITS[endpoint] || RATE_LIMITS['default'];
+  // Get config with guaranteed fallback to default
+  const config = RATE_LIMITS[endpoint] ?? { windowMs: 60000, maxRequests: 30 };
+
   const key = `ratelimit:${endpoint}:${identifier}`;
   const windowSeconds = Math.floor(config.windowMs / 1000);
   const now = Date.now();
