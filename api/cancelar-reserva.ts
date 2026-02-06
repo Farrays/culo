@@ -431,7 +431,7 @@ async function sendCancellationWhatsAppInline(data: {
         type: 'template',
         template: {
           name: 'cancelar',
-          language: { code: 'es' },
+          language: { code: 'es_ES' },
           components: [{ type: 'body', parameters: [{ type: 'text', text: data.firstName }] }],
         },
       }),

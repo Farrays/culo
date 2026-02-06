@@ -537,7 +537,7 @@ async function sendWhatsAppTemplate(
         messaging_product: 'whatsapp',
         to: normalizePhoneNumber(to),
         type: 'template',
-        template: { name: templateName, language: { code: 'es' }, components },
+        template: { name: templateName, language: { code: 'es_ES' }, components },
       }),
     });
 
