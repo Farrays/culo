@@ -10,8 +10,16 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getSupabaseAdmin } from './lib/supabase.js';
-import { sendEmail, isEmailConfigured } from './lib/email.js';
 import { sendTextMessage, isWhatsAppConfigured } from './lib/whatsapp.js';
+
+// Dynamic imports for email to avoid Vercel bundler issues
+async function getEmailFunctions() {
+  const emailModule = await import('./lib/email.js');
+  return {
+    sendEmail: emailModule.sendEmail,
+    isEmailConfigured: emailModule.isEmailConfigured,
+  };
+}
 
 interface ResumenConProfesor {
   id: string;
@@ -150,75 +158,80 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       }
     }
 
-    // Enviar copia por email al profesor y admin
-    if (isEmailConfigured()) {
-      const emailHtml = `
-        <h2>Resumen Mensual Firmado</h2>
-        <p><strong>Profesor:</strong> ${nombreProfesor}</p>
-        <p><strong>Período:</strong> ${nombreMes}</p>
+    // Enviar copia por email al profesor y admin (dynamic import)
+    try {
+      const { sendEmail, isEmailConfigured } = await getEmailFunctions();
+      if (isEmailConfigured()) {
+        const emailHtml = `
+          <h2>Resumen Mensual Firmado</h2>
+          <p><strong>Profesor:</strong> ${nombreProfesor}</p>
+          <p><strong>Período:</strong> ${nombreMes}</p>
 
-        <h3>Datos del Resumen</h3>
-        <table style="border-collapse: collapse; width: 100%; max-width: 400px;">
-          <tr style="background: #f5f5f5;">
-            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total horas</strong></td>
-            <td style="padding: 8px; border: 1px solid #ddd;">${resumen.total_horas}h</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Horas ordinarias</strong></td>
-            <td style="padding: 8px; border: 1px solid #ddd;">${resumen.horas_ordinarias}h</td>
-          </tr>
-          <tr style="background: #f5f5f5;">
-            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Horas complementarias</strong></td>
-            <td style="padding: 8px; border: 1px solid #ddd;">${resumen.horas_complementarias}h</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Clases impartidas</strong></td>
-            <td style="padding: 8px; border: 1px solid #ddd;">${resumen.total_clases}</td>
-          </tr>
-          <tr style="background: #f5f5f5;">
-            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Días trabajados</strong></td>
-            <td style="padding: 8px; border: 1px solid #ddd;">${resumen.dias_trabajados}</td>
-          </tr>
-        </table>
+          <h3>Datos del Resumen</h3>
+          <table style="border-collapse: collapse; width: 100%; max-width: 400px;">
+            <tr style="background: #f5f5f5;">
+              <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total horas</strong></td>
+              <td style="padding: 8px; border: 1px solid #ddd;">${resumen.total_horas}h</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;"><strong>Horas ordinarias</strong></td>
+              <td style="padding: 8px; border: 1px solid #ddd;">${resumen.horas_ordinarias}h</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+              <td style="padding: 8px; border: 1px solid #ddd;"><strong>Horas complementarias</strong></td>
+              <td style="padding: 8px; border: 1px solid #ddd;">${resumen.horas_complementarias}h</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;"><strong>Clases impartidas</strong></td>
+              <td style="padding: 8px; border: 1px solid #ddd;">${resumen.total_clases}</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+              <td style="padding: 8px; border: 1px solid #ddd;"><strong>Días trabajados</strong></td>
+              <td style="padding: 8px; border: 1px solid #ddd;">${resumen.dias_trabajados}</td>
+            </tr>
+          </table>
 
-        <h3>Datos de la Firma Digital</h3>
-        <p><strong>Fecha y hora:</strong> ${new Date(timestampFirma).toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}</p>
-        <p><strong>IP:</strong> ${ip}</p>
-        <p><strong>Hash documento:</strong> <code style="font-size: 10px;">${resumen.hash_documento}</code></p>
+          <h3>Datos de la Firma Digital</h3>
+          <p><strong>Fecha y hora:</strong> ${new Date(timestampFirma).toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}</p>
+          <p><strong>IP:</strong> ${ip}</p>
+          <p><strong>Hash documento:</strong> <code style="font-size: 10px;">${resumen.hash_documento}</code></p>
 
-        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
-        <p style="color: #666; font-size: 11px;">
-          Este documento cumple con el Art. 12.4.c del Estatuto de los Trabajadores.<br>
-          Conservar durante 4 años según normativa vigente.
-        </p>
-      `;
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+          <p style="color: #666; font-size: 11px;">
+            Este documento cumple con el Art. 12.4.c del Estatuto de los Trabajadores.<br>
+            Conservar durante 4 años según normativa vigente.
+          </p>
+        `;
 
-      // Email al profesor
-      if (resumen.profesor.email) {
-        try {
-          await sendEmail({
-            to: resumen.profesor.email,
-            subject: `Confirmación de firma - Resumen ${nombreMes}`,
-            html: emailHtml,
-          });
-        } catch (emailError) {
-          console.error('[firma-resumen] Error enviando email profesor:', emailError);
+        // Email al profesor
+        if (resumen.profesor.email) {
+          try {
+            await sendEmail({
+              to: resumen.profesor.email,
+              subject: `Confirmación de firma - Resumen ${nombreMes}`,
+              html: emailHtml,
+            });
+          } catch (emailError) {
+            console.error('[firma-resumen] Error enviando email profesor:', emailError);
+          }
+        }
+
+        // Email al admin
+        const adminEmail = process.env['ADMIN_EMAIL'] || process.env['RESEND_FROM_EMAIL'];
+        if (adminEmail) {
+          try {
+            await sendEmail({
+              to: adminEmail,
+              subject: `[Fichaje] Resumen firmado: ${nombreProfesor} - ${nombreMes}`,
+              html: emailHtml,
+            });
+          } catch (emailError) {
+            console.error('[firma-resumen] Error enviando email admin:', emailError);
+          }
         }
       }
-
-      // Email al admin
-      const adminEmail = process.env['ADMIN_EMAIL'] || process.env['RESEND_FROM_EMAIL'];
-      if (adminEmail) {
-        try {
-          await sendEmail({
-            to: adminEmail,
-            subject: `[Fichaje] Resumen firmado: ${nombreProfesor} - ${nombreMes}`,
-            html: emailHtml,
-          });
-        } catch (emailError) {
-          console.error('[firma-resumen] Error enviando email admin:', emailError);
-        }
-      }
+    } catch (emailImportError) {
+      console.error('[firma-resumen] Error importing email module:', emailImportError);
     }
 
     console.log(`[firma-resumen] Resumen firmado: ${nombreProfesor}, mes=${nombreMes}, ip=${ip}`);

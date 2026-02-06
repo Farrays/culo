@@ -11,8 +11,16 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import { getSupabaseAdmin } from './lib/supabase.js';
-import { sendEmail, isEmailConfigured } from './lib/email.js';
 import { sendTextMessage, isWhatsAppConfigured } from './lib/whatsapp.js';
+
+// Dynamic imports for email to avoid Vercel bundler issues
+async function getEmailFunctions() {
+  const emailModule = await import('./lib/email.js');
+  return {
+    sendEmail: emailModule.sendEmail,
+    isEmailConfigured: emailModule.isEmailConfigured,
+  };
+}
 
 // Tipos
 interface Profesor {
@@ -365,36 +373,39 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               }
             }
 
-            // Enviar Email
-            if (isEmailConfigured() && profesor.email) {
+            // Enviar Email (dynamic import)
+            if (profesor.email) {
               try {
-                await sendEmail({
-                  to: profesor.email,
-                  subject: `Resumen de horas ${nombreMes} - Farray's Center`,
-                  html: `
-                    <h2>Resumen de horas - ${nombreMes}</h2>
-                    <p>Hola ${profesor.nombre},</p>
-                    <p>Tu resumen mensual de horas trabajadas está disponible:</p>
-                    <ul>
-                      <li><strong>Total horas:</strong> ${totalHoras}h</li>
-                      <li><strong>Horas ordinarias:</strong> ${horasOrdinarias}h</li>
-                      <li><strong>Horas complementarias:</strong> ${horasComplementarias}h</li>
-                      <li><strong>Clases impartidas:</strong> ${fichajes.length}</li>
-                      <li><strong>Días trabajados:</strong> ${diasTrabajados.size}</li>
-                    </ul>
-                    <p><a href="${urlFirma}" style="background: #E91E63; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block;">Revisar y Firmar</a></p>
-                    <p style="color: #666; font-size: 12px;">Este documento es obligatorio según el Art. 12.4.c del Estatuto de los Trabajadores para contratos a tiempo parcial.</p>
-                  `,
-                });
+                const { sendEmail, isEmailConfigured } = await getEmailFunctions();
+                if (isEmailConfigured()) {
+                  await sendEmail({
+                    to: profesor.email,
+                    subject: `Resumen de horas ${nombreMes} - Farray's Center`,
+                    html: `
+                      <h2>Resumen de horas - ${nombreMes}</h2>
+                      <p>Hola ${profesor.nombre},</p>
+                      <p>Tu resumen mensual de horas trabajadas está disponible:</p>
+                      <ul>
+                        <li><strong>Total horas:</strong> ${totalHoras}h</li>
+                        <li><strong>Horas ordinarias:</strong> ${horasOrdinarias}h</li>
+                        <li><strong>Horas complementarias:</strong> ${horasComplementarias}h</li>
+                        <li><strong>Clases impartidas:</strong> ${fichajes.length}</li>
+                        <li><strong>Días trabajados:</strong> ${diasTrabajados.size}</li>
+                      </ul>
+                      <p><a href="${urlFirma}" style="background: #E91E63; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block;">Revisar y Firmar</a></p>
+                      <p style="color: #666; font-size: 12px;">Este documento es obligatorio según el Art. 12.4.c del Estatuto de los Trabajadores para contratos a tiempo parcial.</p>
+                    `,
+                  });
 
-                await supabase
-                  .from('resumen_mensual')
-                  // @ts-expect-error - Supabase types are dynamic
-                  .update({
-                    enviado_email: true,
-                    fecha_envio_email: new Date().toISOString(),
-                  })
-                  .eq('id', resumen.id);
+                  await supabase
+                    .from('resumen_mensual')
+                    // @ts-expect-error - Supabase types are dynamic
+                    .update({
+                      enviado_email: true,
+                      fecha_envio_email: new Date().toISOString(),
+                    })
+                    .eq('id', resumen.id);
+                }
               } catch (emailError) {
                 console.error('[resumen-mensual] Error enviando email:', emailError);
               }

@@ -15,7 +15,15 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getSupabaseAdmin, getFechaHoyEspana, getHoraAhoraEspana } from './lib/supabase.js';
 import { sendTextMessage, isWhatsAppConfigured } from './lib/whatsapp.js';
-import { sendSystemAlert, isEmailConfigured } from './lib/email.js';
+
+// Dynamic imports for email to avoid Vercel bundler issues
+async function getEmailFunctions() {
+  const emailModule = await import('./lib/email.js');
+  return {
+    sendSystemAlert: emailModule.sendSystemAlert,
+    isEmailConfigured: emailModule.isEmailConfigured,
+  };
+}
 
 // Configuración de alertas (minutos)
 const ALERTA_PROFESOR_MINUTOS = 15; // Recordatorio al profesor
@@ -173,34 +181,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         }
       }
 
-      // 2. Alerta al admin (>30 min sin fichar)
-      if (
-        minutosTranscurridos >= ALERTA_ADMIN_MINUTOS &&
-        !fichaje.alerta_admin_enviada &&
-        isEmailConfigured()
-      ) {
+      // 2. Alerta al admin (>30 min sin fichar) - dynamic import
+      if (minutosTranscurridos >= ALERTA_ADMIN_MINUTOS && !fichaje.alerta_admin_enviada) {
         try {
-          await sendSystemAlert({
-            type: `FICHAJE_NO_REGISTRADO_${nombreCompleto.replace(/\s+/g, '_').toUpperCase()}`,
-            message: `El profesor ${nombreCompleto} no ha registrado su entrada para la clase "${fichaje.clase_nombre}" (prevista a las ${horaInicioStr}). Han pasado ${minutosTranscurridos} minutos. Dashboard: https://farrayscenter.com/es/admin/fichajes`,
-            severity: 'warning',
-            details: {
-              profesor: nombreCompleto,
-              clase: fichaje.clase_nombre,
-              hora_prevista: horaInicioStr,
-              minutos_transcurridos: minutosTranscurridos,
-            },
-          });
+          const { sendSystemAlert, isEmailConfigured } = await getEmailFunctions();
+          if (isEmailConfigured()) {
+            await sendSystemAlert({
+              type: `FICHAJE_NO_REGISTRADO_${nombreCompleto.replace(/\s+/g, '_').toUpperCase()}`,
+              message: `El profesor ${nombreCompleto} no ha registrado su entrada para la clase "${fichaje.clase_nombre}" (prevista a las ${horaInicioStr}). Han pasado ${minutosTranscurridos} minutos. Dashboard: https://farrayscenter.com/es/admin/fichajes`,
+              severity: 'warning',
+              details: {
+                profesor: nombreCompleto,
+                clase: fichaje.clase_nombre,
+                hora_prevista: horaInicioStr,
+                minutos_transcurridos: minutosTranscurridos,
+              },
+            });
 
-          // Marcar alerta admin enviada
-          await supabase
-            .from('fichajes')
-            // @ts-expect-error - Supabase types are dynamic
-            .update({ alerta_admin_enviada: true })
-            .eq('id', fichaje.id);
+            // Marcar alerta admin enviada
+            await supabase
+              .from('fichajes')
+              // @ts-expect-error - Supabase types are dynamic
+              .update({ alerta_admin_enviada: true })
+              .eq('id', fichaje.id);
 
-          result.alertasAdmin++;
-          console.log(`[cron-alertas] Alerta admin enviada para ${nombreCompleto}`);
+            result.alertasAdmin++;
+            console.log(`[cron-alertas] Alerta admin enviada para ${nombreCompleto}`);
+          }
         } catch (err) {
           result.errores.push(`Error alerta admin ${nombreCompleto}: ${err}`);
         }
