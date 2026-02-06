@@ -15,7 +15,7 @@ import { sendTextMessage, isWhatsAppConfigured } from './lib/whatsapp.js';
 
 // Dynamic imports for email to avoid Vercel bundler issues
 async function getEmailFunctions() {
-  const emailModule = await import('./lib/email.js');
+  const emailModule = await import('./lib/email-fichaje.js');
   return {
     sendEmail: emailModule.sendEmail,
     isEmailConfigured: emailModule.isEmailConfigured,
