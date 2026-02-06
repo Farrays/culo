@@ -69,7 +69,13 @@ export interface Fichaje {
   minutos_trabajados: number | null;
 
   // Estado del fichaje
-  estado: 'pendiente' | 'entrada_registrada' | 'completado' | 'no_fichado' | 'editado_admin';
+  estado:
+    | 'pendiente'
+    | 'entrada_registrada'
+    | 'completado'
+    | 'no_fichado'
+    | 'editado_admin'
+    | 'clase_cancelada';
 
   // Trazabilidad (OBLIGATORIO para inmutabilidad legal)
   metodo_entrada: 'whatsapp' | 'manual' | 'qr' | 'auto_momence' | null;
@@ -92,7 +98,7 @@ export interface Fichaje {
 export interface FichajeAuditLog {
   id: string;
   fichaje_id: string;
-  accion: 'crear' | 'editar' | 'eliminar';
+  accion: 'crear' | 'editar' | 'eliminar' | 'cancelar';
   campo_modificado: string | null;
   valor_anterior: string | null;
   valor_nuevo: string | null;

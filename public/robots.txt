@@ -1,6 +1,6 @@
 # Robots.txt - Farray's International Dance Center
 
-# Updated: 2026-01-31
+# Updated: 2026-02-05
 # Enterprise-level configuration for SEO, GEO, AIO, AIEO
 
 # Updated: 2026-01-29 - Enterprise Sitemap Ecosystem
@@ -18,27 +18,9 @@ Disallow: /test/
 Disallow: /*.json$
 Disallow: /api/
 
-# Landing pages de pago - noindex
-# Estas páginas son para campañas de ads, no para SEO orgánico
-Disallow: /*/dancehall
-Disallow: /*/twerk
-Disallow: /*/sexy-reggaeton
-Disallow: /*/sexy-style
-Disallow: /*/hip-hop-reggaeton
-Disallow: /*/contemporaneo
-Disallow: /*/femmology
-Disallow: /*/bachata
-Disallow: /*/bachata-curso
-Disallow: /*/salsa-curso
-Disallow: /*/salsa-test
-Disallow: /*/hip-hop
-Disallow: /*/afrobeats
-Disallow: /*/afro-jazz
-Disallow: /*/salsa-cubana
-Disallow: /*/ballet
-Disallow: /*/afro-contemporaneo
-Disallow: /*/clase-bienvenida
-Disallow: /*/hazte-socio
+# Landing pages de pago - usan meta robots noindex en HTML
+# NO se bloquean en robots.txt para permitir que Google vea el noindex
+# (Mejores prácticas: https://developers.google.com/search/docs/crawling-indexing/block-indexing)
 
 # Crawl delay for unknown bots
 Crawl-delay: 1

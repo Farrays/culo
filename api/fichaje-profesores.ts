@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSupabaseAdmin, type Profesor } from '../lib/supabase.js';
+import { getSupabaseAdmin, type Profesor } from './lib/supabase.js';
 
 /**
- * API Route: /api/fichaje/profesores
+ * API Route: /api/fichaje-profesores
  *
  * CRUD completo para gestión de profesores del sistema de fichaje.
  *

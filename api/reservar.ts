@@ -336,6 +336,7 @@ async function sendAdminBookingNotification(data: {
   classTime: string;
   category?: ClassCategory;
   sourceUrl?: string;
+  eventId?: string;
 }): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env['RESEND_API_KEY'];
   if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
@@ -392,6 +393,13 @@ async function sendAdminBookingNotification(data: {
   ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
 
   <div style="text-align: center; margin-top: 20px;">
+    ${
+      data.eventId
+        ? `<a href="https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(data.email)}&event=${data.eventId}" style="display: inline-block; background: ${BRAND_PRIMARY}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+      Gestionar Reserva
+    </a>`
+        : ''
+    }
     <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
       Contactar por WhatsApp
     </a>
@@ -1049,17 +1057,60 @@ async function createMomenceBooking(
       redactEmail(customerData.email)
     );
 
-    // Get hostLocationId from env variable or use hardcoded fallback
-    // NOTE: Farray's Center only has ONE location (26485), so no need for complex logic
-    const FARRAY_LOCATION_ID = 26485;
-    const envLocationId = process.env['MOMENCE_LOCATION_ID'];
-    const hostLocationId = envLocationId ? parseInt(envLocationId, 10) : FARRAY_LOCATION_ID;
+    // Get hostLocationId - priority: session API > env variable > hardcoded fallback
+    let hostLocationId: number | null = null;
+    let locationSource: 'session' | 'env' | 'hardcoded' = 'hardcoded';
 
-    console.warn(
-      '[Momence Booking] Location ID:',
-      hostLocationId,
-      envLocationId ? '(from env)' : '(hardcoded fallback)'
-    );
+    // Farray's Center location ID in Momence (from dashboard URL: /locations/26485)
+    // WARNING: This is a last resort fallback - should be configured via MOMENCE_LOCATION_ID env var
+    const FARRAY_LOCATION_ID = 26485;
+
+    // 1. FIRST: Try to get location from the session itself (most accurate)
+    try {
+      const sessionResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (sessionResponse.ok) {
+        const sessionData = await sessionResponse.json();
+        const session = sessionData.payload || sessionData;
+        const sessionLocationId =
+          session.hostLocationId || session.locationId || session.location?.id;
+        if (sessionLocationId && typeof sessionLocationId === 'number') {
+          hostLocationId = sessionLocationId;
+          locationSource = 'session';
+          console.warn('[Momence Booking] ✅ Using location ID from session:', hostLocationId);
+        }
+      }
+    } catch (err) {
+      console.warn('[Momence Booking] Could not fetch session details:', err);
+    }
+
+    // 2. SECOND: Fall back to environment variable
+    if (!hostLocationId) {
+      const envLocationId = process.env['MOMENCE_LOCATION_ID'];
+      if (envLocationId) {
+        hostLocationId = parseInt(envLocationId, 10);
+        locationSource = 'env';
+        console.warn('[Momence Booking] Using MOMENCE_LOCATION_ID from env:', hostLocationId);
+      }
+    }
+
+    // 3. LAST RESORT: Hardcoded fallback (log warning - this should be configured!)
+    if (!hostLocationId) {
+      hostLocationId = FARRAY_LOCATION_ID;
+      locationSource = 'hardcoded';
+      console.warn(
+        '[Momence Booking] ⚠️ WARNING: Using HARDCODED location ID:',
+        hostLocationId,
+        '- Please set MOMENCE_LOCATION_ID env variable!'
+      );
+    }
+
+    console.warn(`[Momence Booking] Location ID: ${hostLocationId} (source: ${locationSource})`);
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
@@ -2124,6 +2175,7 @@ export default async function handler(
         classTime: classTime || '19:00',
         category,
         sourceUrl: req.headers.referer || req.headers.origin || undefined,
+        eventId: finalEventId,
       });
 
       if (adminResult.success) {
