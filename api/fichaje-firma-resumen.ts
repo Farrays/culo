@@ -129,7 +129,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         fecha_firma: timestampFirma,
         ip_firma: ip,
         user_agent_firma: userAgent,
-        updated_at: timestampFirma,
       })
       .eq('id', resumen.id);
 
