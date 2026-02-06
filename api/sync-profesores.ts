@@ -141,9 +141,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     // Get existing professors from Supabase
     const supabase = getSupabaseAdmin();
-    const { data: existingProfesores } = await supabase
+    const { data: existingProfesoresData } = await supabase
       .from('profesores')
       .select('id, nombre, apellidos, nombre_momence, telefono_whatsapp');
+
+    interface ProfesorRecord {
+      id: string;
+      nombre: string;
+      apellidos: string | null;
+      nombre_momence: string;
+      telefono_whatsapp: string;
+    }
+
+    const existingProfesores = existingProfesoresData as ProfesorRecord[] | null;
 
     const existingNames = new Set(
       (existingProfesores || []).map(p => p.nombre_momence.toLowerCase().trim())
@@ -218,6 +228,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
       const { data: inserted, error } = await supabase
         .from('profesores')
+        // @ts-expect-error - Supabase types are dynamic
         .insert(insertData)
         .select();
 

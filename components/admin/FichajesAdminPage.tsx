@@ -89,6 +89,15 @@ const FichajesAdminPage: React.FC = () => {
     totalHoras: 0,
   });
 
+  // Edit modal
+  const [editingFichaje, setEditingFichaje] = useState<Fichaje | null>(null);
+  const [editForm, setEditForm] = useState({
+    hora_inicio: '',
+    hora_fin: '',
+    estado: '',
+    motivo_edicion: '',
+  });
+
   // Fetch profesores
   const fetchProfesores = useCallback(async () => {
     try {
@@ -173,6 +182,56 @@ const FichajesAdminPage: React.FC = () => {
     link.href = url;
     link.download = `fichajes_${fechaFiltro}.csv`;
     link.click();
+  };
+
+  // Open edit modal
+  const openEditModal = (fichaje: Fichaje) => {
+    setEditingFichaje(fichaje);
+    setEditForm({
+      hora_inicio: fichaje.hora_inicio || '',
+      hora_fin: fichaje.hora_fin || '',
+      estado: fichaje.estado,
+      motivo_edicion: '',
+    });
+  };
+
+  // Save edited fichaje
+  const saveEditedFichaje = async () => {
+    if (!editingFichaje) return;
+    if (!editForm.motivo_edicion.trim()) {
+      setError('El motivo de edición es obligatorio');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}fichajes`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: editingFichaje.id,
+          hora_inicio: editForm.hora_inicio || null,
+          hora_fin: editForm.hora_fin || null,
+          estado: editForm.estado,
+          motivo_edicion: editForm.motivo_edicion,
+          editado_por: 'admin',
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setSuccess('Fichaje actualizado correctamente');
+        setEditingFichaje(null);
+        fetchFichajes();
+      } else {
+        setError(data.error || 'Error al actualizar');
+      }
+    } catch (err) {
+      setError('Error de conexión');
+      console.error('Error updating fichaje:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Format time
@@ -300,6 +359,7 @@ const FichajesAdminPage: React.FC = () => {
                           <th className="px-4 py-3 text-sm font-medium text-gray-600">Salida</th>
                           <th className="px-4 py-3 text-sm font-medium text-gray-600">Tiempo</th>
                           <th className="px-4 py-3 text-sm font-medium text-gray-600">Estado</th>
+                          <th className="px-4 py-3 text-sm font-medium text-gray-600"></th>
                         </tr>
                       </thead>
                       <tbody className="divide-y">
@@ -346,6 +406,14 @@ const FichajesAdminPage: React.FC = () => {
                                           ? 'Editado'
                                           : 'Pendiente'}
                               </span>
+                            </td>
+                            <td className="px-4 py-3">
+                              <button
+                                onClick={() => openEditModal(f)}
+                                className="text-brand-600 hover:text-brand-800 text-sm font-medium"
+                              >
+                                Editar
+                              </button>
                             </td>
                           </tr>
                         ))}
@@ -435,6 +503,7 @@ const FichajesAdminPage: React.FC = () => {
                           <th className="px-4 py-3 text-sm font-medium text-gray-600">Tiempo</th>
                           <th className="px-4 py-3 text-sm font-medium text-gray-600">Estado</th>
                           <th className="px-4 py-3 text-sm font-medium text-gray-600">Método</th>
+                          <th className="px-4 py-3 text-sm font-medium text-gray-600"></th>
                         </tr>
                       </thead>
                       <tbody className="divide-y">
@@ -479,6 +548,14 @@ const FichajesAdminPage: React.FC = () => {
                             </td>
                             <td className="px-4 py-3 text-sm text-gray-500">
                               {f.metodo_entrada || '-'}
+                            </td>
+                            <td className="px-4 py-3">
+                              <button
+                                onClick={() => openEditModal(f)}
+                                className="text-brand-600 hover:text-brand-800 text-sm font-medium"
+                              >
+                                Editar
+                              </button>
                             </td>
                           </tr>
                         ))}
@@ -552,6 +629,104 @@ const FichajesAdminPage: React.FC = () => {
             </div>
           )}
         </main>
+
+        {/* Edit Modal */}
+        {editingFichaje && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Editar Fichaje</h3>
+
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm text-gray-500">Profesor</p>
+                  <p className="font-medium">
+                    {editingFichaje.profesor?.nombre} {editingFichaje.profesor?.apellidos}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-500">Clase</p>
+                  <p className="font-medium">{editingFichaje.clase_nombre}</p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-500">Fecha</p>
+                  <p className="font-medium">{editingFichaje.fecha}</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Hora Entrada
+                    </label>
+                    <input
+                      type="time"
+                      value={editForm.hora_inicio}
+                      onChange={e => setEditForm({ ...editForm, hora_inicio: e.target.value })}
+                      className="w-full border rounded-lg px-3 py-2"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Hora Salida
+                    </label>
+                    <input
+                      type="time"
+                      value={editForm.hora_fin}
+                      onChange={e => setEditForm({ ...editForm, hora_fin: e.target.value })}
+                      className="w-full border rounded-lg px-3 py-2"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Estado</label>
+                  <select
+                    value={editForm.estado}
+                    onChange={e => setEditForm({ ...editForm, estado: e.target.value })}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    <option value="pendiente">Pendiente</option>
+                    <option value="entrada_registrada">En curso</option>
+                    <option value="completado">Completado</option>
+                    <option value="no_fichado">No fichado</option>
+                    <option value="clase_cancelada">Cancelada</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Motivo de edición *
+                  </label>
+                  <textarea
+                    value={editForm.motivo_edicion}
+                    onChange={e => setEditForm({ ...editForm, motivo_edicion: e.target.value })}
+                    placeholder="Ej: Corrección de hora de salida por error del profesor"
+                    className="w-full border rounded-lg px-3 py-2 min-h-[80px]"
+                    required
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Obligatorio para trazabilidad legal</p>
+                </div>
+              </div>
+
+              <div className="flex gap-3 mt-6">
+                <button
+                  onClick={() => setEditingFichaje(null)}
+                  className="flex-1 px-4 py-2 border rounded-lg hover:bg-gray-50"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={saveEditedFichaje}
+                  disabled={loading || !editForm.motivo_edicion.trim()}
+                  className="flex-1 px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 disabled:opacity-50"
+                >
+                  {loading ? 'Guardando...' : 'Guardar'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
