@@ -37,6 +37,7 @@ import { getConsentManager, createConsentRecord } from './consent-flow';
 import { LeadScorer, detectSignalsFromMessage, isLocalPhone } from './lead-scorer';
 import { ObjectionHandler, getObjectionResponse } from './objection-handler';
 import { getAgentMetrics } from './agent-metrics';
+import { getMemberLookup } from './member-lookup';
 
 // ============================================================================
 // TYPES
@@ -67,6 +68,19 @@ export interface ConversationState {
 
   // Booking Flow State (Phase 2)
   bookingState?: BookingState; // Full booking flow state from booking-flow.ts
+
+  // Member Detection (Fase 5: Detección Usuario Existente)
+  isExistingMember?: boolean; // True if found in Momence/Redis
+  memberInfo?: {
+    memberId: number;
+    email: string;
+    firstName: string;
+    lastName: string;
+    hasActiveMembership?: boolean;
+    creditsAvailable?: number;
+    membershipName?: string;
+    memberSince?: string;
+  };
 }
 
 export interface AgentResponse {
@@ -99,7 +113,19 @@ const MODEL_FAST = 'claude-3-haiku-20240307';
 // SYSTEM PROMPT - LAURA'S PERSONALITY
 // ============================================================================
 
-function getSystemPrompt(lang: SupportedLanguage, conversationContext?: string): string {
+interface MemberContext {
+  isExistingMember: boolean;
+  firstName?: string;
+  hasActiveMembership?: boolean;
+  creditsAvailable?: number;
+  membershipName?: string;
+}
+
+function getSystemPrompt(
+  lang: SupportedLanguage,
+  conversationContext?: string,
+  memberContext?: MemberContext
+): string {
   const basePrompt = `Eres Laura, coordinadora de Farray's International Dance Center en Barcelona.
 
 PERSONALIDAD:
@@ -151,14 +177,43 @@ IDIOMA:
 - Idioma actual detectado: ${lang === 'es' ? 'Español' : lang === 'ca' ? 'Català' : lang === 'en' ? 'English' : 'Français'}
 - Mantén la personalidad cercana en todos los idiomas`;
 
+  let fullPrompt = basePrompt;
+
+  // Add member context if available (Fase 5: Detección Usuario Existente)
+  if (memberContext?.isExistingMember) {
+    const memberInfo = [];
+    if (memberContext.firstName) {
+      memberInfo.push(`Nombre: ${memberContext.firstName}`);
+    }
+    if (memberContext.hasActiveMembership) {
+      memberInfo.push(`Es miembro ACTIVO`);
+      if (memberContext.membershipName) {
+        memberInfo.push(`Membresía: ${memberContext.membershipName}`);
+      }
+      if (memberContext.creditsAvailable !== undefined) {
+        memberInfo.push(`Créditos disponibles: ${memberContext.creditsAvailable}`);
+      }
+    }
+
+    fullPrompt += `
+
+USUARIO EXISTENTE:
+Este usuario YA es miembro de Farray's. ${memberInfo.join('. ')}.
+- NO le ofrezcas clase de prueba gratis (ya la usó)
+- Si quiere reservar, usa sus créditos si tiene
+- Sé más familiar: "Hola de nuevo!" "¿Qué tal todo?"
+- Puedes mencionar su nombre si lo conoces
+- Si pregunta por créditos, dile cuántos tiene`;
+  }
+
   if (conversationContext) {
-    return `${basePrompt}
+    fullPrompt += `
 
 CONTEXTO DE LA CONVERSACIÓN ACTUAL:
 ${conversationContext}`;
   }
 
-  return basePrompt;
+  return fullPrompt;
 }
 
 // ============================================================================
@@ -194,6 +249,9 @@ export class SalesAgent {
 
     if (!conversation) {
       conversation = this.createNewConversation(phone, detectedLang, contactName);
+
+      // Fase 5: Detect if this is an existing member (only on new conversations)
+      await this.detectExistingMember(conversation);
     } else {
       // Update language if user switched
       conversation.language = detectedLang;
@@ -544,12 +602,27 @@ export class SalesAgent {
     faqMatch?: ReturnType<typeof findFAQAnswer>
   ): Promise<string> {
     const lang = conversation.language;
-    const greeting = getGreeting(lang);
+
+    // Personalized greeting for existing vs new members (Fase 5)
+    let greeting: string;
+    const memberName = conversation.memberInfo?.firstName || contactName;
+
+    if (conversation.isExistingMember && memberName) {
+      // Returning member - warm familiar greeting
+      greeting = this.getReturningMemberGreeting(lang, memberName);
+    } else {
+      greeting = getGreeting(lang);
+      if (contactName) {
+        greeting += ` ${contactName}!`;
+      }
+    }
 
     // If it's just a greeting, respond with greeting + ask how to help
     if (this.isJustGreeting(userMessage)) {
-      const helpOffer = this.getHelpOffer(lang);
-      return `${greeting} ${contactName ? contactName + '! ' : ''}\n\n${helpOffer}`;
+      const helpOffer = conversation.isExistingMember
+        ? this.getReturningMemberHelpOffer(lang)
+        : this.getHelpOffer(lang);
+      return `${greeting}\n\n${helpOffer}`;
     }
 
     // If FAQ match, greeting + FAQ answer
@@ -559,6 +632,56 @@ export class SalesAgent {
 
     // Otherwise, use AI for the response
     return await this.generateAIResponse(conversation, 'whatsapp');
+  }
+
+  /**
+   * Get greeting for returning members (Fase 5)
+   */
+  private getReturningMemberGreeting(lang: SupportedLanguage, name: string): string {
+    const greetings: Record<SupportedLanguage, string[]> = {
+      es: [
+        `Hola de nuevo ${name}! 💃`,
+        `Hey ${name}! Qué alegría verte de vuelta!`,
+        `Holaa ${name}! ¿Qué tal todo?`,
+      ],
+      ca: [
+        `Hola de nou ${name}! 💃`,
+        `Ei ${name}! Quina alegria veure't!`,
+        `Holaa ${name}! Com va tot?`,
+      ],
+      en: [
+        `Hey ${name}! Great to see you again! 💃`,
+        `Hi ${name}! Welcome back!`,
+        `Hello ${name}! How's it going?`,
+      ],
+      fr: [
+        `Salut ${name}! Ça fait plaisir! 💃`,
+        `Hey ${name}! Content de te revoir!`,
+        `Coucou ${name}! Comment ça va?`,
+      ],
+    };
+    return randomChoice(greetings[lang]);
+  }
+
+  /**
+   * Get help offer for returning members (Fase 5)
+   */
+  private getReturningMemberHelpOffer(lang: SupportedLanguage): string {
+    const offers: Record<SupportedLanguage, string[]> = {
+      es: [
+        '¿Quieres reservar otra clase?',
+        '¿En qué puedo ayudarte hoy?',
+        '¿Te apetece venir a bailar?',
+      ],
+      ca: [
+        'Vols reservar una altra classe?',
+        'En què et puc ajudar avui?',
+        'Et ve de gust venir a ballar?',
+      ],
+      en: ['Want to book another class?', 'How can I help you today?', 'Ready for some dancing?'],
+      fr: ['Tu veux réserver un autre cours?', "Comment puis-je t'aider?", 'Prêt(e) pour danser?'],
+    };
+    return randomChoice(offers[lang]);
   }
 
   /**
@@ -582,11 +705,22 @@ export class SalesAgent {
       content: m.content,
     }));
 
+    // Build member context (Fase 5)
+    const memberContext: MemberContext | undefined = conversation.isExistingMember
+      ? {
+          isExistingMember: true,
+          firstName: conversation.memberInfo?.firstName,
+          hasActiveMembership: conversation.memberInfo?.hasActiveMembership,
+          creditsAvailable: conversation.memberInfo?.creditsAvailable,
+          membershipName: conversation.memberInfo?.membershipName,
+        }
+      : undefined;
+
     try {
       const response = await this.anthropic.messages.create({
         model: MODEL_FAST, // Use Haiku for speed
         max_tokens: 500,
-        system: getSystemPrompt(lang, conversationContext),
+        system: getSystemPrompt(lang, conversationContext, memberContext),
         messages,
       });
 
@@ -803,6 +937,51 @@ export class SalesAgent {
       await this.redis.expire('agent:active_conversations', 48 * 60 * 60);
     } catch (error) {
       console.error('[agent] Redis save error:', error);
+    }
+  }
+
+  /**
+   * Detect if the user is an existing member (Fase 5)
+   * Checks Redis cache first, then Momence API
+   */
+  private async detectExistingMember(conversation: ConversationState): Promise<void> {
+    try {
+      const memberLookup = getMemberLookup(this.redis);
+      const result = await memberLookup.lookupByPhone(conversation.phone);
+
+      if (result.found && result.member) {
+        conversation.isExistingMember = true;
+        conversation.memberInfo = {
+          memberId: result.member.memberId,
+          email: result.member.email,
+          firstName: result.member.firstName,
+          lastName: result.member.lastName,
+          hasActiveMembership: result.member.hasActiveMembership,
+          creditsAvailable: result.member.creditsAvailable,
+          membershipName: result.member.membershipName,
+          memberSince: result.member.memberSince,
+        };
+
+        // If we found a member but don't have membership info, fetch it
+        if (conversation.memberInfo.hasActiveMembership === undefined) {
+          const membershipInfo = await memberLookup.fetchMembershipInfo(result.member.memberId);
+          conversation.memberInfo.hasActiveMembership = membershipInfo.hasActiveMembership;
+          conversation.memberInfo.creditsAvailable = membershipInfo.creditsAvailable;
+          conversation.memberInfo.membershipName = membershipInfo.membershipName;
+        }
+
+        console.log(
+          `[agent] Detected existing member: ${conversation.memberInfo.firstName} ` +
+            `(ID: ${conversation.memberInfo.memberId}, credits: ${conversation.memberInfo.creditsAvailable || 0})`
+        );
+      } else {
+        conversation.isExistingMember = false;
+        console.log(`[agent] New user detected: ${conversation.phone.slice(-4)}`);
+      }
+    } catch (error) {
+      console.error('[agent] Member detection error:', error);
+      // Default to treating as new user on error
+      conversation.isExistingMember = false;
     }
   }
 

@@ -8,7 +8,7 @@
 ## Estado General
 
 ```
-████████████████████░░░░░░  80% MVP Completo
+█████████████████████░░░░░  85% MVP + Fase 5 Completo
 ```
 
 ---
@@ -82,21 +82,48 @@
 
 > Basado en AGENTE.md líneas 820-970
 
-### Fase 5: Detección Usuario Existente ❌ 0%
+### Fase 5: Detección Usuario Existente ✅ 100%
 
-**El agente actualmente NO distingue entre usuarios nuevos y existentes.**
+**Implementado: 2026-02-06**
 
-| Tarea                                  | Estado | Prioridad   |
-| -------------------------------------- | ------ | ----------- |
-| Buscar teléfono en Momence al inicio   | ❌     | 🔴 Alta     |
-| Si existe: obtener membresías/créditos | ❌     | 🔴 Alta     |
-| Si nuevo: flujo primera clase gratis   | ✅     | Ya funciona |
-| Personalizar conversación según estado | ❌     | 🟡 Media    |
+| Tarea                                  | Estado | Notas                         |
+| -------------------------------------- | ------ | ----------------------------- |
+| Buscar usuario en Momence al inicio    | ✅     | Redis cache + Momence API     |
+| Si existe: obtener membresías/créditos | ✅     | `fetchMembershipInfo()`       |
+| Si nuevo: flujo primera clase gratis   | ✅     | Ya funcionaba                 |
+| Personalizar conversación según estado | ✅     | Saludo + prompt personalizado |
 
-**Endpoints Momence a usar:**
+**Archivos creados/modificados:**
 
-- `POST /api/v2/host/members/list` → Buscar por teléfono
-- `GET /api/v2/host/members/{id}/active-subscriptions` → Ver membresías
+```
+api/lib/ai/member-lookup.ts   # NUEVO: Servicio de búsqueda de miembros
+api/reservar.ts               # Cache del member después de booking
+api/lib/ai/agent.ts           # Detección + personalización
+```
+
+**Estrategia implementada (Opción B - Cache local):**
+
+1. Al crear reserva en `/api/reservar`, se guarda en Redis:
+   - Key: `member:phone:{normalizedPhone}`
+   - TTL: 30 días
+   - Data: `{ memberId, email, firstName, lastName, phone, cachedAt }`
+
+2. En cada nueva conversación, `processMessage()` llama a `detectExistingMember()`:
+   - Primero busca en Redis (rápido)
+   - Si no está, busca en Momence via API query
+   - Si encuentra, obtiene membresías/créditos
+
+3. El system prompt de Claude incluye contexto del miembro:
+   - Nombre, membresía activa, créditos disponibles
+   - Instrucciones para no ofrecer clase de prueba gratis
+   - Saludos personalizados ("Hola de nuevo!")
+
+**Endpoints Momence VERIFICADOS:**
+
+```
+POST /api/v2/host/members/list (buscar por query)
+GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
+```
 
 ---
 
@@ -112,6 +139,24 @@
 | Cancelar reserva vía WhatsApp | ❌     | Con confirmación         |
 | Actualizar email/nombre       | ❌     | PUT endpoints            |
 
+**Endpoints Momence VERIFICADOS:**
+
+```
+# Ver membresías activas y créditos
+GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
+
+# Historial de visitas
+GET /api/v2/host/members/{memberId}  → campo "visits"
+
+# Cancelar reserva (ya implementado en cancelar-reserva.ts)
+DELETE /api/v2/host/session-bookings/{bookingId}
+
+# Actualizar datos del miembro
+PUT /api/v2/host/members/{memberId}/name
+PUT /api/v2/host/members/{memberId}/email
+PUT /api/v2/host/members/{memberId}/phone
+```
+
 ---
 
 ### Fase 7: Lista de Espera (Waitlist) ❌ 0%
@@ -122,7 +167,15 @@
 | ----------------------------------------- | ------ |
 | Detectar clase llena (spotsAvailable = 0) | ❌     |
 | Ofrecer waitlist                          | ❌     |
-| Llamar `POST /sessions/{id}/waitlist`     | ❌     |
+| Llamar endpoint de waitlist               | ❌     |
+
+**Endpoint Momence VERIFICADO:**
+
+```
+# Añadir a lista de espera
+POST /api/v2/host/sessions/{sessionId}/waitlist
+Body: { "memberId": 123, "useBoughtMembershipIds": [456] }
+```
 
 ---
 
