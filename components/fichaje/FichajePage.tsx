@@ -49,6 +49,11 @@ interface FichajeResponse {
 // API base URL
 const API_BASE = '/api/fichaje-';
 
+// Obtener fecha de hoy en zona horaria de España
+const getFechaHoyEspana = (): string => {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' });
+};
+
 const FichajePage: React.FC = () => {
   // State
   const [profesores, setProfesores] = useState<Profesor[]>([]);
@@ -105,7 +110,7 @@ const FichajePage: React.FC = () => {
 
   const fetchFichajesHoy = async (profesorId: string) => {
     try {
-      const hoy = new Date().toISOString().split('T')[0];
+      const hoy = getFechaHoyEspana();
       const res = await fetch(`${API_BASE}fichajes?profesor_id=${profesorId}&fecha=${hoy}`);
       const data = await res.json();
       if (data.success) {

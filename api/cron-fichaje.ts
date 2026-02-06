@@ -177,8 +177,8 @@ async function getMomenceSessionsForDate(fecha?: string): Promise<MomenceSession
   }
 
   const data = await response.json();
-  // La respuesta puede ser un array directo o { sessions: [...] }
-  return Array.isArray(data) ? data : data.sessions || data.data || [];
+  // La respuesta de Momence API v2 usa data.payload (igual que schedule.ts)
+  return Array.isArray(data) ? data : data.payload || data.sessions || data.data || [];
 }
 
 // ============================================================================

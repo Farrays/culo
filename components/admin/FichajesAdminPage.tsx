@@ -66,6 +66,11 @@ const API_BASE = '/api/fichaje-';
 // Tabs
 type Tab = 'dashboard' | 'profesores' | 'fichajes';
 
+// Obtener fecha de hoy en zona horaria de España
+const getFechaHoyEspana = (): string => {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' });
+};
+
 const FichajesAdminPage: React.FC = () => {
   // State
   const [activeTab, setActiveTab] = useState<Tab>('dashboard');
@@ -75,8 +80,8 @@ const FichajesAdminPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  // Filters
-  const [fechaFiltro, setFechaFiltro] = useState(new Date().toISOString().split('T')[0]);
+  // Filters - usar zona horaria de España
+  const [fechaFiltro, setFechaFiltro] = useState(getFechaHoyEspana());
   const [profesorFiltro, setProfesorFiltro] = useState<string>('');
   const [estadoFiltro, setEstadoFiltro] = useState<string>('');
 
