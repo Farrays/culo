@@ -54,6 +54,7 @@ interface MomenceSession {
   startsAt: string;
   endsAt: string;
   teacher?: MomenceTeacher;
+  additionalTeachers?: MomenceTeacher[]; // Profesores asistentes
 }
 
 interface BloqueClases {
@@ -424,38 +425,48 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const minutosActuales = horaAMinutos(horaActual);
 
     // 4. Agrupar clases por profesor (solo si hay clases de Momence)
+    // INCLUYE profesor principal + additionalTeachers (asistentes)
     if (sesiones.length > 0) {
       const clasesPorProfesor = new Map<string, MomenceSession[]>();
 
-      for (const sesion of sesiones) {
-        if (!sesion.teacher) continue;
+      // Función helper para asignar sesión a un profesor
+      const asignarSesionAProfesor = (teacher: MomenceTeacher, sesion: MomenceSession) => {
+        const nombreInstructor = `${teacher.firstName} ${teacher.lastName}`.toLowerCase().trim();
 
-        const nombreInstructor = `${sesion.teacher.firstName} ${sesion.teacher.lastName}`
-          .toLowerCase()
-          .trim();
+        // Buscar profesor por nombre exacto
+        let profesor = profesorPorNombre.get(nombreInstructor);
 
-        // Buscar profesor por nombre
-        const profesor = profesorPorNombre.get(nombreInstructor);
+        // Si no encontrado, intentar match parcial
         if (!profesor) {
-          // Intentar match parcial
-          let found = false;
           for (const [nombre, p] of profesorPorNombre) {
             if (nombreInstructor.includes(nombre) || nombre.includes(nombreInstructor)) {
-              const lista = clasesPorProfesor.get(p.id) || [];
-              lista.push(sesion);
-              clasesPorProfesor.set(p.id, lista);
-              found = true;
+              profesor = p;
               break;
             }
           }
-          if (!found) {
-            // Profesor no registrado en el sistema
-            continue;
-          }
-        } else {
+        }
+
+        if (profesor) {
           const lista = clasesPorProfesor.get(profesor.id) || [];
-          lista.push(sesion);
-          clasesPorProfesor.set(profesor.id, lista);
+          // Evitar duplicados (misma sesión ya asignada)
+          if (!lista.some(s => s.id === sesion.id)) {
+            lista.push(sesion);
+            clasesPorProfesor.set(profesor.id, lista);
+          }
+        }
+      };
+
+      for (const sesion of sesiones) {
+        // Procesar profesor principal
+        if (sesion.teacher) {
+          asignarSesionAProfesor(sesion.teacher, sesion);
+        }
+
+        // Procesar profesores asistentes (additionalTeachers)
+        if (sesion.additionalTeachers && sesion.additionalTeachers.length > 0) {
+          for (const asistente of sesion.additionalTeachers) {
+            asignarSesionAProfesor(asistente, sesion);
+          }
         }
       }
 
