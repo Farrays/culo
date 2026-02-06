@@ -137,6 +137,7 @@ const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
 // ===== FICHAJE PAGE (PWA interna para profesores) =====
 const FichajePage = lazy(() => import('./components/fichaje/FichajePage'));
+const ResumenFirmaPage = lazy(() => import('./components/fichaje/ResumenFirmaPage'));
 
 // ===== ADMIN FICHAJES (Dashboard de gestión de fichajes) =====
 const FichajesAdminPage = lazy(() => import('./components/admin/FichajesAdminPage'));
@@ -826,6 +827,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <FichajePage />
+                </>
+              }
+            />
+
+            {/* ===== RESUMEN FIRMA (Firma digital de resumen mensual) ===== */}
+            <Route
+              path="/:locale/fichaje/resumen/:token"
+              element={
+                <>
+                  <LocaleSync />
+                  <ResumenFirmaPage />
                 </>
               }
             />
