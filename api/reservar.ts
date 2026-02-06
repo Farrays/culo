@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
+import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -808,10 +809,8 @@ const BOOKING_KEY_PREFIX = 'booking:';
 const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 
-// Rate limiting
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000;
-const RATE_LIMIT_MAX = 3; // 3 reservas por minuto por IP (más estricto)
+// Rate limiting ahora usa Redis (persistente entre cold starts)
+// Configuración: 3 requests/minuto (ver rate-limit-helper.ts)
 
 // Emails que bypasan la deduplicación (admin/testing)
 // Estos emails pueden hacer reservas múltiples sin ser bloqueados
@@ -844,23 +843,6 @@ function getRedisClient(): Redis | null {
     });
   }
   return redisClient;
-}
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-
-  if (record.count >= RATE_LIMIT_MAX) {
-    return true;
-  }
-
-  record.count++;
-  return false;
 }
 
 // ============================================================================
@@ -1655,7 +1637,7 @@ export default async function handler(
     req.socket?.remoteAddress ||
     'unknown';
 
-  if (isRateLimited(clientIp)) {
+  if (await isRateLimitedRedis('/api/reservar', clientIp)) {
     return res.status(429).json({ error: 'Demasiadas solicitudes. Espera un momento.' });
   }
 

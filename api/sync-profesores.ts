@@ -29,6 +29,18 @@ interface MomenceSession {
   additionalTeachers?: MomenceTeacher[];
 }
 
+// Supabase profesores table type (not in generated types yet)
+interface ProfesorRow {
+  id: number;
+  nombre: string;
+  apellidos: string;
+  nombre_momence: string;
+  telefono_whatsapp: string;
+  tipo_contrato?: string;
+  activo?: boolean;
+  fecha_alta?: string;
+}
+
 // Auth token cache
 let cachedToken: { token: string; expires: number } | null = null;
 
@@ -141,19 +153,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     // Get existing professors from Supabase
     const supabase = getSupabaseAdmin();
-    const { data: existingProfesoresData } = await supabase
+    const { data: existingProfesores } = (await supabase
       .from('profesores')
-      .select('id, nombre, apellidos, nombre_momence, telefono_whatsapp');
-
-    interface ProfesorRecord {
-      id: string;
-      nombre: string;
-      apellidos: string | null;
-      nombre_momence: string;
-      telefono_whatsapp: string;
-    }
-
-    const existingProfesores = existingProfesoresData as ProfesorRecord[] | null;
+      .select('id, nombre, apellidos, nombre_momence, telefono_whatsapp')) as {
+      data: ProfesorRow[] | null;
+    };
 
     const existingNames = new Set(
       (existingProfesores || []).map(p => p.nombre_momence.toLowerCase().trim())
@@ -226,11 +230,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         fecha_alta: new Date().toISOString().split('T')[0],
       }));
 
-      const { data: inserted, error } = await supabase
-        .from('profesores')
-        // @ts-expect-error - Supabase types are dynamic
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: inserted, error } = (await (supabase.from('profesores') as any)
         .insert(insertData)
-        .select();
+        .select()) as { data: ProfesorRow[] | null; error: { message: string } | null };
 
       if (error) {
         res.status(500).json({
