@@ -12,7 +12,7 @@
  * @see AGENTE.md - Lead Scoring MVP
  */
 
-import type { SupportedLanguage } from './language-detector';
+import type { SupportedLanguage } from './language-detector.js';
 
 // ============================================================================
 // TYPES

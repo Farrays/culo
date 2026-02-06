@@ -64,3 +64,6 @@ src-components-*.tsx
 
 .vercel
 .env*.local
+
+.vercel
+.env*.local

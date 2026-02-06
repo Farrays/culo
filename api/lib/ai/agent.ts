@@ -15,7 +15,7 @@
 
 import Anthropic from '@anthropic-ai/sdk';
 import type { Redis } from '@upstash/redis';
-import { detectLanguage, type SupportedLanguage } from './language-detector';
+import { detectLanguage, type SupportedLanguage } from './language-detector.js';
 import {
   CENTER_INFO,
   PRICING,
@@ -25,7 +25,7 @@ import {
   getTransition,
   randomChoice,
   AGENT_PHRASES,
-} from './knowledge-base';
+} from './knowledge-base.js';
 import {
   BookingFlow,
   detectBookingIntent,
@@ -34,12 +34,12 @@ import {
   type BookingState,
   type ClassOption,
   type MemberIntent,
-} from './booking-flow';
-import { getConsentManager, createConsentRecord } from './consent-flow';
-import { LeadScorer, detectSignalsFromMessage, isLocalPhone } from './lead-scorer';
-import { ObjectionHandler, getObjectionResponse } from './objection-handler';
-import { getAgentMetrics } from './agent-metrics';
-import { getMemberLookup, type MemberBooking } from './member-lookup';
+} from './booking-flow.js';
+import { getConsentManager, createConsentRecord } from './consent-flow.js';
+import { LeadScorer, detectSignalsFromMessage, isLocalPhone } from './lead-scorer.js';
+import { ObjectionHandler, getObjectionResponse } from './objection-handler.js';
+import { getAgentMetrics } from './agent-metrics.js';
+import { getMemberLookup, type MemberBooking } from './member-lookup.js';
 
 // ============================================================================
 // TYPES

@@ -16,8 +16,8 @@
  * @see AGENTE.md - Manejo de Situaciones Difíciles
  */
 
-import type { SupportedLanguage } from './language-detector';
-import { randomChoice } from './knowledge-base';
+import type { SupportedLanguage } from './language-detector.js';
+import { randomChoice } from './knowledge-base.js';
 
 // ============================================================================
 // TYPES

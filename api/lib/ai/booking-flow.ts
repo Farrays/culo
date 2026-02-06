@@ -11,8 +11,8 @@
  * @see AGENTE.md - Flujo de Reserva con Consentimientos RGPD
  */
 
-import type { SupportedLanguage } from './language-detector';
-import { getConfirmation, CENTER_INFO } from './knowledge-base';
+import type { SupportedLanguage } from './language-detector.js';
+import { getConfirmation, CENTER_INFO } from './knowledge-base.js';
 
 // ============================================================================
 // TYPES

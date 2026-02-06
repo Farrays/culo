@@ -12,8 +12,8 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedisClient } from './lib/redis';
-import { SalesAgent } from './lib/ai/agent';
+import { getRedisClient } from './lib/redis.js';
+import { SalesAgent } from './lib/ai/agent.js';
 
 // ============================================================================
 // WHATSAPP INLINE (same as webhook-whatsapp.ts)

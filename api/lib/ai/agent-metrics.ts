@@ -15,9 +15,9 @@
  */
 
 import type { Redis } from '@upstash/redis';
-import type { SupportedLanguage } from './language-detector';
-import type { LeadTier } from './lead-scorer';
-import type { ObjectionType } from './objection-handler';
+import type { SupportedLanguage } from './language-detector.js';
+import type { LeadTier } from './lead-scorer.js';
+import type { ObjectionType } from './objection-handler.js';
 
 // ============================================================================
 // TYPES

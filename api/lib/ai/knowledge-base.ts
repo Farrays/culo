@@ -9,7 +9,7 @@
  * @see AGENTE.md - Knowledge Base (precios, horarios, FAQs)
  */
 
-import type { SupportedLanguage } from './language-detector';
+import type { SupportedLanguage } from './language-detector.js';
 
 // ============================================================================
 // CENTER INFORMATION
