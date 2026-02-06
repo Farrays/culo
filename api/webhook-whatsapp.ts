@@ -2,9 +2,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import type { Redis } from '@upstash/redis';
-import { getRedisClient } from './lib/redis';
+import { getRedisClient } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
-import { processAgentMessage } from './lib/ai/agent';
+import { processAgentMessage } from './lib/ai/agent.js';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
