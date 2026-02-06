@@ -84,7 +84,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     // Obtener resumen por token
     const { data: resumenData, error: fetchError } = await supabase
-      .from('resumen_mensual')
+      .from('resumenes_mensuales')
       .select(
         `
         *,
@@ -121,7 +121,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     // Registrar firma (solo campos que existen en la tabla)
     const { error: updateError } = await supabase
-      .from('resumen_mensual')
+      .from('resumenes_mensuales')
       // @ts-expect-error - Supabase types are dynamic
       .update({
         firmado: true,

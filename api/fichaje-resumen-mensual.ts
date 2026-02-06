@@ -107,7 +107,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       // Si hay token, buscar por token (para página de firma)
       if (token && typeof token === 'string') {
         const { data: resumenRaw, error } = await supabase
-          .from('resumen_mensual')
+          .from('resumenes_mensuales')
           .select(
             `
             *,
@@ -158,7 +158,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       const mesFormateado = `${mes}-01`; // Convertir 2026-01 a 2026-01-01
 
       const { data: resumen, error } = await supabase
-        .from('resumen_mensual')
+        .from('resumenes_mensuales')
         .select('*')
         .eq('profesor_id', profesor_id)
         .eq('mes', mesFormateado)
@@ -276,7 +276,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
           // Verificar si ya existe
           const { data: existenteData } = await supabase
-            .from('resumen_mensual')
+            .from('resumenes_mensuales')
             .select('id, firmado')
             .eq('profesor_id', profId)
             .eq('mes', mesFormateado)
@@ -298,7 +298,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
             // Actualizar existente
             const { data: updated, error: updateError } = await supabase
-              .from('resumen_mensual')
+              .from('resumenes_mensuales')
               // @ts-expect-error - Supabase types are dynamic
               .update({
                 total_horas: totalHoras,
@@ -318,7 +318,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           } else {
             // Crear nuevo
             const { data: created, error: createError } = await supabase
-              .from('resumen_mensual')
+              .from('resumenes_mensuales')
               .insert({
                 profesor_id: profId,
                 mes: mesFormateado,
@@ -360,7 +360,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
                 );
 
                 await supabase
-                  .from('resumen_mensual')
+                  .from('resumenes_mensuales')
                   // @ts-expect-error - Supabase types are dynamic
                   .update({
                     enviado_whatsapp: true,
@@ -397,7 +397,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
                   });
 
                   await supabase
-                    .from('resumen_mensual')
+                    .from('resumenes_mensuales')
                     // @ts-expect-error - Supabase types are dynamic
                     .update({
                       enviado_email: true,

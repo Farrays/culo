@@ -122,7 +122,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       try {
         // Verificar si ya existe un resumen firmado
         const { data: existenteData } = await supabase
-          .from('resumen_mensual')
+          .from('resumenes_mensuales')
           .select('id, firmado')
           .eq('profesor_id', profesor.id)
           .eq('mes', mesFormateado)
@@ -188,7 +188,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         // Crear o actualizar resumen
         if (existente) {
           await supabase
-            .from('resumen_mensual')
+            .from('resumenes_mensuales')
             // @ts-expect-error - Supabase types are dynamic
             .update({
               total_horas: totalHoras,
@@ -201,7 +201,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             })
             .eq('id', existente.id);
         } else {
-          await supabase.from('resumen_mensual').insert({
+          await supabase.from('resumenes_mensuales').insert({
             profesor_id: profesor.id,
             mes: mesFormateado,
             total_horas: totalHoras,
@@ -234,7 +234,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             );
 
             await supabase
-              .from('resumen_mensual')
+              .from('resumenes_mensuales')
               // @ts-expect-error - Supabase types are dynamic
               .update({
                 enviado_whatsapp: true,
@@ -272,7 +272,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               });
 
               await supabase
-                .from('resumen_mensual')
+                .from('resumenes_mensuales')
                 // @ts-expect-error - Supabase types are dynamic
                 .update({
                   enviado_email: true,
