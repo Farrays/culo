@@ -832,6 +832,16 @@ const AppContent: React.FC = () => {
             />
 
             {/* ===== RESUMEN FIRMA (Firma digital de resumen mensual) ===== */}
+            {/* Support both /fichaje/resumen?token=xxx and /fichaje/resumen/:token */}
+            <Route
+              path="/:locale/fichaje/resumen"
+              element={
+                <>
+                  <LocaleSync />
+                  <ResumenFirmaPage />
+                </>
+              }
+            />
             <Route
               path="/:locale/fichaje/resumen/:token"
               element={

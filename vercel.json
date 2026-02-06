@@ -1117,6 +1117,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/:locale(es|en|ca|fr)/fichaje/resumen",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/fichaje/resumen/:token",
+      "destination": "/index.html"
+    },
+    {
       "source": "/:locale(es|en|ca|fr)/admin/fichajes",
       "destination": "/index.html"
     },
