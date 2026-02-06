@@ -4,6 +4,7 @@ import crypto from 'crypto';
 import type { Redis } from '@upstash/redis';
 import { getRedisClient } from './lib/redis';
 import { getSupabaseAdmin } from './lib/supabase.js';
+import { processAgentMessage } from './lib/ai/agent';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -597,7 +598,6 @@ async function processMessage(
     // Process with AI agent
     try {
       const redis = getRedisClient();
-      const { processAgentMessage } = await import('./lib/ai/agent');
 
       console.log(`[webhook-whatsapp] Processing with AI agent...`);
 
