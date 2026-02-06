@@ -152,18 +152,22 @@ async function getMomenceSessionsForDate(fecha?: string): Promise<MomenceSession
   const token = await getMomenceToken();
   const today = fecha || getFechaHoyEspana(); // YYYY-MM-DD en timezone España
 
-  // Calcular mañana en timezone España
-  const todayDate = new Date(`${today}T00:00:00+01:00`); // España UTC+1 (o +2 en verano)
-  const tomorrowDate = new Date(todayDate);
-  tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-  const tomorrowStr = tomorrowDate.toISOString().split('T')[0];
+  // Crear timestamps ISO completos (igual que schedule.ts)
+  // startAfter: inicio del día en UTC
+  // startBefore: inicio del día siguiente en UTC
+  const startOfDay = new Date(`${today}T00:00:00.000Z`);
+  const endOfDay = new Date(`${today}T23:59:59.999Z`);
 
-  // Momence API v2 requiere: page, pageSize, y usa startAfter/startBefore para filtrar
-  // startAfter: devuelve sesiones que EMPIEZAN después de esta fecha
-  // startBefore: devuelve sesiones que EMPIEZAN antes de esta fecha
-  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?page=0&pageSize=200&startAfter=${today}T00:00:00&startBefore=${tomorrowStr}T00:00:00`;
+  // Usar URL con searchParams para codificación correcta (igual que schedule.ts)
+  const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+  url.searchParams.set('page', '0');
+  url.searchParams.set('pageSize', '200');
+  url.searchParams.set('startAfter', startOfDay.toISOString());
+  url.searchParams.set('startBefore', endOfDay.toISOString());
+  url.searchParams.set('sortBy', 'startsAt');
+  url.searchParams.set('sortOrder', 'ASC');
 
-  const response = await fetch(url, {
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
