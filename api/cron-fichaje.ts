@@ -378,7 +378,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const fechaEjecucion =
     fechaParam && /^\d{4}-\d{2}-\d{2}$/.test(fechaParam) ? fechaParam : getFechaHoyEspana();
 
-  const result: CronResult = {
+  // Modo debug: incluir logs en respuesta
+  const debugMode = req.query['debug'] === 'true';
+  const debugLogs: string[] = [];
+  const debugLog = (msg: string) => {
+    console.log(msg);
+    if (debugMode) debugLogs.push(msg);
+  };
+
+  // Limpiar fichajes existentes para testing (solo con parámetro clean=true)
+  const cleanMode = req.query['clean'] === 'true';
+
+  const result: CronResult & { debugLogs?: string[] } = {
     fecha: fechaEjecucion,
     hora: getHoraAhoraEspana(),
     profesores: 0,
@@ -394,6 +405,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   try {
     const supabase = getSupabaseAdmin();
+
+    // Limpiar fichajes existentes si clean=true (para testing)
+    if (cleanMode && fechaParam) {
+      const { data: deleted, error: deleteError } = await supabase
+        .from('fichajes')
+        .delete()
+        .eq('fecha', fechaEjecucion)
+        .select('id');
+
+      if (deleteError) {
+        debugLog(`[cron-fichaje] Error limpiando fichajes: ${deleteError.message}`);
+      } else {
+        debugLog(
+          `[cron-fichaje] Limpiados ${deleted?.length || 0} fichajes para ${fechaEjecucion}`
+        );
+      }
+    }
 
     // 1. Obtener configuración
     const { data: config } = await supabase
@@ -467,7 +495,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         const nombreInstructor = `${teacher.firstName} ${teacher.lastName}`.toLowerCase().trim();
 
         // Log para debugging
-        console.log(
+        debugLog(
           `[cron-fichaje] Buscando profesor: "${nombreInstructor}" (${esAsistente ? 'asistente' : 'principal'}) para clase "${sesion.name}"`
         );
 
@@ -479,14 +507,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           for (const [nombre, p] of profesorPorNombre) {
             if (nombreInstructor.includes(nombre) || nombre.includes(nombreInstructor)) {
               profesor = p;
-              console.log(`[cron-fichaje] Match parcial: "${nombreInstructor}" → "${nombre}"`);
+              debugLog(`[cron-fichaje] Match parcial: "${nombreInstructor}" → "${nombre}"`);
               break;
             }
           }
         }
 
         if (!profesor) {
-          console.log(
+          debugLog(
             `[cron-fichaje] ⚠️ Profesor NO encontrado: "${nombreInstructor}". Nombres disponibles: ${Array.from(profesorPorNombre.keys()).join(', ')}`
           );
         }
@@ -509,7 +537,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
         // Procesar profesores asistentes (additionalTeachers)
         if (sesion.additionalTeachers && sesion.additionalTeachers.length > 0) {
-          console.log(
+          debugLog(
             `[cron-fichaje] Clase "${sesion.name}" tiene ${sesion.additionalTeachers.length} asistente(s)`
           );
           for (const asistente of sesion.additionalTeachers) {
@@ -831,6 +859,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       }
     }
 
+    // Incluir debugLogs en respuesta si debug=true
+    if (debugMode) {
+      result.debugLogs = debugLogs;
+    }
+
     res.status(200).json({
       success: true,
       ...result,
@@ -838,6 +871,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   } catch (error) {
     console.error('[cron-fichaje] Error:', error);
     result.errores.push(error instanceof Error ? error.message : 'Unknown error');
+
+    // Incluir debugLogs en respuesta de error también
+    if (debugMode) {
+      result.debugLogs = debugLogs;
+    }
+
     res.status(500).json({
       success: false,
       ...result,
