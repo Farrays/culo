@@ -531,7 +531,21 @@ export class BookingFlow {
     this.state.data.selectedClassDate = `${selectedClass.dayOfWeek} ${selectedClass.date}`;
     this.state.data.selectedClassTime = selectedClass.time;
 
-    // Move to data collection
+    // Check if member data is already populated (existing member - Fase 6)
+    const hasAllData =
+      this.state.data.firstName && this.state.data.lastName && this.state.data.email;
+
+    if (hasAllData) {
+      // Skip data collection, go directly to consents
+      this.state.step = 'consent_terms';
+      const firstName = this.state.data.firstName;
+      return {
+        response: `${getConfirmation(this.lang)} ${firstName}, has elegido *${selectedClass.name}* 💃\n\nComo ya te conozco, solo necesito que confirmes los términos.\n\n${msgs.askTerms}`,
+        newState: this.state,
+      };
+    }
+
+    // Move to data collection (new users)
     this.state.step = 'data_collection';
 
     return {
@@ -848,4 +862,74 @@ export function detectBookingIntent(text: string): boolean {
  */
 export function isInBookingFlow(step: BookingStep): boolean {
   return step !== 'initial' && step !== 'completed';
+}
+
+// ============================================================================
+// MEMBER INTENT DETECTION (Fase 6)
+// ============================================================================
+
+export type MemberIntent = 'credits' | 'cancel' | 'history' | 'none';
+
+/**
+ * Detect member-specific intents (only relevant for existing members)
+ */
+export function detectMemberIntent(text: string): MemberIntent {
+  const normalizedText = text.toLowerCase();
+
+  // Credits inquiry: "cuántas clases me quedan", "mis créditos", etc.
+  const creditsKeywords = [
+    'cuántas clases',
+    'cuantas clases',
+    'clases me quedan',
+    'créditos',
+    'creditos',
+    'mis clases',
+    'how many classes',
+    'my credits',
+    'credits left',
+    'quantes classes',
+    'classes que em queden',
+    'combien de cours',
+    'mes crédits',
+  ];
+
+  if (creditsKeywords.some(kw => normalizedText.includes(kw))) {
+    return 'credits';
+  }
+
+  // Cancel booking: "cancelar reserva", "anular", etc.
+  const cancelKeywords = [
+    'cancelar',
+    'anular',
+    'cancel',
+    'annuler',
+    'no puedo ir',
+    'no podré ir',
+    'quitar reserva',
+    'borrar reserva',
+    'cancel·lar',
+  ];
+
+  if (cancelKeywords.some(kw => normalizedText.includes(kw))) {
+    return 'cancel';
+  }
+
+  // View history: "mis reservas", "historial", etc.
+  const historyKeywords = [
+    'mis reservas',
+    'historial',
+    'clases pasadas',
+    'my bookings',
+    'my reservations',
+    'mes réservations',
+    'les meves reserves',
+    'qué clases tengo',
+    'que clases tengo',
+  ];
+
+  if (historyKeywords.some(kw => normalizedText.includes(kw))) {
+    return 'history';
+  }
+
+  return 'none';
 }

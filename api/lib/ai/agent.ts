@@ -29,9 +29,11 @@ import {
 import {
   BookingFlow,
   detectBookingIntent,
+  detectMemberIntent,
   isInBookingFlow,
   type BookingState,
   type ClassOption,
+  type MemberIntent,
 } from './booking-flow';
 import { getConsentManager, createConsentRecord } from './consent-flow';
 import { LeadScorer, detectSignalsFromMessage, isLocalPhone } from './lead-scorer';
@@ -292,11 +294,19 @@ export class SalesAgent {
     // Track response time
     const responseStartTime = Date.now();
 
+    // Check for member-specific intents (Fase 6)
+    const memberIntent: MemberIntent = conversation.isExistingMember
+      ? detectMemberIntent(text)
+      : 'none';
+
     if (inBookingFlow) {
       // Continue booking flow
       responseText = await this.processBookingFlow(conversation, text);
+    } else if (memberIntent !== 'none') {
+      // Handle member-specific intent (Fase 6)
+      responseText = await this.handleMemberIntent(conversation, memberIntent);
     } else if (wantsToBook) {
-      // Start new booking flow
+      // Start new booking flow (skip data collection for existing members)
       conversation.intent = 'booking';
       responseText = this.startBookingFlow(conversation);
       metrics.trackIntentDetected();
@@ -359,6 +369,17 @@ export class SalesAgent {
     const flow = new BookingFlow(conversation.language);
     const result = flow.startBooking(conversation.phone);
 
+    // Pre-populate member data if existing member (Fase 6)
+    if (conversation.isExistingMember && conversation.memberInfo) {
+      result.newState.data.firstName = conversation.memberInfo.firstName;
+      result.newState.data.lastName = conversation.memberInfo.lastName;
+      result.newState.data.email = conversation.memberInfo.email;
+
+      console.log(
+        `[agent] Pre-populated booking data for existing member: ${conversation.memberInfo.firstName}`
+      );
+    }
+
     // Save booking state
     conversation.bookingState = result.newState;
 
@@ -370,6 +391,122 @@ export class SalesAgent {
 
     console.log(`[agent] Started booking flow for ${conversation.phone.slice(-4)}`);
     return result.response;
+  }
+
+  // ============================================================================
+  // MEMBER INTENT HANDLERS (Fase 6)
+  // ============================================================================
+
+  /**
+   * Handle member-specific intents (credits, cancel, history)
+   */
+  private async handleMemberIntent(
+    conversation: ConversationState,
+    intent: MemberIntent
+  ): Promise<string> {
+    const lang = conversation.language;
+    const memberInfo = conversation.memberInfo;
+
+    if (!memberInfo) {
+      // Shouldn't happen, but fallback
+      return this.getMemberNotFoundResponse(lang);
+    }
+
+    switch (intent) {
+      case 'credits':
+        return this.handleCreditsInquiry(conversation);
+      case 'cancel':
+        return this.handleCancelIntent(conversation);
+      case 'history':
+        return this.handleHistoryIntent(conversation);
+      default:
+        return this.generateAIResponse(conversation, 'whatsapp');
+    }
+  }
+
+  /**
+   * Handle credits inquiry: "¿Cuántas clases me quedan?"
+   */
+  private handleCreditsInquiry(conversation: ConversationState): string {
+    const lang = conversation.language;
+    const memberInfo = conversation.memberInfo;
+    const firstName = memberInfo?.firstName || '';
+    const credits = memberInfo?.creditsAvailable || 0;
+    const membershipName = memberInfo?.membershipName || '';
+
+    const responses: Record<SupportedLanguage, string> = {
+      es:
+        credits > 0
+          ? `${firstName ? firstName + ', t' : 'T'}ienes ${credits} ${credits === 1 ? 'clase' : 'clases'} disponible${credits === 1 ? '' : 's'}${membershipName ? ` de tu ${membershipName}` : ''} 💃\n\n¿Quieres reservar alguna?`
+          : `${firstName ? firstName + ', a' : 'A'}hora mismo no tienes créditos disponibles. ¿Te cuento las opciones de bonos que tenemos?`,
+      ca:
+        credits > 0
+          ? `${firstName ? firstName + ', t' : 'T'}ens ${credits} ${credits === 1 ? 'classe' : 'classes'} disponible${credits === 1 ? '' : 's'}${membershipName ? ` del teu ${membershipName}` : ''} 💃\n\nVols reservar alguna?`
+          : `${firstName ? firstName + ', a' : 'A'}ra mateix no tens crèdits disponibles. T'explico les opcions de bons que tenim?`,
+      en:
+        credits > 0
+          ? `${firstName ? firstName + ', y' : 'Y'}ou have ${credits} ${credits === 1 ? 'class' : 'classes'} available${membershipName ? ` from your ${membershipName}` : ''} 💃\n\nWant to book one?`
+          : `${firstName ? firstName + ', y' : 'Y'}ou don't have any credits right now. Want me to tell you about our packages?`,
+      fr:
+        credits > 0
+          ? `${firstName ? firstName + ', t' : 'T'}u as ${credits} ${credits === 1 ? 'cours' : 'cours'} disponible${credits === 1 ? '' : 's'}${membershipName ? ` de ton ${membershipName}` : ''} 💃\n\nTu veux en réserver un?`
+          : `${firstName ? firstName + ', t' : 'T'}u n'as pas de crédits en ce moment. Je t'explique nos forfaits?`,
+    };
+
+    conversation.intent = 'info';
+    return responses[lang];
+  }
+
+  /**
+   * Handle cancel intent: "Quiero cancelar mi reserva"
+   */
+  private handleCancelIntent(conversation: ConversationState): string {
+    const lang = conversation.language;
+    const firstName = conversation.memberInfo?.firstName || '';
+
+    // For now, guide them to use the cancellation link or provide details
+    // TODO: Fetch member's upcoming bookings from Momence and show them
+    const responses: Record<SupportedLanguage, string> = {
+      es: `${firstName ? firstName + ', p' : 'P'}ara cancelar tienes dos opciones:\n\n1️⃣ Usa el enlace de cancelación que te enviamos por email cuando reservaste\n\n2️⃣ Dime qué clase quieres cancelar (día y nombre) y lo gestiono yo\n\n¿Cuál prefieres?`,
+      ca: `${firstName ? firstName + ', p' : 'P'}er cancel·lar tens dues opcions:\n\n1️⃣ Usa l'enllaç de cancel·lació que et vam enviar per email\n\n2️⃣ Digues-me quina classe vols cancel·lar (dia i nom) i ho gestiono jo\n\nQuina prefereixes?`,
+      en: `${firstName ? firstName + ', t' : 'T'}o cancel you have two options:\n\n1️⃣ Use the cancellation link we sent you by email\n\n2️⃣ Tell me which class you want to cancel (day and name) and I'll handle it\n\nWhich do you prefer?`,
+      fr: `${firstName ? firstName + ', p' : 'P'}our annuler tu as deux options:\n\n1️⃣ Utilise le lien d'annulation qu'on t'a envoyé par email\n\n2️⃣ Dis-moi quel cours tu veux annuler (jour et nom) et je m'en occupe\n\nQuelle option préfères-tu?`,
+    };
+
+    conversation.intent = 'support';
+    return responses[lang];
+  }
+
+  /**
+   * Handle history intent: "Mis reservas"
+   */
+  private handleHistoryIntent(conversation: ConversationState): string {
+    const lang = conversation.language;
+
+    // TODO: Fetch member's recent visits from Momence
+    // For now, acknowledge and explain
+    const responses: Record<SupportedLanguage, string> = {
+      es: 'Dame un momento que miro tus clases... 🔍\n\n(Esta función está en desarrollo, pronto podrás ver tu historial aquí)',
+      ca: "Dona'm un moment que miro les teves classes... 🔍\n\n(Aquesta funció està en desenvolupament)",
+      en: 'Let me check your classes... 🔍\n\n(This feature is coming soon!)',
+      fr: 'Laisse-moi vérifier tes cours... 🔍\n\n(Cette fonction arrive bientôt!)',
+    };
+
+    conversation.intent = 'info';
+    return responses[lang];
+  }
+
+  /**
+   * Fallback when member info is not available
+   */
+  private getMemberNotFoundResponse(lang: SupportedLanguage): string {
+    const responses: Record<SupportedLanguage, string> = {
+      es: 'No encuentro tu información. ¿Podrías decirme tu email para buscarte?',
+      ca: 'No trobo la teva informació. Pots dir-me el teu email per buscar-te?',
+      en: "I can't find your info. Could you tell me your email so I can look you up?",
+      fr: 'Je ne trouve pas tes infos. Peux-tu me donner ton email?',
+    };
+    return responses[lang];
   }
 
   /**

@@ -8,7 +8,7 @@
 ## Estado General
 
 ```
-█████████████████████░░░░░  85% MVP + Fase 5 Completo
+██████████████████████░░░░  88% MVP + Fase 5 + Fase 6 (70%)
 ```
 
 ---
@@ -127,17 +127,38 @@ GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
 
 ---
 
-### Fase 6: Funcionalidades para Miembros ❌ 0%
+### Fase 6: Funcionalidades para Miembros 🟡 70%
 
-> AGENTE.md líneas 849-936
+**Implementado: 2026-02-06**
 
-| Funcionalidad                 | Estado | Ejemplo                  |
-| ----------------------------- | ------ | ------------------------ |
-| "¿Cuántas clases me quedan?"  | ❌     | Ver créditos             |
-| Reservar con créditos         | ❌     | Sin pedir datos de nuevo |
-| Ver historial de clases       | ❌     | visits endpoint          |
-| Cancelar reserva vía WhatsApp | ❌     | Con confirmación         |
-| Actualizar email/nombre       | ❌     | PUT endpoints            |
+| Funcionalidad                 | Estado | Notas                              |
+| ----------------------------- | ------ | ---------------------------------- |
+| "¿Cuántas clases me quedan?"  | ✅     | `handleCreditsInquiry()`           |
+| Reservar con créditos         | ✅     | Salta data collection si es member |
+| Ver historial de clases       | 🟡     | UI lista, falta API Momence        |
+| Cancelar reserva vía WhatsApp | 🟡     | Guía al usuario, falta fetch       |
+| Actualizar email/nombre       | ❌     | PUT endpoints no implementados     |
+
+**Archivos modificados:**
+
+```
+api/lib/ai/booking-flow.ts    # detectMemberIntent(), skip data if member
+api/lib/ai/agent.ts           # handleMemberIntent(), handleCreditsInquiry()
+```
+
+**Flujos implementados:**
+
+```
+Usuario: "¿Cuántas clases me quedan?"
+Laura: "María, tienes 3 clases disponibles de tu Bono Mensual 💃
+        ¿Quieres reservar alguna?"
+
+Usuario: "Quiero reservar bachata"
+[Selecciona clase]
+Laura: "María, has elegido Bachata Sensual 💃
+        Como ya te conozco, solo necesito que confirmes los términos..."
+[Salta nombre/email, va directo a consents]
+```
 
 **Endpoints Momence VERIFICADOS:**
 
