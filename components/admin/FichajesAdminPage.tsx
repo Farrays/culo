@@ -249,9 +249,12 @@ const FichajesAdminPage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-gray-900 to-black">
+      <div className="min-h-screen bg-black relative">
+        {/* Background gradient like blog hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
+
         {/* Header con logo - centrado */}
-        <header className="bg-black/95 backdrop-blur-xl text-white py-6 px-6 shadow-lg border-b border-brand-600/30">
+        <header className="relative z-10 bg-black/95 backdrop-blur-xl text-white py-6 px-6 shadow-lg border-b border-primary-dark/30">
           <div className="max-w-7xl mx-auto">
             {/* Logo centrado */}
             <div className="flex flex-col items-center justify-center mb-4">
@@ -288,8 +291,8 @@ const FichajesAdminPage: React.FC = () => {
           </div>
         </header>
 
-        {/* Main */}
-        <main className="max-w-7xl mx-auto p-6">
+        {/* Main - con más espacio superior */}
+        <main className="relative z-10 max-w-7xl mx-auto p-6 pt-10">
           {/* Messages */}
           {error && (
             <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-xl mb-4">
@@ -307,7 +310,7 @@ const FichajesAdminPage: React.FC = () => {
             <div className="space-y-6">
               {/* Stats Cards - fondo oscuro */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-brand-600/30">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-primary-dark/30">
                   <p className="text-brand-300 text-sm">Total Fichajes</p>
                   <p className="text-3xl font-bold text-white">{stats.totalFichajes}</p>
                 </div>
@@ -330,7 +333,7 @@ const FichajesAdminPage: React.FC = () => {
               </div>
 
               {/* Date filter - fondo oscuro */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-brand-600/30">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-primary-dark/30">
                 <label className="block text-sm font-medium text-brand-200 mb-2">Fecha</label>
                 <input
                   type="date"
@@ -341,8 +344,8 @@ const FichajesAdminPage: React.FC = () => {
               </div>
 
               {/* Today's fichajes - tema oscuro */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-brand-600/30 overflow-hidden">
-                <div className="px-4 py-3 border-b border-brand-600/30 flex justify-between items-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-primary-dark/30 overflow-hidden">
+                <div className="px-4 py-3 border-b border-primary-dark/30 flex justify-between items-center">
                   <h2 className="font-semibold text-white">Fichajes del día</h2>
                   <button
                     onClick={exportCSV}
@@ -440,7 +443,7 @@ const FichajesAdminPage: React.FC = () => {
           {activeTab === 'fichajes' && (
             <div className="space-y-6">
               {/* Filters - tema oscuro */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-brand-600/30 flex flex-wrap gap-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-primary-dark/30 flex flex-wrap gap-4">
                 <div>
                   <label className="block text-sm font-medium text-brand-200 mb-1">Fecha</label>
                   <input
@@ -510,7 +513,7 @@ const FichajesAdminPage: React.FC = () => {
               </div>
 
               {/* Table - tema oscuro */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-brand-600/30 overflow-hidden">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-primary-dark/30 overflow-hidden">
                 {loading ? (
                   <div className="p-8 text-center text-brand-300">Cargando...</div>
                 ) : fichajes.length === 0 ? (
@@ -601,8 +604,8 @@ const FichajesAdminPage: React.FC = () => {
           {/* Profesores Tab - tema oscuro */}
           {activeTab === 'profesores' && (
             <div className="space-y-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-brand-600/30 overflow-hidden">
-                <div className="px-4 py-3 border-b border-brand-600/30">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-primary-dark/30 overflow-hidden">
+                <div className="px-4 py-3 border-b border-primary-dark/30">
                   <h2 className="font-semibold text-white">Profesores</h2>
                 </div>
                 <div className="overflow-x-auto">
@@ -664,17 +667,17 @@ const FichajesAdminPage: React.FC = () => {
         </main>
 
         {/* Footer con info legal - tema oscuro */}
-        <footer className="mt-8 py-4 border-t border-brand-600/30">
+        <footer className="relative z-10 mt-8 py-4 border-t border-primary-dark/30">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-brand-300/70 text-xs">
+            <p className="text-neutral/70 text-xs">
               Sistema de registro de jornada conforme al Art. 34.9 del Estatuto de los Trabajadores
               y RD-ley 8/2019
             </p>
-            <p className="text-brand-300/50 text-xs mt-1">
+            <p className="text-neutral/50 text-xs mt-1">
               Los registros se conservan durante 4 años y están disponibles para los trabajadores,
               sus representantes legales y la Inspección de Trabajo.
             </p>
-            <p className="text-brand-300/50 text-xs mt-2">
+            <p className="text-neutral/50 text-xs mt-2">
               Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
             </p>
           </div>
