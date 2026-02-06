@@ -14,10 +14,10 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedisClient } from './lib/redis';
-import { getGroupsManager } from './lib/whapi/groups';
-import { getLabelsManager } from './lib/whapi/labels';
-import { normalizePhone } from './lib/phone-utils';
+import { getRedisClient } from './lib/redis.js';
+import { getGroupsManager } from './lib/whapi/groups.js';
+import { getLabelsManager } from './lib/whapi/labels.js';
+import { normalizePhone } from './lib/phone-utils.js';
 
 // ============================================================================
 // TYPES

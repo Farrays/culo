@@ -6,7 +6,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const API_BASE = '/api/fichaje-';
@@ -44,7 +44,11 @@ interface Resumen {
 }
 
 const ResumenFirmaPage: React.FC = () => {
-  const { token } = useParams<{ token: string }>();
+  // Support both path params (/resumen/:token) and query params (/resumen?token=xxx)
+  const { token: pathToken } = useParams<{ token: string }>();
+  const [searchParams] = useSearchParams();
+  const queryToken = searchParams.get('token');
+  const token = pathToken || queryToken;
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

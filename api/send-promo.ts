@@ -21,10 +21,10 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedisClient } from './lib/redis';
-import { sendCustomTemplate } from './lib/whatsapp';
-import { normalizePhone } from './lib/phone-utils';
-import { getConsentManager } from './lib/ai/consent-flow';
+import { getRedisClient } from './lib/redis.js';
+import { sendCustomTemplate } from './lib/whatsapp.js';
+import { normalizePhone } from './lib/phone-utils.js';
+import { getConsentManager } from './lib/ai/consent-flow.js';
 
 // ============================================================================
 // TYPES

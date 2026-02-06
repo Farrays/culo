@@ -15,8 +15,8 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedisClient } from './lib/redis';
-import { getAgentMetrics, type AnalyticsSummary } from './lib/ai/agent-metrics';
+import { getRedisClient } from './lib/redis.js';
+import { getAgentMetrics, type AnalyticsSummary } from './lib/ai/agent-metrics.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   // Handle CORS preflight

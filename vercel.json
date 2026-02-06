@@ -1101,10 +1101,6 @@
   ],
   "rewrites": [
     {
-      "source": "/:locale(es|en|ca|fr)/fichaje/resumen/:token",
-      "destination": "/:locale/fichaje/resumen/index.html"
-    },
-    {
       "source": "/yr-project",
       "destination": "/index.html"
     },

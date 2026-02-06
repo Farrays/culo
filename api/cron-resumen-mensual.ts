@@ -219,7 +219,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         result.resumenes_generados++;
 
         // Enviar notificaciones
-        const urlFirma = `https://farrayscenter.com/es/fichaje/resumen/${tokenFirma}`;
+        const urlFirma = `https://farrayscenter.com/es/fichaje/resumen?token=${tokenFirma}`;
 
         // WhatsApp
         if (isWhatsAppConfigured() && profesor.telefono_whatsapp) {
