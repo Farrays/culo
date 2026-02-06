@@ -93,7 +93,7 @@ const FichajePage: React.FC = () => {
 
   const fetchProfesores = async () => {
     try {
-      const res = await fetch(`${API_BASE}/profesores?activo=true`);
+      const res = await fetch(`${API_BASE}profesores?activo=true`);
       const data = await res.json();
       if (data.success) {
         setProfesores(data.data || []);
@@ -106,7 +106,7 @@ const FichajePage: React.FC = () => {
   const fetchFichajesHoy = async (profesorId: string) => {
     try {
       const hoy = new Date().toISOString().split('T')[0];
-      const res = await fetch(`${API_BASE}/fichajes?profesor_id=${profesorId}&fecha=${hoy}`);
+      const res = await fetch(`${API_BASE}fichajes?profesor_id=${profesorId}&fecha=${hoy}`);
       const data = await res.json();
       if (data.success) {
         setFichajesHoy(data.data || []);
@@ -125,7 +125,7 @@ const FichajePage: React.FC = () => {
       setSuccess(null);
 
       try {
-        const res = await fetch(`${API_BASE}/fichajes`, {
+        const res = await fetch(`${API_BASE}fichajes`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

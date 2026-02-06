@@ -92,7 +92,7 @@ const FichajesAdminPage: React.FC = () => {
   // Fetch profesores
   const fetchProfesores = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE}/profesores`);
+      const res = await fetch(`${API_BASE}profesores`);
       const data = await res.json();
       if (data.success) {
         setProfesores(data.data || []);
@@ -106,7 +106,7 @@ const FichajesAdminPage: React.FC = () => {
   const fetchFichajes = useCallback(async () => {
     setLoading(true);
     try {
-      let url = `${API_BASE}/fichajes?fecha=${fechaFiltro}`;
+      let url = `${API_BASE}fichajes?fecha=${fechaFiltro}`;
       if (profesorFiltro) url += `&profesor_id=${profesorFiltro}`;
       if (estadoFiltro) url += `&estado=${estadoFiltro}`;
 
