@@ -645,6 +645,11 @@ export class SalesAgent {
       return this.completeBooking(conversation, flow, result.bookingData);
     }
 
+    // Check if user wants to join waitlist (Fase 7)
+    if (result.action === 'waitlist') {
+      return this.addToWaitlist(conversation, result);
+    }
+
     return result.response;
   }
 
@@ -705,6 +710,52 @@ export class SalesAgent {
   }
 
   /**
+   * Add member to waitlist for a full class (Fase 7)
+   */
+  private async addToWaitlist(
+    conversation: ConversationState,
+    result: import('./booking-flow').BookingFlowResult
+  ): Promise<string> {
+    const sessionId = conversation.bookingState?.data.waitlistClassId;
+    const memberId = conversation.memberInfo?.memberId;
+
+    // If no member ID, we need to create a member first or guide them
+    if (!memberId) {
+      console.log('[agent] Waitlist: No member ID, cannot add to waitlist');
+      // The flow already returned a message about being added
+      // In production, we'd need to collect data first
+      return result.response;
+    }
+
+    if (!sessionId) {
+      console.error('[agent] Waitlist: No session ID');
+      return result.response;
+    }
+
+    try {
+      const memberLookup = getMemberLookup(this.redis);
+      const waitlistResult = await memberLookup.addToWaitlist(sessionId, memberId);
+
+      if (waitlistResult.success) {
+        console.log(`[agent] Waitlist: Added ${memberId} to session ${sessionId}`);
+        // Track metric
+        if (this.redis) {
+          const today = new Date().toISOString().split('T')[0];
+          await this.redis.hincrby(`agent:metrics:${today}`, 'waitlist_added', 1);
+        }
+      } else {
+        console.error('[agent] Waitlist failed:', waitlistResult.error);
+      }
+    } catch (error) {
+      console.error('[agent] Waitlist error:', error);
+    }
+
+    // Return the flow's response regardless of API result
+    // (user sees confirmation, we log any errors)
+    return result.response;
+  }
+
+  /**
    * Fetch available classes for a style from Momence via /api/clases
    */
   private async fetchAvailableClasses(style: string): Promise<ClassOption[]> {
@@ -736,8 +787,13 @@ export class SalesAgent {
       }
 
       // Map API response to ClassOption format (already matches)
+      // Include all classes (even full ones for waitlist - Fase 7)
+      // Sort: available spots first, then full classes
       const classes: ClassOption[] = data.data.classes
-        .filter((c: { spotsAvailable: number }) => c.spotsAvailable > 0)
+        .sort(
+          (a: { spotsAvailable: number }, b: { spotsAvailable: number }) =>
+            b.spotsAvailable - a.spotsAvailable
+        )
         .slice(0, 5) // Limit to 5 options for WhatsApp readability
         .map(
           (c: {

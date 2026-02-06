@@ -474,6 +474,53 @@ export class MemberLookupService {
   }
 
   /**
+   * Add member to session waitlist in Momence (Fase 7)
+   */
+  async addToWaitlist(
+    sessionId: number,
+    memberId: number,
+    membershipIds?: number[]
+  ): Promise<{ success: boolean; error?: string }> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        return { success: false, error: 'No authentication token' };
+      }
+
+      const body: { memberId: number; useBoughtMembershipIds?: number[] } = { memberId };
+      if (membershipIds && membershipIds.length > 0) {
+        body.useBoughtMembershipIds = membershipIds;
+      }
+
+      const response = await fetch(
+        `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/waitlist`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        return {
+          success: false,
+          error: (errorData as { message?: string }).message || `HTTP ${response.status}`,
+        };
+      }
+
+      console.log(`[member-lookup] Added member ${memberId} to waitlist for session ${sessionId}`);
+      return { success: true };
+    } catch (error) {
+      console.error('[member-lookup] Waitlist error:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    }
+  }
+
+  /**
    * Update member's email in Momence
    */
   async updateMemberEmail(

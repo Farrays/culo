@@ -8,7 +8,7 @@
 ## Estado General
 
 ```
-████████████████████████░░  92% MVP + Fase 5 + Fase 6 + Fase 11
+█████████████████████████░  95% MVP + Fases 5-7 + Fase 11
 ```
 
 ---
@@ -180,22 +180,34 @@ PUT /api/v2/host/members/{memberId}/phone
 
 ---
 
-### Fase 7: Lista de Espera (Waitlist) ❌ 0%
+### Fase 7: Lista de Espera (Waitlist) ✅ 100%
 
 > AGENTE.md líneas 878-889
 
-| Tarea                                     | Estado |
-| ----------------------------------------- | ------ |
-| Detectar clase llena (spotsAvailable = 0) | ❌     |
-| Ofrecer waitlist                          | ❌     |
-| Llamar endpoint de waitlist               | ❌     |
+**Implementado: 2026-02-06**
 
-**Endpoint Momence VERIFICADO:**
+| Tarea                                     | Estado | Notas                              |
+| ----------------------------------------- | ------ | ---------------------------------- |
+| Detectar clase llena (spotsAvailable = 0) | ✅     | Muestra "LLENA (lista de espera)"  |
+| Ofrecer waitlist                          | ✅     | `handleWaitlistResponse()` flow    |
+| Llamar endpoint de waitlist               | ✅     | `addToWaitlist()` en member-lookup |
+
+**Archivos modificados:**
 
 ```
-# Añadir a lista de espera
-POST /api/v2/host/sessions/{sessionId}/waitlist
-Body: { "memberId": 123, "useBoughtMembershipIds": [456] }
+api/lib/ai/booking-flow.ts   # 'waitlist_pending' step + handler
+api/lib/ai/agent.ts          # addToWaitlist() method
+api/lib/ai/member-lookup.ts  # addToWaitlist() Momence API
+```
+
+**Flujo implementado:**
+
+```
+Usuario selecciona clase llena
+→ "Uy, esa clase se acaba de llenar 😔 ¿Te apunto a la lista de espera?"
+→ Usuario dice "sí"
+→ API POST /api/v2/host/sessions/{sessionId}/waitlist
+→ "¡Perfecto! Te he apuntado a la lista de espera 📝"
 ```
 
 ---

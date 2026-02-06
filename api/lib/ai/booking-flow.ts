@@ -22,6 +22,7 @@ export type BookingStep =
   | 'initial'
   | 'style_selection'
   | 'class_selection'
+  | 'waitlist_pending' // Fase 7: When class is full, offer waitlist
   | 'data_collection'
   | 'consent_terms'
   | 'consent_privacy'
@@ -42,6 +43,10 @@ export interface BookingData {
   selectedClassName?: string;
   selectedClassDate?: string;
   selectedClassTime?: string;
+
+  // Waitlist (Fase 7)
+  waitlistClassId?: number;
+  waitlistClassName?: string;
 
   // Consents
   acceptsTerms?: boolean;
@@ -73,6 +78,7 @@ export interface BookingFlowResult {
   newState: BookingState;
   shouldBook?: boolean; // True when ready to create actual booking
   bookingData?: BookingData;
+  action?: 'waitlist'; // Fase 7: Signal to add to waitlist
 }
 
 // ============================================================================
@@ -413,6 +419,9 @@ export class BookingFlow {
       case 'class_selection':
         return this.handleClassSelection(normalizedInput);
 
+      case 'waitlist_pending':
+        return this.handleWaitlistResponse(normalizedInput);
+
       case 'data_collection':
         return this.handleDataCollection(input); // Keep original case for names
 
@@ -478,10 +487,11 @@ export class BookingFlow {
     // Format class options (max 5)
     const classesDisplay = classes
       .slice(0, 5)
-      .map(
-        (c, i) =>
-          `${i + 1}️⃣ *${c.name}*\n   📅 ${c.dayOfWeek} ${c.date}, ${c.time}\n   👤 ${c.instructor || 'TBA'}\n   🎫 ${c.spotsAvailable} plazas`
-      )
+      .map((c, i) => {
+        const spotsText =
+          c.spotsAvailable > 0 ? `🎫 ${c.spotsAvailable} plazas` : '⚠️ *LLENA* (lista de espera)';
+        return `${i + 1}️⃣ *${c.name}*\n   📅 ${c.dayOfWeek} ${c.date}, ${c.time}\n   👤 ${c.instructor || 'TBA'}\n   ${spotsText}`;
+      })
       .join('\n\n');
 
     const response = `${getConfirmation(this.lang)} ${msgs.askClass.replace('%STYLE%', style)}\n\n${classesDisplay}\n\nEscribe el número de la clase que quieres`;
@@ -517,8 +527,13 @@ export class BookingFlow {
       };
     }
 
-    // Check if class is full
+    // Check if class is full - offer waitlist (Fase 7)
     if (selectedClass.spotsAvailable <= 0) {
+      // Store the class for potential waitlist
+      this.state.data.waitlistClassId = selectedClass.id;
+      this.state.data.waitlistClassName = selectedClass.name;
+      this.state.step = 'waitlist_pending';
+
       return {
         response: msgs.classFull,
         newState: this.state,
@@ -550,6 +565,89 @@ export class BookingFlow {
 
     return {
       response: `${getConfirmation(this.lang)} Has elegido *${selectedClass.name}*\n\n${msgs.askName}`,
+      newState: this.state,
+    };
+  }
+
+  /**
+   * Handle waitlist response (Fase 7)
+   * User can say yes to join waitlist or choose another class
+   */
+  private handleWaitlistResponse(input: string): BookingFlowResult {
+    const msgs = MESSAGES[this.lang];
+    const className = this.state.data.waitlistClassName || 'la clase';
+
+    // Check if user wants to join waitlist
+    const yesPatterns = ['sí', 'si', 'yes', 'oui', 'apuntame', 'apúntame', 'lista', 'espera', '1'];
+    const noPatterns = ['no', 'otra', 'other', 'autre', 'cambiar', '2'];
+
+    const wantsWaitlist = yesPatterns.some(p => input.includes(p));
+    const wantsOther = noPatterns.some(p => input.includes(p));
+
+    if (wantsWaitlist) {
+      // Mark for waitlist - will be processed by agent
+      this.state.step = 'completed';
+      this.state.data.selectedClassId = this.state.data.waitlistClassId;
+      this.state.data.selectedClassName = this.state.data.waitlistClassName;
+
+      const waitlistConfirm: Record<SupportedLanguage, string> = {
+        es: `¡Perfecto! Te he apuntado a la lista de espera para *${className}* 📝\n\nTe avisaré en cuanto haya una plaza disponible. ¿Hay algo más en lo que pueda ayudarte?`,
+        ca: `Perfecte! T'he apuntat a la llista d'espera per *${className}* 📝\n\nT'avisaré quan hi hagi una plaça disponible. Hi ha alguna cosa més en què pugui ajudar-te?`,
+        en: `Perfect! I've added you to the waitlist for *${className}* 📝\n\nI'll let you know as soon as a spot opens up. Is there anything else I can help you with?`,
+        fr: `Parfait! Je t'ai inscrit sur la liste d'attente pour *${className}* 📝\n\nJe te préviendrai dès qu'une place se libère. Y a-t-il autre chose que je puisse faire?`,
+      };
+
+      return {
+        response: waitlistConfirm[this.lang],
+        newState: this.state,
+        action: 'waitlist', // Signal to agent to call waitlist API
+      };
+    }
+
+    if (wantsOther) {
+      // Go back to class selection
+      this.state.step = 'class_selection';
+      this.state.data.waitlistClassId = undefined;
+      this.state.data.waitlistClassName = undefined;
+
+      const classes = this.state.availableClasses || [];
+      if (classes.length === 0) {
+        return {
+          response: msgs.noClassesAvailable,
+          newState: this.state,
+        };
+      }
+
+      const classList = classes
+        .map(
+          (c, i) =>
+            `${i + 1}️⃣ *${c.name}*\n   📅 ${c.dayOfWeek} ${c.date}, ${c.time}\n   👤 ${c.instructor || 'TBA'}\n   🎫 ${c.spotsAvailable} plazas`
+        )
+        .join('\n\n');
+
+      const chooseAnother: Record<SupportedLanguage, string> = {
+        es: `Sin problema, aquí tienes las demás clases disponibles:\n\n${classList}\n\n¿Cuál te gustaría?`,
+        ca: `Cap problema, aquí tens les altres classes disponibles:\n\n${classList}\n\nQuina t'agradaria?`,
+        en: `No problem, here are the other available classes:\n\n${classList}\n\nWhich one would you like?`,
+        fr: `Pas de souci, voici les autres cours disponibles:\n\n${classList}\n\nLequel voudrais-tu?`,
+      };
+
+      return {
+        response: chooseAnother[this.lang],
+        newState: this.state,
+      };
+    }
+
+    // Unclear response, ask again
+    const askAgain: Record<SupportedLanguage, string> = {
+      es: `¿Te apunto a la lista de espera para *${className}*?\n\n1️⃣ Sí, apúntame\n2️⃣ No, prefiero otra clase`,
+      ca: `T'apunto a la llista d'espera per *${className}*?\n\n1️⃣ Sí, apunta'm\n2️⃣ No, prefereixo una altra classe`,
+      en: `Should I add you to the waitlist for *${className}*?\n\n1️⃣ Yes, add me\n2️⃣ No, I prefer another class`,
+      fr: `Je t'inscris sur la liste d'attente pour *${className}*?\n\n1️⃣ Oui, inscris-moi\n2️⃣ Non, je préfère un autre cours`,
+    };
+
+    return {
+      response: askAgain[this.lang],
       newState: this.state,
     };
   }
