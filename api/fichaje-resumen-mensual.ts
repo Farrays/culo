@@ -414,11 +414,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
           resultados.push({ profesor_id: profId, success: true, resumen });
         } catch (err) {
-          console.error(`[resumen-mensual] Error procesando profesor ${profId}:`, err);
+          const errorDetails =
+            err instanceof Error
+              ? err.message
+              : typeof err === 'object' && err !== null
+                ? JSON.stringify(err)
+                : 'Error desconocido';
+          console.error(`[resumen-mensual] Error procesando profesor ${profId}:`, errorDetails);
           resultados.push({
             profesor_id: profId,
             success: false,
-            error: err instanceof Error ? err.message : 'Error desconocido',
+            error: errorDetails,
           });
         }
       }
