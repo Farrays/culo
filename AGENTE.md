@@ -834,17 +834,21 @@ _(El resto de variables ya las tienen configuradas)_
 
 #### Nuevos Endpoints para el Agente
 
-| Endpoint                                             | Funcionalidad para el Agente                               |
-| ---------------------------------------------------- | ---------------------------------------------------------- |
-| `POST /api/v2/host/sessions/{id}/waitlist`           | **Añadir a lista de espera** cuando clase está llena       |
-| `GET /api/v2/host/members/{id}`                      | **Ver perfil completo** del miembro (créditos, membresías) |
-| `GET /api/v2/host/members/{id}/active-subscriptions` | **Ver membresías activas** y créditos disponibles          |
-| `GET /api/v2/host/members/{id}/visits`               | **Ver historial de clases** del miembro                    |
-| `POST /api/v2/member/checkout`                       | **Usar créditos** para reservar (si tiene membresía)       |
-| `GET /api/v2/member/checkout/compatible-memberships` | **Ver membresías compatibles** con una clase               |
-| `PUT /api/v2/host/members/{id}/name`                 | **Actualizar nombre** del miembro                          |
-| `PUT /api/v2/host/members/{id}/email`                | **Actualizar email** del miembro                           |
-| `POST /api/v2/host/sessions/{id}/checkin`            | **Check-in** en clase (si es necesario)                    |
+> ⚠️ **VERIFICADO contra api.docs.momence.com (2026-02-06)**
+
+| Endpoint                                                    | Funcionalidad para el Agente                         |
+| ----------------------------------------------------------- | ---------------------------------------------------- |
+| `POST /api/v2/host/sessions/{id}/waitlist`                  | **Añadir a lista de espera** cuando clase está llena |
+| `GET /api/v2/host/members/{id}`                             | **Ver perfil completo** del miembro (incluye visits) |
+| `GET /api/v2/host/{hostId}/members/{id}/bought-memberships` | **Ver membresías activas** y créditos disponibles    |
+| `POST /api/v2/member/checkout`                              | **Usar créditos** para reservar (si tiene membresía) |
+| `POST /api/v2/member/checkout/compatible-memberships`       | **Ver membresías compatibles** con una clase         |
+| `PUT /api/v2/host/members/{id}/name`                        | **Actualizar nombre** del miembro                    |
+| `PUT /api/v2/host/members/{id}/email`                       | **Actualizar email** del miembro                     |
+| `PUT /api/v2/host/members/{id}/phone`                       | **Actualizar teléfono** del miembro                  |
+
+**⚠️ Limitación importante:** `POST /api/v2/host/members/list` NO soporta filtro directo por teléfono.
+Usar campo `query` con el número o implementar cache local teléfono→memberId en Redis.
 
 ### Funcionalidades Enterprise del Agente
 

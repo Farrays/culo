@@ -511,7 +511,63 @@ VERCEL_URL="https://www.farrayscenter.com"
 
 ---
 
+## 17. Endpoints Verificados - Febrero 2026
+
+> **Actualización:** Verificado contra https://api.docs.momence.com (2026-02-06)
+
+### Endpoints EN USO (producción):
+
+```http
+# Autenticación
+POST /api/v2/auth/token
+
+# Sesiones/Clases
+GET  /api/v2/host/sessions
+GET  /api/v2/host/sessions/{sessionId}
+GET  /api/v2/host/sessions/{sessionId}/bookings
+
+# Miembros
+POST /api/v2/host/members/list          # Buscar (NO soporta filtro teléfono directo)
+POST /api/v2/host/members               # Crear miembro
+GET  /api/v2/host/members/{memberId}    # Ver perfil (incluye visits)
+
+# Reservas
+POST /api/v2/host/sessions/{sessionId}/bookings/free   # Reserva gratuita
+DELETE /api/v2/host/session-bookings/{bookingId}       # Cancelar
+```
+
+### Endpoints DISPONIBLES (no implementados aún):
+
+```http
+# Membresías y créditos
+GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
+PUT /api/v2/host/{hostId}/members/{memberId}/bought-memberships/{id}/credits
+
+# Waitlist
+POST /api/v2/host/sessions/{sessionId}/waitlist
+
+# Actualizar miembro
+PUT /api/v2/host/members/{memberId}/name
+PUT /api/v2/host/members/{memberId}/email
+PUT /api/v2/host/members/{memberId}/phone
+
+# Checkout con créditos (perspectiva miembro)
+POST /api/v2/member/checkout
+POST /api/v2/member/checkout/compatible-memberships
+```
+
+### Limitaciones conocidas:
+
+| Feature             | Estado                   | Workaround                 |
+| ------------------- | ------------------------ | -------------------------- |
+| Buscar por teléfono | ❌ No hay filtro directo | Usar `query` o cache Redis |
+| Webhooks nativos    | ⚠️ Doc no accesible      | Usar Zapier triggers       |
+| SMS en España       | ❌ No disponible         | Usar WhatsApp vía Meta API |
+
+---
+
 **Documento generado:** Enero 2026
+**Última actualización:** Febrero 2026
 **Analisis realizado por:** 8 agentes especializados
 **Resultado:** ARQUITECTURA VALIDADA - PROCEDER CON IMPLEMENTACION
 

@@ -1047,8 +1047,15 @@ async function createMomenceBooking(
     firstName: string;
     lastName: string;
     phone: string;
-  }
-): Promise<{ success: boolean; bookingId?: number; error?: string; verified?: boolean }> {
+  },
+  redis?: Redis | null
+): Promise<{
+  success: boolean;
+  bookingId?: number;
+  customerId?: number;
+  error?: string;
+  verified?: boolean;
+}> {
   try {
     console.warn(
       '[Momence Booking] Starting for sessionId:',
@@ -1307,7 +1314,30 @@ async function createMomenceBooking(
       );
     }
 
-    return { success: true, bookingId, verified: bookingVerified };
+    // Cache member info for future lookups (Fase 5: Detección Usuario Existente)
+    // This allows the WhatsApp agent to recognize returning members
+    if (redis && customerId) {
+      try {
+        const normalizedPhone = normalizePhone(customerData.phone);
+        const cacheKey = `member:phone:${normalizedPhone}`;
+        const memberData = {
+          memberId: customerId,
+          email: customerData.email,
+          firstName: customerData.firstName,
+          lastName: customerData.lastName,
+          phone: normalizedPhone,
+          cachedAt: new Date().toISOString(),
+        };
+        // Cache for 30 days
+        await redis.setex(cacheKey, 30 * 24 * 60 * 60, JSON.stringify(memberData));
+        console.warn('[Momence Booking] ✅ Cached member for phone:', normalizedPhone.slice(-4));
+      } catch (cacheError) {
+        // Non-critical - log and continue
+        console.warn('[Momence Booking] Cache write failed:', cacheError);
+      }
+    }
+
+    return { success: true, bookingId, customerId, verified: bookingVerified };
   } catch (error) {
     console.error('[Momence Booking] Error:', error);
     return { success: false, error: 'Momence API error' };
@@ -1869,12 +1899,17 @@ export default async function handler(
       console.warn('[reservar] Got access token:', !!accessToken);
 
       if (accessToken) {
-        momenceResult = await createMomenceBooking(accessToken, parseInt(validatedSessionId), {
-          email: normalizedEmail,
-          firstName: sanitize(firstName),
-          lastName: sanitize(lastName),
-          phone: sanitize(phone),
-        });
+        momenceResult = await createMomenceBooking(
+          accessToken,
+          parseInt(validatedSessionId),
+          {
+            email: normalizedEmail,
+            firstName: sanitize(firstName),
+            lastName: sanitize(lastName),
+            phone: sanitize(phone),
+          },
+          redis // Pass Redis for member caching (Fase 5)
+        );
         console.warn('[reservar] Momence booking result:', momenceResult);
 
         // Update circuit breaker based on result
