@@ -779,10 +779,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // 6. PROCESAR TURNOS DE STAFF (horarios fijos, no clases de Momence)
     // =====================================================================
 
-    // Obtener día de la semana actual en timezone España (0=Domingo, 1=Lunes, etc.)
-    const fechaEspanaStr = new Date().toLocaleString('en-US', { timeZone: SPAIN_TIMEZONE });
-    const fechaEspana = new Date(fechaEspanaStr);
-    const diaSemana = fechaEspana.getDay(); // 0=domingo, 1=lunes, ... 6=sábado
+    // Obtener día de la semana para la fecha de ejecución (0=Domingo, 1=Lunes, etc.)
+    // Usar fechaEjecucion (puede ser hoy o una fecha pasada por parámetro)
+    const fechaParaDia = new Date(`${fechaEjecucion}T12:00:00`); // Usar mediodía para evitar problemas de timezone
+    const diaSemana = fechaParaDia.getDay(); // 0=domingo, 1=lunes, ... 6=sábado
+    debugLog(
+      `[cron-fichaje] Fecha: ${fechaEjecucion}, día semana: ${diaSemana} (0=Dom, 1=Lun, ..., 6=Sab)`
+    );
 
     // Obtener turnos de staff para hoy
     const { data: turnosHoyData } = await supabase
