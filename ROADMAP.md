@@ -8,7 +8,7 @@
 ## Estado General
 
 ```
-██████████████████████░░░░  88% MVP + Fase 5 + Fase 6 (70%)
+███████████████████████░░░  90% MVP + Fase 5 + Fase 6 (70%) + Fase 11
 ```
 
 ---
@@ -244,14 +244,14 @@ Body: { "memberId": 123, "useBoughtMembershipIds": [456] }
 
 ## NIVEL 4: AUTOMATIZACIÓN
 
-### Fase 11: Follow-up 24h ✅ 90%
+### Fase 11: Follow-up 24h ✅ 100%
 
-| Tarea                             | Estado | Notas                     |
-| --------------------------------- | ------ | ------------------------- |
-| Tracking lastUserMessage          | ✅     | En ConversationState      |
-| getConversationsNeedingFollowUp() | ✅     | 20-23h window             |
-| generateFollowUpMessage()         | ✅     | Personalizado por señales |
-| **Cron job para ejecutar**        | ❌     | Falta cron                |
+| Tarea                             | Estado | Notas                       |
+| --------------------------------- | ------ | --------------------------- |
+| Tracking lastUserMessage          | ✅     | En ConversationState        |
+| getConversationsNeedingFollowUp() | ✅     | 20-23h window               |
+| generateFollowUpMessage()         | ✅     | Personalizado por señales   |
+| **Cron job para ejecutar**        | ✅     | `15 * * * *` en vercel.json |
 
 ---
 
