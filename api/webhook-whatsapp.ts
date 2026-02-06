@@ -1,7 +1,8 @@
 /* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import Redis from 'ioredis';
+import type { Redis } from '@upstash/redis';
+import { getRedisClient } from './lib/redis';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -181,7 +182,7 @@ async function getMomenceAccessToken(redis: Redis): Promise<string | null> {
   // Check cache
   try {
     const cached = await redis.get(MOMENCE_TOKEN_CACHE_KEY);
-    if (cached) return cached;
+    if (cached) return String(cached);
   } catch (e) {
     console.warn('[webhook-whatsapp] Momence token cache lookup failed:', e);
   }
@@ -341,30 +342,6 @@ async function sendTextMessage(
   } catch (error) {
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
-}
-
-// ============================================================================
-// LAZY REDIS (ioredis TCP - same instance as reservar.ts uses)
-// ============================================================================
-
-let redisClient: Redis | null = null;
-
-function getRedisClient(): Redis | null {
-  const redisUrl = process.env['STORAGE_REDIS_URL'];
-
-  if (!redisUrl) {
-    console.error('[webhook-whatsapp] STORAGE_REDIS_URL not configured');
-    return null;
-  }
-
-  if (!redisClient) {
-    redisClient = new Redis(redisUrl, {
-      maxRetriesPerRequest: 1,
-      connectTimeout: 5000,
-      lazyConnect: true,
-    });
-  }
-  return redisClient;
 }
 
 // ============================================================================
@@ -605,9 +582,50 @@ async function processMessage(
     }
   }
 
-  // Log mensajes de texto (para debugging)
+  // Procesar mensajes de texto con el agente AI
   if (message.type === 'text' && message.text) {
-    console.log(`[webhook-whatsapp] Text message: "${message.text.body}"`);
+    const textBody = message.text.body;
+    console.log(`[webhook-whatsapp] Text message: "${textBody}"`);
+
+    // Process with AI agent
+    try {
+      const redis = getRedisClient();
+      const { processAgentMessage } = await import('./lib/ai/agent');
+
+      console.log(`[webhook-whatsapp] Processing with AI agent...`);
+
+      const response = await processAgentMessage(redis, {
+        phone,
+        text: textBody,
+        contactName,
+        channel: 'whatsapp',
+      });
+
+      console.log(
+        `[webhook-whatsapp] Agent response (${response.language}): "${response.text.substring(0, 100)}..."`
+      );
+
+      // Send response via WhatsApp
+      const sendResult = await sendTextMessage(phone, response.text);
+
+      if (sendResult.success) {
+        console.log(`[webhook-whatsapp] Agent response sent successfully`);
+      } else {
+        console.error(`[webhook-whatsapp] Failed to send agent response:`, sendResult.error);
+      }
+    } catch (agentError) {
+      console.error(`[webhook-whatsapp] Agent processing error:`, agentError);
+
+      // Send fallback message on error
+      try {
+        await sendTextMessage(
+          phone,
+          'Perdona, ha habido un problemilla técnico. ¿Me puedes repetir eso? O si prefieres, llámanos al +34 622 247 085'
+        );
+      } catch (fallbackError) {
+        console.error(`[webhook-whatsapp] Fallback message failed:`, fallbackError);
+      }
+    }
   }
 }
 
@@ -884,7 +902,7 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
   let eventId: string | null = null;
   try {
     const result = await redis.get(`phone:${normalizedPhone}`);
-    eventId = result;
+    eventId = result ? String(result) : null;
     console.log(
       `[webhook-whatsapp] phone index result: ${eventId || 'null'} (type: ${typeof eventId})`
     );
