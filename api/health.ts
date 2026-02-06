@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { withSecurity } from './lib/security/index.js';
 
 /**
  * API Route: /api/health
@@ -64,18 +65,8 @@ interface HealthResponse {
   environment: string;
 }
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-): Promise<VercelResponse> {
-  // CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
+async function handler(req: VercelRequest, res: VercelResponse): Promise<VercelResponse> {
+  // Note: CORS and OPTIONS are now handled by withSecurity middleware
 
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed. Use GET.' });
@@ -204,3 +195,10 @@ export default async function handler(
 
   return res.status(httpStatus).json(response);
 }
+
+// Apply security middleware - public endpoint (health checks from anywhere)
+export default withSecurity(handler, {
+  publicEndpoint: true, // Allow any origin (for monitoring services)
+  rateLimit: true, // Still apply rate limiting
+  requireCsrf: false, // No CSRF for GET-only endpoint
+});
