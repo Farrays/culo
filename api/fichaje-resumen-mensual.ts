@@ -308,7 +308,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
                 dias_trabajados: diasTrabajados.size,
                 token_firma: tokenFirma,
                 hash_documento: hashDocumento,
-                updated_at: new Date().toISOString(),
               })
               .eq('id', existente.id)
               .select()
