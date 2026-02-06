@@ -223,13 +223,23 @@ export function createConsentRecord(
 }
 
 /**
+ * Label set for consent display
+ */
+interface ConsentLabelSet {
+  terms: string;
+  privacy: string;
+  marketing: string;
+  accepted: string;
+  notAccepted: string;
+}
+
+type SupportedLang = 'es' | 'ca' | 'en' | 'fr';
+
+/**
  * Format consent summary for display
  */
-export function formatConsentSummary(
-  consent: ConsentRecord,
-  lang: 'es' | 'ca' | 'en' | 'fr' = 'es'
-): string {
-  const labels: Record<string, Record<string, string>> = {
+export function formatConsentSummary(consent: ConsentRecord, lang: SupportedLang = 'es'): string {
+  const labels: Record<SupportedLang, ConsentLabelSet> = {
     es: {
       terms: 'Términos y Condiciones',
       privacy: 'Política de Privacidad',
@@ -260,12 +270,12 @@ export function formatConsentSummary(
     },
   };
 
-  const l = labels[lang] ?? labels['es'] ?? labels['es'];
+  const l = labels[lang];
 
   return `📋 Consentimientos:
-• ${l['terms']}: ${consent.terms ? '✅ ' + l['accepted'] : '❌ ' + l['notAccepted']}
-• ${l['privacy']}: ${consent.privacy ? '✅ ' + l['accepted'] : '❌ ' + l['notAccepted']}
-• ${l['marketing']}: ${consent.marketing ? '✅ ' + l['accepted'] : '❌ ' + l['notAccepted']}
+• ${l.terms}: ${consent.terms ? '✅ ' + l.accepted : '❌ ' + l.notAccepted}
+• ${l.privacy}: ${consent.privacy ? '✅ ' + l.accepted : '❌ ' + l.notAccepted}
+• ${l.marketing}: ${consent.marketing ? '✅ ' + l.accepted : '❌ ' + l.notAccepted}
 
 📅 Fecha: ${new Date(consent.timestamp).toLocaleDateString(lang === 'en' ? 'en-US' : 'es-ES')}`;
 }

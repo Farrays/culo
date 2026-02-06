@@ -66,7 +66,7 @@ async function getDataForKeys(redis: Redis, keys: string[]): Promise<Record<stri
 
 // Format date for filename
 function formatDate(date: Date): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split('T')[0] ?? '';
 }
 
 // Generate backup report
