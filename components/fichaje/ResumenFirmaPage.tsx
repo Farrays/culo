@@ -143,10 +143,11 @@ const ResumenFirmaPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen bg-black relative flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
+        <div className="relative z-10 text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-4 border-brand-500 border-t-transparent mx-auto mb-4" />
-          <p className="text-gray-600">Cargando resumen...</p>
+          <p className="text-brand-300">Cargando resumen...</p>
         </div>
       </div>
     );
@@ -154,11 +155,12 @@ const ResumenFirmaPage: React.FC = () => {
 
   if (error && !resumen) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
+      <div className="min-h-screen bg-black relative flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
+        <div className="relative z-10 bg-white/10 backdrop-blur-sm rounded-2xl border border-primary-dark/30 p-8 max-w-md w-full text-center">
           <div className="text-6xl mb-4">&#10060;</div>
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Error</h1>
-          <p className="text-gray-600">{error}</p>
+          <h1 className="text-2xl font-bold text-white mb-2">Error</h1>
+          <p className="text-brand-300">{error}</p>
         </div>
       </div>
     );
@@ -172,204 +174,218 @@ const ResumenFirmaPage: React.FC = () => {
     <>
       <Helmet>
         <title>Resumen Mensual - {formatMes(resumen.mes)} | Farray&apos;s Center</title>
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50 py-8 px-4">
-        <div className="max-w-2xl mx-auto">
-          {/* Logo header */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <img
-              src="/images/logo/img/logo-fidc_256.webp"
-              alt="Farray's Center"
-              className="h-12 w-auto"
-            />
-            <div className="text-center">
-              <p className="text-gray-600 text-sm font-medium">
-                Farray&apos;s International Dance Center
-              </p>
-              <p className="text-gray-400 text-xs">Control de Jornada Laboral</p>
-            </div>
-          </div>
+      <div className="min-h-screen bg-black relative">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
 
-          {/* Header */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
-            <div className="bg-gradient-to-r from-brand-600 to-brand-700 px-6 py-8 text-white">
-              <h1 className="text-2xl font-bold mb-1">Resumen de Horas</h1>
-              <p className="text-brand-100 text-lg capitalize">{formatMes(resumen.mes)}</p>
-            </div>
-
-            <div className="p-6">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-brand-100 rounded-full flex items-center justify-center text-2xl">
-                  &#128100;
-                </div>
-                <div>
-                  <h2 className="text-xl font-semibold text-gray-800">{nombreCompleto}</h2>
-                  <p className="text-gray-500 text-sm">
-                    Contrato{' '}
-                    {resumen.profesor.tipo_contrato === 'parcial'
-                      ? 'a tiempo parcial'
-                      : 'a tiempo completo'}
-                  </p>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-brand-50 rounded-xl p-4 text-center">
-                  <p className="text-3xl font-bold text-brand-700">{resumen.total_horas}h</p>
-                  <p className="text-sm text-brand-600">Total horas</p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-3xl font-bold text-gray-700">{resumen.total_clases}</p>
-                  <p className="text-sm text-gray-600">Clases</p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-gray-700">{resumen.horas_ordinarias}h</p>
-                  <p className="text-sm text-gray-600">Ordinarias</p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-gray-700">
-                    {resumen.horas_complementarias}h
-                  </p>
-                  <p className="text-sm text-gray-600">Complementarias</p>
-                </div>
-              </div>
-
-              {/* Días trabajados */}
-              <div className="border-t pt-4">
-                <p className="text-gray-600">
-                  <span className="font-medium">{resumen.dias_trabajados}</span> días trabajados en
-                  el mes
-                </p>
+        <div className="relative z-10 py-8 px-4">
+          <div className="max-w-2xl mx-auto">
+            {/* Logo header */}
+            <div className="flex flex-col items-center justify-center mb-6">
+              <img
+                src="/images/logo/img/logo-fidc_512.webp"
+                alt="Farray's Center"
+                className="h-20 w-auto mb-3"
+              />
+              <div className="text-center">
+                <p className="text-white text-lg font-medium">Control de Jornada Laboral</p>
+                <p className="text-brand-400 text-sm">Resumen Mensual</p>
               </div>
             </div>
-          </div>
 
-          {/* Detalle de fichajes */}
-          {fichajes.length > 0 && (
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
-              <div className="px-6 py-4 border-b">
-                <h3 className="text-lg font-semibold text-gray-800">Detalle de Fichajes</h3>
+            {/* Header con info del profesor */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-primary-dark/30 overflow-hidden mb-6">
+              <div className="bg-gradient-to-r from-brand-600 to-brand-700 px-6 py-6 text-white">
+                <h1 className="text-2xl font-bold mb-1">Resumen de Horas</h1>
+                <p className="text-brand-100 text-lg capitalize">{formatMes(resumen.mes)}</p>
               </div>
-              <div className="max-h-80 overflow-y-auto">
-                <table className="w-full">
-                  <thead className="bg-gray-50 sticky top-0">
-                    <tr>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">
-                        Fecha
-                      </th>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">
-                        Clase
-                      </th>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">
-                        Entrada
-                      </th>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">
-                        Salida
-                      </th>
-                      <th className="px-4 py-3 text-right text-sm font-medium text-gray-600">
-                        Tiempo
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y">
-                    {fichajes.map(f => (
-                      <tr key={f.id} className="hover:bg-gray-50">
-                        <td className="px-4 py-3 text-sm">{formatFecha(f.fecha)}</td>
-                        <td className="px-4 py-3 text-sm font-medium">{f.clase_nombre}</td>
-                        <td className="px-4 py-3 text-sm">
-                          {f.hora_inicio?.substring(0, 5) || '-'}
-                        </td>
-                        <td className="px-4 py-3 text-sm">{f.hora_fin?.substring(0, 5) || '-'}</td>
-                        <td className="px-4 py-3 text-sm text-right font-medium">
-                          {formatMinutos(f.minutos_trabajados)}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
 
-          {/* Firma */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="p-6">
-              {resumen.firmado || firmaExitosa ? (
-                <div className="text-center py-4">
-                  <div className="text-6xl mb-4">&#9989;</div>
-                  <h3 className="text-xl font-bold text-green-700 mb-2">Resumen Firmado</h3>
-                  <p className="text-gray-600">
-                    Firmado el{' '}
-                    {new Date(resumen.fecha_firma || new Date()).toLocaleString('es-ES', {
-                      timeZone: 'Europe/Madrid',
-                    })}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-4">
-                    Hash: {resumen.hash_documento.substring(0, 16)}...
-                  </p>
-                </div>
-              ) : (
-                <>
-                  {error && (
-                    <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg mb-4">{error}</div>
-                  )}
-
-                  <div className="mb-6">
-                    <label className="flex items-start gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={confirmado}
-                        onChange={e => setConfirmado(e.target.checked)}
-                        className="mt-1 w-5 h-5 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
-                      />
-                      <span className="text-sm text-gray-700">
-                        Confirmo que he revisado los datos de este resumen y que son correctos.
-                        Entiendo que esta firma tiene validez legal según el Art. 12.4.c del
-                        Estatuto de los Trabajadores.
-                      </span>
-                    </label>
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-brand-600/30 rounded-full flex items-center justify-center text-2xl">
+                    &#128100;
                   </div>
+                  <div>
+                    <h2 className="text-xl font-semibold text-white">{nombreCompleto}</h2>
+                    <p className="text-brand-300 text-sm">
+                      Contrato{' '}
+                      {resumen.profesor.tipo_contrato === 'parcial'
+                        ? 'a tiempo parcial'
+                        : 'a tiempo completo'}
+                    </p>
+                  </div>
+                </div>
 
-                  <button
-                    onClick={handleFirmar}
-                    disabled={!confirmado || firmando}
-                    className="w-full py-4 bg-brand-600 text-white font-semibold rounded-xl
-                               hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed
-                               transition-colors flex items-center justify-center gap-2"
-                  >
-                    {firmando ? (
-                      <>
-                        <span className="animate-spin">&#9696;</span>
-                        Firmando...
-                      </>
-                    ) : (
-                      <>&#9997; Firmar Resumen</>
-                    )}
-                  </button>
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-brand-600/20 rounded-xl p-4 text-center border border-brand-500/30">
+                    <p className="text-3xl font-bold text-brand-400">{resumen.total_horas}h</p>
+                    <p className="text-sm text-brand-300">Total horas</p>
+                  </div>
+                  <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+                    <p className="text-3xl font-bold text-white">{resumen.total_clases}</p>
+                    <p className="text-sm text-brand-300">Clases</p>
+                  </div>
+                  <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+                    <p className="text-2xl font-bold text-white">{resumen.horas_ordinarias}h</p>
+                    <p className="text-sm text-brand-300">Ordinarias</p>
+                  </div>
+                  <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+                    <p className="text-2xl font-bold text-white">
+                      {resumen.horas_complementarias}h
+                    </p>
+                    <p className="text-sm text-brand-300">Complementarias</p>
+                  </div>
+                </div>
 
-                  <p className="text-xs text-gray-500 text-center mt-4">
-                    Al firmar, se registrará tu IP y la fecha/hora como prueba de firma digital.
+                {/* Días trabajados */}
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-brand-300">
+                    <span className="font-medium text-white">{resumen.dias_trabajados}</span> días
+                    trabajados en el mes
                   </p>
-                </>
-              )}
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Aviso legal */}
-          <div className="mt-6 text-center text-xs text-gray-500 space-y-1">
-            <p>
-              Este documento cumple con el Art. 12.4.c del Estatuto de los Trabajadores para
-              contratos a tiempo parcial y el Art. 34.9 ET (RD-ley 8/2019).
-            </p>
-            <p>
-              La empresa conservará los registros durante 4 años, quedando a disposición del
-              trabajador, sus representantes legales y la Inspección de Trabajo.
-            </p>
-            <p className="mt-2 text-gray-400">
-              Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
-            </p>
+            {/* Detalle de fichajes */}
+            {fichajes.length > 0 && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-primary-dark/30 overflow-hidden mb-6">
+                <div className="px-6 py-4 border-b border-white/10">
+                  <h3 className="text-lg font-semibold text-white">Detalle de Fichajes</h3>
+                </div>
+                <div className="max-h-80 overflow-y-auto">
+                  <table className="w-full">
+                    <thead className="bg-white/5 sticky top-0">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-brand-300">
+                          Fecha
+                        </th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-brand-300">
+                          Clase
+                        </th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-brand-300">
+                          Entrada
+                        </th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-brand-300">
+                          Salida
+                        </th>
+                        <th className="px-4 py-3 text-right text-sm font-medium text-brand-300">
+                          Tiempo
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/10">
+                      {fichajes.map(f => (
+                        <tr key={f.id} className="hover:bg-white/5">
+                          <td className="px-4 py-3 text-sm text-brand-200">
+                            {formatFecha(f.fecha)}
+                          </td>
+                          <td className="px-4 py-3 text-sm font-medium text-white">
+                            {f.clase_nombre}
+                          </td>
+                          <td className="px-4 py-3 text-sm text-brand-200">
+                            {f.hora_inicio?.substring(0, 5) || '-'}
+                          </td>
+                          <td className="px-4 py-3 text-sm text-brand-200">
+                            {f.hora_fin?.substring(0, 5) || '-'}
+                          </td>
+                          <td className="px-4 py-3 text-sm text-right font-medium text-white">
+                            {formatMinutos(f.minutos_trabajados)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Firma */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-primary-dark/30 overflow-hidden">
+              <div className="p-6">
+                {resumen.firmado || firmaExitosa ? (
+                  <div className="text-center py-4">
+                    <div className="text-6xl mb-4">&#9989;</div>
+                    <h3 className="text-xl font-bold text-green-400 mb-2">Resumen Firmado</h3>
+                    <p className="text-brand-300">
+                      Firmado el{' '}
+                      {new Date(resumen.fecha_firma || new Date()).toLocaleString('es-ES', {
+                        timeZone: 'Europe/Madrid',
+                      })}
+                    </p>
+                    <p className="text-xs text-brand-400/50 mt-4">
+                      Hash: {resumen.hash_documento.substring(0, 16)}...
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    {error && (
+                      <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg mb-4">
+                        {error}
+                      </div>
+                    )}
+
+                    <div className="mb-6">
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={confirmado}
+                          onChange={e => setConfirmado(e.target.checked)}
+                          className="mt-1 w-5 h-5 rounded border-brand-500 bg-white/10 text-brand-600 focus:ring-brand-500"
+                        />
+                        <span className="text-sm text-brand-200">
+                          Confirmo que he revisado los datos de este resumen y que son correctos.
+                          Entiendo que esta firma tiene validez legal según el Art. 12.4.c del
+                          Estatuto de los Trabajadores.
+                        </span>
+                      </label>
+                    </div>
+
+                    <button
+                      onClick={handleFirmar}
+                      disabled={!confirmado || firmando}
+                      className={`w-full py-4 font-semibold rounded-xl transition-all transform flex items-center justify-center gap-2 ${
+                        confirmado && !firmando
+                          ? 'bg-green-600 hover:bg-green-500 text-white hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-green-500/30'
+                          : 'bg-gray-600/50 text-gray-400 cursor-not-allowed'
+                      }`}
+                    >
+                      {firmando ? (
+                        <>
+                          <span className="animate-spin">&#9696;</span>
+                          Firmando...
+                        </>
+                      ) : (
+                        <>&#9997; Firmar Resumen</>
+                      )}
+                    </button>
+
+                    <p className="text-xs text-brand-400/70 text-center mt-4">
+                      Al firmar, se registrará tu IP y la fecha/hora como prueba de firma digital.
+                    </p>
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* Aviso legal */}
+            <div className="mt-6 text-center text-xs text-brand-400/70 space-y-1">
+              <p>
+                Este documento cumple con el Art. 12.4.c del Estatuto de los Trabajadores para
+                contratos a tiempo parcial y el Art. 34.9 ET (RD-ley 8/2019).
+              </p>
+              <p>
+                La empresa conservará los registros durante 4 años, quedando a disposición del
+                trabajador, sus representantes legales y la Inspección de Trabajo.
+              </p>
+              <p className="mt-2 text-brand-400/50">
+                Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
+              </p>
+            </div>
           </div>
         </div>
       </div>
