@@ -8,8 +8,8 @@
  */
 
 import crypto from 'crypto';
-import { getRedis } from './redis';
-import { isFeatureEnabled, FEATURES } from './feature-flags';
+import { getRedis } from './redis.js';
+import { isFeatureEnabled, FEATURES } from './feature-flags.js';
 
 // ============================================================================
 // CONFIGURATION

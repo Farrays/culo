@@ -14,8 +14,8 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { generateCsrfToken, getSessionFromRequest } from './lib/csrf';
-import { isFeatureEnabled, FEATURES } from './lib/feature-flags';
+import { generateCsrfToken, getSessionFromRequest } from './lib/csrf.js';
+import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   // CORS headers - solo permitir desde nuestro dominio

@@ -18,7 +18,7 @@
  * @see https://martinfowler.com/articles/feature-toggles.html
  */
 
-import { getRedis } from './redis';
+import { getRedis } from './redis.js';
 
 // ============================================================================
 // FEATURE DEFINITIONS

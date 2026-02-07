@@ -21,7 +21,7 @@ import {
   getAuditLog,
   FEATURES,
   type FeatureFlag,
-} from './lib/feature-flags';
+} from './lib/feature-flags.js';
 
 // Admin token for protection (set in Vercel env)
 const ADMIN_TOKEN = process.env['FEATURE_FLAGS_ADMIN_TOKEN'];
