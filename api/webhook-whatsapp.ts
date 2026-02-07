@@ -4,6 +4,7 @@ import crypto from 'crypto';
 import type { Redis } from '@upstash/redis';
 import { getRedisClient } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
+import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -463,14 +464,27 @@ function handleVerification(req: VercelRequest, res: VercelResponse): VercelResp
 // ============================================================================
 
 async function handleWebhook(req: VercelRequest, res: VercelResponse): Promise<VercelResponse> {
-  // Verificar firma en modo AUDIT (log pero no bloquear)
-  // Fase 1: Solo logging para verificar que las firmas son correctas
-  const signature = req.headers['x-hub-signature-256'];
-  const signatureValid = verifyWebhookSignature(req.body, signature as string | undefined);
+  // ============================================================================
+  // VERIFICACIÓN DE FIRMA - Modo controlado por Feature Flag
+  // Flag OFF (default): AUDIT mode - solo log, no bloquea
+  // Flag ON: ENFORCEMENT mode - bloquea requests sin firma válida
+  // ============================================================================
 
-  if (!signatureValid.valid) {
-    // MODO AUDIT: Solo log, NO bloquear - seguimos procesando
-    console.warn(`[webhook-whatsapp] ⚠️ Signature verification: ${signatureValid.reason}`);
+  const enforcementMode = await isFeatureEnabled(FEATURES.WEBHOOK_ENFORCEMENT);
+  const signature = req.headers['x-hub-signature-256'];
+  const signatureResult = verifyWebhookSignature(req.body, signature as string | undefined);
+
+  if (!signatureResult.valid) {
+    console.warn(`[webhook-whatsapp] ⚠️ Signature verification: ${signatureResult.reason}`);
+
+    // ENFORCEMENT MODE: Bloquear si la firma no es válida
+    if (enforcementMode) {
+      console.error('[webhook-whatsapp] 🚫 ENFORCEMENT: Request blocked - invalid signature');
+      return res.status(401).json({
+        error: 'Unauthorized',
+        message: 'Invalid webhook signature',
+      });
+    }
   } else {
     console.log(`[webhook-whatsapp] ✅ Signature verified successfully`);
   }

@@ -20,6 +20,7 @@ import { getRedisClient } from './lib/redis.js';
 import { getGroupsManager } from './lib/whapi/groups.js';
 import { getLabelsManager } from './lib/whapi/labels.js';
 import { normalizePhone } from './lib/phone-utils.js';
+import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 // ============================================================================
 // TYPES
@@ -76,8 +77,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   // ============================================================================
-  // VERIFICACIÓN DE FIRMA - MODO AUDIT (log pero NO bloquear)
+  // VERIFICACIÓN DE FIRMA - Modo controlado por Feature Flag
+  // Flag OFF (default): AUDIT mode - solo log, no bloquea
+  // Flag ON: ENFORCEMENT mode - bloquea requests sin firma válida
   // ============================================================================
+
+  const enforcementMode = await isFeatureEnabled(FEATURES.WEBHOOK_ENFORCEMENT);
+  let signatureValid = false;
 
   // Método 1: Header secreto simple (x-momence-secret)
   const webhookSecret = process.env['MOMENCE_WEBHOOK_SECRET'];
@@ -86,8 +92,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   if (webhookSecret) {
     if (providedSecret === webhookSecret) {
       console.log('[webhook-momence] ✅ Secret header verified');
+      signatureValid = true;
     } else {
-      // MODO AUDIT: Solo log, NO bloquear
       console.warn(
         `[webhook-momence] ⚠️ Secret header mismatch (got: ${providedSecret ? 'present' : 'missing'})`
       );
@@ -97,11 +103,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   // Método 2: HMAC signature (x-momence-signature) - si Momence lo soporta
-  const signatureResult = verifyMomenceSignature(req);
-  if (!signatureResult.valid) {
-    console.warn(`[webhook-momence] ⚠️ Signature verification: ${signatureResult.reason}`);
-  } else if (signatureResult.reason !== 'No signature header (not configured by Momence)') {
-    console.log(`[webhook-momence] ✅ HMAC signature verified`);
+  if (!signatureValid) {
+    const signatureResult = verifyMomenceSignature(req);
+    if (signatureResult.valid) {
+      console.log(`[webhook-momence] ✅ HMAC signature verified`);
+      signatureValid = true;
+    } else if (signatureResult.reason !== 'No signature header (not configured by Momence)') {
+      console.warn(`[webhook-momence] ⚠️ Signature verification: ${signatureResult.reason}`);
+    }
+  }
+
+  // ENFORCEMENT MODE: Bloquear si la firma no es válida
+  if (enforcementMode && !signatureValid) {
+    console.error('[webhook-momence] 🚫 ENFORCEMENT: Request blocked - invalid signature');
+    res.status(401).json({
+      error: 'Unauthorized',
+      message: 'Invalid webhook signature',
+    });
+    return;
   }
 
   try {

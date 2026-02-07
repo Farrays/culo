@@ -86,7 +86,7 @@ export type FeatureFlag = (typeof FEATURES)[keyof typeof FEATURES];
 // DEFAULT VALUES (Fallback if Redis unavailable)
 // ============================================================================
 
-const DEFAULT_FLAGS: Record<FeatureFlag, boolean> = {
+export const DEFAULT_FLAGS: Record<FeatureFlag, boolean> = {
   // Seguridad: OFF por defecto (activar gradualmente)
   [FEATURES.CSRF_PROTECTION]: false,
   [FEATURES.WEBHOOK_ENFORCEMENT]: false,

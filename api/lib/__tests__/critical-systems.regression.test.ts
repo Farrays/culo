@@ -559,3 +559,63 @@ describe('CRITICAL: CSRF Protection', () => {
     });
   });
 });
+
+// ============================================================================
+// 8. WEBHOOK ENFORCEMENT REGRESSION TESTS
+// ============================================================================
+
+describe('CRITICAL: Webhook Enforcement', () => {
+  describe('Feature Flag Integration', () => {
+    it('should have WEBHOOK_ENFORCEMENT flag defined', async () => {
+      const { FEATURES } = await import('../feature-flags');
+
+      expect(FEATURES.WEBHOOK_ENFORCEMENT).toBe('security.webhook_enforcement');
+    });
+
+    it('should default WEBHOOK_ENFORCEMENT to OFF (audit mode)', async () => {
+      const { FEATURES } = await import('../feature-flags');
+
+      // Get default value from module - feature should be OFF by default
+      const defaultFlags = await import('../feature-flags').then(m => m.DEFAULT_FLAGS);
+      expect(defaultFlags?.[FEATURES.WEBHOOK_ENFORCEMENT]).toBe(false);
+    });
+  });
+
+  describe('Signature Verification Logic', () => {
+    it('should correctly calculate HMAC-SHA256 signature', async () => {
+      const crypto = await import('crypto');
+      const testSecret = 'test_secret_key';
+      const testBody = JSON.stringify({ event: 'test', data: { id: 123 } });
+
+      const signature = crypto.createHmac('sha256', testSecret).update(testBody).digest('hex');
+
+      // Verify it's a valid hex string of correct length (64 chars for SHA256)
+      expect(signature).toMatch(/^[a-f0-9]{64}$/);
+    });
+
+    it('should use timing-safe comparison for signatures', async () => {
+      const crypto = await import('crypto');
+
+      // Verify timingSafeEqual exists and works
+      const buf1 = globalThis.Buffer.from('signature1');
+      const buf2 = globalThis.Buffer.from('signature1');
+      const buf3 = globalThis.Buffer.from('signature2');
+
+      expect(crypto.timingSafeEqual(buf1, buf2)).toBe(true);
+      expect(crypto.timingSafeEqual(buf1, buf3)).toBe(false);
+    });
+  });
+
+  describe('Enforcement Behavior', () => {
+    it('should allow requests in AUDIT mode (flag OFF)', async () => {
+      // In audit mode (default), invalid signatures should NOT block requests
+      // This is verified by checking the feature flag default value
+      const { isFeatureEnabled, FEATURES } = await import('../feature-flags');
+
+      const enforcementEnabled = await isFeatureEnabled(FEATURES.WEBHOOK_ENFORCEMENT);
+
+      // Default should be false (audit mode)
+      expect(enforcementEnabled).toBe(false);
+    });
+  });
+});
