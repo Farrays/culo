@@ -386,12 +386,54 @@ export class BookingFlow {
 
   /**
    * Start the booking flow
+   * @param phone User's phone number
+   * @param initialStyle Optional style if user already mentioned one (e.g., "quiero reservar salsa")
+   * @param fetchClasses Optional callback to fetch classes for the initial style
    */
-  startBooking(phone: string): BookingFlowResult {
+  async startBooking(
+    phone: string,
+    initialStyle?: string,
+    fetchClasses?: (style: string) => Promise<ClassOption[]>
+  ): Promise<BookingFlowResult> {
     this.state = {
       step: 'style_selection',
       data: { phone },
     };
+
+    // If user already mentioned a style, skip style selection
+    if (initialStyle && fetchClasses) {
+      this.state.data.style = initialStyle;
+
+      try {
+        const classes = await fetchClasses(initialStyle);
+        if (classes.length > 0) {
+          this.state.availableClasses = classes;
+          this.state.step = 'class_selection';
+
+          const msgs = MESSAGES[this.lang];
+          const classesDisplay = classes
+            .slice(0, 5)
+            .map((c, i) => {
+              const spotsText =
+                c.spotsAvailable > 0
+                  ? `🎫 ${c.spotsAvailable} plazas`
+                  : '⚠️ *LLENA* (lista de espera)';
+              return `${i + 1}️⃣ *${c.name}*\n   📅 ${c.dayOfWeek} ${c.date}, ${c.time}\n   👤 ${c.instructor || 'TBA'}\n   ${spotsText}`;
+            })
+            .join('\n\n');
+
+          const response = `${getConfirmation(this.lang)} ${msgs.askClass.replace('%STYLE%', initialStyle)}\n\n${classesDisplay}\n\nEscribe el número de la clase que quieres`;
+
+          return {
+            response,
+            newState: this.state,
+          };
+        }
+      } catch (error) {
+        console.error('[booking-flow] Error fetching initial classes:', error);
+        // Fall through to style selection
+      }
+    }
 
     const msgs = MESSAGES[this.lang];
     const response = `${getConfirmation(this.lang)} ${msgs.askStyle}\n\n${msgs.styleOptions}`;
@@ -956,6 +998,53 @@ export function detectBookingIntent(text: string): boolean {
 
   const normalizedText = text.toLowerCase();
   return bookingKeywords.some(kw => normalizedText.includes(kw));
+}
+
+/**
+ * Detect booking intent AND extract style if mentioned
+ * Returns { hasIntent: boolean, style?: string }
+ */
+export function detectBookingIntentWithStyle(text: string): { hasIntent: boolean; style?: string } {
+  const hasIntent = detectBookingIntent(text);
+  if (!hasIntent) {
+    return { hasIntent: false };
+  }
+
+  const normalizedText = text.toLowerCase();
+
+  // Style detection keywords (order matters - more specific first)
+  const stylePatterns: Array<{ style: string; keywords: string[] }> = [
+    { style: 'salsaladystyle', keywords: ['salsa lady', 'lady style salsa'] },
+    { style: 'salsa', keywords: ['salsa cubana', 'salsa'] },
+    { style: 'bachata', keywords: ['bachata sensual', 'bachata'] },
+    { style: 'hiphopreggaeton', keywords: ['hip hop reggaeton', 'hiphop reggaeton'] },
+    { style: 'sexyreggaeton', keywords: ['sexy reggaeton'] },
+    { style: 'reparto', keywords: ['reggaeton', 'reggaetón', 'perreo', 'reparto'] },
+    { style: 'hiphop', keywords: ['hip hop', 'hip-hop', 'hiphop', 'urbano'] },
+    { style: 'dancehall', keywords: ['dancehall', 'dance hall'] },
+    { style: 'heels', keywords: ['heels', 'tacones', 'stiletto'] },
+    { style: 'sexystyle', keywords: ['sexy style', 'sexy-style'] },
+    { style: 'femmology', keywords: ['femmology', 'femme'] },
+    { style: 'twerk', keywords: ['twerk'] },
+    { style: 'bumbum', keywords: ['bum bum', 'bumbum'] },
+    { style: 'afro', keywords: ['afrobeat', 'afrodance', 'afro'] },
+    { style: 'afrocontemporaneo', keywords: ['afro contemporáneo', 'afro contemporaneo'] },
+    { style: 'ballet', keywords: ['ballet'] },
+    { style: 'contemporaneo', keywords: ['contemporáneo', 'contemporaneo', 'contemporary'] },
+    { style: 'jazz', keywords: ['jazz', 'modern jazz'] },
+    { style: 'stretching', keywords: ['stretching', 'estiramientos'] },
+    { style: 'kpop', keywords: ['k-pop', 'kpop'] },
+    { style: 'yoga', keywords: ['yoga'] },
+    { style: 'pilates', keywords: ['pilates'] },
+  ];
+
+  for (const { style, keywords } of stylePatterns) {
+    if (keywords.some(kw => normalizedText.includes(kw))) {
+      return { hasIntent: true, style };
+    }
+  }
+
+  return { hasIntent: true };
 }
 
 /**

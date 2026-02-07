@@ -21,8 +21,8 @@ describe('BookingFlow', () => {
   });
 
   describe('startBooking', () => {
-    it('should initialize booking flow and ask for style', () => {
-      const result = flow.startBooking('+34612345678');
+    it('should initialize booking flow and ask for style', async () => {
+      const result = await flow.startBooking('+34612345678');
 
       expect(result.newState.step).toBe('style_selection');
       expect(result.newState.data.phone).toBe('+34612345678');
@@ -31,8 +31,8 @@ describe('BookingFlow', () => {
   });
 
   describe('processInput - style selection', () => {
-    beforeEach(() => {
-      flow.startBooking('+34612345678');
+    beforeEach(async () => {
+      await flow.startBooking('+34612345678');
     });
 
     it('should detect salsa style', async () => {
@@ -86,7 +86,7 @@ describe('BookingFlow', () => {
 
   describe('processInput - class selection', () => {
     beforeEach(async () => {
-      flow.startBooking('+34612345678');
+      await flow.startBooking('+34612345678');
       const mockClasses: ClassOption[] = [
         {
           id: 1,
@@ -130,7 +130,7 @@ describe('BookingFlow', () => {
 
   describe('processInput - data collection', () => {
     beforeEach(async () => {
-      flow.startBooking('+34612345678');
+      await flow.startBooking('+34612345678');
       const mockClasses: ClassOption[] = [
         {
           id: 1,
@@ -174,7 +174,7 @@ describe('BookingFlow', () => {
 
   describe('processInput - consents', () => {
     beforeEach(async () => {
-      flow.startBooking('+34612345678');
+      await flow.startBooking('+34612345678');
       const mockClasses: ClassOption[] = [
         {
           id: 1,
@@ -221,7 +221,7 @@ describe('BookingFlow', () => {
 
   describe('processInput - confirmation', () => {
     beforeEach(async () => {
-      flow.startBooking('+34612345678');
+      await flow.startBooking('+34612345678');
       const mockClasses: ClassOption[] = [
         {
           id: 1,
@@ -299,23 +299,23 @@ describe('isInBookingFlow', () => {
 });
 
 describe('Multi-language support', () => {
-  it('should work in Catalan', () => {
+  it('should work in Catalan', async () => {
     const flow = new BookingFlow('ca');
-    const result = flow.startBooking('+34612345678');
+    const result = await flow.startBooking('+34612345678');
 
     expect(result.response).toContain('estil de ball');
   });
 
-  it('should work in English', () => {
+  it('should work in English', async () => {
     const flow = new BookingFlow('en');
-    const result = flow.startBooking('+34612345678');
+    const result = await flow.startBooking('+34612345678');
 
     expect(result.response).toContain('dance style');
   });
 
-  it('should work in French', () => {
+  it('should work in French', async () => {
     const flow = new BookingFlow('fr');
-    const result = flow.startBooking('+34612345678');
+    const result = await flow.startBooking('+34612345678');
 
     expect(result.response).toContain('style de danse');
   });

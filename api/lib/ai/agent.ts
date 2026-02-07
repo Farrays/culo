@@ -28,7 +28,7 @@ import {
 } from './knowledge-base.js';
 import {
   BookingFlow,
-  detectBookingIntent,
+  detectBookingIntentWithStyle,
   detectMemberIntent,
   isInBookingFlow,
   type BookingState,
@@ -437,7 +437,12 @@ export class SalesAgent {
     // 5. Check if user is in booking flow or wants to start one
     const inBookingFlow =
       conversation.bookingState && isInBookingFlow(conversation.bookingState.step);
-    const wantsToBook = !inBookingFlow && detectBookingIntent(text);
+    // Use new function that also extracts style from message
+    const bookingIntentResult = !inBookingFlow
+      ? detectBookingIntentWithStyle(text)
+      : { hasIntent: false };
+    const wantsToBook = bookingIntentResult.hasIntent;
+    const detectedStyle = bookingIntentResult.style;
 
     // 5.5. Check for schedule/horario questions (real-time Momence data)
     const scheduleQuery = detectScheduleQuery(text);
@@ -481,8 +486,9 @@ export class SalesAgent {
       responseText = await this.handleMemberIntent(conversation, memberIntent);
     } else if (wantsToBook) {
       // Start new booking flow (skip data collection for existing members)
+      // Pass detected style if user mentioned one (e.g., "quiero reservar salsa")
       conversation.intent = 'booking';
-      responseText = this.startBookingFlow(conversation);
+      responseText = await this.startBookingFlow(conversation, detectedStyle);
       metrics.trackIntentDetected();
     } else {
       // 6. Check for objection first
@@ -558,10 +564,21 @@ export class SalesAgent {
 
   /**
    * Start a new booking flow
+   * @param conversation Current conversation state
+   * @param initialStyle Optional style if user mentioned one (e.g., "quiero reservar salsa")
    */
-  private startBookingFlow(conversation: ConversationState): string {
+  private async startBookingFlow(
+    conversation: ConversationState,
+    initialStyle?: string
+  ): Promise<string> {
     const flow = new BookingFlow(conversation.language);
-    const result = flow.startBooking(conversation.phone);
+
+    // Pass style and fetch callback if user mentioned a specific style
+    const result = await flow.startBooking(
+      conversation.phone,
+      initialStyle,
+      initialStyle ? (style: string) => this.fetchAvailableClasses(style) : undefined
+    );
 
     // Pre-populate member data if existing member (Fase 6)
     if (conversation.isExistingMember && conversation.memberInfo) {
@@ -583,7 +600,9 @@ export class SalesAgent {
       conversation.leadScore += 25;
     }
 
-    console.log(`[agent] Started booking flow for ${conversation.phone.slice(-4)}`);
+    console.log(
+      `[agent] Started booking flow for ${conversation.phone.slice(-4)}${initialStyle ? ` with style: ${initialStyle}` : ''}`
+    );
     return result.response;
   }
 

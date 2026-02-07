@@ -89,7 +89,7 @@ export const PRICING = {
   },
 
   // Single class
-  singleClass: 15,
+  singleClass: 20,
 
   // Registration fee
   registration: {
