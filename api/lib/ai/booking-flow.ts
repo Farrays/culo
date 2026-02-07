@@ -857,12 +857,15 @@ export class BookingFlow {
    * Detect dance style from user input
    */
   private detectStyle(input: string): string | null {
+    // Use same style keys as constants/style-mappings.ts for consistency
     const styleMap: Record<string, string[]> = {
       salsa: ['salsa', 'salsera', 'salsero', 'cubana'],
       bachata: ['bachata', 'bachatera', 'bachatero', 'sensual'],
-      'hip-hop': ['hip hop', 'hiphop', 'hip-hop', 'urbano', 'urban'],
-      reggaeton: ['reggaeton', 'reggaetón', 'regueton', 'perreo'],
-      heels: ['heels', 'tacones', 'stiletto', 'femmology', 'sexy style'],
+      hiphop: ['hip hop', 'hiphop', 'hip-hop', 'urbano', 'urban'],
+      reparto: ['reggaeton', 'reggaetón', 'regueton', 'perreo'],
+      heels: ['heels', 'tacones', 'stiletto'],
+      sexystyle: ['sexy style', 'sexy-style'],
+      femmology: ['femmology', 'femme'],
       dancehall: ['dancehall', 'dance hall', 'jamaican'],
       twerk: ['twerk', 'twerkeo', 'twerking'],
       contemporaneo: ['contemporaneo', 'contemporáneo', 'contemporary', 'contemp'],

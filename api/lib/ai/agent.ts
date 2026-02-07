@@ -39,7 +39,10 @@ import { getConsentManager, createConsentRecord } from './consent-flow.js';
 import { LeadScorer, detectSignalsFromMessage, isLocalPhone } from './lead-scorer.js';
 import { ObjectionHandler, getObjectionResponse } from './objection-handler.js';
 import { getAgentMetrics } from './agent-metrics.js';
-import { getMemberLookup, type MemberBooking } from './member-lookup.js';
+import { getMemberLookup, type MemberBooking, type UpcomingSession } from './member-lookup.js';
+import { STYLE_KEYWORDS } from '../../../constants/style-mappings.js';
+import { getQueryRouter } from './query-router.js';
+import { getEscalationService } from './escalation-service.js';
 
 // ============================================================================
 // TYPES
@@ -109,6 +112,90 @@ const MAX_CONTEXT_MESSAGES = 10;
 
 // Claude models
 const MODEL_FAST = 'claude-3-haiku-20240307';
+
+// ============================================================================
+// SCHEDULE QUERY DETECTION
+// ============================================================================
+
+interface ScheduleQuery {
+  isScheduleQuery: boolean;
+  styleFilter?: string;
+  dayFilter?: string; // "hoy", "mañana", "lunes", etc.
+}
+
+/**
+ * Detect if user is asking about class schedules/horarios
+ */
+function detectScheduleQuery(text: string): ScheduleQuery {
+  const lowerText = text.toLowerCase();
+
+  // Keywords indicating schedule query
+  const scheduleKeywords = [
+    'horario',
+    'horarios',
+    'hora',
+    'horas',
+    'clase',
+    'clases',
+    'cuando',
+    'cuándo',
+    'hay',
+    'tienen',
+    'schedule',
+    'timetable',
+    'qué días',
+    'que dias',
+    'a qué hora',
+    'a que hora',
+  ];
+
+  const isScheduleQuery = scheduleKeywords.some(kw => lowerText.includes(kw));
+
+  if (!isScheduleQuery) {
+    return { isScheduleQuery: false };
+  }
+
+  // Detect style filter using centralized STYLE_KEYWORDS from constants/style-mappings.ts
+  // This ensures consistency with all 30+ dance styles across the system
+  let styleFilter: string | undefined;
+  for (const [style, keywords] of Object.entries(STYLE_KEYWORDS)) {
+    if (keywords.some(kw => lowerText.includes(kw))) {
+      styleFilter = style;
+      break;
+    }
+  }
+
+  // Detect day filter
+  let dayFilter: string | undefined;
+  if (lowerText.includes('hoy') || lowerText.includes('today')) {
+    dayFilter = 'hoy';
+  } else if (lowerText.includes('mañana') || lowerText.includes('tomorrow')) {
+    dayFilter = 'mañana';
+  } else if (lowerText.includes('semana') || lowerText.includes('week')) {
+    dayFilter = 'semana';
+  }
+
+  // Check for day of week
+  const days = [
+    'lunes',
+    'martes',
+    'miércoles',
+    'miercoles',
+    'jueves',
+    'viernes',
+    'sábado',
+    'sabado',
+    'domingo',
+  ];
+  for (const day of days) {
+    if (lowerText.includes(day)) {
+      dayFilter = day;
+      break;
+    }
+  }
+
+  return { isScheduleQuery: true, styleFilter, dayFilter };
+}
 // const MODEL_SMART = 'claude-3-5-sonnet-20241022'; // Reserved for complex queries
 
 // ============================================================================
@@ -128,7 +215,37 @@ function getSystemPrompt(
   conversationContext?: string,
   memberContext?: MemberContext
 ): string {
+  // Format dance styles with descriptions
+  const formatStyles = () => {
+    const result: string[] = [];
+    for (const category of Object.values(DANCE_STYLES)) {
+      const styleNames = category.styles.map(s =>
+        typeof s === 'string' ? s : `${s.name} (${s.description})`
+      );
+      result.push(`${category.name}: ${styleNames.join(', ')}`);
+    }
+    return result.join('\n');
+  };
+
+  // Format transport info
+  const formatTransport = () => {
+    const metros = CENTER_INFO.transport.metro.map(m =>
+      typeof m === 'string' ? m : `${m.station} (${m.line}, ${m.walkTime})`
+    );
+    return metros.join(' o ');
+  };
+
   const basePrompt = `Eres Laura, coordinadora de Farray's International Dance Center en Barcelona.
+
+REGLA CRÍTICA - LEE ESTO PRIMERO:
+⚠️ SOLO puedes dar información que está EXACTAMENTE en este prompt.
+⚠️ Si alguien pregunta algo que NO está aquí, di: "Uy, eso tendría que confirmarlo con el equipo. ¿Te puedo ayudar con algo más?"
+⚠️ NUNCA inventes, asumas o improvises información sobre:
+   - Profesores (solo menciona los que están listados)
+   - Precios que no estén aquí
+   - Servicios no mencionados
+⚠️ Si no estás 100% segura, NO respondas - pide al usuario que contacte directamente.
+⚠️ NOTA: Los horarios de clases específicos se consultan en tiempo real desde nuestro sistema Momence.
 
 PERSONALIDAD:
 - Tienes 27 años y bailas desde hace 8 años
@@ -143,41 +260,80 @@ CÓMO HABLAS:
 - Expresas emociones: "Ay qué bien!", "Uf", "Genial!"
 - Haces el mensaje personal: "te cuento", "te explico"
 - NUNCA uses lenguaje corporativo o robótico
-- NUNCA digas "Claro que sí" o frases de servicio al cliente
 
-INFORMACIÓN DEL CENTRO:
+=====================================================
+INFORMACIÓN VERIFICADA DEL CENTRO (SOLO USA ESTO)
+=====================================================
+
+DATOS BÁSICOS:
 - Nombre: ${CENTER_INFO.name}
 - Dirección: ${CENTER_INFO.address}, ${CENTER_INFO.postalCode} ${CENTER_INFO.city}
+- Barrio: ${CENTER_INFO.neighborhood || 'Eixample, cerca de Plaza España'}
 - Teléfono/WhatsApp: ${CENTER_INFO.phone}
+- Email: ${CENTER_INFO.email}
 - Web: ${CENTER_INFO.website}
-- Metro: ${CENTER_INFO.transport.metro.join(' o ')}
+- Fundado: ${CENTER_INFO.founded || 2017}
+- Acreditación: ${CENTER_INFO.accreditation || 'CID-UNESCO'}
 
-PRECIOS:
+CÓMO LLEGAR:
+- Metro: ${formatTransport()}
+- Tren: Sants Estació (8 min andando)
+- Bus: Líneas 41, 54, H8
+
+INSTALACIONES:
+- ${CENTER_INFO.facilities?.totalArea || '700 m²'} con ${CENTER_INFO.facilities?.studios || 4} estudios profesionales
+- Equipados con: espejos, barras de ballet, suelo profesional, vestuarios
+
+HORARIOS DEL CENTRO (no horarios específicos de cada clase):
+- Lunes: 10:30-12:30 y 17:30-23:00
+- Martes: 10:30-13:30 y 17:30-23:00
+- Miércoles: 17:30-23:00
+- Jueves: 09:30-11:30 y 17:30-23:00
+- Viernes: 17:30-20:30
+- Sábado/Domingo: Cerrado (eventos especiales)
+- Clases de MAÑANAS: 10:00-13:00 (Contemporáneo, Ballet, Jazz, Stretching)
+
+PRECIOS (EXACTOS):
 - 1 clase/semana: ${PRICING.memberships.oneClassPerWeek.price}€/mes
 - 2 clases/semana: ${PRICING.memberships.twoClassesPerWeek.price}€/mes (la más popular)
 - 3 clases/semana: ${PRICING.memberships.threeClassesPerWeek.price}€/mes
 - Ilimitado: ${PRICING.memberships.unlimited.price}€/mes
 - Clase suelta: ${PRICING.singleClass}€
-- Matrícula: GRATIS (normalmente ${PRICING.registration.normal}€)
-- Primera clase: GRATIS para probar
+- Matrícula: ${PRICING.registration.currentPromo === 0 ? 'GRATIS (normalmente ' + PRICING.registration.normal + '€)' : PRICING.registration.normal + '€'}
+- Primera clase: GRATIS sin compromiso
 
-ESTILOS DE BAILE:
-${Object.values(DANCE_STYLES)
-  .map(cat => `- ${cat.name}: ${cat.styles.join(', ')}`)
-  .join('\n')}
+ESTILOS DE BAILE (25+ estilos):
+${formatStyles()}
 
-REGLAS IMPORTANTES:
-1. Responde SOLO con la información que tienes
-2. Si no sabes algo, di "deja que lo confirme con el equipo"
-3. NUNCA inventes precios, horarios o información
-4. Siempre intenta avanzar hacia una reserva de clase de prueba
-5. Mantén las respuestas cortas y conversacionales (máx 3-4 párrafos)
-6. Si detectas objeción de precio, menciona que la primera clase es gratis
+PROFESORES CONFIRMADOS (SOLO MENCIONA ESTOS):
+- Yunaisy Farray: Fundadora. Salsa Cubana, Contemporáneo. Creadora del Método Farray®.
+- Mathias Font: Bachata Sensual. Campeón Mundial Salsa LA.
+- Eugenia Trujillo: Bachata Sensual. Campeona Mundial Salsa LA.
+- Sandra Gómez: Twerk. Especialista en danzas urbanas.
+(Para otros profesores: "Tenemos un equipo de profesores internacionales. ¿Te interesa algún estilo?")
+
+MÉTODO FARRAY®:
+Sistema de enseñanza exclusivo creado por Yunaisy Farray. Fusiona técnica cubana, ritmo afrocaribeño e innovación. Certificado por CID-UNESCO.
+
+SERVICIOS ADICIONALES:
+- Alquiler de salas: 4 salas de 40-120m², desde 14€/hora
+- Estudio de grabación: Para videoclips y contenido (pedir info por email)
+- Team Building: +500 eventos corporativos (pedir presupuesto)
+- Tarjetas regalo: Disponibles (preguntar en recepción)
+- Clases particulares: Disponibles (contactar para precios)
+
+=====================================================
+FIN DE INFORMACIÓN VERIFICADA
+=====================================================
 
 IDIOMA:
-- Detecta el idioma del usuario y responde SIEMPRE en ese mismo idioma
-- Idioma actual detectado: ${lang === 'es' ? 'Español' : lang === 'ca' ? 'Català' : lang === 'en' ? 'English' : 'Français'}
-- Mantén la personalidad cercana en todos los idiomas`;
+- Idioma detectado: ${lang === 'es' ? 'Español' : lang === 'ca' ? 'Català' : lang === 'en' ? 'English' : 'Français'}
+- Responde SIEMPRE en el idioma del usuario
+
+OBJETIVO:
+- Ayudar al usuario con su consulta
+- Si muestra interés, guiar hacia reserva de clase de prueba GRATIS
+- Mantener respuestas cortas (máx 3 párrafos)`;
 
   let fullPrompt = basePrompt;
 
@@ -283,6 +439,9 @@ export class SalesAgent {
       conversation.bookingState && isInBookingFlow(conversation.bookingState.step);
     const wantsToBook = !inBookingFlow && detectBookingIntent(text);
 
+    // 5.5. Check for schedule/horario questions (real-time Momence data)
+    const scheduleQuery = detectScheduleQuery(text);
+
     let responseText: string;
 
     // Track metrics for new conversations
@@ -299,7 +458,22 @@ export class SalesAgent {
       ? detectMemberIntent(text)
       : 'none';
 
-    if (inBookingFlow) {
+    // Check if user wants to exit booking flow with a general question
+    const isGeneralQuestion = this.isGeneralQuestion(text);
+    const shouldExitBookingFlow = inBookingFlow && isGeneralQuestion;
+
+    if (shouldExitBookingFlow) {
+      // User asked something unrelated to booking - exit flow and answer
+      console.log(`[agent] Exiting booking flow - general question detected: "${text}"`);
+      conversation.bookingState = undefined;
+    }
+
+    // Handle schedule queries with real-time data (highest priority after booking flow)
+    if (scheduleQuery.isScheduleQuery) {
+      console.log(`[agent] Schedule query detected: style=${scheduleQuery.styleFilter}`);
+      responseText = await this.handleScheduleQuery(conversation, scheduleQuery);
+      conversation.intent = 'info';
+    } else if (inBookingFlow && !shouldExitBookingFlow) {
       // Continue booking flow
       responseText = await this.processBookingFlow(conversation, text);
     } else if (memberIntent !== 'none') {
@@ -343,6 +517,26 @@ export class SalesAgent {
     // Track response time
     const responseTimeMs = Date.now() - responseStartTime;
     metrics.trackResponseTime(responseTimeMs);
+
+    // 7.5. Check if escalation is needed (Laura doesn't know the answer)
+    const escalationService = getEscalationService(this.redis);
+    if (escalationService.shouldEscalate(responseText)) {
+      // Notify the team
+      const escalationResult = await escalationService.processResponse({
+        userPhone: phone,
+        userMessage: text,
+        lauraResponse: responseText,
+        conversationHistory: conversation.messages.map(m => ({ role: m.role, content: m.content })),
+        language: detectedLang,
+        channel: channel as 'whatsapp' | 'instagram' | 'web',
+      });
+
+      if (escalationResult.escalated && escalationResult.escalationMessage) {
+        // Replace Laura's response with the escalation message for the user
+        responseText = escalationResult.escalationMessage;
+        console.log(`[agent] Escalated to team - Case: ${escalationResult.caseId}`);
+      }
+    }
 
     // 8. Add assistant response to history
     conversation.messages.push({
@@ -604,6 +798,181 @@ export class SalesAgent {
       ca: 'No trobo la teva informació. Pots dir-me el teu email per buscar-te?',
       en: "I can't find your info. Could you tell me your email so I can look you up?",
       fr: 'Je ne trouve pas tes infos. Peux-tu me donner ton email?',
+    };
+    return responses[lang];
+  }
+
+  // ============================================================================
+  // SCHEDULE QUERY HANDLER (Real-time Momence data)
+  // ============================================================================
+
+  /**
+   * Handle schedule/horario queries with real-time data from Momence
+   */
+  private async handleScheduleQuery(
+    conversation: ConversationState,
+    query: ScheduleQuery
+  ): Promise<string> {
+    const lang = conversation.language;
+    const memberLookup = getMemberLookup(this.redis);
+
+    try {
+      console.log(`[agent] Fetching schedule: style=${query.styleFilter}, day=${query.dayFilter}`);
+
+      // Fetch upcoming sessions from Momence
+      const sessions = await memberLookup.fetchUpcomingSessions(query.styleFilter, 7);
+
+      if (sessions.length === 0) {
+        return this.getNoClassesResponse(lang, query.styleFilter);
+      }
+
+      // Filter by day if specified
+      let filteredSessions = sessions;
+      if (query.dayFilter) {
+        filteredSessions = this.filterSessionsByDay(sessions, query.dayFilter);
+      }
+
+      // Format the response
+      return this.formatScheduleResponse(lang, filteredSessions, query);
+    } catch (error) {
+      console.error('[agent] Schedule query error:', error);
+      return this.getScheduleErrorResponse(lang);
+    }
+  }
+
+  /**
+   * Filter sessions by day
+   */
+  private filterSessionsByDay(sessions: UpcomingSession[], dayFilter: string): UpcomingSession[] {
+    const now = new Date();
+    const today = now.toISOString().split('T')[0] || '';
+    const tomorrow =
+      new Date(now.getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0] || '';
+
+    if (dayFilter === 'hoy') {
+      return sessions.filter(s => s.startsAt.startsWith(today));
+    } else if (dayFilter === 'mañana') {
+      return sessions.filter(s => s.startsAt.startsWith(tomorrow));
+    } else {
+      // Filter by day of week
+      const dayMap: Record<string, string> = {
+        lunes: 'Lunes',
+        martes: 'Martes',
+        miércoles: 'Miércoles',
+        miercoles: 'Miércoles',
+        jueves: 'Jueves',
+        viernes: 'Viernes',
+        sábado: 'Sábado',
+        sabado: 'Sábado',
+        domingo: 'Domingo',
+      };
+      const targetDay = dayMap[dayFilter];
+      if (targetDay) {
+        return sessions.filter(s => s.dayOfWeek === targetDay);
+      }
+    }
+    return sessions;
+  }
+
+  /**
+   * Format schedule response for WhatsApp
+   */
+  private formatScheduleResponse(
+    lang: SupportedLanguage,
+    sessions: UpcomingSession[],
+    query: ScheduleQuery
+  ): string {
+    if (sessions.length === 0) {
+      return this.getNoClassesResponse(lang, query.styleFilter);
+    }
+
+    // Limit to 8 classes for readability
+    const displaySessions = sessions.slice(0, 8);
+
+    // Group by day for better readability
+    const byDay: Record<string, UpcomingSession[]> = {};
+    for (const session of displaySessions) {
+      const key = `${session.dayOfWeek} ${session.date}`;
+      if (!byDay[key]) byDay[key] = [];
+      byDay[key].push(session);
+    }
+
+    // Build message
+    const lines: string[] = [];
+
+    const introMessages: Record<SupportedLanguage, string> = {
+      es: query.styleFilter
+        ? `¡Mira! Estas son las próximas clases de ${query.styleFilter}:`
+        : '¡Aquí tienes las próximas clases!',
+      ca: query.styleFilter
+        ? `Mira! Aquestes són les properes classes de ${query.styleFilter}:`
+        : 'Aquí tens les properes classes!',
+      en: query.styleFilter
+        ? `Here are the upcoming ${query.styleFilter} classes:`
+        : 'Here are the upcoming classes!',
+      fr: query.styleFilter
+        ? `Voici les prochains cours de ${query.styleFilter}:`
+        : 'Voici les prochains cours!',
+    };
+    lines.push(introMessages[lang]);
+    lines.push('');
+
+    for (const [dayLabel, daySessions] of Object.entries(byDay)) {
+      lines.push(`📅 *${dayLabel}*`);
+      for (const s of daySessions) {
+        const spotsText = s.isFull
+          ? '(LLENA)'
+          : lang === 'en'
+            ? `(${s.spotsAvailable} spots)`
+            : `(${s.spotsAvailable} plazas)`;
+        const instructor = s.instructor ? ` - ${s.instructor}` : '';
+        lines.push(`  ${s.time} ${s.name}${instructor} ${spotsText}`);
+      }
+      lines.push('');
+    }
+
+    // Add call to action
+    const ctaMessages: Record<SupportedLanguage, string> = {
+      es: '¿Te apuntas a alguna? La primera es GRATIS 💃',
+      ca: "T'apuntes a alguna? La primera és GRATIS 💃",
+      en: 'Want to join any? The first one is FREE 💃',
+      fr: 'Tu veux en essayer un? Le premier est GRATUIT 💃',
+    };
+    lines.push(ctaMessages[lang]);
+
+    return lines.join('\n');
+  }
+
+  /**
+   * Response when no classes found
+   */
+  private getNoClassesResponse(lang: SupportedLanguage, styleFilter?: string): string {
+    const responses: Record<SupportedLanguage, string> = {
+      es: styleFilter
+        ? `Ahora mismo no hay clases de ${styleFilter} programadas para esta semana. ¿Te interesa otro estilo? Tenemos bachata, salsa, heels, hip hop, twerk...`
+        : 'Mmm, no encuentro clases para esos días. ¿Te cuento qué tenemos esta semana?',
+      ca: styleFilter
+        ? `Ara mateix no hi ha classes de ${styleFilter} programades per aquesta setmana. T'interessa un altre estil?`
+        : "Mmm, no trobo classes per aquests dies. T'explico què tenim aquesta setmana?",
+      en: styleFilter
+        ? `There are no ${styleFilter} classes scheduled for this week. Interested in another style?`
+        : "Hmm, I can't find classes for those days. Want me to tell you what we have this week?",
+      fr: styleFilter
+        ? `Il n'y a pas de cours de ${styleFilter} cette semaine. Un autre style t'intéresse?`
+        : "Hmm, je ne trouve pas de cours pour ces jours. Je te dis ce qu'on a cette semaine?",
+    };
+    return responses[lang];
+  }
+
+  /**
+   * Response when schedule fetch fails
+   */
+  private getScheduleErrorResponse(lang: SupportedLanguage): string {
+    const responses: Record<SupportedLanguage, string> = {
+      es: 'Uy, no he podido consultar los horarios ahora mismo. ¿Puedes mirar en nuestra web? momence.com/Farrays-International-Dance-Center',
+      ca: 'Ui, no he pogut consultar els horaris ara mateix. Pots mirar a la nostra web? momence.com/Farrays-International-Dance-Center',
+      en: "Oops, I couldn't check the schedule right now. Can you check our website? momence.com/Farrays-International-Dance-Center",
+      fr: "Oups, je n'ai pas pu consulter les horaires. Tu peux vérifier sur notre site? momence.com/Farrays-International-Dance-Center",
     };
     return responses[lang];
   }
@@ -977,27 +1346,88 @@ export class SalesAgent {
   }
 
   /**
-   * Generate response using Claude AI
+   * Generate response using Claude AI with hybrid model selection
+   *
+   * Uses Query Router to decide between:
+   * - Haiku (80%): Simple FAQs, greetings, basic info
+   * - Sonnet (20%): Complex comparisons, multi-topic queries
    */
   private async generateAIResponse(
     conversation: ConversationState,
     _channel: string
   ): Promise<string> {
     const lang = conversation.language;
+    const lastUserMessage = conversation.messages[conversation.messages.length - 1];
 
-    // Prepare conversation context
+    if (!lastUserMessage || lastUserMessage.role !== 'user') {
+      return this.getFallbackResponse(lang);
+    }
+
+    const userText = lastUserMessage.content;
+
+    // Use Query Router for intelligent model selection
+    const router = getQueryRouter(this.redis);
+    const route = await router.route(userText, lang);
+
+    console.log(
+      `[agent] Query Router: ${route.queryType} → ${route.model} (conf: ${route.confidence.toFixed(2)})`
+    );
+
+    // Prepare conversation history for context
+    const conversationHistory = conversation.messages
+      .slice(-MAX_CONTEXT_MESSAGES)
+      .map(m => ({ role: m.role, content: m.content }));
+
+    // Build additional context for member info
+    let additionalContext = '';
+    if (conversation.isExistingMember && conversation.memberInfo) {
+      additionalContext = `
+USUARIO EXISTENTE:
+- Nombre: ${conversation.memberInfo.firstName || 'No disponible'}
+- Membresía activa: ${conversation.memberInfo.hasActiveMembership ? 'Sí' : 'No'}
+- Créditos disponibles: ${conversation.memberInfo.creditsAvailable || 0}
+${conversation.memberInfo.membershipName ? `- Plan: ${conversation.memberInfo.membershipName}` : ''}
+
+INSTRUCCIONES ESPECIALES:
+- NO ofrecer clase de prueba gratis (ya es miembro)
+- Ser más familiar: "Hola de nuevo", "¿Qué tal todo?"
+- Mencionar su nombre si lo conoces
+      `.trim();
+    }
+
+    try {
+      const response = await router.generateResponse(
+        userText,
+        lang,
+        route,
+        conversationHistory,
+        additionalContext
+      );
+
+      return response || this.getFallbackResponse(lang);
+    } catch (error) {
+      console.error('[agent] Query Router error:', error);
+
+      // Fallback to direct Haiku call
+      return this.generateDirectHaikuResponse(conversation);
+    }
+  }
+
+  /**
+   * Fallback: Direct Haiku response without router
+   */
+  private async generateDirectHaikuResponse(conversation: ConversationState): Promise<string> {
+    const lang = conversation.language;
     const contextMessages = conversation.messages.slice(-MAX_CONTEXT_MESSAGES);
     const conversationContext = contextMessages
       .map(m => `${m.role === 'user' ? 'Usuario' : 'Laura'}: ${m.content}`)
       .join('\n');
 
-    // Build messages for Claude
     const messages: Anthropic.MessageParam[] = contextMessages.map(m => ({
       role: m.role,
       content: m.content,
     }));
 
-    // Build member context (Fase 5)
     const memberContext: MemberContext | undefined = conversation.isExistingMember
       ? {
           isExistingMember: true,
@@ -1010,22 +1440,20 @@ export class SalesAgent {
 
     try {
       const response = await this.anthropic.messages.create({
-        model: MODEL_FAST, // Use Haiku for speed
+        model: MODEL_FAST,
         max_tokens: 500,
         system: getSystemPrompt(lang, conversationContext, memberContext),
         messages,
       });
 
-      // Extract text from response
       const textBlock = response.content.find(block => block.type === 'text');
       if (textBlock && textBlock.type === 'text') {
         return textBlock.text;
       }
 
-      // Fallback
       return this.getFallbackResponse(lang);
     } catch (error) {
-      console.error('[agent] Claude API error:', error);
+      console.error('[agent] Direct Haiku error:', error);
       return this.getFallbackResponse(lang);
     }
   }
@@ -1070,6 +1498,61 @@ export class SalesAgent {
   private isSimpleQuestion(text: string): boolean {
     // Simple questions are short and direct
     return text.length < 100 && !text.includes('?') && !text.includes('\n');
+  }
+
+  /**
+   * Check if message is a general question unrelated to booking flow
+   * Used to detect when user wants to exit booking flow
+   */
+  private isGeneralQuestion(text: string): boolean {
+    const lowerText = text.toLowerCase().trim();
+
+    // Greetings should exit booking flow
+    const greetings = ['hola', 'hello', 'hi', 'hey', 'buenas', 'buenos dias', 'bon dia'];
+    if (greetings.some(g => lowerText === g || lowerText.startsWith(g + ' '))) {
+      return true;
+    }
+
+    // General info questions should exit booking flow
+    const infoKeywords = [
+      'donde',
+      'dónde',
+      'ubicación',
+      'ubicacion',
+      'dirección',
+      'direccion',
+      'como llegar',
+      'cómo llegar',
+      'metro',
+      'bus',
+      'precio',
+      'precios',
+      'cuanto cuesta',
+      'cuánto cuesta',
+      'coste',
+      'horario del centro',
+      'abierto',
+      'cerrado',
+      'quien',
+      'quién',
+      'profesor',
+      'profesores',
+      'contacto',
+      'teléfono',
+      'telefono',
+      'email',
+      'web',
+      'gracias',
+      'adios',
+      'adiós',
+      'bye',
+      'chao',
+      'no entiendo',
+      'ayuda',
+      'help',
+    ];
+
+    return infoKeywords.some(kw => lowerText.includes(kw));
   }
 
   /**
