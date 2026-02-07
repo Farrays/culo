@@ -285,59 +285,10 @@ const YunaisyFarrayPage: React.FC = () => {
     },
   };
 
-  // Schema Markup - AggregateRating for Yunaisy as instructor
-  const aggregateRatingSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    '@id': `${baseUrl}/yunaisy-farray#instructor`,
-    name: 'Yunaisy Farray',
-    jobTitle: t('schema_yunaisy_jobTitle_instructor'),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '509',
-      reviewCount: '509',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Emma S.' },
-        datePublished: '2026-01-09',
-        reviewBody: t('yunaisyFarray_testimonial_1_text'),
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Zhuqing W.' },
-        datePublished: '2025-01-15',
-        reviewBody: t('yunaisyFarray_testimonial_2_text'),
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Berta M.' },
-        datePublished: '2025-01-15',
-        reviewBody: t('yunaisyFarray_testimonial_3_text'),
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Violetta P.' },
-        datePublished: '2019-01-15',
-        reviewBody: t('yunaisyFarray_testimonial_4_text'),
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Karina I.' },
-        datePublished: '2025-01-15',
-        reviewBody: t('yunaisyFarray_testimonial_5_text'),
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-    ],
-  };
+  // Note: AggregateRating removed from Person schema
+  // Google does not support AggregateRating for @type: Person
+  // Reviews for Yunaisy are displayed visually but not in structured data
+  // The business-level rating is in DanceSchoolWithRatingSchema (SchemaMarkup.tsx)
 
   return (
     <>
@@ -361,7 +312,6 @@ const YunaisyFarrayPage: React.FC = () => {
         <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
