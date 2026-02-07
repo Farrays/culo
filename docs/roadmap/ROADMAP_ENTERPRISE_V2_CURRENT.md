@@ -454,12 +454,12 @@ answerCapsule: {
 
 - [ ] 4 páginas profesores Tier Gold (Alejandro, Mathias+Eugenia, Grechén, Lía)
 - [ ] Answer capsules en 4 artículos existentes
-- [ ] Schema.org Person para profesores
+- [x] Schema.org Person para profesores ✅ (ya implementado)
 - [ ] Enlaces DOFOLLOW verificados
 
 **Opcional (4 horas extra):**
 
-- [ ] VideoObject schema (si videos disponibles)
+- [x] VideoObject schema ✅ (ya implementado en 6+ componentes)
 - [ ] Artículo pilar "Guía Completa 2026"
 - [ ] Statistics con citations en todos los artículos
 
@@ -827,7 +827,7 @@ summaryStats: [
 
 **Día 6: VideoObject Schema (1 hora) - Opcional**
 
-- [ ] Schema para videos YouTube (si disponibles)
+- [x] Schema para videos YouTube ✅ (YouTubeEmbed.tsx)
 
 **Resultado esperado:** Score 9.3 → 10/10 (+0.7 puntos) 🎯
 
@@ -872,7 +872,7 @@ summaryStats: [
 - [ ] Página Grechén Méndez (2 horas)
 - [ ] Página Lía Valdés (2 horas)
 - [ ] Statistics con citations (3 horas)
-- [ ] Schemas avanzados (3 horas)
+- [x] Schemas avanzados ✅ (ya implementados todos)
 
 **Resultado:** Score 11.7 → 12.5 (+0.8 puntos)
 
@@ -982,15 +982,15 @@ summaryStats: [
 - [ ] FAQ HTML limpio
 - [x] 28 FAQs creadas
 
-### SCHEMAS AVANZADOS ✅ 8/10 → 9/10
+### SCHEMAS AVANZADOS ✅ 10/10 (COMPLETO)
 
 - [x] Organization
 - [x] LocalBusiness
 - [x] FAQPage
-- [ ] Person (profesores)
-- [ ] VideoObject
-- [ ] HowTo
-- [ ] Event
+- [x] Person (profesores) ✅ 11 archivos
+- [x] VideoObject ✅ 6+ archivos
+- [x] HowTo ✅ BlogSchemas + SchemaMarkup
+- [x] Event ✅ CalendarPage + DynamicScheduleSchema
 
 ---
 
@@ -1045,7 +1045,7 @@ summaryStats: [
 
 **3. VideoObject Schema** (1 hora) - Opcional
 
-- [ ] Schema para videos YouTube (si disponibles)
+- [x] Schema para videos YouTube ✅ (YouTubeEmbed.tsx)
 
 **Al completar estos pasos:** Score 10/10 alcanzado 🎯
 

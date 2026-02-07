@@ -987,9 +987,9 @@ curl -s https://www.farrayscenter.com/es/preguntas-frecuentes | grep "robots"
 - [ ] 5 artículos pilares nuevos
 - [ ] "Top 10 Academias Barcelona"
 - [ ] 5-7 casos de estudio
-- [ ] VideoObject Schema
-- [ ] HowTo Schema
-- [ ] Review Schema individual
+- [x] VideoObject Schema ✅ (implementado en 6+ componentes)
+- [x] HowTo Schema ✅ (BlogSchemas.tsx, SchemaMarkup.tsx)
+- [x] Review Schema individual ✅ (SchemaMarkup.tsx)
 - [ ] Página de estadísticas
 
 ### Fase 13-16: EEAT Profesional (9.0 → 10)

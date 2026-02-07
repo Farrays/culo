@@ -842,10 +842,10 @@ OPTIMIZACIÓN:
 - [x] AggregateRating ✅
 - [x] Person (profesores) ✅
 - [x] OpeningHoursSpecification ✅
-- [ ] Event (workshops) 🚀
-- [ ] VideoObject 🚀
-- [ ] Review individual 🚀
-- [ ] HowTo (tutoriales) 🚀
+- [x] Event (workshops) ✅ CalendarPage, DynamicScheduleSchema
+- [x] VideoObject ✅ 6+ componentes
+- [x] Review individual ✅ SchemaMarkup.tsx
+- [x] HowTo (tutoriales) ✅ BlogSchemas, SchemaMarkup
 
 ---
 
@@ -1176,7 +1176,7 @@ Dance Center está a solo [X] minutos en metro desde [estación más cercana].
 ### Schema
 
 - [ ] Implementar EventSchema para workshops
-- [ ] Añadir VideoObject cuando haya videos
+- [x] VideoObject ✅ (ya implementado en YouTubeEmbed, VideoWithSchema, etc.)
 - [ ] Crear Review schema individual
 
 ## 18.3 MES 2
