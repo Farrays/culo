@@ -689,8 +689,33 @@ export class ObjectionHandler {
 
   /**
    * Check if message contains an objection
+   * Excludes simple informational questions about prices/etc
    */
   hasObjection(text: string): boolean {
+    const lowerText = text.toLowerCase();
+
+    // Exclude simple informational questions - these are NOT objections
+    const infoQuestionPatterns = [
+      'cuáles son los precios',
+      'cuales son los precios',
+      'dime los precios',
+      'qué precios',
+      'que precios',
+      'cuánto cuesta',
+      'cuanto cuesta',
+      'cuánto vale',
+      'cuanto vale',
+      'precio de',
+      'tarifas',
+      'what are the prices',
+      'how much',
+      'quels sont les prix',
+    ];
+
+    if (infoQuestionPatterns.some(p => lowerText.includes(p))) {
+      return false;
+    }
+
     const detection = this.detectObjection(text);
     return detection.type !== 'unknown' && detection.confidence > 0.2;
   }
