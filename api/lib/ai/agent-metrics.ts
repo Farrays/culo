@@ -76,6 +76,33 @@ export interface AnalyticsSummary {
   topObjections: Array<{ objection: string; count: number }>;
   byLanguage: LanguageBreakdown;
   daily: DailyMetrics[];
+  // Fase 6: Métricas Avanzadas
+  modelUsage?: ModelUsageStats;
+  topQueries?: Array<{ query: string; count: number }>;
+  escalations?: EscalationStats;
+}
+
+// Fase 6: Métricas Avanzadas - Nuevos tipos
+export interface ModelUsageStats {
+  haiku: number;
+  sonnet: number;
+  haikuPercent: number;
+  sonnetPercent: number;
+  avgHaikuTimeMs: number;
+  avgSonnetTimeMs: number;
+}
+
+export interface EscalationStats {
+  total: number;
+  byReason: {
+    complex_query: number;
+    user_request: number;
+    sentiment_negative: number;
+    repeated_question: number;
+    booking_issue: number;
+    other: number;
+  };
+  avgTimeToEscalate: number;
 }
 
 // ============================================================================
@@ -89,6 +116,10 @@ const KEYS = {
   objections: (date: string) => `agent:objections:${date}`,
   language: (date: string) => `agent:language:${date}`,
   responseTimes: (date: string) => `agent:response_times:${date}`,
+  // Fase 6: Métricas Avanzadas
+  models: (date: string) => `agent:models:${date}`,
+  queries: (date: string) => `agent:queries:${date}`,
+  escalations: (date: string) => `agent:escalations:${date}`,
 };
 
 // ============================================================================
@@ -241,6 +272,78 @@ export class AgentMetrics {
   }
 
   // --------------------------------------------------------------------------
+  // FASE 6: MÉTRICAS AVANZADAS - INCREMENT METHODS
+  // --------------------------------------------------------------------------
+
+  /**
+   * Track model usage (Haiku vs Sonnet)
+   */
+  async trackModelUsage(model: 'haiku' | 'sonnet', responseTimeMs: number): Promise<void> {
+    if (!this.redis) return;
+
+    const date = this.getToday();
+
+    await Promise.all([
+      this.redis.hincrby(KEYS.models(date), `${model}_calls`, 1),
+      this.redis.hincrby(KEYS.models(date), `${model}_time_total`, responseTimeMs),
+    ]);
+
+    // Set expiry
+    await this.redis.expire(KEYS.models(date), 90 * 24 * 60 * 60);
+  }
+
+  /**
+   * Track user query for frequency analysis
+   */
+  async trackQuery(queryType: string, rawQuery?: string): Promise<void> {
+    if (!this.redis) return;
+
+    const date = this.getToday();
+
+    // Track query type
+    await this.redis.hincrby(KEYS.queries(date), queryType, 1);
+
+    // If raw query provided, store for analysis (top 100)
+    if (rawQuery) {
+      const normalizedQuery = rawQuery.toLowerCase().trim().slice(0, 100);
+      await this.redis.zincrby(`${KEYS.queries(date)}:raw`, 1, normalizedQuery);
+      await this.redis.zremrangebyrank(`${KEYS.queries(date)}:raw`, 0, -101);
+    }
+
+    await this.redis.expire(KEYS.queries(date), 90 * 24 * 60 * 60);
+  }
+
+  /**
+   * Track escalation event
+   */
+  async trackEscalation(
+    reason:
+      | 'complex_query'
+      | 'user_request'
+      | 'sentiment_negative'
+      | 'repeated_question'
+      | 'booking_issue'
+      | 'other',
+    timeToEscalateMs?: number
+  ): Promise<void> {
+    if (!this.redis) return;
+
+    const date = this.getToday();
+
+    await Promise.all([
+      this.redis.hincrby(KEYS.escalations(date), 'total', 1),
+      this.redis.hincrby(KEYS.escalations(date), `reason_${reason}`, 1),
+    ]);
+
+    if (timeToEscalateMs) {
+      await this.redis.rpush(`${KEYS.escalations(date)}:times`, timeToEscalateMs.toString());
+      await this.redis.ltrim(`${KEYS.escalations(date)}:times`, -100, -1);
+    }
+
+    await this.redis.expire(KEYS.escalations(date), 90 * 24 * 60 * 60);
+  }
+
+  // --------------------------------------------------------------------------
   // RETRIEVAL METHODS
   // --------------------------------------------------------------------------
 
@@ -362,6 +465,96 @@ export class AgentMetrics {
     return breakdown;
   }
 
+  // --------------------------------------------------------------------------
+  // FASE 6: MÉTRICAS AVANZADAS - RETRIEVAL METHODS
+  // --------------------------------------------------------------------------
+
+  /**
+   * Get model usage stats for a date
+   */
+  async getModelUsageStats(date: string): Promise<ModelUsageStats> {
+    if (!this.redis) {
+      return this.emptyModelUsageStats();
+    }
+
+    const rawData = await this.redis.hgetall(KEYS.models(date));
+    const data = rawData || {};
+
+    const haikuCalls = parseInt(String(data['haiku_calls'] || '0'));
+    const sonnetCalls = parseInt(String(data['sonnet_calls'] || '0'));
+    const haikuTimeTotal = parseInt(String(data['haiku_time_total'] || '0'));
+    const sonnetTimeTotal = parseInt(String(data['sonnet_time_total'] || '0'));
+    const totalCalls = haikuCalls + sonnetCalls;
+
+    return {
+      haiku: haikuCalls,
+      sonnet: sonnetCalls,
+      haikuPercent: totalCalls > 0 ? Math.round((haikuCalls / totalCalls) * 100) : 0,
+      sonnetPercent: totalCalls > 0 ? Math.round((sonnetCalls / totalCalls) * 100) : 0,
+      avgHaikuTimeMs: haikuCalls > 0 ? Math.round(haikuTimeTotal / haikuCalls) : 0,
+      avgSonnetTimeMs: sonnetCalls > 0 ? Math.round(sonnetTimeTotal / sonnetCalls) : 0,
+    };
+  }
+
+  /**
+   * Get top queries for a date
+   */
+  async getTopQueries(
+    date: string,
+    limit: number = 10
+  ): Promise<Array<{ query: string; count: number }>> {
+    if (!this.redis) {
+      return [];
+    }
+
+    // Get query type counts
+    const rawData = await this.redis.hgetall(KEYS.queries(date));
+    const data = rawData || {};
+
+    const queries = Object.entries(data)
+      .map(([query, count]) => ({ query, count: parseInt(String(count)) }))
+      .filter(q => q.count > 0)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, limit);
+
+    return queries;
+  }
+
+  /**
+   * Get escalation stats for a date
+   */
+  async getEscalationStats(date: string): Promise<EscalationStats> {
+    if (!this.redis) {
+      return this.emptyEscalationStats();
+    }
+
+    const [rawData, times] = await Promise.all([
+      this.redis.hgetall(KEYS.escalations(date)),
+      this.redis.lrange(`${KEYS.escalations(date)}:times`, 0, -1),
+    ]);
+
+    const data = rawData || {};
+    const timesArr = times || [];
+
+    const avgTimeToEscalate =
+      timesArr.length > 0
+        ? Math.round(timesArr.reduce((sum, t) => sum + parseInt(String(t)), 0) / timesArr.length)
+        : 0;
+
+    return {
+      total: parseInt(String(data['total'] || '0')),
+      byReason: {
+        complex_query: parseInt(String(data['reason_complex_query'] || '0')),
+        user_request: parseInt(String(data['reason_user_request'] || '0')),
+        sentiment_negative: parseInt(String(data['reason_sentiment_negative'] || '0')),
+        repeated_question: parseInt(String(data['reason_repeated_question'] || '0')),
+        booking_issue: parseInt(String(data['reason_booking_issue'] || '0')),
+        other: parseInt(String(data['reason_other'] || '0')),
+      },
+      avgTimeToEscalate,
+    };
+  }
+
   /**
    * Get analytics summary for a date range
    */
@@ -429,6 +622,55 @@ export class AgentMetrics {
       .sort((a, b) => b.count - a.count)
       .slice(0, 5);
 
+    // Fase 6: Aggregate model usage
+    const modelData = await Promise.all(dates.map(date => this.getModelUsageStats(date)));
+    const modelUsage = modelData.reduce(
+      (acc, m) => ({
+        haiku: acc.haiku + m.haiku,
+        sonnet: acc.sonnet + m.sonnet,
+        haikuPercent: 0,
+        sonnetPercent: 0,
+        avgHaikuTimeMs: acc.avgHaikuTimeMs + m.avgHaikuTimeMs,
+        avgSonnetTimeMs: acc.avgSonnetTimeMs + m.avgSonnetTimeMs,
+      }),
+      this.emptyModelUsageStats()
+    );
+    const totalModelCalls = modelUsage.haiku + modelUsage.sonnet;
+    modelUsage.haikuPercent =
+      totalModelCalls > 0 ? Math.round((modelUsage.haiku / totalModelCalls) * 100) : 0;
+    modelUsage.sonnetPercent =
+      totalModelCalls > 0 ? Math.round((modelUsage.sonnet / totalModelCalls) * 100) : 0;
+    const daysWithHaiku = modelData.filter(m => m.haiku > 0).length;
+    const daysWithSonnet = modelData.filter(m => m.sonnet > 0).length;
+    modelUsage.avgHaikuTimeMs =
+      daysWithHaiku > 0 ? Math.round(modelUsage.avgHaikuTimeMs / daysWithHaiku) : 0;
+    modelUsage.avgSonnetTimeMs =
+      daysWithSonnet > 0 ? Math.round(modelUsage.avgSonnetTimeMs / daysWithSonnet) : 0;
+
+    // Fase 6: Aggregate top queries (just get latest day's queries for simplicity)
+    const topQueries = await this.getTopQueries(to, 10);
+
+    // Fase 6: Aggregate escalations
+    const escalationData = await Promise.all(dates.map(date => this.getEscalationStats(date)));
+    const escalations = escalationData.reduce(
+      (acc, e) => ({
+        total: acc.total + e.total,
+        byReason: {
+          complex_query: acc.byReason.complex_query + e.byReason.complex_query,
+          user_request: acc.byReason.user_request + e.byReason.user_request,
+          sentiment_negative: acc.byReason.sentiment_negative + e.byReason.sentiment_negative,
+          repeated_question: acc.byReason.repeated_question + e.byReason.repeated_question,
+          booking_issue: acc.byReason.booking_issue + e.byReason.booking_issue,
+          other: acc.byReason.other + e.byReason.other,
+        },
+        avgTimeToEscalate: acc.avgTimeToEscalate + e.avgTimeToEscalate,
+      }),
+      this.emptyEscalationStats()
+    );
+    const daysWithEscalations = escalationData.filter(e => e.total > 0).length;
+    escalations.avgTimeToEscalate =
+      daysWithEscalations > 0 ? Math.round(escalations.avgTimeToEscalate / daysWithEscalations) : 0;
+
     return {
       period: { from, to },
       summary: {
@@ -449,6 +691,10 @@ export class AgentMetrics {
       topObjections,
       byLanguage,
       daily: dailyMetrics,
+      // Fase 6: Nuevas métricas
+      modelUsage,
+      topQueries,
+      escalations,
     };
   }
 
@@ -515,6 +761,32 @@ export class AgentMetrics {
       ca: { conversations: 0, bookings: 0 },
       en: { conversations: 0, bookings: 0 },
       fr: { conversations: 0, bookings: 0 },
+    };
+  }
+
+  private emptyModelUsageStats(): ModelUsageStats {
+    return {
+      haiku: 0,
+      sonnet: 0,
+      haikuPercent: 0,
+      sonnetPercent: 0,
+      avgHaikuTimeMs: 0,
+      avgSonnetTimeMs: 0,
+    };
+  }
+
+  private emptyEscalationStats(): EscalationStats {
+    return {
+      total: 0,
+      byReason: {
+        complex_query: 0,
+        user_request: 0,
+        sentiment_negative: 0,
+        repeated_question: 0,
+        booking_issue: 0,
+        other: 0,
+      },
+      avgTimeToEscalate: 0,
     };
   }
 }

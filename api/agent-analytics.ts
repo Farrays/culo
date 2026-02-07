@@ -115,6 +115,25 @@ async function getAnalytics(res: VercelResponse, from: string, to: string): Prom
       topObjection:
         analytics.topObjections.length > 0 ? (analytics.topObjections[0]?.objection ?? null) : null,
       funnelDropoff: calculateFunnelDropoff(analytics.funnel),
+      // Fase 6: Métricas Avanzadas
+      modelEfficiency: analytics.modelUsage
+        ? {
+            haikuPercent: analytics.modelUsage.haikuPercent,
+            sonnetPercent: analytics.modelUsage.sonnetPercent,
+            costSavings:
+              analytics.modelUsage.haiku > 0
+                ? `${Math.round((analytics.modelUsage.haiku / (analytics.modelUsage.haiku + analytics.modelUsage.sonnet)) * 90)}%`
+                : '0%',
+          }
+        : null,
+      topQueryType:
+        analytics.topQueries && analytics.topQueries.length > 0
+          ? (analytics.topQueries[0]?.query ?? null)
+          : null,
+      escalationRate:
+        analytics.escalations && analytics.summary.totalConversations > 0
+          ? Math.round((analytics.escalations.total / analytics.summary.totalConversations) * 100)
+          : 0,
     },
   };
 

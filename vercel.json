@@ -67,6 +67,11 @@
       "maxDuration": 60,
       "includeFiles": "api/lib/**"
     },
+    "api/cron-momence-sync.ts": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "api/lib/**"
+    },
     "api/**/*.ts": {
       "memory": 512,
       "maxDuration": 60,
@@ -109,6 +114,10 @@
     {
       "path": "/api/cron-agent-followup",
       "schedule": "15 * * * *"
+    },
+    {
+      "path": "/api/cron-momence-sync",
+      "schedule": "0 */6 * * *"
     }
   ],
   "redirects": [
