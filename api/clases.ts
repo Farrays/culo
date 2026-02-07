@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { detectStyleFromName, detectLevelFromName } from '../constants/style-mappings.js';
 
 /* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
@@ -108,83 +109,8 @@ interface NormalizedClass {
   checkoutUrl: string;
 }
 
-// Mapeo de estilos (normalización)
-// IMPORTANTE: Debe coincidir con constants/style-mappings.ts STYLE_KEYWORDS
-// El orden importa - los estilos más específicos deben ir primero
-const STYLE_KEYWORDS: Record<string, string[]> = {
-  // Danza - específicos primero
-  afrocontemporaneo: ['afro contemporáneo', 'afro contemporaneo', 'afro contemp'],
-  ballet: ['ballet', 'ballet clásico', 'ballet clasico'],
-  contemporaneo: ['contemporáneo', 'contemporaneo', 'contemporary', 'contemp'],
-  jazz: ['jazz', 'modern jazz', 'modern-jazz'],
-
-  // Latino - específicos primero
-  timba: ['timba', 'timba cubana'],
-  salsaladystyle: ['salsa lady', 'lady style', 'salsa ladies', 'ladies styling'],
-  salsa: ['salsa cubana', 'salsa'],
-  bachata: ['bachata', 'bachata sensual', 'bachata lady'],
-  folklore: ['folklore', 'folklore cubano'],
-
-  // Urbano
-  dancehall: ['dancehall', 'dance hall'],
-  // Reggaeton variants - específicos primero
-  hiphopreggaeton: ['hip hop reggaeton', 'hip-hop reggaeton', 'hiphop reggaeton'],
-  sexyreggaeton: ['sexy reggaeton', 'sexy reggaetón'],
-  reparto: ['reparto', 'reggaeton', 'reggaetón', 'perreo'],
-  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban'],
-  afro: ['afrobeat', 'afrodance', 'afro jazz', 'afro dance'],
-  girly: ['girly'],
-
-  // Heels category - específicos primero
-  sexystyle: ['sexy style', 'sexy-style'],
-  femmology: ['femmology'],
-  heels: ['heels', 'tacones', 'stiletto'],
-  twerk: ['twerk', 'twerkeo'],
-  commercial: ['commercial', 'comercial'],
-  kpop: ['k-pop', 'kpop', 'k pop'],
-  breaking: ['breaking', 'breakdance', 'bboy'],
-  house: ['house dance'],
-  locking: ['locking'],
-  popping: ['popping'],
-  waacking: ['waacking'],
-
-  // Fitness - específicos primero
-  cuerpofit: ['cuerpo fit', 'cuerpofit', 'body conditioning'],
-  bumbum: ['bum bum', 'bumbum', 'glúteos', 'gluteos'],
-  fitness: ['fitness', 'full body', 'cardio'],
-  stretching: ['stretching', 'estiramientos', 'flexibilidad'],
-  yoga: ['yoga'],
-  pilates: ['pilates'],
-};
-
-// Mapeo de niveles
-const LEVEL_KEYWORDS: Record<string, string[]> = {
-  iniciacion: ['iniciación', 'iniciacion', 'principiante', 'beginner', 'intro'],
-  basico: ['básico', 'basico', 'basic', 'nivel 1'],
-  intermedio: ['intermedio', 'intermediate', 'nivel 2'],
-  avanzado: ['avanzado', 'advanced', 'nivel 3', 'pro'],
-  abierto: ['abierto', 'open', 'todos los niveles', 'all levels'],
-};
-
-function detectStyle(name: string): string {
-  const lowerName = name.toLowerCase();
-  for (const [style, keywords] of Object.entries(STYLE_KEYWORDS)) {
-    if (keywords.some(kw => lowerName.includes(kw))) {
-      return style;
-    }
-  }
-  return 'otros';
-}
-
-function detectLevel(name: string): string {
-  const lowerName = name.toLowerCase();
-  for (const [level, keywords] of Object.entries(LEVEL_KEYWORDS)) {
-    if (keywords.some(kw => lowerName.includes(kw))) {
-      return level;
-    }
-  }
-  return 'abierto';
-}
+// Estilos y niveles importados de constants/style-mappings.ts
+// Esto evita duplicación y asegura consistencia en todo el proyecto
 
 function normalizeSession(session: MomenceSession): NormalizedClass {
   const startDate = new Date(session.startsAt);
@@ -223,8 +149,8 @@ function normalizeSession(session: MomenceSession): NormalizedClass {
     instructor: session.teacher
       ? `${session.teacher.firstName} ${session.teacher.lastName}`.trim()
       : '',
-    style: detectStyle(session.name),
-    level: detectLevel(session.name),
+    style: detectStyleFromName(session.name),
+    level: detectLevelFromName(session.name),
     rawStartsAt: session.startsAt,
     description: session.description || '',
     duration: durationMinutes > 0 ? durationMinutes : 60, // Default 60 min if invalid

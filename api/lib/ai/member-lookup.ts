@@ -14,6 +14,7 @@
 
 import type { Redis } from '@upstash/redis';
 import { Buffer } from 'node:buffer';
+import { detectStyleFromName } from '../../../constants/style-mappings.js';
 
 // ============================================================================
 // TYPES
@@ -51,6 +52,19 @@ export interface MemberBooking {
   date: string;
   instructorName?: string;
   canCancel: boolean;
+}
+
+export interface UpcomingSession {
+  id: number;
+  name: string;
+  startsAt: string;
+  date: string; // formatted: "10 ene"
+  time: string; // formatted: "19:00"
+  dayOfWeek: string; // "Lunes"
+  spotsAvailable: number;
+  isFull: boolean;
+  instructor: string;
+  style: string;
 }
 
 // Internal type for Momence API response
@@ -594,6 +608,113 @@ export class MemberLookupService {
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
     }
   }
+
+  /**
+   * Fetch upcoming sessions/classes from Momence
+   * Used to answer real-time schedule questions
+   *
+   * @param styleFilter - Optional style filter (e.g., "bachata", "salsa")
+   * @param daysAhead - Number of days to look ahead (default: 7)
+   * @returns Array of upcoming sessions
+   */
+  async fetchUpcomingSessions(
+    styleFilter?: string,
+    daysAhead: number = 7
+  ): Promise<UpcomingSession[]> {
+    try {
+      const token = await this.getMomenceToken();
+      if (!token) {
+        console.warn('[member-lookup] No Momence token for sessions fetch');
+        return [];
+      }
+
+      const now = new Date();
+      const futureLimit = new Date(now.getTime() + daysAhead * 24 * 60 * 60 * 1000);
+
+      // Use Momence API with date filtering
+      const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+      url.searchParams.set('page', '0');
+      url.searchParams.set('pageSize', '100');
+      url.searchParams.set('startAfter', now.toISOString());
+      url.searchParams.set('startBefore', futureLimit.toISOString());
+      url.searchParams.set('sortBy', 'startsAt');
+      url.searchParams.set('sortOrder', 'ASC');
+
+      const response = await fetch(url.toString(), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        console.warn(`[member-lookup] Sessions API returned ${response.status}`);
+        return [];
+      }
+
+      const data = await response.json();
+      const sessions = data.payload || [];
+
+      // Normalize and optionally filter
+      const normalized: UpcomingSession[] = sessions.map(
+        (s: {
+          id: number;
+          name: string;
+          startsAt: string;
+          capacity: number;
+          bookingCount: number;
+          teacher?: { firstName?: string; lastName?: string };
+        }) => {
+          const startDate = new Date(s.startsAt);
+          const dayFormatter = new Intl.DateTimeFormat('es-ES', {
+            weekday: 'long',
+            timeZone: 'Europe/Madrid',
+          });
+          const dayNameRaw = dayFormatter.format(startDate);
+          const dayOfWeek = dayNameRaw.charAt(0).toUpperCase() + dayNameRaw.slice(1);
+
+          return {
+            id: s.id,
+            name: s.name,
+            startsAt: s.startsAt,
+            date: startDate.toLocaleDateString('es-ES', {
+              day: 'numeric',
+              month: 'short',
+              timeZone: 'Europe/Madrid',
+            }),
+            time: startDate.toLocaleTimeString('es-ES', {
+              hour: '2-digit',
+              minute: '2-digit',
+              timeZone: 'Europe/Madrid',
+            }),
+            dayOfWeek,
+            spotsAvailable: Math.max(0, s.capacity - s.bookingCount),
+            isFull: s.bookingCount >= s.capacity,
+            instructor: s.teacher
+              ? `${s.teacher.firstName || ''} ${s.teacher.lastName || ''}`.trim()
+              : '',
+            style: detectStyleFromName(s.name),
+          };
+        }
+      );
+
+      // Filter by style if provided
+      if (styleFilter) {
+        const lowerFilter = styleFilter.toLowerCase();
+        return normalized.filter(
+          s => s.style === lowerFilter || s.name.toLowerCase().includes(lowerFilter)
+        );
+      }
+
+      return normalized;
+    } catch (error) {
+      console.error('[member-lookup] Sessions fetch error:', error);
+      return [];
+    }
+  }
+
+  // Style detection moved to constants/style-mappings.ts for consistency
+  // Now uses detectStyleFromName() with 30+ styles
 
   /**
    * Get Momence access token
