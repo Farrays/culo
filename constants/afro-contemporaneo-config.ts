@@ -110,6 +110,11 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
       aspectRatio: '9:16', // Formato vertical (Reel)
       thumbnailUrl:
         'https://vz-3d56a778-175.b-cdn.net/9f2604a0-fed7-4133-bc56-dc1e8cfe95fa/thumbnail_94c0fef4.jpg',
+      // SEO: Campos para VideoObject schema (Google Video indexing)
+      description:
+        'Afro Contemporáneo en Barcelona. Fusión única de danza africana y contemporánea. Movimientos orgánicos y expresión emocional.',
+      uploadDate: '2024-08-05',
+      duration: 'PT1M25S', // 1 min 25 sec
     },
   },
 

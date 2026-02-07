@@ -112,6 +112,11 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
       aspectRatio: '9:16', // Formato vertical (Reel)
       thumbnailUrl:
         'https://vz-3d56a778-175.b-cdn.net/75a74b09-277f-493f-b142-8a84df33a487/thumbnail_3b4401bc.jpg',
+      // SEO: Campos para VideoObject schema (Google Video indexing)
+      description:
+        'Danza Contemporánea en Barcelona. Explora la expresión corporal, floorwork y técnicas modernas con coreógrafos profesionales.',
+      uploadDate: '2024-04-25',
+      duration: 'PT1M30S', // 1 min 30 sec
     },
   },
 

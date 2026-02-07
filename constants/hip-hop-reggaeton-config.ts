@@ -110,6 +110,11 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
       aspectRatio: '9:16', // Formato vertical (Reel)
       thumbnailUrl:
         'https://vz-3d56a778-175.b-cdn.net/49199a2f-c69d-4be0-935e-66bf22cfe077/thumbnail.jpg',
+      // SEO: Campos para VideoObject schema (Google Video indexing)
+      description:
+        'Fusión de Hip Hop y Reggaeton en Barcelona. Coreografías explosivas con los hits más actuales para todos los niveles.',
+      uploadDate: '2024-07-10',
+      duration: 'PT1M20S', // 1 min 20 sec
     },
     // YouTube video (renders after Bunny video)
     videos: [

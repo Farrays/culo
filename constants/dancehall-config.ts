@@ -120,6 +120,11 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
       aspectRatio: '9:16', // Formato vertical (Reel)
       thumbnailUrl:
         'https://vz-3d56a778-175.b-cdn.net/ee68f627-8330-41aa-b1a8-5307a8400fc6/thumbnail.jpg',
+      // SEO: Campos para VideoObject schema (Google Video indexing)
+      description:
+        'Aprende Dancehall en Barcelona con profesoras certificadas. Movimientos auténticos jamaicanos, ambiente vibrante y clases para todos los niveles.',
+      uploadDate: '2024-06-15',
+      duration: 'PT1M15S', // 1 min 15 sec
     },
   },
 

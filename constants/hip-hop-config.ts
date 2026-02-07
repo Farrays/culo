@@ -108,6 +108,11 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
       aspectRatio: '9:16', // Formato vertical (Reel)
       thumbnailUrl:
         'https://vz-3d56a778-175.b-cdn.net/54f2f015-18db-4535-b520-1c8cedde36b9/thumbnail.jpg',
+      // SEO: Campos para VideoObject schema (Google Video indexing)
+      description:
+        'Clases de Hip Hop en Barcelona con coreógrafos profesionales. Aprende técnica, freestyle y coreografías actuales.',
+      uploadDate: '2024-05-20',
+      duration: 'PT1M10S', // 1 min 10 sec
     },
   },
 

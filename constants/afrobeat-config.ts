@@ -109,6 +109,11 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
       aspectRatio: '9:16',
       thumbnailUrl:
         'https://vz-3d56a778-175.b-cdn.net/44f53623-e523-4f22-a19d-dffff0cc26c0/thumbnail_7f0a80d5.jpg',
+      // SEO: Campos para VideoObject schema (Google Video indexing)
+      description:
+        'Clases de Afrobeats en Barcelona. Ritmos africanos, coreografías energéticas y ambiente festivo para todos los niveles.',
+      uploadDate: '2024-09-12',
+      duration: 'PT1M18S', // 1 min 18 sec
     },
     // YouTube videos (appear after Bunny video)
     videos: [
