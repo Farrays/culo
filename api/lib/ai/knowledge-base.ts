@@ -2040,3 +2040,476 @@ ${registration.currentPromo === 0 ? 'Matrícula: GRATIS (antes ' + registration.
 ¡Y la primera clase es GRATIS para probar!`;
   }
 }
+
+// ============================================================================
+// HARDCODED RESPONSES - NO AI, 100% RELIABLE
+// ============================================================================
+
+type HardcodedResponseType = 'prices' | 'location' | 'contact' | 'hours' | 'transport' | null;
+
+/**
+ * Detect if user is asking about something we can answer with hardcoded response
+ * Returns the type of question or null if not detected
+ */
+export function detectHardcodedQuestion(text: string): HardcodedResponseType {
+  const lowerText = text.toLowerCase();
+
+  // PRICES - highest priority
+  const priceKeywords = [
+    'precio',
+    'precios',
+    'cuanto cuesta',
+    'cuánto cuesta',
+    'que cuesta',
+    'qué cuesta',
+    'cuanto vale',
+    'cuánto vale',
+    'cuanto es',
+    'cuánto es',
+    'tarifa',
+    'tarifas',
+    'coste',
+    'costes',
+    'mensualidad',
+    'cuota',
+    'cuotas',
+    'bono',
+    'bonos',
+    'pack',
+    'packs',
+    'abono',
+    'suscripcion',
+    'suscripción',
+    'membership',
+    'price',
+    'cost',
+    'how much',
+    'preu',
+    'preus',
+    'prix',
+  ];
+  if (priceKeywords.some(kw => lowerText.includes(kw))) {
+    return 'prices';
+  }
+
+  // LOCATION
+  const locationKeywords = [
+    'donde esta',
+    'dónde está',
+    'donde queda',
+    'dónde queda',
+    'direccion',
+    'dirección',
+    'ubicacion',
+    'ubicación',
+    'address',
+    'where is',
+    'where are you',
+    'on és',
+    'où est',
+    'adresse',
+  ];
+  if (locationKeywords.some(kw => lowerText.includes(kw))) {
+    return 'location';
+  }
+
+  // TRANSPORT
+  const transportKeywords = [
+    'como llegar',
+    'cómo llegar',
+    'como llego',
+    'cómo llego',
+    'metro',
+    'tren',
+    'bus',
+    'autobus',
+    'autobús',
+    'parking',
+    'aparcar',
+    'how to get',
+    'how do i get',
+    'transport',
+    'com arribar',
+    'comment arriver',
+  ];
+  if (transportKeywords.some(kw => lowerText.includes(kw))) {
+    return 'transport';
+  }
+
+  // CONTACT
+  const contactKeywords = [
+    'telefono',
+    'teléfono',
+    'numero',
+    'número',
+    'whatsapp',
+    'email',
+    'correo',
+    'contacto',
+    'contactar',
+    'llamar',
+    'phone',
+    'contact',
+    'call',
+    'telèfon',
+    'téléphone',
+  ];
+  if (contactKeywords.some(kw => lowerText.includes(kw))) {
+    return 'contact';
+  }
+
+  // CENTER HOURS
+  const hoursKeywords = [
+    'horario del centro',
+    'horario de la escuela',
+    'horario de la academia',
+    'a que hora abren',
+    'a qué hora abren',
+    'cuando abren',
+    'cuándo abren',
+    'cuando cierran',
+    'cuándo cierran',
+    'opening hours',
+    'when do you open',
+    'horari del centre',
+    "heures d'ouverture",
+  ];
+  if (hoursKeywords.some(kw => lowerText.includes(kw))) {
+    return 'hours';
+  }
+
+  return null;
+}
+
+/**
+ * Get hardcoded response - 100% reliable, no AI hallucinations
+ */
+export function getHardcodedResponse(
+  type: HardcodedResponseType,
+  lang: SupportedLanguage
+): string | null {
+  if (!type) return null;
+
+  const { memberships, dropIn, registration, flexiblePacks, privateClasses } = PRICING;
+
+  switch (type) {
+    case 'prices':
+      if (lang === 'ca') {
+        return `💰 *PREUS FARRAY'S CENTER*
+
+📋 *Quotes Mensuals (Regular):*
+• 1h/setmana → ${memberships.oneClassPerWeek.price}€/mes
+• 2h/setmana → ${memberships.twoClassesPerWeek.price}€/mes ⭐ Popular
+• 3h/setmana → ${memberships.threeClassesPerWeek.price}€/mes
+• 4h/setmana → ${memberships.fourClassesPerWeek.price}€/mes
+• 5h/setmana → ${memberships.fiveClassesPerWeek.price}€/mes
+• Il·limitat → ${memberships.unlimited.price}€/mes
+
+🎫 *Participació Puntual (sense ser soci):*
+• 1h regular: ${dropIn.regular1h}€
+• 1.5h regular: ${dropIn.regular1_5h}€
+
+📦 *Bonos Flexibles:*
+• 10 activitats: ${flexiblePacks.bono10_1h.price}€ (6 mesos)
+• 20 activitats: ${flexiblePacks.bono20_1h.price}€ (12 mesos)
+
+💎 *Classes Privades:*
+• 1 sessió: ${privateClasses.single}€
+• Pack 5: ${privateClasses.pack5}€ (60€/sessió)
+
+📝 *Inscripció:* ${registration.currentPromo === 0 ? 'GRATIS! (abans ' + registration.normal + '€)' : registration.normal + '€'}
+
+🎁 *Primera classe GRATIS per provar!*
+
+Vols reservar la teva classe de benvinguda? 💃`;
+      } else if (lang === 'en') {
+        return `💰 *FARRAY'S CENTER PRICES*
+
+📋 *Monthly Memberships (Regular):*
+• 1h/week → ${memberships.oneClassPerWeek.price}€/month
+• 2h/week → ${memberships.twoClassesPerWeek.price}€/month ⭐ Popular
+• 3h/week → ${memberships.threeClassesPerWeek.price}€/month
+• 4h/week → ${memberships.fourClassesPerWeek.price}€/month
+• 5h/week → ${memberships.fiveClassesPerWeek.price}€/month
+• Unlimited → ${memberships.unlimited.price}€/month
+
+🎫 *Drop-in (no membership):*
+• 1h regular: ${dropIn.regular1h}€
+• 1.5h regular: ${dropIn.regular1_5h}€
+
+📦 *Flexible Packs:*
+• 10 activities: ${flexiblePacks.bono10_1h.price}€ (6 months)
+• 20 activities: ${flexiblePacks.bono20_1h.price}€ (12 months)
+
+💎 *Private Classes:*
+• 1 session: ${privateClasses.single}€
+• Pack of 5: ${privateClasses.pack5}€ (60€/session)
+
+📝 *Registration:* ${registration.currentPromo === 0 ? 'FREE! (normally ' + registration.normal + '€)' : registration.normal + '€'}
+
+🎁 *First class FREE to try!*
+
+Want to book your welcome class? 💃`;
+      } else if (lang === 'fr') {
+        return `💰 *PRIX FARRAY'S CENTER*
+
+📋 *Abonnements Mensuels (Régulier):*
+• 1h/semaine → ${memberships.oneClassPerWeek.price}€/mois
+• 2h/semaine → ${memberships.twoClassesPerWeek.price}€/mois ⭐ Populaire
+• 3h/semaine → ${memberships.threeClassesPerWeek.price}€/mois
+• 4h/semaine → ${memberships.fourClassesPerWeek.price}€/mois
+• 5h/semaine → ${memberships.fiveClassesPerWeek.price}€/mois
+• Illimité → ${memberships.unlimited.price}€/mois
+
+🎫 *Cours à l'unité (sans abonnement):*
+• 1h régulier: ${dropIn.regular1h}€
+• 1.5h régulier: ${dropIn.regular1_5h}€
+
+📦 *Packs Flexibles:*
+• 10 activités: ${flexiblePacks.bono10_1h.price}€ (6 mois)
+• 20 activités: ${flexiblePacks.bono20_1h.price}€ (12 mois)
+
+💎 *Cours Privés:*
+• 1 séance: ${privateClasses.single}€
+• Pack 5: ${privateClasses.pack5}€ (60€/séance)
+
+📝 *Inscription:* ${registration.currentPromo === 0 ? 'GRATUIT! (avant ' + registration.normal + '€)' : registration.normal + '€'}
+
+🎁 *Premier cours GRATUIT pour essayer!*
+
+Tu veux réserver ton cours de bienvenue? 💃`;
+      } else {
+        // Spanish (default)
+        return `💰 *PRECIOS FARRAY'S CENTER*
+
+📋 *Cuotas Mensuales (Regular):*
+• 1h/semana → ${memberships.oneClassPerWeek.price}€/mes
+• 2h/semana → ${memberships.twoClassesPerWeek.price}€/mes ⭐ Popular
+• 3h/semana → ${memberships.threeClassesPerWeek.price}€/mes
+• 4h/semana → ${memberships.fourClassesPerWeek.price}€/mes
+• 5h/semana → ${memberships.fiveClassesPerWeek.price}€/mes
+• Ilimitado → ${memberships.unlimited.price}€/mes
+
+🎫 *Participación Puntual (sin ser socio):*
+• 1h regular: ${dropIn.regular1h}€
+• 1.5h regular: ${dropIn.regular1_5h}€
+
+📦 *Bonos Flexibles:*
+• 10 actividades: ${flexiblePacks.bono10_1h.price}€ (6 meses)
+• 20 actividades: ${flexiblePacks.bono20_1h.price}€ (12 meses)
+
+💎 *Clases Privadas:*
+• 1 sesión: ${privateClasses.single}€
+• Pack 5: ${privateClasses.pack5}€ (60€/sesión)
+
+📝 *Inscripción:* ${registration.currentPromo === 0 ? '¡GRATIS! (antes ' + registration.normal + '€)' : registration.normal + '€'}
+
+🎁 *¡Primera clase GRATIS para probar!*
+
+¿Quieres reservar tu clase de bienvenida? 💃`;
+      }
+
+    case 'location':
+      if (lang === 'ca') {
+        return `📍 *ON SOM*
+
+${CENTER_INFO.name}
+${CENTER_INFO.address}
+${CENTER_INFO.postalCode} ${CENTER_INFO.city}
+
+🗺️ Barri: ${CENTER_INFO.neighborhood}
+
+📍 Google Maps: ${CENTER_INFO.googleMaps}
+
+Vols que t'expliqui com arribar? 🚇`;
+      } else if (lang === 'en') {
+        return `📍 *WHERE WE ARE*
+
+${CENTER_INFO.name}
+${CENTER_INFO.address}
+${CENTER_INFO.postalCode} ${CENTER_INFO.city}
+
+🗺️ Neighborhood: ${CENTER_INFO.neighborhood}
+
+📍 Google Maps: ${CENTER_INFO.googleMaps}
+
+Want me to explain how to get here? 🚇`;
+      } else if (lang === 'fr') {
+        return `📍 *OÙ NOUS SOMMES*
+
+${CENTER_INFO.name}
+${CENTER_INFO.address}
+${CENTER_INFO.postalCode} ${CENTER_INFO.city}
+
+🗺️ Quartier: ${CENTER_INFO.neighborhood}
+
+📍 Google Maps: ${CENTER_INFO.googleMaps}
+
+Tu veux que je t'explique comment venir? 🚇`;
+      } else {
+        return `📍 *DÓNDE ESTAMOS*
+
+${CENTER_INFO.name}
+${CENTER_INFO.address}
+${CENTER_INFO.postalCode} ${CENTER_INFO.city}
+
+🗺️ Barrio: ${CENTER_INFO.neighborhood}
+
+📍 Google Maps: ${CENTER_INFO.googleMaps}
+
+¿Quieres que te explique cómo llegar? 🚇`;
+      }
+
+    case 'transport':
+      if (lang === 'ca') {
+        return `🚇 *COM ARRIBAR*
+
+*Metro:*
+• L1 (vermella) - Rocafort → 4 min caminant
+• L5 (blava) - Entença → 5 min caminant
+
+*Tren:*
+• Sants Estació → 8 min caminant
+
+*Bus:*
+• Línies 41, 54, H8
+
+📍 ${CENTER_INFO.address}
+🗺️ ${CENTER_INFO.googleMaps}`;
+      } else if (lang === 'en') {
+        return `🚇 *HOW TO GET HERE*
+
+*Metro:*
+• L1 (red) - Rocafort → 4 min walk
+• L5 (blue) - Entença → 5 min walk
+
+*Train:*
+• Sants Estació → 8 min walk
+
+*Bus:*
+• Lines 41, 54, H8
+
+📍 ${CENTER_INFO.address}
+🗺️ ${CENTER_INFO.googleMaps}`;
+      } else if (lang === 'fr') {
+        return `🚇 *COMMENT VENIR*
+
+*Métro:*
+• L1 (rouge) - Rocafort → 4 min à pied
+• L5 (bleue) - Entença → 5 min à pied
+
+*Train:*
+• Sants Estació → 8 min à pied
+
+*Bus:*
+• Lignes 41, 54, H8
+
+📍 ${CENTER_INFO.address}
+🗺️ ${CENTER_INFO.googleMaps}`;
+      } else {
+        return `🚇 *CÓMO LLEGAR*
+
+*Metro:*
+• L1 (roja) - Rocafort → 4 min andando
+• L5 (azul) - Entença → 5 min andando
+
+*Tren:*
+• Sants Estació → 8 min andando
+
+*Bus:*
+• Líneas 41, 54, H8
+
+📍 ${CENTER_INFO.address}
+🗺️ ${CENTER_INFO.googleMaps}`;
+      }
+
+    case 'contact':
+      if (lang === 'ca') {
+        return `📞 *CONTACTE*
+
+📱 WhatsApp: ${CENTER_INFO.phone}
+📧 Email: ${CENTER_INFO.email}
+🌐 Web: ${CENTER_INFO.website}
+
+Estic aquí per ajudar-te! 😊`;
+      } else if (lang === 'en') {
+        return `📞 *CONTACT*
+
+📱 WhatsApp: ${CENTER_INFO.phone}
+📧 Email: ${CENTER_INFO.email}
+🌐 Web: ${CENTER_INFO.website}
+
+I'm here to help! 😊`;
+      } else if (lang === 'fr') {
+        return `📞 *CONTACT*
+
+📱 WhatsApp: ${CENTER_INFO.phone}
+📧 Email: ${CENTER_INFO.email}
+🌐 Web: ${CENTER_INFO.website}
+
+Je suis là pour t'aider! 😊`;
+      } else {
+        return `📞 *CONTACTO*
+
+📱 WhatsApp: ${CENTER_INFO.phone}
+📧 Email: ${CENTER_INFO.email}
+🌐 Web: ${CENTER_INFO.website}
+
+¡Estoy aquí para ayudarte! 😊`;
+      }
+
+    case 'hours':
+      if (lang === 'ca') {
+        return `🕐 *HORARI DEL CENTRE*
+
+• Dilluns: ${CENTER_INFO.hours.monday}
+• Dimarts: ${CENTER_INFO.hours.tuesday}
+• Dimecres: ${CENTER_INFO.hours.wednesday}
+• Dijous: ${CENTER_INFO.hours.thursday}
+• Divendres: ${CENTER_INFO.hours.friday}
+• Dissabte: ${CENTER_INFO.hours.saturday}
+• Diumenge: ${CENTER_INFO.hours.sunday}
+
+📍 ${CENTER_INFO.address}`;
+      } else if (lang === 'en') {
+        return `🕐 *CENTER HOURS*
+
+• Monday: ${CENTER_INFO.hours.monday}
+• Tuesday: ${CENTER_INFO.hours.tuesday}
+• Wednesday: ${CENTER_INFO.hours.wednesday}
+• Thursday: ${CENTER_INFO.hours.thursday}
+• Friday: ${CENTER_INFO.hours.friday}
+• Saturday: ${CENTER_INFO.hours.saturday}
+• Sunday: ${CENTER_INFO.hours.sunday}
+
+📍 ${CENTER_INFO.address}`;
+      } else if (lang === 'fr') {
+        return `🕐 *HORAIRES DU CENTRE*
+
+• Lundi: ${CENTER_INFO.hours.monday}
+• Mardi: ${CENTER_INFO.hours.tuesday}
+• Mercredi: ${CENTER_INFO.hours.wednesday}
+• Jeudi: ${CENTER_INFO.hours.thursday}
+• Vendredi: ${CENTER_INFO.hours.friday}
+• Samedi: ${CENTER_INFO.hours.saturday}
+• Dimanche: ${CENTER_INFO.hours.sunday}
+
+📍 ${CENTER_INFO.address}`;
+      } else {
+        return `🕐 *HORARIO DEL CENTRO*
+
+• Lunes: ${CENTER_INFO.hours.monday}
+• Martes: ${CENTER_INFO.hours.tuesday}
+• Miércoles: ${CENTER_INFO.hours.wednesday}
+• Jueves: ${CENTER_INFO.hours.thursday}
+• Viernes: ${CENTER_INFO.hours.friday}
+• Sábado: ${CENTER_INFO.hours.saturday}
+• Domingo: ${CENTER_INFO.hours.sunday}
+
+📍 ${CENTER_INFO.address}`;
+      }
+
+    default:
+      return null;
+  }
+}

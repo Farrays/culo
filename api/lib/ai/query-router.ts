@@ -1,16 +1,11 @@
 /**
- * Query Router - Hybrid Haiku/Sonnet Architecture
+ * Query Router - Sonnet Only Architecture (Reliability First)
  *
- * This module implements intelligent routing of user queries to the appropriate
- * Claude model based on query complexity:
+ * This module handles query routing and context building for AI responses.
+ * Uses Claude Sonnet only for maximum reliability - no hallucinations.
  *
- * - Haiku (80%): Simple FAQs, greetings, schedule queries, booking intents
- * - Sonnet (20%): Complex comparisons, multi-topic queries, nuanced questions
- *
- * Benefits:
- * - Cost reduction: Haiku is ~10x cheaper than Sonnet
- * - Speed improvement: Haiku responses are ~2x faster
- * - Quality maintained: Sonnet used when reasoning is needed
+ * Critical info (prices, location, contact) is handled by hardcoded responses
+ * in knowledge-base.ts - NO AI involved for those.
  *
  * @see ENTERPRISE_AGENT_PLAN.md - Fase 2
  */
@@ -35,9 +30,8 @@ import { getAgentMetrics } from './agent-metrics.js';
 // CONSTANTS
 // ============================================================================
 
-// Claude models
-const MODEL_HAIKU = 'claude-3-haiku-20240307'; // Fast, cheap (~$0.25/1M tokens)
-const MODEL_SONNET = 'claude-3-5-sonnet-20241022'; // Smart (~$3/1M tokens)
+// Claude models - SONNET ONLY for reliability (user request)
+const MODEL_SONNET = 'claude-3-5-sonnet-20241022'; // Smart, reliable (~$3/1M tokens)
 
 // ============================================================================
 // TYPES
@@ -215,7 +209,7 @@ export class QueryRouter {
     additionalContext?: string
   ): Promise<string> {
     const startTime = Date.now();
-    const model = route.model === 'haiku' ? MODEL_HAIKU : MODEL_SONNET;
+    const model = MODEL_SONNET; // Always use Sonnet for reliability
 
     // Build context
     let context = route.context || '';
@@ -243,7 +237,7 @@ export class QueryRouter {
     try {
       const response = await this.anthropic.messages.create({
         model,
-        max_tokens: route.model === 'haiku' ? 400 : 600,
+        max_tokens: 500, // Sonnet only
         system: systemPrompt,
         messages,
       });
@@ -256,20 +250,7 @@ export class QueryRouter {
       const textBlock = response.content.find(b => b.type === 'text');
       return textBlock?.type === 'text' ? textBlock.text : '';
     } catch (error) {
-      console.error(`[query-router] ${route.model} API error:`, error);
-
-      // Fallback: if Sonnet fails, try Haiku
-      if (route.model === 'sonnet') {
-        console.log('[query-router] Falling back to Haiku');
-        return this.generateResponse(
-          text,
-          lang,
-          { ...route, model: 'haiku' },
-          conversationHistory,
-          additionalContext
-        );
-      }
-
+      console.error(`[query-router] Sonnet API error:`, error);
       throw error;
     }
   }

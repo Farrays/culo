@@ -25,6 +25,8 @@ import {
   getTransition,
   randomChoice,
   AGENT_PHRASES,
+  detectHardcodedQuestion,
+  getHardcodedResponse,
 } from './knowledge-base.js';
 import {
   BookingFlow,
@@ -111,7 +113,8 @@ const CONVERSATION_KEY_PREFIX = 'agent:conv:';
 const MAX_CONTEXT_MESSAGES = 10;
 
 // Claude models
-const MODEL_FAST = 'claude-3-haiku-20240307';
+// Claude models - SONNET ONLY for reliability (user request)
+const MODEL_SONNET = 'claude-3-5-sonnet-20241022';
 
 // ============================================================================
 // SCHEDULE QUERY DETECTION
@@ -473,8 +476,20 @@ export class SalesAgent {
       conversation.bookingState = undefined;
     }
 
-    // Handle schedule queries with real-time data (highest priority after booking flow)
-    if (scheduleQuery.isScheduleQuery) {
+    // HIGHEST PRIORITY: Check for hardcoded responses (100% reliable, no AI)
+    // This bypasses ALL AI for critical info: prices, location, contact, hours, transport
+    const hardcodedType = detectHardcodedQuestion(text);
+    const hardcodedResponse = hardcodedType
+      ? getHardcodedResponse(hardcodedType, detectedLang)
+      : null;
+
+    if (hardcodedResponse && !inBookingFlow) {
+      // Use hardcoded response - NO AI involved
+      console.log(`[agent] Hardcoded response: ${hardcodedType}`);
+      responseText = hardcodedResponse;
+      conversation.intent = 'info';
+    } else if (scheduleQuery.isScheduleQuery) {
+      // Handle schedule queries with real-time data from Momence
       console.log(`[agent] Schedule query detected: style=${scheduleQuery.styleFilter}`);
       responseText = await this.handleScheduleQuery(conversation, scheduleQuery);
       conversation.intent = 'info';
@@ -1365,11 +1380,9 @@ export class SalesAgent {
   }
 
   /**
-   * Generate response using Claude AI with hybrid model selection
+   * Generate response using Claude AI
    *
-   * Uses Query Router to decide between:
-   * - Haiku (80%): Simple FAQs, greetings, basic info
-   * - Sonnet (20%): Complex comparisons, multi-topic queries
+   * Uses Sonnet only for reliability (no hallucinations)
    */
   private async generateAIResponse(
     conversation: ConversationState,
@@ -1427,15 +1440,15 @@ INSTRUCCIONES ESPECIALES:
     } catch (error) {
       console.error('[agent] Query Router error:', error);
 
-      // Fallback to direct Haiku call
-      return this.generateDirectHaikuResponse(conversation);
+      // Fallback to direct Sonnet call
+      return this.generateDirectSonnetResponse(conversation);
     }
   }
 
   /**
-   * Fallback: Direct Haiku response without router
+   * Fallback: Direct Sonnet response without router
    */
-  private async generateDirectHaikuResponse(conversation: ConversationState): Promise<string> {
+  private async generateDirectSonnetResponse(conversation: ConversationState): Promise<string> {
     const lang = conversation.language;
     const contextMessages = conversation.messages.slice(-MAX_CONTEXT_MESSAGES);
     const conversationContext = contextMessages
@@ -1459,7 +1472,7 @@ INSTRUCCIONES ESPECIALES:
 
     try {
       const response = await this.anthropic.messages.create({
-        model: MODEL_FAST,
+        model: MODEL_SONNET,
         max_tokens: 500,
         system: getSystemPrompt(lang, conversationContext, memberContext),
         messages,
@@ -1472,7 +1485,7 @@ INSTRUCCIONES ESPECIALES:
 
       return this.getFallbackResponse(lang);
     } catch (error) {
-      console.error('[agent] Direct Haiku error:', error);
+      console.error('[agent] Direct Sonnet error:', error);
       return this.getFallbackResponse(lang);
     }
   }
