@@ -513,7 +513,7 @@ export interface FichajeConfirmacionData {
 export async function sendFichajeEntradaWhatsApp(
   data: FichajeEntradaData
 ): Promise<WhatsAppResult> {
-  return sendTemplate('fichaje_entrada1', data.to, 'es_ES', [
+  return sendTemplate('fichaje_entrada1', data.to, 'es', [
     {
       type: 'body',
       parameters: [
@@ -531,7 +531,7 @@ export async function sendFichajeEntradaWhatsApp(
  * Mensaje: "Hola {{1}}, tu turno en Farray's Center ha terminado."
  */
 export async function sendFichajeSalidaWhatsApp(data: FichajeSalidaData): Promise<WhatsAppResult> {
-  return sendTemplate('fichaje_salida', data.to, 'es_ES', [
+  return sendTemplate('fichaje_salida', data.to, 'es', [
     {
       type: 'body',
       parameters: [{ type: 'text', text: data.nombreProfesor }],
