@@ -137,6 +137,7 @@ const MyBookingPage = lazy(() => import('./components/pages/MyBookingPage'));
 
 // ===== FICHAJE PAGE (PWA interna para profesores) =====
 const FichajePage = lazy(() => import('./components/fichaje/FichajePage'));
+const ResumenFirmaPage = lazy(() => import('./components/fichaje/ResumenFirmaPage'));
 
 // ===== ADMIN FICHAJES (Dashboard de gestión de fichajes) =====
 const FichajesAdminPage = lazy(() => import('./components/admin/FichajesAdminPage'));
@@ -151,7 +152,7 @@ const AsistenciaConfirmadaPage = lazy(() => import('./components/AsistenciaConfi
 // ===== HAZTE SOCIO PAGE (Landing pura - sin header/footer) =====
 const HazteSocioPage = lazy(() => import('./components/pages/HazteSocioPage'));
 
-// ===== YR PROJECT PAGE (Linktree-style page - sin header/footer) =====
+// ===== Y&R PROJECT PAGE (Linktree-style - sin header/footer) =====
 const YRProjectPage = lazy(() => import('./components/pages/YRProjectPage'));
 
 // ===== LEGAL PAGES =====
@@ -318,8 +319,8 @@ const AppContent: React.FC = () => {
   // Hazte socio page without header/footer (landing pura for maximum conversion)
   const isHazteSocioPage = location.pathname.includes('/hazte-socio');
 
-  // YR Project page without header/footer (Linktree-style standalone page)
-  const isYRProjectPage = location.pathname === '/yr-project';
+  // Y&R Project page without header/footer (Linktree-style artist page)
+  const isYRProjectPage = location.pathname.includes('/yr-project');
 
   // Combined check for hiding header/footer
   const hideHeaderFooter =
@@ -816,6 +817,9 @@ const AppContent: React.FC = () => {
               }
             />
 
+            {/* ===== Y&R PROJECT (Linktree-style artist page - sin header/footer) ===== */}
+            <Route path="/yr-project" element={<YRProjectPage />} />
+
             {/* ===== FICHAJE (PWA interna para profesores - sin header/footer) ===== */}
             <Route
               path="/:locale/fichaje"
@@ -823,6 +827,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <FichajePage />
+                </>
+              }
+            />
+
+            {/* ===== RESUMEN FIRMA (Firma digital de resumen mensual) ===== */}
+            <Route
+              path="/:locale/fichaje/resumen/:token"
+              element={
+                <>
+                  <LocaleSync />
+                  <ResumenFirmaPage />
                 </>
               }
             />

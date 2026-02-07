@@ -8,7 +8,7 @@
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import AnimateOnScroll from '../AnimateOnScroll';
-import { InstagramIcon, WhatsAppIcon } from '../../lib/icons';
+import { EnvelopeIcon, WhatsAppIcon } from '../../lib/icons';
 
 // Link configuration
 const LINKS = [
@@ -20,10 +20,10 @@ const LINKS = [
     isPrimary: true,
   },
   {
-    id: 'instagram',
-    href: 'https://www.instagram.com/yr.project/',
-    label: '@yr.project',
-    icon: InstagramIcon,
+    id: 'email',
+    href: 'mailto:yrproject2026@gmail.com?subject=Contacto%20Y%26R%20Project',
+    label: 'Enviar Email',
+    icon: EnvelopeIcon,
     isPrimary: false,
   },
 ];

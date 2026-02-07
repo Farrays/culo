@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+// Note: Buffer is a Node.js global available in Vercel serverless functions
+
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import {
   getSupabaseAdmin,
@@ -51,6 +54,7 @@ interface MomenceSession {
   startsAt: string;
   endsAt: string;
   teacher?: MomenceTeacher;
+  additionalTeachers?: MomenceTeacher[]; // Profesores asistentes
 }
 
 interface BloqueClases {
@@ -68,10 +72,23 @@ interface CronResult {
   profesores: number;
   clases: number;
   bloques: number;
+  turnosStaff: number;
   notificacionesEntrada: number;
   notificacionesSalida: number;
   fichajesCreados: number;
+  fichajesCancelados: number;
   errores: string[];
+}
+
+// Turno de staff (recepción, etc.)
+interface TurnoStaff {
+  id: string;
+  empleado_id: string;
+  dia_semana: number;
+  hora_inicio: string;
+  hora_fin: string;
+  nombre_turno: string;
+  activo: boolean;
 }
 
 // ============================================================================
@@ -95,15 +112,17 @@ async function getMomenceToken(): Promise<string> {
     throw new Error('Missing Momence credentials');
   }
 
+  // Use Basic Auth header like clases.ts does (not body params)
+  const basicAuth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+
   const response = await fetch(MOMENCE_AUTH_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${basicAuth}`,
     },
     body: new URLSearchParams({
       grant_type: 'password',
-      client_id: clientId,
-      client_secret: clientSecret,
       username,
       password,
     }),
@@ -147,6 +166,7 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
     },
   });
 
@@ -254,6 +274,71 @@ function crearBloque(clases: MomenceSession[], profesor: Profesor): BloqueClases
 }
 
 // ============================================================================
+// SINCRONIZACIÓN DE CLASES CANCELADAS
+// ============================================================================
+
+/**
+ * Detecta fichajes pendientes cuya clase ya no existe en Momence y los marca como cancelados.
+ * Esto ocurre cuando una clase se cancela en Momence después de crear el fichaje.
+ *
+ * @param supabase - Cliente Supabase
+ * @param fecha - Fecha actual (YYYY-MM-DD)
+ * @param clasesActivasMomence - Set con IDs de clases activas en Momence
+ * @returns Número de fichajes marcados como cancelados
+ */
+interface FichajePendiente {
+  id: string;
+  clase_momence_id: number | null;
+  clase_nombre: string;
+  profesor_id: string;
+}
+
+async function sincronizarClasesCanceladas(
+  supabase: ReturnType<typeof getSupabaseAdmin>,
+  fecha: string,
+  clasesActivasMomence: Set<number>
+): Promise<number> {
+  // Obtener fichajes pendientes de hoy que tienen clase_momence_id
+  const { data: fichajesPendientesData } = await supabase
+    .from('fichajes')
+    .select('id, clase_momence_id, clase_nombre, profesor_id')
+    .eq('fecha', fecha)
+    .eq('estado', 'pendiente')
+    .not('clase_momence_id', 'is', null);
+
+  const fichajesPendientes = fichajesPendientesData as FichajePendiente[] | null;
+
+  if (!fichajesPendientes || fichajesPendientes.length === 0) {
+    return 0;
+  }
+
+  let cancelados = 0;
+
+  for (const fichaje of fichajesPendientes) {
+    // Si la clase ya no existe en Momence, marcar como cancelada
+    if (fichaje.clase_momence_id && !clasesActivasMomence.has(fichaje.clase_momence_id)) {
+      const { error } = await supabase
+        .from('fichajes')
+        // @ts-expect-error - Supabase types are dynamic
+        .update({
+          estado: 'clase_cancelada',
+          motivo_edicion: 'Clase cancelada en Momence - sincronización automática',
+        })
+        .eq('id', fichaje.id);
+
+      if (!error) {
+        cancelados++;
+        console.log(
+          `[cron-fichaje] Fichaje ${fichaje.id} marcado como cancelado (clase ${fichaje.clase_nombre})`
+        );
+      }
+    }
+  }
+
+  return cancelados;
+}
+
+// ============================================================================
 // MAIN HANDLER
 // ============================================================================
 
@@ -270,9 +355,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     profesores: 0,
     clases: 0,
     bloques: 0,
+    turnosStaff: 0,
     notificacionesEntrada: 0,
     notificacionesSalida: 0,
     fichajesCreados: 0,
+    fichajesCancelados: 0,
     errores: [],
   };
 
@@ -322,82 +409,270 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const sesiones = await getMomenceSessionsToday();
     result.clases = sesiones.length;
 
-    if (sesiones.length === 0) {
-      res.status(200).json({ ...result, message: 'No hay clases hoy' });
-      return;
-    }
+    // Crear Set de IDs de clases activas en Momence para sincronización
+    const clasesActivasMomence = new Set<number>(sesiones.map(s => s.id));
 
-    // 4. Agrupar clases por profesor
-    const clasesPorProfesor = new Map<string, MomenceSession[]>();
+    // 3b. Sincronizar clases canceladas - marcar fichajes huérfanos
+    const fichajesCancelados = await sincronizarClasesCanceladas(
+      supabase,
+      result.fecha,
+      clasesActivasMomence
+    );
+    result.fichajesCancelados = fichajesCancelados;
 
-    for (const sesion of sesiones) {
-      if (!sesion.teacher) continue;
-
-      const nombreInstructor = `${sesion.teacher.firstName} ${sesion.teacher.lastName}`
-        .toLowerCase()
-        .trim();
-
-      // Buscar profesor por nombre
-      const profesor = profesorPorNombre.get(nombreInstructor);
-      if (!profesor) {
-        // Intentar match parcial
-        let found = false;
-        for (const [nombre, p] of profesorPorNombre) {
-          if (nombreInstructor.includes(nombre) || nombre.includes(nombreInstructor)) {
-            const lista = clasesPorProfesor.get(p.id) || [];
-            lista.push(sesion);
-            clasesPorProfesor.set(p.id, lista);
-            found = true;
-            break;
-          }
-        }
-        if (!found) {
-          // Profesor no registrado en el sistema
-          continue;
-        }
-      } else {
-        const lista = clasesPorProfesor.get(profesor.id) || [];
-        lista.push(sesion);
-        clasesPorProfesor.set(profesor.id, lista);
-      }
-    }
-
-    // 5. Procesar cada profesor
+    // Calcular hora actual para verificar ventanas de notificación
     const horaActual = getHoraAhoraEspana();
     const minutosActuales = horaAMinutos(horaActual);
 
-    for (const [profesorId, clases] of clasesPorProfesor) {
-      const profesor = profesores.find(p => p.id === profesorId);
-      if (!profesor) continue;
+    // 4. Agrupar clases por profesor (solo si hay clases de Momence)
+    // INCLUYE profesor principal + additionalTeachers (asistentes)
+    if (sesiones.length > 0) {
+      const clasesPorProfesor = new Map<string, MomenceSession[]>();
 
-      // Agrupar en bloques
-      const bloques = agruparEnBloques(clases, profesor, configuracion.umbral_pausa_minutos);
+      // Función helper para asignar sesión a un profesor
+      const asignarSesionAProfesor = (teacher: MomenceTeacher, sesion: MomenceSession) => {
+        const nombreInstructor = `${teacher.firstName} ${teacher.lastName}`.toLowerCase().trim();
 
-      result.bloques += bloques.length;
+        // Buscar profesor por nombre exacto
+        let profesor = profesorPorNombre.get(nombreInstructor);
 
-      for (const bloque of bloques) {
-        const nombreClases = bloque.clases.map(c => c.name);
+        // Si no encontrado, intentar match parcial
+        if (!profesor) {
+          for (const [nombre, p] of profesorPorNombre) {
+            if (nombreInstructor.includes(nombre) || nombre.includes(nombreInstructor)) {
+              profesor = p;
+              break;
+            }
+          }
+        }
 
-        // 5a. Crear fichaje pendiente si no existe
-        const { data: fichajeExistente } = await supabase
+        if (profesor) {
+          const lista = clasesPorProfesor.get(profesor.id) || [];
+          // Evitar duplicados (misma sesión ya asignada)
+          if (!lista.some(s => s.id === sesion.id)) {
+            lista.push(sesion);
+            clasesPorProfesor.set(profesor.id, lista);
+          }
+        }
+      };
+
+      for (const sesion of sesiones) {
+        // Procesar profesor principal
+        if (sesion.teacher) {
+          asignarSesionAProfesor(sesion.teacher, sesion);
+        }
+
+        // Procesar profesores asistentes (additionalTeachers)
+        if (sesion.additionalTeachers && sesion.additionalTeachers.length > 0) {
+          for (const asistente of sesion.additionalTeachers) {
+            asignarSesionAProfesor(asistente, sesion);
+          }
+        }
+      }
+
+      // 5. Procesar cada profesor
+      for (const [profesorId, clases] of clasesPorProfesor) {
+        const profesor = profesores.find(p => p.id === profesorId);
+        if (!profesor) continue;
+
+        // Agrupar en bloques
+        const bloques = agruparEnBloques(clases, profesor, configuracion.umbral_pausa_minutos);
+
+        result.bloques += bloques.length;
+
+        for (const bloque of bloques) {
+          const nombreClases = bloque.clases.map(c => c.name);
+
+          // 5a. Crear fichaje pendiente si no existe
+          const { data: fichajeExistente } = await supabase
+            .from('fichajes')
+            .select('id, estado')
+            .eq('profesor_id', profesor.id)
+            .eq('fecha', result.fecha)
+            .eq('hora_inicio', bloque.horaInicio + ':00')
+            .single();
+
+          if (!fichajeExistente) {
+            // Crear fichaje pendiente
+            const primeraClase = bloque.clases[0];
+
+            const { error: insertError } = await supabase.from('fichajes').insert({
+              profesor_id: profesor.id,
+              clase_momence_id: primeraClase?.id ?? null,
+              clase_nombre: nombreClases.join(' + '),
+              fecha: result.fecha,
+              hora_inicio: bloque.horaInicio + ':00',
+              hora_fin: bloque.horaFin + ':00',
+              estado: 'pendiente',
+              modalidad: 'presencial',
+              tipo_horas: 'ordinarias',
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } as any);
+
+            if (!insertError) {
+              result.fichajesCreados++;
+            } else {
+              result.errores.push(
+                `Error creando fichaje para ${profesor.nombre}: ${insertError.message}`
+              );
+            }
+          }
+
+          // 5b. Enviar WhatsApp de entrada X minutos antes
+          const minutosParaEntrada = bloque.minutoInicio - configuracion.minutos_antes_clase;
+          const ventanaEntrada = 5; // Enviar si estamos en ventana de 5 min
+
+          if (
+            minutosActuales >= minutosParaEntrada &&
+            minutosActuales < minutosParaEntrada + ventanaEntrada
+          ) {
+            // Verificar si ya se envió (usando estado del fichaje o campo específico)
+            const { data: fichajeData } = await supabase
+              .from('fichajes')
+              .select('id, estado, whatsapp_msg_id_entrada')
+              .eq('profesor_id', profesor.id)
+              .eq('fecha', result.fecha)
+              .eq('hora_inicio', bloque.horaInicio + ':00')
+              .single();
+            const fichaje = fichajeData as {
+              id: string;
+              estado: string;
+              whatsapp_msg_id_entrada: string | null;
+            } | null;
+
+            if (fichaje && !fichaje.whatsapp_msg_id_entrada && isWhatsAppConfigured()) {
+              const waResult = await sendFichajeEntradaWhatsApp({
+                to: profesor.telefono_whatsapp,
+                nombreProfesor: profesor.nombre,
+                clases: nombreClases,
+                horaInicio: bloque.horaInicio,
+              });
+
+              if (waResult.success) {
+                result.notificacionesEntrada++;
+                // Marcar que se envió
+                await supabase
+                  .from('fichajes')
+                  // @ts-expect-error - Supabase types are dynamic
+                  .update({ whatsapp_msg_id_entrada: waResult.messageId || 'sent' })
+                  .eq('id', fichaje.id);
+              } else {
+                result.errores.push(`Error WhatsApp entrada ${profesor.nombre}: ${waResult.error}`);
+              }
+            }
+          }
+
+          // 5c. Enviar WhatsApp de salida al terminar el bloque
+          const minutosParaSalida = bloque.minutoFin + configuracion.minutos_despues_clase;
+          const ventanaSalida = 5;
+
+          if (
+            minutosActuales >= minutosParaSalida &&
+            minutosActuales < minutosParaSalida + ventanaSalida
+          ) {
+            const { data: fichajeSalidaData } = await supabase
+              .from('fichajes')
+              .select('id, estado, whatsapp_msg_id_salida')
+              .eq('profesor_id', profesor.id)
+              .eq('fecha', result.fecha)
+              .eq('hora_inicio', bloque.horaInicio + ':00')
+              .single();
+            const fichajeSalida = fichajeSalidaData as {
+              id: string;
+              estado: string;
+              whatsapp_msg_id_salida: string | null;
+            } | null;
+
+            if (
+              fichajeSalida &&
+              fichajeSalida.estado === 'entrada_registrada' &&
+              !fichajeSalida.whatsapp_msg_id_salida &&
+              isWhatsAppConfigured()
+            ) {
+              // Buscar si hay siguiente bloque
+              const bloquesProfesor = bloques;
+              const idxActual = bloquesProfesor.findIndex(b => b.horaInicio === bloque.horaInicio);
+              const siguienteBloque = bloquesProfesor[idxActual + 1];
+
+              const waResult = await sendFichajeSalidaWhatsApp({
+                to: profesor.telefono_whatsapp,
+                nombreProfesor: profesor.nombre,
+                clases: nombreClases,
+                siguienteBloqueHora: siguienteBloque?.horaInicio,
+              });
+
+              if (waResult.success) {
+                result.notificacionesSalida++;
+                await supabase
+                  .from('fichajes')
+                  // @ts-expect-error - Supabase types are dynamic
+                  .update({ whatsapp_msg_id_salida: waResult.messageId || 'sent' })
+                  .eq('id', fichajeSalida.id);
+              } else {
+                result.errores.push(`Error WhatsApp salida ${profesor.nombre}: ${waResult.error}`);
+              }
+            }
+          }
+        }
+      }
+    } // Fin del if (sesiones.length > 0)
+
+    // =====================================================================
+    // 6. PROCESAR TURNOS DE STAFF (horarios fijos, no clases de Momence)
+    // =====================================================================
+
+    // Obtener día de la semana actual en timezone España (0=Domingo, 1=Lunes, etc.)
+    const fechaEspanaStr = new Date().toLocaleString('en-US', { timeZone: SPAIN_TIMEZONE });
+    const fechaEspana = new Date(fechaEspanaStr);
+    const diaSemana = fechaEspana.getDay(); // 0=domingo, 1=lunes, ... 6=sábado
+
+    // Obtener turnos de staff para hoy
+    const { data: turnosHoyData } = await supabase
+      .from('turnos_staff')
+      .select('*, profesores!inner(id, nombre, apellidos, telefono_whatsapp, activo)')
+      .eq('dia_semana', diaSemana)
+      .eq('activo', true);
+
+    const turnosHoy = turnosHoyData as
+      | (TurnoStaff & {
+          profesores: {
+            id: string;
+            nombre: string;
+            apellidos: string;
+            telefono_whatsapp: string;
+            activo: boolean;
+          };
+        })[]
+      | null;
+
+    if (turnosHoy && turnosHoy.length > 0) {
+      result.turnosStaff = turnosHoy.length;
+
+      for (const turno of turnosHoy) {
+        if (!turno.profesores.activo) continue;
+
+        const horaInicioTurno = turno.hora_inicio.substring(0, 5); // HH:MM
+        const horaFinTurno = turno.hora_fin.substring(0, 5);
+        const minutoInicioTurno = horaAMinutos(horaInicioTurno);
+        const minutoFinTurno = horaAMinutos(horaFinTurno);
+
+        // 6a. Crear fichaje pendiente si no existe
+        const { data: fichajeStaffExistente } = await supabase
           .from('fichajes')
           .select('id, estado')
-          .eq('profesor_id', profesor.id)
+          .eq('profesor_id', turno.empleado_id)
           .eq('fecha', result.fecha)
-          .eq('hora_inicio', bloque.horaInicio + ':00')
+          .eq('hora_inicio', horaInicioTurno + ':00')
           .single();
 
-        if (!fichajeExistente) {
-          // Crear fichaje pendiente
-          const primeraClase = bloque.clases[0];
-
+        if (!fichajeStaffExistente) {
           const { error: insertError } = await supabase.from('fichajes').insert({
-            profesor_id: profesor.id,
-            clase_momence_id: primeraClase?.id ?? null,
-            clase_nombre: nombreClases.join(' + '),
+            profesor_id: turno.empleado_id,
+            clase_momence_id: null,
+            clase_nombre: turno.nombre_turno,
             fecha: result.fecha,
-            hora_inicio: bloque.horaInicio + ':00',
-            hora_fin: bloque.horaFin + ':00',
+            hora_inicio: horaInicioTurno + ':00',
+            hora_fin: horaFinTurno + ':00',
             estado: 'pendiente',
             modalidad: 'presencial',
             tipo_horas: 'ordinarias',
@@ -408,92 +683,87 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             result.fichajesCreados++;
           } else {
             result.errores.push(
-              `Error creando fichaje para ${profesor.nombre}: ${insertError.message}`
+              `Error creando fichaje staff para ${turno.profesores.nombre}: ${insertError.message}`
             );
           }
         }
 
-        // 5b. Enviar WhatsApp de entrada X minutos antes
-        const minutosParaEntrada = bloque.minutoInicio - configuracion.minutos_antes_clase;
-        const ventanaEntrada = 5; // Enviar si estamos en ventana de 5 min
+        // 6b. Enviar WhatsApp de entrada X minutos antes
+        const minutosParaEntradaStaff = minutoInicioTurno - configuracion.minutos_antes_clase;
 
         if (
-          minutosActuales >= minutosParaEntrada &&
-          minutosActuales < minutosParaEntrada + ventanaEntrada
+          minutosActuales >= minutosParaEntradaStaff &&
+          minutosActuales < minutosParaEntradaStaff + 5
         ) {
-          // Verificar si ya se envió (usando estado del fichaje o campo específico)
-          const { data: fichajeData } = await supabase
+          const { data: fichajeStaffData } = await supabase
             .from('fichajes')
             .select('id, estado, whatsapp_msg_id_entrada')
-            .eq('profesor_id', profesor.id)
+            .eq('profesor_id', turno.empleado_id)
             .eq('fecha', result.fecha)
-            .eq('hora_inicio', bloque.horaInicio + ':00')
+            .eq('hora_inicio', horaInicioTurno + ':00')
             .single();
-          const fichaje = fichajeData as {
+
+          const fichajeStaff = fichajeStaffData as {
             id: string;
             estado: string;
             whatsapp_msg_id_entrada: string | null;
           } | null;
 
-          if (fichaje && !fichaje.whatsapp_msg_id_entrada && isWhatsAppConfigured()) {
+          if (fichajeStaff && !fichajeStaff.whatsapp_msg_id_entrada && isWhatsAppConfigured()) {
             const waResult = await sendFichajeEntradaWhatsApp({
-              to: profesor.telefono_whatsapp,
-              nombreProfesor: profesor.nombre,
-              clases: nombreClases,
-              horaInicio: bloque.horaInicio,
+              to: turno.profesores.telefono_whatsapp,
+              nombreProfesor: turno.profesores.nombre,
+              clases: [turno.nombre_turno],
+              horaInicio: horaInicioTurno,
             });
 
             if (waResult.success) {
               result.notificacionesEntrada++;
-              // Marcar que se envió
               await supabase
                 .from('fichajes')
                 // @ts-expect-error - Supabase types are dynamic
                 .update({ whatsapp_msg_id_entrada: waResult.messageId || 'sent' })
-                .eq('id', fichaje.id);
+                .eq('id', fichajeStaff.id);
             } else {
-              result.errores.push(`Error WhatsApp entrada ${profesor.nombre}: ${waResult.error}`);
+              result.errores.push(
+                `Error WhatsApp entrada staff ${turno.profesores.nombre}: ${waResult.error}`
+              );
             }
           }
         }
 
-        // 5c. Enviar WhatsApp de salida al terminar el bloque
-        const minutosParaSalida = bloque.minutoFin + configuracion.minutos_despues_clase;
-        const ventanaSalida = 5;
+        // 6c. Enviar WhatsApp de salida al terminar turno
+        const minutosParaSalidaStaff = minutoFinTurno + configuracion.minutos_despues_clase;
 
         if (
-          minutosActuales >= minutosParaSalida &&
-          minutosActuales < minutosParaSalida + ventanaSalida
+          minutosActuales >= minutosParaSalidaStaff &&
+          minutosActuales < minutosParaSalidaStaff + 5
         ) {
-          const { data: fichajeSalidaData } = await supabase
+          const { data: fichajeSalidaStaffData } = await supabase
             .from('fichajes')
             .select('id, estado, whatsapp_msg_id_salida')
-            .eq('profesor_id', profesor.id)
+            .eq('profesor_id', turno.empleado_id)
             .eq('fecha', result.fecha)
-            .eq('hora_inicio', bloque.horaInicio + ':00')
+            .eq('hora_inicio', horaInicioTurno + ':00')
             .single();
-          const fichajeSalida = fichajeSalidaData as {
+
+          const fichajeSalidaStaff = fichajeSalidaStaffData as {
             id: string;
             estado: string;
             whatsapp_msg_id_salida: string | null;
           } | null;
 
           if (
-            fichajeSalida &&
-            fichajeSalida.estado === 'entrada_registrada' &&
-            !fichajeSalida.whatsapp_msg_id_salida &&
+            fichajeSalidaStaff &&
+            fichajeSalidaStaff.estado === 'entrada_registrada' &&
+            !fichajeSalidaStaff.whatsapp_msg_id_salida &&
             isWhatsAppConfigured()
           ) {
-            // Buscar si hay siguiente bloque
-            const bloquesProfesor = bloques;
-            const idxActual = bloquesProfesor.findIndex(b => b.horaInicio === bloque.horaInicio);
-            const siguienteBloque = bloquesProfesor[idxActual + 1];
-
             const waResult = await sendFichajeSalidaWhatsApp({
-              to: profesor.telefono_whatsapp,
-              nombreProfesor: profesor.nombre,
-              clases: nombreClases,
-              siguienteBloqueHora: siguienteBloque?.horaInicio,
+              to: turno.profesores.telefono_whatsapp,
+              nombreProfesor: turno.profesores.nombre,
+              clases: [turno.nombre_turno],
+              siguienteBloqueHora: undefined,
             });
 
             if (waResult.success) {
@@ -502,9 +772,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
                 .from('fichajes')
                 // @ts-expect-error - Supabase types are dynamic
                 .update({ whatsapp_msg_id_salida: waResult.messageId || 'sent' })
-                .eq('id', fichajeSalida.id);
+                .eq('id', fichajeSalidaStaff.id);
             } else {
-              result.errores.push(`Error WhatsApp salida ${profesor.nombre}: ${waResult.error}`);
+              result.errores.push(
+                `Error WhatsApp salida staff ${turno.profesores.nombre}: ${waResult.error}`
+              );
             }
           }
         }

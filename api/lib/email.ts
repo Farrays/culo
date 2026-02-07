@@ -1297,6 +1297,49 @@ export function isEmailConfigured(): boolean {
 }
 
 // ============================================================================
+// GENERIC EMAIL (for fichaje system)
+// ============================================================================
+
+export interface GenericEmailData {
+  to: string;
+  subject: string;
+  html: string;
+}
+
+/**
+ * Envía un email genérico usando Resend
+ * Usado por el sistema de fichaje para resúmenes mensuales y confirmaciones de firma
+ */
+export async function sendEmail(
+  data: GenericEmailData
+): Promise<{ success: boolean; id?: string; error?: string }> {
+  const resend = getResend();
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: data.to,
+      replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
+      subject: data.subject,
+      html: data.html,
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+
+    return { success: true, id: result.data?.id };
+  } catch (error) {
+    console.error('[sendEmail] Error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
+// ============================================================================
 // SYSTEM ALERTS
 // ============================================================================
 

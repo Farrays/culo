@@ -506,7 +506,9 @@ export interface FichajeConfirmacionData {
 
 /**
  * Envía notificación de fichaje de entrada
- * Plantilla: fichaje_entrada (crear en Meta Business)
+ * Plantilla: fichaje_entrada
+ * Variables: {{1}}=nombre, {{2}}=hora
+ * Mensaje: "Hola {{1}}, tu turno en Farray's Center empieza a las {{2}}h."
  */
 export async function sendFichajeEntradaWhatsApp(
   data: FichajeEntradaData
@@ -517,7 +519,6 @@ export async function sendFichajeEntradaWhatsApp(
       parameters: [
         { type: 'text', text: data.nombreProfesor },
         { type: 'text', text: data.horaInicio },
-        { type: 'text', text: data.clases.join(', ') },
       ],
     },
   ]);
@@ -525,21 +526,15 @@ export async function sendFichajeEntradaWhatsApp(
 
 /**
  * Envía notificación de fichaje de salida
- * Plantilla: fichaje_salida (crear en Meta Business)
+ * Plantilla: fichaje_salida
+ * Variables: {{1}}=nombre
+ * Mensaje: "Hola {{1}}, tu turno en Farray's Center ha terminado."
  */
 export async function sendFichajeSalidaWhatsApp(data: FichajeSalidaData): Promise<WhatsAppResult> {
-  const siguienteInfo = data.siguienteBloqueHora
-    ? `Tienes pausa hasta las ${data.siguienteBloqueHora}.`
-    : '';
-
   return sendTemplate('fichaje_salida', data.to, 'es_ES', [
     {
       type: 'body',
-      parameters: [
-        { type: 'text', text: data.nombreProfesor },
-        { type: 'text', text: data.clases.join(', ') },
-        { type: 'text', text: siguienteInfo },
-      ],
+      parameters: [{ type: 'text', text: data.nombreProfesor }],
     },
   ]);
 }
@@ -574,13 +569,11 @@ export async function sendFichajeConfirmacionWhatsApp(
 
 /**
  * Payloads de respuesta de fichaje para el webhook
+ * Simplificado: un botón por acción (entrada/salida)
  */
 export const FICHAJE_PAYLOADS = {
   ENTRADA: 'FICHAJE_ENTRADA',
-  EN_CAMINO: 'FICHAJE_EN_CAMINO',
   SALIDA: 'FICHAJE_SALIDA',
-  EXTENDER: 'FICHAJE_EXTENDER',
-  AUSENCIA: 'FICHAJE_AUSENCIA',
 } as const;
 
 export type FichajePayload = (typeof FICHAJE_PAYLOADS)[keyof typeof FICHAJE_PAYLOADS];

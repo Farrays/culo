@@ -25,6 +25,8 @@ npm-debug.log*
 # Raw images (source files, not needed in repo)
 public/images/**/raw/
 public/images/teachers/raw/
+public/images/nuevos/
+public/images/varios/
 
 # Lighthouse reports
 .lighthouseci/
@@ -59,6 +61,9 @@ api-*.js
 src-components-*.tsx
 *-example.tsx
 *-example.js
+
+.vercel
+.env*.local
 
 .vercel
 .env*.local

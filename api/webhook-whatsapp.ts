@@ -1,7 +1,10 @@
 /* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import Redis from 'ioredis';
+import type { Redis } from '@upstash/redis';
+import { getRedisClient } from './lib/redis.js';
+import { getSupabaseAdmin } from './lib/supabase.js';
+import { processAgentMessage } from './lib/ai/agent.js';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -181,7 +184,7 @@ async function getMomenceAccessToken(redis: Redis): Promise<string | null> {
   // Check cache
   try {
     const cached = await redis.get(MOMENCE_TOKEN_CACHE_KEY);
-    if (cached) return cached;
+    if (cached) return String(cached);
   } catch (e) {
     console.warn('[webhook-whatsapp] Momence token cache lookup failed:', e);
   }
@@ -341,30 +344,6 @@ async function sendTextMessage(
   } catch (error) {
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
-}
-
-// ============================================================================
-// LAZY REDIS (ioredis TCP - same instance as reservar.ts uses)
-// ============================================================================
-
-let redisClient: Redis | null = null;
-
-function getRedisClient(): Redis | null {
-  const redisUrl = process.env['STORAGE_REDIS_URL'];
-
-  if (!redisUrl) {
-    console.error('[webhook-whatsapp] STORAGE_REDIS_URL not configured');
-    return null;
-  }
-
-  if (!redisClient) {
-    redisClient = new Redis(redisUrl, {
-      maxRetriesPerRequest: 1,
-      connectTimeout: 5000,
-      lazyConnect: true,
-    });
-  }
-  return redisClient;
 }
 
 // ============================================================================
@@ -602,12 +581,58 @@ async function processMessage(
       await handleAttendanceConfirmation(phone, 'confirmed');
     } else if (normalizedTitle.includes('no') && normalizedTitle.includes('podr')) {
       await handleAttendanceConfirmation(phone, 'not_attending');
+    } else if (normalizedTitle.includes('fichar') && normalizedTitle.includes('entrada')) {
+      // Fichaje de entrada
+      await handleFichajeButton(phone, 'entrada');
+    } else if (normalizedTitle.includes('fichar') && normalizedTitle.includes('salida')) {
+      // Fichaje de salida
+      await handleFichajeButton(phone, 'salida');
     }
   }
 
-  // Log mensajes de texto (para debugging)
+  // Procesar mensajes de texto con el agente AI
   if (message.type === 'text' && message.text) {
-    console.log(`[webhook-whatsapp] Text message: "${message.text.body}"`);
+    const textBody = message.text.body;
+    console.log(`[webhook-whatsapp] Text message: "${textBody}"`);
+
+    // Process with AI agent
+    try {
+      const redis = getRedisClient();
+
+      console.log(`[webhook-whatsapp] Processing with AI agent...`);
+
+      const response = await processAgentMessage(redis, {
+        phone,
+        text: textBody,
+        contactName,
+        channel: 'whatsapp',
+      });
+
+      console.log(
+        `[webhook-whatsapp] Agent response (${response.language}): "${response.text.substring(0, 100)}..."`
+      );
+
+      // Send response via WhatsApp
+      const sendResult = await sendTextMessage(phone, response.text);
+
+      if (sendResult.success) {
+        console.log(`[webhook-whatsapp] Agent response sent successfully`);
+      } else {
+        console.error(`[webhook-whatsapp] Failed to send agent response:`, sendResult.error);
+      }
+    } catch (agentError) {
+      console.error(`[webhook-whatsapp] Agent processing error:`, agentError);
+
+      // Send fallback message on error
+      try {
+        await sendTextMessage(
+          phone,
+          'Perdona, ha habido un problemilla técnico. ¿Me puedes repetir eso? O si prefieres, llámanos al +34 622 247 085'
+        );
+      } catch (fallbackError) {
+        console.error(`[webhook-whatsapp] Fallback message failed:`, fallbackError);
+      }
+    }
   }
 }
 
@@ -851,6 +876,200 @@ async function handleAttendanceConfirmation(
 }
 
 // ============================================================================
+// FICHAJE DE PROFESORES (Sistema de control horario)
+// ============================================================================
+
+/**
+ * Maneja los botones de fichaje de entrada/salida de profesores
+ * Actualiza Supabase con el timestamp exacto (requisito legal)
+ */
+// Tipos locales para fichaje
+interface ProfesorFichaje {
+  id: string;
+  nombre: string;
+  apellidos: string | null;
+  telefono_whatsapp: string;
+}
+
+interface FichajeRecord {
+  id: string;
+  profesor_id: string;
+  clase_nombre: string;
+  fecha: string;
+  hora_inicio: string | null;
+  hora_fin: string | null;
+  estado: string;
+}
+
+async function handleFichajeButton(phone: string, tipo: 'entrada' | 'salida'): Promise<void> {
+  console.log(`[webhook-whatsapp] handleFichajeButton: phone=${redactPhone(phone)}, tipo=${tipo}`);
+
+  let supabase;
+  try {
+    supabase = getSupabaseAdmin();
+  } catch (error) {
+    console.error('[webhook-whatsapp] Supabase not configured:', error);
+    await sendTextMessage(phone, '❌ Error del sistema. Contacta con administración.');
+    return;
+  }
+
+  // Normalizar teléfono para búsqueda (formato E.164)
+  let normalizedPhone = phone.replace(/[\s\-+]/g, '');
+  if (!normalizedPhone.startsWith('+')) {
+    normalizedPhone = '+' + normalizedPhone;
+  }
+
+  try {
+    // 1. Buscar profesor por teléfono
+    const { data: profesorData, error: profesorError } = await supabase
+      .from('profesores')
+      .select('id, nombre, apellidos, telefono_whatsapp')
+      .or(`telefono_whatsapp.eq.${normalizedPhone},telefono_whatsapp.eq.${phone}`)
+      .eq('activo', true)
+      .single();
+
+    const profesor = profesorData as ProfesorFichaje | null;
+
+    if (profesorError || !profesor) {
+      console.warn(`[webhook-whatsapp] Profesor no encontrado: ${redactPhone(phone)}`);
+      await sendTextMessage(
+        phone,
+        '❓ No encontramos tu perfil de profesor. Contacta con administración.'
+      );
+      return;
+    }
+
+    console.log(`[webhook-whatsapp] Profesor encontrado: ${profesor.nombre}`);
+
+    // 2. Obtener fecha actual en España
+    const fechaHoy = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Madrid' });
+    const horaActual = new Date().toLocaleTimeString('es-ES', {
+      timeZone: 'Europe/Madrid',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    });
+    const timestampActual = new Date().toISOString();
+
+    // 3. Buscar fichaje pendiente para hoy
+    const { data: fichajesData, error: fichajeError } = await supabase
+      .from('fichajes')
+      .select('*')
+      .eq('profesor_id', profesor.id)
+      .eq('fecha', fechaHoy)
+      .in('estado', tipo === 'entrada' ? ['pendiente'] : ['entrada_registrada'])
+      .order('created_at', { ascending: true });
+
+    const fichajes = fichajesData as FichajeRecord[] | null;
+
+    if (fichajeError) {
+      console.error('[webhook-whatsapp] Error buscando fichaje:', fichajeError);
+      await sendTextMessage(phone, '❌ Error al procesar el fichaje. Intenta de nuevo.');
+      return;
+    }
+
+    if (!fichajes || fichajes.length === 0) {
+      console.warn(`[webhook-whatsapp] No hay fichaje pendiente para ${profesor.nombre}`);
+      if (tipo === 'entrada') {
+        await sendTextMessage(
+          phone,
+          `⚠️ ${profesor.nombre}, no tienes clases programadas para hoy o ya fichaste tu entrada.`
+        );
+      } else {
+        await sendTextMessage(
+          phone,
+          `⚠️ ${profesor.nombre}, no hay fichaje de entrada registrado para fichar la salida.`
+        );
+      }
+      return;
+    }
+
+    // Tomar el primer fichaje (el más antiguo del día)
+    const fichaje = fichajes[0];
+    if (!fichaje) {
+      console.warn(`[webhook-whatsapp] Fichaje array vacío para ${profesor.nombre}`);
+      await sendTextMessage(phone, '⚠️ No se encontró fichaje pendiente.');
+      return;
+    }
+    console.log(
+      `[webhook-whatsapp] Fichaje encontrado: ${fichaje.clase_nombre}, estado=${fichaje.estado}`
+    );
+
+    // 4. Actualizar fichaje según tipo
+    if (tipo === 'entrada') {
+      const { error: updateError } = await supabase
+        .from('fichajes')
+        // @ts-expect-error - Supabase types are dynamic
+        .update({
+          hora_inicio: horaActual,
+          timestamp_entrada: timestampActual,
+          metodo_entrada: 'whatsapp',
+          estado: 'entrada_registrada',
+          updated_at: timestampActual,
+        })
+        .eq('id', fichaje.id);
+
+      if (updateError) {
+        console.error('[webhook-whatsapp] Error actualizando fichaje entrada:', updateError);
+        await sendTextMessage(phone, '❌ Error al registrar la entrada. Intenta de nuevo.');
+        return;
+      }
+
+      console.log(`[webhook-whatsapp] Entrada registrada: ${profesor.nombre} a las ${horaActual}`);
+
+      // Mensaje de confirmación
+      await sendTextMessage(
+        phone,
+        `✅ Entrada registrada\n\n👤 ${profesor.nombre}\n📍 Farray's Center\n🕐 ${horaActual}h\n\n¡Buena clase!`
+      );
+    } else {
+      // Calcular minutos trabajados
+      const horaInicio = fichaje.hora_inicio || horaActual;
+      const [hiH = 0, hiM = 0] = horaInicio.split(':').map(Number);
+      const [hfH = 0, hfM = 0] = horaActual.split(':').map(Number);
+      const minutosTrabajados = Math.max(0, hfH * 60 + hfM - (hiH * 60 + hiM));
+
+      const { error: updateError } = await supabase
+        .from('fichajes')
+        // @ts-expect-error - Supabase types are dynamic
+        .update({
+          hora_fin: horaActual,
+          timestamp_salida: timestampActual,
+          metodo_salida: 'whatsapp',
+          estado: 'completado',
+          minutos_trabajados: minutosTrabajados,
+          updated_at: timestampActual,
+        })
+        .eq('id', fichaje.id);
+
+      if (updateError) {
+        console.error('[webhook-whatsapp] Error actualizando fichaje salida:', updateError);
+        await sendTextMessage(phone, '❌ Error al registrar la salida. Intenta de nuevo.');
+        return;
+      }
+
+      // Formatear duración
+      const horas = Math.floor(minutosTrabajados / 60);
+      const mins = minutosTrabajados % 60;
+      const duracion = horas > 0 ? `${horas}h ${mins}min` : `${mins}min`;
+
+      console.log(
+        `[webhook-whatsapp] Salida registrada: ${profesor.nombre} a las ${horaActual} (${duracion})`
+      );
+
+      // Mensaje de confirmación
+      await sendTextMessage(
+        phone,
+        `✅ Salida registrada\n\n👤 ${profesor.nombre}\n📍 Farray's Center\n🕐 Entrada: ${horaInicio}h\n🕐 Salida: ${horaActual}h\n⏱️ Duración: ${duracion}\n\n¡Hasta pronto!`
+      );
+    }
+  } catch (error) {
+    console.error('[webhook-whatsapp] Error en handleFichajeButton:', error);
+    await sendTextMessage(phone, '❌ Error inesperado. Contacta con administración.');
+  }
+}
+
+// ============================================================================
 // BÚSQUEDA DE BOOKING POR TELÉFONO
 // ============================================================================
 
@@ -884,7 +1103,7 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
   let eventId: string | null = null;
   try {
     const result = await redis.get(`phone:${normalizedPhone}`);
-    eventId = result;
+    eventId = result ? String(result) : null;
     console.log(
       `[webhook-whatsapp] phone index result: ${eventId || 'null'} (type: ${typeof eventId})`
     );

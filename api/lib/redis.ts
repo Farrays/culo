@@ -9,6 +9,9 @@
 
 import { Redis } from '@upstash/redis';
 
+// Export Redis type for use in other modules
+export type RedisClient = Redis | null;
+
 // Singleton para reutilizar conexión entre invocaciones
 let redisInstance: Redis | null = null;
 
@@ -211,3 +214,6 @@ export async function hasActiveBooking(email: string): Promise<boolean> {
 
 // Export keys for testing/debugging
 export { KEYS, TTL };
+
+// Alias for compatibility with agent code
+export const getRedisClient = getRedis;

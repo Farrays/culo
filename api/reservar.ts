@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
+import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -335,6 +336,7 @@ async function sendAdminBookingNotification(data: {
   classTime: string;
   category?: ClassCategory;
   sourceUrl?: string;
+  eventId?: string;
 }): Promise<{ success: boolean; error?: string }> {
   const apiKey = process.env['RESEND_API_KEY'];
   if (!apiKey) return { success: false, error: 'Missing RESEND_API_KEY' };
@@ -391,6 +393,13 @@ async function sendAdminBookingNotification(data: {
   ${data.sourceUrl ? `<p style="color: #666; font-size: 12px;">Reserva desde: ${data.sourceUrl}</p>` : ''}
 
   <div style="text-align: center; margin-top: 20px;">
+    ${
+      data.eventId
+        ? `<a href="https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(data.email)}&event=${data.eventId}" style="display: inline-block; background: ${BRAND_PRIMARY}; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
+      Gestionar Reserva
+    </a>`
+        : ''
+    }
     <a href="https://wa.me/${data.phone.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin: 5px;">
       Contactar por WhatsApp
     </a>
@@ -800,10 +809,8 @@ const BOOKING_KEY_PREFIX = 'booking:';
 const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 
-// Rate limiting
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000;
-const RATE_LIMIT_MAX = 3; // 3 reservas por minuto por IP (más estricto)
+// Rate limiting ahora usa Redis (persistente entre cold starts)
+// Configuración: 3 requests/minuto (ver rate-limit-helper.ts)
 
 // Emails que bypasan la deduplicación (admin/testing)
 // Estos emails pueden hacer reservas múltiples sin ser bloqueados
@@ -836,23 +843,6 @@ function getRedisClient(): Redis | null {
     });
   }
   return redisClient;
-}
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-
-  if (record.count >= RATE_LIMIT_MAX) {
-    return true;
-  }
-
-  record.count++;
-  return false;
 }
 
 // ============================================================================
@@ -1057,8 +1047,15 @@ async function createMomenceBooking(
     firstName: string;
     lastName: string;
     phone: string;
-  }
-): Promise<{ success: boolean; bookingId?: number; error?: string; verified?: boolean }> {
+  },
+  redis?: Redis | null
+): Promise<{
+  success: boolean;
+  bookingId?: number;
+  customerId?: number;
+  error?: string;
+  verified?: boolean;
+}> {
   try {
     console.warn(
       '[Momence Booking] Starting for sessionId:',
@@ -1067,17 +1064,60 @@ async function createMomenceBooking(
       redactEmail(customerData.email)
     );
 
-    // Get hostLocationId from env variable or use hardcoded fallback
-    // NOTE: Farray's Center only has ONE location (26485), so no need for complex logic
-    const FARRAY_LOCATION_ID = 26485;
-    const envLocationId = process.env['MOMENCE_LOCATION_ID'];
-    const hostLocationId = envLocationId ? parseInt(envLocationId, 10) : FARRAY_LOCATION_ID;
+    // Get hostLocationId - priority: session API > env variable > hardcoded fallback
+    let hostLocationId: number | null = null;
+    let locationSource: 'session' | 'env' | 'hardcoded' = 'hardcoded';
 
-    console.warn(
-      '[Momence Booking] Location ID:',
-      hostLocationId,
-      envLocationId ? '(from env)' : '(hardcoded fallback)'
-    );
+    // Farray's Center location ID in Momence (from dashboard URL: /locations/26485)
+    // WARNING: This is a last resort fallback - should be configured via MOMENCE_LOCATION_ID env var
+    const FARRAY_LOCATION_ID = 26485;
+
+    // 1. FIRST: Try to get location from the session itself (most accurate)
+    try {
+      const sessionResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (sessionResponse.ok) {
+        const sessionData = await sessionResponse.json();
+        const session = sessionData.payload || sessionData;
+        const sessionLocationId =
+          session.hostLocationId || session.locationId || session.location?.id;
+        if (sessionLocationId && typeof sessionLocationId === 'number') {
+          hostLocationId = sessionLocationId;
+          locationSource = 'session';
+          console.warn('[Momence Booking] ✅ Using location ID from session:', hostLocationId);
+        }
+      }
+    } catch (err) {
+      console.warn('[Momence Booking] Could not fetch session details:', err);
+    }
+
+    // 2. SECOND: Fall back to environment variable
+    if (!hostLocationId) {
+      const envLocationId = process.env['MOMENCE_LOCATION_ID'];
+      if (envLocationId) {
+        hostLocationId = parseInt(envLocationId, 10);
+        locationSource = 'env';
+        console.warn('[Momence Booking] Using MOMENCE_LOCATION_ID from env:', hostLocationId);
+      }
+    }
+
+    // 3. LAST RESORT: Hardcoded fallback (log warning - this should be configured!)
+    if (!hostLocationId) {
+      hostLocationId = FARRAY_LOCATION_ID;
+      locationSource = 'hardcoded';
+      console.warn(
+        '[Momence Booking] ⚠️ WARNING: Using HARDCODED location ID:',
+        hostLocationId,
+        '- Please set MOMENCE_LOCATION_ID env variable!'
+      );
+    }
+
+    console.warn(`[Momence Booking] Location ID: ${hostLocationId} (source: ${locationSource})`);
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
@@ -1274,7 +1314,30 @@ async function createMomenceBooking(
       );
     }
 
-    return { success: true, bookingId, verified: bookingVerified };
+    // Cache member info for future lookups (Fase 5: Detección Usuario Existente)
+    // This allows the WhatsApp agent to recognize returning members
+    if (redis && customerId) {
+      try {
+        const normalizedPhone = normalizePhone(customerData.phone);
+        const cacheKey = `member:phone:${normalizedPhone}`;
+        const memberData = {
+          memberId: customerId,
+          email: customerData.email,
+          firstName: customerData.firstName,
+          lastName: customerData.lastName,
+          phone: normalizedPhone,
+          cachedAt: new Date().toISOString(),
+        };
+        // Cache for 30 days
+        await redis.setex(cacheKey, 30 * 24 * 60 * 60, JSON.stringify(memberData));
+        console.warn('[Momence Booking] ✅ Cached member for phone:', normalizedPhone.slice(-4));
+      } catch (cacheError) {
+        // Non-critical - log and continue
+        console.warn('[Momence Booking] Cache write failed:', cacheError);
+      }
+    }
+
+    return { success: true, bookingId, customerId, verified: bookingVerified };
   } catch (error) {
     console.error('[Momence Booking] Error:', error);
     return { success: false, error: 'Momence API error' };
@@ -1604,7 +1667,7 @@ export default async function handler(
     req.socket?.remoteAddress ||
     'unknown';
 
-  if (isRateLimited(clientIp)) {
+  if (await isRateLimitedRedis('/api/reservar', clientIp)) {
     return res.status(429).json({ error: 'Demasiadas solicitudes. Espera un momento.' });
   }
 
@@ -1836,12 +1899,17 @@ export default async function handler(
       console.warn('[reservar] Got access token:', !!accessToken);
 
       if (accessToken) {
-        momenceResult = await createMomenceBooking(accessToken, parseInt(validatedSessionId), {
-          email: normalizedEmail,
-          firstName: sanitize(firstName),
-          lastName: sanitize(lastName),
-          phone: sanitize(phone),
-        });
+        momenceResult = await createMomenceBooking(
+          accessToken,
+          parseInt(validatedSessionId),
+          {
+            email: normalizedEmail,
+            firstName: sanitize(firstName),
+            lastName: sanitize(lastName),
+            phone: sanitize(phone),
+          },
+          redis // Pass Redis for member caching (Fase 5)
+        );
         console.warn('[reservar] Momence booking result:', momenceResult);
 
         // Update circuit breaker based on result
@@ -2142,6 +2210,7 @@ export default async function handler(
         classTime: classTime || '19:00',
         category,
         sourceUrl: req.headers.referer || req.headers.origin || undefined,
+        eventId: finalEventId,
       });
 
       if (adminResult.success) {
