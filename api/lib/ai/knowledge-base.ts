@@ -76,43 +76,68 @@ export const CENTER_INFO = {
 };
 
 // ============================================================================
-// PRICING
+// PRICING - FUENTE OFICIAL: constants/pricing-data.ts
 // ============================================================================
 
 export const PRICING = {
-  // Monthly memberships
+  // Cuotas mensuales REGULAR (actividades/semana)
   memberships: {
-    oneClassPerWeek: { price: 50, classes: 1 },
-    twoClassesPerWeek: { price: 78, classes: 2, popular: true },
-    threeClassesPerWeek: { price: 103, classes: 3 },
-    unlimited: { price: 130, classes: 'unlimited' },
+    oneClassPerWeek: { price: 50, hoursPerWeek: 1 },
+    twoClassesPerWeek: { price: 78, hoursPerWeek: 2, popular: true },
+    threeClassesPerWeek: { price: 103, hoursPerWeek: 3 },
+    fourClassesPerWeek: { price: 124, hoursPerWeek: 4 },
+    fiveClassesPerWeek: { price: 145, hoursPerWeek: 5 },
+    sixClassesPerWeek: { price: 170, hoursPerWeek: 6 },
+    sevenClassesPerWeek: { price: 195, hoursPerWeek: 7 },
+    unlimited: { price: 300, description: 'Acceso ilimitado a todas las actividades' },
   },
 
-  // Single class
+  // Premium = Regular + 5€/mes (incluye clases con Yunaisy)
+  premiumSupplement: 5,
+
+  // Participación puntual (sin ser socio)
+  dropIn: {
+    regular1h: 20,
+    regular1_5h: 23,
+    premium1h: 22,
+    premium1_5h: 25,
+  },
+
+  // Clase suelta (para compatibilidad)
   singleClass: 20,
 
-  // Registration fee
+  // Cuota de inscripción
   registration: {
     normal: 60,
-    currentPromo: 0, // Currently free!
+    currentPromo: 0, // Actualmente gratis
+    renewalAnnual: 20,
   },
 
-  // Trial class
+  // Clase de bienvenida
   trialClass: {
-    price: 0, // FREE!
-    description: 'Primera clase gratis sin compromiso',
+    price: 0, // GRATIS
+    description: 'Clase de bienvenida sin compromiso',
   },
 
-  // Private classes
+  // Bonos (cuotas de participación flexibles)
+  flexiblePacks: {
+    bono10_1h: { activities: 10, price: 145, validityMonths: 6 },
+    bono10_1_5h: { activities: 10, price: 170, validityMonths: 6 },
+    bono20_1h: { activities: 20, price: 240, validityMonths: 12 },
+    bono20_1_5h: { activities: 20, price: 310, validityMonths: 12 },
+  },
+
+  // Entrenamientos personalizados
   privateClasses: {
-    available: true,
+    single: 70,
+    pack3: 195, // 65€/sesión
+    pack5: 300, // 60€/sesión
     features: [
       'Instructor exclusivo',
       'Horario flexible',
       '25+ estilos disponibles',
       'Método Farray®',
     ],
-    booking: 'Contactar para precios y reservas',
   },
 };
 

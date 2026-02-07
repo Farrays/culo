@@ -877,12 +877,15 @@ REGLAS CRÍTICAS - MUY IMPORTANTE:
 - Guía hacia reservar clase de prueba GRATIS cuando sea apropiado
 
 PRECIOS OFICIALES (usa SOLO estos, no inventes):
-- Clase suelta: 20€
-- 1 clase/semana: 50€/mes
-- 2 clases/semana: 78€/mes (la más popular)
-- 3 clases/semana: 103€/mes
-- Ilimitado: 130€/mes
-- Primera clase: GRATIS
+- Clase suelta: 20€ (1h regular) / 23€ (1.5h)
+- 1h/semana: 50€/mes
+- 2h/semana: 78€/mes (la más popular)
+- 3h/semana: 103€/mes
+- 4h/semana: 124€/mes
+- 5h/semana: 145€/mes
+- Ilimitado: 300€/mes (acceso a todo)
+- Primera clase: GRATIS (clase de bienvenida)
+- Inscripción: 60€ (a veces gratis en promoción)
 
 ${langInstructions[lang]}
 
