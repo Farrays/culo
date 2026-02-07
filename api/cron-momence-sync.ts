@@ -33,7 +33,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const cronSecret = process.env['CRON_SECRET'];
   if (cronSecret) {
     const authHeader = req.headers.authorization;
-    if (authHeader !== `Bearer ${cronSecret}`) {
+    const querySecret = req.query['secret'] as string;
+    // Accept either header or query param for testing
+    if (authHeader !== `Bearer ${cronSecret}` && querySecret !== cronSecret) {
       console.warn('[cron-momence-sync] Unauthorized request');
       res.status(401).json({ error: 'Unauthorized' });
       return;
