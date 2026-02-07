@@ -2672,10 +2672,27 @@ ${preloadHintsHtml}
 });
 
 console.log(`\n🎉 Prerendering complete! Generated ${generatedCount} pages.`);
+
+// ============================================================================
+// COPY 404.html TO ROOT FOR VERCEL (SEO: Real HTTP 404)
+// ============================================================================
+// Vercel automatically serves 404.html with HTTP 404 status for unmatched routes
+// This ensures search engines correctly identify 404 pages
+const source404 = path.join(distPath, 'es/404/index.html');
+const dest404 = path.join(distPath, '404.html');
+
+if (fs.existsSync(source404)) {
+  fs.copyFileSync(source404, dest404);
+  console.log(`\n✅ Created 404.html for Vercel (HTTP 404 real)`);
+} else {
+  console.log(`\n⚠️  Warning: es/404/index.html not found, skipping 404.html creation`);
+}
+
 console.log('\n📊 Summary:');
 console.log(`   - Total pages: ${generatedCount}`);
 console.log(`   - Languages: es, ca, en, fr (4)`);
 console.log(`   - Pages per language: home, baile-barcelona, danza-barcelona, salsa-bachata-barcelona, danzas-urbanas-barcelona, dancehall-barcelona, twerk-barcelona, clases-particulares-baile (8)`);
 console.log(`   - SEO: ✅ Metadata, ✅ hreflang, ✅ Canonical, ✅ Open Graph`);
 console.log(`   - Locale: ✅ Pre-set via localStorage + cookie before React hydration`);
+console.log(`   - 404: ✅ Real HTTP 404 (dist/404.html)`);
 console.log('\n🔍 Verify: Run "npm run preview" and view page source to see prerendered content\n');
