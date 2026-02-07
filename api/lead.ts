@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -56,27 +57,8 @@ const LEAD_KEY_PREFIX = 'lead:';
 // Tipos de estado de lead
 type LeadStatus = 'new' | 'existing';
 
-// Rate limiting simple (en memoria - se resetea en cada cold start)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minuto
-const RATE_LIMIT_MAX = 5; // 5 requests por minuto por IP
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-
-  if (record.count >= RATE_LIMIT_MAX) {
-    return true;
-  }
-
-  record.count++;
-  return false;
-}
+// Rate limiting now uses Redis (persistent across cold starts)
+// See lib/rate-limit-helper.ts for implementation
 
 // Validacion de email
 function isValidEmail(email: string): boolean {
@@ -98,13 +80,13 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Rate limiting
+  // Rate limiting (uses Redis for persistence across cold starts)
   const clientIp =
     (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
     req.socket?.remoteAddress ||
     'unknown';
 
-  if (isRateLimited(clientIp)) {
+  if (await isRateLimitedRedis('/api/lead', clientIp)) {
     return res.status(429).json({ error: 'Too many requests. Please wait a minute.' });
   }
 

@@ -22,7 +22,13 @@ vi.mock('ioredis', () => {
   };
 });
 
+// Mock rate limiter (now uses Redis)
+vi.mock('../lib/rate-limit-helper.js', () => ({
+  isRateLimitedRedis: vi.fn().mockResolvedValue(false),
+}));
+
 import handler from '../lead';
+import { isRateLimitedRedis } from '../lib/rate-limit-helper.js';
 
 // Store original env
 const originalEnv = process.env;
@@ -74,11 +80,7 @@ const validLeadData = {
   acceptsMarketing: true,
 };
 
-// Counter for unique IPs to avoid in-memory rate limiting between tests
-let ipCounter = 0;
-function getUniqueIp(): string {
-  return `10.${Math.floor(ipCounter / 256)}.${ipCounter % 256}.${++ipCounter % 256}`;
-}
+// Rate limiting is now mocked via isRateLimitedRedis
 
 describe('Lead Capture API Endpoint', () => {
   beforeEach(() => {
@@ -106,7 +108,6 @@ describe('Lead Capture API Endpoint', () => {
 
       const req = createMockRequest({
         body: validLeadData,
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -127,7 +128,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should require firstName', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, firstName: '' },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -140,7 +140,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should require lastName', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, lastName: '' },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -153,7 +152,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should require email', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, email: '' },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -166,7 +164,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should require phoneNumber', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, phoneNumber: '' },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -179,7 +176,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should validate email format', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, email: 'invalid-email' },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -200,7 +196,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should require marketing consent', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, acceptsMarketing: false },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
@@ -218,16 +213,25 @@ describe('Lead Capture API Endpoint', () => {
       process.env['MOMENCE_SOURCE_ID'] = '1234';
     });
 
-    it('should allow first request from IP', async () => {
-      const req = createMockRequest({
-        body: validLeadData,
-        headers: { 'x-forwarded-for': '10.0.0.1' },
-      });
+    it('should return 429 when rate limited', async () => {
+      vi.mocked(isRateLimitedRedis).mockResolvedValueOnce(true);
+
+      const req = createMockRequest({ body: validLeadData });
       const res = createMockResponse();
 
       await handler(req, res);
 
-      // Should not be rate limited
+      expect(res.status).toHaveBeenCalledWith(429);
+      expect(res._json).toEqual({ error: 'Too many requests. Please wait a minute.' });
+    });
+
+    it('should allow request when not rate limited', async () => {
+      const req = createMockRequest({ body: validLeadData });
+      const res = createMockResponse();
+
+      await handler(req, res);
+
+      // Should not be rate limited (mock returns false by default)
       expect(res._status).not.toBe(429);
     });
   });
@@ -242,7 +246,6 @@ describe('Lead Capture API Endpoint', () => {
     it('should accept custom sourceId in body', async () => {
       const req = createMockRequest({
         body: { ...validLeadData, sourceId: '9999' },
-        headers: { 'x-forwarded-for': getUniqueIp() },
       });
       const res = createMockResponse();
 
