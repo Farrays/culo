@@ -156,7 +156,8 @@ export class MomenceSyncService {
       if (this.redis) {
         const cached = await this.redis.get(SYNC_TEACHERS_KEY);
         if (cached) {
-          previousTeachers = JSON.parse(cached as string);
+          previousTeachers =
+            typeof cached === 'string' ? JSON.parse(cached) : (cached as SyncedTeacher[]);
         }
       }
 
@@ -229,8 +230,12 @@ export class MomenceSyncService {
         return null;
       }
 
-      const teachers = JSON.parse(teachersRaw as string) as SyncedTeacher[];
-      const styles = JSON.parse(stylesRaw as string) as SyncedStyle[];
+      const teachers =
+        typeof teachersRaw === 'string'
+          ? JSON.parse(teachersRaw)
+          : (teachersRaw as SyncedTeacher[]);
+      const styles =
+        typeof stylesRaw === 'string' ? JSON.parse(stylesRaw) : (stylesRaw as SyncedStyle[]);
 
       // Calculate next sync time
       const lastSyncTime = lastSync ? new Date(lastSync as string) : new Date();

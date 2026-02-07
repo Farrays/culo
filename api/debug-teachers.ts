@@ -18,5 +18,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const redis = new Redis({ url, token });
 
   const teachers = await redis.get('momence:sync:teachers');
-  res.status(200).json({ teachers: JSON.parse(teachers as string) });
+  res
+    .status(200)
+    .json({ teachers: typeof teachers === 'string' ? JSON.parse(teachers) : teachers });
 }
