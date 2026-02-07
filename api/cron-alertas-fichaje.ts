@@ -164,7 +164,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         try {
           await sendTextMessage(
             fichaje.profesor.telefono_whatsapp,
-            `⚠️ Recordatorio de fichaje\n\n${nombreCompleto}, tu clase "${fichaje.clase_nombre}" empezó hace ${minutosTranscurridos} minutos y no hemos recibido tu fichaje de entrada.\n\nSi ya estás en clase, responde "ya llegué" o usa la app de fichaje.`
+            `📋 Recordatorio: ${nombreCompleto}, tu clase "${fichaje.clase_nombre}" empezó hace ${minutosTranscurridos} min.\n\nSi aún no has fichado, pulsa aquí:\nhttps://farrayscenter.com/es/fichaje`
           );
 
           // Marcar alerta enviada
