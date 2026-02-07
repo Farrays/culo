@@ -483,8 +483,13 @@ export class SalesAgent {
       ? getHardcodedResponse(hardcodedType, detectedLang)
       : null;
 
-    if (hardcodedResponse && !inBookingFlow) {
-      // Use hardcoded response - NO AI involved
+    if (hardcodedResponse) {
+      // MÁXIMA PRIORIDAD: Respuestas hardcodeadas SIEMPRE ganan
+      // Si estaba en booking flow, lo cancelamos para dar la info solicitada
+      if (inBookingFlow) {
+        console.log(`[agent] Exiting booking flow for hardcoded response`);
+        conversation.bookingState = undefined;
+      }
       console.log(`[agent] Hardcoded response: ${hardcodedType}`);
       responseText = hardcodedResponse;
       conversation.intent = 'info';
@@ -920,15 +925,27 @@ export class SalesAgent {
       return this.getNoClassesResponse(lang, query.styleFilter);
     }
 
-    // Limit to 8 classes for readability
-    const displaySessions = sessions.slice(0, 8);
-
-    // Group by day for better readability
+    // PRIMERO agrupar por día, LUEGO limitar
+    // Esto asegura que mostramos clases de VARIOS días, no solo el primero
     const byDay: Record<string, UpcomingSession[]> = {};
-    for (const session of displaySessions) {
+    for (const session of sessions) {
       const key = `${session.dayOfWeek} ${session.date}`;
       if (!byDay[key]) byDay[key] = [];
       byDay[key].push(session);
+    }
+
+    // Limitar a máx 3 clases por día y máx 5 días
+    const MAX_CLASSES_PER_DAY = 3;
+    const MAX_DAYS = 5;
+    const dayKeys = Object.keys(byDay).slice(0, MAX_DAYS);
+    for (const key of dayKeys) {
+      byDay[key] = byDay[key].slice(0, MAX_CLASSES_PER_DAY);
+    }
+    // Eliminar días extra
+    for (const key of Object.keys(byDay)) {
+      if (!dayKeys.includes(key)) {
+        delete byDay[key];
+      }
     }
 
     // Build message

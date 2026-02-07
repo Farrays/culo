@@ -261,7 +261,7 @@ export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   sexystyle: ['sexy style', 'sexy-style'],
   femmology: ['femmology', 'femme'],
   heels: ['heels', 'tacones', 'stiletto'],
-  salsa: ['salsa cubana'],
+  salsa: ['salsa', 'salsa cubana', 'casino'],
   timba: ['timba', 'timba cubana'],
   salsaladystyle: ['salsa lady', 'lady style salsa', 'salsa lady timba'],
   bachata: ['bachata', 'bachata sensual', 'bachata lady'],
