@@ -69,7 +69,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   videoId,
   title,
   description = '',
-  uploadDate = '2025-01-01T00:00:00+01:00',
+  uploadDate = '2025-01-01',
   duration = 'PT5M',
   priority = false,
 }) => {

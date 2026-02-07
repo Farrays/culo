@@ -203,6 +203,10 @@ export interface VideoSection {
     title?: string;
     aspectRatio?: '16:9' | '9:16' | '1:1'; // Default: 16:9
     thumbnailUrl?: string; // Custom thumbnail URL from Bunny dashboard
+    // SEO fields for VideoObject schema (Google Video indexing)
+    description?: string; // Video description for schema
+    uploadDate?: string; // ISO 8601 date (e.g., '2024-06-15')
+    duration?: string; // ISO 8601 duration (e.g., 'PT1M30S' = 1 min 30 sec)
   };
 }
 
@@ -927,7 +931,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         thumbnailUrl:
           config.videoSchema.thumbnailUrl ||
           `${baseUrl}/images/classes/${config.stylePath}/video-thumbnail.jpg`,
-        uploadDate: '2025-01-01T00:00:00+01:00',
+        uploadDate: '2025-01-01',
         contentUrl: config.videoSchema.videoId
           ? `https://www.youtube.com/watch?v=${config.videoSchema.videoId}`
           : `${baseUrl}/videos/${config.stylePath}-class-experience.mp4`,
@@ -945,7 +949,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         name: t(config.bunnyVideoSchema.titleKey),
         description: t(config.bunnyVideoSchema.descKey),
         thumbnailUrl: config.bunnyVideoSchema.thumbnailUrl,
-        uploadDate: config.bunnyVideoSchema.uploadDate || '2025-01-01T00:00:00+01:00',
+        uploadDate: config.bunnyVideoSchema.uploadDate || '2025-01-01',
         duration: config.bunnyVideoSchema.duration || 'PT1M',
         contentUrl: `https://iframe.mediadelivery.net/play/${config.bunnyVideoSchema.libraryId}/${config.bunnyVideoSchema.videoId}`,
         embedUrl: `https://iframe.mediadelivery.net/embed/${config.bunnyVideoSchema.libraryId}/${config.bunnyVideoSchema.videoId}`,
@@ -977,12 +981,14 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           '@context': 'https://schema.org',
           '@type': 'VideoObject',
           name: config.videoSection.bunnyVideo.title || t(`${config.styleKey}VideoTitle`),
-          description: t(`${config.styleKey}VideoDesc`),
+          description:
+            config.videoSection.bunnyVideo.description || t(`${config.styleKey}VideoDesc`),
           thumbnailUrl:
             config.videoSection.bunnyVideo.thumbnailUrl ||
             `${baseUrl}/images/classes/${config.stylePath}/video-thumbnail.jpg`,
-          uploadDate: '2025-01-01T00:00:00+01:00',
-          duration: 'PT1M',
+          // Use config values or sensible defaults
+          uploadDate: config.videoSection.bunnyVideo.uploadDate || '2024-01-01',
+          duration: config.videoSection.bunnyVideo.duration || 'PT1M',
           contentUrl: `https://iframe.mediadelivery.net/play/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`,
           embedUrl: `https://iframe.mediadelivery.net/embed/${config.videoSection.bunnyVideo.libraryId}/${config.videoSection.bunnyVideo.videoId}`,
           publisher: {
@@ -995,6 +1001,12 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           },
           inLanguage: locale,
           isAccessibleForFree: true,
+          // Additional recommended fields for better indexing
+          regionsAllowed: 'ES',
+          potentialAction: {
+            '@type': 'WatchAction',
+            target: `${pageUrl}#video`,
+          },
         }
       : null);
 

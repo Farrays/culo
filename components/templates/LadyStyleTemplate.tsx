@@ -550,17 +550,31 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         datePublished: new Date().toISOString(),
       }));
 
-  // VideoObject Schema
-  const videoSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: t(config.video.titleKey),
-    description: t(config.video.descKey),
-    thumbnailUrl: `https://img.youtube.com/vi/${config.video.id}/maxresdefault.jpg`,
-    uploadDate: '2025-01-01T00:00:00+01:00',
-    contentUrl: `https://www.youtube.com/watch?v=${config.video.id}`,
-    embedUrl: `https://www.youtube.com/embed/${config.video.id}`,
-  };
+  // VideoObject Schema - Only generate if video ID is provided
+  const videoSchema = config.video.id
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: t(config.video.titleKey),
+        description: t(config.video.descKey),
+        thumbnailUrl: `https://img.youtube.com/vi/${config.video.id}/maxresdefault.jpg`,
+        uploadDate: '2024-01-01',
+        duration: 'PT2M', // Default 2 minutes for dance class videos
+        contentUrl: `https://www.youtube.com/watch?v=${config.video.id}`,
+        embedUrl: `https://www.youtube.com/embed/${config.video.id}`,
+        publisher: {
+          '@type': 'Organization',
+          name: "Farray's International Dance Center",
+          logo: {
+            '@type': 'ImageObject',
+            url: `${baseUrl}/logo.svg`,
+          },
+        },
+        inLanguage: locale,
+        isAccessibleForFree: true,
+        regionsAllowed: 'ES',
+      }
+    : null;
 
   // Schedule data for CourseSchemaEnterprise
   const courseSchedules = config.schedules.map(schedule => ({
@@ -636,11 +650,13 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         <meta name="twitter:image" content={`${baseUrl}${config.ogImage}`} />
       </Helmet>
 
-      {/* VideoObject Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-      />
+      {/* VideoObject Schema - Only render if video ID is provided */}
+      {videoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      )}
 
       {/* BreadcrumbList Schema */}
       <script

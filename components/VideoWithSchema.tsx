@@ -11,7 +11,7 @@ interface VideoWithSchemaProps {
   description: string;
   /** URL to video thumbnail image */
   thumbnailUrl: string;
-  /** Upload date in ISO 8601 format with timezone (e.g., 2025-01-01T00:00:00+01:00) */
+  /** Upload date in ISO 8601 format (e.g., 2025-01-01) */
   uploadDate: string;
   /** Duration in ISO 8601 format (e.g., PT1M30S = 1 min 30 sec) */
   duration?: string;
@@ -47,7 +47,7 @@ interface VideoWithSchemaProps {
  * @param name - Video title for schema
  * @param description - Video description for schema
  * @param thumbnailUrl - Thumbnail image URL
- * @param uploadDate - Upload date in ISO 8601 with timezone (e.g., 2025-01-01T00:00:00+01:00)
+ * @param uploadDate - Upload date in ISO 8601 format (e.g., 2025-01-01)
  * @param duration - Duration in ISO 8601 (default: PT30S)
  * @param src - Video source URL
  *
@@ -57,7 +57,7 @@ interface VideoWithSchemaProps {
  *   name="Clase de Dancehall en Barcelona"
  *   description="Aprende los movimientos básicos de Dancehall"
  *   thumbnailUrl="https://example.com/thumb.jpg"
- *   uploadDate="2024-01-15T00:00:00+01:00"
+ *   uploadDate="2024-01-15"
  *   duration="PT2M30S"
  *   src="/videos/dancehall-intro.mp4"
  *   poster="/images/dancehall-poster.jpg"
