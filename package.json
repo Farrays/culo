@@ -26,6 +26,8 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
     "test:e2e:report": "playwright show-report",
+    "test:regression": "vitest run api/lib/__tests__/critical-systems.regression.test.ts --reporter=verbose",
+    "test:pre-deploy": "npm run test:regression && npm run test:run && npm run build",
     "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",

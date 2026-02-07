@@ -142,7 +142,7 @@ export default async function handler(
         type: 'template',
         template: {
           name: 'recordatorio_prueba_0',
-          language: { code: 'es' },
+          language: { code: 'es_ES' },
           components: [
             {
               type: 'body',

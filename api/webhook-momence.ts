@@ -1,3 +1,4 @@
+/* global Buffer */
 /**
  * Momence Webhook Handler
  *
@@ -14,10 +15,12 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedisClient } from './lib/redis';
-import { getGroupsManager } from './lib/whapi/groups';
-import { getLabelsManager } from './lib/whapi/labels';
-import { normalizePhone } from './lib/phone-utils';
+import crypto from 'crypto';
+import { getRedisClient } from './lib/redis.js';
+import { getGroupsManager } from './lib/whapi/groups.js';
+import { getLabelsManager } from './lib/whapi/labels.js';
+import { normalizePhone } from './lib/phone-utils.js';
+import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 // ============================================================================
 // TYPES
@@ -73,13 +76,50 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
 
-  // Verify webhook secret (optional but recommended)
+  // ============================================================================
+  // VERIFICACIÓN DE FIRMA - Modo controlado por Feature Flag
+  // Flag OFF (default): AUDIT mode - solo log, no bloquea
+  // Flag ON: ENFORCEMENT mode - bloquea requests sin firma válida
+  // ============================================================================
+
+  const enforcementMode = await isFeatureEnabled(FEATURES.WEBHOOK_ENFORCEMENT);
+  let signatureValid = false;
+
+  // Método 1: Header secreto simple (x-momence-secret)
   const webhookSecret = process.env['MOMENCE_WEBHOOK_SECRET'];
   const providedSecret = req.headers['x-momence-secret'];
 
-  if (webhookSecret && providedSecret !== webhookSecret) {
-    console.warn('[webhook-momence] Invalid webhook secret');
-    res.status(401).json({ error: 'Invalid webhook secret' });
+  if (webhookSecret) {
+    if (providedSecret === webhookSecret) {
+      console.log('[webhook-momence] ✅ Secret header verified');
+      signatureValid = true;
+    } else {
+      console.warn(
+        `[webhook-momence] ⚠️ Secret header mismatch (got: ${providedSecret ? 'present' : 'missing'})`
+      );
+    }
+  } else {
+    console.warn('[webhook-momence] ⚠️ MOMENCE_WEBHOOK_SECRET not configured');
+  }
+
+  // Método 2: HMAC signature (x-momence-signature) - si Momence lo soporta
+  if (!signatureValid) {
+    const signatureResult = verifyMomenceSignature(req);
+    if (signatureResult.valid) {
+      console.log(`[webhook-momence] ✅ HMAC signature verified`);
+      signatureValid = true;
+    } else if (signatureResult.reason !== 'No signature header (not configured by Momence)') {
+      console.warn(`[webhook-momence] ⚠️ Signature verification: ${signatureResult.reason}`);
+    }
+  }
+
+  // ENFORCEMENT MODE: Bloquear si la firma no es válida
+  if (enforcementMode && !signatureValid) {
+    console.error('[webhook-momence] 🚫 ENFORCEMENT: Request blocked - invalid signature');
+    res.status(401).json({
+      error: 'Unauthorized',
+      message: 'Invalid webhook signature',
+    });
     return;
   }
 
@@ -357,4 +397,78 @@ async function handleMemberCreated(
     action: 'member_created',
     details: memberName,
   };
+}
+
+// ============================================================================
+// VERIFICACIÓN DE FIRMA HMAC (Modo Audit - Solo logging, no bloquea)
+// ============================================================================
+
+interface SignatureVerificationResult {
+  valid: boolean;
+  reason: string;
+}
+
+/**
+ * Verifica la firma HMAC del webhook de Momence
+ * MODO AUDIT: Retorna resultado detallado para logging, pero NO bloquea
+ *
+ * Momence puede enviar firma en headers como:
+ * - x-momence-signature
+ * - x-webhook-signature
+ * - x-signature
+ */
+function verifyMomenceSignature(req: VercelRequest): SignatureVerificationResult {
+  const webhookSecret = process.env['MOMENCE_WEBHOOK_SECRET'];
+
+  if (!webhookSecret) {
+    return {
+      valid: false,
+      reason: 'MOMENCE_WEBHOOK_SECRET not configured',
+    };
+  }
+
+  // Buscar firma en headers comunes
+  const signature =
+    (req.headers['x-momence-signature'] as string) ||
+    (req.headers['x-webhook-signature'] as string) ||
+    (req.headers['x-signature'] as string);
+
+  if (!signature) {
+    return {
+      valid: false,
+      reason: 'No signature header (not configured by Momence)',
+    };
+  }
+
+  try {
+    // Calcular HMAC esperado
+    const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
+    const expectedSignature = crypto.createHmac('sha256', webhookSecret).update(body).digest('hex');
+
+    // Comparar (con o sin prefijo sha256=)
+    const providedSig = signature.replace(/^sha256=/, '');
+
+    if (providedSig.length !== expectedSignature.length) {
+      return {
+        valid: false,
+        reason: `Signature length mismatch`,
+      };
+    }
+
+    const isValid = crypto.timingSafeEqual(
+      Buffer.from(providedSig),
+      Buffer.from(expectedSignature)
+    );
+
+    if (isValid) {
+      return { valid: true, reason: 'Signature matches' };
+    } else {
+      return { valid: false, reason: 'Signature mismatch (HMAC does not match)' };
+    }
+  } catch (error) {
+    return {
+      valid: false,
+      reason: `Verification error: ${error instanceof Error ? error.message : 'Unknown'}`,
+    };
+  }
 }

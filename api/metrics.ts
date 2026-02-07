@@ -21,7 +21,7 @@ import {
   getRecentAuditEvents,
   getAuditEventsByDate,
   type AuditAction,
-} from './lib/audit';
+} from './lib/audit.js';
 
 // Lazy Redis client
 let redisClient: Redis | null = null;

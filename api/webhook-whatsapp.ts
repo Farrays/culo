@@ -5,6 +5,7 @@ import type { Redis } from '@upstash/redis';
 import { getRedisClient } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
 import { processAgentMessage } from './lib/ai/agent.js';
+import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -464,11 +465,29 @@ function handleVerification(req: VercelRequest, res: VercelResponse): VercelResp
 // ============================================================================
 
 async function handleWebhook(req: VercelRequest, res: VercelResponse): Promise<VercelResponse> {
-  // Verificar firma (opcional pero recomendado)
+  // ============================================================================
+  // VERIFICACIÓN DE FIRMA - Modo controlado por Feature Flag
+  // Flag OFF (default): AUDIT mode - solo log, no bloquea
+  // Flag ON: ENFORCEMENT mode - bloquea requests sin firma válida
+  // ============================================================================
+
+  const enforcementMode = await isFeatureEnabled(FEATURES.WEBHOOK_ENFORCEMENT);
   const signature = req.headers['x-hub-signature-256'];
-  if (signature && !verifySignature(req.body, signature as string)) {
-    console.warn('[webhook-whatsapp] Invalid signature');
-    return res.status(401).json({ error: 'Invalid signature' });
+  const signatureResult = verifyWebhookSignature(req.body, signature as string | undefined);
+
+  if (!signatureResult.valid) {
+    console.warn(`[webhook-whatsapp] ⚠️ Signature verification: ${signatureResult.reason}`);
+
+    // ENFORCEMENT MODE: Bloquear si la firma no es válida
+    if (enforcementMode) {
+      console.error('[webhook-whatsapp] 🚫 ENFORCEMENT: Request blocked - invalid signature');
+      return res.status(401).json({
+        error: 'Unauthorized',
+        message: 'Invalid webhook signature',
+      });
+    }
+  } else {
+    console.log(`[webhook-whatsapp] ✅ Signature verified successfully`);
   }
 
   const payload = req.body as WhatsAppWebhookPayload;
@@ -1173,24 +1192,68 @@ async function findBookingByPhone(redis: Redis, phone: string): Promise<BookingD
 }
 
 // ============================================================================
-// VERIFICACIÓN DE FIRMA
+// VERIFICACIÓN DE FIRMA (Modo Audit - Solo logging, no bloquea)
 // ============================================================================
 
-function verifySignature(body: unknown, signature: string): boolean {
+interface SignatureVerificationResult {
+  valid: boolean;
+  reason: string;
+}
+
+/**
+ * Verifica la firma HMAC del webhook de WhatsApp
+ * MODO AUDIT: Retorna resultado detallado para logging, pero NO bloquea
+ *
+ * @see https://developers.facebook.com/docs/graph-api/webhooks/getting-started#verification-requests
+ */
+function verifyWebhookSignature(
+  body: unknown,
+  signature: string | undefined
+): SignatureVerificationResult {
   const appSecret = process.env['WHATSAPP_APP_SECRET'];
 
+  // Si no hay secret configurado, no podemos verificar
   if (!appSecret) {
-    // Si no hay secret configurado, skip verificación (para desarrollo)
-    console.warn('[webhook-whatsapp] WHATSAPP_APP_SECRET not configured, skipping verification');
-    return true;
+    return {
+      valid: false,
+      reason: 'WHATSAPP_APP_SECRET not configured (add to env for signature verification)',
+    };
+  }
+
+  // Si no hay firma en el request
+  if (!signature) {
+    return {
+      valid: false,
+      reason: 'No x-hub-signature-256 header in request',
+    };
   }
 
   try {
     const expectedSignature =
       'sha256=' + crypto.createHmac('sha256', appSecret).update(JSON.stringify(body)).digest('hex');
 
-    return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature));
-  } catch {
-    return false;
+    // Verificar longitud antes de timingSafeEqual para evitar errores
+    if (signature.length !== expectedSignature.length) {
+      return {
+        valid: false,
+        reason: `Signature length mismatch (got ${signature.length}, expected ${expectedSignature.length})`,
+      };
+    }
+
+    const isValid = crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature));
+
+    if (isValid) {
+      return { valid: true, reason: 'Signature matches' };
+    } else {
+      return {
+        valid: false,
+        reason: 'Signature mismatch (HMAC does not match)',
+      };
+    }
+  } catch (error) {
+    return {
+      valid: false,
+      reason: `Verification error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+    };
   }
 }

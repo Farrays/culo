@@ -397,6 +397,7 @@ const routes = [
 
   { path: 'es/mi-reserva', lang: 'es', page: 'miReserva' },
   { path: 'es/fichaje', lang: 'es', page: 'fichaje' },
+  { path: 'es/fichaje/resumen', lang: 'es', page: 'fichajeResumen' },
   { path: 'es/admin/fichajes', lang: 'es', page: 'adminFichajes' },
   { path: 'es/feedback-gracias', lang: 'es', page: 'feedbackGracias' },
   { path: 'es/feedback-comentario', lang: 'es', page: 'feedbackComentario' },
@@ -476,6 +477,7 @@ const routes = [
 
   { path: 'ca/mi-reserva', lang: 'ca', page: 'miReserva' },
   { path: 'ca/fichaje', lang: 'ca', page: 'fichaje' },
+  { path: 'ca/fichaje/resumen', lang: 'ca', page: 'fichajeResumen' },
   { path: 'ca/admin/fichajes', lang: 'ca', page: 'adminFichajes' },
   { path: 'ca/feedback-gracias', lang: 'ca', page: 'feedbackGracias' },
   { path: 'ca/feedback-comentario', lang: 'ca', page: 'feedbackComentario' },
@@ -555,6 +557,7 @@ const routes = [
 
   { path: 'en/mi-reserva', lang: 'en', page: 'miReserva' },
   { path: 'en/fichaje', lang: 'en', page: 'fichaje' },
+  { path: 'en/fichaje/resumen', lang: 'en', page: 'fichajeResumen' },
   { path: 'en/admin/fichajes', lang: 'en', page: 'adminFichajes' },
   { path: 'en/feedback-gracias', lang: 'en', page: 'feedbackGracias' },
   { path: 'en/feedback-comentario', lang: 'en', page: 'feedbackComentario' },
@@ -634,6 +637,7 @@ const routes = [
 
   { path: 'fr/mi-reserva', lang: 'fr', page: 'miReserva' },
   { path: 'fr/fichaje', lang: 'fr', page: 'fichaje' },
+  { path: 'fr/fichaje/resumen', lang: 'fr', page: 'fichajeResumen' },
   { path: 'fr/admin/fichajes', lang: 'fr', page: 'adminFichajes' },
   { path: 'fr/feedback-gracias', lang: 'fr', page: 'feedbackGracias' },
   { path: 'fr/feedback-comentario', lang: 'fr', page: 'feedbackComentario' },
@@ -950,6 +954,11 @@ const metadata = {
     fichaje: {
       title: 'Fichaje Profesores | Farray\'s Center',
       description: 'Sistema de fichaje para profesores de Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
+    fichajeResumen: {
+      title: 'Firma Resumen Mensual | Farray\'s Center',
+      description: 'Revisa y firma tu resumen mensual de horas trabajadas en Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
     adminFichajes: {
@@ -1333,6 +1342,11 @@ const metadata = {
       description: 'Sistema de fitxatge per a professors de Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
+    fichajeResumen: {
+      title: 'Signatura Resum Mensual | Farray\'s Center',
+      description: 'Revisa i signa el teu resum mensual d\'hores treballades a Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
     adminFichajes: {
       title: 'Dashboard Fitxatges | Farray\'s Center',
       description: 'Panell d\'administració de fitxatges per a Farray\'s Center Barcelona.',
@@ -1714,6 +1728,11 @@ const metadata = {
       description: 'Clock-in system for Farray\'s Center Barcelona teachers.',
       robots: 'noindex, nofollow',
     },
+    fichajeResumen: {
+      title: 'Sign Monthly Summary | Farray\'s Center',
+      description: 'Review and sign your monthly work hours summary at Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
     adminFichajes: {
       title: 'Clock-In Dashboard | Farray\'s Center',
       description: 'Clock-in administration panel for Farray\'s Center Barcelona.',
@@ -2093,6 +2112,11 @@ const metadata = {
     fichaje: {
       title: 'Pointage Professeurs | Farray\'s Center',
       description: 'Système de pointage pour les professeurs de Farray\'s Center Barcelone.',
+      robots: 'noindex, nofollow',
+    },
+    fichajeResumen: {
+      title: 'Signature Résumé Mensuel | Farray\'s Center',
+      description: 'Consultez et signez votre résumé mensuel d\'heures travaillées chez Farray\'s Center Barcelone.',
       robots: 'noindex, nofollow',
     },
     adminFichajes: {

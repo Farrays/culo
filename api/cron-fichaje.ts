@@ -148,22 +148,46 @@ async function getMomenceToken(): Promise<string> {
 // MOMENCE SESSIONS
 // ============================================================================
 
-async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
+async function getMomenceSessionsForDate(fecha?: string): Promise<MomenceSession[]> {
   const token = await getMomenceToken();
-  const today = getFechaHoyEspana(); // YYYY-MM-DD en timezone España
+  const today = fecha || getFechaHoyEspana(); // YYYY-MM-DD en timezone España
 
-  // Calcular mañana en timezone España
-  const todayDate = new Date(`${today}T00:00:00+01:00`); // España UTC+1 (o +2 en verano)
-  const tomorrowDate = new Date(todayDate);
-  tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-  const tomorrowStr = tomorrowDate.toISOString().split('T')[0];
+  // Convertir fecha de Madrid a UTC correctamente
+  // Ejemplo: "2026-02-13" en Madrid (UTC+1) =
+  //   startAfter: 2026-02-12T23:00:00.000Z (00:00 Madrid)
+  //   startBefore: 2026-02-13T22:59:59.999Z (23:59 Madrid)
 
-  // Momence API v2 requiere: page, pageSize, y usa startAfter/startBefore para filtrar
-  // startAfter: devuelve sesiones que EMPIEZAN después de esta fecha
-  // startBefore: devuelve sesiones que EMPIEZAN antes de esta fecha
-  const url = `${MOMENCE_API_URL}/api/v2/host/sessions?page=0&pageSize=200&startAfter=${today}T00:00:00&startBefore=${tomorrowStr}T00:00:00`;
+  // Crear fecha en timezone Madrid y obtener offset correcto
+  const startMadrid = new Date(`${today}T00:00:00`);
+  const endMadrid = new Date(`${today}T23:59:59`);
 
-  const response = await fetch(url, {
+  // Calcular offset de Madrid (puede ser +1 o +2 dependiendo de DST)
+  const getMadridOffset = (date: Date): number => {
+    const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
+    const madridDate = new Date(date.toLocaleString('en-US', { timeZone: SPAIN_TIMEZONE }));
+    return (madridDate.getTime() - utcDate.getTime()) / (1000 * 60 * 60);
+  };
+
+  const offsetHours = getMadridOffset(startMadrid);
+
+  // Ajustar a UTC restando el offset de Madrid
+  const startOfDayUTC = new Date(startMadrid.getTime() - offsetHours * 60 * 60 * 1000);
+  const endOfDayUTC = new Date(endMadrid.getTime() - offsetHours * 60 * 60 * 1000);
+
+  // Usar URL con searchParams para codificación correcta (igual que schedule.ts)
+  const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+  url.searchParams.set('page', '0');
+  url.searchParams.set('pageSize', '200');
+  url.searchParams.set('startAfter', startOfDayUTC.toISOString());
+  url.searchParams.set('startBefore', endOfDayUTC.toISOString());
+  url.searchParams.set('sortBy', 'startsAt');
+  url.searchParams.set('sortOrder', 'ASC');
+
+  console.log(
+    `[cron-fichaje] Consultando Momence para ${today} Madrid → UTC: ${startOfDayUTC.toISOString()} a ${endOfDayUTC.toISOString()}`
+  );
+
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -177,8 +201,69 @@ async function getMomenceSessionsToday(): Promise<MomenceSession[]> {
   }
 
   const data = await response.json();
-  // La respuesta puede ser un array directo o { sessions: [...] }
-  return Array.isArray(data) ? data : data.sessions || data.data || [];
+  // La respuesta de Momence API v2 usa data.payload (igual que schedule.ts)
+  return Array.isArray(data) ? data : data.payload || data.sessions || data.data || [];
+}
+
+/**
+ * Obtiene los detalles completos de una sesión individual.
+ * El endpoint individual devuelve additionalTeachers que el listado no incluye.
+ */
+async function getMomenceSessionDetails(sessionId: number): Promise<MomenceSession | null> {
+  try {
+    const token = await getMomenceToken();
+    const url = `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`;
+
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      console.warn(
+        `[cron-fichaje] Error obteniendo detalles sesión ${sessionId}: ${response.status}`
+      );
+      return null;
+    }
+
+    const data = await response.json();
+    return data.payload || data;
+  } catch (error) {
+    console.error(`[cron-fichaje] Error en getMomenceSessionDetails(${sessionId}):`, error);
+    return null;
+  }
+}
+
+/**
+ * Enriquece las sesiones con additionalTeachers haciendo llamadas individuales.
+ * Solo hace la llamada individual si la sesión tiene nombre de clase "pair" (parejas).
+ */
+async function enrichSessionsWithAdditionalTeachers(
+  sessions: MomenceSession[],
+  debugLog: (msg: string) => void
+): Promise<MomenceSession[]> {
+  const enrichedSessions: MomenceSession[] = [];
+
+  for (const session of sessions) {
+    // Intentar obtener detalles completos para cada clase
+    const details = await getMomenceSessionDetails(session.id);
+
+    if (details && details.additionalTeachers && details.additionalTeachers.length > 0) {
+      debugLog(
+        `[cron-fichaje] 🎓 Clase "${session.name}" tiene ${details.additionalTeachers.length} profesor(es) adicional(es): ${details.additionalTeachers.map(t => `${t.firstName} ${t.lastName}`).join(', ')}`
+      );
+      enrichedSessions.push({
+        ...session,
+        additionalTeachers: details.additionalTeachers,
+      });
+    } else {
+      enrichedSessions.push(session);
+    }
+  }
+
+  return enrichedSessions;
 }
 
 // ============================================================================
@@ -349,8 +434,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
 
-  const result: CronResult = {
-    fecha: getFechaHoyEspana(),
+  // Permitir fecha personalizada para testing (formato: YYYY-MM-DD)
+  const fechaParam = req.query['fecha'] as string | undefined;
+  const fechaEjecucion =
+    fechaParam && /^\d{4}-\d{2}-\d{2}$/.test(fechaParam) ? fechaParam : getFechaHoyEspana();
+
+  // Modo debug: incluir logs en respuesta
+  const debugMode = req.query['debug'] === 'true';
+  const debugLogs: string[] = [];
+  const debugLog = (msg: string) => {
+    console.log(msg);
+    if (debugMode) debugLogs.push(msg);
+  };
+
+  // Limpiar fichajes existentes para testing (solo con parámetro clean=true)
+  const cleanMode = req.query['clean'] === 'true';
+
+  const result: CronResult & { debugLogs?: string[] } = {
+    fecha: fechaEjecucion,
     hora: getHoraAhoraEspana(),
     profesores: 0,
     clases: 0,
@@ -365,6 +466,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   try {
     const supabase = getSupabaseAdmin();
+
+    // Limpiar fichajes existentes si clean=true (para testing)
+    if (cleanMode && fechaParam) {
+      const { data: deleted, error: deleteError } = await supabase
+        .from('fichajes')
+        .delete()
+        .eq('fecha', fechaEjecucion)
+        .select('id');
+
+      if (deleteError) {
+        debugLog(`[cron-fichaje] Error limpiando fichajes: ${deleteError.message}`);
+      } else {
+        debugLog(
+          `[cron-fichaje] Limpiados ${deleted?.length || 0} fichajes para ${fechaEjecucion}`
+        );
+      }
+    }
 
     // 1. Obtener configuración
     const { data: config } = await supabase
@@ -405,12 +523,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       profesorPorNombre.set(nombreNormalizado, p);
     }
 
-    // 3. Obtener clases de hoy de Momence
-    const sesiones = await getMomenceSessionsToday();
+    // 3. Obtener clases de Momence para la fecha especificada
+    let sesiones = await getMomenceSessionsForDate(result.fecha);
     result.clases = sesiones.length;
 
+    // 3a. Enriquecer sesiones con additionalTeachers (requiere llamadas individuales)
+    if (sesiones.length > 0) {
+      debugLog(`[cron-fichaje] Obteniendo additionalTeachers para ${sesiones.length} clases...`);
+      sesiones = await enrichSessionsWithAdditionalTeachers(sesiones, debugLog);
+    }
+
     // Crear Set de IDs de clases activas en Momence para sincronización
-    const clasesActivasMomence = new Set<number>(sesiones.map(s => s.id));
+    const clasesActivasMomence = new Set<number>(sesiones.map((s: MomenceSession) => s.id));
 
     // 3b. Sincronizar clases canceladas - marcar fichajes huérfanos
     const fichajesCancelados = await sincronizarClasesCanceladas(
@@ -427,11 +551,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // 4. Agrupar clases por profesor (solo si hay clases de Momence)
     // INCLUYE profesor principal + additionalTeachers (asistentes)
     if (sesiones.length > 0) {
+      // Debug: mostrar estructura completa de una sesión para ver campos disponibles
+      if (debugMode && sesiones.length > 0) {
+        const bachataClass = sesiones.find(s => s.name.toLowerCase().includes('bachata'));
+        if (bachataClass) {
+          debugLog(
+            `[cron-fichaje] 📋 Estructura clase Bachata: ${JSON.stringify(bachataClass, null, 2)}`
+          );
+        } else {
+          const primeraClase = sesiones[0];
+          debugLog(
+            `[cron-fichaje] 📋 Estructura primera clase: ${JSON.stringify(primeraClase, null, 2)}`
+          );
+        }
+      }
+
       const clasesPorProfesor = new Map<string, MomenceSession[]>();
 
       // Función helper para asignar sesión a un profesor
-      const asignarSesionAProfesor = (teacher: MomenceTeacher, sesion: MomenceSession) => {
+      const asignarSesionAProfesor = (
+        teacher: MomenceTeacher,
+        sesion: MomenceSession,
+        esAsistente: boolean = false
+      ) => {
         const nombreInstructor = `${teacher.firstName} ${teacher.lastName}`.toLowerCase().trim();
+
+        // Log para debugging
+        debugLog(
+          `[cron-fichaje] Buscando profesor: "${nombreInstructor}" (${esAsistente ? 'asistente' : 'principal'}) para clase "${sesion.name}"`
+        );
 
         // Buscar profesor por nombre exacto
         let profesor = profesorPorNombre.get(nombreInstructor);
@@ -441,9 +589,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           for (const [nombre, p] of profesorPorNombre) {
             if (nombreInstructor.includes(nombre) || nombre.includes(nombreInstructor)) {
               profesor = p;
+              debugLog(`[cron-fichaje] Match parcial: "${nombreInstructor}" → "${nombre}"`);
               break;
             }
           }
+        }
+
+        if (!profesor) {
+          debugLog(
+            `[cron-fichaje] ⚠️ Profesor NO encontrado: "${nombreInstructor}". Nombres disponibles: ${Array.from(profesorPorNombre.keys()).join(', ')}`
+          );
         }
 
         if (profesor) {
@@ -459,13 +614,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       for (const sesion of sesiones) {
         // Procesar profesor principal
         if (sesion.teacher) {
-          asignarSesionAProfesor(sesion.teacher, sesion);
+          asignarSesionAProfesor(sesion.teacher, sesion, false);
         }
 
         // Procesar profesores asistentes (additionalTeachers)
         if (sesion.additionalTeachers && sesion.additionalTeachers.length > 0) {
+          debugLog(
+            `[cron-fichaje] Clase "${sesion.name}" tiene ${sesion.additionalTeachers.length} asistente(s)`
+          );
           for (const asistente of sesion.additionalTeachers) {
-            asignarSesionAProfesor(asistente, sesion);
+            asignarSesionAProfesor(asistente, sesion, true);
           }
         }
       }
@@ -621,10 +779,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // 6. PROCESAR TURNOS DE STAFF (horarios fijos, no clases de Momence)
     // =====================================================================
 
-    // Obtener día de la semana actual en timezone España (0=Domingo, 1=Lunes, etc.)
-    const fechaEspanaStr = new Date().toLocaleString('en-US', { timeZone: SPAIN_TIMEZONE });
-    const fechaEspana = new Date(fechaEspanaStr);
-    const diaSemana = fechaEspana.getDay(); // 0=domingo, 1=lunes, ... 6=sábado
+    // Obtener día de la semana para la fecha de ejecución (0=Domingo, 1=Lunes, etc.)
+    // Usar fechaEjecucion (puede ser hoy o una fecha pasada por parámetro)
+    const fechaParaDia = new Date(`${fechaEjecucion}T12:00:00`); // Usar mediodía para evitar problemas de timezone
+    const diaSemana = fechaParaDia.getDay(); // 0=domingo, 1=lunes, ... 6=sábado
+    debugLog(
+      `[cron-fichaje] Fecha: ${fechaEjecucion}, día semana: ${diaSemana} (0=Dom, 1=Lun, ..., 6=Sab)`
+    );
 
     // Obtener turnos de staff para hoy
     const { data: turnosHoyData } = await supabase
@@ -783,6 +944,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       }
     }
 
+    // Incluir debugLogs en respuesta si debug=true
+    if (debugMode) {
+      result.debugLogs = debugLogs;
+    }
+
     res.status(200).json({
       success: true,
       ...result,
@@ -790,6 +956,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   } catch (error) {
     console.error('[cron-fichaje] Error:', error);
     result.errores.push(error instanceof Error ? error.message : 'Unknown error');
+
+    // Incluir debugLogs en respuesta de error también
+    if (debugMode) {
+      result.debugLogs = debugLogs;
+    }
+
     res.status(500).json({
       success: false,
       ...result,

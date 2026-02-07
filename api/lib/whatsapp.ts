@@ -506,14 +506,14 @@ export interface FichajeConfirmacionData {
 
 /**
  * Envía notificación de fichaje de entrada
- * Plantilla: fichaje_entrada
+ * Plantilla: fichaje_entrada1
  * Variables: {{1}}=nombre, {{2}}=hora
  * Mensaje: "Hola {{1}}, tu turno en Farray's Center empieza a las {{2}}h."
  */
 export async function sendFichajeEntradaWhatsApp(
   data: FichajeEntradaData
 ): Promise<WhatsAppResult> {
-  return sendTemplate('fichaje_entrada', data.to, 'es_ES', [
+  return sendTemplate('fichaje_entrada1', data.to, 'es_ES', [
     {
       type: 'body',
       parameters: [

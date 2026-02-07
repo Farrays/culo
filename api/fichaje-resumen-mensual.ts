@@ -11,8 +11,16 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import { getSupabaseAdmin } from './lib/supabase.js';
-import { sendEmail, isEmailConfigured } from './lib/email.js';
 import { sendTextMessage, isWhatsAppConfigured } from './lib/whatsapp.js';
+
+// Dynamic imports for email to avoid Vercel bundler issues
+async function getEmailFunctions() {
+  const emailModule = await import('./lib/email-fichaje.js');
+  return {
+    sendEmail: emailModule.sendEmail,
+    isEmailConfigured: emailModule.isEmailConfigured,
+  };
+}
 
 // Tipos
 interface Profesor {
@@ -99,7 +107,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       // Si hay token, buscar por token (para página de firma)
       if (token && typeof token === 'string') {
         const { data: resumenRaw, error } = await supabase
-          .from('resumen_mensual')
+          .from('resumenes_mensuales')
           .select(
             `
             *,
@@ -150,7 +158,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       const mesFormateado = `${mes}-01`; // Convertir 2026-01 a 2026-01-01
 
       const { data: resumen, error } = await supabase
-        .from('resumen_mensual')
+        .from('resumenes_mensuales')
         .select('*')
         .eq('profesor_id', profesor_id)
         .eq('mes', mesFormateado)
@@ -268,7 +276,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
           // Verificar si ya existe
           const { data: existenteData } = await supabase
-            .from('resumen_mensual')
+            .from('resumenes_mensuales')
             .select('id, firmado')
             .eq('profesor_id', profId)
             .eq('mes', mesFormateado)
@@ -290,7 +298,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
             // Actualizar existente
             const { data: updated, error: updateError } = await supabase
-              .from('resumen_mensual')
+              .from('resumenes_mensuales')
               // @ts-expect-error - Supabase types are dynamic
               .update({
                 total_horas: totalHoras,
@@ -300,7 +308,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
                 dias_trabajados: diasTrabajados.size,
                 token_firma: tokenFirma,
                 hash_documento: hashDocumento,
-                updated_at: new Date().toISOString(),
               })
               .eq('id', existente.id)
               .select()
@@ -311,7 +318,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           } else {
             // Crear nuevo
             const { data: created, error: createError } = await supabase
-              .from('resumen_mensual')
+              .from('resumenes_mensuales')
               .insert({
                 profesor_id: profId,
                 mes: mesFormateado,
@@ -337,7 +344,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               month: 'long',
               year: 'numeric',
             });
-            const urlFirma = `https://farrayscenter.com/es/fichaje/resumen/${tokenFirma}`;
+            const urlFirma = `https://farrayscenter.com/es/fichaje/resumen?token=${tokenFirma}`;
 
             // Enviar WhatsApp
             if (isWhatsAppConfigured() && profesor.telefono_whatsapp) {
@@ -353,7 +360,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
                 );
 
                 await supabase
-                  .from('resumen_mensual')
+                  .from('resumenes_mensuales')
                   // @ts-expect-error - Supabase types are dynamic
                   .update({
                     enviado_whatsapp: true,
@@ -365,36 +372,39 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               }
             }
 
-            // Enviar Email
-            if (isEmailConfigured() && profesor.email) {
+            // Enviar Email (dynamic import)
+            if (profesor.email) {
               try {
-                await sendEmail({
-                  to: profesor.email,
-                  subject: `Resumen de horas ${nombreMes} - Farray's Center`,
-                  html: `
-                    <h2>Resumen de horas - ${nombreMes}</h2>
-                    <p>Hola ${profesor.nombre},</p>
-                    <p>Tu resumen mensual de horas trabajadas está disponible:</p>
-                    <ul>
-                      <li><strong>Total horas:</strong> ${totalHoras}h</li>
-                      <li><strong>Horas ordinarias:</strong> ${horasOrdinarias}h</li>
-                      <li><strong>Horas complementarias:</strong> ${horasComplementarias}h</li>
-                      <li><strong>Clases impartidas:</strong> ${fichajes.length}</li>
-                      <li><strong>Días trabajados:</strong> ${diasTrabajados.size}</li>
-                    </ul>
-                    <p><a href="${urlFirma}" style="background: #E91E63; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block;">Revisar y Firmar</a></p>
-                    <p style="color: #666; font-size: 12px;">Este documento es obligatorio según el Art. 12.4.c del Estatuto de los Trabajadores para contratos a tiempo parcial.</p>
-                  `,
-                });
+                const { sendEmail, isEmailConfigured } = await getEmailFunctions();
+                if (isEmailConfigured()) {
+                  await sendEmail({
+                    to: profesor.email,
+                    subject: `Resumen de horas ${nombreMes} - Farray's Center`,
+                    html: `
+                      <h2>Resumen de horas - ${nombreMes}</h2>
+                      <p>Hola ${profesor.nombre},</p>
+                      <p>Tu resumen mensual de horas trabajadas está disponible:</p>
+                      <ul>
+                        <li><strong>Total horas:</strong> ${totalHoras}h</li>
+                        <li><strong>Horas ordinarias:</strong> ${horasOrdinarias}h</li>
+                        <li><strong>Horas complementarias:</strong> ${horasComplementarias}h</li>
+                        <li><strong>Clases impartidas:</strong> ${fichajes.length}</li>
+                        <li><strong>Días trabajados:</strong> ${diasTrabajados.size}</li>
+                      </ul>
+                      <p><a href="${urlFirma}" style="background: #E91E63; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block;">Revisar y Firmar</a></p>
+                      <p style="color: #666; font-size: 12px;">Este documento es obligatorio según el Art. 12.4.c del Estatuto de los Trabajadores para contratos a tiempo parcial.</p>
+                    `,
+                  });
 
-                await supabase
-                  .from('resumen_mensual')
-                  // @ts-expect-error - Supabase types are dynamic
-                  .update({
-                    enviado_email: true,
-                    fecha_envio_email: new Date().toISOString(),
-                  })
-                  .eq('id', resumen.id);
+                  await supabase
+                    .from('resumenes_mensuales')
+                    // @ts-expect-error - Supabase types are dynamic
+                    .update({
+                      enviado_email: true,
+                      fecha_envio_email: new Date().toISOString(),
+                    })
+                    .eq('id', resumen.id);
+                }
               } catch (emailError) {
                 console.error('[resumen-mensual] Error enviando email:', emailError);
               }
@@ -403,11 +413,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
           resultados.push({ profesor_id: profId, success: true, resumen });
         } catch (err) {
-          console.error(`[resumen-mensual] Error procesando profesor ${profId}:`, err);
+          const errorDetails =
+            err instanceof Error
+              ? err.message
+              : typeof err === 'object' && err !== null
+                ? JSON.stringify(err)
+                : 'Error desconocido';
+          console.error(`[resumen-mensual] Error procesando profesor ${profId}:`, errorDetails);
           resultados.push({
             profesor_id: profId,
             success: false,
-            error: err instanceof Error ? err.message : 'Error desconocido',
+            error: errorDetails,
           });
         }
       }

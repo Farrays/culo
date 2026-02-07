@@ -7,7 +7,7 @@
  * 2. Backend must validate X-CSRF-Token header on POST requests
  */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 interface CsrfState {
   token: string | null;
@@ -71,7 +71,8 @@ export function useCsrfToken(): UseCsrfTokenReturn {
       const data = await response.json();
       const token = data.token;
 
-      // Cache the token
+      // If CSRF is disabled on backend, we still cache the dummy token
+      // This prevents unnecessary re-fetches and the backend will ignore it
       cachedToken = token;
       tokenExpiry = Date.now() + TOKEN_VALIDITY_MS;
 
@@ -84,13 +85,13 @@ export function useCsrfToken(): UseCsrfTokenReturn {
     }
   }, []);
 
-  // DISABLED: Auto-fetch removed - /api/csrf endpoint doesn't exist yet
-  // Token will be fetched lazily when getCsrfHeaders() is called with no cached token
-  // useEffect(() => {
-  //   if (!isTokenValid()) {
-  //     fetchToken();
-  //   }
-  // }, [fetchToken]);
+  // Auto-fetch token on mount (endpoint now exists)
+  // Token is cached globally, so multiple components won't cause multiple fetches
+  useEffect(() => {
+    if (!isTokenValid()) {
+      fetchToken();
+    }
+  }, [fetchToken]);
 
   /**
    * Get headers with CSRF token for fetch requests

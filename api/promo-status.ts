@@ -9,7 +9,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedisClient } from './lib/redis';
+import { getRedisClient } from './lib/redis.js';
 
 interface PromoJobStatus {
   jobId: string;

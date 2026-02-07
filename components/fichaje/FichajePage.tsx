@@ -49,6 +49,11 @@ interface FichajeResponse {
 // API base URL
 const API_BASE = '/api/fichaje-';
 
+// Obtener fecha de hoy en zona horaria de España
+const getFechaHoyEspana = (): string => {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' });
+};
+
 const FichajePage: React.FC = () => {
   // State
   const [profesores, setProfesores] = useState<Profesor[]>([]);
@@ -105,7 +110,7 @@ const FichajePage: React.FC = () => {
 
   const fetchFichajesHoy = async (profesorId: string) => {
     try {
-      const hoy = new Date().toISOString().split('T')[0];
+      const hoy = getFechaHoyEspana();
       const res = await fetch(`${API_BASE}fichajes?profesor_id=${profesorId}&fecha=${hoy}`);
       const data = await res.json();
       if (data.success) {
@@ -188,25 +193,39 @@ const FichajePage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black pt-28">
-        {/* Header interno del fichaje */}
-        <header className="bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 px-6 shadow-lg">
-          <div className="max-w-md mx-auto flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-white">Fichaje</h1>
-              <p className="text-gray-400 text-sm">Farray&apos;s Center</p>
+      <div className="min-h-screen bg-black relative flex flex-col">
+        {/* Background gradient like blog hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
+
+        {/* Header con logo */}
+        <header className="relative z-10 bg-black/95 backdrop-blur-xl border-b border-primary-dark/30 py-6 px-6 shadow-lg">
+          <div className="max-w-md mx-auto">
+            {/* Logo y título - centrado */}
+            <div className="flex flex-col items-center justify-center mb-4">
+              <img
+                src="/images/logo/img/logo-fidc_512.webp"
+                alt="Farray's Center"
+                className="h-24 w-auto mb-3"
+              />
+              <div className="text-center">
+                <h1 className="text-2xl font-bold text-white">Control de Jornada</h1>
+                <p className="text-brand-400 text-sm">Registro de entrada/salida</p>
+              </div>
             </div>
-            <div className="text-right">
-              <div className="text-3xl font-mono text-white">{formatTime(currentTime)}</div>
-              <div className="text-gray-400 text-sm capitalize">{formatDate(currentTime)}</div>
+            {/* Reloj */}
+            <div className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-3">
+              <div className="text-brand-300 text-sm capitalize">{formatDate(currentTime)}</div>
+              <div className="text-3xl font-mono text-white font-bold">
+                {formatTime(currentTime)}
+              </div>
             </div>
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="max-w-md mx-auto p-6 pb-24">
+        {/* Main Content - centrado vertical */}
+        <main className="relative z-10 flex-1 flex flex-col justify-center max-w-md mx-auto w-full p-6 pb-24">
           {/* Selector de Profesor */}
-          <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-brand-600/30">
+          <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-primary-dark/30">
             <label className="block text-brand-200 text-sm font-medium mb-2">
               Selecciona tu nombre:
             </label>
@@ -231,7 +250,7 @@ const FichajePage: React.FC = () => {
 
           {/* Estado y Botones */}
           {selectedProfesor && (
-            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-brand-600/30">
+            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-primary-dark/30">
               <h2 className="text-xl font-semibold text-white mb-4">
                 Hola, {selectedProfesor.nombre}
               </h2>
@@ -313,7 +332,7 @@ const FichajePage: React.FC = () => {
 
           {/* Historial del día */}
           {selectedProfesor && fichajesHoy.length > 0 && (
-            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-brand-600/30">
+            <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-dark/30">
               <h3 className="text-lg font-semibold text-white mb-4">Fichajes de hoy</h3>
               <div className="space-y-3">
                 {fichajesHoy.map(f => (
@@ -368,11 +387,16 @@ const FichajePage: React.FC = () => {
           )}
         </main>
 
-        {/* Footer */}
-        <footer className="fixed bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm border-t border-brand-600/30 py-3 px-6">
-          <p className="text-center text-brand-300/50 text-sm">
-            Sistema de fichaje - Farray&apos;s International Dance Center
-          </p>
+        {/* Footer con info legal */}
+        <footer className="fixed bottom-0 left-0 right-0 z-20 bg-black/90 backdrop-blur-sm border-t border-primary-dark/30 py-3 px-4">
+          <div className="max-w-md mx-auto text-center">
+            <p className="text-neutral/70 text-xs">
+              Sistema de registro de jornada conforme al Art. 34.9 ET y RD-ley 8/2019
+            </p>
+            <p className="text-neutral/50 text-xs mt-1">
+              Farray&apos;s International Dance Center &copy; {new Date().getFullYear()}
+            </p>
+          </div>
         </footer>
       </div>
     </>

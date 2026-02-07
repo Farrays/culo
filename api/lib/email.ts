@@ -175,6 +175,283 @@ export async function getRetryQueueCount(): Promise<number> {
   }
 }
 
+/**
+ * Maximum retry attempts before giving up
+ */
+const MAX_RETRY_ATTEMPTS = 3;
+
+/**
+ * Process the email retry queue
+ * Called by cron job to retry failed emails with exponential backoff
+ *
+ * @returns Summary of processed emails
+ */
+export async function processEmailRetryQueue(): Promise<{
+  processed: number;
+  succeeded: number;
+  failed: number;
+  permanent: number;
+}> {
+  const summary = { processed: 0, succeeded: 0, failed: 0, permanent: 0 };
+
+  try {
+    const Redis = (await import('ioredis')).default;
+    const redisUrl = process.env['STORAGE_REDIS_URL'];
+    if (!redisUrl) {
+      console.log('[EmailRetry] Redis not configured, skipping');
+      return summary;
+    }
+
+    const redis = new Redis(redisUrl, { maxRetriesPerRequest: 1, connectTimeout: 5000 });
+
+    // Get all queued emails
+    const keys: string[] = [];
+    let cursor = '0';
+    do {
+      const [newCursor, foundKeys] = await redis.scan(
+        cursor,
+        'MATCH',
+        `${EMAIL_RETRY_QUEUE_KEY}:*`,
+        'COUNT',
+        100
+      );
+      cursor = newCursor;
+      keys.push(...foundKeys);
+    } while (cursor !== '0');
+
+    console.log(`[EmailRetry] Found ${keys.length} emails to retry`);
+
+    for (const key of keys) {
+      try {
+        const data = await redis.get(key);
+        if (!data) continue;
+
+        const queuedEmail: QueuedEmail = JSON.parse(data);
+        summary.processed++;
+
+        // Check if max attempts exceeded
+        if (queuedEmail.attempts >= MAX_RETRY_ATTEMPTS) {
+          console.warn(`[EmailRetry] Max attempts reached for ${queuedEmail.type}, removing`);
+          await redis.del(key);
+          summary.permanent++;
+          continue;
+        }
+
+        // Attempt to resend based on type
+        let result: { success: boolean; error?: string } = { success: false };
+
+        switch (queuedEmail.type) {
+          case 'booking_confirmation':
+            result = await sendBookingConfirmationRetry(queuedEmail.data);
+            break;
+          case 'cancellation':
+            result = await sendCancellationEmailRetry(queuedEmail.data);
+            break;
+          case 'reminder':
+            result = await sendReminderEmailRetry(queuedEmail.data);
+            break;
+          case 'feedback':
+            result = await sendFeedbackEmailRetry(queuedEmail.data);
+            break;
+          default:
+            console.warn(`[EmailRetry] Unknown email type: ${queuedEmail.type}`);
+            await redis.del(key);
+            continue;
+        }
+
+        if (result.success) {
+          console.log(`[EmailRetry] Successfully retried ${queuedEmail.type}`);
+          await redis.del(key);
+          summary.succeeded++;
+        } else {
+          // Update attempts and keep in queue
+          queuedEmail.attempts++;
+          queuedEmail.lastError = result.error;
+          await redis.setex(key, EMAIL_RETRY_TTL_SECONDS, JSON.stringify(queuedEmail));
+          summary.failed++;
+          console.warn(
+            `[EmailRetry] Retry failed (attempt ${queuedEmail.attempts}): ${result.error}`
+          );
+        }
+      } catch (e) {
+        console.error(`[EmailRetry] Error processing ${key}:`, e);
+        summary.failed++;
+      }
+    }
+
+    await redis.quit();
+    console.log(`[EmailRetry] Summary:`, summary);
+    return summary;
+  } catch (e) {
+    console.error('[EmailRetry] Queue processing error:', e);
+    return summary;
+  }
+}
+
+/**
+ * Internal retry functions - send without re-queueing on failure
+ */
+async function sendBookingConfirmationRetry(
+  data: Record<string, unknown>
+): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  const bookingData = data as unknown as BookingEmailData;
+
+  const googleCalUrl = generateGoogleCalendarUrl({
+    className: bookingData.className,
+    classDate: bookingData.classDate,
+    classTime: bookingData.classTime,
+    classDateRaw: bookingData.classDateRaw,
+  });
+  const icsUrl = generateIcsDataUrl({
+    className: bookingData.className,
+    classDate: bookingData.classDate,
+    classTime: bookingData.classTime,
+    classDateRaw: bookingData.classDateRaw,
+    eventId: bookingData.eventId,
+  });
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: bookingData.to,
+      replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
+      subject: `Reserva confirmada: ${bookingData.className}`,
+      html: generateConfirmationEmailHtml({
+        firstName: bookingData.firstName,
+        className: bookingData.className,
+        classDate: bookingData.classDate,
+        classTime: bookingData.classTime,
+        managementUrl: bookingData.managementUrl,
+        calendarUrl: googleCalUrl,
+        icsUrl,
+        instructor: bookingData.instructor,
+        category: bookingData.category,
+      }),
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+async function sendCancellationEmailRetry(
+  data: Record<string, unknown>
+): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  const cancelData = data as unknown as CancellationEmailData;
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: cancelData.to,
+      replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
+      subject: `Reserva cancelada: ${cancelData.className}`,
+      html: generateCancellationEmailHtml({
+        firstName: cancelData.firstName,
+        className: cancelData.className,
+        classDate: '',
+        classTime: '',
+      }),
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+async function sendReminderEmailRetry(
+  data: Record<string, unknown>
+): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  const reminderData = data as unknown as ReminderEmailData;
+
+  const googleCalUrl = generateGoogleCalendarUrl({
+    className: reminderData.className,
+    classDate: reminderData.classDate,
+    classTime: reminderData.classTime,
+    classDateRaw: reminderData.classDateISO,
+  });
+  const icsUrl = generateIcsDataUrl({
+    className: reminderData.className,
+    classDate: reminderData.classDate,
+    classTime: reminderData.classTime,
+    classDateRaw: reminderData.classDateISO,
+    eventId: reminderData.eventId,
+  });
+
+  const is48h = reminderData.reminderType === '48h';
+  const timeText = is48h ? 'pasado mañana' : 'mañana';
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: reminderData.to,
+      replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
+      subject: `Recordatorio: Tu clase de ${reminderData.className} es ${timeText}`,
+      html: generateReminderEmailHtml({
+        firstName: reminderData.firstName,
+        className: reminderData.className,
+        classDate: reminderData.classDate,
+        classTime: reminderData.classTime,
+        timeframe: timeText,
+        managementUrl: reminderData.managementUrl,
+        calendarUrl: googleCalUrl,
+        icsUrl,
+        category: reminderData.category,
+      }),
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+async function sendFeedbackEmailRetry(
+  data: Record<string, unknown>
+): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  const feedbackData = data as unknown as FeedbackEmailData;
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: feedbackData.to,
+      replyTo: 'info@farrayscenter.com',
+      headers: EMAIL_HEADERS,
+      subject: `¿Qué tal tu clase de ${feedbackData.className}? 💃`,
+      html: generateFeedbackEmailHtml({
+        firstName: feedbackData.firstName,
+        className: feedbackData.className,
+        classDate: '',
+        feedbackToken: feedbackData.feedbackToken,
+      }),
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
 // ============================================================================
 // TIPOS
 // ============================================================================
@@ -927,15 +1204,26 @@ export async function sendCancellationEmail(
     });
 
     if (result.error) {
+      // Queue for retry on API error
+      queueEmailForRetry(
+        'cancellation',
+        data as unknown as Record<string, unknown>,
+        result.error.message
+      ).catch(() => {});
       return { success: false, error: result.error.message };
     }
 
     return { success: true, id: result.data?.id };
   } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Unknown error';
     console.error('Error sending cancellation email:', error);
+    // Queue for retry on exception
+    queueEmailForRetry('cancellation', data as unknown as Record<string, unknown>, errorMsg).catch(
+      () => {}
+    );
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: errorMsg,
     };
   }
 }
@@ -1036,15 +1324,26 @@ export async function sendReminderEmail(
     });
 
     if (result.error) {
+      // Queue for retry on API error
+      queueEmailForRetry(
+        'reminder',
+        data as unknown as Record<string, unknown>,
+        result.error.message
+      ).catch(() => {});
       return { success: false, error: result.error.message };
     }
 
     return { success: true, id: result.data?.id };
   } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Unknown error';
     console.error('Error sending reminder email:', error);
+    // Queue for retry on exception
+    queueEmailForRetry('reminder', data as unknown as Record<string, unknown>, errorMsg).catch(
+      () => {}
+    );
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: errorMsg,
     };
   }
 }
@@ -1093,15 +1392,26 @@ export async function sendFeedbackEmail(
     });
 
     if (result.error) {
+      // Queue for retry on API error
+      queueEmailForRetry(
+        'feedback',
+        data as unknown as Record<string, unknown>,
+        result.error.message
+      ).catch(() => {});
       return { success: false, error: result.error.message };
     }
 
     return { success: true, id: result.data?.id };
   } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Unknown error';
     console.error('Error sending feedback email:', error);
+    // Queue for retry on exception
+    queueEmailForRetry('feedback', data as unknown as Record<string, unknown>, errorMsg).catch(
+      () => {}
+    );
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: errorMsg,
     };
   }
 }
@@ -1467,4 +1777,4 @@ export const EMAIL_CONFIG = {
  * Los archivos API pueden importar de ./lib/google-calendar directamente,
  * pero gracias a esta re-exportación, el archivo se incluirá en el bundle.
  */
-export * from './google-calendar';
+export * from './google-calendar.js';

@@ -3,6 +3,7 @@ import Redis from 'ioredis';
 import crypto from 'crypto';
 import { Resend } from 'resend';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
+import { validateCsrfRequest } from './lib/csrf.js';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -1669,6 +1670,13 @@ export default async function handler(
 
   if (await isRateLimitedRedis('/api/reservar', clientIp)) {
     return res.status(429).json({ error: 'Demasiadas solicitudes. Espera un momento.' });
+  }
+
+  // CSRF Protection (controlled by feature flag)
+  const csrfError = await validateCsrfRequest(req);
+  if (csrfError) {
+    console.warn(`[reservar] CSRF validation failed: ${csrfError.error}`);
+    return res.status(csrfError.status).json({ error: csrfError.error });
   }
 
   try {

@@ -54,7 +54,6 @@ const EMAIL_HEADERS = {
 
 // WhatsApp Cloud API
 const WHATSAPP_API_URL = 'https://graph.facebook.com/v21.0';
-const WHATSAPP_PHONE_NUMBER_ID = '576045082';
 
 // Category types
 type ClassCategory = 'bailes_sociales' | 'danzas_urbanas' | 'danza' | 'entrenamiento' | 'heels';
@@ -525,18 +524,20 @@ async function sendWhatsAppTemplate(
   to: string,
   components: Array<{ type: string; parameters?: Array<{ type: string; text: string }> }>
 ): Promise<{ success: boolean; error?: string }> {
-  const accessToken = process.env['WHATSAPP_ACCESS_TOKEN'];
-  if (!accessToken) return { success: false, error: 'Missing WHATSAPP_ACCESS_TOKEN' };
+  const accessToken = process.env['WHATSAPP_TOKEN'];
+  const phoneId = process.env['WHATSAPP_PHONE_ID'];
+  if (!accessToken || !phoneId)
+    return { success: false, error: 'Missing WHATSAPP_TOKEN or WHATSAPP_PHONE_ID' };
 
   try {
-    const response = await fetch(`${WHATSAPP_API_URL}/${WHATSAPP_PHONE_NUMBER_ID}/messages`, {
+    const response = await fetch(`${WHATSAPP_API_URL}/${phoneId}/messages`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         messaging_product: 'whatsapp',
         to: normalizePhoneNumber(to),
         type: 'template',
-        template: { name: templateName, language: { code: 'es' }, components },
+        template: { name: templateName, language: { code: 'es_ES' }, components },
       }),
     });
 
