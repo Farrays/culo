@@ -165,6 +165,7 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
                   price: '50',
                   priceCurrency: 'EUR',
                   availability: 'https://schema.org/InStock',
+                  url: courseUrl,
                   availableAtOrFrom: {
                     '@type': 'Place',
                     name: "Farray's International Dance Center",
@@ -286,6 +287,7 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
                     price: '50',
                     priceCurrency: 'EUR',
                     availability: 'https://schema.org/SoldOut',
+                    url: courseUrl,
                     validFrom: session.rawStartsAt,
                   },
                 }
@@ -404,6 +406,7 @@ export const VacationSchema: React.FC<{
       price: '50',
       priceCurrency: 'EUR',
       availability: 'https://schema.org/OutOfStock',
+      url: courseUrl,
       availabilityStarts: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // Estimate 1 week
     },
   };
