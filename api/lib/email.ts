@@ -1777,4 +1777,4 @@ export const EMAIL_CONFIG = {
  * Los archivos API pueden importar de ./lib/google-calendar directamente,
  * pero gracias a esta re-exportación, el archivo se incluirá en el bundle.
  */
-export * from './google-calendar';
+export * from './google-calendar.js';
