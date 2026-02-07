@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
+import { validateCsrfRequest } from './lib/csrf.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -75,6 +76,13 @@ export default async function handler(
 
   if (await isRateLimitedRedis('/api/contact', clientIp)) {
     return res.status(429).json({ error: 'Too many requests. Please wait a minute.' });
+  }
+
+  // CSRF Protection (controlled by feature flag)
+  const csrfError = await validateCsrfRequest(req);
+  if (csrfError) {
+    console.warn(`[contact] CSRF validation failed: ${csrfError.error}`);
+    return res.status(csrfError.status).json({ error: csrfError.error });
   }
 
   // Validar variables de entorno
