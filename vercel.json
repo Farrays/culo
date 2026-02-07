@@ -81,11 +81,11 @@
   "crons": [
     {
       "path": "/api/cron-reminders",
-      "schedule": "0 * * * *"
+      "schedule": "0 8,17 * * *"
     },
     {
       "path": "/api/cron-reminders-24h",
-      "schedule": "0 * * * *"
+      "schedule": "0 0 31 2 *"
     },
     {
       "path": "/api/cron-feedback",
