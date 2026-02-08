@@ -80,7 +80,7 @@ const TrustBar: React.FC = () => {
           />
         </svg>
       ),
-      value: '+40',
+      value: '+25',
       labelKey: 'trustbar_styles',
     },
     {

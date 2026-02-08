@@ -784,7 +784,7 @@ const metadata = {
     },
     classesHub: {
       title: 'Todas las Clases de Baile en Barcelona | Farray\'s Center',
-      description: 'Descubre +40 estilos de baile en Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat y más. Academia CID-UNESCO. ¡Reserva clase!',
+      description: 'Descubre +25 estilos de baile en Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat y más. Academia CID-UNESCO. ¡Reserva clase!',
     },
     horariosPrecio: {
       title: 'Horarios y Precios | Clases de Baile Barcelona | Farray\'s Center',
@@ -793,11 +793,11 @@ const metadata = {
     },
     horariosClases: {
       title: 'Horarios Clases de Baile Barcelona 2026 | Farray\'s Center',
-      description: 'Horarios actualizados de clases de baile en Barcelona. Mañanas, tardes y fines de semana. Salsa, Bachata, Hip Hop, Dancehall y +40 estilos. Plaza España.',
+      description: 'Horarios actualizados de clases de baile en Barcelona. Mañanas, tardes y fines de semana. Salsa, Bachata, Hip Hop, Dancehall y +25 estilos. Plaza España.',
     },
     preciosClases: {
       title: 'Precios Clases de Baile Barcelona | Bonos y Tarifas | Farray\'s Center',
-      description: 'Precios y tarifas de clases de baile en Barcelona. Bonos mensuales desde 45€, clases sueltas y packs. Primera clase de prueba. Farray\'s Center Plaza España.',
+      description: 'Precios y tarifas de clases de baile en Barcelona. Bonos mensuales desde 50€, clases sueltas y packs. Primera clase de prueba. Farray\'s Center Plaza España.',
     },
     danza: {
       title: 'Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray\'s Center',
@@ -929,7 +929,7 @@ const metadata = {
     },
     contact: {
       title: 'Contacto | Farray\'s International Dance Center Barcelona',
-      description: 'Contacta con Farray\'s Center Barcelona. Carrer d\'Entença 100. Tel: +34 622 24 70 85. Escuela baile CID-UNESCO. +40 estilos. Reserva clase!',
+      description: 'Contacta con Farray\'s Center Barcelona. Carrer d\'Entença 100. Tel: +34 622 24 70 85. Escuela baile CID-UNESCO. +25 estilos. Reserva clase!',
     },
     reservas: {
       title: 'Reserva tu Clase de Bienvenida | Farray\'s Center Barcelona',
@@ -1059,7 +1059,7 @@ const metadata = {
     },
     promoClaseGratis: {
       title: 'Tu Primera Clase de Baile | Farray\'s Center Barcelona',
-      description: 'Reserva tu clase de prueba en la escuela de baile más completa de Barcelona. +15.000 alumnos, +40 estilos. CID-UNESCO. ¡Plazas limitadas!',
+      description: 'Reserva tu clase de prueba en la escuela de baile más completa de Barcelona. +15.000 alumnos, +25 estilos. CID-UNESCO. ¡Plazas limitadas!',
       robots: 'noindex, nofollow',
     },
     promoSexyReggaeton: {
@@ -1170,7 +1170,7 @@ const metadata = {
     },
     classesHub: {
       title: 'Totes les Classes de Ball a Barcelona | Farray\'s Center',
-      description: 'Descobreix +40 estils de ball a Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat i més. Acadèmia CID-UNESCO. Reserva classe!',
+      description: 'Descobreix +25 estils de ball a Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat i més. Acadèmia CID-UNESCO. Reserva classe!',
     },
     horariosPrecio: {
       title: 'Horaris i Preus | Classes de Ball Barcelona | Farray\'s Center',
@@ -1179,11 +1179,11 @@ const metadata = {
     },
     horariosClases: {
       title: 'Horaris Classes de Ball Barcelona 2026 | Farray\'s Center',
-      description: 'Horaris actualitzats de classes de ball a Barcelona. Matins, tardes i caps de setmana. Salsa, Bachata, Hip Hop, Dancehall i +40 estils. Plaça Espanya.',
+      description: 'Horaris actualitzats de classes de ball a Barcelona. Matins, tardes i caps de setmana. Salsa, Bachata, Hip Hop, Dancehall i +25 estils. Plaça Espanya.',
     },
     preciosClases: {
       title: 'Preus Classes de Ball Barcelona | Bonos i Tarifes | Farray\'s Center',
-      description: 'Preus i tarifes de classes de ball a Barcelona. Bonos mensuals des de 45€, classes soltes i packs. Primera classe de prova. Farray\'s Center Plaça Espanya.',
+      description: 'Preus i tarifes de classes de ball a Barcelona. Bonos mensuals des de 50€, classes soltes i packs. Primera classe de prova. Farray\'s Center Plaça Espanya.',
     },
     danza: {
       title: 'Classes de Dansa a Barcelona | Ballet, Contemporani i Jazz | Farray\'s Center',
@@ -1445,7 +1445,7 @@ const metadata = {
     },
     promoClaseGratis: {
       title: 'La Teva Primera Classe de Ball | Farray\'s Center Barcelona',
-      description: 'Reserva la teva classe de prova gratuïta a l\'escola de ball més completa de Barcelona. +15.000 alumnes, +40 estils. Places limitades!',
+      description: 'Reserva la teva classe de prova gratuïta a l\'escola de ball més completa de Barcelona. +15.000 alumnes, +25 estils. Places limitades!',
       robots: 'noindex, nofollow',
     },
     promoSexyReggaeton: {
@@ -1565,7 +1565,7 @@ const metadata = {
     },
     horariosClases: {
       title: 'Dance Class Schedule Barcelona 2026 | Farray\'s Center',
-      description: 'Updated dance class schedules in Barcelona. Mornings, evenings and weekends. Salsa, Bachata, Hip Hop, Dancehall and +40 styles. Plaza España.',
+      description: 'Updated dance class schedules in Barcelona. Mornings, evenings and weekends. Salsa, Bachata, Hip Hop, Dancehall and +25 styles. Plaza España.',
     },
     preciosClases: {
       title: 'Dance Class Prices Barcelona | Passes & Rates | Farray\'s Center',
@@ -1573,7 +1573,7 @@ const metadata = {
     },
     danza: {
       title: 'Dance Classes in Barcelona | Ballet, Contemporary & Jazz | Farray\'s Center',
-      description: 'Dance classes Barcelona: Cuban Ballet, Contemporary, Modern Jazz, Afro Jazz. CID-UNESCO accredited academy. +40 styles. Book your class!',
+      description: 'Dance classes Barcelona: Cuban Ballet, Contemporary, Modern Jazz, Afro Jazz. CID-UNESCO accredited academy. +25 styles. Book your class!',
     },
     salsaBachata: {
       title: 'Salsa and Bachata Classes in Barcelona | Cuban Salsa, Sensual Bachata & more | Farray\'s Center',
@@ -1701,7 +1701,7 @@ const metadata = {
     },
     contact: {
       title: 'Contact | Farray\'s International Dance Center Barcelona',
-      description: 'Contact Farray\'s Center Barcelona. Carrer d\'Entença 100. Tel: +34 622 24 70 85. CID-UNESCO dance school. +40 styles. Book class!',
+      description: 'Contact Farray\'s Center Barcelona. Carrer d\'Entença 100. Tel: +34 622 24 70 85. CID-UNESCO dance school. +25 styles. Book class!',
     },
     reservas: {
       title: 'Book Your Welcome Class | Farray\'s Center Barcelona',
@@ -1831,7 +1831,7 @@ const metadata = {
     },
     promoClaseGratis: {
       title: 'Your First Dance Class | Farray\'s Center Barcelona',
-      description: 'Book your trial class at Barcelona\'s most complete dance school. +15,000 students, +40 styles. CID-UNESCO certified. Limited spots!',
+      description: 'Book your trial class at Barcelona\'s most complete dance school. +15,000 students, +25 styles. CID-UNESCO certified. Limited spots!',
       robots: 'noindex, nofollow',
     },
     promoSexyReggaeton: {
@@ -1942,7 +1942,7 @@ const metadata = {
     },
     classesHub: {
       title: 'Tous les Cours de Danse à Barcelone | Farray\'s Center',
-      description: 'Découvrez +40 styles de danse à Barcelone : Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat et plus. Académie CID-UNESCO. Réservez cours!',
+      description: 'Découvrez +25 styles de danse à Barcelone : Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat et plus. Académie CID-UNESCO. Réservez cours!',
     },
     horariosPrecio: {
       title: 'Horaires et Tarifs | Cours de Danse Barcelone | Farray\'s Center',
@@ -1951,11 +1951,11 @@ const metadata = {
     },
     horariosClases: {
       title: 'Horaires Cours de Danse Barcelone 2026 | Farray\'s Center',
-      description: 'Horaires actualisés des cours de danse à Barcelone. Matins, après-midis et week-ends. Salsa, Bachata, Hip Hop, Dancehall et +40 styles. Plaza España.',
+      description: 'Horaires actualisés des cours de danse à Barcelone. Matins, après-midis et week-ends. Salsa, Bachata, Hip Hop, Dancehall et +25 styles. Plaza España.',
     },
     preciosClases: {
       title: 'Tarifs Cours de Danse Barcelone | Abonnements et Prix | Farray\'s Center',
-      description: 'Tarifs et prix des cours de danse à Barcelone. Abonnements mensuels dès 45€, cours à l\'unité et packs. Premier cours d\'essai. Farray\'s Center Plaza España.',
+      description: 'Tarifs et prix des cours de danse à Barcelone. Abonnements mensuels dès 50€, cours à l\'unité et packs. Premier cours d\'essai. Farray\'s Center Plaza España.',
     },
     danza: {
       title: 'Cours de Danse à Barcelone | Ballet, Contemporain et Jazz | Farray\'s Center',
@@ -2087,7 +2087,7 @@ const metadata = {
     },
     contact: {
       title: 'Contact | Farray\'s International Dance Center Barcelone',
-      description: 'Contactez Farray\'s Center Barcelone. Carrer d\'Entença 100. Tél: +34 622 24 70 85. École danse CID-UNESCO. +40 styles. Réservez cours!',
+      description: 'Contactez Farray\'s Center Barcelone. Carrer d\'Entença 100. Tél: +34 622 24 70 85. École danse CID-UNESCO. +25 styles. Réservez cours!',
     },
     reservas: {
       title: 'Réservez votre Cours de Bienvenue | Farray\'s Center Barcelone',
@@ -2217,7 +2217,7 @@ const metadata = {
     },
     promoClaseGratis: {
       title: 'Votre Premier Cours de Danse | Farray\'s Center Barcelone',
-      description: 'Réservez votre cours d\'essai dans l\'école de danse la plus complète de Barcelone. +15 000 élèves, +40 styles. CID-UNESCO. Places limitées!',
+      description: 'Réservez votre cours d\'essai dans l\'école de danse la plus complète de Barcelone. +15 000 élèves, +25 styles. CID-UNESCO. Places limitées!',
       robots: 'noindex, nofollow',
     },
     promoSexyReggaeton: {
@@ -2631,7 +2631,7 @@ routes.forEach(route => {
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
     <meta property="og:image" content="${getOgImageUrl(page)}" />
-    <meta property="og:locale" content="${lang}_ES" />
+    <meta property="og:locale" content="${lang === 'es' ? 'es_ES' : lang === 'ca' ? 'ca_ES' : lang === 'en' ? 'en_US' : 'fr_FR'}" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

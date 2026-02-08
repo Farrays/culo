@@ -22,7 +22,7 @@ describe('TrustBar', () => {
     expect(screen.getByText('CID-UNESCO')).toBeInTheDocument();
     expect(screen.getByText('1,500+')).toBeInTheDocument();
     expect(screen.getByText('700m²')).toBeInTheDocument();
-    expect(screen.getByText('+40')).toBeInTheDocument();
+    expect(screen.getByText('+25')).toBeInTheDocument();
     expect(screen.getByText('4.9/5')).toBeInTheDocument();
   });
 
