@@ -4,7 +4,7 @@ import crypto from 'crypto';
 import type { Redis } from '@upstash/redis';
 import { getRedisClient } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
-import { processAgentMessage } from './lib/ai/agent.js';
+import { processAgentMessage } from './lib/ai/agent-simple.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 // ============================================================================
