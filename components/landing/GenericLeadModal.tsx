@@ -698,6 +698,11 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                         value={formData.firstName}
                         onChange={handleInputChange}
                         disabled={status === 'loading'}
+                        aria-invalid={
+                          !!errorMessage &&
+                          errorMessage.includes(t(`${modalPrefix}_error_firstName`))
+                        }
+                        aria-describedby={errorMessage ? `${config.id}-form-error` : undefined}
                         className={`w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:${theme.borderPrimary} focus:ring-2 ${theme.ringPrimary} transition-all disabled:opacity-50`}
                         placeholder={t(`${modalPrefix}_placeholder_firstName`)}
                         autoComplete="given-name"
@@ -718,6 +723,11 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                         value={formData.lastName}
                         onChange={handleInputChange}
                         disabled={status === 'loading'}
+                        aria-invalid={
+                          !!errorMessage &&
+                          errorMessage.includes(t(`${modalPrefix}_error_lastName`))
+                        }
+                        aria-describedby={errorMessage ? `${config.id}-form-error` : undefined}
                         className={`w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:${theme.borderPrimary} focus:ring-2 ${theme.ringPrimary} transition-all disabled:opacity-50`}
                         placeholder={t(`${modalPrefix}_placeholder_lastName`)}
                         autoComplete="family-name"
@@ -740,6 +750,10 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                       value={formData.email}
                       onChange={handleInputChange}
                       disabled={status === 'loading'}
+                      aria-invalid={
+                        !!errorMessage && errorMessage.includes(t(`${modalPrefix}_error_email`))
+                      }
+                      aria-describedby={errorMessage ? `${config.id}-form-error` : undefined}
                       className={`w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:${theme.borderPrimary} focus:ring-2 ${theme.ringPrimary} transition-all disabled:opacity-50`}
                       placeholder={t(`${modalPrefix}_placeholder_email`)}
                       autoComplete="email"
@@ -813,7 +827,12 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
 
                   {/* Error message */}
                   {errorMessage && (
-                    <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+                    <div
+                      id={`${config.id}-form-error`}
+                      className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl"
+                      role="alert"
+                      aria-live="polite"
+                    >
                       <p className="text-sm text-red-400">{errorMessage}</p>
                     </div>
                   )}

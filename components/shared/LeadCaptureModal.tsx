@@ -626,6 +626,10 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                         value={formData.firstName}
                         onChange={handleInputChange}
                         disabled={status === 'loading'}
+                        aria-invalid={
+                          !!errorMessage && errorMessage.includes(t('leadModal_error_firstName'))
+                        }
+                        aria-describedby={errorMessage ? 'leadModal-error' : undefined}
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20 transition-all disabled:opacity-50"
                         placeholder={t('leadModal_placeholder_firstName')}
                         autoComplete="given-name"
@@ -645,6 +649,10 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                         value={formData.lastName}
                         onChange={handleInputChange}
                         disabled={status === 'loading'}
+                        aria-invalid={
+                          !!errorMessage && errorMessage.includes(t('leadModal_error_lastName'))
+                        }
+                        aria-describedby={errorMessage ? 'leadModal-error' : undefined}
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20 transition-all disabled:opacity-50"
                         placeholder={t('leadModal_placeholder_lastName')}
                         autoComplete="family-name"
@@ -667,6 +675,10 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                       value={formData.email}
                       onChange={handleInputChange}
                       disabled={status === 'loading'}
+                      aria-invalid={
+                        !!errorMessage && errorMessage.includes(t('leadModal_error_email'))
+                      }
+                      aria-describedby={errorMessage ? 'leadModal-error' : undefined}
                       className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-neutral placeholder-neutral/40 focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20 transition-all disabled:opacity-50"
                       placeholder={t('leadModal_placeholder_email')}
                       autoComplete="email"
@@ -798,7 +810,12 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
                   {/* Error message */}
                   {errorMessage && (
-                    <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+                    <div
+                      id="leadModal-error"
+                      className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl"
+                      role="alert"
+                      aria-live="polite"
+                    >
                       <p className="text-sm text-red-400">{errorMessage}</p>
                     </div>
                   )}
