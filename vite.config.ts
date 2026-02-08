@@ -70,6 +70,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,ico,png,svg,woff2}'],
         // Don't pre-cache everything to keep SW size small
         globIgnores: ['**/stats.html', '**/node_modules/**'],
+        // Disable navigateFallback since we don't precache HTML (SSG pages are served fresh)
+        navigateFallback: null,
       },
       manifest: {
         name: "Farray's International Dance Center",

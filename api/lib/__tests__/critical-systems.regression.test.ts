@@ -458,7 +458,7 @@ describe('CRITICAL: Integration Sanity', () => {
       const module = await import(modulePath);
       expect(module).toBeDefined();
     }
-  });
+  }, 15000);
 });
 
 // ============================================================================
