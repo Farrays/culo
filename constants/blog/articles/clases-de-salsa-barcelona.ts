@@ -41,14 +41,13 @@ export const CLASES_SALSA_BARCELONA_CONFIG: BlogArticleConfig = {
   // === KEY STATISTICS (Holographic Cards with GEO Citations) ===
   summaryStats: [
     {
-      value: '76%',
-      labelKey: 'blogClasesSalsaBarcelona_statDemenciaLabel',
+      value: '+140%',
+      labelKey: 'blogClasesSalsaBarcelona_statStreamingLabel',
       citation: {
-        source: 'New England Journal of Medicine',
-        url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
-        year: '2003',
-        authors: 'Verghese et al.',
-        doi: '10.1056/NEJMoa022252',
+        source: 'Spotify Newsroom',
+        url: 'https://newsroom.spotify.com/2025-03-11/salsa-revival-gen-z-bad-bunny-rauw-alejandro/',
+        year: '2025',
+        authors: 'Spotify',
       },
     },
     {

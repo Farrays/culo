@@ -39,14 +39,13 @@ export const CLASES_PRINCIPIANTES_CONFIG: BlogArticleConfig = {
   // === KEY STATISTICS (Holographic Cards with GEO Citations) ===
   summaryStats: [
     {
-      value: '76%',
-      labelKey: 'blogClasesPrincipiantes_statDemenciaLabel',
+      value: '39%',
+      labelKey: 'blogClasesPrincipiantes_statRetencionLabel',
       citation: {
-        source: 'New England Journal of Medicine',
-        url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
-        year: '2003',
-        authors: 'Verghese et al.',
-        doi: '10.1056/NEJMoa022252',
+        source: 'Dance Training Marketing Statistics',
+        url: 'https://www.amraandelma.com/dance-training-marketing-statistics/',
+        year: '2024',
+        authors: 'Amra & Elma LLC',
       },
     },
     {
@@ -145,13 +144,13 @@ export const CLASES_PRINCIPIANTES_CONFIG: BlogArticleConfig = {
       definitionTermKey: 'blogClasesPrincipiantes_defClasePrincipiantesTerm',
     },
 
-    // === STATISTIC: Beneficios cognitivos ===
+    // === STATISTIC: Retención de alumnos ===
     {
-      id: 'stat-cognitivo',
+      id: 'stat-retencion',
       type: 'statistic',
-      contentKey: 'blogClasesPrincipiantes_statCognitivoContent',
-      statisticValue: '76%',
-      statisticSource: 'New England Journal of Medicine, 2003',
+      contentKey: 'blogClasesPrincipiantes_statRetencionContent',
+      statisticValue: '39%',
+      statisticSource: 'Dance Training Marketing Statistics, 2024',
     },
 
     // =====================================================
