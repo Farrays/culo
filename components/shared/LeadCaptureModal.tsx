@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef, memo, useTransition } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
@@ -25,6 +25,7 @@ interface FormData {
   discoveryAnswer: string;
   estilo: string;
   acceptsMarketing: boolean;
+  acceptsWhatsApp: boolean;
 }
 
 interface LeadCaptureModalProps {
@@ -96,6 +97,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
     'contact',
     'pages',
   ]);
+  const navigate = useNavigate();
   const locale = i18n.language;
 
   // Form state
@@ -107,6 +109,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
     discoveryAnswer: defaultValues.discoveryAnswer || '',
     estilo: defaultValues.estilo || '',
     acceptsMarketing: false,
+    acceptsWhatsApp: false,
   });
 
   const [status, setStatus] = useState<FormStatus>('idle');
@@ -196,6 +199,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
             discoveryAnswer: defaultValues.discoveryAnswer || '',
             estilo: defaultValues.estilo || '',
             acceptsMarketing: false,
+            acceptsWhatsApp: false,
           });
           setStatus('idle');
           setErrorMessage('');
@@ -349,6 +353,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         discoveryAnswer: formData.discoveryAnswer || 'Not specified',
         estilo: formData.estilo || 'Not specified',
         acceptsMarketing: formData.acceptsMarketing,
+        acceptsWhatsApp: formData.acceptsWhatsApp,
         url: window.location.href,
       };
 
@@ -356,7 +361,6 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       if (import.meta.env.DEV) {
         console.warn('[DEV] Lead form data:', payload);
         await new Promise(resolve => window.setTimeout(resolve, 1000)); // Simular delay
-        setStatus('success');
 
         // Track conversion with full dataLayer + GA4 + Meta Pixel
         trackLeadConversion({
@@ -365,6 +369,11 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           leadValue: LEAD_VALUES.GENERIC_LEAD,
           pagePath: window.location.pathname,
         });
+
+        // Redirigir inmediatamente a horarios-precios (evitar history.back del modal)
+        historyPushedRef.current = false;
+        onClose();
+        navigate(`/${locale}/horarios-precios`);
         return;
       }
 
@@ -385,11 +394,9 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       const responseData = await response.json().catch(() => ({ success: true }));
       const leadStatus: LeadResponseStatus = responseData.status || 'new';
 
-      // Set appropriate success state based on lead status
+      // Track según estado del lead
       if (leadStatus === 'existing') {
-        // Lead ya registrado dentro de 90 días - mostrar mensaje diferente
-        setStatus('success_existing');
-        // Track existing lead event for analytics
+        // Lead ya registrado dentro de 90 días
         pushToDataLayer({
           event: 'lead_existing',
           lead_source: 'generic_modal',
@@ -398,9 +405,6 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         });
       } else {
         // new o refresh - lead nuevo o re-registrado después de 90 días
-        setStatus('success');
-
-        // Track conversion with full dataLayer + GA4 + Meta Pixel
         trackLeadConversion({
           leadSource: 'generic_modal',
           formName: `Lead Capture - ${formData.estilo || 'General'}`,
@@ -408,6 +412,11 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           pagePath: window.location.pathname,
         });
       }
+
+      // Redirigir inmediatamente a horarios-precios (evitar history.back del modal)
+      historyPushedRef.current = false;
+      onClose();
+      navigate(`/${locale}/horarios-precios`);
     } catch (err) {
       console.error('Lead submission error:', err);
       setStatus('error');
@@ -772,7 +781,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                     </select>
                   </div>
 
-                  {/* RGPD Consent checkbox */}
+                  {/* RGPD Consent checkbox - Email (obligatorio) */}
                   <div className="pt-2">
                     <label className="flex items-start gap-3 cursor-pointer group">
                       <div className="relative flex-shrink-0 mt-0.5">
@@ -797,13 +806,46 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                       </div>
                       <span className="text-sm text-neutral/70 leading-tight">
                         {t('leadModal_consent_text')}{' '}
-                        <Link
-                          to={`/${locale}/politica-privacidad`}
+                        <a
+                          href={`/${locale}/politica-privacidad`}
                           className="text-primary-accent hover:underline"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           {t('leadModal_consent_link')}
-                        </Link>
+                        </a>
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* WhatsApp consent checkbox (opcional) */}
+                  <div className="pt-1">
+                    <label className="flex items-start gap-3 cursor-pointer group">
+                      <div className="relative flex-shrink-0 mt-0.5">
+                        <input
+                          type="checkbox"
+                          id="acceptsWhatsApp"
+                          name="acceptsWhatsApp"
+                          checked={formData.acceptsWhatsApp}
+                          onChange={e =>
+                            setFormData(prev => ({
+                              ...prev,
+                              acceptsWhatsApp: e.target.checked,
+                            }))
+                          }
+                          disabled={status === 'loading'}
+                          className="peer sr-only"
+                        />
+                        <div className="w-5 h-5 border-2 border-white/30 rounded bg-white/5 peer-checked:bg-green-500 peer-checked:border-green-500 transition-all peer-focus:ring-2 peer-focus:ring-green-500/50 group-hover:border-white/50">
+                          <CheckIcon className="w-full h-full text-white opacity-0 peer-checked:opacity-100 p-0.5" />
+                        </div>
+                        <CheckIcon className="absolute inset-0 w-5 h-5 text-white opacity-0 peer-checked:opacity-100 p-0.5 pointer-events-none" />
+                      </div>
+                      <span className="text-sm text-neutral/70 leading-tight">
+                        {t(
+                          'leadModal_consent_whatsapp',
+                          'También quiero recibir información por WhatsApp'
+                        )}
                       </span>
                     </label>
                   </div>
@@ -852,12 +894,14 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                   <p className="text-[10px] leading-relaxed text-neutral/40">
                     {t('leadModal_legal_text')}
                   </p>
-                  <Link
-                    to={`/${locale}/aviso-legal`}
+                  <a
+                    href={`/${locale}/aviso-legal`}
                     className="inline-block mt-2 text-[10px] text-primary-accent/70 hover:text-primary-accent transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {t('leadModal_legal_link')}
-                  </Link>
+                  </a>
                 </div>
               </>
             )}
