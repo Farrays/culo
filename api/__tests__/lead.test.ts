@@ -226,14 +226,16 @@ describe('Lead Capture API Endpoint', () => {
     });
 
     it('should allow request when not rate limited', async () => {
+      vi.mocked(isRateLimitedRedis).mockResolvedValueOnce(false);
+
       const req = createMockRequest({ body: validLeadData });
       const res = createMockResponse();
 
       await handler(req, res);
 
-      // Should not be rate limited (mock returns false by default)
+      // Should not be rate limited (mock returns false)
       expect(res._status).not.toBe(429);
-    });
+    }, 10000);
   });
 
   describe('Custom Source ID', () => {

@@ -93,7 +93,7 @@ describe('Feature Flags Admin Endpoint', () => {
       const req = createMockRequest();
       const res = createMockResponse();
 
-      vi.mocked(getAllFlags).mockResolvedValue({});
+      vi.mocked(getAllFlags).mockResolvedValue({} as Record<string, boolean>);
 
       await handler(req, res);
 
@@ -124,7 +124,7 @@ describe('Feature Flags Admin Endpoint', () => {
       });
       const res = createMockResponse();
 
-      vi.mocked(getAllFlags).mockResolvedValue({});
+      vi.mocked(getAllFlags).mockResolvedValue({} as Record<string, boolean>);
 
       await handler(req, res);
 
@@ -153,17 +153,17 @@ describe('Feature Flags Admin Endpoint', () => {
       const res = createMockResponse();
 
       vi.mocked(getAllFlags).mockResolvedValue({
-        BOOKING_ENABLED: true,
-        CSRF_PROTECTION: false,
-      });
+        'security.csrf_protection': true,
+        'security.webhook_enforcement': false,
+      } as Record<string, boolean>);
 
       await handler(req, res);
 
       expect(res.status).toHaveBeenCalledWith(200);
       expect(res._json).toMatchObject({
         flags: {
-          BOOKING_ENABLED: true,
-          CSRF_PROTECTION: false,
+          'security.csrf_protection': true,
+          'security.webhook_enforcement': false,
         },
         available: expect.arrayContaining(['BOOKING_ENABLED', 'CSRF_PROTECTION']),
       });
@@ -174,7 +174,13 @@ describe('Feature Flags Admin Endpoint', () => {
       const res = createMockResponse();
 
       const mockAuditLog = [
-        { flag: 'BOOKING_ENABLED', enabled: true, timestamp: '2024-01-01T00:00:00Z' },
+        {
+          flag: 'security.csrf_protection',
+          newValue: true,
+          reason: 'test',
+          changedBy: 'admin',
+          timestamp: '2024-01-01T00:00:00Z',
+        },
       ];
       vi.mocked(getAuditLog).mockResolvedValue(mockAuditLog);
 
@@ -242,7 +248,7 @@ describe('Feature Flags Admin Endpoint', () => {
       });
       const res = createMockResponse();
 
-      vi.mocked(snapshotFlags).mockResolvedValue('snapshot:2024-01-01T00:00:00Z');
+      vi.mocked(snapshotFlags).mockResolvedValue('snapshot:2024-01-01T00:00:00Z' as unknown as Record<string, boolean>);
 
       await handler(req, res);
 
