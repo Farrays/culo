@@ -68,11 +68,11 @@ export async function checkRateLimit(
   endpoint: string,
   identifier: string
 ): Promise<RateLimitResult> {
-  const config = RATE_LIMITS[endpoint] || RATE_LIMITS['default']!;
+  const config = RATE_LIMITS[endpoint] || RATE_LIMITS['default'];
   const key = `ratelimit:${endpoint}:${identifier}`;
-  const windowSeconds = Math.floor(config!.windowMs / 1000);
+  const windowSeconds = Math.floor(config.windowMs / 1000);
   const now = Date.now();
-  const windowStart = now - config!.windowMs;
+  const windowStart = now - config.windowMs;
 
   try {
     const redis = getRedis();
@@ -83,16 +83,16 @@ export async function checkRateLimit(
     // Count requests in current window
     const requestCount = await redis.zcard(key);
 
-    if (requestCount >= config!.maxRequests) {
+    if (requestCount >= config.maxRequests) {
       // Rate limited - calculate when it resets
       const oldestRequest = await redis.zrange(key, 0, 0);
       let resetIn = windowSeconds;
 
-      if (oldestRequest && oldestRequest.length > 0 && oldestRequest[0]) {
+      if (oldestRequest && oldestRequest.length > 0) {
         // Parse the timestamp from the oldest request
-        const oldestTime = parseInt(String(oldestRequest[0]!).split(':')[0]!, 10);
+        const oldestTime = parseInt(String(oldestRequest[0]).split(':')[0], 10);
         if (!isNaN(oldestTime)) {
-          resetIn = Math.max(1, Math.ceil((oldestTime + config!.windowMs - now) / 1000));
+          resetIn = Math.max(1, Math.ceil((oldestTime + config.windowMs - now) / 1000));
         }
       }
 
@@ -100,7 +100,7 @@ export async function checkRateLimit(
         allowed: false,
         remaining: 0,
         resetIn,
-        limit: config!.maxRequests,
+        limit: config.maxRequests,
       };
     }
 
@@ -111,9 +111,9 @@ export async function checkRateLimit(
 
     return {
       allowed: true,
-      remaining: config!.maxRequests - requestCount - 1,
+      remaining: config.maxRequests - requestCount - 1,
       resetIn: windowSeconds,
-      limit: config!.maxRequests,
+      limit: config.maxRequests,
     };
   } catch (error) {
     // If Redis fails, allow the request but log the error
@@ -121,9 +121,9 @@ export async function checkRateLimit(
     console.error('[rate-limit] Redis error, allowing request:', error);
     return {
       allowed: true,
-      remaining: config!.maxRequests,
+      remaining: config.maxRequests,
       resetIn: windowSeconds,
-      limit: config!.maxRequests,
+      limit: config.maxRequests,
     };
   }
 }
