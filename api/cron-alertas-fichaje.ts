@@ -186,17 +186,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         try {
           const { sendSystemAlert, isEmailConfigured } = await getEmailFunctions();
           if (isEmailConfigured()) {
-            await sendSystemAlert({
-              type: `FICHAJE_NO_REGISTRADO_${nombreCompleto.replace(/\s+/g, '_').toUpperCase()}`,
-              message: `El profesor ${nombreCompleto} no ha registrado su entrada para la clase "${fichaje.clase_nombre}" (prevista a las ${horaInicioStr}). Han pasado ${minutosTranscurridos} minutos. Dashboard: https://farrayscenter.com/es/admin/fichajes`,
-              severity: 'warning',
-              details: {
-                profesor: nombreCompleto,
-                clase: fichaje.clase_nombre,
-                hora_prevista: horaInicioStr,
-                minutos_transcurridos: minutosTranscurridos,
-              },
-            });
+            const subject = `⚠️ Fichaje no registrado: ${nombreCompleto}`;
+            const htmlBody = `
+              <h2>Fichaje No Registrado</h2>
+              <p>El profesor <strong>${nombreCompleto}</strong> no ha registrado su entrada para la clase "${fichaje.clase_nombre}" (prevista a las ${horaInicioStr}).</p>
+              <p>Han pasado <strong>${minutosTranscurridos} minutos</strong> desde el inicio de la clase.</p>
+              <p><a href="https://farrayscenter.com/es/admin/fichajes">Ver Dashboard de Fichajes</a></p>
+            `;
+            await sendSystemAlert(subject, htmlBody);
 
             // Marcar alerta admin enviada
             await supabase

@@ -18,7 +18,7 @@ const ALLOWED_ORIGINS = new Set([
   'https://farrayscenter.com',
   'https://admin.farrayscenter.com',
   // Development origins (only added in non-production)
-  ...(process.env.NODE_ENV !== 'production'
+  ...(process.env['NODE_ENV'] !== 'production'
     ? [
         'http://localhost:5173',
         'http://localhost:3000',

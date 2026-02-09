@@ -23,10 +23,11 @@ const sampleReview: GoogleReview = {
   author: 'María García',
   rating: 5,
   text: 'Excelente academia de baile. Los profesores son muy profesionales.',
-  publishedAt: '2026-01-15',
+  date: '15 de enero de 2026',
+  dateISO: '2026-01-15',
   categories: ['salsa-cubana', 'bachata'],
   teachers: ['Iroel', 'Yunaisy'],
-  keywords: ['baile', 'profesional'],
+  sentiment: 'positive',
 };
 
 describe('useReviews - getReviewText', () => {
@@ -149,10 +150,11 @@ describe('useReviews - Type Safety', () => {
       author: 'Test Author',
       rating: 5,
       text: 'Test review text',
-      publishedAt: '2026-01-01',
+      date: '1 de enero de 2026',
+      dateISO: '2026-01-01',
       categories: ['general'],
       teachers: [],
-      keywords: [],
+      sentiment: 'positive',
     };
 
     expect(review.id).toBeDefined();
