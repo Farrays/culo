@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef, memo, useTransition } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
@@ -789,13 +788,14 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                       </div>
                       <span className="text-sm text-neutral/70 leading-tight">
                         {t('leadModal_consent_text')}{' '}
-                        <Link
-                          to={`/${locale}/politica-privacidad`}
+                        <a
+                          href={`/${locale}/politica-privacidad`}
                           className="text-primary-accent hover:underline"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           {t('leadModal_consent_link')}
-                        </Link>
+                        </a>
                       </span>
                     </label>
                   </div>
@@ -871,12 +871,14 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                   <p className="text-[10px] leading-relaxed text-neutral/40">
                     {t('leadModal_legal_text')}
                   </p>
-                  <Link
-                    to={`/${locale}/aviso-legal`}
+                  <a
+                    href={`/${locale}/aviso-legal`}
                     className="inline-block mt-2 text-[10px] text-primary-accent/70 hover:text-primary-accent transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {t('leadModal_legal_link')}
-                  </Link>
+                  </a>
                 </div>
               </>
             )}
