@@ -388,6 +388,57 @@ function generateFeedbackEmailHtml(data: FeedbackHtmlData): string {
 }
 
 // ============================================================================
+// LEAD WELCOME EMAIL
+// ============================================================================
+
+interface LeadWelcomeHtmlData {
+  firstName: string;
+}
+
+function generateLeadWelcomeEmailHtml(data: LeadWelcomeHtmlData): string {
+  const horariosUrl = `${BASE_URL}/es/horarios-precios?utm_source=email&utm_medium=lead_welcome&utm_campaign=descubre`;
+
+  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+  ${generatePreheader('Reserva tu clase gratis y conócenos en persona - plazas limitadas por grupo')}
+  <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    ${generateHeader()}
+    <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; text-align: center;">
+      <h1 style="margin: 0 0 10px 0; font-size: 24px;">¡Bienvenido/a, ${data.firstName}!</h1>
+      <p style="margin: 0; opacity: 0.9;">Te estamos esperando</p>
+    </div>
+    <div style="padding: 30px;">
+      <p style="margin: 0 0 20px 0; font-size: 16px;">
+        Elige el horario que mejor te venga y reserva tu clase de bienvenida gratis (plazas limitadas por grupo):
+      </p>
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${horariosUrl}" style="${BUTTON_PRIMARY}">
+          👉 Ver Horarios y Reservar
+        </a>
+      </div>
+      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+        <p style="margin: 0; color: #666; font-size: 14px;">
+          <strong>¿Ya lo tienes claro y quieres darte de alta o hacer una clase suelta?</strong><br>
+          En la misma página pulsa "Hazte Socio".
+        </p>
+      </div>
+      <div style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 20px;">
+        <p style="margin: 0; color: #666; font-size: 14px;">
+          📱 <strong>¿Dudas?</strong> WhatsApp: <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none;">${WHATSAPP_NUMBER}</a>
+        </p>
+      </div>
+      <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
+        <p style="margin: 0; color: #888; font-size: 13px;">
+          ⭐ 4.9 en Google · +509 opiniones
+        </p>
+      </div>
+    </div>
+    ${generateFooter()}
+  </div>
+</body></html>`;
+}
+
+// ============================================================================
 // SAMPLE DATA
 // ============================================================================
 
@@ -440,6 +491,7 @@ export default async function handler(
     <li><a href="?type=reminder"><span class="emoji">⏰</span> Recordatorio 24h</a></li>
     <li><a href="?type=cancellation"><span class="emoji">❌</span> Cancelación</a></li>
     <li><a href="?type=feedback"><span class="emoji">💬</span> Feedback</a></li>
+    <li><a href="?type=lead"><span class="emoji">🎉</span> Bienvenida Lead (Descubre cómo empezar)</a></li>
   </ul>
 </body>
 </html>
@@ -513,9 +565,15 @@ export default async function handler(
         });
         break;
 
+      case 'lead':
+        html = generateLeadWelcomeEmailHtml({
+          firstName: SAMPLE_BOOKING.firstName,
+        });
+        break;
+
       default:
         return res.status(400).json({
-          error: 'Invalid type. Use: confirmation, reminder, cancellation, or feedback',
+          error: 'Invalid type. Use: confirmation, reminder, cancellation, feedback, or lead',
         });
     }
 

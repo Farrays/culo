@@ -1,6 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
+import { sendLeadWelcomeEmail } from './lib/email.js';
+import { sendLeadWelcomeWhatsApp, isWhatsAppConfigured } from './lib/whatsapp.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -109,6 +111,7 @@ export default async function handler(
       discoveryAnswer,
       estilo, // No se envía a Momence, pero se guarda en KV para analytics
       acceptsMarketing,
+      acceptsWhatsApp, // RGPD: consentimiento explícito para WhatsApp
       sourceId: customSourceId, // Permite override del sourceId por landing
     } = req.body;
 
@@ -214,6 +217,42 @@ export default async function handler(
       } catch (redisError) {
         // Si Redis falla al guardar, solo logear (el lead ya se envió a Momence)
         console.warn('Redis save failed:', redisError);
+      }
+    }
+
+    // ===== ENVIAR EMAIL DE BIENVENIDA CON RESEND =====
+    try {
+      const emailResult = await sendLeadWelcomeEmail({
+        to: normalizedEmail,
+        firstName: sanitize(firstName),
+        estilo: sanitize(estilo || ''),
+        locale: 'es',
+      });
+
+      if (emailResult.success) {
+        console.log(`[lead] Welcome email sent to ${redactEmail(normalizedEmail)}`);
+      } else {
+        console.warn(`[lead] Welcome email failed: ${emailResult.error}`);
+      }
+    } catch (emailError) {
+      console.warn('[lead] Welcome email exception:', emailError);
+    }
+
+    // ===== ENVIAR WHATSAPP DE BIENVENIDA (si el usuario dio consentimiento) =====
+    if (acceptsWhatsApp && isWhatsAppConfigured()) {
+      try {
+        const whatsappResult = await sendLeadWelcomeWhatsApp({
+          to: sanitize(phoneNumber),
+          firstName: sanitize(firstName),
+        });
+
+        if (whatsappResult.success) {
+          console.log(`[lead] Welcome WhatsApp sent to ${phoneNumber.slice(-4)}`);
+        } else {
+          console.warn(`[lead] Welcome WhatsApp failed: ${whatsappResult.error}`);
+        }
+      } catch (whatsappError) {
+        console.warn('[lead] Welcome WhatsApp exception:', whatsappError);
       }
     }
 

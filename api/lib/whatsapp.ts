@@ -577,3 +577,35 @@ export const FICHAJE_PAYLOADS = {
 } as const;
 
 export type FichajePayload = (typeof FICHAJE_PAYLOADS)[keyof typeof FICHAJE_PAYLOADS];
+
+// ============================================================================
+// MENSAJES DE LEADS (Formulario "Descubre cómo empezar")
+// ============================================================================
+
+/**
+ * Datos para el mensaje de bienvenida a leads
+ */
+export interface LeadWelcomeWhatsAppData {
+  to: string; // Número con código de país (ej: 34612345678)
+  firstName: string;
+}
+
+/**
+ * Envía mensaje de bienvenida a lead por WhatsApp
+ *
+ * Plantilla: lead_descubre_empezar
+ * Variables: {{1}}=firstName
+ * Botón: "Ver Horarios y Reservar" → horarios-precios con UTM
+ *
+ * IMPORTANTE: Solo enviar si el lead marcó el checkbox de WhatsApp (RGPD)
+ */
+export async function sendLeadWelcomeWhatsApp(
+  data: LeadWelcomeWhatsAppData
+): Promise<WhatsAppResult> {
+  return sendTemplate('lead_descubre_empezar', data.to, 'es_ES', [
+    {
+      type: 'body',
+      parameters: [{ type: 'text', text: data.firstName }],
+    },
+  ]);
+}

@@ -579,6 +579,22 @@ async function processMessage(
       } catch (e) {
         console.error(`[webhook-whatsapp] Error in handleAttendanceConfirmation:`, e);
       }
+    } else if (normalizedPayload.includes('fichar') && normalizedPayload.includes('entrada')) {
+      // Fichaje de entrada
+      console.log(`[webhook-whatsapp] Matched: Fichar entrada - calling handleFichajeButton`);
+      try {
+        await handleFichajeButton(phone, 'entrada');
+      } catch (e) {
+        console.error(`[webhook-whatsapp] Error in handleFichajeButton entrada:`, e);
+      }
+    } else if (normalizedPayload.includes('fichar') && normalizedPayload.includes('salida')) {
+      // Fichaje de salida
+      console.log(`[webhook-whatsapp] Matched: Fichar salida - calling handleFichajeButton`);
+      try {
+        await handleFichajeButton(phone, 'salida');
+      } catch (e) {
+        console.error(`[webhook-whatsapp] Error in handleFichajeButton salida:`, e);
+      }
     } else {
       console.log(`[webhook-whatsapp] No match for payload: "${normalizedPayload}"`);
     }
