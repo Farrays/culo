@@ -25,6 +25,7 @@ interface FormData {
   discoveryAnswer: string;
   estilo: string;
   acceptsMarketing: boolean;
+  acceptsWhatsApp: boolean;
 }
 
 interface LeadCaptureModalProps {
@@ -107,6 +108,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
     discoveryAnswer: defaultValues.discoveryAnswer || '',
     estilo: defaultValues.estilo || '',
     acceptsMarketing: false,
+    acceptsWhatsApp: false,
   });
 
   const [status, setStatus] = useState<FormStatus>('idle');
@@ -196,6 +198,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
             discoveryAnswer: defaultValues.discoveryAnswer || '',
             estilo: defaultValues.estilo || '',
             acceptsMarketing: false,
+            acceptsWhatsApp: false,
           });
           setStatus('idle');
           setErrorMessage('');
@@ -349,6 +352,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         discoveryAnswer: formData.discoveryAnswer || 'Not specified',
         estilo: formData.estilo || 'Not specified',
         acceptsMarketing: formData.acceptsMarketing,
+        acceptsWhatsApp: formData.acceptsWhatsApp,
         url: window.location.href,
       };
 
@@ -792,6 +796,38 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                         >
                           {t('leadModal_consent_link')}
                         </Link>
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* WhatsApp consent checkbox (opcional) */}
+                  <div className="pt-1">
+                    <label className="flex items-start gap-3 cursor-pointer group">
+                      <div className="relative flex-shrink-0 mt-0.5">
+                        <input
+                          type="checkbox"
+                          id="acceptsWhatsApp"
+                          name="acceptsWhatsApp"
+                          checked={formData.acceptsWhatsApp}
+                          onChange={e =>
+                            setFormData(prev => ({
+                              ...prev,
+                              acceptsWhatsApp: e.target.checked,
+                            }))
+                          }
+                          disabled={status === 'loading'}
+                          className="peer sr-only"
+                        />
+                        <div className="w-5 h-5 border-2 border-white/30 rounded bg-white/5 peer-checked:bg-green-500 peer-checked:border-green-500 transition-all peer-focus:ring-2 peer-focus:ring-green-500/50 group-hover:border-white/50">
+                          <CheckIcon className="w-full h-full text-white opacity-0 peer-checked:opacity-100 p-0.5" />
+                        </div>
+                        <CheckIcon className="absolute inset-0 w-5 h-5 text-white opacity-0 peer-checked:opacity-100 p-0.5 pointer-events-none" />
+                      </div>
+                      <span className="text-sm text-neutral/70 leading-tight">
+                        {t(
+                          'leadModal_consent_whatsapp',
+                          'También quiero recibir información por WhatsApp'
+                        )}
                       </span>
                     </label>
                   </div>
