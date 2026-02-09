@@ -12,6 +12,7 @@ import type { Redis } from '@upstash/redis';
 import { detectLanguage, type SupportedLanguage } from './language-detector.js';
 import { getFullSystemPrompt } from './laura-system-prompt.js';
 import { checkAndEscalate } from './escalation-service.js';
+import { getMemberLookup } from './member-lookup.js';
 
 // Tipos
 interface AgentInput {
@@ -92,19 +93,57 @@ export async function processSimpleMessage(
   const language = detectLanguage(text);
   console.log(`[agent-simple] Detected language: ${language}`);
 
-  // 2. Cargar system prompt desde LAURA_PROMPT.md
-  const systemPrompt = getFullSystemPrompt(language);
+  // 2. Buscar si es miembro existente (si está activado)
+  let memberContext:
+    | {
+        isExistingMember: boolean;
+        firstName?: string;
+        hasActiveMembership?: boolean;
+        creditsAvailable?: number;
+        membershipName?: string;
+      }
+    | undefined;
 
-  // 3. Obtener historial de conversación
+  if (process.env['ENABLE_MEMBER_LOOKUP'] === 'true') {
+    try {
+      const memberService = getMemberLookup(redis);
+      const lookup = await memberService.lookupByPhone(phone);
+
+      if (lookup.found && lookup.member) {
+        // Obtener info de membresía
+        const membershipInfo = await memberService.fetchMembershipInfo(lookup.member.memberId);
+
+        memberContext = {
+          isExistingMember: true,
+          firstName: lookup.member.firstName,
+          hasActiveMembership: membershipInfo.hasActiveMembership,
+          creditsAvailable: membershipInfo.creditsAvailable,
+          membershipName: membershipInfo.membershipName,
+        };
+
+        console.log(
+          `[agent-simple] Member found: ${lookup.member.firstName} (${membershipInfo.creditsAvailable} credits)`
+        );
+      }
+    } catch (lookupError) {
+      // Si falla el lookup, continuamos sin contexto de miembro
+      console.error('[agent-simple] Member lookup error (non-blocking):', lookupError);
+    }
+  }
+
+  // 3. Cargar system prompt desde LAURA_PROMPT.md (con contexto de miembro si existe)
+  const systemPrompt = getFullSystemPrompt(language, memberContext);
+
+  // 4. Obtener historial de conversación
   const history = await getConversationHistory(redis, phone);
 
-  // 4. Preparar mensajes para Claude
+  // 5. Preparar mensajes para Claude
   const messages: Array<{ role: 'user' | 'assistant'; content: string }> = [
     ...history,
     { role: 'user' as const, content: text },
   ];
 
-  // 5. Llamar a Claude Sonnet
+  // 6. Llamar a Claude Sonnet
   try {
     const anthropic = getAnthropicClient();
 
@@ -115,7 +154,7 @@ export async function processSimpleMessage(
       messages: messages,
     });
 
-    // 6. Extraer respuesta
+    // 7. Extraer respuesta
     const firstBlock = response.content[0];
     const assistantMessage = firstBlock && firstBlock.type === 'text' ? firstBlock.text : '';
 
@@ -123,7 +162,7 @@ export async function processSimpleMessage(
       `[agent-simple] Response generated in ${Date.now() - startTime}ms: "${assistantMessage.slice(0, 50)}..."`
     );
 
-    // 7. Guardar en historial
+    // 8. Guardar en historial
     const updatedHistory: ConversationMessage[] = [
       ...history,
       { role: 'user', content: text },
@@ -131,7 +170,7 @@ export async function processSimpleMessage(
     ];
     await saveConversationHistory(redis, phone, updatedHistory);
 
-    // 8. Escalación a humano (si está activado)
+    // 9. Escalación a humano (si está activado)
     if (process.env['ENABLE_ESCALATION'] === 'true') {
       try {
         const escalation = await checkAndEscalate(redis, {
