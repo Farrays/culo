@@ -83,14 +83,21 @@ describe('Health Check Endpoint', () => {
   });
 
   describe('CORS Headers', () => {
-    it('should set CORS headers', async () => {
+    it('should set CORS headers via security middleware', async () => {
       const req = createMockRequest();
       const res = createMockResponse();
 
       await handler(req, res);
 
-      expect(res.setHeader).toHaveBeenCalledWith('Access-Control-Allow-Origin', '*');
-      expect(res.setHeader).toHaveBeenCalledWith('Access-Control-Allow-Methods', 'GET, OPTIONS');
+      // The security middleware now handles CORS with broader defaults
+      expect(res.setHeader).toHaveBeenCalledWith(
+        'Access-Control-Allow-Methods',
+        'GET, POST, PUT, DELETE, OPTIONS'
+      );
+      expect(res.setHeader).toHaveBeenCalledWith(
+        'Access-Control-Allow-Headers',
+        'Content-Type, Authorization, X-CSRF-Token, X-Session-Id'
+      );
     });
   });
 
