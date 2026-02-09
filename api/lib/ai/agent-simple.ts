@@ -11,6 +11,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import type { Redis } from '@upstash/redis';
 import { detectLanguage, type SupportedLanguage } from './language-detector.js';
 import { getFullSystemPrompt } from './laura-system-prompt.js';
+import { checkAndEscalate } from './escalation-service.js';
 
 // Tipos
 interface AgentInput {
@@ -129,6 +130,26 @@ export async function processSimpleMessage(
       { role: 'assistant', content: assistantMessage },
     ];
     await saveConversationHistory(redis, phone, updatedHistory);
+
+    // 8. Escalación a humano (si está activado)
+    if (process.env['ENABLE_ESCALATION'] === 'true') {
+      try {
+        const escalation = await checkAndEscalate(redis, {
+          userPhone: phone,
+          userMessage: text,
+          lauraResponse: assistantMessage,
+          conversationHistory: updatedHistory,
+          language,
+          channel: input.channel || 'whatsapp',
+        });
+        if (escalation.escalated) {
+          console.log(`[agent-simple] Escalated to team: ${escalation.caseId}`);
+        }
+      } catch (escalationError) {
+        // Si falla la escalación, no afecta la respuesta
+        console.error('[agent-simple] Escalation error (non-blocking):', escalationError);
+      }
+    }
 
     return {
       text: assistantMessage,
