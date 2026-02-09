@@ -120,6 +120,21 @@ function addDays(date: Date, days: number): Date {
   return result;
 }
 
+/**
+ * Guard: Verifica que la hora actual en Madrid sea razonable (8:00-21:00)
+ * para evitar enviar recordatorios de madrugada
+ */
+function isReasonableHourInMadrid(): boolean {
+  const madridHour = parseInt(
+    new Date().toLocaleString('en-US', {
+      timeZone: SPAIN_TIMEZONE,
+      hour: 'numeric',
+      hour12: false,
+    })
+  );
+  return madridHour >= 8 && madridHour <= 21;
+}
+
 function formatDateSpanish(isoDate: string): string {
   if (!isoDate) return '';
   try {
@@ -737,6 +752,24 @@ export default async function handler(
   if (!redis) {
     console.error('[cron-reminders] Redis not configured');
     return res.status(500).json({ error: 'Redis not configured' });
+  }
+
+  // Guard: Skip if outside reasonable hours in Madrid (8:00-21:00)
+  // This prevents sending reminders in the middle of the night
+  if (!isReasonableHourInMadrid()) {
+    const currentMadridHour = new Date().toLocaleString('es-ES', {
+      timeZone: SPAIN_TIMEZONE,
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    console.log(
+      `[cron-reminders] Skipping - outside reasonable hours (current Madrid time: ${currentMadridHour})`
+    );
+    return res.status(200).json({
+      success: true,
+      skipped: true,
+      reason: `Outside reasonable hours in Madrid (8:00-21:00). Current: ${currentMadridHour}`,
+    });
   }
 
   // Distributed lock to prevent concurrent executions
