@@ -684,8 +684,8 @@ const routes = [
   { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
   { path: 'es/blog/historia/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachata' },
   { path: 'es/blog/tutoriales', lang: 'es', page: 'blogTutoriales' },
-  { path: 'es/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
-  { path: 'es/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
+  { path: 'es/blog/historia/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
+  { path: 'es/blog/tips/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
   { path: 'es/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'es', page: 'blogAcademiaDanza' },
@@ -704,8 +704,8 @@ const routes = [
   { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
   { path: 'ca/blog/historia/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachata' },
   { path: 'ca/blog/tutoriales', lang: 'ca', page: 'blogTutoriales' },
-  { path: 'ca/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
-  { path: 'ca/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
+  { path: 'ca/blog/historia/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
+  { path: 'ca/blog/tips/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
   { path: 'ca/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'ca', page: 'blogAcademiaDanza' },
@@ -724,8 +724,8 @@ const routes = [
   { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
   { path: 'en/blog/historia/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachata' },
   { path: 'en/blog/tutoriales', lang: 'en', page: 'blogTutoriales' },
-  { path: 'en/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
-  { path: 'en/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
+  { path: 'en/blog/historia/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
+  { path: 'en/blog/tips/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
   { path: 'en/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'en', page: 'blogAcademiaDanza' },
@@ -744,8 +744,8 @@ const routes = [
   { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
   { path: 'fr/blog/historia/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachata' },
   { path: 'fr/blog/tutoriales', lang: 'fr', page: 'blogTutoriales' },
-  { path: 'fr/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
-  { path: 'fr/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
+  { path: 'fr/blog/historia/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
+  { path: 'fr/blog/tips/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
   { path: 'fr/blog/tips/academia-de-danza-barcelona-guia-completa', lang: 'fr', page: 'blogAcademiaDanza' },
@@ -2541,9 +2541,9 @@ routes.forEach(route => {
   } else if (page === 'blogTutoriales') {
     pagePath = 'blog/tutoriales';
   } else if (page === 'blogSalsaRitmo') {
-    pagePath = 'blog/tutoriales/salsa-ritmo-conquisto-mundo';
+    pagePath = 'blog/historia/salsa-ritmo-conquisto-mundo';
   } else if (page === 'blogSalsaVsBachata') {
-    pagePath = 'blog/tutoriales/salsa-vs-bachata-que-estilo-elegir';
+    pagePath = 'blog/tips/salsa-vs-bachata-que-estilo-elegir';
   } else if (page === 'blogClasesSalsaBarcelona') {
     pagePath = 'blog/lifestyle/clases-de-salsa-barcelona';
   } else if (page === 'blogTips') {

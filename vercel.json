@@ -157,7 +157,7 @@
     },
     {
       "source": "/:locale(es|ca|en|fr)/blog/lifestyle/salsa-ritmo-conquisto-mundo",
-      "destination": "/:locale/blog/tutoriales/salsa-ritmo-conquisto-mundo",
+      "destination": "/:locale/blog/historia/salsa-ritmo-conquisto-mundo",
       "permanent": true
     },
     {
@@ -176,8 +176,8 @@
       "permanent": true
     },
     {
-      "source": "/:locale(es|ca|en|fr)/blog/tips/salsa-vs-bachata-que-estilo-elegir",
-      "destination": "/:locale/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir",
+      "source": "/:locale(es|ca|en|fr)/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir",
+      "destination": "/:locale/blog/tips/salsa-vs-bachata-que-estilo-elegir",
       "permanent": true
     },
     {
@@ -528,6 +528,11 @@
     {
       "source": "/instalaciones-de-farrays-international-dance-center",
       "destination": "/es/instalaciones-escuela-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/instalaciones",
+      "destination": "/:locale/instalaciones-escuela-baile-barcelona",
       "permanent": true
     },
     {

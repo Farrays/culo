@@ -23,6 +23,7 @@ const routes = [
   { path: '', priority: '1.0', changefreq: 'weekly' },
 
   // Hub Pages (categorías principales)
+  { path: 'clases', priority: '0.8', changefreq: 'weekly' },
   { path: 'clases/baile-barcelona', priority: '0.9', changefreq: 'weekly' },
   { path: 'clases/danzas-urbanas-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/salsa-bachata-barcelona', priority: '0.8', changefreq: 'monthly' },
@@ -42,6 +43,7 @@ const routes = [
   // Salsa y Bachata
   { path: 'clases/salsa-cubana-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/salsa-lady-style-barcelona', priority: '0.8', changefreq: 'monthly' },
+  { path: 'clases/bachata-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/bachata-lady-style-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/timba-barcelona', priority: '0.7', changefreq: 'monthly' },
   { path: 'clases/folklore-cubano', priority: '0.7', changefreq: 'monthly' },
@@ -60,6 +62,14 @@ const routes = [
   // Fitness y Preparación Física
   { path: 'clases/stretching-barcelona', priority: '0.7', changefreq: 'monthly' },
   { path: 'clases/ejercicios-gluteos-barcelona', priority: '0.7', changefreq: 'monthly' },
+  { path: 'clases/acondicionamiento-fisico-bailarines', priority: '0.7', changefreq: 'monthly' },
+  { path: 'clases/cuerpo-fit', priority: '0.7', changefreq: 'monthly' },
+
+  // Otros estilos
+  { path: 'clases/commercial-dance-barcelona', priority: '0.7', changefreq: 'monthly' },
+  { path: 'clases/kizomba-barcelona', priority: '0.7', changefreq: 'monthly' },
+  { path: 'clases/kpop-dance-barcelona', priority: '0.7', changefreq: 'monthly' },
+  { path: 'clases/baile-mananas', priority: '0.6', changefreq: 'monthly' },
 
   // Páginas de Alto Valor Transaccional
   { path: 'precios-clases-baile-barcelona', priority: '0.9', changefreq: 'weekly' },
@@ -82,11 +92,39 @@ const routes = [
   { path: 'preguntas-frecuentes', priority: '0.6', changefreq: 'monthly' },
   { path: 'calendario', priority: '0.6', changefreq: 'monthly' },
   { path: 'merchandising', priority: '0.5', changefreq: 'monthly' },
+  { path: 'metodo-farray', priority: '0.7', changefreq: 'monthly' },
+  { path: 'team-building-barcelona', priority: '0.6', changefreq: 'monthly' },
 
-  // Blog
+  // Blog - Índice y Categorías (solo con contenido)
   { path: 'blog', priority: '0.7', changefreq: 'weekly' },
+  // blog/tutoriales excluido - no tiene artículos
+  { path: 'blog/tips', priority: '0.6', changefreq: 'weekly' },
+  { path: 'blog/historia', priority: '0.6', changefreq: 'weekly' },
+  { path: 'blog/fitness', priority: '0.6', changefreq: 'weekly' },
+  { path: 'blog/lifestyle', priority: '0.6', changefreq: 'weekly' },
+
+  // Blog - Artículos Lifestyle
   { path: 'blog/lifestyle/beneficios-bailar-salsa', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/lifestyle/clases-de-salsa-barcelona', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/lifestyle/como-perder-miedo-bailar', priority: '0.6', changefreq: 'monthly' },
+
+  // Blog - Artículos Historia
   { path: 'blog/historia/historia-salsa-barcelona', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/historia/historia-bachata-barcelona', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/historia/salsa-ritmo-conquisto-mundo', priority: '0.6', changefreq: 'monthly' },
+
+  // Blog - Artículos Tips
+  { path: 'blog/tips/academia-de-danza-barcelona-guia-completa', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/tips/clases-baile-principiantes-barcelona-farrays', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/tips/danzas-urbanas-barcelona-guia-completa', priority: '0.6', changefreq: 'monthly' },
+  { path: 'blog/tips/ballet-para-adultos-barcelona', priority: '0.6', changefreq: 'monthly' },
+
+  // Blog - Artículos Tutoriales
+  { path: 'blog/tips/salsa-vs-bachata-que-estilo-elegir', priority: '0.6', changefreq: 'monthly' },
+
+  // Blog - Artículos Fitness
+  { path: 'blog/fitness/baile-salud-mental', priority: '0.6', changefreq: 'monthly' },
 ];
 
 const locales = ['es', 'ca', 'en', 'fr'];
