@@ -1,18 +1,21 @@
 #!/usr/bin/env node
 
 /**
- * Generate complete sitemap.xml with all routes from App.tsx
+ * Generate sitemap-pages.xml with all routes from App.tsx
+ * Also updates the sitemap index (sitemap.xml) with current date
  * Run this script during build process to keep sitemap up to date
  */
 
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
-const sitemapPath = join(projectRoot, 'sitemap.xml');
+const publicDir = join(projectRoot, 'public');
+const sitemapPagesPath = join(publicDir, 'sitemap-pages.xml');
+const sitemapIndexPath = join(publicDir, 'sitemap.xml');
 
 // All routes from App.tsx (excluding redirects and 404)
 const routes = [
@@ -110,8 +113,8 @@ ${generateHreflangLinks(route.path)}
 }
 
 try {
-  console.log('📝 Generating complete sitemap.xml...');
-  
+  console.log('📝 Generating sitemap-pages.xml...');
+
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -125,12 +128,33 @@ try {
   });
 
   sitemap += '</urlset>\n';
-  
-  writeFileSync(sitemapPath, sitemap, 'utf-8');
-  
+
+  // Write sitemap-pages.xml
+  writeFileSync(sitemapPagesPath, sitemap, 'utf-8');
+
+  // Update sitemap index with current date
+  const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.farrayscenter.com/sitemap-pages.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.farrayscenter.com/sitemap-news.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.farrayscenter.com/sitemap-images.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+</sitemapindex>
+`;
+  writeFileSync(sitemapIndexPath, sitemapIndex, 'utf-8');
+
   const totalUrls = routes.length * locales.length;
-  console.log(`✅ Generated sitemap with ${totalUrls} URLs (${routes.length} routes × ${locales.length} languages)`);
-  console.log(`📍 Sitemap location: ${sitemapPath}`);
+  console.log(`✅ Generated sitemap-pages.xml with ${totalUrls} URLs (${routes.length} routes × ${locales.length} languages)`);
+  console.log(`✅ Updated sitemap.xml index with date: ${currentDate}`);
+  console.log(`📍 Location: ${publicDir}/`);
 } catch (error) {
   console.error('❌ Failed to generate sitemap:', error.message);
   process.exit(1);
