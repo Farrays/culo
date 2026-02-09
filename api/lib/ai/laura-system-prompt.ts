@@ -1,7 +1,7 @@
 /**
  * Laura System Prompt Loader
  *
- * Carga el system prompt completo desde docs/LAURA_PROMPT.md
+ * Carga el system prompt completo desde api/LAURA_PROMPT.md
  * Este archivo contiene TODA la información que Laura necesita:
  * - Datos del centro
  * - Precios
@@ -13,10 +13,13 @@
  *
  * El prompt está diseñado para ser editado directamente en el archivo MD
  * sin necesidad de tocar código.
+ *
+ * IMPORTANTE: El archivo está en /api/ para que Vercel lo incluya en el bundle.
  */
 
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import type { SupportedLanguage } from './language-detector.js';
 
 // Cache del prompt para no leerlo en cada request
@@ -25,7 +28,7 @@ let lastLoadTime = 0;
 const CACHE_TTL_MS = 60 * 1000; // Recargar cada 1 minuto en dev
 
 /**
- * Carga el system prompt desde docs/LAURA_PROMPT.md
+ * Carga el system prompt desde api/LAURA_PROMPT.md
  * Con cache para evitar lecturas repetidas
  */
 export function loadLauraPrompt(): string {
@@ -37,8 +40,12 @@ export function loadLauraPrompt(): string {
   }
 
   try {
-    // El archivo está en docs/LAURA_PROMPT.md relativo a la raíz del proyecto
-    const promptPath = join(process.cwd(), 'docs', 'LAURA_PROMPT.md');
+    // El archivo está en api/LAURA_PROMPT.md (junto al código para que Vercel lo incluya)
+    // Usamos __dirname para obtener la ruta relativa al archivo actual
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    // Subimos 2 niveles: lib/ai/ -> lib/ -> api/
+    const promptPath = join(__dirname, '..', '..', 'LAURA_PROMPT.md');
     const rawContent = readFileSync(promptPath, 'utf-8');
 
     // Limpiar el contenido: quitar el header de comentarios y el separador ---

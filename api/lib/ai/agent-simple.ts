@@ -4,15 +4,13 @@
  * Agente minimalista que usa Claude Sonnet con el system prompt completo.
  * Sin routing complejo, sin máquinas de estado, solo prompt + Claude.
  *
- * FASE 1: Solo respuestas básicas (sin memoria, sin Momence)
- * FASE 2: Añadir memoria Redis
- * FASE 3: Añadir consulta Momence para horarios
+ * El prompt se carga desde api/LAURA_PROMPT.md
  */
 
 import Anthropic from '@anthropic-ai/sdk';
 import type { Redis } from '@upstash/redis';
-import { loadLauraPrompt } from './laura-system-prompt.js';
 import { detectLanguage, type SupportedLanguage } from './language-detector.js';
+import { getFullSystemPrompt } from './laura-system-prompt.js';
 
 // Tipos
 interface AgentInput {
@@ -42,17 +40,10 @@ function getAnthropicClient(): Anthropic {
   return anthropicClient;
 }
 
-// Instrucciones de idioma
-const LANGUAGE_INSTRUCTIONS: Record<SupportedLanguage, string> = {
-  es: 'Responde SIEMPRE en español de España. Usa expresiones naturales como "vale", "genial", "mola".',
-  ca: 'Responde SIEMPRE en català. Usa expressions naturals.',
-  en: 'ALWAYS respond in English. Use natural, friendly language.',
-  fr: 'Réponds TOUJOURS en français. Utilise un langage naturel et amical.',
-};
+// ============================================================================
+// HISTORIAL DE CONVERSACIÓN (Redis)
+// ============================================================================
 
-/**
- * Obtiene el historial de conversación de Redis
- */
 async function getConversationHistory(redis: Redis, phone: string): Promise<ConversationMessage[]> {
   try {
     const key = `conv:${phone}`;
@@ -66,9 +57,6 @@ async function getConversationHistory(redis: Redis, phone: string): Promise<Conv
   return [];
 }
 
-/**
- * Guarda el historial de conversación en Redis
- */
 async function saveConversationHistory(
   redis: Redis,
   phone: string,
@@ -84,19 +72,16 @@ async function saveConversationHistory(
   }
 }
 
-/**
- * Procesa un mensaje con el agente Laura simple
- *
- * @param redis - Cliente Redis para memoria
- * @param input - Mensaje entrante
- * @returns Respuesta del agente
- */
+// ============================================================================
+// PROCESAMIENTO DE MENSAJES
+// ============================================================================
+
 export async function processSimpleMessage(
   redis: Redis,
   input: AgentInput
 ): Promise<AgentResponse> {
   const startTime = Date.now();
-  const { phone, text, contactName } = input;
+  const { phone, text } = input;
 
   console.log(
     `[agent-simple] Processing message from ${phone.slice(-4)}: "${text.slice(0, 50)}..."`
@@ -106,35 +91,19 @@ export async function processSimpleMessage(
   const language = detectLanguage(text);
   console.log(`[agent-simple] Detected language: ${language}`);
 
-  // 2. Cargar system prompt
-  const basePrompt = loadLauraPrompt();
+  // 2. Cargar system prompt desde LAURA_PROMPT.md
+  const systemPrompt = getFullSystemPrompt(language);
 
-  // 3. Añadir instrucciones de idioma
-  const systemPrompt = `${basePrompt}
-
-================================================================================
-INSTRUCCIONES DE IDIOMA
-================================================================================
-${LANGUAGE_INSTRUCTIONS[language]}
-
-================================================================================
-CONTEXTO DE LA CONVERSACIÓN
-================================================================================
-- Usuario: ${contactName || 'Desconocido'}
-- Canal: WhatsApp
-- Hora actual: ${new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid' })}
-`;
-
-  // 4. Obtener historial de conversación
+  // 3. Obtener historial de conversación
   const history = await getConversationHistory(redis, phone);
 
-  // 5. Preparar mensajes para Claude
+  // 4. Preparar mensajes para Claude
   const messages: Array<{ role: 'user' | 'assistant'; content: string }> = [
     ...history,
     { role: 'user' as const, content: text },
   ];
 
-  // 6. Llamar a Claude Sonnet
+  // 5. Llamar a Claude Sonnet
   try {
     const anthropic = getAnthropicClient();
 
@@ -145,7 +114,7 @@ CONTEXTO DE LA CONVERSACIÓN
       messages: messages,
     });
 
-    // 7. Extraer respuesta
+    // 6. Extraer respuesta
     const firstBlock = response.content[0];
     const assistantMessage = firstBlock && firstBlock.type === 'text' ? firstBlock.text : '';
 
@@ -153,7 +122,7 @@ CONTEXTO DE LA CONVERSACIÓN
       `[agent-simple] Response generated in ${Date.now() - startTime}ms: "${assistantMessage.slice(0, 50)}..."`
     );
 
-    // 8. Guardar en historial
+    // 7. Guardar en historial
     const updatedHistory: ConversationMessage[] = [
       ...history,
       { role: 'user', content: text },
@@ -185,7 +154,6 @@ CONTEXTO DE LA CONVERSACIÓN
 
 /**
  * Wrapper para mantener compatibilidad con el webhook actual
- * (mismo nombre de función que agent.ts)
  */
 export async function processAgentMessage(redis: Redis, input: AgentInput): Promise<AgentResponse> {
   return processSimpleMessage(redis, input);
