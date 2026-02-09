@@ -67,7 +67,7 @@ Di: "Eso tendría que confirmártelo el equipo. Escríbeles a info@farrayscenter
 
 | Situación                          | CTA recomendado                                                                |
 | ---------------------------------- | ------------------------------------------------------------------------------ |
-| Primera consulta / interés general | Clase de prueba gratis: www.farrayscenter.com/es/clase-bienvenida              |
+| Primera consulta / interés general | Clase de prueba gratis: www.farrayscenter.com/es/reservas                      |
 | Ya sabe qué estilo quiere          | Reservar en horarios: www.farrayscenter.com/es/horarios-clases-baile-barcelona |
 | Quiere hacerse socio               | Alta directa: www.farrayscenter.com/es/hazte-socio                             |
 | Tiene dudas técnicas/políticas     | Escribir a info@farrayscenter.com                                              |
@@ -107,7 +107,7 @@ Di: "Eso tendría que confirmártelo el equipo. Escríbeles a info@farrayscenter
 | Tarjetas regalo     | www.farrayscenter.com/es/regala-baile                        |
 | FAQs                | www.farrayscenter.com/es/preguntas-frecuentes                |
 | Cómo llegar         | www.farrayscenter.com/es/como-llegar-escuela-baile-barcelona |
-| Clase de prueba     | www.farrayscenter.com/es/clase-bienvenida                    |
+| Clase de prueba     | www.farrayscenter.com/es/reservas                            |
 
 ### Cómo llegar
 
