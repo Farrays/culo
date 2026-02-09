@@ -22,6 +22,22 @@ import Redis from 'ioredis';
 const REMINDER_WINDOW_HOURS = 24; // Recordatorio 24h antes de la clase
 const REMINDER_TOLERANCE_HOURS = 1; // +/- 1 hora de tolerancia
 const WHATSAPP_API_VERSION = 'v23.0';
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+
+/**
+ * Guard: Verifica que la hora actual en Madrid sea razonable (8:00-21:00)
+ * para evitar enviar recordatorios de madrugada
+ */
+function isReasonableHourInMadrid(): boolean {
+  const madridHour = parseInt(
+    new Date().toLocaleString('en-US', {
+      timeZone: SPAIN_TIMEZONE,
+      hour: 'numeric',
+      hour12: false,
+    })
+  );
+  return madridHour >= 8 && madridHour <= 21;
+}
 
 interface BookingData {
   firstName: string;
@@ -210,6 +226,24 @@ export default async function handler(
   const redis = getRedisClient();
   if (!redis) {
     return res.status(500).json({ error: 'Redis not configured' });
+  }
+
+  // Guard: Skip if outside reasonable hours in Madrid (8:00-21:00)
+  // This prevents sending reminders in the middle of the night
+  if (!isReasonableHourInMadrid()) {
+    const currentMadridHour = new Date().toLocaleString('es-ES', {
+      timeZone: SPAIN_TIMEZONE,
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    console.log(
+      `[Reminders24h] Skipping - outside reasonable hours (current Madrid time: ${currentMadridHour})`
+    );
+    return res.status(200).json({
+      success: true,
+      skipped: true,
+      reason: `Outside reasonable hours in Madrid (8:00-21:00). Current: ${currentMadridHour}`,
+    });
   }
 
   // Distributed lock to prevent concurrent executions

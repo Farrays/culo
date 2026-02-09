@@ -85,7 +85,7 @@
     },
     {
       "path": "/api/cron-reminders-24h",
-      "schedule": "0 * * * *"
+      "schedule": "0 8,17 * * *"
     },
     {
       "path": "/api/cron-feedback",
