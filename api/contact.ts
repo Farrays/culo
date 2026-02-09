@@ -147,7 +147,9 @@ export default async function handler(
     }
 
     // Preparar payload para Momence con los campos exactos esperados
+    // El token va en el body, no en Authorization header (como lead.ts)
     const payload = {
+      token: MOMENCE_CONTACT_TOKEN,
       firstName: sanitize(firstName, 100),
       lastName: sanitize(lastName, 100),
       email: sanitize(email, 255).toLowerCase(),
@@ -163,7 +165,6 @@ export default async function handler(
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${MOMENCE_CONTACT_TOKEN}`,
       },
       body: JSON.stringify(payload),
     });
