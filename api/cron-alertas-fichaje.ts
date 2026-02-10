@@ -140,9 +140,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     //   .select('*')
     //   .single();
 
+    // Obtener profesores que YA han fichado hoy (para no enviarles alertas)
+    const { data: profesoresYaFichadosData } = await supabase
+      .from('fichajes')
+      .select('profesor_id')
+      .eq('fecha', result.fecha)
+      .in('estado', ['entrada_registrada', 'completado', 'editado_admin']);
+
+    const profesoresYaFichados = new Set(
+      (profesoresYaFichadosData || []).map((f: { profesor_id: string }) => f.profesor_id)
+    );
+
+    console.log(`[cron-alertas] Profesores que ya ficharon hoy: ${profesoresYaFichados.size}`);
+
     // Procesar cada fichaje pendiente
     for (const fichaje of fichajes) {
       if (!fichaje.profesor || !fichaje.hora_inicio) continue;
+
+      // Si el profesor ya fichó en otro fichaje hoy, NO enviar alerta
+      if (profesoresYaFichados.has(fichaje.profesor_id)) {
+        console.log(`[cron-alertas] Saltando alerta para ${fichaje.profesor.nombre}: ya fichó hoy`);
+        continue;
+      }
 
       // Calcular minutos desde que debió empezar
       const horaInicioStr = fichaje.hora_inicio.substring(0, 5); // HH:MM

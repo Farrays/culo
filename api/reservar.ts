@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
+import { Buffer } from 'buffer';
 import { Resend } from 'resend';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { validateCsrfRequest } from './lib/csrf.js';
@@ -626,8 +627,7 @@ function getCalendarId(): string {
 function isGoogleCalendarConfigured(): boolean {
   // Check Service Account first, then OAuth2
   const hasServiceAccount = !!(
-    process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'] &&
-    process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY']
+    process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'] && process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY']
   );
   const hasOAuth = !!(
     process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
@@ -848,7 +848,6 @@ async function sendBookingConfirmationWhatsApp(data: {
   }
 }
 
-/* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
 
 /**

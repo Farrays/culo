@@ -633,6 +633,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         const profesor = profesores.find(p => p.id === profesorId);
         if (!profesor) continue;
 
+        // Verificar si el profesor ya fichó hoy (para no crear fichajes duplicados)
+        const { data: yaFichoData } = await supabase
+          .from('fichajes')
+          .select('id')
+          .eq('profesor_id', profesor.id)
+          .eq('fecha', result.fecha)
+          .in('estado', ['entrada_registrada', 'completado', 'editado_admin'])
+          .limit(1)
+          .single();
+
+        const yaFicho = yaFichoData as { id: string } | null;
+
+        if (yaFicho) {
+          debugLog(`[cron-fichaje] Saltando ${profesor.nombre}: ya fichó hoy (id: ${yaFicho.id})`);
+          continue; // No crear más fichajes pendientes para este profesor
+        }
+
         // Agrupar en bloques
         const bloques = agruparEnBloques(clases, profesor, configuracion.umbral_pausa_minutos);
 
@@ -811,6 +828,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
       for (const turno of turnosHoy) {
         if (!turno.profesores.activo) continue;
+
+        // Verificar si el empleado ya fichó hoy (para no crear fichajes duplicados)
+        const { data: staffYaFichoData } = await supabase
+          .from('fichajes')
+          .select('id')
+          .eq('profesor_id', turno.empleado_id)
+          .eq('fecha', result.fecha)
+          .in('estado', ['entrada_registrada', 'completado', 'editado_admin'])
+          .limit(1)
+          .single();
+
+        const staffYaFicho = staffYaFichoData as { id: string } | null;
+
+        if (staffYaFicho) {
+          debugLog(`[cron-fichaje] Saltando staff ${turno.profesores.nombre}: ya fichó hoy`);
+          continue; // No crear más fichajes pendientes para este empleado
+        }
 
         const horaInicioTurno = turno.hora_inicio.substring(0, 5); // HH:MM
         const horaFinTurno = turno.hora_fin.substring(0, 5);

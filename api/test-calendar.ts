@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
+import { Buffer } from 'buffer';
 
 /**
  * Test endpoint para verificar Google Calendar
@@ -147,8 +148,7 @@ function getCalendarId(): string {
 function isGoogleCalendarConfigured(): boolean {
   // Check Service Account first, then OAuth2
   const hasServiceAccount = !!(
-    process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'] &&
-    process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY']
+    process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'] && process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY']
   );
   const hasOAuth = !!(
     process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
