@@ -59,8 +59,12 @@ if (!rootElement) {
 const isPrerendered = rootElement.hasAttribute('data-prerendered');
 const hasContent = rootElement.hasChildNodes();
 
-if (isPrerendered && hasContent) {
-  // En producción con prerender Y contenido: hidratar el HTML existente
+// Homepage tiene H1 para SEO pero no coincide con React (Hero component)
+// Usar createRoot para evitar error #418 mientras mantenemos el H1 para SEO
+const isHomePage = /^\/(es|ca|en|fr)\/?$/.test(window.location.pathname);
+
+if (isPrerendered && hasContent && !isHomePage) {
+  // Páginas con contenido pre-renderizado que SÍ coincide con React: hidratar
   ReactDOM.hydrateRoot(
     rootElement,
     <React.StrictMode>
@@ -68,7 +72,7 @@ if (isPrerendered && hasContent) {
     </React.StrictMode>
   );
 } else {
-  // En desarrollo sin prerender, o landing pages con SSG vacío: renderizar normalmente
+  // Homepage, desarrollo, o landing pages: renderizar fresh (sin hidratación)
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
