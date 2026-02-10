@@ -631,4 +631,4 @@ Contactar a través de **www.farrayscenter.com/es/contacto**
 - NO digas "contacta con soporte de Momence" - siempre redirige a info@farrayscenter.com
 - NO hagas comentarios tipo "no te tengo en mi base de datos" o "eres usuario nuevo"
 - Sé objetivo y contesta solo la información que el cliente necesita
-- Si preguntan por horarios de clases específicas, consulta la API de Momence
+- Si preguntan por horarios de clases específicas, usa la información de horarios incluida arriba
