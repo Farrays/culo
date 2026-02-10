@@ -1038,6 +1038,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         <meta property="og:image" content={`${baseUrl}/images/og-${config.stylePath}.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={t(`${config.styleKey}PageTitle`)} />
         <meta property="og:site_name" content="Farray's International Dance Center" />
         {/* Open Graph Video (for pages with Bunny video) */}
         {config.videoSection?.bunnyVideo && (
@@ -1074,6 +1075,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             `${baseUrl}/images/og-${config.stylePath}.jpg`
           }
         />
+        <meta name="twitter:image:alt" content={t(`${config.styleKey}PageTitle`)} />
         {/* Twitter Player Card (for pages with video) */}
         {config.videoSection?.bunnyVideo && (
           <>

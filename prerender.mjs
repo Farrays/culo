@@ -1274,7 +1274,7 @@ const metadata = {
       description: "Classes de ballet clàssic a Barcelona per a adults. Aprèn tècnica, postura i elegància amb mestres formats a l'ENA. Acadèmia CID-UNESCO entre Plaça Espanya i Sants.",
     },
     cuerpoFit: {
-      title: 'Cuerpo-Fit Barcelona | Cardio Dance | Farray\'s Center',
+      title: 'Cuerpo-Fit Barcelona | Classes de Cardio Dance | Farray\'s Center',
       description: 'Cuerpo-Fit a Barcelona: crema 400-500 calories ballant. Entrenament full body amb dansa, cardio i tonificació. CID-UNESCO. Reserva la teva classe!',
     },
     baileManananas: {
@@ -1660,7 +1660,7 @@ const metadata = {
       description: 'Classical ballet Barcelona for adults. Technique, posture and elegance with ENA-trained masters. CID-UNESCO Academy. Plaza España. Book!',
     },
     cuerpoFit: {
-      title: 'Cuerpo-Fit Barcelona | Cardio Dance | Farray\'s Center',
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance Workout | Farray\'s Center',
       description: 'Cuerpo-Fit in Barcelona: burn 400-500 calories dancing. Full body workout with dance, cardio and toning. CID-UNESCO. Book your class!',
     },
     baileManananas: {
@@ -2354,7 +2354,8 @@ const generateInitialContentForLang = (lang, manualOverrides) => {
 // NOTE: home is excluded to avoid hydration mismatch - React components don't match static HTML
 const manualOverrides = {
   es: {
-    // home excluded - causes hydration error #418 because React renders complex components
+    // SEO H1 for home - minimal content to avoid hydration mismatch, React will replace
+    home: `<h1 class="sr-only">Farray's Center - Escuela de Baile en Barcelona | Clases de Dancehall, Hip Hop, Salsa y más</h1>`,
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Términos y Condiciones</h1><p>Información legal sobre inscripciones, pagos y políticas de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Aviso Legal</h1><p>Información sobre la empresa, propiedad intelectual y condiciones de uso.</p></main>`,
@@ -2366,7 +2367,8 @@ const manualOverrides = {
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
   },
   ca: {
-    // home excluded - causes hydration error #418 because React renders complex components
+    // SEO H1 for home - minimal content to avoid hydration mismatch, React will replace
+    home: `<h1 class="sr-only">Farray's Center - Escola de Ball a Barcelona | Classes de Dancehall, Hip Hop, Salsa i més</h1>`,
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Termes i Condicions</h1><p>Informació legal sobre inscripcions, pagaments i polítiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Avís Legal</h1><p>Informació sobre l'empresa, propietat intel·lectual i condicions d'ús.</p></main>`,
@@ -2378,7 +2380,8 @@ const manualOverrides = {
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
   },
   en: {
-    // home excluded - causes hydration error #418 because React renders complex components
+    // SEO H1 for home - minimal content to avoid hydration mismatch, React will replace
+    home: `<h1 class="sr-only">Farray's Center - Dance School in Barcelona | Dancehall, Hip Hop, Salsa Classes and more</h1>`,
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Terms and Conditions</h1><p>Legal information about registration, payments and policies at Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Legal Notice</h1><p>Information about the company, intellectual property and terms of use.</p></main>`,
@@ -2390,7 +2393,8 @@ const manualOverrides = {
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
   },
   fr: {
-    // home excluded - causes hydration error #418 because React renders complex components
+    // SEO H1 for home - minimal content to avoid hydration mismatch, React will replace
+    home: `<h1 class="sr-only">Farray's Center - École de Danse à Barcelone | Cours de Dancehall, Hip Hop, Salsa et plus</h1>`,
     yrProject: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Y&R | Yunaisy & Reynier</h1><p>Cuban International Dancers</p></main>`,
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditions Générales</h1><p>Informations légales sur les inscriptions, paiements et politiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Mentions Légales</h1><p>Informations sur l'entreprise, propriété intellectuelle et conditions d'utilisation.</p></main>`,
