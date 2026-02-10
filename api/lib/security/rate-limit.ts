@@ -94,7 +94,8 @@ export async function checkRateLimit(
       const firstRequest = oldestRequest?.[0];
       if (firstRequest) {
         // Parse the timestamp from the oldest request
-        const oldestTime = parseInt(String(firstRequest).split(':')[0], 10);
+        const timestampPart = String(firstRequest).split(':')[0] ?? '';
+        const oldestTime = parseInt(timestampPart, 10);
         if (!isNaN(oldestTime)) {
           resetIn = Math.max(1, Math.ceil((oldestTime + config.windowMs - now) / 1000));
         }
