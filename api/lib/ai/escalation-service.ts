@@ -105,8 +105,8 @@ const ANGRY_USER_TRIGGERS = [
   'esto es una mierda',
   'estoy harto',
   'estoy harta',
-  'me voy a dar de baja',
-  'voy a cancelar',
+  // NOTA: "me voy a dar de baja" y "voy a cancelar" NO son triggers de enfado
+  // Laura debe explicar las políticas de cancelación sin escalar
   'no me sirve',
   'no funciona',
   'incompetentes',
@@ -130,7 +130,7 @@ const ANGRY_USER_TRIGGERS = [
   'vull parlar amb algú',
   'estic fart',
   'estic farta',
-  'em donaré de baixa',
+  // NOTA: "em donaré de baixa" NO es trigger - Laura explica políticas
   'és vergonyós',
   'vull queixar-me',
   // Inglés
@@ -138,8 +138,7 @@ const ANGRY_USER_TRIGGERS = [
   'let me talk to a human',
   'this is ridiculous',
   "i'm frustrated",
-  'i want a refund',
-  'i want to cancel',
+  // NOTA: "i want a refund" y "i want to cancel" NO son triggers - Laura explica políticas
   'terrible service',
   'worst experience',
   'i want to complain',
@@ -147,7 +146,7 @@ const ANGRY_USER_TRIGGERS = [
   "je veux parler à quelqu'un",
   "c'est ridicule",
   'je veux me plaindre',
-  'je veux un remboursement',
+  // NOTA: "je veux un remboursement" NO es trigger - Laura explica políticas
 ];
 
 // Respuestas de escalación para cada idioma
