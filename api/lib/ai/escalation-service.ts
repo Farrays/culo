@@ -43,12 +43,23 @@ export interface EscalationStats {
 // ============================================================================
 
 // Frases que indican que Laura no supo responder
+// IMPORTANTE: Deben coincidir con lo que dice LAURA_PROMPT.md
 const ESCALATION_TRIGGERS = [
-  'tendría que confirmarlo con el equipo',
-  'tendria que confirmarlo con el equipo',
-  "hauria de confirmar-ho amb l'equip",
-  'i would need to confirm with the team',
-  "je devrais confirmer avec l'équipe",
+  // Español - coincide con el prompt: "Tendría que confirmarlo, contacta en info@"
+  'tendría que confirmarlo',
+  'tendria que confirmarlo',
+  'tendría que confirmártelo',
+  'tendria que confirmartelo',
+  // Catalán
+  'hauria de confirmar-ho',
+  "m'ho hauria de confirmar",
+  // Inglés
+  'i would need to confirm',
+  'would need to check with',
+  // Francés
+  'je devrais confirmer',
+  'il faudrait confirmer',
+  // Frases adicionales de "no sé"
   'no tengo esa información',
   'no tinc aquesta informació',
   "i don't have that information",
