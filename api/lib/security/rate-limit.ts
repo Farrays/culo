@@ -64,11 +64,14 @@ export interface RateLimitResult {
  * @param identifier - Unique identifier (usually client IP)
  * @returns Rate limit check result
  */
+// Default config (extracted to avoid undefined checks)
+const DEFAULT_CONFIG: RateLimitConfig = { windowMs: 60000, maxRequests: 30 };
+
 export async function checkRateLimit(
   endpoint: string,
   identifier: string
 ): Promise<RateLimitResult> {
-  const config = RATE_LIMITS[endpoint] || RATE_LIMITS['default'];
+  const config = RATE_LIMITS[endpoint] ?? DEFAULT_CONFIG;
   const key = `ratelimit:${endpoint}:${identifier}`;
   const windowSeconds = Math.floor(config.windowMs / 1000);
   const now = Date.now();

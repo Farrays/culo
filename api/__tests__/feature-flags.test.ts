@@ -248,7 +248,9 @@ describe('Feature Flags Admin Endpoint', () => {
       });
       const res = createMockResponse();
 
-      vi.mocked(snapshotFlags).mockResolvedValue('snapshot:2024-01-01T00:00:00Z' as unknown as Record<string, boolean>);
+      vi.mocked(snapshotFlags).mockResolvedValue(
+        'snapshot:2024-01-01T00:00:00Z' as unknown as Record<string, boolean>
+      );
 
       await handler(req, res);
 

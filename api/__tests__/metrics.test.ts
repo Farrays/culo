@@ -288,8 +288,18 @@ describe('Metrics API Endpoint', () => {
       delete process.env['CRON_SECRET'];
 
       const mockEvents = [
-        { id: '1', action: 'booking_created' as const, timestamp: '2024-01-15T10:00:00Z', success: true },
-        { id: '2', action: 'booking_cancelled' as const, timestamp: '2024-01-15T11:00:00Z', success: true },
+        {
+          id: '1',
+          action: 'booking_created' as const,
+          timestamp: '2024-01-15T10:00:00Z',
+          success: true,
+        },
+        {
+          id: '2',
+          action: 'booking_cancelled' as const,
+          timestamp: '2024-01-15T11:00:00Z',
+          success: true,
+        },
       ];
 
       vi.mocked(getRecentAuditEvents).mockResolvedValue(mockEvents);
@@ -311,7 +321,14 @@ describe('Metrics API Endpoint', () => {
     it('should use getAuditEventsByDate when date is provided', async () => {
       delete process.env['CRON_SECRET'];
 
-      const mockEvents = [{ id: '1', action: 'booking_created' as const, timestamp: '2024-01-15T10:00:00Z', success: true }];
+      const mockEvents = [
+        {
+          id: '1',
+          action: 'booking_created' as const,
+          timestamp: '2024-01-15T10:00:00Z',
+          success: true,
+        },
+      ];
 
       vi.mocked(getAuditEventsByDate).mockResolvedValue(mockEvents);
 
