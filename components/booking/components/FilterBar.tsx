@@ -3,7 +3,7 @@
  * Collapsible on mobile, inline on desktop
  */
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useTransition } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { FilterState, FilterOptions } from '../types/booking';
 import {
@@ -284,10 +284,22 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   // Filters visible by default on mobile, click to hide
   const [isExpanded, setIsExpanded] = useState(true);
+  // useTransition for non-blocking filter updates (INP optimization)
+  const [, startTransition] = useTransition();
 
   const handleClose = useCallback(() => {
     setOpenDropdown(null);
   }, []);
+
+  // Wrap filter changes in startTransition for better INP
+  const handleFilterChange = useCallback(
+    (key: keyof FilterState, value: string) => {
+      startTransition(() => {
+        onFilterChange(key, value);
+      });
+    },
+    [onFilterChange]
+  );
 
   const handleToggle = useCallback((dropdown: string) => {
     setOpenDropdown(prev => (prev === dropdown ? null : dropdown));
@@ -296,15 +308,17 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   // Handle category change - clear style if it's not in the new category
   const handleCategoryChange = useCallback(
     (value: string) => {
-      onFilterChange('category', value);
-      // Clear style if it doesn't belong to the new category
-      if (filters.style && value) {
-        const stylesInCategory = getStylesByCategory(value as Category);
-        const styleExists = stylesInCategory.some(s => s.value === filters.style);
-        if (!styleExists) {
-          onFilterChange('style', '');
+      startTransition(() => {
+        onFilterChange('category', value);
+        // Clear style if it doesn't belong to the new category
+        if (filters.style && value) {
+          const stylesInCategory = getStylesByCategory(value as Category);
+          const styleExists = stylesInCategory.some(s => s.value === filters.style);
+          if (!styleExists) {
+            onFilterChange('style', '');
+          }
         }
-      }
+      });
     },
     [filters.style, onFilterChange]
   );
@@ -390,7 +404,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         label={t('booking_filter_style')}
         value={filters.style}
         options={styleOptions}
-        onChange={value => onFilterChange('style', value)}
+        onChange={value => handleFilterChange('style', value)}
         isOpen={openDropdown === 'style'}
         onToggle={() => handleToggle('style')}
         onClose={handleClose}
@@ -401,7 +415,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         label={t('booking_filter_level')}
         value={filters.level}
         options={levelOptions}
-        onChange={value => onFilterChange('level', value)}
+        onChange={value => handleFilterChange('level', value)}
         isOpen={openDropdown === 'level'}
         onToggle={() => handleToggle('level')}
         onClose={handleClose}
@@ -413,7 +427,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         label={t('booking_filter_day')}
         value={filters.day}
         options={dayOptions}
-        onChange={value => onFilterChange('day', value)}
+        onChange={value => handleFilterChange('day', value)}
         isOpen={openDropdown === 'day'}
         onToggle={() => handleToggle('day')}
         onClose={handleClose}
@@ -425,7 +439,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         label={t('booking_filter_time')}
         value={filters.timeBlock}
         options={timeBlockOptions}
-        onChange={value => onFilterChange('timeBlock', value)}
+        onChange={value => handleFilterChange('timeBlock', value)}
         isOpen={openDropdown === 'timeBlock'}
         onToggle={() => handleToggle('timeBlock')}
         onClose={handleClose}
@@ -438,7 +452,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           label={t('booking_filter_instructor')}
           value={filters.instructor}
           options={instructorOptions}
-          onChange={value => onFilterChange('instructor', value)}
+          onChange={value => handleFilterChange('instructor', value)}
           isOpen={openDropdown === 'instructor'}
           onToggle={() => handleToggle('instructor')}
           onClose={handleClose}

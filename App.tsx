@@ -162,10 +162,11 @@ const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
 const CookiePolicyPage = lazy(() => import('./components/CookiePolicyPage'));
 
 // ===== COOKIE CONSENT =====
-import CookieBanner from './components/shared/CookieBanner';
+// CookieBanner lazy loaded for LCP optimization
+const CookieBanner = lazy(() => import('./components/shared/CookieBanner'));
 
-// ===== EXIT INTENT MODAL =====
-import ExitIntentModal from './components/ExitIntentModal';
+// ===== EXIT INTENT MODAL (Lazy loaded for LCP optimization) =====
+const ExitIntentModal = lazy(() => import('./components/ExitIntentModal'));
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -1413,16 +1414,20 @@ const AppContent: React.FC = () => {
           <BackToTop />
         </>
       )}
-      {/* Exit Intent Modal - Only on conversion pages */}
+      {/* Exit Intent Modal - Only on conversion pages (Lazy loaded) */}
       {shouldShowExitIntent && (
-        <ExitIntentModal
-          delay={EXIT_INTENT_PROMO_CONFIG.delay}
-          cookieExpiry={EXIT_INTENT_PROMO_CONFIG.cookieExpiry}
-          promoEndDate={EXIT_INTENT_PROMO_CONFIG.endDate}
-          discountPercent={EXIT_INTENT_PROMO_CONFIG.discountPercent}
-        />
+        <Suspense fallback={null}>
+          <ExitIntentModal
+            delay={EXIT_INTENT_PROMO_CONFIG.delay}
+            cookieExpiry={EXIT_INTENT_PROMO_CONFIG.cookieExpiry}
+            promoEndDate={EXIT_INTENT_PROMO_CONFIG.endDate}
+            discountPercent={EXIT_INTENT_PROMO_CONFIG.discountPercent}
+          />
+        </Suspense>
       )}
-      <CookieBanner />
+      <Suspense fallback={null}>
+        <CookieBanner />
+      </Suspense>
       <ServiceWorkerStatus />
     </div>
   );
