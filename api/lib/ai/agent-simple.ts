@@ -51,6 +51,10 @@ async function getConversationHistory(redis: Redis, phone: string): Promise<Conv
     const key = `conv:${phone}`;
     const data = await redis.get(key);
     if (data) {
+      // Upstash puede devolver objeto ya parseado o string
+      if (typeof data === 'object') {
+        return data as ConversationMessage[];
+      }
       return JSON.parse(data as string);
     }
   } catch (error) {
@@ -104,7 +108,10 @@ export async function processSimpleMessage(
       }
     | undefined;
 
-  if (process.env['ENABLE_MEMBER_LOOKUP'] === 'true') {
+  const memberLookupEnabled = process.env['ENABLE_MEMBER_LOOKUP'] === 'true';
+  console.log(`[agent-simple] Member lookup enabled: ${memberLookupEnabled}`);
+
+  if (memberLookupEnabled) {
     try {
       const memberService = getMemberLookup(redis);
       const lookup = await memberService.lookupByPhone(phone);
@@ -124,6 +131,8 @@ export async function processSimpleMessage(
         console.log(
           `[agent-simple] Member found: ${lookup.member.firstName} (${membershipInfo.creditsAvailable} credits)`
         );
+      } else {
+        console.log(`[agent-simple] Member not found for phone: ${phone.slice(-4)}`);
       }
     } catch (lookupError) {
       // Si falla el lookup, continuamos sin contexto de miembro
