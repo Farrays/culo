@@ -2,7 +2,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import Redis from 'ioredis';
+import { getRedisClient as getUpstashRedis } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
+import { processAgentMessage } from './lib/ai/agent-simple.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 
 // ============================================================================
@@ -648,9 +650,41 @@ async function processMessage(
     }
   }
 
-  // Log mensajes de texto (el agente AI se procesa por separado)
+  // Procesar mensajes de texto con LAURA (usa Upstash Redis)
   if (message.type === 'text' && message.text) {
-    console.log(`[webhook-whatsapp] Text message: "${message.text.body}"`);
+    const textBody = message.text.body;
+    console.log(`[webhook-whatsapp] Text message: "${textBody}"`);
+
+    try {
+      const upstashRedis = getUpstashRedis();
+      console.log(`[webhook-whatsapp] Processing with LAURA agent...`);
+
+      const response = await processAgentMessage(upstashRedis, {
+        phone,
+        text: textBody,
+        contactName,
+        channel: 'whatsapp',
+      });
+
+      console.log(`[webhook-whatsapp] LAURA response: "${response.text.substring(0, 50)}..."`);
+
+      const sendResult = await sendTextMessage(phone, response.text);
+      if (sendResult.success) {
+        console.log(`[webhook-whatsapp] LAURA response sent successfully`);
+      } else {
+        console.error(`[webhook-whatsapp] Failed to send LAURA response:`, sendResult.error);
+      }
+    } catch (agentError) {
+      console.error(`[webhook-whatsapp] LAURA error:`, agentError);
+      try {
+        await sendTextMessage(
+          phone,
+          'Perdona, ha habido un problemilla técnico. ¿Me puedes repetir eso? O si prefieres, llámanos al +34 622 247 085'
+        );
+      } catch (fallbackError) {
+        console.error(`[webhook-whatsapp] Fallback message failed:`, fallbackError);
+      }
+    }
   }
 }
 
