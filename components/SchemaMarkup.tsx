@@ -543,6 +543,7 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
       price: '50',
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
+      url: pageUrl,
     },
   };
 
