@@ -64,14 +64,8 @@ const ESCALATION_TRIGGERS = [
   'no tinc aquesta informació',
   "i don't have that information",
   "je n'ai pas cette information",
-  // CATCH-ALL: cualquier respuesta que redirija al email de contacto
-  'info@farrayscenter.com',
-  'escríbeles a info@',
-  'escribeles a info@',
-  'contacta en info@',
-  'escriu a info@',
-  'email us at info@',
-  'contact us at info@',
+  // NOTA: NO incluir 'info@farrayscenter.com' como catch-all porque
+  // causa falsos positivos cuando Laura explica políticas de cancelación/pausa
 ];
 
 // Frases que indican enfado o frustración del usuario -> ESCALAR A HUMANO
