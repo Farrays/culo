@@ -14,6 +14,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'images/**/*'],
       workbox: {
+        // Force SW to update immediately and take control
+        skipWaiting: true,
+        clientsClaim: true,
         // Cache strategies for different resource types
         runtimeCaching: [
           {
@@ -70,6 +73,9 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,ico,png,svg,woff2}'],
         // Don't pre-cache everything to keep SW size small
         globIgnores: ['**/stats.html', '**/node_modules/**'],
+        // Don't use navigateFallback - let the network handle HTML requests
+        // This prevents stale HTML from being served
+        navigateFallback: null,
       },
       manifest: {
         name: "Farray's International Dance Center",
