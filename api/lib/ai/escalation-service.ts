@@ -68,11 +68,16 @@ const ESCALATION_TRIGGERS = [
 
 // Frases que indican enfado o frustración del usuario -> ESCALAR A HUMANO
 const ANGRY_USER_TRIGGERS = [
-  // Español - enfado directo
+  // Español - enfado directo (con variantes comunes de escritura)
   'estoy enfadado',
   'estoy enfadada',
+  'estoy enfado', // variante sin 'a'
   'estoy muy enfadado',
   'estoy muy enfadada',
+  'estoy muy enfado', // variante sin 'a'
+  'muy enfadado',
+  'muy enfadada',
+  'muy enfado',
   'estoy cabreado',
   'estoy cabreada',
   'estoy molesto',
@@ -80,6 +85,8 @@ const ANGRY_USER_TRIGGERS = [
   'estoy furioso',
   'estoy furiosa',
   'me he enfadado',
+  'enfadado contigo',
+  'enfadada contigo',
   // Español - petición de humano
   'quiero hablar con una persona',
   'quiero hablar con alguien',
