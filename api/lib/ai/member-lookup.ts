@@ -256,6 +256,7 @@ export class MemberLookupService {
 
   /**
    * Fetch member's active memberships and credits from Momence
+   * Uses GET /api/v2/host/members/{memberId} which returns full member profile
    */
   async fetchMembershipInfo(memberId: number): Promise<{
     hasActiveMembership: boolean;
@@ -270,17 +271,10 @@ export class MemberLookupService {
         return { hasActiveMembership: false, creditsAvailable: 0 };
       }
 
-      // Get hostId from environment or use default
-      const hostId = process.env['MOMENCE_HOST_ID'] || '';
-      console.log(`[member-lookup] MOMENCE_HOST_ID configured: ${!!hostId}`);
-
-      // Endpoint: GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
-      const url = hostId
-        ? `${MOMENCE_API_URL}/api/v2/host/${hostId}/members/${memberId}/bought-memberships`
-        : `${MOMENCE_API_URL}/api/v2/host/members/${memberId}/bought-memberships`;
-
+      // Use the member profile endpoint which includes memberships/credits info
+      const url = `${MOMENCE_API_URL}/api/v2/host/members/${memberId}`;
       console.log(
-        `[member-lookup] 🔄 Fetching memberships from: ${url.replace(MOMENCE_API_URL, '')}`
+        `[member-lookup] 🔄 Fetching member profile from: ${url.replace(MOMENCE_API_URL, '')}`
       );
       const startTime = Date.now();
 
@@ -301,62 +295,94 @@ export class MemberLookupService {
         clearTimeout(timeoutId);
 
         console.log(
-          `[member-lookup] ✅ Membership response: ${response.status} in ${Date.now() - startTime}ms`
+          `[member-lookup] ✅ Member profile response: ${response.status} in ${Date.now() - startTime}ms`
         );
 
         if (!response.ok) {
           const errorText = await response.text().catch(() => 'unknown');
           console.warn(
-            `[member-lookup] ❌ Membership fetch failed: ${response.status} - ${errorText}`
+            `[member-lookup] ❌ Member profile fetch failed: ${response.status} - ${errorText}`
           );
           return { hasActiveMembership: false, creditsAvailable: 0 };
         }
       } catch (fetchError) {
         clearTimeout(timeoutId);
         if (fetchError instanceof Error && fetchError.name === 'AbortError') {
-          console.error('[member-lookup] ❌ Membership fetch TIMEOUT (10s)');
+          console.error('[member-lookup] ❌ Member profile fetch TIMEOUT (10s)');
         } else {
-          console.error('[member-lookup] ❌ Membership fetch error:', fetchError);
+          console.error('[member-lookup] ❌ Member profile fetch error:', fetchError);
         }
         return { hasActiveMembership: false, creditsAvailable: 0 };
       }
 
       const data = await response.json();
-      const memberships = data.payload || data || [];
+      const member = data.payload || data;
 
-      if (!Array.isArray(memberships) || memberships.length === 0) {
-        return { hasActiveMembership: false, creditsAvailable: 0 };
+      // Log the fields we get to understand Momence structure
+      const relevantFields = [
+        'credits',
+        'remainingCredits',
+        'creditsRemaining',
+        'classCredits',
+        'memberships',
+        'boughtMemberships',
+        'activeMemberships',
+        'membershipCredits',
+        'balance',
+        'creditBalance',
+      ];
+      const foundFields: Record<string, unknown> = {};
+      for (const field of relevantFields) {
+        if (member[field] !== undefined) {
+          foundFields[field] = member[field];
+        }
       }
+      console.log(`[member-lookup] 📋 Member profile fields: ${JSON.stringify(foundFields)}`);
 
-      // Find active membership with credits
+      // Try multiple possible field names for credits
       let totalCredits = 0;
       let activeMembershipName = '';
 
-      for (const membership of memberships) {
-        // Check if membership is active
-        const isActive =
-          membership.status === 'active' ||
-          membership.state === 'active' ||
-          !membership.cancelledAt;
+      // Direct credit fields on member profile
+      if (typeof member.credits === 'number') totalCredits = member.credits;
+      else if (typeof member.remainingCredits === 'number') totalCredits = member.remainingCredits;
+      else if (typeof member.creditsRemaining === 'number') totalCredits = member.creditsRemaining;
+      else if (typeof member.classCredits === 'number') totalCredits = member.classCredits;
+      else if (typeof member.creditBalance === 'number') totalCredits = member.creditBalance;
 
-        if (isActive) {
-          // Sum up credits
-          const credits =
-            membership.remainingCredits ||
-            membership.creditsRemaining ||
-            membership.classesRemaining ||
-            0;
-          totalCredits += credits;
+      // Check memberships array if present
+      const memberships =
+        member.memberships || member.boughtMemberships || member.activeMemberships || [];
+      if (Array.isArray(memberships)) {
+        for (const membership of memberships) {
+          const isActive =
+            membership.status === 'active' ||
+            membership.state === 'active' ||
+            !membership.cancelledAt;
 
-          if (!activeMembershipName && membership.name) {
-            activeMembershipName = membership.name;
+          if (isActive) {
+            const credits =
+              membership.remainingCredits ||
+              membership.creditsRemaining ||
+              membership.classesRemaining ||
+              0;
+            if (typeof credits === 'number') {
+              totalCredits += credits;
+            }
+
+            if (!activeMembershipName && membership.name) {
+              activeMembershipName = membership.name;
+            }
           }
         }
       }
 
+      console.log(
+        `[member-lookup] 💳 Parsed credits: ${totalCredits}, membership: ${activeMembershipName || 'none'}`
+      );
+
       return {
-        hasActiveMembership:
-          totalCredits > 0 || memberships.some((m: { status?: string }) => m.status === 'active'),
+        hasActiveMembership: totalCredits > 0 || memberships.length > 0,
         creditsAvailable: totalCredits,
         membershipName: activeMembershipName || undefined,
       };
