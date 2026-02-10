@@ -187,16 +187,20 @@ export class MemberLookupService {
 
   /**
    * Search for member in Momence by phone number using query parameter
+   * ENTERPRISE: Logs detallados para diagnóstico
    */
   private async searchInMomence(phone: string): Promise<MemberInfo | null> {
+    console.log(`[member-lookup] Searching Momence for phone: ${phone.slice(-4)}`);
+
     try {
       const token = await this.getMomenceToken();
       if (!token) {
-        console.warn('[member-lookup] No Momence token available');
+        console.warn('[member-lookup] ❌ No Momence token available - cannot search');
         return null;
       }
 
       // Use POST /api/v2/host/members/list with query parameter
+      console.log('[member-lookup] Calling Momence API: POST /api/v2/host/members/list');
       const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
         method: 'POST',
         headers: {
@@ -211,12 +215,14 @@ export class MemberLookupService {
       });
 
       if (!response.ok) {
-        console.warn(`[member-lookup] Momence search failed: ${response.status}`);
+        const errorText = await response.text().catch(() => 'unknown');
+        console.warn(`[member-lookup] ❌ Momence search failed: ${response.status} - ${errorText}`);
         return null;
       }
 
       const data = await response.json();
       const members = data.payload || [];
+      console.log(`[member-lookup] Momence returned ${members.length} member(s)`);
 
       // Find member with matching phone number
       const matchedMember = members.find((m: { phoneNumber?: string; phone?: string }) => {
@@ -225,8 +231,13 @@ export class MemberLookupService {
       });
 
       if (!matchedMember) {
+        console.log(`[member-lookup] No matching member found for phone: ${phone.slice(-4)}`);
         return null;
       }
+
+      console.log(
+        `[member-lookup] ✓ Member found: ${matchedMember.firstName} ${matchedMember.lastName}`
+      );
 
       // Map to MemberInfo format
       return {
@@ -238,7 +249,7 @@ export class MemberLookupService {
         memberSince: matchedMember.firstSeen || matchedMember.createdAt,
       };
     } catch (error) {
-      console.error('[member-lookup] Momence search error:', error);
+      console.error('[member-lookup] ❌ Momence search error:', error);
       return null;
     }
   }
@@ -718,12 +729,26 @@ export class MemberLookupService {
 
   /**
    * Get Momence access token
+   * ENTERPRISE: Añadidos logs detallados para diagnóstico
    */
   private async getMomenceToken(): Promise<string | null> {
     const { MOMENCE_CLIENT_ID, MOMENCE_CLIENT_SECRET, MOMENCE_USERNAME, MOMENCE_PASSWORD } =
       process.env;
 
+    // Diagnóstico: verificar qué credenciales están presentes
+    const hasClientId = !!MOMENCE_CLIENT_ID;
+    const hasClientSecret = !!MOMENCE_CLIENT_SECRET;
+    const hasUsername = !!MOMENCE_USERNAME;
+    const hasPassword = !!MOMENCE_PASSWORD;
+
+    console.log(
+      `[member-lookup] Momence credentials check: clientId=${hasClientId}, secret=${hasClientSecret}, username=${hasUsername}, password=${hasPassword}`
+    );
+
     if (!MOMENCE_CLIENT_ID || !MOMENCE_CLIENT_SECRET || !MOMENCE_USERNAME || !MOMENCE_PASSWORD) {
+      console.error(
+        '[member-lookup] ❌ Missing Momence OAuth credentials - member lookup disabled'
+      );
       return null;
     }
 
@@ -732,14 +757,16 @@ export class MemberLookupService {
       try {
         const cachedToken = await this.redis.get('momence:access_token');
         if (cachedToken) {
+          console.log('[member-lookup] ✓ Using cached Momence token');
           return String(cachedToken);
         }
-      } catch {
-        // Ignore cache errors
+      } catch (cacheError) {
+        console.warn('[member-lookup] Cache read error:', cacheError);
       }
     }
 
     // Fetch new token
+    console.log('[member-lookup] Fetching new Momence token...');
     const basicAuth = Buffer.from(`${MOMENCE_CLIENT_ID}:${MOMENCE_CLIENT_SECRET}`).toString(
       'base64'
     );
@@ -759,23 +786,34 @@ export class MemberLookupService {
       });
 
       if (!response.ok) {
+        const errorText = await response.text().catch(() => 'unknown');
+        console.error(`[member-lookup] ❌ Momence auth failed: ${response.status} - ${errorText}`);
         return null;
       }
 
       const data = await response.json();
       const token = data.access_token;
 
+      if (!token) {
+        console.error('[member-lookup] ❌ No access_token in Momence response');
+        return null;
+      }
+
+      console.log('[member-lookup] ✓ Got new Momence token');
+
       // Cache token
-      if (this.redis && token) {
+      if (this.redis) {
         try {
           await this.redis.setex('momence:access_token', 3500, token);
-        } catch {
-          // Ignore cache errors
+          console.log('[member-lookup] ✓ Token cached in Redis');
+        } catch (cacheError) {
+          console.warn('[member-lookup] Cache write error:', cacheError);
         }
       }
 
       return token;
-    } catch {
+    } catch (fetchError) {
+      console.error('[member-lookup] ❌ Momence auth network error:', fetchError);
       return null;
     }
   }
