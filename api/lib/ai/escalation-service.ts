@@ -583,7 +583,7 @@ export async function checkAndEscalate(
     language: string;
     channel: 'whatsapp' | 'instagram' | 'web';
   }
-): Promise<{ escalated: boolean; caseId?: string }> {
+): Promise<{ escalated: boolean; caseId?: string; escalationMessage?: string }> {
   const service = getEscalationService(redis);
   return service.processResponse(params);
 }

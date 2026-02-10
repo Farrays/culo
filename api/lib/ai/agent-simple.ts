@@ -180,6 +180,7 @@ export async function processSimpleMessage(
     await saveConversationHistory(redis, phone, updatedHistory);
 
     // 9. Escalación a humano (si está activado)
+    let finalResponse = assistantMessage;
     if (process.env['ENABLE_ESCALATION'] === 'true') {
       try {
         const escalation = await checkAndEscalate(redis, {
@@ -191,7 +192,12 @@ export async function processSimpleMessage(
           channel: input.channel || 'whatsapp',
         });
         if (escalation.escalated) {
-          console.log(`[agent-simple] Escalated to team: ${escalation.caseId}`);
+          console.log(`[agent-simple] 🚨 Escalated to team: ${escalation.caseId}`);
+          // Usar el mensaje de escalación si está disponible
+          if (escalation.escalationMessage) {
+            finalResponse = escalation.escalationMessage;
+            console.log(`[agent-simple] 📧 Escalation email sent, response replaced`);
+          }
         }
       } catch (escalationError) {
         // Si falla la escalación, no afecta la respuesta
@@ -200,7 +206,7 @@ export async function processSimpleMessage(
     }
 
     return {
-      text: assistantMessage,
+      text: finalResponse,
       language,
     };
   } catch (error) {
