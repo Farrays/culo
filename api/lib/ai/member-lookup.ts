@@ -256,7 +256,8 @@ export class MemberLookupService {
 
   /**
    * Fetch member's active memberships and credits from Momence
-   * Uses GET /api/v2/host/members/{memberId} which returns full member profile
+   * Uses GET /api/v2/host/members/{memberId}/bought-memberships/active
+   * @see https://api.momence.com docs
    */
   async fetchMembershipInfo(memberId: number): Promise<{
     hasActiveMembership: boolean;
@@ -271,10 +272,10 @@ export class MemberLookupService {
         return { hasActiveMembership: false, creditsAvailable: 0 };
       }
 
-      // Use the member profile endpoint which includes memberships/credits info
-      const url = `${MOMENCE_API_URL}/api/v2/host/members/${memberId}`;
+      // Correct endpoint: /bought-memberships/active with pagination
+      const url = `${MOMENCE_API_URL}/api/v2/host/members/${memberId}/bought-memberships/active?page=0&pageSize=50`;
       console.log(
-        `[member-lookup] 🔄 Fetching member profile from: ${url.replace(MOMENCE_API_URL, '')}`
+        `[member-lookup] 🔄 Fetching active memberships from: /api/v2/host/members/${memberId}/bought-memberships/active`
       );
       const startTime = Date.now();
 
@@ -295,94 +296,91 @@ export class MemberLookupService {
         clearTimeout(timeoutId);
 
         console.log(
-          `[member-lookup] ✅ Member profile response: ${response.status} in ${Date.now() - startTime}ms`
+          `[member-lookup] ✅ Active memberships response: ${response.status} in ${Date.now() - startTime}ms`
         );
 
         if (!response.ok) {
           const errorText = await response.text().catch(() => 'unknown');
           console.warn(
-            `[member-lookup] ❌ Member profile fetch failed: ${response.status} - ${errorText}`
+            `[member-lookup] ❌ Active memberships fetch failed: ${response.status} - ${errorText}`
           );
           return { hasActiveMembership: false, creditsAvailable: 0 };
         }
       } catch (fetchError) {
         clearTimeout(timeoutId);
         if (fetchError instanceof Error && fetchError.name === 'AbortError') {
-          console.error('[member-lookup] ❌ Member profile fetch TIMEOUT (10s)');
+          console.error('[member-lookup] ❌ Active memberships fetch TIMEOUT (10s)');
         } else {
-          console.error('[member-lookup] ❌ Member profile fetch error:', fetchError);
+          console.error('[member-lookup] ❌ Active memberships fetch error:', fetchError);
         }
         return { hasActiveMembership: false, creditsAvailable: 0 };
       }
 
       const data = await response.json();
-      const member = data.payload || data;
+      const memberships = data.payload || [];
 
-      // Log the fields we get to understand Momence structure
-      const relevantFields = [
-        'credits',
-        'remainingCredits',
-        'creditsRemaining',
-        'classCredits',
-        'memberships',
-        'boughtMemberships',
-        'activeMemberships',
-        'membershipCredits',
-        'balance',
-        'creditBalance',
-      ];
-      const foundFields: Record<string, unknown> = {};
-      for (const field of relevantFields) {
-        if (member[field] !== undefined) {
-          foundFields[field] = member[field];
-        }
+      console.log(`[member-lookup] 📋 Found ${memberships.length} active membership(s)`);
+
+      if (!Array.isArray(memberships) || memberships.length === 0) {
+        console.log('[member-lookup] 💳 No active memberships found');
+        return { hasActiveMembership: false, creditsAvailable: 0 };
       }
-      console.log(`[member-lookup] 📋 Member profile fields: ${JSON.stringify(foundFields)}`);
 
-      // Try multiple possible field names for credits
+      // Sum credits from all active memberships
+      // Fields per Momence API docs:
+      // - eventCreditsLeft: credits for package-events
+      // - moneyCreditsLeft: credits for package-money
+      // - usageLimitForSessions - usedSessions: remaining for subscriptions
+      // - combinedUsageLimit - combinedUsage: combined limits
       let totalCredits = 0;
       let activeMembershipName = '';
 
-      // Direct credit fields on member profile
-      if (typeof member.credits === 'number') totalCredits = member.credits;
-      else if (typeof member.remainingCredits === 'number') totalCredits = member.remainingCredits;
-      else if (typeof member.creditsRemaining === 'number') totalCredits = member.creditsRemaining;
-      else if (typeof member.classCredits === 'number') totalCredits = member.classCredits;
-      else if (typeof member.creditBalance === 'number') totalCredits = member.creditBalance;
+      for (const m of memberships) {
+        // Skip frozen memberships
+        if (m.isFrozen) continue;
 
-      // Check memberships array if present
-      const memberships =
-        member.memberships || member.boughtMemberships || member.activeMemberships || [];
-      if (Array.isArray(memberships)) {
-        for (const membership of memberships) {
-          const isActive =
-            membership.status === 'active' ||
-            membership.state === 'active' ||
-            !membership.cancelledAt;
+        // Package credits (eventCreditsLeft for class packages)
+        if (typeof m.eventCreditsLeft === 'number' && m.eventCreditsLeft > 0) {
+          totalCredits += m.eventCreditsLeft;
+          console.log(`[member-lookup] 📦 Package credits: ${m.eventCreditsLeft}`);
+        }
 
-          if (isActive) {
-            const credits =
-              membership.remainingCredits ||
-              membership.creditsRemaining ||
-              membership.classesRemaining ||
-              0;
-            if (typeof credits === 'number') {
-              totalCredits += credits;
-            }
+        // Money credits
+        if (typeof m.moneyCreditsLeft === 'number' && m.moneyCreditsLeft > 0) {
+          totalCredits += m.moneyCreditsLeft;
+          console.log(`[member-lookup] 💰 Money credits: ${m.moneyCreditsLeft}`);
+        }
 
-            if (!activeMembershipName && membership.name) {
-              activeMembershipName = membership.name;
-            }
+        // Subscription with session limits
+        if (typeof m.usageLimitForSessions === 'number' && typeof m.usedSessions === 'number') {
+          const remaining = m.usageLimitForSessions - m.usedSessions;
+          if (remaining > 0) {
+            totalCredits += remaining;
+            console.log(`[member-lookup] 📅 Subscription sessions remaining: ${remaining}`);
           }
+        }
+
+        // Combined usage limits
+        if (typeof m.combinedUsageLimit === 'number' && typeof m.combinedUsage === 'number') {
+          const remaining = m.combinedUsageLimit - m.combinedUsage;
+          if (remaining > 0) {
+            totalCredits += remaining;
+            console.log(`[member-lookup] 🔢 Combined usage remaining: ${remaining}`);
+          }
+        }
+
+        // Get membership name
+        if (!activeMembershipName && m.membership?.name) {
+          activeMembershipName = m.membership.name;
         }
       }
 
       console.log(
-        `[member-lookup] 💳 Parsed credits: ${totalCredits}, membership: ${activeMembershipName || 'none'}`
+        `[member-lookup] 💳 Total credits: ${totalCredits}, membership: ${activeMembershipName || 'none'}`
       );
 
       return {
-        hasActiveMembership: totalCredits > 0 || memberships.length > 0,
+        hasActiveMembership: memberships.length > 0,
         creditsAvailable: totalCredits,
         membershipName: activeMembershipName || undefined,
       };
