@@ -536,7 +536,6 @@ function createServiceAccountJWT(email: string, privateKey: string): string {
   const unsignedToken = `${base64Header}.${base64Payload}`;
 
   // Sign with private key
-  const crypto = require('crypto');
   const sign = crypto.createSign('RSA-SHA256');
   sign.update(unsignedToken);
   const signature = sign.sign(privateKey, 'base64url');

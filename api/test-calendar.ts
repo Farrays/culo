@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import crypto from 'crypto';
 
 /**
  * Test endpoint para verificar Google Calendar
@@ -32,7 +33,6 @@ let tokenExpiry: number = 0;
  * Creates a JWT for Service Account authentication
  */
 function createServiceAccountJWT(email: string, privateKey: string): string {
-  const crypto = require('crypto');
   const header = { alg: 'RS256', typ: 'JWT' };
   const now = Math.floor(Date.now() / 1000);
   const payload = {
