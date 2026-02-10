@@ -120,27 +120,33 @@ ${langInstructions[lang]}`;
     if (memberContext.firstName) {
       memberInfo.push(`Nombre: ${memberContext.firstName}`);
     }
+
+    // Siempre mostrar los créditos, aunque sean 0
+    const credits = memberContext.creditsAvailable ?? 0;
+    memberInfo.push(`Créditos disponibles: ${credits}`);
+
     if (memberContext.hasActiveMembership) {
-      memberInfo.push(`Es miembro ACTIVO`);
+      memberInfo.push(`Estado: miembro ACTIVO`);
       if (memberContext.membershipName) {
         memberInfo.push(`Membresía: ${memberContext.membershipName}`);
       }
-      if (memberContext.creditsAvailable !== undefined) {
-        memberInfo.push(`Créditos disponibles: ${memberContext.creditsAvailable}`);
-      }
+    } else {
+      memberInfo.push(`Estado: sin membresía activa`);
     }
 
     fullPrompt += `
 
 ================================================================================
-USUARIO EXISTENTE (NO ofrecer clase de prueba)
+INFORMACIÓN DEL USUARIO (datos de Momence)
 ================================================================================
-Este usuario YA es miembro de Farray's. ${memberInfo.join('. ')}.
-- NO le ofrezcas clase de prueba gratis (ya la usó)
-- Si quiere reservar, usa sus créditos si tiene
-- Sé más familiar: "Hola de nuevo!" "¿Qué tal todo?"
-- Puedes mencionar su nombre si lo conoces
-- Si pregunta por créditos, dile cuántos tiene`;
+${memberInfo.join('\n')}
+
+INSTRUCCIONES PARA ESTE USUARIO:
+- NO le ofrezcas clase de prueba gratis (ya es miembro registrado)
+- Si pregunta por créditos, DEBES decirle: "Tienes ${credits} créditos disponibles"
+- Si quiere reservar y tiene créditos, puede usarlos
+- Si tiene 0 créditos, sugiérele comprar un bono o pack de clases
+- Sé familiar: usa su nombre, "Hola de nuevo!", "¿Qué tal?"`;
   }
 
   return fullPrompt;

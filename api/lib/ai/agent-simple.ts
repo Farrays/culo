@@ -129,7 +129,7 @@ export async function processSimpleMessage(
         };
 
         console.log(
-          `[agent-simple] Member found: ${lookup.member.firstName} (${membershipInfo.creditsAvailable} credits)`
+          `[agent-simple] ✅ Member context built: name=${lookup.member.firstName}, credits=${membershipInfo.creditsAvailable}, hasActive=${membershipInfo.hasActiveMembership}, membership=${membershipInfo.membershipName || 'none'}`
         );
       } else {
         console.log(`[agent-simple] Member not found for phone: ${phone.slice(-4)}`);
