@@ -91,9 +91,10 @@ export async function checkRateLimit(
       const oldestRequest = await redis.zrange(key, 0, 0);
       let resetIn = windowSeconds;
 
-      if (oldestRequest && oldestRequest.length > 0) {
+      const firstRequest = oldestRequest?.[0];
+      if (firstRequest) {
         // Parse the timestamp from the oldest request
-        const oldestTime = parseInt(String(oldestRequest[0]).split(':')[0], 10);
+        const oldestTime = parseInt(String(firstRequest).split(':')[0], 10);
         if (!isNaN(oldestTime)) {
           resetIn = Math.max(1, Math.ceil((oldestTime + config.windowMs - now) / 1000));
         }
