@@ -256,6 +256,6 @@ describe('Lead Capture API Endpoint', () => {
 
       // Should reach the Momence API call (502 without mock, or 200 with success)
       expect([200, 500, 502]).toContain(res._status);
-    });
+    }, 15000); // Extended timeout for API call
   });
 });
