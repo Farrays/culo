@@ -66,6 +66,62 @@ const ESCALATION_TRIGGERS = [
   "je n'ai pas cette information",
 ];
 
+// Frases que indican enfado o frustración del usuario -> ESCALAR A HUMANO
+const ANGRY_USER_TRIGGERS = [
+  // Español - enfado
+  'quiero hablar con una persona',
+  'quiero hablar con alguien',
+  'pasame con un humano',
+  'pásame con un humano',
+  'hablar con un responsable',
+  'esto es una mierda',
+  'estoy harto',
+  'estoy harta',
+  'me voy a dar de baja',
+  'voy a cancelar',
+  'no me sirve',
+  'no funciona',
+  'incompetentes',
+  'es vergonzoso',
+  'me quejo',
+  'quiero quejarme',
+  'vaya estafa',
+  'esto es un robo',
+  'devuélveme el dinero',
+  'quiero reclamar',
+  'una vergüenza',
+  'muy mal servicio',
+  'pesimo servicio',
+  'pésimo servicio',
+  'decepcionado',
+  'decepcionada',
+  'me habéis engañado',
+  'me habeis engañado',
+  // Catalán
+  'vull parlar amb una persona',
+  'vull parlar amb algú',
+  'estic fart',
+  'estic farta',
+  'em donaré de baixa',
+  'és vergonyós',
+  'vull queixar-me',
+  // Inglés
+  'i want to speak to a person',
+  'let me talk to a human',
+  'this is ridiculous',
+  "i'm frustrated",
+  'i want a refund',
+  'i want to cancel',
+  'terrible service',
+  'worst experience',
+  'i want to complain',
+  // Francés
+  "je veux parler à quelqu'un",
+  "c'est ridicule",
+  'je veux me plaindre',
+  'je veux un remboursement',
+];
+
 // Respuestas de escalación para cada idioma
 const ESCALATION_RESPONSES: Record<string, string> = {
   es: `¡Entendido! 📋 He escalado tu consulta a mi equipo para que puedan darte una respuesta precisa.
@@ -105,9 +161,33 @@ export class EscalationService {
   /**
    * Detectar si la respuesta de Laura indica que no supo responder
    */
-  shouldEscalate(lauraResponse: string): boolean {
+  shouldEscalateFromLaura(lauraResponse: string): boolean {
     const lowerResponse = lauraResponse.toLowerCase();
     return ESCALATION_TRIGGERS.some(trigger => lowerResponse.includes(trigger.toLowerCase()));
+  }
+
+  /**
+   * Detectar si el usuario está enfadado o frustrado
+   */
+  isUserAngry(userMessage: string): boolean {
+    const lowerMessage = userMessage.toLowerCase();
+    return ANGRY_USER_TRIGGERS.some(trigger => lowerMessage.includes(trigger.toLowerCase()));
+  }
+
+  /**
+   * Detectar si hay que escalar (por Laura o por enfado del usuario)
+   */
+  shouldEscalate(lauraResponse: string, userMessage?: string): boolean {
+    // Escalar si Laura no supo responder
+    if (this.shouldEscalateFromLaura(lauraResponse)) {
+      return true;
+    }
+    // Escalar si el usuario está enfadado
+    if (userMessage && this.isUserAngry(userMessage)) {
+      console.log(`[escalation] 🔴 User anger detected: "${userMessage.slice(0, 50)}..."`);
+      return true;
+    }
+    return false;
   }
 
   /**
@@ -135,8 +215,8 @@ export class EscalationService {
     language: string;
     channel: 'whatsapp' | 'instagram' | 'web';
   }): Promise<{ escalated: boolean; caseId?: string; escalationMessage?: string }> {
-    // Verificar si hay que escalar
-    if (!this.shouldEscalate(params.lauraResponse)) {
+    // Verificar si hay que escalar (por respuesta de Laura O por enfado del usuario)
+    if (!this.shouldEscalate(params.lauraResponse, params.userMessage)) {
       return { escalated: false };
     }
 
