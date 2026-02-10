@@ -1,11 +1,34 @@
 /* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import type { Redis } from '@upstash/redis';
-import { getRedisClient } from './lib/redis.js';
+import Redis from 'ioredis';
 import { getSupabaseAdmin } from './lib/supabase.js';
-import { processAgentMessage } from './lib/ai/agent-simple.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
+
+// ============================================================================
+// STORAGE REDIS (ioredis TCP - MUST match reservar.ts)
+// Las reservas se guardan en STORAGE_REDIS_URL con ioredis, debemos buscar ahí
+// ============================================================================
+
+let redisClient: Redis | null = null;
+
+function getRedisClient(): Redis | null {
+  const redisUrl = process.env['STORAGE_REDIS_URL'];
+
+  if (!redisUrl) {
+    console.error('[webhook-whatsapp] STORAGE_REDIS_URL not configured');
+    return null;
+  }
+
+  if (!redisClient) {
+    redisClient = new Redis(redisUrl, {
+      maxRetriesPerRequest: 1,
+      connectTimeout: 5000,
+      lazyConnect: true,
+    });
+  }
+  return redisClient;
+}
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -625,49 +648,9 @@ async function processMessage(
     }
   }
 
-  // Procesar mensajes de texto con el agente AI
+  // Log mensajes de texto (el agente AI se procesa por separado)
   if (message.type === 'text' && message.text) {
-    const textBody = message.text.body;
-    console.log(`[webhook-whatsapp] Text message: "${textBody}"`);
-
-    // Process with AI agent
-    try {
-      const redis = getRedisClient();
-
-      console.log(`[webhook-whatsapp] Processing with AI agent...`);
-
-      const response = await processAgentMessage(redis, {
-        phone,
-        text: textBody,
-        contactName,
-        channel: 'whatsapp',
-      });
-
-      console.log(
-        `[webhook-whatsapp] Agent response (${response.language}): "${response.text.substring(0, 100)}..."`
-      );
-
-      // Send response via WhatsApp
-      const sendResult = await sendTextMessage(phone, response.text);
-
-      if (sendResult.success) {
-        console.log(`[webhook-whatsapp] Agent response sent successfully`);
-      } else {
-        console.error(`[webhook-whatsapp] Failed to send agent response:`, sendResult.error);
-      }
-    } catch (agentError) {
-      console.error(`[webhook-whatsapp] Agent processing error:`, agentError);
-
-      // Send fallback message on error
-      try {
-        await sendTextMessage(
-          phone,
-          'Perdona, ha habido un problemilla técnico. ¿Me puedes repetir eso? O si prefieres, llámanos al +34 622 247 085'
-        );
-      } catch (fallbackError) {
-        console.error(`[webhook-whatsapp] Fallback message failed:`, fallbackError);
-      }
-    }
+    console.log(`[webhook-whatsapp] Text message: "${message.text.body}"`);
   }
 }
 
