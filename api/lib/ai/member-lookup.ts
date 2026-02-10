@@ -262,30 +262,62 @@ export class MemberLookupService {
     creditsAvailable: number;
     membershipName?: string;
   }> {
+    console.log(`[member-lookup] 📊 fetchMembershipInfo for member: ${memberId}`);
     try {
       const token = await this.getMomenceToken();
       if (!token) {
+        console.warn('[member-lookup] ❌ No token for membership fetch');
         return { hasActiveMembership: false, creditsAvailable: 0 };
       }
 
       // Get hostId from environment or use default
       const hostId = process.env['MOMENCE_HOST_ID'] || '';
+      console.log(`[member-lookup] MOMENCE_HOST_ID configured: ${!!hostId}`);
 
       // Endpoint: GET /api/v2/host/{hostId}/members/{memberId}/bought-memberships
       const url = hostId
         ? `${MOMENCE_API_URL}/api/v2/host/${hostId}/members/${memberId}/bought-memberships`
         : `${MOMENCE_API_URL}/api/v2/host/members/${memberId}/bought-memberships`;
 
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      console.log(
+        `[member-lookup] 🔄 Fetching memberships from: ${url.replace(MOMENCE_API_URL, '')}`
+      );
+      const startTime = Date.now();
 
-      if (!response.ok) {
-        console.warn(`[member-lookup] Membership fetch failed: ${response.status}`);
+      // Add timeout to prevent hanging
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+      let response: Awaited<ReturnType<typeof fetch>>;
+      try {
+        response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+
+        console.log(
+          `[member-lookup] ✅ Membership response: ${response.status} in ${Date.now() - startTime}ms`
+        );
+
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => 'unknown');
+          console.warn(
+            `[member-lookup] ❌ Membership fetch failed: ${response.status} - ${errorText}`
+          );
+          return { hasActiveMembership: false, creditsAvailable: 0 };
+        }
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+          console.error('[member-lookup] ❌ Membership fetch TIMEOUT (10s)');
+        } else {
+          console.error('[member-lookup] ❌ Membership fetch error:', fetchError);
+        }
         return { hasActiveMembership: false, creditsAvailable: 0 };
       }
 
