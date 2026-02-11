@@ -324,7 +324,7 @@ export default async function handler(
     }
   }
 
-  // Test crear evento
+  // Test crear evento genérico
   if (req.query['action'] === 'test') {
     if (!isGoogleCalendarConfigured()) {
       return res.status(400).json({
@@ -351,6 +351,55 @@ export default async function handler(
       message: result.success
         ? 'Google Calendar funciona! Revisa tu calendario.'
         : 'Error al crear evento',
+    });
+  }
+
+  // Crear evento con datos personalizados
+  // Uso: ?action=create&firstName=Test&lastName=Test&email=...&phone=...&className=...&classDate=2026-02-12&classTime=18:00&category=bailes_sociales&eventId=evt_xxx
+  if (req.query['action'] === 'create') {
+    if (!isGoogleCalendarConfigured()) {
+      return res.status(400).json({
+        error: 'Google Calendar not configured',
+        config: configInfo,
+      });
+    }
+
+    const firstName = req.query['firstName'] as string;
+    const lastName = req.query['lastName'] as string;
+    const email = req.query['email'] as string;
+    const phone = req.query['phone'] as string;
+    const className = req.query['className'] as string;
+    const classDate = req.query['classDate'] as string;
+    const classTime = req.query['classTime'] as string;
+    const category = (req.query['category'] as string) || 'bailes_sociales';
+    const eventId = (req.query['eventId'] as string) || `manual-${Date.now()}`;
+
+    if (!firstName || !lastName || !email || !className || !classDate || !classTime) {
+      return res.status(400).json({
+        error: 'Missing required parameters',
+        usage: '?action=create&firstName=X&lastName=X&email=X&phone=X&className=X&classDate=YYYY-MM-DD&classTime=HH:MM',
+        required: ['firstName', 'lastName', 'email', 'className', 'classDate', 'classTime'],
+        optional: ['phone', 'category', 'eventId'],
+      });
+    }
+
+    const result = await createBookingEvent({
+      firstName,
+      lastName,
+      email,
+      phone: phone || '+34000000000',
+      className,
+      classDate,
+      classTime,
+      category,
+      eventId,
+    });
+
+    return res.status(200).json({
+      success: result.success,
+      calendarEventId: result.calendarEventId,
+      error: result.error,
+      booking: { firstName, lastName, email, className, classDate, classTime },
     });
   }
 
