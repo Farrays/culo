@@ -25,25 +25,30 @@ import { activateTakeover, addNotification } from './human-takeover.js';
 
 // ============================================================================
 // MOMENCE URL CONFIG
-// Uses same pattern as MomenceModal.tsx: encodeURIComponent for names
+// Momence URL format: spaces → hyphens, preserve accents and casing.
+// e.g. "Sexy Style Principiantes" → "Sexy-Style-Principiantes"
 // ============================================================================
 
 const MOMENCE_HOST = "Farray's-International-Dance-Center";
 
+/** Replace spaces with hyphens for Momence URL slugs. Preserves accents and casing. */
+function toMomenceSlug(text: string): string {
+  return text.trim().replace(/\s+/g, '-');
+}
+
 /**
  * Direct link to a class session on Momence.
  * Users can pay for a single drop-in class from this page.
- * Format matches MomenceModal.tsx getClassDeeplink().
  */
 function buildClassUrl(className: string, sessionId: number): string {
-  return `https://momence.com/${MOMENCE_HOST}/${encodeURIComponent(className)}/${sessionId}?skipPreview=true`;
+  return `https://momence.com/${MOMENCE_HOST}/${toMomenceSlug(className)}/${sessionId}?skipPreview=true`;
 }
 
 /**
  * Direct link to purchase a membership on Momence.
  */
 function buildMembershipUrl(membershipName: string, membershipId: number): string {
-  return `https://momence.com/${MOMENCE_HOST}/membership/${encodeURIComponent(membershipName)}/${membershipId}`;
+  return `https://momence.com/${MOMENCE_HOST}/membership/${toMomenceSlug(membershipName)}/${membershipId}`;
 }
 
 // ============================================================================
