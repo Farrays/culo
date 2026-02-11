@@ -346,8 +346,10 @@ export async function getNotifications(
 ): Promise<{ notifications: ConversationNotification[]; unreadCount: number }> {
   try {
     // Obtener notificaciones más recientes que 'since'
-    const raw = await redis.zrangebyscore('notifications:queue', since + 1, '+inf', {
-      limit: { offset: 0, count: limit },
+    const raw = await redis.zrange('notifications:queue', since + 1, '+inf', {
+      byScore: true,
+      count: limit,
+      offset: 0,
     });
 
     const notifications: ConversationNotification[] = (raw as string[]).map((item) => {
