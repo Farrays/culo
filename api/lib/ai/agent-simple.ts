@@ -116,7 +116,7 @@ export async function processSimpleMessage(
   if (memberLookupEnabled) {
     try {
       const memberService = getMemberLookup(redis);
-      const lookup = await memberService.lookupByPhone(phone);
+      const lookup = await memberService.lookupByPhone(phone, input.contactName);
 
       if (lookup.found && lookup.member) {
         memberId = lookup.member.memberId;

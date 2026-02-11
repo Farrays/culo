@@ -84,7 +84,7 @@ interface MomenceVisit {
 // ============================================================================
 
 const MEMBER_CACHE_PREFIX = 'member:phone:';
-const MEMBER_CACHE_TTL = 30 * 24 * 60 * 60; // 30 days
+const MEMBER_CACHE_TTL = 7 * 24 * 60 * 60; // 7 days
 const MOMENCE_API_URL = 'https://api.momence.com';
 
 // ============================================================================
@@ -100,26 +100,45 @@ export class MemberLookupService {
 
   /**
    * Look up a member by phone number
-   * Returns member info if found, null if not
+   * @param phone - Phone number to look up
+   * @param contactName - Optional WhatsApp contact name for cache validation
    */
-  async lookupByPhone(phone: string): Promise<MemberLookupResult> {
+  async lookupByPhone(phone: string, contactName?: string): Promise<MemberLookupResult> {
     const normalizedPhone = this.normalizePhone(phone);
 
     // 1. Try Redis cache first (fast path)
     const cachedMember = await this.getFromCache(normalizedPhone);
     if (cachedMember) {
-      console.log(`[member-lookup] Found in cache: ${normalizedPhone.slice(-4)}`);
-      return {
-        found: true,
-        member: cachedMember,
-        source: 'cache',
-      };
+      // Validate cached member against WhatsApp contact name if available
+      if (contactName && cachedMember.firstName) {
+        const cachedName = cachedMember.firstName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const whatsappName = contactName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        if (!whatsappName.includes(cachedName) && !cachedName.includes(whatsappName)) {
+          console.warn(`[member-lookup] ⚠️ Cache mismatch: cached="${cachedMember.firstName}" vs WhatsApp="${contactName}" - invalidating cache`);
+          await this.clearPhoneCache(normalizedPhone);
+          // Fall through to Momence search
+        } else {
+          console.log(`[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`);
+          return {
+            found: true,
+            member: cachedMember,
+            source: 'cache',
+          };
+        }
+      } else {
+        console.log(`[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`);
+        return {
+          found: true,
+          member: cachedMember,
+          source: 'cache',
+        };
+      }
     }
 
     // 2. Try Momence API with query
     const momenceMember = await this.searchInMomence(normalizedPhone);
     if (momenceMember) {
-      console.log(`[member-lookup] Found in Momence: ${normalizedPhone.slice(-4)}`);
+      console.log(`[member-lookup] Found in Momence: ${normalizedPhone.slice(-4)} (${momenceMember.firstName})`);
       // Cache for future lookups
       await this.saveToCache(normalizedPhone, momenceMember);
       return {
@@ -145,6 +164,20 @@ export class MemberLookupService {
     const normalizedPhone = this.normalizePhone(member.phone);
     await this.saveToCache(normalizedPhone, member);
     console.log(`[member-lookup] Cached member: ${normalizedPhone.slice(-4)}`);
+  }
+
+  /**
+   * Clear cached member for a phone number
+   */
+  async clearPhoneCache(phone: string): Promise<void> {
+    if (!this.redis) return;
+    try {
+      const key = `${MEMBER_CACHE_PREFIX}${phone}`;
+      await this.redis.del(key);
+      console.log(`[member-lookup] Cache cleared for: ${phone.slice(-4)}`);
+    } catch (error) {
+      console.error('[member-lookup] Cache clear error:', error);
+    }
   }
 
   /**
