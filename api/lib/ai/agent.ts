@@ -1764,6 +1764,23 @@ INSTRUCCIONES ESPECIALES:
           conversation.memberInfo.membershipName = membershipInfo.membershipName;
         }
 
+        // Upgrade Google Contact from Lead (P) to Cliente (A) if active membership
+        if (conversation.memberInfo.hasActiveMembership) {
+          try {
+            const gc = await import('../google-contacts.js');
+            if (gc.isGoogleContactsConfigured()) {
+              gc.upgradeToCliente(conversation.phone).catch((e: unknown) =>
+                console.warn(
+                  '[agent] Google Contacts upgrade skipped:',
+                  e instanceof Error ? e.message : e
+                )
+              );
+            }
+          } catch {
+            // Module not available or failed — no impact on agent
+          }
+        }
+
         console.log(
           `[agent] Detected existing member: ${conversation.memberInfo.firstName} ` +
             `(ID: ${conversation.memberInfo.memberId}, credits: ${conversation.memberInfo.creditsAvailable || 0})`

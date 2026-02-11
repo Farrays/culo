@@ -2199,6 +2199,28 @@ export default async function handler(
       console.log('[reservar] Google Calendar not configured');
     }
 
+    // 6.5. Google Contacts - Guardar como Lead (dynamic import, no rompe nada si falla)
+    try {
+      const gc = await import('./lib/google-contacts.js');
+      if (gc.isGoogleContactsConfigured()) {
+        const contactResult = await gc.saveAsLead({
+          firstName: sanitize(firstName),
+          lastName: sanitize(lastName),
+          email: normalizedEmail,
+          phone: sanitize(phone),
+          style: className || estilo || '',
+        });
+        if (contactResult.success) {
+          console.log(`[reservar] Google Contact Lead saved: ${contactResult.resourceName}`);
+        } else {
+          console.warn('[reservar] Google Contact save failed:', contactResult.error);
+        }
+      }
+    } catch (e) {
+      // Si el módulo no carga o falla, el booking sigue sin problemas
+      console.warn('[reservar] Google Contacts skipped:', e instanceof Error ? e.message : e);
+    }
+
     // 7. Guardar booking_details para mi-reserva y cron-reminders
     const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');
     if (redis) {
