@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { validateCsrfRequest } from './lib/csrf.js';
+import { formatPhoneForMomence } from './lib/phone-utils.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -153,7 +154,7 @@ export default async function handler(
       firstName: sanitize(firstName, 100),
       lastName: sanitize(lastName, 100),
       email: sanitize(email, 255).toLowerCase(),
-      phoneNumber: sanitize(phoneNumber, 30),
+      phoneNumber: formatPhoneForMomence(sanitize(phoneNumber, 30)),
       comoconoce: sanitize(comoconoce || 'No especificado', 200),
       Asunto: sanitize(Asunto, 200),
       Mensaje: sanitize(Mensaje, 2000),
