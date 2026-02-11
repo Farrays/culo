@@ -25,32 +25,25 @@ import { activateTakeover, addNotification } from './human-takeover.js';
 
 // ============================================================================
 // MOMENCE URL CONFIG
+// Uses same pattern as MomenceModal.tsx: encodeURIComponent for names
 // ============================================================================
 
-const MOMENCE_BUSINESS_SLUG = "Farray's-International-Dance-Center";
-
-function slugify(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-zA-Z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-');
-}
+const MOMENCE_HOST = "Farray's-International-Dance-Center";
 
 /**
  * Direct link to a class session on Momence.
  * Users can pay for a single drop-in class from this page.
+ * Format matches MomenceModal.tsx getClassDeeplink().
  */
 function buildClassUrl(className: string, sessionId: number): string {
-  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/${slugify(className)}/${sessionId}`;
+  return `https://momence.com/${MOMENCE_HOST}/${encodeURIComponent(className)}/${sessionId}?skipPreview=true`;
 }
 
 /**
  * Direct link to purchase a membership on Momence.
  */
 function buildMembershipUrl(membershipName: string, membershipId: number): string {
-  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/membership/${slugify(membershipName)}/${membershipId}`;
+  return `https://momence.com/${MOMENCE_HOST}/membership/${encodeURIComponent(membershipName)}/${membershipId}`;
 }
 
 // ============================================================================
