@@ -282,7 +282,10 @@ export async function processSimpleMessage(
       // Enviar todas las burbujas menos la ultima desde aqui
       for (let i = 0; i < allBubbles.length - 1; i++) {
         await sendWhatsAppText(phone, allBubbles[i]);
-        await new Promise(resolve => setTimeout(resolve, 800));
+        // Delay proporcional al largo del siguiente mensaje (simula escritura humana)
+        const nextLen = allBubbles[i + 1]?.length || 100;
+        const typingDelay = Math.min(Math.max(nextLen * 15, 1500), 4000);
+        await new Promise(resolve => setTimeout(resolve, typingDelay));
       }
       // Retornar la ultima para que webhook la envie (flujo normal)
       console.log(
