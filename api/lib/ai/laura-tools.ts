@@ -31,9 +31,9 @@ import { activateTakeover, addNotification } from './human-takeover.js';
 
 const MOMENCE_HOST = "Farray's-International-Dance-Center";
 
-/** Replace spaces with hyphens for Momence URL slugs. Preserves accents and casing. */
+/** Spaces → hyphens, then URI-encode (accents get encoded, hyphens stay). */
 function toMomenceSlug(text: string): string {
-  return text.trim().replace(/\s+/g, '-');
+  return encodeURIComponent(text.trim().replace(/\s+/g, '-'));
 }
 
 /**
