@@ -14,6 +14,8 @@ import { getFullSystemPrompt } from './laura-system-prompt.js';
 import { checkAndEscalate } from './escalation-service.js';
 import { getMemberLookup } from './member-lookup.js';
 import { LAURA_TOOLS, executeTool } from './laura-tools.js';
+import { markdownToWhatsApp, splitIntoBubbles } from './whatsapp-formatter.js';
+import { sendTypingIndicator, sendTextMessage as sendWhatsAppText } from '../whatsapp.js';
 
 // Tipos
 interface AgentInput {
@@ -21,6 +23,7 @@ interface AgentInput {
   text: string;
   contactName?: string;
   channel?: 'whatsapp' | 'web';
+  messageId?: string; // WhatsApp message ID para typing indicator
 }
 
 interface AgentResponse {
@@ -93,6 +96,11 @@ export async function processSimpleMessage(
   console.log(
     `[agent-simple] Processing message from ${phone.slice(-4)}: "${text.slice(0, 50)}..."`
   );
+
+  // 0. Marcar como leido (checkmarks azules) - fire and forget
+  if (input.messageId && input.channel === 'whatsapp') {
+    sendTypingIndicator(phone, input.messageId).catch(() => {});
+  }
 
   // 1. Detectar idioma
   const language = detectLanguage(text);
@@ -218,11 +226,14 @@ export async function processSimpleMessage(
     );
     const assistantMessage = textBlocks.map(b => b.text).join('');
 
+    // 8b. Convertir markdown de Claude a formato WhatsApp (*bold* en vez de **bold**)
+    const formattedForWhatsApp = markdownToWhatsApp(assistantMessage);
+
     console.log(
       `[agent-simple] Response generated in ${Date.now() - startTime}ms (${iterations} tool calls): "${assistantMessage.slice(0, 50)}..."`
     );
 
-    // 8. Guardar en historial
+    // 9. Guardar en historial (original de Claude, no el formateado)
     const updatedHistory: ConversationMessage[] = [
       ...history,
       { role: 'user', content: text },
@@ -230,34 +241,61 @@ export async function processSimpleMessage(
     ];
     await saveConversationHistory(redis, phone, updatedHistory);
 
-    // 9. Escalación a humano (si está activado)
-    let finalResponse = assistantMessage;
+    // 10. Escalacion a humano (si esta activado)
+    const finalResponse = formattedForWhatsApp;
+    const additionalMessages: string[] = [];
+
     if (process.env['ENABLE_ESCALATION'] === 'true') {
       try {
         const escalation = await checkAndEscalate(redis, {
           userPhone: phone,
           userMessage: text,
-          lauraResponse: assistantMessage,
+          lauraResponse: formattedForWhatsApp,
           conversationHistory: updatedHistory,
           language,
           channel: input.channel || 'whatsapp',
         });
         if (escalation.escalated) {
-          console.log(`[agent-simple] 🚨 Escalated to team: ${escalation.caseId}`);
-          // Usar el mensaje de escalación si está disponible
-          if (escalation.escalationMessage) {
-            finalResponse = escalation.escalationMessage;
-            console.log(`[agent-simple] 📧 Escalation email sent, response replaced`);
+          console.log(
+            `[agent-simple] Escalated (${escalation.type || 'unknown'}): ${escalation.caseId}`
+          );
+
+          if (escalation.type === 'IMMEDIATE' && escalation.escalationMessage) {
+            // Enfado: mantener respuesta de Laura + anadir aviso como 2a burbuja
+            additionalMessages.push(escalation.escalationMessage);
+            console.log(`[agent-simple] IMMEDIATE escalation - adding ticket message`);
           }
+          // OFFER: Laura ya dice "contacta en info@..." - no reemplazar su respuesta
+          // El email al equipo se envio en background
         }
       } catch (escalationError) {
-        // Si falla la escalación, no afecta la respuesta
+        // Si falla la escalacion, no afecta la respuesta
         console.error('[agent-simple] Escalation error (non-blocking):', escalationError);
       }
     }
 
+    // 11. Dividir en burbujas para WhatsApp (estrategia "last-bubble")
+    const mainBubbles = splitIntoBubbles(finalResponse);
+    const allBubbles = [...mainBubbles, ...additionalMessages].filter(m => m.trim().length > 0);
+
+    if (allBubbles.length > 1 && input.channel === 'whatsapp') {
+      // Enviar todas las burbujas menos la ultima desde aqui
+      for (let i = 0; i < allBubbles.length - 1; i++) {
+        await sendWhatsAppText(phone, allBubbles[i]);
+        await new Promise(resolve => setTimeout(resolve, 800));
+      }
+      // Retornar la ultima para que webhook la envie (flujo normal)
+      console.log(
+        `[agent-simple] Sent ${allBubbles.length - 1} bubbles, returning last for webhook`
+      );
+      return {
+        text: allBubbles[allBubbles.length - 1],
+        language,
+      };
+    }
+
     return {
-      text: finalResponse,
+      text: allBubbles[0] || finalResponse,
       language,
     };
   } catch (error) {

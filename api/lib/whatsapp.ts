@@ -413,6 +413,50 @@ export async function sendTextMessage(to: string, text: string): Promise<WhatsAp
 }
 
 // ============================================================================
+// TYPING INDICATOR / READ RECEIPT
+// ============================================================================
+
+/**
+ * Marca un mensaje como leido (checkmarks azules) via WhatsApp Cloud API.
+ * Esto le da feedback al usuario de que Laura "vio" su mensaje.
+ *
+ * Es fire-and-forget: si falla, no afecta al flujo principal.
+ *
+ * @see https://developers.facebook.com/docs/whatsapp/cloud-api/messages/mark-messages-as-read
+ */
+export async function sendTypingIndicator(_to: string, messageId: string): Promise<WhatsAppResult> {
+  try {
+    const config = getConfig();
+
+    const response = await fetch(config.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${config.token}`,
+      },
+      body: JSON.stringify({
+        messaging_product: 'whatsapp',
+        status: 'read',
+        message_id: messageId,
+      }),
+    });
+
+    if (!response.ok) {
+      return { success: false, error: `HTTP ${response.status}` };
+    }
+
+    return { success: true };
+  } catch (error) {
+    // Non-blocking: si falla, no pasa nada (es cosmetico)
+    console.warn('[whatsapp] Typing indicator failed (non-blocking):', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
+// ============================================================================
 // UTILIDADES
 // ============================================================================
 

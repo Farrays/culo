@@ -737,6 +737,7 @@ async function processMessage(
         text: textBody,
         contactName,
         channel: 'whatsapp',
+        messageId: message.id,
       });
 
       console.log(`[webhook-whatsapp] LAURA response: "${response.text.substring(0, 50)}..."`);

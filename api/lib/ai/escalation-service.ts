@@ -64,8 +64,13 @@ const ESCALATION_TRIGGERS = [
   'no tinc aquesta informació',
   "i don't have that information",
   "je n'ai pas cette information",
-  // NOTA: NO incluir 'info@farrayscenter.com' como catch-all porque
-  // causa falsos positivos cuando Laura explica políticas de cancelación/pausa
+  // Frases naturales de incertidumbre
+  'no estoy 100% segura',
+  'no estoy segura de esto',
+  'no estic 100% segura',
+  "i'm not 100% sure",
+  "i'm not sure about this",
+  'je ne suis pas sûre',
 ];
 
 // Frases que indican enfado o frustración del usuario -> ESCALAR A HUMANO
@@ -143,23 +148,26 @@ const ANGRY_USER_TRIGGERS = [
   // NOTA: "je veux un remboursement" NO es trigger - Laura explica políticas
 ];
 
-// Respuestas de escalación para cada idioma
+// Tipos de escalacion
+export type EscalationType = 'IMMEDIATE' | 'OFFER' | 'NONE';
+
+// Respuestas de escalacion con ticket (para IMMEDIATE - enfado)
+function getEscalationResponseWithTicket(language: string, caseId: string): string {
+  const responses: Record<string, string> = {
+    es: `He notificado a mi equipo con el ticket ${caseId}. Te contactaran lo antes posible por aqui mismo.`,
+    ca: `He notificat al meu equip amb el tiquet ${caseId}. Et contactaran el mes aviat possible per aqui mateix.`,
+    en: `I've notified my team with ticket ${caseId}. They'll contact you as soon as possible through this channel.`,
+    fr: `J'ai notifie mon equipe avec le ticket ${caseId}. Ils te contacteront des que possible par ce meme canal.`,
+  };
+  return responses[language] ?? responses['es'] ?? '';
+}
+
+// Respuestas legacy (mantenidas por compatibilidad)
 const ESCALATION_RESPONSES: Record<string, string> = {
-  es: `¡Entendido! 📋 He escalado tu consulta a mi equipo para que puedan darte una respuesta precisa.
-
-Te contactarán lo antes posible por este mismo canal. ¡Gracias por tu paciencia! 🙏`,
-
-  ca: `Entès! 📋 He escalat la teva consulta al meu equip perquè puguin donar-te una resposta precisa.
-
-Et contactaran el més aviat possible per aquest mateix canal. Gràcies per la teva paciència! 🙏`,
-
-  en: `Got it! 📋 I've escalated your question to my team so they can give you an accurate answer.
-
-They'll contact you as soon as possible through this same channel. Thanks for your patience! 🙏`,
-
-  fr: `Compris! 📋 J'ai transmis ta question à mon équipe pour qu'ils puissent te donner une réponse précise.
-
-Ils te contacteront dès que possible par ce même canal. Merci pour ta patience! 🙏`,
+  es: `He notificado a mi equipo. Te contactaran lo antes posible por aqui mismo.`,
+  ca: `He notificat al meu equip. Et contactaran el mes aviat possible per aqui mateix.`,
+  en: `I've notified my team. They'll contact you as soon as possible through this channel.`,
+  fr: `J'ai notifie mon equipe. Ils te contacteront des que possible par ce meme canal.`,
 };
 
 // Email de destino
@@ -199,16 +207,27 @@ export class EscalationService {
    * Detectar si hay que escalar (por Laura o por enfado del usuario)
    */
   shouldEscalate(lauraResponse: string, userMessage?: string): boolean {
-    // Escalar si Laura no supo responder
-    if (this.shouldEscalateFromLaura(lauraResponse)) {
-      return true;
-    }
-    // Escalar si el usuario está enfadado
+    return this.shouldEscalateClassified(lauraResponse, userMessage) !== 'NONE';
+  }
+
+  /**
+   * Clasificar el tipo de escalacion:
+   * - IMMEDIATE: usuario enfadado -> escalar automaticamente con ticket
+   * - OFFER: Laura no sabe -> enviar email pero NO reemplazar su respuesta
+   * - NONE: sin escalacion
+   */
+  shouldEscalateClassified(lauraResponse: string, userMessage?: string): EscalationType {
+    // Enfado del usuario -> IMMEDIATE (prioridad)
     if (userMessage && this.isUserAngry(userMessage)) {
-      console.log(`[escalation] 🔴 User anger detected: "${userMessage.slice(0, 50)}..."`);
-      return true;
+      console.log(`[escalation] User anger detected -> IMMEDIATE`);
+      return 'IMMEDIATE';
     }
-    return false;
+    // Laura no supo responder -> OFFER (email en background, no reemplazar)
+    if (this.shouldEscalateFromLaura(lauraResponse)) {
+      console.log(`[escalation] Laura uncertainty detected -> OFFER`);
+      return 'OFFER';
+    }
+    return 'NONE';
   }
 
   /**
@@ -235,9 +254,16 @@ export class EscalationService {
     conversationHistory: Array<{ role: 'user' | 'assistant'; content: string }>;
     language: string;
     channel: 'whatsapp' | 'instagram' | 'web';
-  }): Promise<{ escalated: boolean; caseId?: string; escalationMessage?: string }> {
-    // Verificar si hay que escalar (por respuesta de Laura O por enfado del usuario)
-    if (!this.shouldEscalate(params.lauraResponse, params.userMessage)) {
+  }): Promise<{
+    escalated: boolean;
+    type?: EscalationType;
+    caseId?: string;
+    escalationMessage?: string;
+  }> {
+    // Clasificar tipo de escalacion
+    const escType = this.shouldEscalateClassified(params.lauraResponse, params.userMessage);
+
+    if (escType === 'NONE') {
       return { escalated: false };
     }
 
@@ -261,25 +287,28 @@ export class EscalationService {
     // Enviar email
     await this.sendEscalationEmail(escalationCase);
 
-    // Fase 6: Track escalation metrics
+    // Track escalation metrics
     try {
       const metrics = getAgentMetrics(this.redis);
-      // Determine reason based on Laura's response
       const reason = this.determineEscalationReason(params.lauraResponse, params.userMessage);
       await metrics.trackEscalation(reason);
     } catch (e) {
       console.warn('[escalation] Failed to track metrics:', e);
     }
 
-    // Log para monitoreo
     console.log(
-      `[escalation] Case ${caseId} created for question: "${params.userMessage.substring(0, 50)}..."`
+      `[escalation] Case ${caseId} (${escType}) created for: "${params.userMessage.substring(0, 50)}..."`
     );
 
-    // Devolver mensaje de escalación para que Laura lo envíe al usuario
-    const escalationMessage = this.getEscalationResponse(params.language);
+    if (escType === 'IMMEDIATE') {
+      // Enfado: enviar mensaje con ticket como burbuja adicional
+      const escalationMessage = getEscalationResponseWithTicket(params.language, caseId);
+      return { escalated: true, type: 'IMMEDIATE', caseId, escalationMessage };
+    }
 
-    return { escalated: true, caseId, escalationMessage };
+    // OFFER: Laura ya dice "contacta en info@..." - no reemplazar
+    // Solo email al equipo en background
+    return { escalated: true, type: 'OFFER', caseId };
   }
 
   /**
@@ -604,7 +633,12 @@ export async function checkAndEscalate(
     language: string;
     channel: 'whatsapp' | 'instagram' | 'web';
   }
-): Promise<{ escalated: boolean; caseId?: string; escalationMessage?: string }> {
+): Promise<{
+  escalated: boolean;
+  type?: EscalationType;
+  caseId?: string;
+  escalationMessage?: string;
+}> {
   const service = getEscalationService(redis);
   return service.processResponse(params);
 }
