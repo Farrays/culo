@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import crypto from 'crypto';
+import { Buffer } from 'buffer';
 import { Resend } from 'resend';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { validateCsrfRequest } from './lib/csrf.js';
@@ -517,7 +518,75 @@ const ACADEMY_LOCATION =
 let cachedCalendarAccessToken: string | null = null;
 let calendarTokenExpiry: number = 0;
 
+/**
+ * Creates a JWT for Service Account authentication
+ */
+function createServiceAccountJWT(email: string, privateKey: string): string {
+  const header = { alg: 'RS256', typ: 'JWT' };
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: email,
+    scope: 'https://www.googleapis.com/auth/calendar',
+    aud: CALENDAR_TOKEN_URL,
+    iat: now,
+    exp: now + 3600, // 1 hour
+  };
+
+  const base64Header = Buffer.from(JSON.stringify(header)).toString('base64url');
+  const base64Payload = Buffer.from(JSON.stringify(payload)).toString('base64url');
+  const unsignedToken = `${base64Header}.${base64Payload}`;
+
+  // Sign with private key
+  const sign = crypto.createSign('RSA-SHA256');
+  sign.update(unsignedToken);
+  const signature = sign.sign(privateKey, 'base64url');
+
+  return `${unsignedToken}.${signature}`;
+}
+
 async function getCalendarAccessToken(): Promise<string | null> {
+  // Check for Service Account credentials first (preferred)
+  const serviceEmail = process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'];
+  const serviceKey = process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY'];
+
+  if (serviceEmail && serviceKey) {
+    // Use Service Account authentication
+    if (cachedCalendarAccessToken && Date.now() < calendarTokenExpiry - 60000) {
+      return cachedCalendarAccessToken;
+    }
+
+    try {
+      // Handle escaped newlines in private key
+      const formattedKey = serviceKey.replace(/\\n/g, '\n');
+      const jwt = createServiceAccountJWT(serviceEmail, formattedKey);
+
+      const response = await fetchWithTimeout(CALENDAR_TOKEN_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+          assertion: jwt,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('[google-calendar] Service Account token error:', errorText);
+        return null;
+      }
+
+      const data = await response.json();
+      cachedCalendarAccessToken = data.access_token;
+      calendarTokenExpiry = Date.now() + (data.expires_in || 3600) * 1000;
+      console.log('[google-calendar] Service Account token obtained successfully');
+      return cachedCalendarAccessToken;
+    } catch (error) {
+      console.error('[google-calendar] Service Account auth error:', error);
+      return null;
+    }
+  }
+
+  // Fallback to OAuth2 refresh token (legacy)
   const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
   const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
   const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
@@ -556,11 +625,16 @@ function getCalendarId(): string {
 }
 
 function isGoogleCalendarConfigured(): boolean {
-  return !!(
+  // Check Service Account first, then OAuth2
+  const hasServiceAccount = !!(
+    process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'] && process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY']
+  );
+  const hasOAuth = !!(
     process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
     process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
     process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
   );
+  return hasServiceAccount || hasOAuth;
 }
 
 /**
@@ -774,7 +848,6 @@ async function sendBookingConfirmationWhatsApp(data: {
   }
 }
 
-/* eslint-disable no-undef */
 // Note: Buffer and URLSearchParams are Node.js globals available in Vercel serverless functions
 
 /**

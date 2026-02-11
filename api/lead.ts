@@ -3,6 +3,7 @@ import Redis from 'ioredis';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { sendLeadWelcomeEmail } from './lib/email.js';
 import { sendLeadWelcomeWhatsApp, isWhatsAppConfigured } from './lib/whatsapp.js';
+import { formatPhoneForMomence } from './lib/phone-utils.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -172,7 +173,7 @@ export default async function handler(
       firstName: sanitize(firstName),
       lastName: sanitize(lastName),
       email: normalizedEmail,
-      phoneNumber: sanitize(phoneNumber),
+      phoneNumber: formatPhoneForMomence(sanitize(phoneNumber)),
       discoveryAnswer: sanitize(discoveryAnswer || 'Not specified'),
       sourceId: finalSourceId,
     };

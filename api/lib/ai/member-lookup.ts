@@ -84,7 +84,7 @@ interface MomenceVisit {
 // ============================================================================
 
 const MEMBER_CACHE_PREFIX = 'member:phone:';
-const MEMBER_CACHE_TTL = 30 * 24 * 60 * 60; // 30 days
+const MEMBER_CACHE_TTL = 7 * 24 * 60 * 60; // 7 days
 const MOMENCE_API_URL = 'https://api.momence.com';
 
 // ============================================================================
@@ -100,26 +100,59 @@ export class MemberLookupService {
 
   /**
    * Look up a member by phone number
-   * Returns member info if found, null if not
+   * @param phone - Phone number to look up
+   * @param contactName - Optional WhatsApp contact name for cache validation
    */
-  async lookupByPhone(phone: string): Promise<MemberLookupResult> {
+  async lookupByPhone(phone: string, contactName?: string): Promise<MemberLookupResult> {
     const normalizedPhone = this.normalizePhone(phone);
 
     // 1. Try Redis cache first (fast path)
     const cachedMember = await this.getFromCache(normalizedPhone);
     if (cachedMember) {
-      console.log(`[member-lookup] Found in cache: ${normalizedPhone.slice(-4)}`);
-      return {
-        found: true,
-        member: cachedMember,
-        source: 'cache',
-      };
+      // Validate cached member against WhatsApp contact name if available
+      if (contactName && cachedMember.firstName) {
+        const cachedName = cachedMember.firstName
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+        const whatsappName = contactName
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+        if (!whatsappName.includes(cachedName) && !cachedName.includes(whatsappName)) {
+          console.warn(
+            `[member-lookup] ⚠️ Cache mismatch: cached="${cachedMember.firstName}" vs WhatsApp="${contactName}" - invalidating cache`
+          );
+          await this.clearPhoneCache(normalizedPhone);
+          // Fall through to Momence search
+        } else {
+          console.log(
+            `[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`
+          );
+          return {
+            found: true,
+            member: cachedMember,
+            source: 'cache',
+          };
+        }
+      } else {
+        console.log(
+          `[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`
+        );
+        return {
+          found: true,
+          member: cachedMember,
+          source: 'cache',
+        };
+      }
     }
 
     // 2. Try Momence API with query
     const momenceMember = await this.searchInMomence(normalizedPhone);
     if (momenceMember) {
-      console.log(`[member-lookup] Found in Momence: ${normalizedPhone.slice(-4)}`);
+      console.log(
+        `[member-lookup] Found in Momence: ${normalizedPhone.slice(-4)} (${momenceMember.firstName})`
+      );
       // Cache for future lookups
       await this.saveToCache(normalizedPhone, momenceMember);
       return {
@@ -145,6 +178,20 @@ export class MemberLookupService {
     const normalizedPhone = this.normalizePhone(member.phone);
     await this.saveToCache(normalizedPhone, member);
     console.log(`[member-lookup] Cached member: ${normalizedPhone.slice(-4)}`);
+  }
+
+  /**
+   * Clear cached member for a phone number
+   */
+  async clearPhoneCache(phone: string): Promise<void> {
+    if (!this.redis) return;
+    try {
+      const key = `${MEMBER_CACHE_PREFIX}${phone}`;
+      await this.redis.del(key);
+      console.log(`[member-lookup] Cache cleared for: ${phone.slice(-4)}`);
+    } catch (error) {
+      console.error('[member-lookup] Cache clear error:', error);
+    }
   }
 
   /**
@@ -199,39 +246,89 @@ export class MemberLookupService {
         return null;
       }
 
-      // Use POST /api/v2/host/members/list with query parameter
-      console.log('[member-lookup] Calling Momence API: POST /api/v2/host/members/list');
-      const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: phone,
-          page: 0,
-          pageSize: 10,
-        }),
-      });
+      // Try multiple query formats to maximize match chances
+      // Momence search depends on how the phone was stored
+      const queriesToTry = [phone];
 
-      if (!response.ok) {
-        const errorText = await response.text().catch(() => 'unknown');
-        console.warn(`[member-lookup] ❌ Momence search failed: ${response.status} - ${errorText}`);
+      // Add local number (without country code) as fallback
+      if (phone.startsWith('34') && phone.length >= 11) {
+        queriesToTry.push(phone.slice(2)); // e.g., "34663331640" → "663331640"
+      } else if (phone.startsWith('33') && phone.length >= 11) {
+        queriesToTry.push(phone.slice(2));
+      }
+
+      // Also try with + prefix in case Momence indexes that way
+      queriesToTry.push('+' + phone);
+
+      let members: Array<{
+        id: number;
+        phoneNumber?: string;
+        phone?: string;
+        firstName?: string;
+        lastName?: string;
+        email?: string;
+        firstSeen?: string;
+        createdAt?: string;
+      }> = [];
+
+      for (const query of queriesToTry) {
+        console.log(
+          `[member-lookup] Calling Momence API: POST /api/v2/host/members/list (query="${query.slice(0, 4)}...${query.slice(-4)}")`
+        );
+        const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query,
+            page: 0,
+            pageSize: 10,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => 'unknown');
+          console.warn(
+            `[member-lookup] ❌ Momence search failed: ${response.status} - ${errorText}`
+          );
+          continue;
+        }
+
+        const data = await response.json();
+        members = data.payload || [];
+        console.log(
+          `[member-lookup] Momence returned ${members.length} member(s) for query "${query.slice(0, 4)}..."`
+        );
+
+        if (members.length > 0) break; // Found results, stop trying
+      }
+
+      if (members.length === 0) {
+        console.log(
+          `[member-lookup] No members found for any query variant of: ${phone.slice(-4)}`
+        );
         return null;
       }
 
-      const data = await response.json();
-      const members = data.payload || [];
-      console.log(`[member-lookup] Momence returned ${members.length} member(s)`);
-
-      // Find member with matching phone number
-      const matchedMember = members.find((m: { phoneNumber?: string; phone?: string }) => {
+      // Find member with matching phone number (bidirectional matching)
+      const last9 = phone.slice(-9);
+      const matchedMember = members.find(m => {
         const memberPhone = this.normalizePhone(m.phoneNumber || m.phone || '');
-        return memberPhone === phone || memberPhone.endsWith(phone.slice(-9));
+        const memberLast9 = memberPhone.slice(-9);
+        return memberPhone === phone || memberPhone.endsWith(last9) || phone.endsWith(memberLast9);
       });
 
       if (!matchedMember) {
-        console.log(`[member-lookup] No matching member found for phone: ${phone.slice(-4)}`);
+        // Log what Momence returned vs what we expected for debugging
+        const returnedPhones = members.map(m => {
+          const mp = this.normalizePhone(m.phoneNumber || m.phone || '');
+          return mp.slice(-4);
+        });
+        console.log(
+          `[member-lookup] No matching member for phone: ${phone.slice(-4)}. Momence phones: [${returnedPhones.join(', ')}]`
+        );
         return null;
       }
 

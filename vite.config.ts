@@ -14,6 +14,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'images/**/*'],
       workbox: {
+        // Force SW to update immediately and take control
+        skipWaiting: true,
+        clientsClaim: true,
         // Cache strategies for different resource types
         runtimeCaching: [
           {
@@ -70,6 +73,9 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,ico,png,svg,woff2}'],
         // Don't pre-cache everything to keep SW size small
         globIgnores: ['**/stats.html', '**/node_modules/**'],
+        // Don't use navigateFallback - let the network handle HTML requests
+        // This prevents stale HTML from being served
+        navigateFallback: null,
       },
       manifest: {
         name: "Farray's International Dance Center",
@@ -176,14 +182,22 @@ export default defineConfig({
           // i18n translations are now loaded dynamically via resourcesToBackend
           // (JSON files loaded on demand, not bundled as JS chunks)
 
-          // Constants - separate chunk (large config files)
-          if (id.includes('/constants/') && !id.includes('/constants/blog/')) {
-            return 'constants';
+          // Heavy media constants - separate chunk (only loaded when needed)
+          // These are NOT needed on HomePage, so we isolate them
+          if (
+            id.includes('/constants/image-alt-texts') ||
+            id.includes('/constants/style-images') ||
+            id.includes('/constants/teacher-registry') ||
+            id.includes('/constants/teacher-images')
+          ) {
+            return 'constants-media';
           }
           // Blog constants separate (loaded on-demand)
           if (id.includes('/constants/blog/')) {
             return 'blog-constants';
           }
+          // Other constants: let Vite bundle them naturally with their consumers
+          // This allows HomePage to only load categories.ts + homepage-v2-config.ts
 
           // Templates - separate chunk (large components)
           if (id.includes('/templates/')) {
@@ -203,9 +217,16 @@ export default defineConfig({
     // i18n locale files are 1.4-1.6MB each, but only ONE is loaded per user session
     // This is acceptable because: 1) lazy-loaded per locale, 2) cached, 3) Brotli-compressed (~400KB)
     chunkSizeWarningLimit: 1700,
-    // Module preload for faster loading
+    // Module preload configuration
+    // Disable preload for heavy chunks not needed on initial page load (improves LCP for SEO)
     modulePreload: {
       polyfill: true,
+      resolveDependencies: (_filename, deps) => {
+        // Don't preload heavy chunks that aren't needed on homepage
+        // These will still load when actually needed (lazy navigation)
+        const heavyChunks = ['templates', 'constants-media', 'blog-constants', 'hls', 'blog-'];
+        return deps.filter(dep => !heavyChunks.some(chunk => dep.includes(chunk)));
+      },
     },
   },
   css: {

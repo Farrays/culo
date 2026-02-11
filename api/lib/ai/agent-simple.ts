@@ -13,6 +13,7 @@ import { detectLanguage, type SupportedLanguage } from './language-detector.js';
 import { getFullSystemPrompt } from './laura-system-prompt.js';
 import { checkAndEscalate } from './escalation-service.js';
 import { getMemberLookup } from './member-lookup.js';
+import { LAURA_TOOLS, executeTool } from './laura-tools.js';
 
 // Tipos
 interface AgentInput {
@@ -107,6 +108,7 @@ export async function processSimpleMessage(
         membershipName?: string;
       }
     | undefined;
+  let memberId: number | undefined;
 
   const memberLookupEnabled = process.env['ENABLE_MEMBER_LOOKUP'] === 'true';
   console.log(`[agent-simple] Member lookup enabled: ${memberLookupEnabled}`);
@@ -114,9 +116,10 @@ export async function processSimpleMessage(
   if (memberLookupEnabled) {
     try {
       const memberService = getMemberLookup(redis);
-      const lookup = await memberService.lookupByPhone(phone);
+      const lookup = await memberService.lookupByPhone(phone, input.contactName);
 
       if (lookup.found && lookup.member) {
+        memberId = lookup.member.memberId;
         // Obtener info de membresía
         const membershipInfo = await memberService.fetchMembershipInfo(lookup.member.memberId);
 
@@ -146,29 +149,77 @@ export async function processSimpleMessage(
   // 4. Obtener historial de conversación
   const history = await getConversationHistory(redis, phone);
 
-  // 5. Preparar mensajes para Claude
-  const messages: Array<{ role: 'user' | 'assistant'; content: string }> = [
-    ...history,
+  // 5. Preparar mensajes para Claude (con soporte para tool_use)
+  const messages: Anthropic.MessageParam[] = [
+    ...history.map((m): Anthropic.MessageParam => ({ role: m.role, content: m.content })),
     { role: 'user' as const, content: text },
   ];
 
-  // 6. Llamar a Claude Sonnet
+  // 6. Llamar a Claude Sonnet con tools
   try {
     const anthropic = getAnthropicClient();
+    const toolsEnabled = process.env['ENABLE_LAURA_TOOLS'] !== 'false';
+    const useTools = toolsEnabled && memberId; // Tools only work for identified members
 
-    const response = await anthropic.messages.create({
+    let currentResponse = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
-      max_tokens: 500,
+      max_tokens: 1024,
       system: systemPrompt,
-      messages: messages,
+      messages,
+      ...(useTools ? { tools: LAURA_TOOLS } : {}),
     });
 
-    // 7. Extraer respuesta
-    const firstBlock = response.content[0];
-    const assistantMessage = firstBlock && firstBlock.type === 'text' ? firstBlock.text : '';
+    // 7. Tool use loop (max 3 iterations to stay within 30s Vercel limit)
+    const MAX_TOOL_ITERATIONS = 3;
+    let iterations = 0;
+    const toolContext = { redis, phone, memberId };
+
+    while (currentResponse.stop_reason === 'tool_use' && iterations < MAX_TOOL_ITERATIONS) {
+      iterations++;
+      const toolUseBlocks = currentResponse.content.filter(
+        (b): b is Anthropic.ToolUseBlock => b.type === 'tool_use'
+      );
+
+      console.log(
+        `[agent-simple] Tool use iteration ${iterations}: ${toolUseBlocks.map(t => t.name).join(', ')}`
+      );
+
+      // Execute tools and collect results
+      const toolResults: Anthropic.ToolResultBlockParam[] = [];
+      for (const toolUse of toolUseBlocks) {
+        const result = await executeTool(
+          toolUse.name,
+          toolUse.input as Record<string, unknown>,
+          toolContext
+        );
+        toolResults.push({
+          type: 'tool_result',
+          tool_use_id: toolUse.id,
+          content: result,
+        });
+      }
+
+      // Continue conversation with tool results
+      messages.push({ role: 'assistant', content: currentResponse.content });
+      messages.push({ role: 'user', content: toolResults });
+
+      currentResponse = await anthropic.messages.create({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1024,
+        system: systemPrompt,
+        messages,
+        ...(useTools ? { tools: LAURA_TOOLS } : {}),
+      });
+    }
+
+    // 8. Extract final text response (ignore any remaining tool_use blocks)
+    const textBlocks = currentResponse.content.filter(
+      (b): b is Anthropic.TextBlock => b.type === 'text'
+    );
+    const assistantMessage = textBlocks.map(b => b.text).join('');
 
     console.log(
-      `[agent-simple] Response generated in ${Date.now() - startTime}ms: "${assistantMessage.slice(0, 50)}..."`
+      `[agent-simple] Response generated in ${Date.now() - startTime}ms (${iterations} tool calls): "${assistantMessage.slice(0, 50)}..."`
     );
 
     // 8. Guardar en historial

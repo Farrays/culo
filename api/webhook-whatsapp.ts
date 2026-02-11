@@ -1,11 +1,36 @@
 /* global Buffer */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
-import type { Redis } from '@upstash/redis';
-import { getRedisClient } from './lib/redis.js';
+import Redis from 'ioredis';
+import { getRedisClient as getUpstashRedis } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
 import { processAgentMessage } from './lib/ai/agent-simple.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
+
+// ============================================================================
+// STORAGE REDIS (ioredis TCP - MUST match reservar.ts)
+// Las reservas se guardan en STORAGE_REDIS_URL con ioredis, debemos buscar ahí
+// ============================================================================
+
+let redisClient: Redis | null = null;
+
+function getRedisClient(): Redis | null {
+  const redisUrl = process.env['STORAGE_REDIS_URL'];
+
+  if (!redisUrl) {
+    console.error('[webhook-whatsapp] STORAGE_REDIS_URL not configured');
+    return null;
+  }
+
+  if (!redisClient) {
+    redisClient = new Redis(redisUrl, {
+      maxRetriesPerRequest: 1,
+      connectTimeout: 5000,
+      lazyConnect: true,
+    });
+  }
+  return redisClient;
+}
 
 // ============================================================================
 // GOOGLE CALENDAR INLINED (Vercel bundler no incluye ./lib/email)
@@ -47,7 +72,75 @@ const STATUS_COLORS: Record<AttendanceStatus, string> = {
 let cachedCalendarAccessToken: string | null = null;
 let calendarTokenExpiry: number = 0;
 
+/**
+ * Creates a JWT for Service Account authentication
+ */
+function createServiceAccountJWT(email: string, privateKey: string): string {
+  const header = { alg: 'RS256', typ: 'JWT' };
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: email,
+    scope: 'https://www.googleapis.com/auth/calendar',
+    aud: CALENDAR_TOKEN_URL,
+    iat: now,
+    exp: now + 3600, // 1 hour
+  };
+
+  const base64Header = Buffer.from(JSON.stringify(header)).toString('base64url');
+  const base64Payload = Buffer.from(JSON.stringify(payload)).toString('base64url');
+  const unsignedToken = `${base64Header}.${base64Payload}`;
+
+  // Sign with private key
+  const sign = crypto.createSign('RSA-SHA256');
+  sign.update(unsignedToken);
+  const signature = sign.sign(privateKey, 'base64url');
+
+  return `${unsignedToken}.${signature}`;
+}
+
 async function getCalendarAccessToken(): Promise<string | null> {
+  // Check for Service Account credentials first (preferred)
+  const serviceEmail = process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'];
+  const serviceKey = process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY'];
+
+  if (serviceEmail && serviceKey) {
+    // Use Service Account authentication
+    if (cachedCalendarAccessToken && Date.now() < calendarTokenExpiry - 60000) {
+      return cachedCalendarAccessToken;
+    }
+
+    try {
+      // Handle escaped newlines in private key
+      const formattedKey = serviceKey.replace(/\\n/g, '\n');
+      const jwt = createServiceAccountJWT(serviceEmail, formattedKey);
+
+      const response = await fetch(CALENDAR_TOKEN_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+          assertion: jwt,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('[google-calendar] Service Account token error:', errorText);
+        return null;
+      }
+
+      const data = await response.json();
+      cachedCalendarAccessToken = data.access_token;
+      calendarTokenExpiry = Date.now() + (data.expires_in || 3600) * 1000;
+      console.log('[google-calendar] Service Account token obtained successfully');
+      return cachedCalendarAccessToken;
+    } catch (error) {
+      console.error('[google-calendar] Service Account auth error:', error);
+      return null;
+    }
+  }
+
+  // Fallback to OAuth2 refresh token (legacy)
   const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
   const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
   const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
@@ -86,11 +179,16 @@ function getCalendarId(): string {
 }
 
 function isGoogleCalendarConfigured(): boolean {
-  return !!(
+  // Check Service Account first, then OAuth2
+  const hasServiceAccount = !!(
+    process.env['GOOGLE_SERVICE_ACCOUNT_EMAIL'] && process.env['GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY']
+  );
+  const hasOAuth = !!(
     process.env['GOOGLE_CALENDAR_CLIENT_ID'] &&
     process.env['GOOGLE_CALENDAR_CLIENT_SECRET'] &&
     process.env['GOOGLE_CALENDAR_REFRESH_TOKEN']
   );
+  return hasServiceAccount || hasOAuth;
 }
 
 function getStatusText(status: AttendanceStatus): string {
@@ -625,43 +723,32 @@ async function processMessage(
     }
   }
 
-  // Procesar mensajes de texto con el agente AI
+  // Procesar mensajes de texto con LAURA (usa Upstash Redis)
   if (message.type === 'text' && message.text) {
     const textBody = message.text.body;
     console.log(`[webhook-whatsapp] Text message: "${textBody}"`);
 
-    // Process with AI agent
-    console.log(`[webhook-whatsapp] 🤖 Entering AI agent block...`);
     try {
-      console.log(`[webhook-whatsapp] 🔌 Getting Redis client...`);
-      const redis = getRedisClient();
-      console.log(`[webhook-whatsapp] ✅ Redis client obtained`);
+      const upstashRedis = getUpstashRedis();
+      console.log(`[webhook-whatsapp] Processing with LAURA agent...`);
 
-      console.log(`[webhook-whatsapp] Processing with AI agent...`);
-
-      const response = await processAgentMessage(redis, {
+      const response = await processAgentMessage(upstashRedis, {
         phone,
         text: textBody,
         contactName,
         channel: 'whatsapp',
       });
 
-      console.log(
-        `[webhook-whatsapp] Agent response (${response.language}): "${response.text.substring(0, 100)}..."`
-      );
+      console.log(`[webhook-whatsapp] LAURA response: "${response.text.substring(0, 50)}..."`);
 
-      // Send response via WhatsApp
       const sendResult = await sendTextMessage(phone, response.text);
-
       if (sendResult.success) {
-        console.log(`[webhook-whatsapp] Agent response sent successfully`);
+        console.log(`[webhook-whatsapp] LAURA response sent successfully`);
       } else {
-        console.error(`[webhook-whatsapp] Failed to send agent response:`, sendResult.error);
+        console.error(`[webhook-whatsapp] Failed to send LAURA response:`, sendResult.error);
       }
     } catch (agentError) {
-      console.error(`[webhook-whatsapp] Agent processing error:`, agentError);
-
-      // Send fallback message on error
+      console.error(`[webhook-whatsapp] LAURA error:`, agentError);
       try {
         await sendTextMessage(
           phone,
