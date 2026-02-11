@@ -1,7 +1,7 @@
 /**
  * Laura Tools - Claude tool_use integration for Momence actions
  *
- * Defines 10 tools that Laura can use during WhatsApp conversations:
+ * Defines 13 tools that Laura can use during WhatsApp conversations:
  * 1. search_upcoming_classes - Real-time class schedule
  * 2. get_member_info - Credits, membership status
  * 3. get_member_bookings - Upcoming reservations
@@ -12,6 +12,9 @@
  * 8. get_class_details - Detailed info about a specific class
  * 9. check_in_member - Remote check-in for a booking
  * 10. transfer_to_human - Transfer conversation to human agent
+ * 11. get_credit_details - Detailed credit breakdown per bought membership
+ * 12. get_visit_history - Past class attendance history
+ * 13. update_member_email - Update member email address
  */
 
 import type { Redis } from '@upstash/redis';
@@ -175,6 +178,41 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
       required: [],
     },
   },
+  {
+    name: 'get_credit_details',
+    description:
+      'Obtener desglose detallado de créditos por cada bono/membresía comprada: créditos usados, restantes, fechas, estado congelado. Usa cuando pregunten "cuántos créditos me quedan de cada bono" o quieran detalle por membresía.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {},
+      required: [],
+    },
+  },
+  {
+    name: 'get_visit_history',
+    description:
+      'Ver historial de clases a las que ha asistido el miembro. Usa cuando pregunten "a qué clases he ido", "mi historial" o quieran ver asistencia pasada.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {},
+      required: [],
+    },
+  },
+  {
+    name: 'update_member_email',
+    description:
+      'Actualizar el email del miembro en Momence. IMPORTANTE: Confirma el nuevo email con el usuario antes de ejecutar.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        email: {
+          type: 'string',
+          description: 'Nuevo email del miembro',
+        },
+      },
+      required: ['email'],
+    },
+  },
 ];
 
 // ============================================================================
@@ -225,6 +263,15 @@ export async function executeTool(
         break;
       case 'transfer_to_human':
         result = await executeTransferToHuman(toolInput, context);
+        break;
+      case 'get_credit_details':
+        result = await executeGetCreditDetails(context);
+        break;
+      case 'get_visit_history':
+        result = await executeGetVisitHistory(context);
+        break;
+      case 'update_member_email':
+        result = await executeUpdateMemberEmail(toolInput, context);
         break;
       default:
         result = JSON.stringify({ error: `Herramienta desconocida: ${toolName}` });
@@ -600,5 +647,115 @@ async function executeTransferToHuman(
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
     return JSON.stringify({ error: `No se pudo transferir: ${errorMsg}` });
+  }
+}
+
+async function executeGetCreditDetails(context: ToolContext): Promise<string> {
+  if (!context.memberId) {
+    return JSON.stringify({
+      error: 'No se encontró tu perfil de miembro. ¿Estás registrado en Momence?',
+    });
+  }
+
+  const client = getMomenceClient(context.redis);
+
+  try {
+    const result = await client.getMemberBoughtMemberships(context.memberId, {
+      page: 0,
+      pageSize: 50,
+    });
+
+    const memberships = (result.payload || []).map(m => ({
+      id: m.id,
+      name: m.membership?.name || 'Membresía',
+      type: m.type,
+      startDate: m.startDate,
+      endDate: m.endDate || null,
+      isFrozen: m.isFrozen,
+      eventCreditsLeft: m.eventCreditsLeft ?? null,
+      eventCreditsTotal: m.eventCreditsTotal ?? null,
+      moneyCreditsLeft: m.moneyCreditsLeft ?? null,
+      moneyCreditsTotal: m.moneyCreditsTotal ?? null,
+    }));
+
+    if (memberships.length === 0) {
+      return JSON.stringify({
+        found: 0,
+        message: 'No tienes membresías activas.',
+      });
+    }
+
+    return JSON.stringify({
+      found: memberships.length,
+      memberships,
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    return JSON.stringify({ error: `No se pudieron obtener los créditos: ${errorMsg}` });
+  }
+}
+
+async function executeGetVisitHistory(context: ToolContext): Promise<string> {
+  if (!context.memberId) {
+    return JSON.stringify({
+      error: 'No se encontró tu perfil de miembro. ¿Estás registrado en Momence?',
+    });
+  }
+
+  const memberService = getMemberLookup(context.redis);
+
+  try {
+    const visits = await memberService.fetchMemberVisits(context.memberId);
+
+    if (visits.length === 0) {
+      return JSON.stringify({
+        found: 0,
+        message: 'No se encontraron visitas recientes.',
+      });
+    }
+
+    return JSON.stringify({
+      found: visits.length,
+      visits: visits.map(v => ({
+        class_name: v.className,
+        date: v.date,
+        instructor: v.instructorName || null,
+      })),
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    return JSON.stringify({ error: `No se pudo obtener el historial: ${errorMsg}` });
+  }
+}
+
+async function executeUpdateMemberEmail(
+  input: Record<string, unknown>,
+  context: ToolContext
+): Promise<string> {
+  if (!context.memberId) {
+    return JSON.stringify({ error: 'No se encontró tu perfil de miembro.' });
+  }
+
+  const email = input['email'] as string;
+  if (!email) {
+    return JSON.stringify({ error: 'Falta el nuevo email.' });
+  }
+
+  const memberService = getMemberLookup(context.redis);
+
+  try {
+    const result = await memberService.updateMemberEmail(context.memberId, email);
+
+    if (!result.success) {
+      return JSON.stringify({ error: result.error || 'No se pudo actualizar el email.' });
+    }
+
+    return JSON.stringify({
+      success: true,
+      message: `Email actualizado correctamente a ${email}.`,
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    return JSON.stringify({ error: `No se pudo actualizar el email: ${errorMsg}` });
   }
 }
