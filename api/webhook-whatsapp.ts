@@ -747,16 +747,15 @@ async function processMessage(
       const adminPhone = process.env['ADMIN_NOTIFICATION_PHONE'];
       if (adminPhone && adminPhone !== phone) {
         const preview = textBody.length > 100 ? textBody.slice(0, 100) + '...' : textBody;
-        sendTextMessage(
-          adminPhone,
-          `📩 ${contactName || phone}:\n"${preview}"`
-        ).catch(() => {});
+        sendTextMessage(adminPhone, `📩 ${contactName || phone}:\n"${preview}"`).catch(() => {});
       }
 
       // Comprobar si un humano ha tomado el control
       const takeoverActive = await isHumanTakeover(upstashRedis, phone);
       if (takeoverActive) {
-        console.log(`[webhook-whatsapp] Human takeover active for ${phone.slice(-4)} - skipping Laura`);
+        console.log(
+          `[webhook-whatsapp] Human takeover active for ${phone.slice(-4)} - skipping Laura`
+        );
         await saveUserMessageDuringTakeover(upstashRedis, phone, textBody);
         return; // No llamar a Laura
       }

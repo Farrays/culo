@@ -9,13 +9,12 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getRedisClient } from './lib/redis.js';
-import {
-  activateTakeover,
-  deactivateTakeover,
-  getTakeoverInfo,
-} from './lib/ai/human-takeover.js';
+import { activateTakeover, deactivateTakeover, getTakeoverInfo } from './lib/ai/human-takeover.js';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+): Promise<VercelResponse | void> {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');

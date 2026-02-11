@@ -17,7 +17,10 @@ import {
   trackConversationActivity,
 } from './lib/ai/human-takeover.js';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+): Promise<VercelResponse | void> {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -57,7 +60,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 4. Actualizar timestamp de actividad
     await trackConversationActivity(redis, phone);
 
-    console.log(`[conversations-reply] Sent human reply to ${phone.slice(-4)}: "${text.slice(0, 50)}..."`);
+    console.log(
+      `[conversations-reply] Sent human reply to ${phone.slice(-4)}: "${text.slice(0, 50)}..."`
+    );
 
     return res.status(200).json({ success: true });
   } catch (error) {

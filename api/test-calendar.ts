@@ -377,7 +377,8 @@ export default async function handler(
     if (!firstName || !lastName || !email || !className || !classDate || !classTime) {
       return res.status(400).json({
         error: 'Missing required parameters',
-        usage: '?action=create&firstName=X&lastName=X&email=X&phone=X&className=X&classDate=YYYY-MM-DD&classTime=HH:MM',
+        usage:
+          '?action=create&firstName=X&lastName=X&email=X&phone=X&className=X&classDate=YYYY-MM-DD&classTime=HH:MM',
         required: ['firstName', 'lastName', 'email', 'className', 'classDate', 'classTime'],
         optional: ['phone', 'category', 'eventId'],
       });
@@ -413,15 +414,20 @@ export default async function handler(
       return res.status(400).json({
         error: 'Missing eventId parameter',
         usage: '?action=color&eventId=EVENT_ID&color=green',
-        colors: { green: '10 (confirmado)', red: '11 (cancelado)', orange: '6 (cancelado a tiempo)', gray: '8 (pendiente)' },
+        colors: {
+          green: '10 (confirmado)',
+          red: '11 (cancelado)',
+          orange: '6 (cancelado a tiempo)',
+          gray: '8 (pendiente)',
+        },
       });
     }
 
     const colorMap: Record<string, string> = {
-      green: '10',    // Basil - confirmado
-      red: '11',      // Tomato - cancelado tarde
-      orange: '6',    // Tangerine - cancelado a tiempo
-      gray: '8',      // Graphite - pendiente
+      green: '10', // Basil - confirmado
+      red: '11', // Tomato - cancelado tarde
+      orange: '6', // Tangerine - cancelado a tiempo
+      gray: '8', // Graphite - pendiente
     };
 
     const colorId = colorMap[colorName] || '10';

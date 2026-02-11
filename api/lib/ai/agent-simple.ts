@@ -281,7 +281,8 @@ export async function processSimpleMessage(
     if (allBubbles.length > 1 && input.channel === 'whatsapp') {
       // Enviar todas las burbujas menos la ultima desde aqui
       for (let i = 0; i < allBubbles.length - 1; i++) {
-        await sendWhatsAppText(phone, allBubbles[i]);
+        const bubble = allBubbles[i] ?? '';
+        await sendWhatsAppText(phone, bubble);
         // Delay proporcional al largo del siguiente mensaje (simula escritura humana)
         const nextLen = allBubbles[i + 1]?.length || 100;
         const typingDelay = Math.min(Math.max(nextLen * 15, 1500), 4000);
@@ -291,8 +292,9 @@ export async function processSimpleMessage(
       console.log(
         `[agent-simple] Sent ${allBubbles.length - 1} bubbles, returning last for webhook`
       );
+      const lastBubble = allBubbles[allBubbles.length - 1] ?? finalResponse;
       return {
-        text: allBubbles[allBubbles.length - 1],
+        text: lastBubble,
         language,
       };
     }
