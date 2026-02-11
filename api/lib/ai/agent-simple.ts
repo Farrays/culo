@@ -46,6 +46,30 @@ function getAnthropicClient(): Anthropic {
   return anthropicClient;
 }
 
+/**
+ * Wrapper around Anthropic messages.create with retry on 429 (rate limit).
+ * Waits for retry-after header value (or 5s fallback) and retries once.
+ */
+async function createMessageWithRetry(
+  params: Anthropic.MessageCreateParamsNonStreaming
+): Promise<Anthropic.Message> {
+  const anthropic = getAnthropicClient();
+  try {
+    return await anthropic.messages.create(params);
+  } catch (error) {
+    if (error instanceof Anthropic.RateLimitError) {
+      // Extract retry-after from headers (seconds) or default to 5s
+      const retryAfterRaw = error.headers?.get?.('retry-after');
+      const retryAfter = (retryAfterRaw ? Number(retryAfterRaw) : 0) || 5;
+      const waitMs = Math.min(retryAfter * 1000, 15000); // cap at 15s
+      console.warn(`[agent-simple] 429 rate limit hit, retrying in ${waitMs}ms...`);
+      await new Promise(resolve => setTimeout(resolve, waitMs));
+      return await anthropic.messages.create(params);
+    }
+    throw error;
+  }
+}
+
 // ============================================================================
 // HISTORIAL DE CONVERSACIÓN (Redis)
 // ============================================================================
@@ -165,11 +189,10 @@ export async function processSimpleMessage(
 
   // 6. Llamar a Claude Sonnet con tools
   try {
-    const anthropic = getAnthropicClient();
     const toolsEnabled = process.env['ENABLE_LAURA_TOOLS'] !== 'false';
     const useTools = toolsEnabled && memberId; // Tools only work for identified members
 
-    let currentResponse = await anthropic.messages.create({
+    let currentResponse = await createMessageWithRetry({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 1024,
       system: systemPrompt,
@@ -211,7 +234,7 @@ export async function processSimpleMessage(
       messages.push({ role: 'assistant', content: currentResponse.content });
       messages.push({ role: 'user', content: toolResults });
 
-      currentResponse = await anthropic.messages.create({
+      currentResponse = await createMessageWithRetry({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 1024,
         system: systemPrompt,

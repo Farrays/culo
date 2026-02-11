@@ -103,48 +103,23 @@ export class MemberLookupService {
    * @param phone - Phone number to look up
    * @param contactName - Optional WhatsApp contact name for cache validation
    */
-  async lookupByPhone(phone: string, contactName?: string): Promise<MemberLookupResult> {
+  async lookupByPhone(phone: string, _contactName?: string): Promise<MemberLookupResult> {
     const normalizedPhone = this.normalizePhone(phone);
 
     // 1. Try Redis cache first (fast path)
     const cachedMember = await this.getFromCache(normalizedPhone);
     if (cachedMember) {
-      // Validate cached member against WhatsApp contact name if available
-      if (contactName && cachedMember.firstName) {
-        const cachedName = cachedMember.firstName
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '');
-        const whatsappName = contactName
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '');
-        if (!whatsappName.includes(cachedName) && !cachedName.includes(whatsappName)) {
-          console.warn(
-            `[member-lookup] ⚠️ Cache mismatch: cached="${cachedMember.firstName}" vs WhatsApp="${contactName}" - invalidating cache`
-          );
-          await this.clearPhoneCache(normalizedPhone);
-          // Fall through to Momence search
-        } else {
-          console.log(
-            `[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`
-          );
-          return {
-            found: true,
-            member: cachedMember,
-            source: 'cache',
-          };
-        }
-      } else {
-        console.log(
-          `[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`
-        );
-        return {
-          found: true,
-          member: cachedMember,
-          source: 'cache',
-        };
-      }
+      // Phone-to-member mapping from Momence is authoritative.
+      // WhatsApp contact names are unreliable (business names, nicknames, etc.)
+      // so we no longer invalidate cache based on name mismatch.
+      console.log(
+        `[member-lookup] Found in cache: ${normalizedPhone.slice(-4)} (${cachedMember.firstName})`
+      );
+      return {
+        found: true,
+        member: cachedMember,
+        source: 'cache',
+      };
     }
 
     // 2. Try Momence API with query
