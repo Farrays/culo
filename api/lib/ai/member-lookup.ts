@@ -199,39 +199,74 @@ export class MemberLookupService {
         return null;
       }
 
-      // Use POST /api/v2/host/members/list with query parameter
-      console.log('[member-lookup] Calling Momence API: POST /api/v2/host/members/list');
-      const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: phone,
-          page: 0,
-          pageSize: 10,
-        }),
-      });
+      // Try multiple query formats to maximize match chances
+      // Momence search depends on how the phone was stored
+      const queriesToTry = [phone];
 
-      if (!response.ok) {
-        const errorText = await response.text().catch(() => 'unknown');
-        console.warn(`[member-lookup] ❌ Momence search failed: ${response.status} - ${errorText}`);
+      // Add local number (without country code) as fallback
+      if (phone.startsWith('34') && phone.length >= 11) {
+        queriesToTry.push(phone.slice(2)); // e.g., "34663331640" → "663331640"
+      } else if (phone.startsWith('33') && phone.length >= 11) {
+        queriesToTry.push(phone.slice(2));
+      }
+
+      // Also try with + prefix in case Momence indexes that way
+      queriesToTry.push('+' + phone);
+
+      let members: Array<{ id: number; phoneNumber?: string; phone?: string; firstName?: string; lastName?: string; email?: string; firstSeen?: string; createdAt?: string }> = [];
+
+      for (const query of queriesToTry) {
+        console.log(`[member-lookup] Calling Momence API: POST /api/v2/host/members/list (query="${query.slice(0, 4)}...${query.slice(-4)}")`);
+        const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query,
+            page: 0,
+            pageSize: 10,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => 'unknown');
+          console.warn(`[member-lookup] ❌ Momence search failed: ${response.status} - ${errorText}`);
+          continue;
+        }
+
+        const data = await response.json();
+        members = data.payload || [];
+        console.log(`[member-lookup] Momence returned ${members.length} member(s) for query "${query.slice(0, 4)}..."`);
+
+        if (members.length > 0) break; // Found results, stop trying
+      }
+
+      if (members.length === 0) {
+        console.log(`[member-lookup] No members found for any query variant of: ${phone.slice(-4)}`);
         return null;
       }
 
-      const data = await response.json();
-      const members = data.payload || [];
-      console.log(`[member-lookup] Momence returned ${members.length} member(s)`);
-
-      // Find member with matching phone number
-      const matchedMember = members.find((m: { phoneNumber?: string; phone?: string }) => {
+      // Find member with matching phone number (bidirectional matching)
+      const last9 = phone.slice(-9);
+      const matchedMember = members.find((m) => {
         const memberPhone = this.normalizePhone(m.phoneNumber || m.phone || '');
-        return memberPhone === phone || memberPhone.endsWith(phone.slice(-9));
+        const memberLast9 = memberPhone.slice(-9);
+        return (
+          memberPhone === phone ||
+          memberPhone.endsWith(last9) ||
+          phone.endsWith(memberLast9)
+        );
       });
 
       if (!matchedMember) {
-        console.log(`[member-lookup] No matching member found for phone: ${phone.slice(-4)}`);
+        // Log what Momence returned vs what we expected for debugging
+        const returnedPhones = members.map(m => {
+          const mp = this.normalizePhone(m.phoneNumber || m.phone || '');
+          return mp.slice(-4);
+        });
+        console.log(`[member-lookup] No matching member for phone: ${phone.slice(-4)}. Momence phones: [${returnedPhones.join(', ')}]`);
         return null;
       }
 
