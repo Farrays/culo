@@ -1,18 +1,24 @@
 /**
  * Laura Tools - Claude tool_use integration for Momence actions
  *
- * Defines 5 tools that Laura can use during WhatsApp conversations:
+ * Defines 10 tools that Laura can use during WhatsApp conversations:
  * 1. search_upcoming_classes - Real-time class schedule
  * 2. get_member_info - Credits, membership status
  * 3. get_member_bookings - Upcoming reservations
  * 4. create_booking - Book a class
  * 5. cancel_booking - Cancel a reservation
+ * 6. get_membership_options - Available membership plans/prices
+ * 7. add_to_waitlist - Add to waitlist when class is full
+ * 8. get_class_details - Detailed info about a specific class
+ * 9. check_in_member - Remote check-in for a booking
+ * 10. transfer_to_human - Transfer conversation to human agent
  */
 
 import type { Redis } from '@upstash/redis';
 import type Anthropic from '@anthropic-ai/sdk';
 import { getMemberLookup } from './member-lookup.js';
 import { getMomenceClient } from '../momence-client.js';
+import { activateTakeover, addNotification } from './human-takeover.js';
 
 // ============================================================================
 // TYPES
@@ -99,6 +105,76 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
       required: ['booking_id'],
     },
   },
+  {
+    name: 'get_membership_options',
+    description:
+      'Obtener los planes de membresía/bonos disponibles con sus precios. Usa cuando pregunten por precios, bonos, tarifas o qué opciones de membresía hay.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {},
+      required: [],
+    },
+  },
+  {
+    name: 'add_to_waitlist',
+    description:
+      'Apuntar al miembro a la lista de espera de una clase llena. Usa cuando una clase esté completa y el usuario quiera apuntarse a la lista de espera.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        session_id: {
+          type: 'number',
+          description: 'ID de la sesión llena (obtenido de search_upcoming_classes)',
+        },
+      },
+      required: ['session_id'],
+    },
+  },
+  {
+    name: 'get_class_details',
+    description:
+      'Obtener información detallada de una clase específica: profesor, horario, plazas disponibles, capacidad. Usa cuando pregunten detalles de una clase concreta.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        session_id: {
+          type: 'number',
+          description: 'ID de la sesión (obtenido de search_upcoming_classes)',
+        },
+      },
+      required: ['session_id'],
+    },
+  },
+  {
+    name: 'check_in_member',
+    description:
+      'Hacer check-in remoto de un miembro para una reserva. IMPORTANTE: Confirma con el usuario antes de ejecutar.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        booking_id: {
+          type: 'number',
+          description: 'ID de la reserva para hacer check-in (obtenido de get_member_bookings)',
+        },
+      },
+      required: ['booking_id'],
+    },
+  },
+  {
+    name: 'transfer_to_human',
+    description:
+      'Transferir la conversación a un agente humano. Usa cuando el usuario pida hablar con una persona, cuando no puedas resolver su consulta, o cuando la situación requiera intervención humana.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        reason: {
+          type: 'string',
+          description: 'Motivo de la transferencia (ej: "solicita hablar con persona", "consulta compleja sobre facturación")',
+        },
+      },
+      required: [],
+    },
+  },
 ];
 
 // ============================================================================
@@ -134,6 +210,21 @@ export async function executeTool(
         break;
       case 'cancel_booking':
         result = await executeCancelBooking(toolInput, context);
+        break;
+      case 'get_membership_options':
+        result = await executeGetMembershipOptions(context);
+        break;
+      case 'add_to_waitlist':
+        result = await executeAddToWaitlist(toolInput, context);
+        break;
+      case 'get_class_details':
+        result = await executeGetClassDetails(toolInput, context);
+        break;
+      case 'check_in_member':
+        result = await executeCheckInMember(toolInput, context);
+        break;
+      case 'transfer_to_human':
+        result = await executeTransferToHuman(toolInput, context);
         break;
       default:
         result = JSON.stringify({ error: `Herramienta desconocida: ${toolName}` });
@@ -328,5 +419,186 @@ async function executeCancelBooking(
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
     return JSON.stringify({ error: `No se pudo cancelar: ${errorMsg}` });
+  }
+}
+
+async function executeGetMembershipOptions(context: ToolContext): Promise<string> {
+  const client = getMomenceClient(context.redis);
+
+  try {
+    const result = await client.getMemberships({ page: 0, pageSize: 50 });
+    const memberships = (result.payload || []).map(m => ({
+      id: m.id,
+      name: m.name,
+      price: m.price,
+      type: m.type,
+    }));
+
+    if (memberships.length === 0) {
+      return JSON.stringify({
+        found: 0,
+        message: 'No hay planes de membresía configurados.',
+      });
+    }
+
+    return JSON.stringify({
+      found: memberships.length,
+      memberships,
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    return JSON.stringify({ error: `No se pudieron obtener las membresías: ${errorMsg}` });
+  }
+}
+
+async function executeAddToWaitlist(
+  input: Record<string, unknown>,
+  context: ToolContext
+): Promise<string> {
+  if (!context.memberId) {
+    return JSON.stringify({
+      error: 'No se encontró tu perfil de miembro. ¿Estás registrado en Momence?',
+    });
+  }
+
+  const sessionId = input['session_id'] as number;
+  if (!sessionId) {
+    return JSON.stringify({
+      error: 'Falta el ID de la sesión. Busca primero las clases disponibles.',
+    });
+  }
+
+  const client = getMomenceClient(context.redis);
+
+  try {
+    await client.addToWaitlist(sessionId, context.memberId);
+    return JSON.stringify({
+      success: true,
+      message: 'Te has apuntado a la lista de espera. Te avisaremos si se libera una plaza.',
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+
+    if (errorMsg.includes('404')) {
+      return JSON.stringify({ error: 'Esa clase no existe o ya no está disponible.' });
+    }
+    if (errorMsg.includes('409') || errorMsg.includes('already')) {
+      return JSON.stringify({ error: 'Ya estás en la lista de espera para esta clase.' });
+    }
+
+    return JSON.stringify({ error: `No se pudo apuntar a la lista de espera: ${errorMsg}` });
+  }
+}
+
+async function executeGetClassDetails(
+  input: Record<string, unknown>,
+  context: ToolContext
+): Promise<string> {
+  const sessionId = input['session_id'] as number;
+  if (!sessionId) {
+    return JSON.stringify({
+      error: 'Falta el ID de la sesión. Busca primero las clases disponibles.',
+    });
+  }
+
+  const client = getMomenceClient(context.redis);
+
+  try {
+    const session = await client.getSession(sessionId);
+
+    const capacity = session['capacity'] as number | undefined;
+    const bookingCount = session['bookingCount'] as number | undefined;
+
+    return JSON.stringify({
+      id: session['id'],
+      name: session['name'],
+      startsAt: session['startsAt'],
+      endsAt: session['endsAt'],
+      capacity,
+      bookingCount,
+      spotsAvailable: typeof capacity === 'number' && typeof bookingCount === 'number'
+        ? Math.max(0, capacity - bookingCount)
+        : null,
+      isFull: typeof capacity === 'number' && typeof bookingCount === 'number'
+        ? bookingCount >= capacity
+        : null,
+      teacher: session['teacher'] || null,
+      location: session['location'] || null,
+      description: session['description'] || null,
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+
+    if (errorMsg.includes('404')) {
+      return JSON.stringify({ error: 'Esa clase no existe o ya no está disponible.' });
+    }
+
+    return JSON.stringify({ error: `No se pudo obtener la información de la clase: ${errorMsg}` });
+  }
+}
+
+async function executeCheckInMember(
+  input: Record<string, unknown>,
+  context: ToolContext
+): Promise<string> {
+  if (!context.memberId) {
+    return JSON.stringify({ error: 'No se encontró tu perfil de miembro.' });
+  }
+
+  const bookingId = input['booking_id'] as number;
+  if (!bookingId) {
+    return JSON.stringify({
+      error: 'Falta el ID de la reserva. Consulta primero tus reservas.',
+    });
+  }
+
+  const client = getMomenceClient(context.redis);
+
+  try {
+    await client.checkIn(bookingId);
+    return JSON.stringify({
+      success: true,
+      message: 'Check-in realizado correctamente.',
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+
+    if (errorMsg.includes('404')) {
+      return JSON.stringify({ error: 'Esa reserva no existe.' });
+    }
+    if (errorMsg.includes('already') || errorMsg.includes('409')) {
+      return JSON.stringify({ error: 'Ya se ha hecho check-in para esta reserva.' });
+    }
+
+    return JSON.stringify({ error: `No se pudo hacer el check-in: ${errorMsg}` });
+  }
+}
+
+async function executeTransferToHuman(
+  input: Record<string, unknown>,
+  context: ToolContext
+): Promise<string> {
+  const reason = (input['reason'] as string) || 'Solicitud del usuario';
+
+  try {
+    await activateTakeover(context.redis, context.phone, 'laura-transfer');
+
+    // Notificar al admin
+    await addNotification(
+      context.redis,
+      context.phone,
+      `Laura ha transferido la conversación: ${reason}`,
+      undefined,
+      'escalation'
+    ).catch(() => {});
+
+    return JSON.stringify({
+      success: true,
+      message: 'Conversación transferida a un agente humano. Un miembro del equipo te atenderá en breve.',
+      reason,
+    });
+  } catch (error) {
+    const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    return JSON.stringify({ error: `No se pudo transferir: ${errorMsg}` });
   }
 }
