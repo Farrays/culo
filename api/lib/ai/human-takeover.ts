@@ -238,7 +238,8 @@ export async function saveUserMessageDuringTakeover(
     let messages: ConversationMessage[] = [];
 
     if (data) {
-      messages = typeof data === 'object' ? (data as ConversationMessage[]) : JSON.parse(data as string);
+      messages =
+        typeof data === 'object' ? (data as ConversationMessage[]) : JSON.parse(data as string);
     }
 
     messages.push({ role: 'user', content: text });
@@ -254,18 +255,15 @@ export async function saveUserMessageDuringTakeover(
 /**
  * Guarda una respuesta humana en el historial (como assistant para mantener compatibilidad)
  */
-export async function saveHumanReply(
-  redis: Redis,
-  phone: string,
-  text: string
-): Promise<void> {
+export async function saveHumanReply(redis: Redis, phone: string, text: string): Promise<void> {
   try {
     const key = `conv:${phone}`;
     const data = await redis.get(key);
     let messages: ConversationMessage[] = [];
 
     if (data) {
-      messages = typeof data === 'object' ? (data as ConversationMessage[]) : JSON.parse(data as string);
+      messages =
+        typeof data === 'object' ? (data as ConversationMessage[]) : JSON.parse(data as string);
     }
 
     messages.push({ role: 'assistant', content: text });
@@ -352,7 +350,7 @@ export async function getNotifications(
       offset: 0,
     });
 
-    const notifications: ConversationNotification[] = (raw as string[]).map((item) => {
+    const notifications: ConversationNotification[] = (raw as string[]).map(item => {
       return typeof item === 'object' ? (item as ConversationNotification) : JSON.parse(item);
     });
 

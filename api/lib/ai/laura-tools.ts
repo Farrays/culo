@@ -24,6 +24,36 @@ import { getMomenceClient } from '../momence-client.js';
 import { activateTakeover, addNotification } from './human-takeover.js';
 
 // ============================================================================
+// MOMENCE CHECKOUT URL CONFIG
+// ============================================================================
+
+const MOMENCE_CHECKOUT = {
+  BUSINESS_SLUG: "Farray's-International-Dance-Center",
+  PRODUCTS: {
+    SINGLE_CLASS: {
+      id: '189422',
+      slug: "Clase-Especial-de-Bienvenida-Farray's-Center---1-Clase-x-10%E2%82%AC",
+    },
+    PACK_3_CLASSES: {
+      id: '518447',
+      slug: "Pack-Especial-de-Bienvenida-Farray's-Center---3-Clases-x-20%E2%82%AC",
+    },
+  },
+};
+
+function buildPurchaseUrl(sessionId: number): {
+  singleClass: string;
+  pack3Classes: string;
+} {
+  const single = MOMENCE_CHECKOUT.PRODUCTS.SINGLE_CLASS;
+  const pack3 = MOMENCE_CHECKOUT.PRODUCTS.PACK_3_CLASSES;
+  return {
+    singleClass: `https://momence.com/${MOMENCE_CHECKOUT.BUSINESS_SLUG}/membership/${single.slug}/${single.id}?sessionId=${sessionId}`,
+    pack3Classes: `https://momence.com/${MOMENCE_CHECKOUT.BUSINESS_SLUG}/membership/${pack3.slug}/${pack3.id}?sessionId=${sessionId}`,
+  };
+}
+
+// ============================================================================
 // TYPES
 // ============================================================================
 
@@ -172,7 +202,8 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
       properties: {
         reason: {
           type: 'string',
-          description: 'Motivo de la transferencia (ej: "solicita hablar con persona", "consulta compleja sobre facturación")',
+          description:
+            'Motivo de la transferencia (ej: "solicita hablar con persona", "consulta compleja sobre facturación")',
         },
       },
       required: [],
@@ -392,14 +423,20 @@ async function executeCreateBooking(
   input: Record<string, unknown>,
   context: ToolContext
 ): Promise<string> {
+  const sessionId = input['session_id'] as number;
+
   if (!context.memberId) {
+    const purchaseUrls = sessionId ? buildPurchaseUrl(sessionId) : null;
     return JSON.stringify({
       error:
-        'No se encontró tu perfil de miembro. Para reservar, hazlo desde la web: www.farrayscenter.com/es/horarios-clases-baile-barcelona',
+        'No se encontró tu perfil de miembro. Puede comprar una clase directamente desde el enlace.',
+      ...(purchaseUrls && {
+        purchase_url: purchaseUrls.singleClass,
+        purchase_url_pack3: purchaseUrls.pack3Classes,
+      }),
     });
   }
 
-  const sessionId = input['session_id'] as number;
   if (!sessionId) {
     return JSON.stringify({
       error: 'Falta el ID de la sesión. Busca primero las clases disponibles.',
@@ -417,6 +454,7 @@ async function executeCreateBooking(
     });
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    const purchaseUrls = buildPurchaseUrl(sessionId);
 
     // Parse common Momence errors
     if (errorMsg.includes('404')) {
@@ -431,7 +469,13 @@ async function executeCreateBooking(
       });
     }
 
-    return JSON.stringify({ error: `No se pudo crear la reserva: ${errorMsg}` });
+    // For credit/payment related failures, include purchase URLs
+    return JSON.stringify({
+      error: `No se pudo crear la reserva: ${errorMsg}`,
+      purchase_url: purchaseUrls.singleClass,
+      purchase_url_pack3: purchaseUrls.pack3Classes,
+      hint: 'El usuario puede necesitar comprar créditos. Comparte el enlace de compra.',
+    });
   }
 }
 
@@ -563,12 +607,14 @@ async function executeGetClassDetails(
       endsAt: session['endsAt'],
       capacity,
       bookingCount,
-      spotsAvailable: typeof capacity === 'number' && typeof bookingCount === 'number'
-        ? Math.max(0, capacity - bookingCount)
-        : null,
-      isFull: typeof capacity === 'number' && typeof bookingCount === 'number'
-        ? bookingCount >= capacity
-        : null,
+      spotsAvailable:
+        typeof capacity === 'number' && typeof bookingCount === 'number'
+          ? Math.max(0, capacity - bookingCount)
+          : null,
+      isFull:
+        typeof capacity === 'number' && typeof bookingCount === 'number'
+          ? bookingCount >= capacity
+          : null,
       teacher: session['teacher'] || null,
       location: session['location'] || null,
       description: session['description'] || null,
@@ -641,7 +687,8 @@ async function executeTransferToHuman(
 
     return JSON.stringify({
       success: true,
-      message: 'Conversación transferida a un agente humano. Un miembro del equipo te atenderá en breve.',
+      message:
+        'Conversación transferida a un agente humano. Un miembro del equipo te atenderá en breve.',
       reason,
     });
   } catch (error) {
