@@ -29,12 +29,28 @@ import { activateTakeover, addNotification } from './human-takeover.js';
 
 const MOMENCE_BUSINESS_SLUG = "Farray's-International-Dance-Center";
 
+function slugify(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+}
+
 /**
- * Builds a direct link to a class session on Momence.
+ * Direct link to a class session on Momence.
  * Users can pay for a single drop-in class from this page.
  */
 function buildClassUrl(className: string, sessionId: number): string {
-  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/${encodeURIComponent(className)}/${sessionId}`;
+  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/${slugify(className)}/${sessionId}`;
+}
+
+/**
+ * Direct link to purchase a membership on Momence.
+ */
+function buildMembershipUrl(membershipName: string, membershipId: number): string {
+  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/membership/${slugify(membershipName)}/${membershipId}`;
 }
 
 // ============================================================================
@@ -509,6 +525,7 @@ async function executeGetMembershipOptions(context: ToolContext): Promise<string
       name: m.name,
       price: m.price,
       type: m.type,
+      purchase_url: buildMembershipUrl(m.name, m.id),
     }));
 
     if (memberships.length === 0) {

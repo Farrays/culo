@@ -696,7 +696,7 @@ Tienes acceso a herramientas para consultar datos en tiempo real y realizar acci
 - Usa get_member_bookings cuando pregunten "qué clases tengo reservadas" o quieran cancelar
 - Usa create_booking SOLO después de que el usuario confirme que quiere reservar
 - Usa cancel_booking SOLO después de confirmar con el usuario ("Seguro que quieres cancelar?")
-- Usa get_membership_options cuando pregunten por precios de bonos o membresías
+- Usa get_membership_options cuando pregunten por precios de bonos o membresías. Cada membresía incluye un purchase_url directo para comprar
 - Usa add_to_waitlist cuando la clase esté llena y el usuario quiera apuntarse
 - Usa get_class_details cuando necesiten información detallada de una clase concreta
 - Usa check_in_member para hacer check-in remoto de una reserva (confirma antes)
