@@ -1,0 +1,50 @@
+/**
+ * GET /api/conversations-detail?phone=34XXXXXXXXX
+ *
+ * Obtiene el detalle completo de una conversación:
+ * historial de mensajes, estado de takeover, info de miembro.
+ */
+
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { getRedisClient } from './lib/redis.js';
+import {
+  getConversationHistory,
+  getTakeoverInfo,
+} from './lib/ai/human-takeover.js';
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const phone = req.query['phone'] as string;
+  if (!phone) {
+    return res.status(400).json({ error: 'Missing phone parameter' });
+  }
+
+  try {
+    const redis = getRedisClient();
+
+    const [messages, takeover] = await Promise.all([
+      getConversationHistory(redis, phone),
+      getTakeoverInfo(redis, phone),
+    ]);
+
+    return res.status(200).json({
+      phone,
+      messages,
+      takeover: takeover || { active: false },
+    });
+  } catch (error) {
+    console.error('[conversations-detail] Error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}

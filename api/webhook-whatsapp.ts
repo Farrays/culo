@@ -6,6 +6,12 @@ import { getRedisClient as getUpstashRedis } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
 import { processAgentMessage } from './lib/ai/agent-simple.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
+import {
+  isHumanTakeover,
+  trackConversationActivity,
+  saveUserMessageDuringTakeover,
+  addNotification,
+} from './lib/ai/human-takeover.js';
 
 // ============================================================================
 // STORAGE REDIS (ioredis TCP - MUST match reservar.ts)
@@ -730,6 +736,31 @@ async function processMessage(
 
     try {
       const upstashRedis = getUpstashRedis();
+
+      // Registrar actividad en la conversación (para el listado del dashboard)
+      await trackConversationActivity(upstashRedis, phone);
+
+      // Crear notificación para el dashboard
+      addNotification(upstashRedis, phone, textBody, contactName).catch(() => {});
+
+      // Notificación WhatsApp al móvil del admin (fire and forget)
+      const adminPhone = process.env['ADMIN_NOTIFICATION_PHONE'];
+      if (adminPhone && adminPhone !== phone) {
+        const preview = textBody.length > 100 ? textBody.slice(0, 100) + '...' : textBody;
+        sendTextMessage(
+          adminPhone,
+          `📩 ${contactName || phone}:\n"${preview}"`
+        ).catch(() => {});
+      }
+
+      // Comprobar si un humano ha tomado el control
+      const takeoverActive = await isHumanTakeover(upstashRedis, phone);
+      if (takeoverActive) {
+        console.log(`[webhook-whatsapp] Human takeover active for ${phone.slice(-4)} - skipping Laura`);
+        await saveUserMessageDuringTakeover(upstashRedis, phone, textBody);
+        return; // No llamar a Laura
+      }
+
       console.log(`[webhook-whatsapp] Processing with LAURA agent...`);
 
       const response = await processAgentMessage(upstashRedis, {
