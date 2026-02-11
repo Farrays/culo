@@ -24,33 +24,17 @@ import { getMomenceClient } from '../momence-client.js';
 import { activateTakeover, addNotification } from './human-takeover.js';
 
 // ============================================================================
-// MOMENCE CHECKOUT URL CONFIG
+// MOMENCE URL CONFIG
 // ============================================================================
 
-const MOMENCE_CHECKOUT = {
-  BUSINESS_SLUG: "Farray's-International-Dance-Center",
-  PRODUCTS: {
-    SINGLE_CLASS: {
-      id: '189422',
-      slug: "Clase-Especial-de-Bienvenida-Farray's-Center---1-Clase-x-10%E2%82%AC",
-    },
-    PACK_3_CLASSES: {
-      id: '518447',
-      slug: "Pack-Especial-de-Bienvenida-Farray's-Center---3-Clases-x-20%E2%82%AC",
-    },
-  },
-};
+const MOMENCE_BUSINESS_SLUG = "Farray's-International-Dance-Center";
 
-function buildPurchaseUrl(sessionId: number): {
-  singleClass: string;
-  pack3Classes: string;
-} {
-  const single = MOMENCE_CHECKOUT.PRODUCTS.SINGLE_CLASS;
-  const pack3 = MOMENCE_CHECKOUT.PRODUCTS.PACK_3_CLASSES;
-  return {
-    singleClass: `https://momence.com/${MOMENCE_CHECKOUT.BUSINESS_SLUG}/membership/${single.slug}/${single.id}?sessionId=${sessionId}`,
-    pack3Classes: `https://momence.com/${MOMENCE_CHECKOUT.BUSINESS_SLUG}/membership/${pack3.slug}/${pack3.id}?sessionId=${sessionId}`,
-  };
+/**
+ * Builds a direct link to a class session on Momence.
+ * Users can pay for a single drop-in class from this page.
+ */
+function buildClassUrl(className: string, sessionId: number): string {
+  return `https://momence.com/${MOMENCE_BUSINESS_SLUG}/${encodeURIComponent(className)}/${sessionId}`;
 }
 
 // ============================================================================
@@ -111,7 +95,7 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
   {
     name: 'create_booking',
     description:
-      'Reservar una clase para el miembro. IMPORTANTE: Solo usar después de que el usuario confirme que quiere reservar. Necesitas el session_id de la clase.',
+      'Reservar una clase para el miembro. IMPORTANTE: Solo usar después de que el usuario confirme que quiere reservar. Necesitas el session_id y class_name de search_upcoming_classes.',
     input_schema: {
       type: 'object' as const,
       properties: {
@@ -119,8 +103,13 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
           type: 'number',
           description: 'ID de la sesión de Momence (obtenido de search_upcoming_classes)',
         },
+        class_name: {
+          type: 'string',
+          description:
+            'Nombre de la clase (obtenido de search_upcoming_classes). Necesario para generar enlace de compra si falla la reserva.',
+        },
       },
-      required: ['session_id'],
+      required: ['session_id', 'class_name'],
     },
   },
   {
@@ -424,16 +413,14 @@ async function executeCreateBooking(
   context: ToolContext
 ): Promise<string> {
   const sessionId = input['session_id'] as number;
+  const className = input['class_name'] as string;
 
   if (!context.memberId) {
-    const purchaseUrls = sessionId ? buildPurchaseUrl(sessionId) : null;
+    const classUrl = sessionId && className ? buildClassUrl(className, sessionId) : null;
     return JSON.stringify({
       error:
-        'No se encontró tu perfil de miembro. Puede comprar una clase directamente desde el enlace.',
-      ...(purchaseUrls && {
-        purchase_url: purchaseUrls.singleClass,
-        purchase_url_pack3: purchaseUrls.pack3Classes,
-      }),
+        'No se encontró tu perfil de miembro. Puede comprar la clase directamente desde el enlace.',
+      ...(classUrl && { class_url: classUrl }),
     });
   }
 
@@ -454,7 +441,6 @@ async function executeCreateBooking(
     });
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
-    const purchaseUrls = buildPurchaseUrl(sessionId);
 
     // Parse common Momence errors
     if (errorMsg.includes('404')) {
@@ -469,12 +455,12 @@ async function executeCreateBooking(
       });
     }
 
-    // For credit/payment related failures, include purchase URLs
+    // Include direct class link so user can pay for a single drop-in class
+    const classUrl = className ? buildClassUrl(className, sessionId) : null;
     return JSON.stringify({
       error: `No se pudo crear la reserva: ${errorMsg}`,
-      purchase_url: purchaseUrls.singleClass,
-      purchase_url_pack3: purchaseUrls.pack3Classes,
-      hint: 'El usuario puede necesitar comprar créditos. Comparte el enlace de compra.',
+      ...(classUrl && { class_url: classUrl }),
+      hint: 'El usuario puede comprar la clase directamente desde el enlace.',
     });
   }
 }
