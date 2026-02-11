@@ -354,8 +354,74 @@ export default async function handler(
     });
   }
 
+  // Test cambiar color de evento
+  // Uso: ?action=color&eventId=xxx&color=green (green, red, orange, gray)
+  if (req.query['action'] === 'color') {
+    const eventId = req.query['eventId'] as string;
+    const colorName = (req.query['color'] as string) || 'green';
+
+    if (!eventId) {
+      return res.status(400).json({
+        error: 'Missing eventId parameter',
+        usage: '?action=color&eventId=EVENT_ID&color=green',
+        colors: { green: '10 (confirmado)', red: '11 (cancelado)', orange: '6 (cancelado a tiempo)', gray: '8 (pendiente)' },
+      });
+    }
+
+    const colorMap: Record<string, string> = {
+      green: '10',    // Basil - confirmado
+      red: '11',      // Tomato - cancelado tarde
+      orange: '6',    // Tangerine - cancelado a tiempo
+      gray: '8',      // Graphite - pendiente
+    };
+
+    const colorId = colorMap[colorName] || '10';
+    const accessToken = await getAccessToken();
+
+    if (!accessToken) {
+      return res.status(500).json({ error: 'Failed to get access token' });
+    }
+
+    try {
+      // Primero obtener el evento actual
+      const getResponse = await fetch(
+        `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${eventId}`,
+        { headers: { Authorization: `Bearer ${accessToken}` } }
+      );
+
+      if (!getResponse.ok) {
+        return res.status(404).json({ error: `Event not found: ${eventId}` });
+      }
+
+      // Actualizar solo el color
+      const updateResponse = await fetch(
+        `${CALENDAR_API_BASE}/calendars/${encodeURIComponent(getCalendarId())}/events/${eventId}?sendUpdates=none`,
+        {
+          method: 'PATCH',
+          headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ colorId }),
+        }
+      );
+
+      if (!updateResponse.ok) {
+        const error = await updateResponse.text();
+        return res.status(500).json({ error: `Update failed: ${error}` });
+      }
+
+      return res.status(200).json({
+        success: true,
+        eventId,
+        color: colorName,
+        colorId,
+        message: `Color cambiado a ${colorName} (${colorId})`,
+      });
+    } catch (error) {
+      return res.status(500).json({ error: error instanceof Error ? error.message : 'Unknown' });
+    }
+  }
+
   return res.status(200).json({
-    error: 'Use ?action=check or ?action=test',
+    error: 'Use ?action=check, ?action=test, ?action=list, or ?action=color&eventId=X&color=green',
     configured: isGoogleCalendarConfigured(),
   });
 }
