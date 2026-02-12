@@ -358,6 +358,7 @@ async function executeSearchClasses(
     instructor: s.instructor,
     spots_available: s.spotsAvailable,
     is_full: s.isFull,
+    class_url: buildClassUrl(s.name, s.id),
   }));
 
   return JSON.stringify({
