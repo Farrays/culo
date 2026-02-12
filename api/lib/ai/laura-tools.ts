@@ -109,18 +109,19 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
   {
     name: 'create_booking',
     description:
-      'Reservar una clase para el miembro. IMPORTANTE: Solo usar después de que el usuario confirme que quiere reservar. Necesitas el session_id y class_name de search_upcoming_classes.',
+      'Reservar una clase para el miembro. IMPORTANTE: Solo usar después de que el usuario confirme. Usa EXACTAMENTE el id y name devueltos por search_upcoming_classes. NUNCA inventes session_id ni class_name.',
     input_schema: {
       type: 'object' as const,
       properties: {
         session_id: {
           type: 'number',
-          description: 'ID de la sesión de Momence (obtenido de search_upcoming_classes)',
+          description:
+            'ID numérico EXACTO de la sesión, copiado del campo "id" de search_upcoming_classes. NUNCA inventar.',
         },
         class_name: {
           type: 'string',
           description:
-            'Nombre de la clase (obtenido de search_upcoming_classes). Necesario para generar enlace de compra si falla la reserva.',
+            'Nombre EXACTO de la clase, copiado del campo "name" de search_upcoming_classes. NUNCA inventar ni modificar.',
         },
       },
       required: ['session_id', 'class_name'],
