@@ -98,8 +98,18 @@ export default async function handler(
   }
 
   try {
-    const { firstName, lastName, email, phoneNumber, comoconoce, Asunto, Mensaje, acceptsPrivacy, fbc, fbp } =
-      req.body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      comoconoce,
+      Asunto,
+      Mensaje,
+      acceptsPrivacy,
+      fbc,
+      fbp,
+    } = req.body;
 
     // Validaciones de campos requeridos
     if (!firstName?.trim()) {
