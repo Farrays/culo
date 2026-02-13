@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useRef, memo, useTransition } 
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
-import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
+import { trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../../utils/analytics';
 import { CountryPhoneInput } from '../booking/components/CountryPhoneInput';
 import { getDefaultCountry, findCountryByCode } from '../booking/constants/countries';
 import type { CountryCode } from 'libphonenumber-js';
@@ -343,6 +343,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       const formattedPhone = `${dialCodeDigits}${cleanedPhone}`;
 
       // El token y sourceId se anaden en el backend (api/lead.ts)
+      const { fbc, fbp } = getMetaCookies();
       const payload = {
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
@@ -353,6 +354,8 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         acceptsMarketing: formData.acceptsMarketing,
         acceptsWhatsApp: formData.acceptsWhatsApp,
         url: window.location.href,
+        fbc,
+        fbp,
       };
 
       // En desarrollo local, simular exito (la API solo funciona en Vercel)
@@ -409,6 +412,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           formName: `Lead Capture - ${formData.estilo || 'General'}`,
           leadValue: LEAD_VALUES.GENERIC_LEAD,
           pagePath: window.location.pathname,
+          eventId: responseData.eventId,
         });
       }
     } catch (err) {

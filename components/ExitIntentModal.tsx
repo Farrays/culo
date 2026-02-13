@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import CountdownTimer from './shared/CountdownTimer';
-import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../utils/analytics';
+import { trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../utils/analytics';
 
 interface ExitIntentModalProps {
   /** Delay before enabling exit detection (ms) */
@@ -250,6 +250,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
     setErrorMessage('');
 
     try {
+      const { fbc, fbp } = getMetaCookies();
       const response = await fetch('/api/exit-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -258,6 +259,8 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
           page: window.location.pathname,
           promo: `${discountPercent}_matricula`,
           locale,
+          fbc,
+          fbp,
         }),
       });
 
@@ -276,6 +279,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
             leadValue: LEAD_VALUES.EXIT_INTENT,
             discountCode: `${discountPercent}_matricula`,
             pagePath: window.location.pathname,
+            eventId: data.eventId,
           });
 
           // Push specific exit_intent_converted event for GTM triggers

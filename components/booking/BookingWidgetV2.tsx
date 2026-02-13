@@ -666,6 +666,7 @@ const BookingWidgetV2: React.FC = memo(() => {
           formName: `Booking - ${selectedClass.style || 'General'}`,
           leadValue: LEAD_VALUES.BOOKING_LEAD,
           pagePath: typeof window !== 'undefined' ? window.location.pathname : '',
+          eventId,
         });
       }
     } catch (err) {

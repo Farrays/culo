@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { kv } from '@vercel/kv';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
+import { sendMetaConversionEvent, generateServerEventId } from './lib/meta-capi.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -81,7 +82,7 @@ export default async function handler(
   }
 
   try {
-    const { email, page, promo, locale } = req.body;
+    const { email, page, promo, locale, fbc, fbp } = req.body;
 
     // Validación: solo email es requerido
     if (!email) {
@@ -168,11 +169,33 @@ export default async function handler(
       console.warn('KV save failed for exit-intent:', kvError);
     }
 
+    // ===== META CAPI (fire-and-forget, no bloquea respuesta) =====
+    const capiEventId = generateServerEventId('exit');
+    const userAgent = (req.headers['user-agent'] as string) || '';
+
+    sendMetaConversionEvent({
+      email: normalizedEmail,
+      eventName: 'Lead',
+      eventId: capiEventId,
+      sourceUrl: `https://www.farrayscenter.com${sanitize(page || '')}`,
+      userAgent,
+      clientIp,
+      fbc: fbc || undefined,
+      fbp: fbp || undefined,
+      customData: {
+        currency: 'EUR',
+        value: 15,
+        content_name: 'Exit Intent Modal',
+        content_category: 'Lead Capture',
+      },
+    }).catch(err => console.warn('[exit-intent] CAPI error (non-blocking):', err));
+
     // Éxito
     return res.status(200).json({
       success: true,
       status,
       message: 'Discount reserved successfully',
+      eventId: capiEventId,
     });
   } catch (error) {
     console.error('Exit intent submission error:', error);

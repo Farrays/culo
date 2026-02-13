@@ -18,7 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon, CalendarIcon } from '../../lib/icons';
 import type { LandingConfig, LandingScheduleItem } from '../../constants/landing-template-config';
-import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
+import { trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../../utils/analytics';
 import { CountryPhoneInput } from '../booking/components/CountryPhoneInput';
 import { getDefaultCountry, findCountryByCode } from '../booking/constants/countries';
 import type { CountryCode } from 'libphonenumber-js';
@@ -306,6 +306,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
       const dialCodeDigits = country?.dialCode.replace('+', '') ?? '34';
       const formattedPhone = `${dialCodeDigits}${cleanedPhone}`;
 
+      const { fbc, fbp } = getMetaCookies();
       const payload = {
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
@@ -316,6 +317,8 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
         acceptsMarketing: formData.acceptsMarketing,
         url: window.location.href,
         sourceId: sourceId,
+        fbc,
+        fbp,
       };
 
       // En desarrollo local, simular exito
@@ -368,6 +371,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
           formName: `${estiloValue} Free Welcome Class`,
           leadValue: LEAD_VALUES.GENERIC_LEAD,
           pagePath: window.location.pathname,
+          eventId: responseData.eventId,
         });
       }
     } catch (err) {

@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { validateCsrfRequest } from './lib/csrf.js';
 import { formatPhoneForMomence } from './lib/phone-utils.js';
+import { sendMetaConversionEvent, generateServerEventId } from './lib/meta-capi.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -97,7 +98,7 @@ export default async function handler(
   }
 
   try {
-    const { firstName, lastName, email, phoneNumber, comoconoce, Asunto, Mensaje, acceptsPrivacy } =
+    const { firstName, lastName, email, phoneNumber, comoconoce, Asunto, Mensaje, acceptsPrivacy, fbc, fbp } =
       req.body;
 
     // Validaciones de campos requeridos
@@ -181,10 +182,35 @@ export default async function handler(
       `Contact form submitted: ${redactEmail(payload.email)} - Subject: ${payload.Asunto}`
     );
 
+    // ===== META CAPI (fire-and-forget, no bloquea respuesta) =====
+    const capiEventId = generateServerEventId('contact');
+    const userAgent = (req.headers['user-agent'] as string) || '';
+
+    sendMetaConversionEvent({
+      email: sanitize(email, 255).toLowerCase(),
+      phone: sanitize(phoneNumber, 30),
+      firstName: sanitize(firstName, 100),
+      lastName: sanitize(lastName, 100),
+      eventName: 'Lead',
+      eventId: capiEventId,
+      sourceUrl: 'https://www.farrayscenter.com/es/contacto',
+      userAgent,
+      clientIp,
+      fbc: fbc || undefined,
+      fbp: fbp || undefined,
+      customData: {
+        currency: 'EUR',
+        value: 20,
+        content_name: 'Contact Form',
+        content_category: 'Contact',
+      },
+    }).catch(err => console.warn('[contact] CAPI error (non-blocking):', err));
+
     // Exito
     return res.status(200).json({
       success: true,
       message: 'Contact form submitted successfully',
+      eventId: capiEventId,
     });
   } catch (error) {
     console.error('Contact form submission error:', error);

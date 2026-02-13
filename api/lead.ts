@@ -4,6 +4,7 @@ import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { sendLeadWelcomeEmail } from './lib/email.js';
 import { sendLeadWelcomeWhatsApp, isWhatsAppConfigured } from './lib/whatsapp.js';
 import { formatPhoneForMomence } from './lib/phone-utils.js';
+import { sendMetaConversionEvent, generateServerEventId } from './lib/meta-capi.js';
 
 /** Redact email for GDPR-compliant logging */
 function redactEmail(email: string | null | undefined): string {
@@ -114,6 +115,8 @@ export default async function handler(
       acceptsMarketing,
       acceptsWhatsApp, // RGPD: consentimiento explícito para WhatsApp
       sourceId: customSourceId, // Permite override del sourceId por landing
+      fbc, // Meta Click ID cookie
+      fbp, // Meta Browser ID cookie
     } = req.body;
 
     // Validaciones
@@ -257,11 +260,36 @@ export default async function handler(
       }
     }
 
+    // ===== META CAPI (fire-and-forget, no bloquea respuesta) =====
+    const capiEventId = generateServerEventId('lead');
+    const userAgent = (req.headers['user-agent'] as string) || '';
+
+    sendMetaConversionEvent({
+      email: normalizedEmail,
+      phone: sanitize(phoneNumber),
+      firstName: sanitize(firstName),
+      lastName: sanitize(lastName),
+      eventName: 'Lead',
+      eventId: capiEventId,
+      sourceUrl: req.body.url || 'https://www.farrayscenter.com',
+      userAgent,
+      clientIp,
+      fbc: fbc || undefined,
+      fbp: fbp || undefined,
+      customData: {
+        currency: 'EUR',
+        value: 15,
+        content_name: `Lead - ${sanitize(estilo || 'General')}`,
+        content_category: 'Lead Capture',
+      },
+    }).catch(err => console.warn('[lead] CAPI error (non-blocking):', err));
+
     // Éxito - nuevo lead registrado
     return res.status(200).json({
       success: true,
       status: leadStatus,
       message: 'Lead submitted successfully',
+      eventId: capiEventId,
     });
   } catch (error) {
     console.error('Lead submission error:', error);

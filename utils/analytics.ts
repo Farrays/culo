@@ -12,11 +12,28 @@ declare global {
     fbq?: (
       command: 'init' | 'track' | 'trackCustom',
       eventOrPixelId: string,
-      params?: Record<string, unknown>
+      params?: Record<string, unknown>,
+      options?: { eventID?: string }
     ) => void;
     _fbq?: unknown;
     clarity?: (command: string, ...args: unknown[]) => void;
   }
+}
+
+// ============================================================================
+// META COOKIE HELPERS
+// Extract _fbc (click ID) and _fbp (browser ID) for CAPI matching
+// ============================================================================
+
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? (match[2] ?? null) : null;
+}
+
+/** Get Meta _fbc and _fbp cookies for server-side CAPI matching */
+export function getMetaCookies(): { fbc: string | null; fbp: string | null } {
+  return { fbc: getCookie('_fbc'), fbp: getCookie('_fbp') };
 }
 
 // ============================================================================
@@ -236,6 +253,9 @@ export function pushToDataLayer(eventData: Record<string, unknown>): void {
 /**
  * Track micro-conversion: Lead captured
  * Use for: Exit Intent Modal, Contact Form, Lead Modals
+ *
+ * When eventId is provided (from server CAPI response), fires Meta Pixel
+ * directly with matching eventID for deduplication with server-side CAPI.
  */
 export function trackLeadConversion(params: {
   leadSource:
@@ -250,12 +270,13 @@ export function trackLeadConversion(params: {
   email?: string; // Optional, only pass if user consented
   discountCode?: string;
   pagePath?: string;
+  eventId?: string; // For Meta CAPI deduplication (from server response)
 }): void {
   const utmParams = getStoredUTMParams();
   const pagePath =
     params.pagePath || (typeof window !== 'undefined' ? window.location.pathname : '');
 
-  // 1. Push to dataLayer for GTM
+  // 1. Push to dataLayer for GTM (include event_id for GTM tag if configured)
   pushToDataLayer({
     event: 'generate_lead',
     lead_source: params.leadSource,
@@ -264,6 +285,7 @@ export function trackLeadConversion(params: {
     currency: 'EUR',
     page_path: pagePath,
     discount_code: params.discountCode,
+    event_id: params.eventId,
     ...utmParams,
   });
 
@@ -279,8 +301,17 @@ export function trackLeadConversion(params: {
     });
   }
 
-  // NOTE: Meta Pixel Lead event is handled by GTM (listens to 'generate_lead' dataLayer event)
-  // Removed direct fbq('track', 'Lead') call to avoid duplicate events
+  // 3. Fire Meta Pixel Lead with eventID for CAPI deduplication
+  // When eventId is present, fire pixel directly so Meta can match with server CAPI event.
+  // Without eventId, GTM continues handling the pixel Lead event (fallback).
+  if (params.eventId && hasConsentFor('marketing') && window.fbq) {
+    window.fbq('track', 'Lead', {
+      content_name: params.formName,
+      content_category: params.leadSource,
+      value: params.leadValue,
+      currency: 'EUR',
+    }, { eventID: params.eventId });
+  }
 }
 
 /**
