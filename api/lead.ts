@@ -260,29 +260,33 @@ export default async function handler(
       }
     }
 
-    // ===== META CAPI (fire-and-forget, no bloquea respuesta) =====
+    // ===== META CAPI (must await in serverless to prevent early termination) =====
     const capiEventId = generateServerEventId('lead');
     const userAgent = (req.headers['user-agent'] as string) || '';
 
-    sendMetaConversionEvent({
-      email: normalizedEmail,
-      phone: sanitize(phoneNumber),
-      firstName: sanitize(firstName),
-      lastName: sanitize(lastName),
-      eventName: 'Lead',
-      eventId: capiEventId,
-      sourceUrl: req.body.url || 'https://www.farrayscenter.com',
-      userAgent,
-      clientIp,
-      fbc: fbc || undefined,
-      fbp: fbp || undefined,
-      customData: {
-        currency: 'EUR',
-        value: 15,
-        content_name: `Lead - ${sanitize(estilo || 'General')}`,
-        content_category: 'Lead Capture',
-      },
-    }).catch(err => console.warn('[lead] CAPI error (non-blocking):', err));
+    try {
+      await sendMetaConversionEvent({
+        email: normalizedEmail,
+        phone: sanitize(phoneNumber),
+        firstName: sanitize(firstName),
+        lastName: sanitize(lastName),
+        eventName: 'Lead',
+        eventId: capiEventId,
+        sourceUrl: req.body.url || 'https://www.farrayscenter.com',
+        userAgent,
+        clientIp,
+        fbc: fbc || undefined,
+        fbp: fbp || undefined,
+        customData: {
+          currency: 'EUR',
+          value: 15,
+          content_name: `Lead - ${sanitize(estilo || 'General')}`,
+          content_category: 'Lead Capture',
+        },
+      });
+    } catch (capiErr) {
+      console.warn('[lead] CAPI error (non-blocking):', capiErr);
+    }
 
     // Éxito - nuevo lead registrado
     return res.status(200).json({

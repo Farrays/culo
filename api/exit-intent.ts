@@ -169,26 +169,30 @@ export default async function handler(
       console.warn('KV save failed for exit-intent:', kvError);
     }
 
-    // ===== META CAPI (fire-and-forget, no bloquea respuesta) =====
+    // ===== META CAPI (must await in serverless to prevent early termination) =====
     const capiEventId = generateServerEventId('exit');
     const userAgent = (req.headers['user-agent'] as string) || '';
 
-    sendMetaConversionEvent({
-      email: normalizedEmail,
-      eventName: 'Lead',
-      eventId: capiEventId,
-      sourceUrl: `https://www.farrayscenter.com${sanitize(page || '')}`,
-      userAgent,
-      clientIp,
-      fbc: fbc || undefined,
-      fbp: fbp || undefined,
-      customData: {
-        currency: 'EUR',
-        value: 15,
-        content_name: 'Exit Intent Modal',
-        content_category: 'Lead Capture',
-      },
-    }).catch(err => console.warn('[exit-intent] CAPI error (non-blocking):', err));
+    try {
+      await sendMetaConversionEvent({
+        email: normalizedEmail,
+        eventName: 'Lead',
+        eventId: capiEventId,
+        sourceUrl: `https://www.farrayscenter.com${sanitize(page || '')}`,
+        userAgent,
+        clientIp,
+        fbc: fbc || undefined,
+        fbp: fbp || undefined,
+        customData: {
+          currency: 'EUR',
+          value: 15,
+          content_name: 'Exit Intent Modal',
+          content_category: 'Lead Capture',
+        },
+      });
+    } catch (capiErr) {
+      console.warn('[exit-intent] CAPI error (non-blocking):', capiErr);
+    }
 
     // Éxito
     return res.status(200).json({

@@ -182,29 +182,33 @@ export default async function handler(
       `Contact form submitted: ${redactEmail(payload.email)} - Subject: ${payload.Asunto}`
     );
 
-    // ===== META CAPI (fire-and-forget, no bloquea respuesta) =====
+    // ===== META CAPI (must await in serverless to prevent early termination) =====
     const capiEventId = generateServerEventId('contact');
     const userAgent = (req.headers['user-agent'] as string) || '';
 
-    sendMetaConversionEvent({
-      email: sanitize(email, 255).toLowerCase(),
-      phone: sanitize(phoneNumber, 30),
-      firstName: sanitize(firstName, 100),
-      lastName: sanitize(lastName, 100),
-      eventName: 'Lead',
-      eventId: capiEventId,
-      sourceUrl: 'https://www.farrayscenter.com/es/contacto',
-      userAgent,
-      clientIp,
-      fbc: fbc || undefined,
-      fbp: fbp || undefined,
-      customData: {
-        currency: 'EUR',
-        value: 20,
-        content_name: 'Contact Form',
-        content_category: 'Contact',
-      },
-    }).catch(err => console.warn('[contact] CAPI error (non-blocking):', err));
+    try {
+      await sendMetaConversionEvent({
+        email: sanitize(email, 255).toLowerCase(),
+        phone: sanitize(phoneNumber, 30),
+        firstName: sanitize(firstName, 100),
+        lastName: sanitize(lastName, 100),
+        eventName: 'Lead',
+        eventId: capiEventId,
+        sourceUrl: 'https://www.farrayscenter.com/es/contacto',
+        userAgent,
+        clientIp,
+        fbc: fbc || undefined,
+        fbp: fbp || undefined,
+        customData: {
+          currency: 'EUR',
+          value: 20,
+          content_name: 'Contact Form',
+          content_category: 'Contact',
+        },
+      });
+    } catch (capiErr) {
+      console.warn('[contact] CAPI error (non-blocking):', capiErr);
+    }
 
     // Exito
     return res.status(200).json({
