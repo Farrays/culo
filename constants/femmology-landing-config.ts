@@ -102,6 +102,13 @@ export const FEMMOLOGY_LANDING_CONFIG: LandingConfig = createLandingConfig('fuch
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'femmology',
+  },
+
+  // =========================================================================
   // HORARIOS - Clases de Femmology disponibles (con Yunaisy Farray)
   // =========================================================================
   schedule: [

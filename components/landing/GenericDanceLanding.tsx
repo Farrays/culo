@@ -11,7 +11,7 @@
  * <GenericDanceLanding config={SALSA_LANDING_CONFIG} />
  */
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -33,7 +33,7 @@ import {
   MapPinIcon,
 } from '../../lib/icons';
 import { SOCIAL_PROOF } from '../../constants/shared';
-import type { LandingConfig } from '../../constants/landing-template-config';
+import type { LandingConfig, LandingScheduleItem } from '../../constants/landing-template-config';
 import type { LandingThemeClasses } from '../../constants/landing-themes';
 
 // =============================================================================
@@ -312,10 +312,14 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
   const navigate = useNavigate();
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedScheduleItem, setSelectedScheduleItem] = useState<LandingScheduleItem | null>(
+    null
+  );
   const [isExitPopupOpen, setIsExitPopupOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<string | null>(null);
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [hasShownExitIntent, setHasShownExitIntent] = useState(false);
+  const programmaticScrollRef = useRef(false);
   const baseUrl = 'https://www.farrayscenter.com';
 
   const { images, logos, translationPrefix: prefix } = config;
@@ -393,6 +397,9 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
     const SCROLL_UP_TRIGGER = 150;
 
     const handleScroll = () => {
+      // Skip exit intent during programmatic scroll (e.g. CTA scroll-to-schedule)
+      if (programmaticScrollRef.current) return;
+
       const currentScrollY = window.scrollY || 0;
       const windowHeight = window.innerHeight || 1;
       const pageHeight = document.documentElement.scrollHeight - windowHeight;
@@ -437,7 +444,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
     navigate,
   ]);
 
-  const openModal = () => {
+  const openModal = (scheduleItem?: LandingScheduleItem) => {
     try {
       if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
         window.fbq('track', 'InitiateCheckout', {
@@ -450,10 +457,26 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
     } catch {
       // FB Pixel not available
     }
+    setSelectedScheduleItem(scheduleItem ?? null);
     setIsModalOpen(true);
   };
 
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedScheduleItem(null);
+  };
+
+  const scrollToSchedule = () => {
+    const el = document.getElementById('schedule-section');
+    if (el) {
+      programmaticScrollRef.current = true;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Re-enable exit intent after scroll animation completes
+      setTimeout(() => {
+        programmaticScrollRef.current = false;
+      }, 1500);
+    }
+  };
 
   const toggleFaq = (id: string) => {
     setOpenFaq(openFaq === id ? null : id);
@@ -602,7 +625,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
               <div>
                 <button
-                  onClick={openModal}
+                  onClick={scrollToSchedule}
                   className={`w-full sm:w-auto sm:min-w-[280px] md:min-w-[320px] min-h-[48px] sm:min-h-[52px] ${theme.bgPrimary} text-white font-bold text-base sm:text-lg py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${theme.shadowPrimary} animate-glow active:scale-95`}
                 >
                   {t(`${prefix}CTA`)}
@@ -818,7 +841,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               {/* CTA */}
               <div className="text-center">
                 <button
-                  onClick={openModal}
+                  onClick={scrollToSchedule}
                   className={`w-full sm:w-auto sm:min-w-[280px] md:min-w-[320px] min-h-[48px] sm:min-h-[52px] ${theme.bgPrimary} text-white font-bold text-base sm:text-lg py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${theme.shadowPrimary} animate-glow active:scale-95`}
                 >
                   {t(`${prefix}CTA`)}
@@ -838,7 +861,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
         {/* SCHEDULE SECTION (only if not showing full schedule) */}
         {!config.showFullSchedule && (
-          <section className="py-12 md:py-16">
+          <section id="schedule-section" className="py-12 md:py-16">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-2 sm:mb-3 holographic-text">
@@ -850,48 +873,55 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               </AnimateOnScroll>
 
               <div className="max-w-xl mx-auto space-y-2 sm:space-y-3">
-                {config.schedule.map((schedule, index) => (
-                  <AnimateOnScroll key={schedule.id} delay={index * 60}>
-                    <div
-                      className={`flex items-center justify-between p-3 sm:p-4 bg-black/50 backdrop-blur-md rounded-xl ${theme.borderPrimaryLight} border ${theme.borderPrimaryHover} transition-all duration-300`}
-                    >
-                      <div className="flex items-center gap-3 sm:gap-4">
-                        <div className="text-center min-w-[70px] sm:min-w-[80px]">
-                          <span className="text-neutral font-bold text-sm sm:text-base block">
-                            {t(schedule.dayKey)}
-                          </span>
-                          <span className="text-neutral/60 text-xs sm:text-sm">
-                            {schedule.time.split(' - ')[0]}
-                          </span>
-                        </div>
-                        <div className={`w-px h-8 ${theme.bgPrimaryLight}`} />
-                        <div>
-                          <p className="text-neutral font-semibold text-sm sm:text-base">
-                            {schedule.className}
-                          </p>
-                          <p className="text-neutral/60 text-xs sm:text-sm">{schedule.teacher}</p>
-                        </div>
-                      </div>
-                      <span
-                        className={`px-2 sm:px-3 py-1 text-[10px] sm:text-xs rounded-full ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium whitespace-nowrap`}
-                      >
-                        {t(schedule.levelKey)}
-                      </span>
-                    </div>
-                  </AnimateOnScroll>
-                ))}
-              </div>
+                {config.schedule.map((schedule, index) => {
+                  const isClickable = !!config.bookingWidget;
+                  const CardWrapper = isClickable ? 'button' : 'div';
 
-              <AnimateOnScroll>
-                <div className="text-center mt-8 sm:mt-10">
-                  <button
-                    onClick={openModal}
-                    className={`w-full sm:w-auto sm:min-w-[280px] md:min-w-[320px] min-h-[48px] sm:min-h-[52px] ${theme.bgPrimary} text-white font-bold text-base sm:text-lg py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${theme.shadowPrimary} animate-glow active:scale-95`}
-                  >
-                    {t(`${prefix}CTA`)}
-                  </button>
-                </div>
-              </AnimateOnScroll>
+                  return (
+                    <AnimateOnScroll key={schedule.id} delay={index * 60}>
+                      <CardWrapper
+                        {...(isClickable
+                          ? {
+                              type: 'button' as const,
+                              onClick: () => openModal(schedule),
+                              'aria-label': `${t('common:scheduleBookBtn')} ${schedule.className} - ${t(schedule.dayKey)} ${schedule.time.split(' - ')[0]}`,
+                            }
+                          : {})}
+                        className={`w-full flex items-center justify-between p-3 sm:p-4 bg-black/50 backdrop-blur-md rounded-xl ${theme.borderPrimaryLight} border transition-all duration-300 ${
+                          isClickable
+                            ? `${theme.borderPrimaryHover} hover:scale-[1.02] hover:bg-black/70 cursor-pointer group active:scale-[0.98]`
+                            : `${theme.borderPrimaryHover}`
+                        }`}
+                      >
+                        <div className="flex items-center gap-3 sm:gap-4">
+                          <div className="text-center min-w-[70px] sm:min-w-[80px]">
+                            <span className="text-neutral font-bold text-sm sm:text-base block">
+                              {t(schedule.dayKey)}
+                            </span>
+                            <span className="text-neutral/60 text-xs sm:text-sm">
+                              {schedule.time.split(' - ')[0]}
+                            </span>
+                          </div>
+                          <div className={`w-px h-8 ${theme.bgPrimaryLight}`} />
+                          <div className="text-left">
+                            <p className="text-neutral font-semibold text-sm sm:text-base">
+                              {schedule.className} {t(schedule.levelKey)}
+                            </p>
+                            <p className="text-neutral/60 text-xs sm:text-sm">{schedule.teacher}</p>
+                          </div>
+                        </div>
+                        {isClickable && (
+                          <span
+                            className={`px-3 sm:px-4 py-1.5 text-xs sm:text-sm rounded-full ${theme.bgPrimary} text-white font-semibold whitespace-nowrap transition-all duration-300 group-hover:shadow-lg ${theme.shadowPrimary}`}
+                          >
+                            {t('common:scheduleBookBtn')}
+                          </span>
+                        )}
+                      </CardWrapper>
+                    </AnimateOnScroll>
+                  );
+                })}
+              </div>
 
               <AnimateOnScroll>
                 <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
@@ -1169,7 +1199,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                 </p>
 
                 <button
-                  onClick={openModal}
+                  onClick={scrollToSchedule}
                   className={`w-full sm:w-auto sm:min-w-[280px] md:min-w-[320px] min-h-[48px] sm:min-h-[52px] ${theme.bgPrimary} text-white font-bold text-base sm:text-lg py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${theme.shadowPrimary} animate-glow active:scale-95 relative overflow-hidden group`}
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -1195,7 +1225,12 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
       </main>
 
       {/* Lead Capture Modal */}
-      <GenericLeadModal isOpen={isModalOpen} onClose={closeModal} config={config} />
+      <GenericLeadModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        config={config}
+        selectedScheduleItem={selectedScheduleItem}
+      />
 
       {/* Exit Intent Popup */}
       <ExitIntentPopup

@@ -95,6 +95,13 @@ export const BACHATA_LANDING_CONFIG: LandingConfig = createLandingConfig('brand'
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'bachata',
+  },
+
+  // =========================================================================
   // HORARIOS - Bachata Sensual (de bachata.ts)
   // =========================================================================
   schedule: [

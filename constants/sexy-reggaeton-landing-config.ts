@@ -97,6 +97,13 @@ export const SEXY_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConfig(
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'sexyreggaeton',
+  },
+
+  // =========================================================================
   // HORARIOS - Clases de Sexy Reggaeton disponibles
   // =========================================================================
   schedule: [

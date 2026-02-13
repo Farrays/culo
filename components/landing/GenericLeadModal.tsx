@@ -17,7 +17,7 @@ import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon, CalendarIcon } from '../../lib/icons';
-import type { LandingConfig } from '../../constants/landing-template-config';
+import type { LandingConfig, LandingScheduleItem } from '../../constants/landing-template-config';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 import { CountryPhoneInput } from '../booking/components/CountryPhoneInput';
 import { getDefaultCountry, findCountryByCode } from '../booking/constants/countries';
@@ -38,10 +38,22 @@ interface FormData {
   acceptsMarketing: boolean;
 }
 
+// Mapping from translation dayKey to Spanish day name (used by booking widget URL params)
+const DAY_KEY_TO_BOOKING_DAY: Record<string, string> = {
+  monday: 'Lunes',
+  tuesday: 'Martes',
+  wednesday: 'Miércoles',
+  thursday: 'Jueves',
+  friday: 'Viernes',
+  saturday: 'Sábado',
+  sunday: 'Domingo',
+};
+
 interface GenericLeadModalProps {
   isOpen: boolean;
   onClose: () => void;
   config: LandingConfig;
+  selectedScheduleItem?: LandingScheduleItem | null;
 }
 
 // =============================================================================
@@ -58,6 +70,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
   isOpen,
   onClose,
   config,
+  selectedScheduleItem,
 }) {
   const { t, i18n } = useTranslation([
     'common',
@@ -546,17 +559,34 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                     onClick={() => {
                       if (useDirectBooking && bookingWidget) {
                         // Direct booking flow: go straight to booking widget
+                        const bookingDay = selectedScheduleItem
+                          ? DAY_KEY_TO_BOOKING_DAY[selectedScheduleItem.dayKey] || ''
+                          : '';
+                        const bookingTime = selectedScheduleItem
+                          ? selectedScheduleItem.time.split(' - ')[0]
+                          : '';
+
                         pushToDataLayer({
                           event: 'micro_commitment_booking',
-                          lead_source: 'generic_modal',
+                          lead_source: selectedScheduleItem ? 'schedule_card' : 'generic_modal',
                           style: bookingWidget.styleFilter,
+                          ...(bookingDay && { day: bookingDay }),
+                          ...(bookingTime && { time: bookingTime }),
                           page_path: window.location.pathname,
                         });
 
                         // Prevent cleanup from calling history.back() which would undo navigation
                         historyPushedRef.current = false;
 
-                        const bookingUrl = `/${locale}/reservas?style=${bookingWidget.styleFilter}&locked=true`;
+                        // Build booking URL with optional day/time from selected schedule card
+                        const params = new URLSearchParams();
+                        if (bookingWidget.styleFilter)
+                          params.set('style', bookingWidget.styleFilter);
+                        params.set('locked', 'true');
+                        if (bookingDay) params.set('day', bookingDay);
+                        if (bookingTime) params.set('time', bookingTime);
+
+                        const bookingUrl = `/${locale}/reservas?${params.toString()}`;
                         navigate(bookingUrl);
                         onClose();
                       } else {
@@ -568,15 +598,6 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                   >
                     {t(`${modalPrefix}_microCommit_yes`)}
                   </button>
-                  {/* Only show "curious" button for legacy lead form flow */}
-                  {!useDirectBooking && (
-                    <button
-                      onClick={() => setHasMicroCommitment(true)}
-                      className={`w-full py-2.5 md:py-3 ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium rounded-xl transition-all ${theme.borderPrimary} border hover:opacity-80`}
-                    >
-                      {t(`${modalPrefix}_microCommit_curious`)}
-                    </button>
-                  )}
                 </div>
               </div>
             ) : useDirectBooking ? (
@@ -629,16 +650,30 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                 {/* Booking CTA Button */}
                 <button
                   onClick={() => {
-                    // Track micro-commitment conversion
+                    const bookingDay = selectedScheduleItem
+                      ? DAY_KEY_TO_BOOKING_DAY[selectedScheduleItem.dayKey] || ''
+                      : '';
+                    const bookingTime = selectedScheduleItem
+                      ? selectedScheduleItem.time.split(' - ')[0]
+                      : '';
+
                     pushToDataLayer({
                       event: 'micro_commitment_booking',
-                      lead_source: 'generic_modal',
+                      lead_source: selectedScheduleItem ? 'schedule_card' : 'generic_modal',
                       style: bookingWidget.styleFilter,
+                      ...(bookingDay && { day: bookingDay }),
+                      ...(bookingTime && { time: bookingTime }),
                       page_path: window.location.pathname,
                     });
 
                     // Navigate to booking widget with filters (locked mode - no filter UI)
-                    const bookingUrl = `/${locale}/reservas?style=${bookingWidget.styleFilter}&locked=true`;
+                    const params = new URLSearchParams();
+                    if (bookingWidget.styleFilter) params.set('style', bookingWidget.styleFilter);
+                    params.set('locked', 'true');
+                    if (bookingDay) params.set('day', bookingDay);
+                    if (bookingTime) params.set('time', bookingTime);
+
+                    const bookingUrl = `/${locale}/reservas?${params.toString()}`;
                     navigate(bookingUrl);
                     onClose();
                   }}

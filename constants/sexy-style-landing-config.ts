@@ -99,6 +99,13 @@ export const SEXY_STYLE_LANDING_CONFIG: LandingConfig = createLandingConfig('ros
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'sexystyle',
+  },
+
+  // =========================================================================
   // HORARIOS - Clases de Sexy Style disponibles
   // =========================================================================
   schedule: [

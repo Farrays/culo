@@ -100,6 +100,13 @@ export const SALSA_CUBANA_LANDING_CONFIG: LandingConfig = createLandingConfig('b
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'salsa',
+  },
+
+  // =========================================================================
   // HORARIOS (basado en salsa-cubana.ts)
   // =========================================================================
   schedule: [

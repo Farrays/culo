@@ -98,6 +98,13 @@ export const AFRO_JAZZ_LANDING_CONFIG: LandingConfig = createLandingConfig('bran
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'jazz',
+  },
+
+  // =========================================================================
   // HORARIOS (basado en afro-jazz.ts)
   // =========================================================================
   schedule: [

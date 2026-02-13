@@ -107,6 +107,13 @@ export const BALLET_LANDING_CONFIG: LandingConfig = createLandingConfig('brand',
   ],
 
   // =========================================================================
+  // BOOKING WIDGET (Direct booking flow - high conversion)
+  // =========================================================================
+  bookingWidget: {
+    styleFilter: 'ballet',
+  },
+
+  // =========================================================================
   // HORARIOS - Clases de Ballet disponibles (datos reales 2025)
   // =========================================================================
   schedule: [
