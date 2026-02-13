@@ -106,14 +106,6 @@ export const DANCEHALL_LANDING_CONFIG: LandingConfig = createLandingConfig('rose
   // =========================================================================
   schedule: [
     {
-      id: '1',
-      dayKey: 'monday',
-      time: '22:00 - 23:00',
-      levelKey: 'beginnerLevel',
-      className: 'Dancehall Female',
-      teacher: 'Sandra',
-    },
-    {
       id: '2',
       dayKey: 'wednesday',
       time: '12:00 - 13:00',
@@ -127,14 +119,6 @@ export const DANCEHALL_LANDING_CONFIG: LandingConfig = createLandingConfig('rose
       time: '21:00 - 22:00',
       levelKey: 'intermediateLevel',
       className: 'Dancehall Twerk',
-      teacher: 'Isabel',
-    },
-    {
-      id: '4',
-      dayKey: 'thursday',
-      time: '21:00 - 22:00',
-      levelKey: 'beginnerLevel',
-      className: 'Dancehall Female',
       teacher: 'Isabel',
     },
     {
