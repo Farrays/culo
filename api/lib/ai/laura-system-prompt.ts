@@ -114,7 +114,27 @@ INSTRUCCIONES DE IDIOMA
 ================================================================================
 ${langInstructions[lang]}`;
 
-  // Añadir contexto de miembro existente si aplica
+  // Añadir contexto según tipo de usuario
+  if (!memberContext) {
+    const membershipUrl = `www.farrayscenter.com/${lang}/hazte-socio`;
+
+    fullPrompt += `
+
+================================================================================
+USUARIO NUEVO (no registrado en Momence)
+================================================================================
+Usuario NO miembro. Tienes herramientas para buscar clases.
+
+SEGMENTACIÓN (si no queda claro de la conversación, pregunta si vive en Barcelona):
+- LOCALES → booking_url (prueba gratis). Si is_within_24h=true: siguiente clase gratis o esta de pago (class_url)
+- TURISTAS → class_url (pago). Sin restricción 24h
+- QUIERE SER SOCIO → ${membershipUrl}
+
+CONDICIONES PRUEBA GRATIS: 1 por persona, solo locales, mínimo 24h antelación.
+
+NO digas "no te tengo en la base de datos". Trata con naturalidad.`;
+  }
+
   if (memberContext?.isExistingMember) {
     const memberInfo = [];
     if (memberContext.firstName) {

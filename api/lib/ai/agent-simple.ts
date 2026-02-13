@@ -13,7 +13,7 @@ import { detectLanguage, type SupportedLanguage } from './language-detector.js';
 import { getFullSystemPrompt } from './laura-system-prompt.js';
 import { checkAndEscalate } from './escalation-service.js';
 import { getMemberLookup } from './member-lookup.js';
-import { LAURA_TOOLS, executeTool } from './laura-tools.js';
+import { LAURA_TOOLS_MEMBER, LAURA_TOOLS_NEW_USER, executeTool } from './laura-tools.js';
 import { markdownToWhatsApp, splitIntoBubbles } from './whatsapp-formatter.js';
 import { sendTypingIndicator, sendTextMessage as sendWhatsAppText } from '../whatsapp.js';
 
@@ -190,20 +190,21 @@ export async function processSimpleMessage(
   // 6. Llamar a Claude Sonnet con tools
   try {
     const toolsEnabled = process.env['ENABLE_LAURA_TOOLS'] !== 'false';
-    const useTools = toolsEnabled && memberId; // Tools only work for identified members
+    const useTools = toolsEnabled;
+    const toolSet = memberId ? LAURA_TOOLS_MEMBER : LAURA_TOOLS_NEW_USER;
 
     let currentResponse = await createMessageWithRetry({
       model: 'claude-sonnet-4-20250514',
-      max_tokens: 1024,
+      max_tokens: 500,
       system: systemPrompt,
       messages,
-      ...(useTools ? { tools: LAURA_TOOLS } : {}),
+      ...(useTools ? { tools: toolSet } : {}),
     });
 
     // 7. Tool use loop (max 3 iterations to stay within 30s Vercel limit)
     const MAX_TOOL_ITERATIONS = 3;
     let iterations = 0;
-    const toolContext = { redis, phone, memberId };
+    const toolContext = { redis, phone, memberId, lang: language };
 
     while (currentResponse.stop_reason === 'tool_use' && iterations < MAX_TOOL_ITERATIONS) {
       iterations++;
@@ -236,10 +237,10 @@ export async function processSimpleMessage(
 
       currentResponse = await createMessageWithRetry({
         model: 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
+        max_tokens: 500,
         system: systemPrompt,
         messages,
-        ...(useTools ? { tools: LAURA_TOOLS } : {}),
+        ...(useTools ? { tools: toolSet } : {}),
       });
     }
 

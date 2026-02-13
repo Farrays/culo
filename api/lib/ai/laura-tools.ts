@@ -59,6 +59,7 @@ export interface ToolContext {
   redis: Redis;
   phone: string;
   memberId?: number;
+  lang: string;
 }
 
 // ============================================================================
@@ -170,7 +171,7 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
   {
     name: 'get_class_details',
     description:
-      'Obtener información detallada de una clase específica: profesor, horario, plazas disponibles, capacidad. Usa cuando pregunten detalles de una clase concreta.',
+      'Obtener información detallada de una clase específica: profesor, horario, si está llena o no. Usa cuando pregunten detalles de una clase concreta.',
     input_schema: {
       type: 'object' as const,
       properties: {
@@ -249,6 +250,24 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
     },
   },
 ];
+
+// ============================================================================
+// TOOL SETS (member vs new user)
+// ============================================================================
+
+// These 4 tools work WITHOUT memberId (verified: no guard if(!context.memberId))
+const NEW_USER_TOOL_NAMES = new Set([
+  'search_upcoming_classes',
+  'get_membership_options',
+  'get_class_details',
+  'transfer_to_human',
+]);
+
+export const LAURA_TOOLS_NEW_USER: Anthropic.Tool[] = LAURA_TOOLS.filter(t =>
+  NEW_USER_TOOL_NAMES.has(t.name)
+);
+
+export const LAURA_TOOLS_MEMBER: Anthropic.Tool[] = LAURA_TOOLS;
 
 // ============================================================================
 // TOOL EXECUTION
@@ -349,18 +368,26 @@ async function executeSearchClasses(
     });
   }
 
-  // Return structured data for Claude to format nicely
-  const classes = sessions.slice(0, 15).map(s => ({
-    id: s.id,
-    name: s.name,
-    day: s.dayOfWeek,
-    date: s.date,
-    time: s.time,
-    instructor: s.instructor,
-    spots_available: s.spotsAvailable,
-    is_full: s.isFull,
-    class_url: buildClassUrl(s.name, s.id),
-  }));
+  // Compute 24h threshold for free trial rule (widget requires MIN_BOOKING_HOURS=24)
+  const now = new Date();
+  const in24h = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+  const lang = context.lang || 'es';
+
+  const classes = sessions.slice(0, 8).map(s => {
+    const classDate = new Date(s.startsAt);
+    return {
+      id: s.id,
+      name: s.name,
+      day: s.dayOfWeek,
+      date: s.date,
+      time: s.time,
+      instructor: s.instructor,
+      is_full: s.isFull,
+      is_within_24h: classDate < in24h,
+      class_url: buildClassUrl(s.name, s.id),
+      booking_url: `https://www.farrayscenter.com/${lang}/reservas?classId=${s.id}`,
+    };
+  });
 
   return JSON.stringify({
     found: sessions.length,
@@ -608,13 +635,7 @@ async function executeGetClassDetails(
       name: session['name'],
       startsAt: session['startsAt'],
       endsAt: session['endsAt'],
-      capacity,
-      bookingCount,
-      spotsAvailable:
-        typeof capacity === 'number' && typeof bookingCount === 'number'
-          ? Math.max(0, capacity - bookingCount)
-          : null,
-      isFull:
+      is_full:
         typeof capacity === 'number' && typeof bookingCount === 'number'
           ? bookingCount >= capacity
           : null,
