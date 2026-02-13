@@ -187,7 +187,7 @@ export default async function handler(
     const userAgent = (req.headers['user-agent'] as string) || '';
 
     try {
-      await sendMetaConversionEvent({
+      const capiResult = await sendMetaConversionEvent({
         email: sanitize(email, 255).toLowerCase(),
         phone: sanitize(phoneNumber, 30),
         firstName: sanitize(firstName, 100),
@@ -206,6 +206,7 @@ export default async function handler(
           content_category: 'Contact',
         },
       });
+      console.warn(`[contact] CAPI result: ${JSON.stringify(capiResult)}`);
     } catch (capiErr) {
       console.warn('[contact] CAPI error (non-blocking):', capiErr);
     }
