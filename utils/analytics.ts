@@ -289,19 +289,7 @@ export function trackLeadConversion(params: {
     ...utmParams,
   });
 
-  // 2. Track in GA4 directly (backup, GTM should handle this)
-  if (hasConsentFor('analytics') && window.gtag) {
-    window.gtag('event', 'generate_lead', {
-      event_category: 'Lead',
-      event_label: params.formName,
-      value: params.leadValue,
-      currency: 'EUR',
-      lead_source: params.leadSource,
-      page_path: pagePath,
-    });
-  }
-
-  // 3. Fire Meta Pixel Lead with eventID for CAPI deduplication
+  // 2. Fire Meta Pixel Lead with eventID for CAPI deduplication
   // When eventId is present, fire pixel directly so Meta can match with server CAPI event.
   // Without eventId, GTM continues handling the pixel Lead event (fallback).
   if (params.eventId && hasConsentFor('marketing') && window.fbq) {
