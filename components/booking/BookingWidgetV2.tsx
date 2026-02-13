@@ -43,7 +43,7 @@ import { requiresHeelsConsent } from './types/booking';
 import { validateBookingForm, sanitizeFormData } from './validation';
 
 // Utilities
-import { trackLeadConversion, LEAD_VALUES } from '../../utils/analytics';
+import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 import { isAnyModalOpen } from './utils/modalHistoryManager';
 
 // Helper: Get cookie value
@@ -342,7 +342,7 @@ const BookingWidgetV2: React.FC = memo(() => {
     }
   }, [hasExplicitWeek, allWeeksLoading, allWeeksClasses, weekOffset, setWeekOffset]);
 
-  const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
+  const { trackClassSelected } = useBookingAnalytics();
 
   // Funnel analytics for time tracking and abandonment
   const { startStep, endStep, trackClassLoadTime, trackFormSubmitTime, trackInteraction } =
@@ -659,14 +659,21 @@ const BookingWidgetV2: React.FC = memo(() => {
         // Replace history state to prevent back navigation to form
         window.history.replaceState({ bookingStep: 'success', bookingWidget: true }, '');
 
-        // Track conversion with analytics
-        trackBookingSuccess(selectedClass);
+        // Track conversion with analytics (single call with eventId for CAPI dedup)
         trackLeadConversion({
           leadSource: 'booking_widget',
           formName: `Booking - ${selectedClass.style || 'General'}`,
           leadValue: LEAD_VALUES.BOOKING_LEAD,
           pagePath: typeof window !== 'undefined' ? window.location.pathname : '',
           eventId,
+        });
+
+        // Track booking-specific event (separate from lead, for GTM booking_success trigger)
+        pushToDataLayer({
+          event: 'booking_success',
+          class_id: selectedClass.id,
+          class_name: selectedClass.name,
+          class_style: selectedClass.style,
         });
       }
     } catch (err) {
