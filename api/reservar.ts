@@ -5,6 +5,7 @@ import { Buffer } from 'buffer';
 import { Resend } from 'resend';
 import { isRateLimitedRedis } from './lib/rate-limit-helper.js';
 import { validateCsrfRequest } from './lib/csrf.js';
+import { sendMetaConversionEvent } from './lib/meta-capi.js';
 
 // ============================================================================
 // TIPOS INLINE (evitar imports de api/lib/ que fallan en Vercel)
@@ -872,8 +873,6 @@ async function sendBookingConfirmationWhatsApp(data: {
 
 const MOMENCE_API_URL = 'https://api.momence.com';
 const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
-const META_CAPI_URL = 'https://graph.facebook.com/v18.0';
-
 // Lead value calculado: 50€/mes * 6 meses retención * 30% conversión = €90
 const LEAD_VALUE_EUR = 90;
 
@@ -1018,12 +1017,6 @@ function sanitize(str: string): string {
   return String(str || '')
     .trim()
     .slice(0, 500);
-}
-
-// Hash SHA256 para Meta CAPI (normalizado)
-function hashForMeta(value: string): string {
-  const normalized = value.toLowerCase().trim();
-  return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
 // Normalizar teléfono para Meta CAPI (E.164: solo dígitos con código país)
@@ -1639,89 +1632,6 @@ async function sendToCustomerLeads(data: {
   }
 }
 
-// Enviar evento a Meta Conversions API
-async function sendMetaConversionEvent(data: {
-  email: string;
-  phone: string;
-  firstName: string;
-  lastName: string;
-  eventName: string;
-  eventId: string;
-  sourceUrl: string;
-  userAgent: string;
-  clientIp: string;
-  fbc?: string;
-  fbp?: string;
-}): Promise<{ success: boolean }> {
-  const PIXEL_ID = process.env['META_PIXEL_ID'];
-  const ACCESS_TOKEN = process.env['META_CAPI_TOKEN'];
-
-  if (!PIXEL_ID || !ACCESS_TOKEN) {
-    console.warn('Meta CAPI not configured');
-    return { success: false };
-  }
-
-  const timestamp = Math.floor(Date.now() / 1000);
-  const normalizedPhone = normalizePhone(data.phone);
-
-  const eventData = {
-    data: [
-      {
-        event_name: data.eventName,
-        event_time: timestamp,
-        event_id: data.eventId,
-        event_source_url: data.sourceUrl,
-        action_source: 'website',
-        user_data: {
-          em: [hashForMeta(data.email)],
-          ph: [hashForMeta(normalizedPhone)],
-          fn: [hashForMeta(data.firstName)],
-          ln: [hashForMeta(data.lastName)],
-          // Detectar país por prefijo telefónico
-          ...(normalizedPhone.startsWith('34') ? { country: [hashForMeta('es')] } : {}),
-          ...(normalizedPhone.startsWith('33') ? { country: [hashForMeta('fr')] } : {}),
-          ...(normalizedPhone.startsWith('34') ? { ct: [hashForMeta('barcelona')] } : {}),
-          client_ip_address: data.clientIp,
-          client_user_agent: data.userAgent,
-          fbc: data.fbc || undefined,
-          fbp: data.fbp || undefined,
-        },
-        custom_data: {
-          currency: 'EUR',
-          value: LEAD_VALUE_EUR,
-          content_name: 'Clase de Prueba Gratuita',
-          content_category: 'Dance Class',
-        },
-      },
-    ],
-  };
-
-  try {
-    const response = await fetchWithTimeout(
-      `${META_CAPI_URL}/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(eventData),
-      }
-    );
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Meta CAPI error:', response.status, errorText);
-      return { success: false };
-    }
-
-    await response.json();
-    return { success: true };
-  } catch (error) {
-    console.error('Meta CAPI error:', error);
-    return { success: false };
-  }
-}
-
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -2123,6 +2033,12 @@ export default async function handler(
       clientIp,
       fbc,
       fbp,
+      customData: {
+        currency: 'EUR',
+        value: LEAD_VALUE_EUR,
+        content_name: 'Clase de Prueba Gratuita',
+        content_category: 'Dance Class',
+      },
     });
 
     // 3. Guardar en Redis

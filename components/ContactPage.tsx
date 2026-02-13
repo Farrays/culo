@@ -7,7 +7,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon from './Icon';
 import { CheckIcon } from '../lib/icons';
-import { trackEvent, trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../utils/analytics';
+import { trackEvent, trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../utils/analytics';
 
 // ============================================================================
 // CONSTANTS
@@ -325,6 +325,7 @@ const ContactPage: React.FC = () => {
       }
 
       // Enviar a la API
+      const { fbc, fbp } = getMetaCookies();
       const response = await fetch(CONTACT_API_URL, {
         method: 'POST',
         headers: {
@@ -339,6 +340,8 @@ const ContactPage: React.FC = () => {
           Asunto: sanitizedData.subject,
           Mensaje: sanitizedData.message,
           acceptsPrivacy: sanitizedData.acceptsPrivacy,
+          fbc,
+          fbp,
         }),
       });
 
@@ -346,6 +349,8 @@ const ContactPage: React.FC = () => {
         const data = await response.json().catch(() => ({}));
         throw new Error(data.error || `HTTP ${response.status}`);
       }
+
+      const responseData = await response.json().catch(() => ({ success: true }));
 
       setFormStatus('success');
       setFormData({
@@ -365,6 +370,7 @@ const ContactPage: React.FC = () => {
         formName: `Contact Form - ${sanitizedData.subject}`,
         leadValue: LEAD_VALUES.CONTACT_FORM,
         pagePath: window.location.pathname,
+        eventId: responseData.eventId,
       });
 
       // Also push specific contact_form_submit event for GTM triggers

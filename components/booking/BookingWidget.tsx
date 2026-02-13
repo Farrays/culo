@@ -933,6 +933,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
           formName: `Booking - ${selectedClass?.style || 'General'}`,
           leadValue: LEAD_VALUES.BOOKING_LEAD,
           pagePath: window.location.pathname,
+          eventId,
         });
         return;
       }
@@ -957,6 +958,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
         formName: `Booking - ${selectedClass?.style || 'General'}`,
         leadValue: LEAD_VALUES.BOOKING_LEAD,
         pagePath: window.location.pathname,
+        eventId,
       });
     } catch (error) {
       console.error('Booking submission error:', error);
