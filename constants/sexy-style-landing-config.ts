@@ -110,14 +110,6 @@ export const SEXY_STYLE_LANDING_CONFIG: LandingConfig = createLandingConfig('ros
   // =========================================================================
   schedule: [
     {
-      id: '1',
-      dayKey: 'monday',
-      time: '12:00 - 13:00',
-      levelKey: 'beginnerLevel',
-      className: 'Sexy Style',
-      teacher: 'Yasmina Fernández',
-    },
-    {
       id: '2',
       dayKey: 'monday',
       time: '19:00 - 20:00',
