@@ -451,6 +451,38 @@ const BookingWidgetV2: React.FC = memo(() => {
     }
   }, [directClassId, classes, selectClass]);
 
+  // Auto-select class when landing page filters produce exactly 1 result.
+  // This skips the redundant class list step — the user already chose a specific
+  // class from the landing schedule card + confirmed via micro-commitment.
+  // Only triggers when filtersLocked (came from landing with locked=true).
+  const hasAutoSelectedFromLandingRef = useRef(false);
+
+  useEffect(() => {
+    if (
+      filtersLocked &&
+      !loading &&
+      !hasAutoSelectedFromLandingRef.current &&
+      step === 'class' &&
+      classes.length === 1
+    ) {
+      const targetClass = classes[0];
+      if (!targetClass) return;
+
+      hasAutoSelectedFromLandingRef.current = true;
+      selectClass(targetClass);
+      trackClassSelected(targetClass);
+      endStep('class_selected');
+      startStep('form_started');
+
+      pushToDataLayer({
+        event: 'booking_auto_select_from_landing',
+        class_name: targetClass.name,
+        class_style: targetClass.style,
+        class_time: targetClass.time,
+      });
+    }
+  }, [filtersLocked, loading, classes, step, selectClass, trackClassSelected, endStep, startStep]);
+
   // Handle class selection
   const handleSelectClass = (classData: ClassData) => {
     selectClass(classData);
