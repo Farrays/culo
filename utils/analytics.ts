@@ -293,12 +293,17 @@ export function trackLeadConversion(params: {
   // When eventId is present, fire pixel directly so Meta can match with server CAPI event.
   // Without eventId, GTM continues handling the pixel Lead event (fallback).
   if (params.eventId && hasConsentFor('marketing') && window.fbq) {
-    window.fbq('track', 'Lead', {
-      content_name: params.formName,
-      content_category: params.leadSource,
-      value: params.leadValue,
-      currency: 'EUR',
-    }, { eventID: params.eventId });
+    window.fbq(
+      'track',
+      'Lead',
+      {
+        content_name: params.formName,
+        content_category: params.leadSource,
+        value: params.leadValue,
+        currency: 'EUR',
+      },
+      { eventID: params.eventId }
+    );
   }
 }
 

@@ -2,7 +2,12 @@ import React, { useEffect, useState, useCallback, useRef, memo, useTransition } 
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
-import { trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../../utils/analytics';
+import {
+  trackLeadConversion,
+  LEAD_VALUES,
+  pushToDataLayer,
+  getMetaCookies,
+} from '../../utils/analytics';
 import { CountryPhoneInput } from '../booking/components/CountryPhoneInput';
 import { getDefaultCountry, findCountryByCode } from '../booking/constants/countries';
 import type { CountryCode } from 'libphonenumber-js';

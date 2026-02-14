@@ -1,7 +1,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import CountdownTimer from './shared/CountdownTimer';
-import { trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../utils/analytics';
+import {
+  trackLeadConversion,
+  LEAD_VALUES,
+  pushToDataLayer,
+  getMetaCookies,
+} from '../utils/analytics';
 
 interface ExitIntentModalProps {
   /** Delay before enabling exit detection (ms) */

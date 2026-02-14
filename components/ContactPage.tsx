@@ -7,7 +7,13 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon from './Icon';
 import { CheckIcon } from '../lib/icons';
-import { trackEvent, trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../utils/analytics';
+import {
+  trackEvent,
+  trackLeadConversion,
+  LEAD_VALUES,
+  pushToDataLayer,
+  getMetaCookies,
+} from '../utils/analytics';
 
 // ============================================================================
 // CONSTANTS
