@@ -18,7 +18,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon, CalendarIcon } from '../../lib/icons';
 import type { LandingConfig, LandingScheduleItem } from '../../constants/landing-template-config';
-import { trackLeadConversion, LEAD_VALUES, pushToDataLayer, getMetaCookies } from '../../utils/analytics';
+import {
+  trackLeadConversion,
+  LEAD_VALUES,
+  pushToDataLayer,
+  getMetaCookies,
+} from '../../utils/analytics';
 import { CountryPhoneInput } from '../booking/components/CountryPhoneInput';
 import { getDefaultCountry, findCountryByCode } from '../booking/constants/countries';
 import type { CountryCode } from 'libphonenumber-js';
