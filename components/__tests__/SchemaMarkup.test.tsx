@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
@@ -151,6 +151,31 @@ describe('SchemaMarkup', () => {
 
       const { container } = renderWithHelmet(<AggregateReviewsSchema {...propsWithSingleReview} />);
       expect(container).toBeInTheDocument();
+    });
+
+    it('includes itemReviewed in each review for Google structured data compliance', () => {
+      // Spy on JSON.stringify to capture the schema object passed to Helmet
+      const stringifySpy = vi.spyOn(JSON, 'stringify');
+      renderWithHelmet(<AggregateReviewsSchema {...defaultProps} />);
+
+      // Find the call that contains AggregateRating (our schema)
+      const schemaCalls = stringifySpy.mock.calls
+        .map(call => call[0])
+        .filter(arg => arg && typeof arg === 'object' && arg['@type'] === 'Course');
+
+      expect(schemaCalls).toHaveLength(1);
+      const schema = schemaCalls[0];
+      expect(schema.review).toHaveLength(2);
+
+      // Each Review MUST have itemReviewed (Google requirement - fixes GSC error)
+      for (const review of schema.review) {
+        expect(review['@type']).toBe('Review');
+        expect(review.itemReviewed).toBeDefined();
+        expect(review.itemReviewed['@type']).toBe('Course');
+        expect(review.itemReviewed.name).toBe(defaultProps.itemName);
+      }
+
+      stringifySpy.mockRestore();
     });
   });
 });
