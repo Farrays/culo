@@ -32,7 +32,7 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   // Instead, fetch ALL sessions and filter by morning hours (10:00–14:00).
   momenceStyle: '', // Empty = no style filter (fetch all styles)
   scheduleStartHour: 10, // From 10:00
-  scheduleEndHour: 14,   // Until 14:00 (exclusive)
+  scheduleEndHour: 14, // Until 14:00 (exclusive)
 
   // === REQUIRED DATA ===
   faqsConfig: BAILE_MANANAS_FAQS_CONFIG,

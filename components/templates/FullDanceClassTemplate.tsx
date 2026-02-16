@@ -773,7 +773,8 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   const useDynamicSchedule = config.useDynamicSchedule !== false;
   // Get Momence style for filtering (from config or auto-detect from styleKey)
   // Use undefined check so that momenceStyle='' explicitly means "no style filter"
-  const momenceStyle = config.momenceStyle !== undefined ? config.momenceStyle : getMomenceStyle(config.styleKey);
+  const momenceStyle =
+    config.momenceStyle !== undefined ? config.momenceStyle : getMomenceStyle(config.styleKey);
   // Days ahead for schedule (default: 14)
   const scheduleDaysAhead = config.scheduleDaysAhead || 14;
 

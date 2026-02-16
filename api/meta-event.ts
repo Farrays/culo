@@ -27,7 +27,7 @@ const ALLOWED_EVENTS = new Set([
   'Schedule',
 ]);
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   // Handle CORS preflight (for dev environments)
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Origin', '*');
