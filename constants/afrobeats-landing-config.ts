@@ -111,14 +111,6 @@ export const AFROBEATS_LANDING_CONFIG: LandingConfig = createLandingConfig('bran
     },
     {
       id: '2',
-      dayKey: 'wednesday',
-      time: '18:00 - 19:00',
-      levelKey: 'beginnerLevel',
-      className: 'Afrobeats Principiantes',
-      teacher: 'Charlie Breezy',
-    },
-    {
-      id: '3',
       dayKey: 'friday',
       time: '18:00 - 19:00',
       levelKey: 'basicLevel',
