@@ -14,7 +14,7 @@ export interface UseBookingAnalyticsReturn {
   trackCalendarGoogle: (classData: ClassData) => void;
   trackCalendarICS: (classData: ClassData) => void;
   trackFormStarted: (classData: ClassData) => void;
-  trackBookingSuccess: (classData: ClassData) => void;
+  trackBookingSuccess: (classData: ClassData, eventId?: string) => void;
   trackBookingError: (classData: ClassData, error: string) => void;
   trackDeepLinkUsed: (params: Partial<FilterState>) => void;
   trackWeekChange: (weekOffset: number) => void;
@@ -89,13 +89,14 @@ export function useBookingAnalytics(): UseBookingAnalyticsReturn {
   }, []);
 
   // Track successful booking
-  const trackBookingSuccess = useCallback((classData: ClassData) => {
-    // Track lead conversion
+  const trackBookingSuccess = useCallback((classData: ClassData, eventId?: string) => {
+    // Track lead conversion (eventId enables CAPI deduplication)
     trackLeadConversion({
       leadSource: 'booking_widget',
       formName: `Booking - ${classData.style}`,
       leadValue: LEAD_VALUES.BOOKING_LEAD,
       pagePath: window.location.pathname,
+      eventId,
     });
 
     // Also push to dataLayer for GTM

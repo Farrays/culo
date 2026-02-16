@@ -32,6 +32,7 @@ import {
   ClockIcon,
   MapPinIcon,
 } from '../../lib/icons';
+import { sendCAPIBrowserEvent } from '../../utils/analytics';
 import { SOCIAL_PROOF } from '../../constants/shared';
 import type { LandingConfig, LandingScheduleItem } from '../../constants/landing-template-config';
 import type { LandingThemeClasses } from '../../constants/landing-themes';
@@ -446,16 +447,30 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
   const openModal = (scheduleItem?: LandingScheduleItem) => {
     try {
+      // Send CAPI event first (returns eventId for pixel deduplication)
+      const eventId = sendCAPIBrowserEvent('InitiateCheckout', {
+        content_name: `${config.estiloValue} Free Welcome Class`,
+        content_category: 'Dance Class',
+        value: 0,
+        currency: 'EUR',
+      });
+
+      // Fire pixel with matching eventID
       if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
-        window.fbq('track', 'InitiateCheckout', {
-          content_name: `${config.estiloValue} Free Welcome Class`,
-          content_category: 'Dance Class',
-          value: '0',
-          currency: 'EUR',
-        });
+        window.fbq(
+          'track',
+          'InitiateCheckout',
+          {
+            content_name: `${config.estiloValue} Free Welcome Class`,
+            content_category: 'Dance Class',
+            value: 0,
+            currency: 'EUR',
+          },
+          { eventID: eventId }
+        );
       }
     } catch {
-      // FB Pixel not available
+      // Tracking not available
     }
     setSelectedScheduleItem(scheduleItem ?? null);
     setIsModalOpen(true);

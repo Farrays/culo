@@ -15,6 +15,7 @@ import i18n from './i18n/i18n';
 import { preloadNamespaces } from './i18n/preloadNamespaces';
 import type { Locale } from './types';
 import { SUPPORTED_LOCALES } from './types';
+import { sendCAPIPageView } from './utils/analytics';
 import ErrorBoundary from './components/ErrorBoundary';
 import SEO from './components/SEO';
 import Header from './components/Header';
@@ -202,6 +203,46 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
+/**
+ * MetaCAPIPageView: Sends PageView events to Meta CAPI on each route change.
+ * This matches the pixel PageView fired by GTM, closing the CAPI coverage gap.
+ * Uses sendBeacon (non-blocking, zero performance impact).
+ */
+const MetaCAPIPageView: React.FC = () => {
+  const location = useLocation();
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    // Skip internal/admin pages that shouldn't be tracked
+    const path = location.pathname;
+    if (
+      path.includes('/fichaje') ||
+      path.includes('/admin/') ||
+      path.includes('/yr-project') ||
+      path.includes('/404')
+    ) {
+      return;
+    }
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      // Delay first PageView slightly to allow Meta cookies (_fbp, _fbc) to be set by GTM
+      const timer = setTimeout(() => {
+        sendCAPIPageView();
+      }, 1000);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+
+    // On SPA navigation, fire immediately
+    sendCAPIPageView();
+    return undefined;
+  }, [location.pathname]);
+
+  return null;
+};
+
 // Component to sync URL locale with i18n context and validate
 const LocaleSync: React.FC = () => {
   const { locale: urlLocale } = useParams<{ locale: Locale }>();
@@ -354,6 +395,7 @@ const AppContent: React.FC = () => {
   return (
     <div className="bg-black text-neutral antialiased font-sans overflow-x-hidden">
       <ScrollToTop />
+      <MetaCAPIPageView />
       <SEO />
       {!hideHeaderFooter && (
         <>
