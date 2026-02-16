@@ -171,6 +171,51 @@
       "statusCode": 301
     },
     {
+      "source": "/:locale(es|ca|en|fr)/contact",
+      "destination": "/:locale/contacto",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/schedules-prices",
+      "destination": "/:locale/horarios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/classes-particulars-ball",
+      "destination": "/:locale/clases-particulares-baile",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/clases/clases-baile-principiantes-barcelona",
+      "destination": "/:locale/blog/tips/clases-baile-principiantes-barcelona-farrays",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/clases-baile-principiantes-barcelona",
+      "destination": "/:locale/blog/tips/clases-baile-principiantes-barcelona-farrays",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/salsa-vs-bachata",
+      "destination": "/:locale/blog/tips/salsa-vs-bachata-que-estilo-elegir",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/:category/clases-baile-principiantes-barcelona",
+      "destination": "/:locale/blog/tips/clases-baile-principiantes-barcelona-farrays",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/:category/salsa-vs-bachata",
+      "destination": "/:locale/blog/tips/salsa-vs-bachata-que-estilo-elegir",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/classes/:slug*",
+      "destination": "/:locale/clases/:slug*",
+      "statusCode": 301
+    },
+    {
       "source": "/:locale(es|ca|en|fr)/blog/clases/:slug*",
       "destination": "/:locale/blog/lifestyle/:slug*",
       "statusCode": 301
@@ -1171,6 +1216,11 @@
       "statusCode": 301
     },
     {
+      "source": "/classes/contemporaneo-en-barcelona",
+      "destination": "/es/clases/contemporaneo-barcelona",
+      "statusCode": 301
+    },
+    {
       "source": "/classes/:slug/:path*",
       "destination": "/es/clases/baile-barcelona",
       "statusCode": 301
@@ -1213,6 +1263,354 @@
     {
       "source": "/clases-de-baile-online/:path*",
       "destination": "/es",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/inicio/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/classes-category/salsa-cubana",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/danzas-urbanas",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/reggaeton",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/stretching",
+      "destination": "/es/clases/stretching-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/modern-jazz",
+      "destination": "/es/clases/modern-jazz-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/jazz-danza",
+      "destination": "/es/clases/modern-jazz-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/danza",
+      "destination": "/es/clases/danza-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/heels",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/hip-hop-reggaeton",
+      "destination": "/es/clases/hip-hop-reggaeton-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/ballet",
+      "destination": "/es/clases/ballet-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/afrobeat",
+      "destination": "/es/clases/afrobeats-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/femmoology",
+      "destination": "/es/clases/femmology",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes-category/:slug*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/producto/:path*",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/baile-intensivos-de-verano-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/cursos-de-danza-para-ninos-en-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/instalaciones-de-farrays-international-dance-center/:path*",
+      "destination": "/es/instalaciones-escuela-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/high-heels-en-barcelona/:path*",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/profesores-farray-s-center-barcelona/:path*",
+      "destination": "/es/profesores-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/equipo-farrays-center/:path*",
+      "destination": "/es/profesores-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-salsa/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-baile-para-ninos/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/historia-de-la-salsa/:path*",
+      "destination": "/es/blog/historia/historia-salsa-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsa-un-genero-bailable-singular/:path*",
+      "destination": "/es/blog/historia/salsa-ritmo-conquisto-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsealo/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/full-pass-baile-ninos/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-baile-online-registro/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-baile-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/dancehall/:path*",
+      "destination": "/es/clases/dancehall-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-verano-urbanos/:path*",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bootcamp-salsa/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/elegance-on-high-heels-gatica/:path*",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/jornada-puertas-abiertas/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/fiesta-de-navidad-en-farrays/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/yanis-marshall/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/cursos-intensivos-de-baile-y-danza-verano/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/danza/:path*",
+      "destination": "/es/clases/danza-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-baile-gratis/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/salsa-bachata-iniciacion",
+      "destination": "/es/clases/salsa-bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsa-bachata-iniciacion/:path*",
+      "destination": "/es/clases/salsa-bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsa-nuevos-cursos",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsa-nuevos-cursos/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsa-iniciacion",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsa-iniciacion/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-verano-hip-hop",
+      "destination": "/es/clases/hip-hop-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-verano-hip-hop/:path*",
+      "destination": "/es/clases/hip-hop-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-baile",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-baile/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/beneficios-del-baile",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
+      "statusCode": 301
+    },
+    {
+      "source": "/beneficios-del-baile/:path*",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
+      "statusCode": 301
+    },
+    {
+      "source": "/colaboradores",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/colaboradores/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/blog/classes-category/:slug*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-de-baile",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-de-baile/:path*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/categoria/:slug*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/catwerk-barcelona",
+      "destination": "/ca/clases/twerk-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/enejercicios-gluteos-barcelona",
+      "destination": "/en/clases/ejercicios-gluteos-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/frafro-contemporaneo-barcelona",
+      "destination": "/fr/clases/afro-contemporaneo-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/aplicacion-movil",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/APLICACION-MOVIL",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/sem",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/septiembre-clases-gratis",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-de-baile-gratis",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-salsaal",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolutipn-2019",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/alquiler-de-salas",
+      "destination": "/es/alquiler-salas-baile-barcelona",
       "statusCode": 301
     }
   ],
