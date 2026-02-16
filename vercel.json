@@ -2149,6 +2149,197 @@
       "source": "/intensivos-de-d",
       "destination": "/es/clases/baile-barcelona",
       "statusCode": 301
+    },
+
+    {
+      "source": "/1-2",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/black-friday",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/black-friday/:path*",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/carrera-de-la-mujer-de-barcelona",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/carrera-de-la-mujer-de-barcelona/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/carrito",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/comprar",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/cursos-intensivos-de-baile-verano",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/cursos-intensivos-de-baile-verano/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-escribirnos-contacto",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-escribirnos",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-escribirnos/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-reservar-tus-clases",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-reservar-tus-clases/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-danza-verano",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-danza-verano/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/jornada-de-la-danza",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/jornada-de-la-danza/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolution-mans-bootcamp",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolution-mans-bootcamp/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/mi-cuenta",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/mi-cuenta/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/nuevos-cursos",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/nuevos-cursos/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/pago-confirmado",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pago-confirmado/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pago-fallido",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pago-fallido/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pago-personalizado",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pago-personalizado/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/prueba-1",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/prueba-iii",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/reserva-segunda-clase-gratis",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/reserva-segunda-clase-gratis/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/thrive",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/thrive/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/widget",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/widget/:path*",
+      "destination": "/es",
+      "statusCode": 301
     }
   ],
   "rewrites": [
