@@ -64,6 +64,67 @@ export default async function handler(
       });
     }
 
+    // Si action=tomorrow, muestra reservas de mañana
+    if (action === 'tomorrow') {
+      const SPAIN_TIMEZONE = 'Europe/Madrid';
+      const now = new Date();
+      const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+      const tomorrowDate = tomorrow.toLocaleDateString('sv-SE', { timeZone: SPAIN_TIMEZONE });
+
+      const bookingKeys = await redis.keys('booking:*');
+      const tomorrowBookings: Array<{
+        nombre: string;
+        email: string;
+        telefono: string;
+        clase: string;
+        hora: string;
+      }> = [];
+
+      for (const key of bookingKeys) {
+        try {
+          const data = await redis.get(key);
+          if (!data) continue;
+
+          const booking = typeof data === 'string' ? JSON.parse(data) : data;
+
+          // Verificar si la clase es mañana
+          let classDateStr = null;
+          if (booking.classDateRaw) {
+            classDateStr = booking.classDateRaw.split('T')[0];
+          } else if (booking.classDate && /^\d{4}-\d{2}-\d{2}/.test(booking.classDate)) {
+            classDateStr = booking.classDate.split('T')[0];
+          }
+
+          if (classDateStr === tomorrowDate && booking.status !== 'cancelled') {
+            tomorrowBookings.push({
+              nombre: `${booking.firstName} ${booking.lastName}`,
+              email: booking.email,
+              telefono: booking.phone || 'No registrado',
+              clase: booking.className,
+              hora: booking.classTime,
+            });
+          }
+        } catch {
+          // Ignorar errores de parseo
+        }
+      }
+
+      // Agrupar por clase
+      const byClass: Record<string, number> = {};
+      for (const b of tomorrowBookings) {
+        const key = `${b.clase} (${b.hora})`;
+        byClass[key] = (byClass[key] || 0) + 1;
+      }
+
+      return res.status(200).json({
+        success: true,
+        fecha: tomorrowDate,
+        total: tomorrowBookings.length,
+        porClase: byClass,
+        reservas: tomorrowBookings,
+      });
+    }
+
     // Por defecto, muestra las keys de momence
     const momenceToken = await redis.get('momence:access_token');
     const sessionsCache = await redis.get('momence:sessions:cache:28');

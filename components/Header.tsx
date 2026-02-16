@@ -164,6 +164,7 @@ const Header: React.FC = () => {
           submenu: [
             // Ordenado alfabéticamente - Heels tiene submenú con Femmology y Sexy Style
             { path: `/${locale}/clases/afrobeats-barcelona`, textKey: 'navAfrobeat' },
+            { path: `/${locale}/clases/commercial-dance-barcelona`, textKey: 'navCommercialDance' },
             { path: `/${locale}/clases/dancehall-barcelona`, textKey: 'navDancehall' },
             {
               path: `/${locale}/clases/heels-barcelona`,

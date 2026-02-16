@@ -40,6 +40,7 @@ export { ACADEMIA_DANZA_BARCELONA_CONFIG } from './articles/academia-de-danza-ba
 export { BALLET_ADULTOS_BARCELONA_CONFIG } from './articles/ballet-para-adultos-barcelona';
 export { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from './articles/danza-contemporanea-vs-modern-jazz-vs-ballet';
 export { DANZAS_URBANAS_BARCELONA_CONFIG } from './articles/danzas-urbanas-barcelona';
+export { MODERN_JAZZ_BARCELONA_CONFIG } from './articles/modern-jazz-barcelona';
 
 // Template Enterprise (Reference - Do not use in production routes)
 export { TEMPLATE_ENTERPRISE_CONFIG } from './articles/_TEMPLATE_ENTERPRISE';

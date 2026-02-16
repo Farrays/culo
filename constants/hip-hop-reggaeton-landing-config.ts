@@ -125,6 +125,14 @@ export const HIP_HOP_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConf
     },
     {
       id: '4',
+      dayKey: 'thursday',
+      time: '10:00 - 11:00',
+      levelKey: 'beginnerLevel',
+      className: 'Hip Hop Reggaeton',
+      teacher: 'Charlie Breezy',
+    },
+    {
+      id: '5',
       dayKey: 'friday',
       time: '19:00 - 20:00',
       levelKey: 'beginnerLevel',

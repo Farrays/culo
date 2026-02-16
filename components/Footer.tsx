@@ -310,6 +310,7 @@ const Footer: React.FC = () => {
               <FooterLink to={`/${locale}/yunaisy-farray`} textKey="sitemapYunaisy" />
               <FooterLink to={`/${locale}/blog`} textKey="sitemapBlog" />
               <FooterLink to={`/${locale}/calendario`} textKey="sitemapCalendar" />
+              <FooterLink to={`/${locale}/clases/baile-mananas`} textKey="navBaileMananas" />
             </FooterSection>
 
             {/* Danzas Urbanas */}
@@ -322,6 +323,7 @@ const Footer: React.FC = () => {
               />
               <FooterLink to={`/${locale}/clases/afrobeats-barcelona`} textKey="sitemapAfrobeat" />
               <FooterLink to={`/${locale}/clases/heels-barcelona`} textKey="sitemapHeels" />
+              <FooterLink to={`/${locale}/clases/commercial-dance-barcelona`} textKey="navCommercialDance" />
             </FooterSection>
 
             {/* Ritmos Latinos */}
@@ -356,6 +358,7 @@ const Footer: React.FC = () => {
               />
               <FooterLink to={`/${locale}/regala-baile`} textKey="sitemapRegala" />
               <FooterLink to={`/${locale}/preguntas-frecuentes`} textKey="sitemapFAQ" />
+              <FooterLink to={`/${locale}/clases/cuerpo-fit`} textKey="navCuerpoFit" />
             </FooterSection>
           </div>
 

@@ -114,6 +114,7 @@ const BachataVentaDirectaLanding = lazy(
 const SalsaVentaDirectaLanding = lazy(
   () => import('./components/landing/pages/SalsaVentaDirectaLanding')
 );
+const ReynierLanding = lazy(() => import('./components/landing/pages/ReynierLanding'));
 // TEST: Pagina de prueba para el nuevo sistema de ofertas
 const OfferTestLanding = lazy(() => import('./components/landing/pages/OfferTestLanding'));
 const SalsaSimpleLanding = lazy(() => import('./components/landing/pages/SalsaSimpleLanding'));
@@ -302,6 +303,7 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/ballet',
   '/afro-contemporaneo',
   '/clase-bienvenida',
+  '/profesor-reynier',
   '/bachata-curso',
   '/salsa-curso',
   '/salsa-test',
@@ -341,6 +343,7 @@ const AppContent: React.FC = () => {
       location.pathname.endsWith('/ballet') ||
       location.pathname.endsWith('/afro-contemporaneo') ||
       location.pathname.endsWith('/clase-bienvenida') ||
+      location.pathname.endsWith('/profesor-reynier') ||
       location.pathname.endsWith('/bachata-curso') ||
       location.pathname.endsWith('/salsa-curso') ||
       location.pathname.endsWith('/salsa-test'));
@@ -1308,6 +1311,15 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ClaseBienvenidaLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/profesor-reynier"
+              element={
+                <>
+                  <LocaleSync />
+                  <ReynierLanding />
                 </>
               }
             />

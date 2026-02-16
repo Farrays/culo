@@ -1583,5 +1583,253 @@
   "blogDanzasUrbanas_refMarketDesc": "Informe de mercado que proyecta un crecimiento anual del 15,98% en la industria global de la danza.",
 
   "blogDanzasUrbanas_courseSchemaName": "Clases de Danzas Urbanas en Barcelona",
-  "blogDanzasUrbanas_courseSchemaDesc": "Clases de hip-hop, popping, locking y danzas urbanas para todos los niveles en Farray's International Dance Center, Eixample Izquierdo, Barcelona."
+  "blogDanzasUrbanas_courseSchemaDesc": "Clases de hip-hop, popping, locking y danzas urbanas para todos los niveles en Farray's International Dance Center, Eixample Izquierdo, Barcelona.",
+
+  "blog_authorRoleAlejandro": "Profesor de Modern Jazz y Contemporáneo",
+  "blog_authorBioAlejandro": "Bailarín profesional cubano formado en la ENA y ex solista de la prestigiosa Compañía Carlos Acosta. Especialista en la fusión de técnicas clásicas, jazz y contemporáneo.",
+  "blog_credential_companiaCarlosAcosta": "Ex solista Compañía Carlos Acosta",
+  "blog_credential_enaCuba": "Formación ENA Cuba",
+  "blog_credential_contemporaneoModernJazz": "Especialista en Contemporáneo y Modern Jazz",
+
+  "blogModernJazz_title": "Modern Jazz en Barcelona: Guía Definitiva 2026 por un Ex Solista de Carlos Acosta",
+  "blogModernJazz_metaDescription": "Historia completa del Modern Jazz desde Jack Cole hasta Mia Michaels. Estudios científicos (NEJM: 76% menos demencia), técnicas, 6 estilos y dónde aprender en Barcelona. Por Alejandro Miñoso, ENA Cuba.",
+  "blogModernJazz_excerpt": "El jazz dance redujo un 76% el riesgo de demencia según el New England Journal of Medicine—más que cualquier otra actividad física o cognitiva. Desde Jack Cole en 1942 hasta los videoclips de Beyoncé, esta es la historia completa del Modern Jazz contada por un bailarín cubano formado en la ENA.",
+  "blogModernJazz_breadcrumbCurrent": "Modern Jazz Barcelona",
+  "blogModernJazz_heroAlt": "Clase de Modern Jazz en Farray's Center Barcelona mostrando técnica de isolations, contracciones y jazz walks con bailarines profesionales ejecutando coreografía estilo Bob Fosse",
+  "blogModernJazz_faqTitle": "Preguntas Frecuentes sobre Modern Jazz",
+
+  "blogModernJazz_summaryBullet1": "El New England Journal of Medicine demostró que bailar reduce un 76% el riesgo de demencia—más que leer, hacer crucigramas o cualquier ejercicio físico",
+  "blogModernJazz_summaryBullet2": "Jack Cole creó el jazz teatral en 1942; Bob Fosse, Jerome Robbins, Luigi y Matt Mattox lo convirtieron en arte universal",
+  "blogModernJazz_summaryBullet3": "Existen 6 estilos principales: Lyrical, Commercial, Broadway, Contemporary Jazz, Jazz Funk y Afro Jazz—cada uno con su técnica y estética",
+  "blogModernJazz_summaryBullet4": "Una clase intensa quema 400-600 calorías/hora según Harvard Health, trabajando cardio, fuerza, flexibilidad y coordinación simultáneamente",
+  "blogModernJazz_summaryBullet5": "Barcelona tiene una escena creciente de Modern Jazz con academias especializadas en Eixample, Gràcia y Poblenou",
+
+  "blogModernJazz_stat1Label": "menos riesgo de demencia bailando frecuentemente (estudio NEJM 21 años)",
+  "blogModernJazz_stat2Label": "calorías quemadas por hora en clase intensa (Harvard Health)",
+  "blogModernJazz_stat3Label": "año en que Jack Cole creó el jazz teatral en Hollywood",
+  "blogModernJazz_stat4Label": "menos riesgo de mortalidad cardiovascular bailando regularmente",
+
+  "blogModernJazz_answerQuestion1": "¿Qué es el Modern Jazz?",
+  "blogModernJazz_answerText1": "El Modern Jazz es un estilo de danza teatral que fusiona la técnica del ballet clásico con elementos del jazz vernacular afroamericano, la danza moderna de Martha Graham y ritmos sincopados. Nació en Hollywood en los años 40 con Jack Cole y se caracteriza por isolations (movimientos aislados de partes del cuerpo), contracciones, jazz walks, extensiones de ballet y una fuerte teatralidad. Es el estilo dominante en Broadway, videoclips comerciales y teatro musical contemporáneo.",
+  "blogModernJazz_answerCapsule1": "Definición de Modern Jazz",
+
+  "blogModernJazz_answerQuestion2": "¿Quién inventó el Modern Jazz?",
+  "blogModernJazz_answerText2": "Jack Cole (1911-1974) es reconocido como el 'Padre del Jazz Teatral'. En 1942, mientras trabajaba como coreógrafo en Columbia Pictures, Cole fusionó técnicas de danza india (Bharatanatyam), ballet, danza moderna y jazz vernacular afroamericano para crear un estilo completamente nuevo. Su método de isolations y contracciones se convirtió en la base de todo el Modern Jazz posterior. Katherine Dunham aportó la conexión con las raíces africanas, mientras que Bob Fosse y Jerome Robbins lo llevaron a Broadway.",
+  "blogModernJazz_answerCapsule2": "Origen del Modern Jazz",
+
+  "blogModernJazz_answerQuestion3": "¿El baile realmente previene la demencia?",
+  "blogModernJazz_answerText3": "Sí, con evidencia científica contundente. El estudio del New England Journal of Medicine de 2003 (Verghese et al.) siguió a 469 personas durante 21 años y encontró que bailar frecuentemente reduce el riesgo de demencia en un 76%—más que cualquier otra actividad física (nadar: 0%, golf: 0%, ciclismo: 0%) o cognitiva (leer: 35%, crucigramas: 47%). La razón: bailar combina ejercicio físico, memorización, improvisación y conexión social, estimulando múltiples áreas cerebrales simultáneamente.",
+  "blogModernJazz_answerCapsule3": "Baile y prevención de demencia",
+
+  "blogModernJazz_answerQuestion4": "¿Cuál es la diferencia entre Modern Jazz y Danza Contemporánea?",
+  "blogModernJazz_answerText4": "El Modern Jazz mantiene estructuras coreográficas definidas, ritmos marcados, musicalidad precisa y vocabulario técnico específico (isolations, jazz hands, ball change). La Danza Contemporánea es más experimental: explora el trabajo de suelo, la improvisación, la deconstrucción del movimiento y la expresión emocional libre. El jazz nació en el teatro y el entretenimiento; el contemporáneo, en el arte conceptual. Ambos comparten influencias de Martha Graham y la danza moderna, pero difieren en estructura y propósito.",
+  "blogModernJazz_answerCapsule4": "Jazz vs Contemporáneo",
+
+  "blogModernJazz_answerQuestion5": "¿Cuántas calorías quema una clase de Modern Jazz?",
+  "blogModernJazz_answerText5": "Según Harvard Health Publishing (2021), una persona de 70 kg quema aproximadamente 400-600 calorías por hora en una clase intensa de jazz dance. Esto supera al aeróbic de bajo impacto (365 cal/h) y se acerca al entrenamiento de circuito (480 cal/h). El jazz combina cardio (desplazamientos, saltos), fuerza (contracciones, control muscular), flexibilidad (extensiones, stretching) y coordinación (isolations, ritmos complejos), convirtiéndolo en un entrenamiento integral.",
+  "blogModernJazz_answerCapsule5": "Calorías quemadas en jazz",
+
+  "blogModernJazz_intro": "En 2003, el New England Journal of Medicine publicó un estudio que cambió mi forma de ver la danza. Después de seguir a 469 personas durante 21 años, los investigadores descubrieron que bailar frecuentemente reduce el riesgo de demencia en un <strong>76%</strong>—más que leer (35%), hacer crucigramas (47%) o cualquier ejercicio físico como nadar o jugar golf (0%). Ninguna otra actividad se acercó.",
+  "blogModernJazz_intro2": "Cuando leí ese estudio, llevaba años bailando profesionalmente. Me había formado en la Escuela Nacional de Arte de Cuba, había sido solista de la Compañía de Carlos Acosta, había recorrido escenarios de medio mundo. Pero nunca había pensado en la danza como medicina. Ahora entiendo que cada classe, cada coreografía, cada improvisación no solo me hacía mejor bailarín—estaba construyendo reservas cognitivas que me protegerían toda la vida.",
+  "blogModernJazz_intro3": "Esta guía es todo lo que he aprendido sobre Modern Jazz en 20 años de carrera profesional: la historia real desde Jack Cole hasta Mia Michaels, la ciencia detrás de los beneficios, las técnicas que definen el estilo, los 6 subgéneros que existen hoy, y cómo empezar a bailar en Barcelona. <strong>No es marketing: es conocimiento verificado y experiencia vivida.</strong>",
+
+  "blogModernJazz_section1Title": "Historia del Modern Jazz: Los Pioneros que Crearon un Arte (1940-1987)",
+  "blogModernJazz_section1Content1": "El Modern Jazz no apareció de la nada. Nació de la colisión de mundos: el ballet europeo, el jazz vernacular afroamericano, la danza moderna de Martha Graham, los ritmos hindúes y las percusiones africanas. Pero necesitó arquitectos que dieran forma al caos. Estos son los seis pioneros que definieron el estilo que hoy bailamos.",
+
+  "blogModernJazz_jackColeTitle": "Jack Cole (1911-1974): El Padre del Jazz Teatral",
+  "blogModernJazz_jackColeContent": "<strong>Jack Cole</strong> es reconocido universalmente como el creador del jazz teatral. En 1942, mientras trabajaba como coreógrafo en Columbia Pictures, Cole fusionó técnicas que nadie había combinado antes: <em>Bharatanatyam</em> (danza clásica india), ballet clásico, danza moderna de Ruth St. Denis, jazz vernacular afroamericano y Lindy Hop. El resultado fue revolucionario.<br><br>Cole desarrolló el concepto de <strong>'isolation'</strong>—mover partes del cuerpo independientemente—que se convirtió en la firma del jazz dance. Trabajó con todas las estrellas de Hollywood: entrenó a Marilyn Monroe para 'Los caballeros las prefieren rubias' (1953) y coreografió números icónicos para Rita Hayworth, Betty Grable y Ann Miller. Su legado técnico sigue vivo en cada clase de jazz del mundo. <a href=\"https://www.britannica.com/biography/Jack-Cole\" target=\"_blank\" rel=\"noopener noreferrer\">Más información en Britannica</a>.",
+
+  "blogModernJazz_dunhamTitle": "Katherine Dunham (1909-2006): La Conexión Afroamericana",
+  "blogModernJazz_dunhamContent": "<strong>Katherine Dunham</strong> fue antropóloga antes que bailarina, y eso cambió todo. En los años 30 viajó a Haití, Jamaica, Trinidad y Martinica estudiando danzas africanas de la diáspora. Volvió a Estados Unidos con un tesoro: ritmos, movimientos y filosofías que fusionó con técnicas occidentales para crear la <strong>'Técnica Dunham'</strong>.<br><br>Su método integra isolations de pelvis y torso, polirritmias, trabajo de columna ondulante y conexión con la tierra. Dunham llevó la dignidad y la riqueza de las danzas africanas a los escenarios de Broadway y Hollywood. Sin ella, el jazz dance sería blanco y académico. Con ella, es vibrante, terrenal y profundamente humano. <a href=\"https://www.britannica.com/biography/Katherine-Dunham\" target=\"_blank\" rel=\"noopener noreferrer\">Su biografía completa</a>.",
+
+  "blogModernJazz_fosseTitle": "Bob Fosse (1927-1987): El Genio Cinematográfico",
+  "blogModernJazz_fosseContent": "Si Cole creó el lenguaje, <strong>Bob Fosse</strong> escribió poesía con él. Su estilo es inconfundible: rodillas giradas hacia dentro, hombros redondeados, movimientos mínimos pero cargados de intención sexual, sombreros de bombín, guantes blancos, sillas como extensión del cuerpo. Fosse no bailaba pasos: contaba historias oscuras sobre deseo, poder y muerte.<br><br>Sus obras maestras definieron una era: 'Sweet Charity' (1966), 'Cabaret' (1972—ganó el Oscar a Mejor Director), 'Chicago' (1975), 'All That Jazz' (1979). Cuando ves a Beyoncé en 'Single Ladies' o a Bruno Mars en cualquier actuación, estás viendo a Fosse. Su influencia es tan profunda que se ha convertido en invisible—simplemente es cómo se hace jazz comercial. <a href=\"https://www.britannica.com/biography/Bob-Fosse\" target=\"_blank\" rel=\"noopener noreferrer\">Biografía en Britannica</a>.",
+
+  "blogModernJazz_luigiMattoxTitle": "Luigi y Matt Mattox: Los Codificadores",
+  "blogModernJazz_luigiMattoxContent": "<strong>Eugene Louis Faccuito 'Luigi'</strong> (1925-2015) desarrolló su técnica después de sobrevivir a un accidente de coche que lo dejó parcialmente paralizado a los 21 años. Los médicos dijeron que nunca volvería a caminar. Luigi no solo caminó: creó un método de calentamiento y entrenamiento que se usa en todo el mundo. Su 'Luigi Technique' enfatiza la <strong>conexión cuerpo-mente</strong>, el alargamiento muscular y el 'Never Stop Moving'—la idea de que el movimiento nunca termina, solo transiciona.<br><br><strong>Matt Mattox</strong> (1921-2013), por su parte, fue el liberador. Bailó en películas de Hollywood junto a Gene Kelly y Fred Astaire, pero después se rebeló contra la rigidez del ballet incorporado al jazz. Desarrolló el 'Freestyle Jazz'—un enfoque más orgánico, improvisacional, que permitía a cada bailarín encontrar su propia voz. Sus escuelas en Francia formaron a generaciones de bailarines europeos.",
+
+  "blogModernJazz_robbinsTitle": "Jerome Robbins (1918-1998): El Puente con Broadway",
+  "blogModernJazz_robbinsContent": "<strong>Jerome Robbins</strong> llevó el jazz dance al territorio del arte elevado. Su coreografía para 'West Side Story' (1957) fusionó ballet clásico, jazz vernacular y tensión dramática para contar una historia de amor y violencia en las calles de Nueva York. Los Jets y los Sharks no solo bailaban: peleaban, seducían, morían a través del movimiento.<br><br>Robbins demostró que el jazz podía ser narrativo, emocional, políticamente relevante. 'The King and I', 'Fiddler on the Roof', 'Gypsy'—cada obra maestra elevó las expectativas de lo que la danza teatral podía comunicar. Ganó cinco Tony Awards y dos Oscar. Sin Robbins, el jazz sería entretenimiento. Con él, es teatro serio.",
+
+  "blogModernJazz_section2Title": "Coreógrafos Contemporáneos: Los Herederos (1990-Presente)",
+  "blogModernJazz_section2Intro": "El jazz no murió con Fosse. Una nueva generación tomó el lenguaje de los pioneros y lo llevó a territorios inexplorados. Estos son los coreógrafos que definen el Modern Jazz del siglo XXI.",
+
+  "blogModernJazz_contemporaneosContent": "<strong>Mia Michaels</strong> revolucionó el jazz contemporáneo con coreografías emocionalmente devastadoras. Su trabajo en 'So You Think You Can Dance' (ganó dos Emmy Awards) fusiona jazz con contemporáneo y expresionismo. Su pieza 'Gravity' es considerada una de las mejores coreografías televisadas de la historia.<br><br><strong>Sonya Tayeh</strong> lleva el jazz al territorio del punk y la vulnerabilidad extrema. Su estilo es anguloso, agresivo, emocionalmente crudo. Ganó el Tony Award por 'Moulin Rouge!' (2020) y ha coreografiado para Lady Gaga, Florence + the Machine y Miley Cyrus.<br><br><strong>Travis Wall</strong> representa la fusión perfecta de técnica clásica y sensibilidad contemporánea. Entrenado en ballet desde niño, llevó el lyrical jazz a nuevas alturas emocionales. Sus coreografías en 'So You Think You Can Dance' acumulan millones de visualizaciones en YouTube.<br><br><strong>Brian Friedman</strong> y <strong>Parris Goebel</strong> dominan el commercial jazz actual. Friedman coreografió para Britney Spears, Beyoncé y Mariah Carey. Goebel (neozelandesa de origen samoano) creó las coreografías virales de Justin Bieber ('Sorry', 'What Do You Mean?') y ganó premios MTV con su crew ReQuest. <strong>JaQuel Knight</strong> hizo historia al registrar como propiedad intelectual la coreografía de Beyoncé en 'Single Ladies'—un precedente legal revolucionario.",
+
+  "blogModernJazz_section3Title": "Los 6 Estilos de Modern Jazz (Y Cuál Es Para Ti)",
+  "blogModernJazz_section3Intro": "Cuando la gente dice 'jazz' puede referirse a cosas muy distintas. No es un estilo monolítico: es una familia de técnicas y estéticas que comparten ADN pero tienen personalidades únicas. Estos son los seis principales.",
+
+  "blogModernJazz_estiloLyricalTitle": "1. Lyrical Jazz",
+  "blogModernJazz_estiloLyricalContent": "El más emocional de todos los estilos. El Lyrical Jazz fusiona técnica de ballet, jazz y contemporáneo para contar historias a través del movimiento. Se caracteriza por extensiones largas, líneas elegantes, transiciones fluidas y una conexión profunda con la letra de la música. Coreógrafos como Travis Wall y Mia Michaels llevaron el Lyrical a la fama televisiva.<br><br><strong>Técnica requerida:</strong> Base de ballet (arabesque, développé, pirouettes), flexibilidad, control emocional.<br><strong>Música típica:</strong> Baladas pop, canciones emotivas (Adele, Sia, Billie Eilish).<br><strong>Ideal para ti si:</strong> Te emocionas con la música, disfrutas expresando sentimientos, quieres combinar técnica con arte.<br><strong>Mi perspectiva:</strong> Es precioso cuando se hace bien, pero cuidado con quedarse solo en 'lo bonito'. El Lyrical sin técnica sólida se convierte en pantomima. Necesitas controlar tu cuerpo para poder liberarlo.",
+
+  "blogModernJazz_estiloCommercialTitle": "2. Commercial Jazz / Industry Jazz",
+  "blogModernJazz_estiloCommercialContent": "Lo que ves en videoclips, conciertos de pop stars, anuncios de televisión y giras mundiales. El Commercial Jazz está diseñado para impactar en cámara: movimientos llamativos, sincronización perfecta en grupo, actitud magnética, y una estética que grita 'mainstream'. Parris Goebel, Brian Friedman y JaQuel Knight son los reyes de este estilo.<br><br><strong>Técnica requerida:</strong> Isolations rápidas, stamina, capacidad de memorización, presencia escénica para cámara.<br><strong>Música típica:</strong> Pop, R&B, hip-hop comercial (Beyoncé, Justin Bieber, Dua Lipa).<br><strong>Ideal para ti si:</strong> Sueñas con bailar detrás de artistas famosos, te encanta aprender coreografías virales, quieres trabajar en la industria del entretenimiento.<br><strong>Mi perspectiva:</strong> Es divertidísimo y muy demandado profesionalmente. Pero no te quedes solo aquí: sin base técnica de jazz clásico y ballet, el commercial envejece rápido y tu cuerpo sufre.",
+
+  "blogModernJazz_estiloBroadwayTitle": "3. Broadway Jazz / Theatre Jazz",
+  "blogModernJazz_estiloBroadwayContent": "El jazz donde todo empezó. Broadway Jazz es técnica teatral pura: presencia escénica exagerada para llegar a la última fila, expresividad facial intensa, movimientos amplios y precisos. Incluye influencias de ballet, tap y teatro musical. Bob Fosse, Jerome Robbins y Susan Stroman definieron este estilo. Producciones como 'Chicago', 'A Chorus Line', 'Cabaret' y 'Moulin Rouge!' son sus biblias.<br><br><strong>Técnica requerida:</strong> Proyección escénica, técnica de giro (chaînés, piqué turns), expresión facial, timing teatral.<br><strong>Música típica:</strong> Show tunes, musicales de Broadway y West End.<br><strong>Ideal para ti si:</strong> Te atrae el teatro musical, disfrutas actuando mientras bailas, quieres trabajar en producciones teatrales.<br><strong>Mi perspectiva:</strong> Si quieres entender el jazz de verdad, tienes que pasar por Broadway. Aquí nació todo. Fosse era Broadway. Es la raíz del árbol.",
+
+  "blogModernJazz_estiloContemporaryTitle": "4. Contemporary Jazz",
+  "blogModernJazz_estiloContemporaryContent": "La fusión más experimental del jazz actual. Contemporary Jazz toma el vocabulario técnico del jazz (isolations, jazz walks, syncopation) y lo mezcla con contemporáneo (trabajo de suelo, release, partnering, improvisación). El resultado es un estilo versátil, emocional y en constante evolución. Mia Michaels y Sonya Tayeh son referentes de este híbrido.<br><br><strong>Técnica requerida:</strong> Base sólida de jazz + técnicas de contemporáneo (floor work, release), capacidad de improvisación.<br><strong>Música típica:</strong> Variada—desde clásica hasta electrónica experimental (Sigur Rós, Bon Iver, Radiohead).<br><strong>Ideal para ti si:</strong> Te aburre repetir pasos exactos, quieres explorar tu propio movimiento, buscas un estilo artístico más que comercial.<br><strong>Mi perspectiva:</strong> Es lo que más enseño porque creo que es el futuro. Mantiene la técnica del jazz pero abre puertas a la creatividad personal. Es donde yo me siento en casa.",
+
+  "blogModernJazz_estiloFunkTitle": "5. Jazz Funk / Street Jazz",
+  "blogModernJazz_estiloFunkContent": "El hermano callejero del jazz. Jazz Funk mezcla la técnica del Modern Jazz con la actitud del hip-hop, el groove del funk y la estética urbana. Menos formalidad académica, más personalidad, más swag. Se popularizó en los 90s con coreógrafos como Laurieann Gibson y actualmente domina en clases de 'heels' y estilos urbanos femeninos.<br><br><strong>Técnica requerida:</strong> Groove, isolations de cadera, actitud, capacidad de interpretar diferentes 'personajes'.<br><strong>Música típica:</strong> Funk, hip-hop, R&B urbano (Chris Brown, Ciara, Tinashe).<br><strong>Ideal para ti si:</strong> Prefieres sentir la música en las entrañas antes que pensarla, te gusta improvisar, quieres bailar con actitud sin perder técnica.<br><strong>Mi perspectiva:</strong> Muy divertido, pero no lo uses como excusa para saltarte la técnica. El mejor Jazz Funk lo hacen bailarines con base sólida de jazz clásico. El swag sin control es solo desorden.",
+
+  "blogModernJazz_estiloAfrojazzTitle": "6. Afro Jazz / Afro Fusion",
+  "blogModernJazz_estiloAfrojazzContent": "El estilo que reconecta el jazz con sus raíces. Afro Jazz incorpora ritmos, movimientos y filosofías de las danzas africanas de la diáspora: polirritmos, isolations de pelvis y torso, conexión con la tierra (pliés profundos), celebración comunitaria. Katherine Dunham es la madre de este estilo. Hoy, coreógrafos como Sherrie Silver (coreógrafa de 'This Is America' de Childish Gambino) lo llevan al mainstream.<br><br><strong>Técnica requerida:</strong> Trabajo de pelvis y torso, polirritmia, pliés profundos, soltura de columna.<br><strong>Música típica:</strong> Afrobeat, afrohouse, música africana contemporánea (Burna Boy, Wizkid, Fela Kuti).<br><strong>Ideal para ti si:</strong> Quieres conectar con las raíces africanas del jazz, te gustan los ritmos complejos, prefieres bailar desde la tierra hacia arriba.<br><strong>Mi perspectiva:</strong> Como cubano, este estilo está en mi ADN. La formación que recibí en la ENA integraba folklore afrocubano desde el primer día. Cuando enseño jazz en Barcelona, siempre traigo ese sabor.",
+
+  "blogModernJazz_tablaTitle": "Comparativa de Estilos de Modern Jazz",
+  "blogModernJazz_tablaHeaderEstilo": "Estilo",
+  "blogModernJazz_tablaHeaderCaracteristicas": "Características",
+  "blogModernJazz_tablaHeaderMusica": "Música típica",
+  "blogModernJazz_tablaHeaderIdeal": "Ideal si...",
+
+  "blogModernJazz_tablaLyrical": "Lyrical Jazz",
+  "blogModernJazz_tablaLyricalCaract": "Emocional, fluido, storytelling",
+  "blogModernJazz_tablaLyricalMusica": "Baladas, pop emocional",
+  "blogModernJazz_tablaLyricalIdeal": "Te conectas con las letras",
+
+  "blogModernJazz_tablaCommercial": "Commercial Jazz",
+  "blogModernJazz_tablaCommercialCaract": "Llamativo, sincronizado, impacto visual",
+  "blogModernJazz_tablaCommercialMusica": "Pop, R&B, hip-hop",
+  "blogModernJazz_tablaCommercialIdeal": "Sueñas con videoclips",
+
+  "blogModernJazz_tablaBroadway": "Broadway Jazz",
+  "blogModernJazz_tablaBroadwayCaract": "Teatral, técnico, expresivo",
+  "blogModernJazz_tablaBroadwayMusica": "Show tunes, musicales",
+  "blogModernJazz_tablaBroadwayIdeal": "Te gusta actuar bailando",
+
+  "blogModernJazz_tablaContemporary": "Contemporary Jazz",
+  "blogModernJazz_tablaContemporaryCaract": "Experimental, suelo, fusión",
+  "blogModernJazz_tablaContemporaryMusica": "Variada, electrónica",
+  "blogModernJazz_tablaContemporaryIdeal": "Buscas tu propio estilo",
+
+  "blogModernJazz_tablaFunk": "Jazz Funk",
+  "blogModernJazz_tablaFunkCaract": "Groovy, urbano, actitud",
+  "blogModernJazz_tablaFunkMusica": "Funk, hip-hop, R&B",
+  "blogModernJazz_tablaFunkIdeal": "Prefieres sentir que pensar",
+
+  "blogModernJazz_tablaAfrojazz": "Afro Jazz",
+  "blogModernJazz_tablaAfrojazzCaract": "Polirritmos, terrenal, celebración",
+  "blogModernJazz_tablaAfrojazzMusica": "Afrobeat, afrohouse, ritmos africanos",
+  "blogModernJazz_tablaAfrojazzIdeal": "Buscas conexión con las raíces",
+
+  "blogModernJazz_section4Title": "Técnica del Modern Jazz: Los 7 Elementos Fundamentales",
+  "blogModernJazz_section4Content1": "El Modern Jazz tiene un vocabulario técnico específico que lo distingue de otros estilos. No es ballet, no es contemporáneo, no es hip-hop—aunque bebe de todos. Estos son los siete elementos que definen el estilo y que trabajo en cada clase.",
+
+  "blogModernJazz_tecnicaIsolationsTitle": "1. Isolations (Aislamientos)",
+  "blogModernJazz_tecnicaIsolationsContent": "La firma del jazz dance. <strong>Isolation</strong> es la capacidad de mover una parte del cuerpo de forma independiente mientras el resto permanece inmóvil. Cabeza (lado a lado, arriba-abajo), hombros (arriba-abajo, adelante-atrás), costillas (side-to-side, círculos), caderas (shifts, circles, figures-8). Jack Cole trajo esta técnica de la danza india Bharatanatyam.<br><br>En mis clases dedicamos los primeros 15 minutos solo a isolations porque son la base de todo lo demás. Sin control segmentado del cuerpo, no hay jazz. Parece simple hasta que lo intentas: mover solo la cabeza sin que los hombros se muevan requiere años de entrenamiento.",
+
+  "blogModernJazz_tecnicaContraccionesTitle": "2. Contracciones y Release",
+  "blogModernJazz_tecnicaContraccionesContent": "Heredadas directamente de <strong>Martha Graham</strong>, las contracciones son el acortamiento y alargamiento controlado de los músculos del torso para crear dinamismo expresivo. La contracción típica del jazz: el ombligo se hunde hacia la columna, la pelvis bascula, la espalda se curva. El release es lo opuesto: expansión, apertura, extensión.<br><br>Las contracciones dan al jazz su característica 'urgencia' visual. Cuando ves a un bailarín de jazz hacer un movimiento con punch, eso es contracción. Es lo que diferencia bailar jazz de hacer aeróbic con música.",
+
+  "blogModernJazz_tecnicaPlieTitle": "3. Plié Jazz y Trabajo de Piernas",
+  "blogModernJazz_tecnicaPlieContent": "A diferencia del ballet (donde el plié es elegante y contenido), el plié en jazz es profundo, terrenal, con peso. Bob Fosse llevaba las rodillas hacia dentro (<em>turned-in</em>), rompiendo todas las reglas del ballet. El <strong>jazz walk</strong>—esa manera de caminar con actitud, peso controlado, caderas involucradas—es uno de los primeros elementos que se aprenden.<br><br>Otros elementos de piernas: <em>ball change</em> (transferencia rápida de peso), <em>pas de bourrée</em> (heredado del ballet), <em>kick-ball-change</em>, <em>chassé</em>. El vocabulario de piernas del jazz es extenso y preciso.",
+
+  "blogModernJazz_section5Title": "Beneficios Científicos del Modern Jazz: Lo Que Dice la Investigación",
+  "blogModernJazz_section5Content1": "El jazz dance no es solo arte—es medicina preventiva con evidencia científica sólida. Estos son los beneficios documentados en estudios revisados por pares.",
+
+  "blogModernJazz_beneficiosNeuroTitle": "Beneficios Neurocognitivos: 76% Menos Riesgo de Demencia",
+  "blogModernJazz_beneficiosNeuroContent": "El estudio más importante sobre danza y cerebro se publicó en el <strong>New England Journal of Medicine</strong> en 2003 (Verghese et al., DOI: 10.1056/NEJMoa022252). Los investigadores del Albert Einstein College of Medicine siguieron a 469 personas mayores de 75 años durante 21 años. Encontraron que bailar frecuentemente reduce el riesgo de demencia en un <strong>76%</strong>.<br><br>Comparación con otras actividades:<br>• Leer: 35% reducción<br>• Crucigramas: 47% reducción<br>• Nadar: 0% reducción<br>• Jugar golf: 0% reducción<br>• Ciclismo: 0% reducción<br><br>¿Por qué bailar es superior? Porque combina ejercicio físico, memorización de secuencias, improvisación (toma de decisiones en tiempo real), y conexión social. Esta combinación estimula múltiples áreas cerebrales simultáneamente, creando <strong>reserva cognitiva</strong> que protege contra el deterioro.",
+
+  "blogModernJazz_beneficiosCardioTitle": "Beneficios Cardiovasculares: 46% Menos Mortalidad",
+  "blogModernJazz_beneficiosCardioContent": "Un estudio del <strong>American Journal of Preventive Medicine</strong> (2016, PMID: 27267275) analizó a 48,390 adultos británicos durante 12 años. Los que bailaban regularmente tenían un <strong>46% menos riesgo de mortalidad cardiovascular</strong> que los sedentarios—incluso después de ajustar por otros factores.<br><br>En términos de gasto calórico, <strong>Harvard Health Publishing</strong> (2021) reporta que una persona de 70 kg quema aproximadamente 400-600 calorías por hora en una clase intensa de jazz dance. Esto supera al aeróbic de bajo impacto (365 cal/h) y se acerca al entrenamiento de circuito (480 cal/h). Además, el jazz trabaja cardio (desplazamientos, saltos), fuerza (contracciones, control muscular), flexibilidad (extensiones, stretching) y coordinación (isolations, ritmos complejos) en la misma sesión.",
+
+  "blogModernJazz_beneficiosMentalTitle": "Beneficios de Salud Mental: Más Allá de las Estadísticas",
+  "blogModernJazz_beneficiosMentalContent": "Múltiples estudios (Journal of Dance Medicine & Science, Frontiers in Psychology) demuestran que bailar reduce cortisol (hormona del estrés), aumenta endorfinas y serotonina, mejora la imagen corporal y reduce síntomas de ansiedad y depresión.<br><br>Pero lo que yo veo en mis alumnos va más allá de las estadísticas. Veo gente que llega tímida y al cabo de unos meses ocupa el espacio sin miedo. Personas que descubren que su cuerpo puede hacer cosas que nunca imaginaron. Adultos que recuperan la alegría de moverse sin pensar en el 'qué dirán'. El Modern Jazz te exige presencia escénica, y eso se traduce en confianza fuera del estudio. <strong>No es solo fitness con música: es una transformación personal.</strong>",
+
+  "blogModernJazz_section6Title": "Mi Formación Cubana: Por Qué Enseño Jazz Diferente",
+  "blogModernJazz_section6Content1": "Cuba produce algunos de los mejores bailarines del mundo. Carlos Acosta, Alicia Alonso, Yolanda Correa, José Manuel Carreño—la lista es interminable. Pero la pregunta real es: ¿por qué? La respuesta está en el sistema de formación.",
+
+  "blogModernJazz_formacionENATitle": "La Escuela Nacional de Arte (ENA): Donde Todo Empezó",
+  "blogModernJazz_formacionENAContent": "Me formé en la <strong>Escuela Nacional de Arte de Cuba (ENA)</strong>, fundada en 1962 y considerada una de las instituciones de danza más exigentes del mundo. El programa de formación cubano es único porque integra todo:<br><br>• <strong>Mañanas:</strong> Ballet clásico riguroso (método Vaganova adaptado)<br>• <strong>Tardes:</strong> Danza moderna, contemporáneo, técnica Graham y Limón<br>• <strong>Fines de semana:</strong> Folklore afrocubano—danzas yoruba, congo, arará, carabalí<br><br>No aprendías 'jazz' como categoría separada. Aprendías a fusionar. Cuando llegué a tu edad, mi cuerpo ya sabía mezclar el port de bras del ballet con el movimiento de caderas del guaguancó. Esa fusión está en mi ADN y es lo que traigo a Barcelona.",
+
+  "blogModernJazz_formacionAcostaTitle": "La Compañía de Carlos Acosta: El Salto Internacional",
+  "blogModernJazz_formacionAcostaContent": "Después de la ENA, tuve el privilegio de formar parte de la <strong>Compañía de Carlos Acosta</strong>, bailando repertorio clásico y contemporáneo en escenarios de medio mundo. Carlos es un fenómeno: primer bailarín negro principal del Royal Ballet de Londres, con una técnica sobrehumana pero también una humanidad escénica que conecta con cualquier audiencia.<br><br>¿Por qué te cuento esto? Porque mi manera de enseñar Modern Jazz viene de ahí: <strong>técnica rigurosa pero nunca fría</strong>. En Cuba el arte siempre tiene cuerpo, tiene sabor, tiene humanidad. No bailamos para demostrar lo que sabemos; bailamos para comunicar. Esa es la filosofía que traigo a cada clase en <a href=\"/es/horarios-clases-baile-barcelona\">Farray's Center</a>.",
+
+  "blogModernJazz_section7Title": "Dónde Aprender Modern Jazz en Barcelona y España",
+  "blogModernJazz_section7Content1": "España tiene una escena de Modern Jazz creciente, especialmente en las grandes ciudades. Barcelona, Madrid y Valencia concentran las mejores academias y formaciones profesionales.",
+
+  "blogModernJazz_escuelasBarcelonaTitle": "Escuelas de Modern Jazz en Barcelona",
+  "blogModernJazz_escuelasBarcelonaContent": "Barcelona tiene una oferta variada de Modern Jazz. En <strong>Farray's International Dance Center</strong> (Eixample Izquierdo), donde yo enseño, ofrecemos clases de Modern Jazz para todos los niveles con un enfoque en técnica rigurosa y expresividad latina. Otras opciones recomendables:<br><br>• <strong>Area Espai de Dansa</strong> (Gràcia): Formación profesional de jazz y contemporáneo<br>• <strong>Dau al Sec</strong> (Poblenou): Jazz contemporáneo con enfoque experimental<br>• <strong>Institut del Teatre</strong>: Formación académica oficial con titulación<br>• <strong>Steps Dance Studios</strong>: Commercial jazz y estilos urbanos<br><br>En Madrid destacan el <strong>Real Conservatorio Profesional de Danza Mariemma</strong> y escuelas como <strong>Carmen Roche</strong> y <strong>Víctor Ullate</strong>. En Valencia, <strong>Centro Coreográfico de Valencia</strong> y <strong>Danzarte</strong> son referencias.<br><br>Si buscas formación profesional con titulación oficial, el <strong>Institut del Teatre de Barcelona</strong> y los conservatorios profesionales de danza de cada comunidad autónoma ofrecen grados oficiales que incluyen Modern Jazz en su currículo.",
+
+  "blogModernJazz_section8Title": "Tu Primera Clase de Modern Jazz: Qué Esperar",
+  "blogModernJazz_section8Content1": "Vas a llegar nervioso. Todos llegan nerviosos. Mirarás a los demás y pensarás que saben más que tú. Algunos sí, otros no. Da igual. En mi clase nadie compite con nadie excepto consigo mismo.<br><br><strong>Estructura típica de una clase de 90 minutos:</strong><br>1. <em>Calentamiento</em> (15-20 min): Isolations, movilidad articular, estiramientos dinámicos<br>2. <em>Técnica</em> (20-25 min): Ejercicios de centro (pliés jazz, contracciones, port de bras)<br>3. <em>Desplazamientos</em> (15-20 min): Jazz walks, diagonales, combinaciones por el espacio<br>4. <em>Coreografía</em> (25-30 min): Secuencia que iremos construyendo semana a semana<br>5. <em>Cool down</em> (5-10 min): Estiramientos finales",
+  "blogModernJazz_section8List": "¿Qué traer a tu primera clase?",
+  "blogModernJazz_section8ListItem1": "Ropa cómoda y ajustada (necesito ver tu cuerpo para corregirte)",
+  "blogModernJazz_section8ListItem2": "Zapatillas de jazz con suela partida o calcetines antideslizantes (no zapatillas de running)",
+  "blogModernJazz_section8ListItem3": "Botella de agua (vas a sudar)",
+  "blogModernJazz_section8ListItem4": "Toalla pequeña",
+  "blogModernJazz_section8ListItem5": "Actitud abierta, disposición a equivocarte, y ganas de disfrutar",
+  "blogModernJazz_section8Content2": "<strong>Un consejo que le daría a mi yo de hace 20 años:</strong> No te compares con el bailarín de al lado. Tu único trabajo es ser mejor que ayer. El jazz nació en la alegría, en la celebración de la comunidad afroamericana. Si no estás disfrutando, algo estamos haciendo mal. Permítete fallar, reírte de tus errores, y volver a intentarlo. Así se aprende.",
+
+  "blogModernJazz_defTerm1": "Modern Jazz",
+  "blogModernJazz_defContent1": "Estilo de danza teatral que fusiona técnica de ballet clásico con elementos del jazz vernacular afroamericano, danza moderna (especialmente la técnica Graham) y ritmos sincopados. Surgió en Hollywood en los años 40 con Jack Cole y evolucionó con figuras como Bob Fosse, Jerome Robbins, Luigi y Katherine Dunham. Se caracteriza por isolations, contracciones, jazz walks, extensiones de ballet y fuerte teatralidad. Es el estilo dominante en Broadway, videoclips y teatro musical.",
+  "blogModernJazz_defTerm2": "Isolations (Aislamientos)",
+  "blogModernJazz_defContent2": "Técnica fundamental del jazz dance que consiste en mover una parte del cuerpo de forma independiente mientras el resto permanece inmóvil. Incluye isolations de cabeza (side-to-side, front-back), hombros (up-down, roll), costillas (side-to-side, circles), y caderas (shifts, circles, figure-8). Jack Cole adaptó esta técnica de la danza india Bharatanatyam. Es la firma distintiva del Modern Jazz y la base de la mayoría de movimientos del estilo.",
+  "blogModernJazz_defTerm3": "Contracciones y Release",
+  "blogModernJazz_defContent3": "Técnica heredada de Martha Graham que involucra el acortamiento (contracción) y alargamiento (release) controlado de los músculos del torso. En la contracción típica del jazz, el ombligo se hunde hacia la columna, la pelvis bascula y la espalda se curva. El release es la expansión opuesta. Esta técnica da al jazz su característica urgencia visual y dinamismo expresivo.",
+  "blogModernJazz_defTerm4": "Jazz Walk",
+  "blogModernJazz_defContent4": "Manera característica de caminar en el jazz dance, con actitud, control y proyección escénica. Implica una colocación específica del peso (normalmente en la parte delantera del pie), uso activo de las caderas, y una cualidad de 'atravesar' el espacio más que simplemente moverse por él. Es uno de los primeros elementos que se aprenden en clase y un indicador del nivel del bailarín.",
+  "blogModernJazz_defTerm5": "Jazz Hands",
+  "blogModernJazz_defContent5": "Posición de manos característica del jazz teatral donde los dedos están completamente extendidos y separados, con las palmas hacia el público. Bob Fosse las popularizó en Broadway. Se usan para crear marcos visuales, acentuar movimientos y comunicar energía escénica. Variaciones incluyen 'spirit fingers' (dedos vibrando) y 'soft hands' (dedos relajados).",
+  "blogModernJazz_defTerm6": "Passé / Coupé Jazz",
+  "blogModernJazz_defContent6": "Posición del pie en el tobillo (coupé) o rodilla (passé) de la pierna de soporte, adaptada del ballet para el jazz. A diferencia del ballet clásico donde el passé es rotado hacia afuera, en jazz puede ser paralelo (rodillas al frente) o rotado según el estilo. Bob Fosse usaba frecuentemente el passé con rodillas giradas hacia dentro como parte de su estética distintiva.",
+
+  "blogModernJazz_conclusionTitle": "El Mejor Momento Para Empezar Es Ahora",
+  "blogModernJazz_conclusionContent": "El Modern Jazz cambió mi vida. Me dio herramientas expresivas que el ballet solo no me había dado. Me enseñó que ser técnico y ser artístico no son cosas separadas. Me conectó con una tradición que va desde los salones de Harlem hasta los escenarios de Broadway, desde Jack Cole hasta Mia Michaels.<br><br>Y ahora la ciencia confirma lo que los bailarines siempre supimos intuitivamente: bailar no solo nos hace sentir bien, nos protege. Reduce el riesgo de demencia un 76%, de muerte cardiovascular un 46%, de depresión y ansiedad. Cada clase es una inversión en tu futuro cognitivo.<br><br>Pero honestamente, nadie empieza a bailar jazz por las estadísticas. Empiezas porque hay algo en la música que te mueve, algo en el movimiento que te llama. Y mi mayor satisfacción es ver a mis alumnos descubrir eso mismo.",
+  "blogModernJazz_conclusionCTA": "Si has llegado hasta aquí, algo te está llamando. Hazle caso. En <a href=\"/es/horarios-clases-baile-barcelona\">Farray's International Dance Center</a> ofrezco clases de Modern Jazz para todos los niveles, desde principiantes absolutos hasta avanzados. La primera clase es para conocernos, sin compromiso. Ven, prueba, y decide después. Nos vemos en el estudio.<br><br><strong>— Alejandro Miñoso</strong><br><em>Ex solista Compañía Carlos Acosta | Formación ENA Cuba</em>",
+
+  "blogModernJazz_faq1Question": "¿Necesito saber ballet para hacer Modern Jazz?",
+  "blogModernJazz_faq1Answer": "No es obligatorio, pero ayuda significativamente. El ballet te da alineación, control, vocabulario técnico (pliés, tendus, pirouettes) y conciencia corporal que facilitan el aprendizaje del jazz. Dicho esto, muchos de mis alumnos empezaron directamente con jazz y progresan perfectamente. Jack Cole mismo recomendaba estudiar ballet en paralelo. Lo importante es la constancia y estar dispuesto a trabajar tu técnica.",
+  "blogModernJazz_faq2Question": "¿A qué edad puedo empezar a bailar Modern Jazz?",
+  "blogModernJazz_faq2Answer": "A cualquier edad. Tengo alumnos desde los 16 hasta los 60 años. El Modern Jazz se adapta a tu cuerpo y tu nivel. El estudio del NEJM que demostró la reducción del 76% en demencia se hizo con personas mayores de 75 años—nunca es tarde. Cuanto antes empieces, más tiempo tendrás para construir reserva cognitiva y disfrutar del proceso.",
+  "blogModernJazz_faq3Question": "¿Cuánto tiempo se tarda en aprender Modern Jazz?",
+  "blogModernJazz_faq3Answer": "En 3-4 meses de clases regulares (2-3 veces por semana) ya puedes seguir coreografías básicas, dominar los isolations fundamentales y sentirte cómodo con el vocabulario técnico. En 1-2 años de entrenamiento consistente puedes bailar coreografías intermedias con confianza. ¿Dominar el estilo a nivel profesional? Eso requiere 5-10 años de formación intensiva. Pero la diversión empieza desde el primer día.",
+  "blogModernJazz_faq4Question": "¿El Modern Jazz es un buen ejercicio?",
+  "blogModernJazz_faq4Answer": "Excelente, y hay ciencia que lo respalda. Según Harvard Health, una clase intensa quema 400-600 calorías por hora. Trabaja cardio (desplazamientos, saltos), fuerza (contracciones, control muscular), flexibilidad (extensiones, stretching) y coordinación (isolations, ritmos complejos) en la misma sesión. El estudio del American Journal of Preventive Medicine encontró que bailar regularmente reduce un 46% el riesgo de mortalidad cardiovascular. Muchos de mis alumnos dejaron el gimnasio porque prefieren bailar—y los resultados son mejores.",
+  "blogModernJazz_faq5Question": "¿Qué diferencia hay entre Modern Jazz y Jazz vernacular (tradicional)?",
+  "blogModernJazz_faq5Answer": "El jazz vernacular (Charleston, Lindy Hop, swing) nació en la comunidad afroamericana de los años 1920s-40s, caracterizado por improvisación, swing y raíces sociales. El Modern Jazz (o jazz teatral) surgió en los años 40s cuando coreógrafos como Jack Cole incorporaron técnica de ballet, danza moderna y elementos de otras culturas para crear un estilo codificado y escénico. Hoy cuando decimos 'jazz' en una academia, normalmente nos referimos al Modern Jazz. Ambos son valiosos, pero tienen propósitos y estéticas diferentes.",
+  "blogModernJazz_faq6Question": "¿Qué ropa necesito para clase de Modern Jazz?",
+  "blogModernJazz_faq6Answer": "Ropa cómoda, elástica y relativamente ajustada que permita ver tu cuerpo (leggings, pantalones de jazz, camiseta ceñida o top). El profesor necesita ver tu alineación para corregirte. Zapatillas de jazz con suela partida (split sole) o calcetines antideslizantes—evita zapatillas de running o pies descalzos en superficies duras. Lleva también agua, toalla pequeña y, si tienes pelo largo, algo para recogértelo.",
+  "blogModernJazz_faq7Question": "¿Es el Modern Jazz solo para mujeres?",
+  "blogModernJazz_faq7Answer": "Absolutamente no. Los pioneros del jazz teatral fueron mayoritariamente hombres: Jack Cole, Bob Fosse, Jerome Robbins, Luigi, Matt Mattox, Gus Giordano. Hoy, coreógrafos como Brian Friedman, Travis Wall y Wade Robson dominan la industria. En mis clases hay alumnos de todos los géneros. El jazz no discrimina—el único requisito es querer bailar.",
+  "blogModernJazz_faq8Question": "¿Puedo dedicarme profesionalmente al Modern Jazz?",
+  "blogModernJazz_faq8Answer": "Sí, y es uno de los estilos con más salidas laborales. El Modern Jazz tiene demanda en: teatro musical (Broadway, West End, producciones nacionales), videoclips comerciales, giras de artistas pop, publicidad televisiva, cruceros y resorts, parques temáticos (Disney, Universal), compañías de danza contemporánea, y enseñanza. Es uno de los estilos más versátiles de la industria del entretenimiento.",
+  "blogModernJazz_faq9Question": "¿Es verdad que bailar previene la demencia?",
+  "blogModernJazz_faq9Answer": "Sí, con evidencia científica sólida. El estudio del New England Journal of Medicine (Verghese et al., 2003) siguió a 469 personas durante 21 años y encontró que bailar frecuentemente reduce el riesgo de demencia en un 76%—más que cualquier otra actividad física o cognitiva estudiada (leer: 35%, crucigramas: 47%, nadar/golf/ciclismo: 0%). La razón: bailar combina ejercicio físico, memorización, toma de decisiones en tiempo real y conexión social, estimulando múltiples áreas cerebrales simultáneamente.",
+  "blogModernJazz_faq10Question": "¿Quién fue Jack Cole y por qué es importante?",
+  "blogModernJazz_faq10Answer": "Jack Cole (1911-1974) es reconocido como el 'Padre del Jazz Teatral'. En los años 40, mientras trabajaba como coreógrafo en Hollywood, fusionó técnicas de danza india (Bharatanatyam), ballet, danza moderna y jazz vernacular para crear el Modern Jazz como lo conocemos. Desarrolló el concepto de 'isolation' que define el estilo. Entrenó a Marilyn Monroe, coreografió para Rita Hayworth y creó números icónicos en películas de Columbia Pictures. Sin Jack Cole, no existiría el jazz dance que se enseña hoy en las academias de todo el mundo.",
+
+  "blogModernJazz_referencesTitle": "Referencias y Fuentes Científicas",
+  "blogModernJazz_referencesIntro": "Este artículo está basado en investigación científica revisada por pares, fuentes académicas y experiencia profesional directa. Todas las estadísticas citadas provienen de estudios publicados en revistas médicas de alto impacto.",
+
+  "blogModernJazz_refNEJMTitle": "Leisure Activities and the Risk of Dementia in the Elderly - NEJM 2003",
+  "blogModernJazz_refNEJMDesc": "Estudio seminal de Verghese et al. que demostró que bailar frecuentemente reduce el riesgo de demencia en un 76%—más que cualquier otra actividad física o cognitiva. Seguimiento de 21 años a 469 participantes mayores de 75 años. DOI: 10.1056/NEJMoa022252",
+
+  "blogModernJazz_refBritannicaTitle": "Jazz Dance - Encyclopaedia Britannica",
+  "blogModernJazz_refBritannicaDesc": "Definición autorizada y contexto histórico del jazz dance desde sus orígenes afroamericanos hasta el Modern Jazz contemporáneo.",
+
+  "blogModernJazz_refUniversityPressTitle": "Unsung Genius: The Passion of Dancer-Choreographer Jack Cole - University of Florida Press",
+  "blogModernJazz_refUniversityPressDesc": "Biografía académica completa de Jack Cole por Glenn Loney. Documenta cómo Cole creó el jazz teatral fusionando técnicas de danza india, ballet y jazz vernacular en Hollywood durante los años 40.",
+
+  "blogModernJazz_refMasterClassTitle": "Jazz Dance Guide: History of Jazz Dance - MasterClass",
+  "blogModernJazz_refMasterClassDesc": "Guía educativa sobre la historia, técnicas y movimientos fundamentales del jazz dance, con contribuciones de profesionales de la industria.",
+
+  "blogModernJazz_refHarvardTitle": "Calories Burned in 30 Minutes - Harvard Health Publishing",
+  "blogModernJazz_refHarvardDesc": "Datos de Harvard Medical School sobre el gasto calórico en diferentes actividades físicas, incluyendo danza (400-600 cal/hora en jazz intenso).",
+
+  "blogModernJazz_refAJPMTitle": "Dancing Participation and Cardiovascular Disease Mortality - AJPM 2016",
+  "blogModernJazz_refAJPMDesc": "Estudio con 48,390 participantes que demuestra una reducción del 46% en mortalidad cardiovascular entre bailarines regulares. PMID: 27267275",
+
+  "blogModernJazz_refDunhamTitle": "Katherine Dunham - Encyclopaedia Britannica",
+  "blogModernJazz_refDunhamDesc": "Biografía de Katherine Dunham, antropóloga y coreógrafa que integró las danzas africanas de la diáspora en el jazz americano, creando la 'Técnica Dunham'.",
+
+  "blogModernJazz_refFosseTitle": "Bob Fosse - Encyclopaedia Britannica",
+  "blogModernJazz_refFosseDesc": "Biografía del coreógrafo y director que definió el jazz teatral moderno con su estilo distintivo en Broadway y Hollywood. Ganador de 8 Tony Awards, 1 Oscar y 3 Emmy Awards.",
+
+  "blogModernJazz_refJDMSTitle": "Journal of Dance Medicine & Science",
+  "blogModernJazz_refJDMSDesc": "Publicación científica revisada por pares dedicada a la investigación médica y científica relacionada con la danza, incluyendo estudios sobre beneficios físicos y cognitivos del baile.",
+
+  "blogModernJazz_courseSchemaName": "Clases de Modern Jazz en Barcelona - Farray's International Dance Center",
+  "blogModernJazz_courseSchemaDesc": "Clases de Modern Jazz para todos los niveles (principiante a avanzado) en Farray's International Dance Center, Eixample Izquierdo, Barcelona. Impartidas por Alejandro Miñoso, ex solista de la Compañía Carlos Acosta y graduado de la Escuela Nacional de Arte de Cuba (ENA). Técnica rigurosa con perspectiva latina."
 }

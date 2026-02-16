@@ -12,6 +12,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const SUPPORTED_LOCALES = ['es', 'ca', 'en', 'fr'];
 
+// Load pages.json translations for rich pre-rendered content (class pages)
+// These are read at build time to generate semantic HTML for crawlers
+const pagesTranslations = {};
+for (const locale of SUPPORTED_LOCALES) {
+  try {
+    const filePath = path.join(__dirname, 'i18n', 'locales', locale, 'pages.json');
+    pagesTranslations[locale] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  } catch (e) {
+    console.warn(`Warning: Could not load pages.json for locale "${locale}":`, e.message);
+    pagesTranslations[locale] = {};
+  }
+}
+
 const LANDING_SLUGS = [
   'dancehall',
   'twerk',
@@ -30,6 +43,7 @@ const LANDING_SLUGS = [
   'ballet',
   'afro-contemporaneo',
   'clase-bienvenida',
+  'profesor-reynier',
 ];
 
 // Helper: convert slug to page key (e.g., 'sexy-reggaeton' -> 'sexyReggaetonLanding')
@@ -87,6 +101,7 @@ const LANDING_DISPLAY_NAMES = {
   'ballet': { es: 'Ballet Clásico', ca: 'Ballet Clàssic', en: 'Classical Ballet', fr: 'Ballet Classique' },
   'afro-contemporaneo': { es: 'Afro Contemporáneo', ca: 'Afro Contemporani', en: 'Afro Contemporary', fr: 'Afro Contemporain' },
   'clase-bienvenida': { es: 'Clase de Bienvenida', ca: 'Classe de Benvinguda', en: 'Welcome Class', fr: 'Cours de Bienvenue' },
+  'profesor-reynier': { es: 'Broadway Jazz y Commercial Dance', ca: 'Broadway Jazz i Commercial Dance', en: 'Broadway Jazz & Commercial Dance', fr: 'Broadway Jazz et Commercial Dance' },
 };
 
 // Auto-generate landing metadata for all languages
@@ -243,6 +258,7 @@ const OG_IMAGE_MAP = {
   blogDanzaContemporaneaVsJazzBallet: 'blog/danza-contemporanea-vs-jazz-ballet/og.jpg',
   blogBaileSaludMental: 'blog/beneficios-salsa/og.jpg', // Reutiliza beneficios
   blogDanzasUrbanas: 'blog/danzas-urbanas/og.jpg',
+  blogModernJazz: 'blog/modern-jazz/og.jpg',
 
   // === Páginas legales ===
   termsConditions: 'og-home.jpg',
@@ -319,6 +335,122 @@ const PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT = [
   'serviciosBaile',
 ];
 
+// Map from pageKey (used in routes) to styleKey prefix (used in pages.json translation keys)
+// Verified against actual translation keys in i18n/locales/*/pages.json
+const STYLE_KEY_MAP = {
+  bachataSensual: 'bachataV3',
+  dancehall: 'dhV3',
+  twerk: 'twerk',
+  afrobeat: 'afro',
+  hipHopReggaeton: 'hhr',
+  commercial: 'commercial',
+  cuerpoFit: 'cuerpofit',
+  baileManananas: 'bailemanananas',
+  sexyReggaeton: 'sxr',
+  reggaetonCubano: 'rcb',
+  femmology: 'fem',
+  sexyStyle: 'sexystyle',
+  modernJazz: 'modernjazz',
+  ballet: 'ballet',
+  salsaCubana: 'salsaCubana',
+  folkloreCubano: 'folklore',
+  timba: 'timba',
+  salsaLadyStyle: 'salsaLady',
+  bachataLadyStyle: 'bachataLady',
+  afroContemporaneo: 'afrocontemporaneo',
+  afroJazz: 'afrojazz',
+  stretching: 'stretching',
+  bumBum: 'bumbum',
+  kpop: 'kpop',
+  kizomba: 'kizomba',
+  hipHop: 'hiphop',
+  contemporaneo: 'contemporaneo',
+};
+
+/**
+ * Generates rich HTML content for class pages using pages.json translations.
+ * This content is seen by crawlers (Google first-wave, AI bots like GPTBot, ClaudeBot).
+ * React silently replaces it during hydration fallback - no risk of mismatch.
+ *
+ * @param {string} pageKey - Route page key (e.g., 'dancehall')
+ * @param {string} lang - Language code (es, ca, en, fr)
+ * @returns {string} Rich semantic HTML or '' if no translations found
+ */
+const generateRichClassContent = (pageKey, lang) => {
+  const styleKey = STYLE_KEY_MAP[pageKey];
+  if (!styleKey) return '';
+
+  const t = pagesTranslations[lang];
+  if (!t) return '';
+
+  const get = (key) => t[key] || '';
+
+  const sections = [];
+
+  // Hero section - H1 title + subtitle + description
+  const heroTitle = get(`${styleKey}HeroTitle`);
+  if (!heroTitle) return ''; // No title means no translations for this style
+
+  const heroSubtitle = get(`${styleKey}HeroSubtitle`);
+  const heroDesc = get(`${styleKey}HeroDesc`);
+
+  let heroHtml = `<h1>${heroTitle}</h1>`;
+  if (heroSubtitle) heroHtml += `<p><strong>${heroSubtitle}</strong></p>`;
+  if (heroDesc) heroHtml += `<p>${heroDesc}</p>`;
+  sections.push(`<header id="hero">${heroHtml}</header>`);
+
+  // "What is" section - educational content (critical for E-E-A-T)
+  const whatIsTitle = get(`${styleKey}WhatIsTitle`);
+  if (whatIsTitle) {
+    let whatIsHtml = `<h2>${whatIsTitle}</h2>`;
+    // Most styles use P1-P4 paragraphs
+    let hasP = false;
+    for (let i = 1; i <= 4; i++) {
+      const p = get(`${styleKey}WhatIsP${i}`);
+      if (p) { whatIsHtml += `<p>${p}</p>`; hasP = true; }
+    }
+    // Some styles use WhatIsDesc instead of P1-P4
+    if (!hasP) {
+      const desc = get(`${styleKey}WhatIsDesc`);
+      if (desc) whatIsHtml += `<p>${desc}</p>`;
+    }
+    sections.push(`<section id="what-is">${whatIsHtml}</section>`);
+  }
+
+  // Teachers section
+  const teachersTitle = get(`${styleKey}TeachersTitle`);
+  if (teachersTitle) {
+    let teachersHtml = `<h2>${teachersTitle}</h2>`;
+    const teachersSubtitle = get(`${styleKey}TeachersSubtitle`);
+    if (teachersSubtitle) teachersHtml += `<p>${teachersSubtitle}</p>`;
+    const teachersClosing = get(`${styleKey}TeachersClosing`);
+    if (teachersClosing) teachersHtml += `<p>${teachersClosing}</p>`;
+    sections.push(`<section id="teachers">${teachersHtml}</section>`);
+  }
+
+  // FAQ section - up to 15 Q&A pairs (structured for featured snippets)
+  const faqTitle = get(`${styleKey}FaqTitle`);
+  if (faqTitle) {
+    let faqHtml = `<h2>${faqTitle}</h2>`;
+    let faqCount = 0;
+    for (let i = 1; i <= 15; i++) {
+      const q = get(`${styleKey}FaqQ${i}`);
+      const a = get(`${styleKey}FaqA${i}`);
+      if (q && a) {
+        faqHtml += `<details><summary>${q}</summary><p>${a}</p></details>`;
+        faqCount++;
+      }
+    }
+    if (faqCount > 0) {
+      sections.push(`<section id="faq">${faqHtml}</section>`);
+    }
+  }
+
+  if (sections.length === 0) return '';
+
+  return `<main id="main-content">${sections.join('')}</main>`;
+};
+
 /**
  * Genera HTML simple desde la metadata de una página.
  * @param {string} pageKey - Clave de la página (ej: 'dancehall')
@@ -332,6 +464,11 @@ const generateContentFromMetadata = (pageKey, lang, allMetadata) => {
     return '';
   }
 
+  // Try rich content first (class pages with pages.json translations)
+  const richContent = generateRichClassContent(pageKey, lang);
+  if (richContent) return richContent;
+
+  // Fallback: simple H1 + description for non-class pages
   const meta = allMetadata[lang]?.[pageKey];
   if (!meta || !meta.title || !meta.description) {
     return '';
@@ -692,6 +829,7 @@ const routes = [
   { path: 'es/blog/tips/ballet-para-adultos-barcelona', lang: 'es', page: 'blogBalletAdultos' },
   { path: 'es/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'es', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'es/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'es', page: 'blogDanzasUrbanas' },
+  { path: 'es/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'es', page: 'blogModernJazz' },
   { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
   { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
@@ -712,6 +850,7 @@ const routes = [
   { path: 'ca/blog/tips/ballet-para-adultos-barcelona', lang: 'ca', page: 'blogBalletAdultos' },
   { path: 'ca/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'ca', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'ca/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'ca', page: 'blogDanzasUrbanas' },
+  { path: 'ca/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'ca', page: 'blogModernJazz' },
   { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
   { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
@@ -732,6 +871,7 @@ const routes = [
   { path: 'en/blog/tips/ballet-para-adultos-barcelona', lang: 'en', page: 'blogBalletAdultos' },
   { path: 'en/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'en', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'en/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'en', page: 'blogDanzasUrbanas' },
+  { path: 'en/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'en', page: 'blogModernJazz' },
   { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
   { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
@@ -752,6 +892,7 @@ const routes = [
   { path: 'fr/blog/tips/ballet-para-adultos-barcelona', lang: 'fr', page: 'blogBalletAdultos' },
   { path: 'fr/blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet', lang: 'fr', page: 'blogDanzaContemporaneaVsJazzBallet' },
   { path: 'fr/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'fr', page: 'blogDanzasUrbanas' },
+  { path: 'fr/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'fr', page: 'blogModernJazz' },
   { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
   { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 
@@ -1044,6 +1185,10 @@ const metadata = {
     blogDanzasUrbanas: {
       title: 'Danzas Urbanas Barcelona: Guía Completa Hip-Hop 2026 | Farray\'s',
       description: '20 años enseñando danzas urbanas en Barcelona. Breaking, popping, locking y hip-hop con un profesor veterano. Guía definitiva para empezar.',
+    },
+    blogModernJazz: {
+      title: 'Modern Jazz Barcelona: Guía Completa 2026 | Farray\'s Center',
+      description: 'Descubre el Modern Jazz con Alejandro Miñoso, ex solista de Carlos Acosta. Historia, técnica, estilos y dónde aprender en Barcelona. Guía definitiva.',
     },
     blogPerderMiedoBailar: {
       title: 'Cómo Perder el Miedo a Bailar: Guía Práctica 2025 | Farray\'s Center',
@@ -1431,6 +1576,10 @@ const metadata = {
       title: 'Danses Urbanes Barcelona: Guia Completa Hip-Hop 2026 | Farray\'s',
       description: '20 anys ensenyant danses urbanes a Barcelona. Breaking, popping, locking i hip-hop amb un professor veterà. Guia definitiva per començar.',
     },
+    blogModernJazz: {
+      title: 'Modern Jazz Barcelona: Guia Completa 2026 | Farray\'s Center',
+      description: 'Descobreix el Modern Jazz amb Alejandro Miñoso, ex solista de Carlos Acosta. Història, tècnica, estils i on aprendre a Barcelona. Guia definitiva.',
+    },
     blogPerderMiedoBailar: {
       title: 'Com Perdre la Por a Ballar: Guia Pràctica 2025 | Farray\'s Center',
       description: 'Descobreix tècniques provades per superar la vergonya i la por a ballar. El 80% dels adults senten ansietat en ballar. Aprèn com superar-ho pas a pas.',
@@ -1816,6 +1965,10 @@ const metadata = {
     blogDanzasUrbanas: {
       title: 'Urban Dance Barcelona: Complete Hip-Hop Guide 2026 | Farray\'s',
       description: '20 years teaching urban dance in Barcelona. Breaking, popping, locking and hip-hop with a veteran teacher. The definitive guide to get started.',
+    },
+    blogModernJazz: {
+      title: 'Modern Jazz Barcelona: Complete Guide 2026 | Farray\'s Center',
+      description: 'Discover Modern Jazz with Alejandro Miñoso, former Carlos Acosta Company soloist. History, technique, styles and where to learn in Barcelona. Ultimate guide.',
     },
     blogPerderMiedoBailar: {
       title: 'How to Overcome Fear of Dancing: Practical Guide 2025 | Farray\'s Center',
@@ -2203,6 +2356,10 @@ const metadata = {
       title: 'Danses Urbaines Barcelone : Guide Complet Hip-Hop 2026 | Farray\'s',
       description: '20 ans d\'enseignement des danses urbaines à Barcelone. Breaking, popping, locking et hip-hop avec un professeur vétéran. Le guide définitif pour commencer.',
     },
+    blogModernJazz: {
+      title: 'Modern Jazz Barcelone : Guide Complet 2026 | Farray\'s Center',
+      description: 'Découvrez le Modern Jazz avec Alejandro Miñoso, ancien soliste de la compagnie Carlos Acosta. Histoire, technique, styles et où apprendre à Barcelone. Guide ultime.',
+    },
     blogPerderMiedoBailar: {
       title: 'Comment Vaincre la Peur de Danser : Guide Pratique 2025 | Farray\'s Center',
       description: 'Découvrez des techniques éprouvées pour surmonter la timidité et la peur de danser. 80% des adultes ressentent de l\'anxiété en dansant. Apprenez à la surmonter pas à pas.',
@@ -2562,6 +2719,8 @@ routes.forEach(route => {
     pagePath = 'blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet';
   } else if (page === 'blogDanzasUrbanas') {
     pagePath = 'blog/tips/danzas-urbanas-barcelona-guia-completa';
+  } else if (page === 'blogModernJazz') {
+    pagePath = 'blog/tips/modern-jazz-barcelona-guia-completa';
   } else if (page === 'blogPerderMiedoBailar') {
     pagePath = 'blog/lifestyle/como-perder-miedo-bailar';
   } else if (page === 'blogFitness') {
