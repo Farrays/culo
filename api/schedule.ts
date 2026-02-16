@@ -511,10 +511,12 @@ export default async function handler(
   res.setHeader('Vary', 'Accept-Encoding');
 
   try {
-    const { style, days, locale } = req.query;
+    const { style, days, locale, startHour, endHour } = req.query;
     const daysAhead = Math.min(28, Math.max(1, parseInt(days as string) || 14));
     const styleFilter = style ? String(style).toLowerCase() : null;
     const localeStr = (locale as string) || 'es';
+    const startHourFilter = startHour ? parseInt(startHour as string) : null;
+    const endHourFilter = endHour ? parseInt(endHour as string) : null;
 
     // Intentar obtener de caché
     const redis = getRedisClient();
@@ -572,6 +574,16 @@ export default async function handler(
     // Filtrar por estilo si se especifica
     if (styleFilter) {
       scheduleSessions = scheduleSessions.filter(s => s.style === styleFilter);
+    }
+
+    // Filtrar por rango horario (para páginas como "clases de mañanas")
+    if (startHourFilter !== null || endHourFilter !== null) {
+      scheduleSessions = scheduleSessions.filter(s => {
+        const hour = parseInt(s.time.split(':')[0] ?? '0');
+        if (startHourFilter !== null && hour < startHourFilter) return false;
+        if (endHourFilter !== null && hour >= endHourFilter) return false;
+        return true;
+      });
     }
 
     // Agrupar por fecha (para visualización)

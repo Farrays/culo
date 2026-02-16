@@ -26,6 +26,14 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   styleKey: 'bailemanananas',
   stylePath: 'baile-mananas',
 
+  // === SCHEDULE MODE ===
+  // "Baile Mañanas" is a time-based aggregation of multiple styles (Contemporáneo,
+  // Ballet, Sexy Reggaeton, etc.) - no single Momence style filter applies.
+  // Instead, fetch ALL sessions and filter by morning hours (10:00–14:00).
+  momenceStyle: '', // Empty = no style filter (fetch all styles)
+  scheduleStartHour: 10, // From 10:00
+  scheduleEndHour: 14,   // Until 14:00 (exclusive)
+
   // === REQUIRED DATA ===
   faqsConfig: BAILE_MANANAS_FAQS_CONFIG,
   testimonials: BAILE_MANANAS_TESTIMONIALS,

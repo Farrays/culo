@@ -97,6 +97,8 @@ export function useLazyScheduleSessions({
   days = 14,
   locale = 'es',
   fallbackData = [],
+  startHour,
+  endHour,
   eager = false,
   prefetch = true,
   rootMargin = LAZY_LOAD_ROOT_MARGIN,
@@ -166,6 +168,8 @@ export function useLazyScheduleSessions({
     days,
     locale,
     fallbackData,
+    startHour,
+    endHour,
     enabled: shouldFetch,
   });
 

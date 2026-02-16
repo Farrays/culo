@@ -284,6 +284,10 @@ export interface FullDanceClassConfig {
   useDynamicSchedule?: boolean;
   /** Number of days ahead to fetch for dynamic schedule (default: 14) */
   scheduleDaysAhead?: number;
+  /** Filter by start hour (inclusive, 0-23). For time-based pages like "morning classes" */
+  scheduleStartHour?: number;
+  /** Filter by end hour (exclusive, 0-23). For time-based pages like "morning classes" */
+  scheduleEndHour?: number;
 
   // === REQUIRED DATA ===
   faqsConfig: FAQ[];
@@ -768,7 +772,8 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   // Determine if we should use dynamic schedules (default: true)
   const useDynamicSchedule = config.useDynamicSchedule !== false;
   // Get Momence style for filtering (from config or auto-detect from styleKey)
-  const momenceStyle = config.momenceStyle || getMomenceStyle(config.styleKey);
+  // Use undefined check so that momenceStyle='' explicitly means "no style filter"
+  const momenceStyle = config.momenceStyle !== undefined ? config.momenceStyle : getMomenceStyle(config.styleKey);
   // Days ahead for schedule (default: 14)
   const scheduleDaysAhead = config.scheduleDaysAhead || 14;
 
@@ -1600,8 +1605,10 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           <LazyDynamicScheduleSection
             id="schedule"
             t={t}
-            style={momenceStyle}
+            style={momenceStyle || undefined}
             days={scheduleDaysAhead}
+            startHour={config.scheduleStartHour}
+            endHour={config.scheduleEndHour}
             locale={locale}
             courseName={t(`${config.styleKey}Title`)}
             courseUrl={`https://www.farrayscenter.com/${locale}${config.stylePath}`}

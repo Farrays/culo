@@ -63,6 +63,10 @@ export interface UseScheduleSessionsOptions {
   enabled?: boolean;
   /** Static fallback data to use if API fails */
   fallbackData?: ScheduleSession[];
+  /** Filter by start hour (inclusive, 0-23). E.g., 10 = only classes at 10:00 or later */
+  startHour?: number;
+  /** Filter by end hour (exclusive, 0-23). E.g., 14 = only classes before 14:00 */
+  endHour?: number;
 }
 
 export interface UseScheduleSessionsReturn {
@@ -135,8 +139,9 @@ function calculateBackoffDelay(attempt: number): number {
 }
 
 // Helper: Generate cache key
-function getCacheKey(style?: string, days?: number, locale?: string): string {
-  return `schedule:${style || 'all'}:${days || 14}:${locale || 'es'}`;
+function getCacheKey(style?: string, days?: number, locale?: string, startHour?: number, endHour?: number): string {
+  const timeKey = startHour != null || endHour != null ? `:${startHour ?? ''}-${endHour ?? ''}` : '';
+  return `schedule:${style || 'all'}:${days || 14}:${locale || 'es'}${timeKey}`;
 }
 
 // Helper: Check if cache is fresh
@@ -150,6 +155,8 @@ export function useScheduleSessions({
   locale = 'es',
   enabled = true,
   fallbackData = [],
+  startHour,
+  endHour,
 }: UseScheduleSessionsOptions = {}): UseScheduleSessionsReturn {
   const [sessions, setSessions] = useState<ScheduleSession[]>([]);
   const [byDate, setByDate] = useState<Record<string, ScheduleSession[]>>({});
@@ -170,7 +177,7 @@ export function useScheduleSessions({
       return;
     }
 
-    const cacheKey = getCacheKey(style, days, locale);
+    const cacheKey = getCacheKey(style, days, locale, startHour, endHour);
 
     // Check cache first
     const cached = scheduleCache.get(cacheKey);
@@ -204,6 +211,12 @@ export function useScheduleSessions({
 
         if (style) {
           params.set('style', style);
+        }
+        if (startHour != null) {
+          params.set('startHour', startHour.toString());
+        }
+        if (endHour != null) {
+          params.set('endHour', endHour.toString());
         }
 
         const response = await fetch(`/api/schedule?${params.toString()}`, {
@@ -319,14 +332,14 @@ export function useScheduleSessions({
     } else {
       console.error('Failed to fetch schedule:', lastError);
     }
-  }, [enabled, style, days, locale, fallbackData]);
+  }, [enabled, style, days, locale, fallbackData, startHour, endHour]);
 
   // Refetch function for manual refresh
   const refetch = useCallback(async () => {
-    const cacheKey = getCacheKey(style, days, locale);
+    const cacheKey = getCacheKey(style, days, locale, startHour, endHour);
     scheduleCache.delete(cacheKey);
     await fetchSchedule();
-  }, [style, days, locale, fetchSchedule]);
+  }, [style, days, locale, startHour, endHour, fetchSchedule]);
 
   // Fetch on mount and when dependencies change
   useEffect(() => {
@@ -340,7 +353,7 @@ export function useScheduleSessions({
   // Refetch on window focus (stale-while-revalidate pattern)
   useEffect(() => {
     const handleFocus = () => {
-      const cacheKey = getCacheKey(style, days, locale);
+      const cacheKey = getCacheKey(style, days, locale, startHour, endHour);
       const cached = scheduleCache.get(cacheKey);
       // Only refetch if cache is stale
       if (!cached || !isCacheFresh(cached.timestamp)) {
@@ -350,7 +363,7 @@ export function useScheduleSessions({
 
     window.addEventListener('focus', handleFocus);
     return () => window.removeEventListener('focus', handleFocus);
-  }, [style, days, locale, fetchSchedule]);
+  }, [style, days, locale, startHour, endHour, fetchSchedule]);
 
   const isEmpty = !loading && sessions.length === 0;
 

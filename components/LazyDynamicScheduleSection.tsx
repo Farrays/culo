@@ -40,6 +40,10 @@ interface LazyDynamicScheduleSectionProps {
   style?: string;
   /** Number of days ahead to show */
   days?: number;
+  /** Filter by start hour (inclusive, 0-23) */
+  startHour?: number;
+  /** Filter by end hour (exclusive, 0-23) */
+  endHour?: number;
   /** Locale for date formatting */
   locale?: string;
   /** Course name for schema */
@@ -83,6 +87,8 @@ const LazyDynamicScheduleSection: React.FC<LazyDynamicScheduleSectionProps> = me
     t,
     style,
     days = 14,
+    startHour,
+    endHour,
     locale = 'es',
     courseName,
     courseUrl,
@@ -167,6 +173,8 @@ const LazyDynamicScheduleSection: React.FC<LazyDynamicScheduleSectionProps> = me
     } = useLazyScheduleSessions({
       style,
       days,
+      startHour,
+      endHour,
       locale,
       fallbackData,
       eager,
