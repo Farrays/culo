@@ -51,7 +51,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
 
-  const { eventName, eventId, sourceUrl, fbp, fbc, customData } = req.body || {};
+  const { eventName, eventId, sourceUrl, fbp, fbc, customData, testEventCode } = req.body || {};
 
   // Validate event name (whitelist)
   if (!eventName || !ALLOWED_EVENTS.has(eventName)) {
@@ -109,7 +109,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     }
   }
 
-  const eventPayload = {
+  const eventPayload: Record<string, unknown> = {
     data: [
       {
         event_name: eventName,
@@ -124,6 +124,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       },
     ],
   };
+
+  // Include test_event_code for Meta Events Manager "Test Events" tab
+  if (testEventCode && typeof testEventCode === 'string' && testEventCode.length <= 40) {
+    eventPayload['test_event_code'] = testEventCode;
+  }
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), CAPI_TIMEOUT_MS);
