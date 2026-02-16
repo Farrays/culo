@@ -294,35 +294,20 @@ export function trackLeadConversion(params: {
     ...utmParams,
   });
 
-  if (params.eventId) {
-    // 2a. Track GA4 directly (ensures GA4 Lead is tracked even if GTM config changes)
-    // This mirrors the pattern used in trackPurchaseConversion().
-    if (hasConsentFor('analytics') && window.gtag) {
-      window.gtag('event', 'generate_lead', {
-        lead_source: params.leadSource,
-        form_name: params.formName,
+  // When eventId is present, fire Meta Pixel directly with eventID for CAPI deduplication.
+  // GA4 is handled by GTM from the dataLayer push above (no need for direct gtag call).
+  if (params.eventId && hasConsentFor('marketing') && window.fbq) {
+    window.fbq(
+      'track',
+      'Lead',
+      {
+        content_name: params.formName,
+        content_category: params.leadSource,
         value: params.leadValue,
         currency: 'EUR',
-        page_path: pagePath,
-        event_id: params.eventId,
-      });
-    }
-
-    // 2b. Fire Meta Pixel Lead with eventID for CAPI deduplication.
-    // This is the ONLY pixel Lead event that should fire (GTM's should be blocked via flag above).
-    if (hasConsentFor('marketing') && window.fbq) {
-      window.fbq(
-        'track',
-        'Lead',
-        {
-          content_name: params.formName,
-          content_category: params.leadSource,
-          value: params.leadValue,
-          currency: 'EUR',
-        },
-        { eventID: params.eventId }
-      );
-    }
+      },
+      { eventID: params.eventId }
+    );
   }
 }
 
@@ -358,24 +343,8 @@ export function trackPurchaseConversion(params: {
     ...utmParams,
   });
 
-  // 2. Track in GA4 directly
-  if (hasConsentFor('analytics') && window.gtag) {
-    window.gtag('event', 'purchase', {
-      transaction_id: params.transactionId,
-      value: params.value,
-      currency: 'EUR',
-      items: [
-        {
-          item_name: params.productName,
-          item_category: params.productCategory,
-          price: params.value,
-          quantity: 1,
-        },
-      ],
-    });
-  }
-
-  // 3. Track in Meta Pixel with eventID for CAPI deduplication
+  // 2. Track in Meta Pixel with eventID for CAPI deduplication
+  // GA4 is handled by GTM from the dataLayer push above.
   if (hasConsentFor('marketing') && window.fbq) {
     window.fbq(
       'track',
@@ -422,18 +391,8 @@ export function trackScheduleConversion(params: {
     ...utmParams,
   });
 
-  // 2. Track in GA4
-  if (hasConsentFor('analytics') && window.gtag) {
-    window.gtag('event', 'schedule', {
-      event_category: 'Booking',
-      event_label: params.className,
-      value: value,
-      currency: 'EUR',
-      class_type: params.classType,
-    });
-  }
-
-  // 3. Track in Meta Pixel with eventID for CAPI deduplication
+  // 2. Track in Meta Pixel with eventID for CAPI deduplication
+  // GA4 is handled by GTM from the dataLayer push above.
   if (hasConsentFor('marketing') && window.fbq) {
     window.fbq(
       'track',
