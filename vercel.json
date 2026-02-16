@@ -2053,6 +2053,102 @@
       "source": "/alquiler-de-salas/:path*",
       "destination": "/es/alquiler-salas-baile-barcelona",
       "statusCode": 301
+    },
+
+    {
+      "source": "/intensivos-agosto",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-agosto/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/urban-contemporaneo",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/urban-contemporaneo/:path*",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bum-camp",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bum-camp/:path*",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-prueba-gratis",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-prueba-gratis/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-reservar-tus-clases-1",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-por-reservar-tus-clases-1/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacolandia-bootcamp-2018",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacolandia-bootcamp-2018/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/search/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/events",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/events/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/etiqueta/:path*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-d",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
     }
   ],
   "rewrites": [

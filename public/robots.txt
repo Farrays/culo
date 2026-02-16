@@ -18,7 +18,8 @@ Disallow: /test/
 Disallow: /*.json$
 Disallow: /api/
 
-# Old WordPress junk URL patterns (waste crawl budget)
+# Old WordPress junk query string patterns (waste crawl budget)
+# These generate infinite duplicate URLs with no SEO value
 Disallow: /*?_escaped_fragment_
 Disallow: /*?p=
 Disallow: /*?attachment_id=
@@ -26,40 +27,25 @@ Disallow: /*?page_id=
 Disallow: /*?paged=
 Disallow: /*?avia_extended_shop_select=
 Disallow: /*?product_order=
+Disallow: /*?product_count=
+Disallow: /*?product_sort=
 Disallow: /*?ltclid
 Disallow: /*?utm_source=Opiniones
+Disallow: /*?s$
+Disallow: /*?s&
+Disallow: /*?s=
+Disallow: /*?tribe-bar-date=
+Disallow: /*?outlook-ical=
+Disallow: /*?ical=
+Disallow: /*?avia-element-paging=
+Disallow: /*?feed=
 
-# Old WordPress paths that no longer exist
-Disallow: /home/foto*
-Disallow: /home/puertas*
-Disallow: /home/black-friday*
-Disallow: /home/inscripc*
-Disallow: /home/intensivos*
-Disallow: /home/ladies*
-Disallow: /home/stars*
-Disallow: /home/agosto*
-Disallow: /home/julio*
-Disallow: /home/cursos*
-Disallow: /home/whatsapp*
-Disallow: /home/web-*
-Disallow: /home/yanis*
-Disallow: /home/flayer*
-Disallow: /home/tacolandia*
-Disallow: /home/barbara*
-Disallow: /home/yoyo*
-Disallow: /home/olofi*
-Disallow: /home/ela-*
-Disallow: /home/chicolandia*
-Disallow: /home/larrinaga*
-Disallow: /home/nuevos-cursos*
-Disallow: /home/sdcv*
-Disallow: /home/xc-v-z*
-Disallow: /salsa-nuevos-cursos/
-Disallow: /clase-prueba-gratis/
-Disallow: /bum-camp/
-Disallow: /intensivos-de-verano-hip-hop/
-Disallow: /horarios/horario*
-Disallow: /horarios/horarios-*
+# WordPress system paths (no SEO value, waste crawl budget)
+# Note: /home/, /inicio/, /trainer/, /classes/ etc. have 301 redirects
+# in vercel.json - NOT blocked here so Google can follow them
+Disallow: /*/feed/$
+Disallow: /*/feed/rss2/$
+Disallow: /feed/
 Disallow: /WWW.FARRAYSCENTER.COM/
 
 # Landing pages de pago - usan meta robots noindex en HTML
