@@ -276,7 +276,11 @@ export function trackLeadConversion(params: {
   const pagePath =
     params.pagePath || (typeof window !== 'undefined' ? window.location.pathname : '');
 
-  // 1. Push to dataLayer for GTM (include event_id for GTM tag if configured)
+  // 1. Push to dataLayer for GTM
+  // When eventId is present, we handle Meta Pixel directly (with eventID for CAPI dedup).
+  // The _meta_pixel_handled flag tells GTM to NOT fire its own Meta Pixel Lead tag,
+  // preventing double-fire (GTM pixel without eventID + direct pixel with eventID).
+  // GTM should add blocking condition: fire Meta Pixel Lead ONLY when _meta_pixel_handled != true.
   pushToDataLayer({
     event: 'generate_lead',
     lead_source: params.leadSource,
@@ -286,24 +290,39 @@ export function trackLeadConversion(params: {
     page_path: pagePath,
     discount_code: params.discountCode,
     event_id: params.eventId,
+    _meta_pixel_handled: !!params.eventId,
     ...utmParams,
   });
 
-  // 2. Fire Meta Pixel Lead with eventID for CAPI deduplication
-  // When eventId is present, fire pixel directly so Meta can match with server CAPI event.
-  // Without eventId, GTM continues handling the pixel Lead event (fallback).
-  if (params.eventId && hasConsentFor('marketing') && window.fbq) {
-    window.fbq(
-      'track',
-      'Lead',
-      {
-        content_name: params.formName,
-        content_category: params.leadSource,
+  if (params.eventId) {
+    // 2a. Track GA4 directly (ensures GA4 Lead is tracked even if GTM config changes)
+    // This mirrors the pattern used in trackPurchaseConversion().
+    if (hasConsentFor('analytics') && window.gtag) {
+      window.gtag('event', 'generate_lead', {
+        lead_source: params.leadSource,
+        form_name: params.formName,
         value: params.leadValue,
         currency: 'EUR',
-      },
-      { eventID: params.eventId }
-    );
+        page_path: pagePath,
+        event_id: params.eventId,
+      });
+    }
+
+    // 2b. Fire Meta Pixel Lead with eventID for CAPI deduplication.
+    // This is the ONLY pixel Lead event that should fire (GTM's should be blocked via flag above).
+    if (hasConsentFor('marketing') && window.fbq) {
+      window.fbq(
+        'track',
+        'Lead',
+        {
+          content_name: params.formName,
+          content_category: params.leadSource,
+          value: params.leadValue,
+          currency: 'EUR',
+        },
+        { eventID: params.eventId }
+      );
+    }
   }
 }
 
@@ -319,6 +338,14 @@ export function trackPurchaseConversion(params: {
 }): void {
   const utmParams = getStoredUTMParams();
 
+  // 0. Send CAPI event (returns eventId for pixel deduplication)
+  const eventId = sendCAPIBrowserEvent('Purchase', {
+    value: params.value,
+    currency: 'EUR',
+    content_name: params.productName,
+    content_category: params.productCategory,
+  });
+
   // 1. Push to dataLayer for GTM
   pushToDataLayer({
     event: 'purchase',
@@ -327,6 +354,7 @@ export function trackPurchaseConversion(params: {
     currency: 'EUR',
     product_name: params.productName,
     product_category: params.productCategory,
+    event_id: eventId,
     ...utmParams,
   });
 
@@ -347,14 +375,19 @@ export function trackPurchaseConversion(params: {
     });
   }
 
-  // 3. Track in Meta Pixel
+  // 3. Track in Meta Pixel with eventID for CAPI deduplication
   if (hasConsentFor('marketing') && window.fbq) {
-    window.fbq('track', 'Purchase', {
-      content_name: params.productName,
-      content_category: params.productCategory,
-      value: params.value,
-      currency: 'EUR',
-    });
+    window.fbq(
+      'track',
+      'Purchase',
+      {
+        content_name: params.productName,
+        content_category: params.productCategory,
+        value: params.value,
+        currency: 'EUR',
+      },
+      { eventID: eventId }
+    );
   }
 }
 
@@ -370,6 +403,14 @@ export function trackScheduleConversion(params: {
   const utmParams = getStoredUTMParams();
   const value = params.value || (params.classType === 'trial' ? 0 : LEAD_VALUES.TRIAL_CLASS);
 
+  // 0. Send CAPI event (returns eventId for pixel deduplication)
+  const eventId = sendCAPIBrowserEvent('Schedule', {
+    value,
+    currency: 'EUR',
+    content_name: params.className,
+    content_category: params.classType,
+  });
+
   // 1. Push to dataLayer for GTM
   pushToDataLayer({
     event: 'schedule_class',
@@ -377,6 +418,7 @@ export function trackScheduleConversion(params: {
     class_type: params.classType,
     value: value,
     currency: 'EUR',
+    event_id: eventId,
     ...utmParams,
   });
 
@@ -391,14 +433,161 @@ export function trackScheduleConversion(params: {
     });
   }
 
-  // 3. Track in Meta Pixel with Schedule event
+  // 3. Track in Meta Pixel with eventID for CAPI deduplication
   if (hasConsentFor('marketing') && window.fbq) {
-    window.fbq('track', 'Schedule', {
-      content_name: params.className,
-      content_category: params.classType,
-      value: value,
-      currency: 'EUR',
-    });
+    window.fbq(
+      'track',
+      'Schedule',
+      {
+        content_name: params.className,
+        content_category: params.classType,
+        value: value,
+        currency: 'EUR',
+      },
+      { eventID: eventId }
+    );
+  }
+}
+
+// ============================================================================
+// META CAPI: BROWSER-TO-SERVER EVENT BRIDGE
+// Sends browser events to /api/meta-event for CAPI forwarding.
+// Uses sendBeacon (non-blocking, fire-and-forget). No PII — just IP/UA/fbp/fbc.
+// ============================================================================
+
+/** Generate a unique event ID for pixel/CAPI deduplication */
+function generateEventId(prefix: string): string {
+  try {
+    return `${prefix}_${window.crypto.randomUUID()}`;
+  } catch {
+    return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`;
+  }
+}
+
+/**
+ * Send any standard Meta event to CAPI via server endpoint.
+ * Pairs with pixel events to close the CAPI coverage gap.
+ *
+ * @returns The generated eventId (pass to fbq for deduplication)
+ */
+export function sendCAPIBrowserEvent(
+  eventName: string,
+  customData?: Record<string, unknown>
+): string {
+  const prefix = eventName
+    .toLowerCase()
+    .replace(/[^a-z]/g, '')
+    .slice(0, 6);
+  const eventId = generateEventId(prefix);
+
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return eventId;
+
+  const { fbc, fbp } = getMetaCookies();
+
+  const payload = JSON.stringify({
+    eventName,
+    eventId,
+    sourceUrl: window.location.href,
+    fbp: fbp || undefined,
+    fbc: fbc || undefined,
+    ...(customData && { customData }),
+  });
+
+  const url = '/api/meta-event';
+
+  if (navigator.sendBeacon) {
+    const blob = new window.Blob([payload], { type: 'application/json' });
+    const sent = navigator.sendBeacon(url, blob);
+    if (!sent) {
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true,
+      }).catch(() => {});
+    }
+  } else {
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload,
+      keepalive: true,
+    }).catch(() => {});
+  }
+
+  return eventId;
+}
+
+// ============================================================================
+// META CAPI: PAGE VIEW SERVER-SIDE TRACKING
+// Sends PageView events to Meta Conversions API via /api/meta-event endpoint.
+// This closes the CAPI coverage gap (GTM fires pixel PageView, but CAPI was missing).
+// Uses navigator.sendBeacon for non-blocking delivery (no impact on page performance).
+// ============================================================================
+
+/** Track if we already sent CAPI PageView for current path (prevent duplicates) */
+let lastCAPIPageViewPath = '';
+
+/**
+ * Send PageView event to Meta CAPI via server endpoint.
+ * Call this on every route change to match GTM's pixel PageView.
+ *
+ * - Generates unique event_id for deduplication with pixel
+ * - Includes fbp/fbc cookies for Meta to match browser ↔ server events
+ * - Uses sendBeacon (non-blocking, survives page navigation)
+ * - Falls back to fetch with keepalive
+ * - Fire-and-forget: errors are silently ignored
+ */
+export function sendCAPIPageView(): void {
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
+
+  // Deduplicate: don't send if same path as last call
+  const currentPath = window.location.pathname;
+  if (currentPath === lastCAPIPageViewPath) return;
+  lastCAPIPageViewPath = currentPath;
+
+  // Generate unique event ID for pixel/CAPI deduplication
+  // crypto.randomUUID is available in all modern browsers (Chrome 92+, Firefox 95+, Safari 15.4+)
+  let eventId: string;
+  try {
+    eventId = `pv_${window.crypto.randomUUID()}`;
+  } catch {
+    eventId = `pv_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`;
+  }
+
+  const { fbc, fbp } = getMetaCookies();
+
+  const payload = JSON.stringify({
+    eventName: 'PageView',
+    eventId,
+    sourceUrl: window.location.href,
+    fbp: fbp || undefined,
+    fbc: fbc || undefined,
+  });
+
+  const url = '/api/meta-event';
+
+  // Use sendBeacon for non-blocking delivery (doesn't delay page navigation)
+  if (navigator.sendBeacon) {
+    const blob = new window.Blob([payload], { type: 'application/json' });
+    const sent = navigator.sendBeacon(url, blob);
+    if (!sent) {
+      // Beacon queue full — fallback to fetch
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true,
+      }).catch(() => {});
+    }
+  } else {
+    // Fallback for very old browsers
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload,
+      keepalive: true,
+    }).catch(() => {});
   }
 }
 

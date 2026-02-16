@@ -139,8 +139,15 @@ function calculateBackoffDelay(attempt: number): number {
 }
 
 // Helper: Generate cache key
-function getCacheKey(style?: string, days?: number, locale?: string, startHour?: number, endHour?: number): string {
-  const timeKey = startHour != null || endHour != null ? `:${startHour ?? ''}-${endHour ?? ''}` : '';
+function getCacheKey(
+  style?: string,
+  days?: number,
+  locale?: string,
+  startHour?: number,
+  endHour?: number
+): string {
+  const timeKey =
+    startHour != null || endHour != null ? `:${startHour ?? ''}-${endHour ?? ''}` : '';
   return `schedule:${style || 'all'}:${days || 14}:${locale || 'es'}${timeKey}`;
 }
 
