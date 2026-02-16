@@ -1612,6 +1612,447 @@
       "source": "/alquiler-de-salas",
       "destination": "/es/alquiler-salas-baile-barcelona",
       "statusCode": 301
+    },
+
+    {
+      "source": "/alta/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/yunaisy-farray/:path*",
+      "destination": "/es/yunaisy-farray",
+      "statusCode": 301
+    },
+    {
+      "source": "/contacto/:path*",
+      "destination": "/es/contacto",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes/:path*",
+      "destination": "/es/preguntas-frecuentes",
+      "statusCode": 301
+    },
+    {
+      "source": "/alquiler-de-salas-en-barcelona/:path*",
+      "destination": "/es/alquiler-salas-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/multimedia-artistas-y-profesores/:path*",
+      "destination": "/es/profesores-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-de-farrays/:path*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/8-razones-para-ir-a-clases-de-salsa/:path*",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
+      "statusCode": 301
+    },
+    {
+      "source": "/historia-de-la-bachata/:path*",
+      "destination": "/es/blog/historia/historia-bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/hablemos-salsa/:path*",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
+      "statusCode": 301
+    },
+    {
+      "source": "/empezar-a-bailar/:path*",
+      "destination": "/es/blog/tips/clases-baile-principiantes-barcelona-farrays",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-baile-por-las-mananas-en-barcelona/:path*",
+      "destination": "/es/clases/baile-mananas",
+      "statusCode": 301
+    },
+    {
+      "source": "/bum-bum-barcelona/:path*",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-afro-y-rumba/:path*",
+      "destination": "/es/clases/folklore-cubano",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-kizomba-barcelona-tomas-keita/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/kizomba-intermedio-en-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bootcamp-reggaeton/:path*",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/femmology-camp/:path*",
+      "destination": "/es/clases/femmology",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-danza-sexy-style/:path*",
+      "destination": "/es/clases/sexy-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-kizomba/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-salsa-y-bachata-barcelona/:path*",
+      "destination": "/es/clases/salsa-bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-verano-afrobeat-camp/:path*",
+      "destination": "/es/clases/afrobeats-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-de-verano-dancehall-camp/:path*",
+      "destination": "/es/clases/dancehall-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/intensivos-verano-lady-style/:path*",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-particulares/:path*",
+      "destination": "/es/clases-particulares-baile",
+      "statusCode": 301
+    },
+    {
+      "source": "/estudio-fotos/:path*",
+      "destination": "/es/estudio-grabacion-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/farrays-photo-studio-experience/:path*",
+      "destination": "/es/estudio-grabacion-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/aviso-legal/:path*",
+      "destination": "/es/aviso-legal",
+      "statusCode": 301
+    },
+    {
+      "source": "/politica-de-privacidad/:path*",
+      "destination": "/es/politica-privacidad",
+      "statusCode": 301
+    },
+    {
+      "source": "/terminos-y-condiciones/:path*",
+      "destination": "/es/terminos-y-condiciones",
+      "statusCode": 301
+    },
+    {
+      "source": "/uso-de-cookies/:path*",
+      "destination": "/es/politica-cookies",
+      "statusCode": 301
+    },
+    {
+      "source": "/formulario-de-desistimiento/:path*",
+      "destination": "/es/terminos-y-condiciones",
+      "statusCode": 301
+    },
+    {
+      "source": "/bachata/:path*",
+      "destination": "/es/clases/bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bachata-lady/:path*",
+      "destination": "/es/clases/bachata-lady-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/hip-hop/:path*",
+      "destination": "/es/clases/hip-hop-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/reggaeton/:path*",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/twerk/:path*",
+      "destination": "/es/clases/twerk-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/afrobeats/:path*",
+      "destination": "/es/clases/afrobeats-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/afro-contemporaneo/:path*",
+      "destination": "/es/clases/afro-contemporaneo-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/afro-jazz/:path*",
+      "destination": "/es/clases/afro-jazz",
+      "statusCode": 301
+    },
+    {
+      "source": "/contemporaneo/:path*",
+      "destination": "/es/clases/contemporaneo-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/folklore-cubano/:path*",
+      "destination": "/es/clases/folklore-cubano",
+      "statusCode": 301
+    },
+    {
+      "source": "/fitness/:path*",
+      "destination": "/es/clases/cuerpo-fit",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-kizomba/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-kizomba-en-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-sexy-style/:path*",
+      "destination": "/es/clases/sexy-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-estiramientos/:path*",
+      "destination": "/es/clases/stretching-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-timba-para-chicas/:path*",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/danzas/:path*",
+      "destination": "/es/clases/danza-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/danzas-urbanas/:path*",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/danza-urbana/:path*",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuban-salsa-lady-styling/:path*",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/sexy-reggaeton/:path*",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/son-moderno/:path*",
+      "destination": "/es/clases/timba-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/femmology-1/:path*",
+      "destination": "/es/clases/femmology",
+      "statusCode": 301
+    },
+    {
+      "source": "/urban-contemporaneo-3/:path*",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-salsa-cubana-dy/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bailes-de-salon-en-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolution-2019/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-high-heels-en-barcelona-con-gatica/:path*",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/alejandro/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/regalo-baile/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/baile-social/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-baile-gratis-en-barcelona/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-de-prueba/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/formacion-en-danza-barcelona/:path*",
+      "destination": "/es/clases/danza-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/alexander-carbo-bootcamp/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacolandia-bootcamp-2019/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacolandia-bootcamp/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolution-2018/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/farraysolidario/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/cid-unesco/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/covid19/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/preinscripcion/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/reparto/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/grupos/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pump-camp/:path*",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/san-valentin/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/8-razones-para-tomar-clases-de-salsa/:path*",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/:path*",
+      "destination": "/es/contacto",
+      "statusCode": 301
+    },
+    {
+      "source": "/baile-intensivos-de-verano/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/aplicacion-movil/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/sem/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/septiembre-clases-gratis/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-de-baile-gratis/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-salsaal/:path*",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolutipn-2019/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/alquiler-de-salas/:path*",
+      "destination": "/es/alquiler-salas-baile-barcelona",
+      "statusCode": 301
     }
   ],
   "rewrites": [
