@@ -27,17 +27,19 @@ const ALLOWED_EVENTS = new Set([
   'Schedule',
 ]);
 
-export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Handle CORS preflight (for dev environments)
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    return res.status(204).end();
+    res.status(204).end();
+    return;
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
   }
 
   const PIXEL_ID = process.env['META_PIXEL_ID'];
@@ -45,23 +47,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   if (!PIXEL_ID || !ACCESS_TOKEN) {
     // Return 200 to not block the client — CAPI just isn't configured
-    return res.status(200).json({ success: false, error: 'not_configured' });
+    res.status(200).json({ success: false, error: 'not_configured' });
+    return;
   }
 
   const { eventName, eventId, sourceUrl, fbp, fbc, customData } = req.body || {};
 
   // Validate event name (whitelist)
   if (!eventName || !ALLOWED_EVENTS.has(eventName)) {
-    return res.status(400).json({ error: 'Invalid or missing eventName' });
+    res.status(400).json({ error: 'Invalid or missing eventName' });
+    return;
   }
 
   // Validate required fields with length bounds
   if (!eventId || typeof eventId !== 'string' || eventId.length > 100) {
-    return res.status(400).json({ error: 'Invalid or missing eventId' });
+    res.status(400).json({ error: 'Invalid or missing eventId' });
+    return;
   }
 
   if (!sourceUrl || typeof sourceUrl !== 'string' || sourceUrl.length > 2000) {
-    return res.status(400).json({ error: 'Invalid or missing sourceUrl' });
+    res.status(400).json({ error: 'Invalid or missing sourceUrl' });
+    return;
   }
 
   // Sanitize sourceUrl — validate domain via URL parsing (prevents injection like evil.com.farrayscenter.com)
@@ -112,7 +118,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         event_source_url: sanitizedUrl,
         action_source: 'website',
         user_data: userData,
-        ...(Object.keys(safeCustomData).length > 0 && { custom_data: safeCustomData }),
+        ...(Object.keys(safeCustomData).length > 0 && {
+          custom_data: safeCustomData,
+        }),
       },
     ],
   };
@@ -134,10 +142,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (!response.ok) {
       const errorText = await response.text();
       console.warn(`[meta-event] CAPI error (${response.status}):`, errorText);
-      return res.status(200).json({ success: false });
+      res.status(200).json({ success: false });
+      return;
     }
 
-    return res.status(200).json({ success: true });
+    res.status(200).json({ success: true });
   } catch (error) {
     if ((error as Error).name === 'AbortError') {
       console.warn('[meta-event] CAPI timeout (5s)');
@@ -145,7 +154,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       console.warn('[meta-event] Error:', error);
     }
     // Always return 200 — this is fire-and-forget telemetry
-    return res.status(200).json({ success: false });
+    res.status(200).json({ success: false });
   } finally {
     clearTimeout(timeoutId);
   }
