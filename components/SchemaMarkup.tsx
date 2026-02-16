@@ -851,6 +851,10 @@ export const AggregateReviewsSchema: React.FC<{
         bestRating: review.reviewRating.bestRating,
       },
       reviewBody: review.reviewBody,
+      itemReviewed: {
+        '@type': itemType,
+        name: itemName,
+      },
       ...(review.datePublished && { datePublished: review.datePublished }),
     })),
   };
