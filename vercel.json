@@ -191,16 +191,6 @@
       "statusCode": 301
     },
     {
-      "source": "/classes/:slug/:path*",
-      "destination": "/es/clases/baile-barcelona",
-      "statusCode": 301
-    },
-    {
-      "source": "/trainer/:slug/:path*",
-      "destination": "/es/profesores-baile-barcelona",
-      "statusCode": 301
-    },
-    {
       "source": "/classes",
       "destination": "/es/clases/baile-barcelona",
       "statusCode": 301
@@ -472,6 +462,11 @@
     },
     {
       "source": "/trainer/farrays-center",
+      "destination": "/es/profesores-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/trainer/:slug/:path*",
       "destination": "/es/profesores-baile-barcelona",
       "statusCode": 301
     },
@@ -838,6 +833,386 @@
     {
       "source": "/clases-de-salsa-cubana-dy",
       "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/blog/classes/:slug*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/cursos-de-danza-para-ninos-en-barcelona/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/elegance-on-high-heels-gatica/:path*",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/clases-kizomba-barcelona-tomas-keita/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/clases-de-baile-gratis/:path*",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/es/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/trainer-category/:slug*",
+      "destination": "/es/profesores-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/que-quieres-hacer/:slug*",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/categoria-producto/:slug*",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/etiqueta-producto/:slug*",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/regalo-baile",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/bootcamp-salsa",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/baile-social",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-baile-gratis",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-baile-gratis-en-barcelona",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clase-de-prueba",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/formacion-en-danza-barcelona",
+      "destination": "/es/clases/danza-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/cursos-intensivos-de-baile-y-danza-verano",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/baile-intensivos-de-verano-barcelona",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/jornada-puertas-abiertas",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/alexander-carbo-bootcamp",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacolandia-bootcamp-2019",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/tacolandia-bootcamp",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/fiesta-de-navidad-en-farrays",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolution-2018",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/farraysolidario",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/full-pass-baile-ninos",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/cid-unesco",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-baile-online-registro",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-baile-online",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/covid19",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/preinscripcion",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/reparto",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/grupos",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/pump-camp",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/salsealo",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/san-valentin",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/elegance-on-high-heels-gatica",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/8-razones-para-tomar-clases-de-salsa",
+      "destination": "/es/blog/lifestyle/beneficios-bailar-salsa",
+      "statusCode": 301
+    },
+    {
+      "source": "/yanis-marshall",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/es/contacto",
+      "statusCode": 301
+    },
+    {
+      "source": "/CONTACTO",
+      "destination": "/es/contacto",
+      "statusCode": 301
+    },
+    {
+      "source": "/alta",
+      "destination": "/es",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/classes/salsa-cubana-barcelona",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-bachata-barcelona",
+      "destination": "/es/clases/bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/salsa-cubana",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/afrocubano",
+      "destination": "/es/clases/folklore-cubano",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/ladies-style-barcelona",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/stretching-barcelona",
+      "destination": "/es/clases/stretching-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/stretching",
+      "destination": "/es/clases/stretching-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/kizomba",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/cursos-de-kizomba-en-barcelona",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-de-kizomba-en-barcelona",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-de-kizomba-barcelona",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/bachata-en-barcelona",
+      "destination": "/es/clases/bachata-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-de-jazz-en-barcelona",
+      "destination": "/es/clases/modern-jazz-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/rumba-cubana-barcelona",
+      "destination": "/es/clases/folklore-cubano",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/afro-contemporaneo",
+      "destination": "/es/clases/afro-contemporaneo-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/street-heel",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-de-baile-hip-hop-barcelona",
+      "destination": "/es/clases/hip-hop-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-de-sexy-style-en-barcelona",
+      "destination": "/es/clases/sexy-style-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/clases-ballet-barcelona",
+      "destination": "/es/clases/ballet-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/ladies-timba",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/clases-de-high-heels-en-barcelona-con-gatica",
+      "destination": "/es/clases/heels-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/alejandro",
+      "destination": "/es",
+      "statusCode": 301
+    },
+
+    {
+      "source": "/classes/folklor-cubano",
+      "destination": "/es/clases/folklore-cubano",
+      "statusCode": 301
+    },
+    {
+      "source": "/classes/:slug/:path*",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/bailes-de-salon-en-barcelona",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/ladies-revolution-2019",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/TWERK",
+      "destination": "/es/clases/twerk-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/tutoriales/salsa-ritmo-conquisto-mundo",
+      "destination": "/:locale/blog/historia/salsa-ritmo-conquisto-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/precios/:path*",
+      "destination": "/es/precios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/horarios/:path*",
+      "destination": "/es/horarios-clases-baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/baile-intensivos-de-verano",
+      "destination": "/es/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/clases-de-baile-online/:path*",
+      "destination": "/es",
       "statusCode": 301
     }
   ],
