@@ -23,6 +23,19 @@ vi.mock('@vercel/kv', () => ({
   },
 }));
 
+vi.mock('../lib/meta-capi.js', () => ({
+  sendMetaConversionEvent: vi.fn().mockResolvedValue(undefined),
+  generateServerEventId: vi.fn().mockReturnValue('test-event-id-123'),
+}));
+
+// Mock global fetch for Momence API calls
+const mockFetchResponse = {
+  ok: true,
+  json: () => Promise.resolve({ success: true }),
+  text: () => Promise.resolve('OK'),
+};
+vi.stubGlobal('fetch', vi.fn().mockResolvedValue(mockFetchResponse));
+
 import handler from '../exit-intent';
 import { isRateLimitedRedis } from '../lib/rate-limit-helper.js';
 import { kv } from '@vercel/kv';
