@@ -263,7 +263,7 @@ const Header: React.FC = () => {
             : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-8 lg:py-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-4 xl:px-8 py-8 sm:py-8 lg:py-4">
           {/* Top Row: Logo + Nav + CTA */}
           <div className="flex items-center justify-between lg:justify-between">
             {/* Mobile: Menu button on left */}
@@ -301,7 +301,7 @@ const Header: React.FC = () => {
                   width="256"
                   height="256"
                   fetchPriority="high"
-                  className="w-40 h-40 sm:w-44 sm:h-44 md:w-44 md:h-44 lg:w-28 lg:h-28 xl:w-32 xl:h-32 transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(200,34,96,0.3)]"
+                  className="w-40 h-40 sm:w-44 sm:h-44 md:w-44 md:h-44 lg:w-20 lg:h-20 xl:w-28 xl:h-28 2xl:w-32 2xl:h-32 transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(200,34,96,0.3)]"
                 />
               </picture>
             </Link>
@@ -314,7 +314,7 @@ const Header: React.FC = () => {
               {/* Inicio */}
               <Link
                 to={`/${locale}`}
-                className={`relative px-2.5 xl:px-3 2xl:px-4 py-2 text-sm 2xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent group ${
+                className={`relative px-1.5 xl:px-3 2xl:px-4 py-2 text-xs xl:text-sm 2xl:text-base font-semibold tracking-normal xl:tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent group ${
                   location.pathname === `/${locale}` || location.pathname === `/${locale}/`
                     ? 'text-white'
                     : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -334,7 +334,7 @@ const Header: React.FC = () => {
               <div className="relative aboutus-dropdown group/about">
                 <button
                   onClick={() => toggleDropdown('aboutUs')}
-                  className={`relative flex items-center gap-1 px-2.5 xl:px-3 2xl:px-4 py-2 text-sm 2xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  className={`relative flex items-center gap-1 px-1.5 xl:px-3 2xl:px-4 py-2 text-xs xl:text-sm 2xl:text-base font-semibold tracking-normal xl:tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
                     location.pathname.includes('/sobre-nosotros') ||
                     location.pathname.includes('/yunaisy-farray') ||
                     location.pathname.includes('/profesores-baile')
@@ -414,7 +414,7 @@ const Header: React.FC = () => {
               <div className="relative classes-dropdown">
                 <button
                   onClick={() => toggleDropdown('classes')}
-                  className={`relative flex items-center gap-1 px-2.5 xl:px-3 2xl:px-4 py-2 text-sm 2xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  className={`relative flex items-center gap-1 px-1.5 xl:px-3 2xl:px-4 py-2 text-xs xl:text-sm 2xl:text-base font-semibold tracking-normal xl:tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
                     location.pathname.includes('/clases')
                       ? 'text-white bg-white/5'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -516,7 +516,7 @@ const Header: React.FC = () => {
               <div className="relative services-dropdown">
                 <button
                   onClick={() => toggleDropdown('services')}
-                  className={`relative flex items-center gap-1 px-2.5 xl:px-3 2xl:px-4 py-2 text-sm 2xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  className={`relative flex items-center gap-1 px-1.5 xl:px-3 2xl:px-4 py-2 text-xs xl:text-sm 2xl:text-base font-semibold tracking-normal xl:tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
                     location.pathname.includes('/servicios-baile-barcelona') ||
                     location.pathname.includes('/alquiler-salas') ||
                     location.pathname.includes('/estudio-grabacion') ||
@@ -591,7 +591,7 @@ const Header: React.FC = () => {
               {/* Blog */}
               <Link
                 to={`/${locale}/blog`}
-                className={`relative px-2.5 xl:px-3 2xl:px-4 py-2 text-sm 2xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent group ${
+                className={`relative px-1.5 xl:px-3 2xl:px-4 py-2 text-xs xl:text-sm 2xl:text-base font-semibold tracking-normal xl:tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent group ${
                   location.pathname.includes('/blog')
                     ? 'text-white'
                     : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -608,7 +608,7 @@ const Header: React.FC = () => {
               {/* Contacto */}
               <Link
                 to={`/${locale}/contacto`}
-                className={`relative px-2.5 xl:px-3 2xl:px-4 py-2 text-sm 2xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent group ${
+                className={`relative px-1.5 xl:px-3 2xl:px-4 py-2 text-xs xl:text-sm 2xl:text-base font-semibold tracking-normal xl:tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent group ${
                   location.pathname.includes('/contacto')
                     ? 'text-white'
                     : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -624,7 +624,7 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Member Area + Language Selector + CTA Button */}
-            <div className="hidden lg:flex items-center gap-5">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-5">
               {/* Área de Socio - icono discreto */}
               <a
                 href="https://momence.com/sign-in?hostId=36148"
@@ -645,7 +645,7 @@ const Header: React.FC = () => {
               />
               <button
                 onClick={() => setIsLeadModalOpen(true)}
-                className="relative bg-gradient-to-r from-primary-accent to-brand-500 text-white font-bold text-sm 2xl:text-base py-2.5 2xl:py-3 px-4 xl:px-5 2xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white overflow-hidden group"
+                className="relative bg-gradient-to-r from-primary-accent to-brand-500 text-white font-bold text-xs xl:text-sm 2xl:text-base py-2 xl:py-2.5 2xl:py-3 px-3 xl:px-5 2xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white overflow-hidden group"
               >
                 <span className="relative z-10">{t('enrollNow')}</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-brand-500 to-primary-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
