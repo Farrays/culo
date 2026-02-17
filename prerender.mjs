@@ -2630,7 +2630,7 @@ let generatedCount = 0;
 // Uses first 'es' route for each page key, strips 'es/' prefix to get the shared path
 const pageToPathMap = {};
 for (const r of [...routes, ...LANDING_ROUTES]) {
-  if (r.lang === 'es' && !pageToPathMap.hasOwnProperty(r.page)) {
+  if (r.lang === 'es' && !Object.prototype.hasOwnProperty.call(pageToPathMap, r.page)) {
     if (r.path === '' || r.path === 'es') {
       pageToPathMap[r.page] = '';
     } else if (r.path.startsWith('es/')) {

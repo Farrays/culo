@@ -323,7 +323,10 @@ const Footer: React.FC = () => {
               />
               <FooterLink to={`/${locale}/clases/afrobeats-barcelona`} textKey="sitemapAfrobeat" />
               <FooterLink to={`/${locale}/clases/heels-barcelona`} textKey="sitemapHeels" />
-              <FooterLink to={`/${locale}/clases/commercial-dance-barcelona`} textKey="navCommercialDance" />
+              <FooterLink
+                to={`/${locale}/clases/commercial-dance-barcelona`}
+                textKey="navCommercialDance"
+              />
             </FooterSection>
 
             {/* Ritmos Latinos */}

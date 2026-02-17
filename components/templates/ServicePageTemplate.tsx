@@ -1255,7 +1255,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
         <meta property="og:url" content={`${BASE_URL}/${locale}${canonicalPath}`} />
         <meta property="og:image" content={`${BASE_URL}${ogImage}`} />
         <meta property="og:site_name" content={BUSINESS_INFO.name} />
-        <meta property="og:locale" content={{ es: 'es_ES', ca: 'ca_ES', en: 'en_GB', fr: 'fr_FR' }[locale] || 'es_ES'} />
+        <meta
+          property="og:locale"
+          content={{ es: 'es_ES', ca: 'ca_ES', en: 'en_GB', fr: 'fr_FR' }[locale] || 'es_ES'}
+        />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
