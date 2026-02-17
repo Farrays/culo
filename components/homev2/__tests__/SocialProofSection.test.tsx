@@ -67,7 +67,7 @@ describe('SocialProofSection', () => {
     render(<SocialProofSection config={mockConfig} />);
 
     const googleLink = screen.getByRole('link');
-    expect(googleLink).toHaveAttribute('href', 'https://g.page/r/CWgdDe92LVnmEBM/review');
+    expect(googleLink).toHaveAttribute('href', 'https://g.page/r/Ca9MFoK1mqdHEBM/review');
     expect(googleLink).toHaveAttribute('target', '_blank');
     expect(googleLink).toHaveAttribute('rel', 'noopener noreferrer');
   });

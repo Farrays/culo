@@ -228,7 +228,7 @@ export const PAGE_CATEGORY_MAP: Record<string, DanceCategory[]> = {
 // =============================================================================
 
 export const GOOGLE_BUSINESS_PROFILE = {
-  url: 'https://g.page/r/CWBvYu8J9aJAEBM/review',
+  url: 'https://g.page/r/Ca9MFoK1mqdHEBM/review',
   placeId: 'ChIJAW9i7-8iQg0RYGK_CflivUA',
   name: "Farray's International Dance Center",
   totalReviews: parseInt(REVIEW_STATS.reviewCount),

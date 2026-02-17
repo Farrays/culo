@@ -21,7 +21,7 @@ import { Resend } from 'resend';
  *    - rating < 5 → /es/feedback-gracias
  */
 
-const GOOGLE_REVIEW_URL = 'https://g.page/r/CfqWwEMdERK5EAE/review';
+const GOOGLE_REVIEW_URL = 'https://g.page/r/Ca9MFoK1mqdHEBM/review';
 const FEEDBACK_NOTIFY_EMAIL = 'info@farrayscenter.com';
 const BASE_URL = process.env['VITE_BASE_URL'] || 'https://www.farrayscenter.com';
 

@@ -60,7 +60,7 @@ const SocialProofSection: React.FC<SocialProofSectionProps> = ({ config }) => {
         <AnimateOnScroll delay={200}>
           <div className="flex justify-center mb-16">
             <a
-              href="https://g.page/r/CWgdDe92LVnmEBM/review"
+              href="https://g.page/r/Ca9MFoK1mqdHEBM/review"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-6 bg-white/5 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/10 hover:border-primary-accent/50 transition-all duration-300"

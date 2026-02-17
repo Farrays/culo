@@ -237,7 +237,7 @@ export function useGoogleBusinessStats(): {
   name: string;
 } {
   return {
-    url: 'https://g.page/r/CWBvYu8J9aJAEBM/review',
+    url: 'https://g.page/r/Ca9MFoK1mqdHEBM/review',
     totalReviews: parseInt(REVIEW_STATS.reviewCount),
     averageRating: parseFloat(REVIEW_STATS.ratingValue),
     name: "Farray's International Dance Center",

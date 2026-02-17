@@ -162,7 +162,7 @@ const Testimonials: React.FC = () => {
             </h2>
             {/* Google Reviews Badge */}
             <a
-              href="https://g.page/r/CWBvYu8J9aJAEBM/review"
+              href="https://g.page/r/Ca9MFoK1mqdHEBM/review"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-accent/50 rounded-2xl p-4"

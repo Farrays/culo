@@ -169,7 +169,7 @@ const VideoTestimonialsSection: React.FC = () => {
         <AnimateOnScroll delay={400}>
           <div className="text-center">
             <a
-              href="https://g.page/r/farrayscenter/review"
+              href="https://g.page/r/Ca9MFoK1mqdHEBM/review"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-4 bg-white/5 backdrop-blur-md border border-primary-dark/50 rounded-full px-8 py-4 hover:border-primary-accent/50 transition-all duration-300 group"

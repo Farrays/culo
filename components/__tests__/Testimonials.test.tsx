@@ -20,7 +20,7 @@ describe('Testimonials', () => {
   it('should render Google Reviews badge link', () => {
     render(<Testimonials />);
     const googleLink = screen.getByRole('link', { name: /ver reseñas en google/i });
-    expect(googleLink).toHaveAttribute('href', 'https://g.page/r/CWBvYu8J9aJAEBM/review');
+    expect(googleLink).toHaveAttribute('href', 'https://g.page/r/Ca9MFoK1mqdHEBM/review');
     expect(googleLink).toHaveAttribute('target', '_blank');
     expect(googleLink).toHaveAttribute('rel', 'noopener noreferrer');
   });
