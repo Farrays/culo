@@ -12,6 +12,7 @@ import CategoryPageTemplate, {
   type HeroImageConfig,
 } from './templates/CategoryPageTemplate';
 import { getStyleImage } from '../constants/style-images';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // HERO IMAGE CONFIGURATION (Enterprise Level - SEO/GEO Optimized)
@@ -440,8 +441,8 @@ const SalsaBachataPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '4.9',
-          reviewCount: '509',
+          ratingValue: REVIEW_STATS.ratingValue,
+          reviewCount: REVIEW_STATS.reviewCount,
         }}
       />
       <Helmet>

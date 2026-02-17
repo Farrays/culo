@@ -8,6 +8,7 @@ import FAQSection from './FAQSection';
 import Icon from './Icon';
 import OptimizedImage from './OptimizedImage';
 import { ReviewsSection } from './reviews';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 const ClasesParticularesPage: React.FC = () => {
   const { t, i18n } = useTranslation([
@@ -201,8 +202,8 @@ const ClasesParticularesPage: React.FC = () => {
       telephone: '+34622247085',
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '509',
+        ratingValue: REVIEW_STATS.ratingValue,
+        reviewCount: REVIEW_STATS.reviewCount,
       },
     },
     areaServed: {

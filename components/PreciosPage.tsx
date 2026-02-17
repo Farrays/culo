@@ -5,6 +5,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import { ReviewsSection } from './reviews';
+import { REVIEW_STATS } from '../constants/reviews-config';
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -223,7 +224,7 @@ const PreciosPage: React.FC = () => {
   const languageMap: Record<string, string> = {
     es: 'es-ES',
     ca: 'ca-ES',
-    en: 'en',
+    en: 'en-GB',
     fr: 'fr-FR',
   };
 
@@ -386,11 +387,11 @@ const PreciosPage: React.FC = () => {
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: 4.9,
-      bestRating: 5,
-      worstRating: 1,
-      ratingCount: 509,
-      reviewCount: 509,
+      ratingValue: REVIEW_STATS.ratingValue,
+      bestRating: REVIEW_STATS.bestRating,
+      worstRating: REVIEW_STATS.worstRating,
+      ratingCount: REVIEW_STATS.reviewCount,
+      reviewCount: REVIEW_STATS.reviewCount,
     },
     offers: {
       '@type': 'AggregateOffer',

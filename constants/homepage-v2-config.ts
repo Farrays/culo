@@ -2,6 +2,7 @@
  * Homepage V2 Configuration
  * Configuración centralizada para la nueva homepage con estrategia océano azul
  */
+import { REVIEW_STATS } from './reviews-config';
 
 export const HOMEPAGE_V2_CONFIG = {
   // Meta información
@@ -27,8 +28,8 @@ export const HOMEPAGE_V2_CONFIG = {
       scrollTo: '#method-section',
     },
     socialProof: {
-      rating: '4.9',
-      reviewCount: '509+',
+      rating: REVIEW_STATS.ratingValue as string,
+      reviewCount: `${REVIEW_STATS.reviewCount}+` as string,
       studentsActive: '1500+',
       badge: 'CID-UNESCO',
     },

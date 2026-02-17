@@ -447,28 +447,13 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
   const openModal = (scheduleItem?: LandingScheduleItem) => {
     try {
-      // Send CAPI event first (returns eventId for pixel deduplication)
-      const eventId = sendCAPIBrowserEvent('InitiateCheckout', {
+      // Send CAPI + pixel (sendCAPIBrowserEvent fires both with matching eventId)
+      sendCAPIBrowserEvent('InitiateCheckout', {
         content_name: `${config.estiloValue} Free Welcome Class`,
         content_category: 'Dance Class',
         value: 0,
         currency: 'EUR',
       });
-
-      // Fire pixel with matching eventID
-      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
-        window.fbq(
-          'track',
-          'InitiateCheckout',
-          {
-            content_name: `${config.estiloValue} Free Welcome Class`,
-            content_category: 'Dance Class',
-            value: 0,
-            currency: 'EUR',
-          },
-          { eventID: eventId }
-        );
-      }
     } catch {
       // Tracking not available
     }

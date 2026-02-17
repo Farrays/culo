@@ -25,6 +25,7 @@ const ALLOWED_EVENTS = new Set([
   'InitiateCheckout',
   'Purchase',
   'Schedule',
+  'Lead',
 ]);
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {

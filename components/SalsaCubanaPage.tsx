@@ -9,6 +9,7 @@ import {
   getContextualAltKey,
   getRelatedClassImageUrl,
 } from '../constants/style-images';
+import { REVIEW_STATS } from '../constants/reviews-config';
 import {
   SALSA_CUBANA_FAQS_CONFIG,
   SALSA_CUBANA_SCHEDULE_KEYS,
@@ -165,8 +166,8 @@ const SalsaCubanaPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '4.9',
-          reviewCount: '509',
+          ratingValue: REVIEW_STATS.ratingValue,
+          reviewCount: REVIEW_STATS.reviewCount,
         }}
       />
 

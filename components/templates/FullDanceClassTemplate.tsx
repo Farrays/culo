@@ -969,7 +969,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           },
         },
         // GEO/AIEO: Structured data for AI search engines
-        inLanguage: locale,
+        inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
         isAccessibleForFree: true,
         interactionStatistic: {
           '@type': 'InteractionCounter',
@@ -1005,7 +1005,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
               url: `${baseUrl}/logo.svg`,
             },
           },
-          inLanguage: locale,
+          inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
           isAccessibleForFree: true,
           // Additional recommended fields for better indexing
           regionsAllowed: 'ES',
@@ -1291,7 +1291,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         description={t(`${config.styleKey}MetaDescription`)}
         datePublished="2024-01-01"
         dateModified={currentDate}
-        inLanguage={locale || 'es'}
+        inLanguage={{ es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES'}
         mainEntityId={`${pageUrl}#course`}
         primaryImageUrl={
           config.hero?.heroImage

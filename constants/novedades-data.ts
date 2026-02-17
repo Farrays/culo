@@ -13,10 +13,10 @@ import type { Novedad } from '../types/novedad';
 // Farray's location for all events
 const FARRAYS_LOCATION = {
   name: "Farray's International Dance Center",
-  address: 'C/ Villarroel 91, 08011 Barcelona',
+  address: 'C/ Entença 100, 08015 Barcelona',
   geo: {
-    lat: 41.3851,
-    lng: 2.1564,
+    lat: 41.380421,
+    lng: 2.148014,
   },
 };
 

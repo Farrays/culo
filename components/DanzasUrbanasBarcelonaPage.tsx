@@ -11,6 +11,7 @@ import CategoryPageTemplate, {
   type RelatedClass,
 } from './templates/CategoryPageTemplate';
 import { getStyleImage } from '../constants/style-images';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // PAGE-SPECIFIC DATA
@@ -400,8 +401,8 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '4.9',
-          reviewCount: '509',
+          ratingValue: REVIEW_STATS.ratingValue,
+          reviewCount: REVIEW_STATS.reviewCount,
         }}
       />
       <Helmet>

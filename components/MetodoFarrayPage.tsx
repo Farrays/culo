@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 // Iconos para los pilares
 const PillarIcons: Record<string, React.FC<{ className?: string }>> = {
@@ -1047,7 +1048,7 @@ const MetodoFarrayPage: React.FC = () => {
               {[
                 { value: '15000+', key: 'students' },
                 { value: '15+', key: 'years' },
-                { value: '4.9', key: 'rating' },
+                { value: REVIEW_STATS.ratingValue, key: 'rating' },
                 { value: '25+', key: 'styles' },
               ].map((stat, index) => (
                 <AnimateOnScroll key={stat.key} delay={100 + index * 100}>

@@ -28,13 +28,14 @@
  *   telephone="+34 123 456 789"
  *   email="info@farrays.com"
  *   address={{ streetAddress: "C/ Example", addressLocality: "Barcelona", postalCode: "08001", addressCountry: "ES" }}
- *   geo={{ latitude: "41.3851", longitude: "2.1734" }}
+ *   geo={{ latitude: "41.380421", longitude: "2.148014" }}
  * />
  * ```
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 /**
  * Global Organization Schema - renders once at app level.
@@ -167,7 +168,7 @@ export const WebSiteSchema: React.FC = () => {
     publisher: {
       '@id': 'https://www.farrayscenter.com/#organization',
     },
-    inLanguage: ['es-ES', 'ca-ES', 'en', 'fr-FR'],
+    inLanguage: ['es-ES', 'ca-ES', 'en-GB', 'fr-FR'],
     datePublished: '2017-01-01',
     dateModified: '2026-01-25',
     copyrightYear: 2017,
@@ -490,7 +491,8 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
   addressRegion: addressRegionProp,
 }) => {
   // @ts-ignore - Type instantiation depth limitation with react-i18next
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
+  const locale = i18n.language;
 
   // Use translated defaults if props not provided
   const streetAddress = streetAddressProp || t('schema_streetAddress');
@@ -502,6 +504,7 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
     '@id': `${pageUrl}#course`,
     name,
     description,
+    inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
     provider: {
       '@type': 'EducationalOrganization',
       '@id': `${baseUrl}/#organization`,
@@ -964,10 +967,10 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '509',
-      bestRating: '5',
-      worstRating: '1',
+      ratingValue: REVIEW_STATS.ratingValue,
+      reviewCount: REVIEW_STATS.reviewCount,
+      bestRating: REVIEW_STATS.bestRating,
+      worstRating: REVIEW_STATS.worstRating,
     },
     sameAs: [
       'https://www.instagram.com/farrays_centerbcn/',
@@ -1305,6 +1308,16 @@ export const LLMArticleSchema: React.FC<LLMArticleSchemaProps> = ({
   wordCount,
   articleSection,
 }) => {
+  const { i18n } = useTranslation('common');
+  const locale = i18n.language;
+
+  const inLanguageMap: Record<string, string> = {
+    es: 'es-ES',
+    ca: 'ca-ES',
+    en: 'en-GB',
+    fr: 'fr-FR',
+  };
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -1335,7 +1348,7 @@ export const LLMArticleSchema: React.FC<LLMArticleSchemaProps> = ({
         },
       }),
     // GEO: inLanguage helps LLMs with multilingual content
-    inLanguage: 'es-ES',
+    inLanguage: inLanguageMap[locale] || 'es-ES',
     // GEO: mainEntityOfPage links to the WebPage
     mainEntityOfPage: {
       '@id': `${url}#webpage`,

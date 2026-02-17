@@ -570,7 +570,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
             url: `${baseUrl}/logo.svg`,
           },
         },
-        inLanguage: locale,
+        inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
         isAccessibleForFree: true,
         regionsAllowed: 'ES',
       }

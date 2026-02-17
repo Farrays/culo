@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/bachata-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Bachata Sensual en Barcelona</image:caption>
@@ -12,9 +12,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/salsa-cubana-barcelona</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/salsa-cubana/img/clases-salsa-cubana-barcelona_1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/classes/salsa-cubana/img/salsa-cubana_1920.jpg</image:loc>
       <image:caption>Clases de Salsa Cubana en Barcelona</image:caption>
       <image:title>Salsa Cubana Barcelona</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -22,9 +22,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/dancehall-barcelona</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/dancehall/img/clases-dancehall-barcelona_1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/classes/dancehall/img/dancehall-classes-barcelona-01_1920.jpg</image:loc>
       <image:caption>Clases de Dancehall en Barcelona</image:caption>
       <image:title>Dancehall Barcelona</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -32,7 +32,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/twerk-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/twerk/img/clases-twerk-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Twerk en Barcelona</image:caption>
@@ -42,7 +42,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/heels-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/heels/img/clases-heels-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Heels en Barcelona</image:caption>
@@ -52,9 +52,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/femmology</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/femmology/img/clases-femmology-barcelona_1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/classes/femmology/img/clases-de-femmology-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Femmology en Barcelona</image:caption>
       <image:title>Femmology Barcelona</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -62,17 +62,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
-    <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/kpop/img/clases-kpop-barcelona_1920.jpg</image:loc>
-      <image:caption>Clases de K-Pop en Barcelona</image:caption>
-      <image:title>K-Pop Barcelona</image:title>
-      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/afrobeats-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Afrobeat en Barcelona</image:caption>
@@ -82,9 +72,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/hip-hop-reggaeton-barcelona</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reggaeton-barcelona_1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Hip Hop y Reggaeton en Barcelona</image:caption>
       <image:title>Hip Hop Reggaeton Barcelona</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -92,17 +82,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
-    <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/kizomba/img/clases-kizomba-barcelona_1920.jpg</image:loc>
-      <image:caption>Clases de Kizomba en Barcelona</image:caption>
-      <image:title>Kizomba Barcelona</image:title>
-      <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/ballet-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/ballet/img/clases-ballet-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Ballet en Barcelona</image:caption>
@@ -112,9 +92,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/contemporaneo-barcelona</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/classes/contemporary/img/clases-contemporaneo-barcelona_1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/classes/contemporaneo/img/mgs_5189_1920.jpg</image:loc>
       <image:caption>Clases de Contemporáneo en Barcelona</image:caption>
       <image:title>Contemporáneo Barcelona</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -122,7 +102,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/modern-jazz-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.jpg</image:loc>
       <image:caption>Clases de Modern Jazz en Barcelona</image:caption>
@@ -132,7 +112,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/afro-jazz</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/afro-jazz/img/afro-jazz_1920.jpg</image:loc>
       <image:caption>Clases de Afro Jazz en Barcelona</image:caption>
@@ -142,7 +122,7 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/clases/afro-contemporaneo-barcelona</loc>
     <image:image>
       <image:loc>https://www.farrayscenter.com/images/classes/afro-contemporaneo/img/mgs_5260_1920.jpg</image:loc>
       <image:caption>Clases de Afro Contemporáneo en Barcelona</image:caption>
@@ -152,9 +132,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/instalaciones-escuela-baile-barcelona</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/facilities/sala-principal-1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/salas/img/salaa-1_1920.jpg</image:loc>
       <image:caption>Sala principal de baile Farray Center Barcelona</image:caption>
       <image:title>Sala Principal Farray Center</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -162,9 +142,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/estudio-grabacion-barcelona</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/facilities/estudio-grabacion-1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/estudio-grabacion/hero.jpg</image:loc>
       <image:caption>Estudio de grabación Farray Center Barcelona</image:caption>
       <image:title>Estudio Grabación Barcelona</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>
@@ -172,9 +152,9 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/es</loc>
+    <loc>https://www.farrayscenter.com/es/yunaisy-farray</loc>
     <image:image>
-      <image:loc>https://www.farrayscenter.com/images/yunaisy/yunaisy-farray-1920.jpg</image:loc>
+      <image:loc>https://www.farrayscenter.com/images/yunaisy/img/yunaisy-artistica-1_1440.jpg</image:loc>
       <image:caption>Yunaisy Farray - Fundadora y Directora</image:caption>
       <image:title>Yunaisy Farray</image:title>
       <image:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</image:license>

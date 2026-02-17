@@ -22,6 +22,7 @@ import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import MomenceModal from '../shared/MomenceModal';
 import OptimizedImage from '../OptimizedImage';
+import { REVIEW_STATS } from '../../constants/reviews-config';
 
 // Lazy load the booking components
 const ClassListStep = lazy(() =>
@@ -433,8 +434,8 @@ const HazteSocioPage: React.FC = () => {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '509',
+        ratingValue: REVIEW_STATS.ratingValue,
+        reviewCount: REVIEW_STATS.reviewCount,
       },
       offers: {
         '@type': 'AggregateOffer',

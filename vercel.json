@@ -221,8 +221,28 @@
       "statusCode": 301
     },
     {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/baile-salud-mental",
+      "destination": "/:locale/blog/fitness/baile-salud-mental",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/salsa-ritmo-conquisto-mundo",
+      "destination": "/:locale/blog/historia/salsa-ritmo-conquisto-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/historia-salsa-barcelona",
+      "destination": "/:locale/blog/historia/historia-salsa-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/historia-bachata-barcelona",
+      "destination": "/:locale/blog/historia/historia-bachata-barcelona",
+      "statusCode": 301
+    },
+    {
       "source": "/:locale(es|ca|en|fr)/blog/clases/:slug*",
-      "destination": "/:locale/blog/lifestyle/:slug*",
+      "destination": "/:locale/blog",
       "statusCode": 301
     },
     {
@@ -2462,14 +2482,6 @@
     },
     {
       "source": "/:locale(es|en|ca|fr)/team-building-barcelona",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/yr-project",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/:locale(es|en|ca|fr)/fichaje/resumen/:token",
       "destination": "/index.html"
     },
     {

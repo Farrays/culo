@@ -44,7 +44,7 @@ const BookingPage: React.FC = () => {
     name: title,
     description: description,
     url: canonicalUrl,
-    inLanguage: locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en' : locale === 'fr' ? 'fr' : 'es',
+    inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
     isPartOf: {
       '@type': 'WebSite',
       name: "Farray's Center Barcelona",

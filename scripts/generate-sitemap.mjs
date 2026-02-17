@@ -51,6 +51,7 @@ const LANDING_SLUGS = [
   'ballet',
   'afro-contemporaneo',
   'jornada-puertas-abiertas',
+  'profesor-reynier',
 ];
 
 // =============================================================================
@@ -154,27 +155,25 @@ const BLOG_ARTICLES = [
 // =============================================================================
 
 const KEY_IMAGES = [
-  // Class hero images
-  { url: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1920.jpg', caption: 'Clases de Bachata Sensual en Barcelona', title: 'Bachata Sensual Barcelona' },
-  { url: '/images/classes/salsa-cubana/img/clases-salsa-cubana-barcelona_1920.jpg', caption: 'Clases de Salsa Cubana en Barcelona', title: 'Salsa Cubana Barcelona' },
-  { url: '/images/classes/dancehall/img/clases-dancehall-barcelona_1920.jpg', caption: 'Clases de Dancehall en Barcelona', title: 'Dancehall Barcelona' },
-  { url: '/images/classes/twerk/img/clases-twerk-barcelona_1920.jpg', caption: 'Clases de Twerk en Barcelona', title: 'Twerk Barcelona' },
-  { url: '/images/classes/heels/img/clases-heels-barcelona_1920.jpg', caption: 'Clases de Heels en Barcelona', title: 'Heels Barcelona' },
-  { url: '/images/classes/femmology/img/clases-femmology-barcelona_1920.jpg', caption: 'Clases de Femmology en Barcelona', title: 'Femmology Barcelona' },
-  { url: '/images/classes/kpop/img/clases-kpop-barcelona_1920.jpg', caption: 'Clases de K-Pop en Barcelona', title: 'K-Pop Barcelona' },
-  { url: '/images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.jpg', caption: 'Clases de Afrobeat en Barcelona', title: 'Afrobeat Barcelona' },
-  { url: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reggaeton-barcelona_1920.jpg', caption: 'Clases de Hip Hop y Reggaeton en Barcelona', title: 'Hip Hop Reggaeton Barcelona' },
-  { url: '/images/classes/kizomba/img/clases-kizomba-barcelona_1920.jpg', caption: 'Clases de Kizomba en Barcelona', title: 'Kizomba Barcelona' },
-  { url: '/images/classes/ballet/img/clases-ballet-barcelona_1920.jpg', caption: 'Clases de Ballet en Barcelona', title: 'Ballet Barcelona' },
-  { url: '/images/classes/contemporary/img/clases-contemporaneo-barcelona_1920.jpg', caption: 'Clases de Contemporáneo en Barcelona', title: 'Contemporáneo Barcelona' },
-  { url: '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.jpg', caption: 'Clases de Modern Jazz en Barcelona', title: 'Modern Jazz Barcelona' },
-  { url: '/images/classes/afro-jazz/img/afro-jazz_1920.jpg', caption: 'Clases de Afro Jazz en Barcelona', title: 'Afro Jazz Barcelona' },
-  { url: '/images/classes/afro-contemporaneo/img/mgs_5260_1920.jpg', caption: 'Clases de Afro Contemporáneo en Barcelona', title: 'Afro Contemporáneo Barcelona' },
+  // Class hero images (pagePath = the page where this image appears)
+  { url: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1920.jpg', caption: 'Clases de Bachata Sensual en Barcelona', title: 'Bachata Sensual Barcelona', pagePath: 'clases/bachata-barcelona' },
+  { url: '/images/classes/salsa-cubana/img/salsa-cubana_1920.jpg', caption: 'Clases de Salsa Cubana en Barcelona', title: 'Salsa Cubana Barcelona', pagePath: 'clases/salsa-cubana-barcelona' },
+  { url: '/images/classes/dancehall/img/dancehall-classes-barcelona-01_1920.jpg', caption: 'Clases de Dancehall en Barcelona', title: 'Dancehall Barcelona', pagePath: 'clases/dancehall-barcelona' },
+  { url: '/images/classes/twerk/img/clases-twerk-barcelona_1920.jpg', caption: 'Clases de Twerk en Barcelona', title: 'Twerk Barcelona', pagePath: 'clases/twerk-barcelona' },
+  { url: '/images/classes/heels/img/clases-heels-barcelona_1920.jpg', caption: 'Clases de Heels en Barcelona', title: 'Heels Barcelona', pagePath: 'clases/heels-barcelona' },
+  { url: '/images/classes/femmology/img/clases-de-femmology-barcelona_1920.jpg', caption: 'Clases de Femmology en Barcelona', title: 'Femmology Barcelona', pagePath: 'clases/femmology' },
+  { url: '/images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.jpg', caption: 'Clases de Afrobeat en Barcelona', title: 'Afrobeat Barcelona', pagePath: 'clases/afrobeats-barcelona' },
+  { url: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_1920.jpg', caption: 'Clases de Hip Hop y Reggaeton en Barcelona', title: 'Hip Hop Reggaeton Barcelona', pagePath: 'clases/hip-hop-reggaeton-barcelona' },
+  { url: '/images/classes/ballet/img/clases-ballet-barcelona_1920.jpg', caption: 'Clases de Ballet en Barcelona', title: 'Ballet Barcelona', pagePath: 'clases/ballet-barcelona' },
+  { url: '/images/classes/contemporaneo/img/mgs_5189_1920.jpg', caption: 'Clases de Contemporáneo en Barcelona', title: 'Contemporáneo Barcelona', pagePath: 'clases/contemporaneo-barcelona' },
+  { url: '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.jpg', caption: 'Clases de Modern Jazz en Barcelona', title: 'Modern Jazz Barcelona', pagePath: 'clases/modern-jazz-barcelona' },
+  { url: '/images/classes/afro-jazz/img/afro-jazz_1920.jpg', caption: 'Clases de Afro Jazz en Barcelona', title: 'Afro Jazz Barcelona', pagePath: 'clases/afro-jazz' },
+  { url: '/images/classes/afro-contemporaneo/img/mgs_5260_1920.jpg', caption: 'Clases de Afro Contemporáneo en Barcelona', title: 'Afro Contemporáneo Barcelona', pagePath: 'clases/afro-contemporaneo-barcelona' },
   // Facilities
-  { url: '/images/facilities/sala-principal-1920.jpg', caption: 'Sala principal de baile Farray Center Barcelona', title: 'Sala Principal Farray Center' },
-  { url: '/images/facilities/estudio-grabacion-1920.jpg', caption: 'Estudio de grabación Farray Center Barcelona', title: 'Estudio Grabación Barcelona' },
+  { url: '/images/salas/img/salaa-1_1920.jpg', caption: 'Sala principal de baile Farray Center Barcelona', title: 'Sala Principal Farray Center', pagePath: 'instalaciones-escuela-baile-barcelona' },
+  { url: '/images/estudio-grabacion/hero.jpg', caption: 'Estudio de grabación Farray Center Barcelona', title: 'Estudio Grabación Barcelona', pagePath: 'estudio-grabacion-barcelona' },
   // Team
-  { url: '/images/yunaisy/yunaisy-farray-1920.jpg', caption: 'Yunaisy Farray - Fundadora y Directora', title: 'Yunaisy Farray' },
+  { url: '/images/yunaisy/img/yunaisy-artistica-1_1440.jpg', caption: 'Yunaisy Farray - Fundadora y Directora', title: 'Yunaisy Farray', pagePath: 'yunaisy-farray' },
 ];
 
 // =============================================================================
@@ -257,7 +256,6 @@ const routes = [
   { path: 'es/metodo-farray', lang: 'es', page: 'metodoFarray' },
   { path: 'es/merchandising', lang: 'es', page: 'merchandising' },
   { path: 'es/regala-baile', lang: 'es', page: 'regalaBaile' },
-  { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
   { path: 'es/reservas', lang: 'es', page: 'reservas' },
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
@@ -341,7 +339,6 @@ const routes = [
   { path: 'ca/metodo-farray', lang: 'ca', page: 'metodoFarray' },
   { path: 'ca/merchandising', lang: 'ca', page: 'merchandising' },
   { path: 'ca/regala-baile', lang: 'ca', page: 'regalaBaile' },
-  { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
   { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
@@ -425,7 +422,6 @@ const routes = [
   { path: 'en/metodo-farray', lang: 'en', page: 'metodoFarray' },
   { path: 'en/merchandising', lang: 'en', page: 'merchandising' },
   { path: 'en/regala-baile', lang: 'en', page: 'regalaBaile' },
-  { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
   { path: 'en/reservas', lang: 'en', page: 'reservas' },
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
@@ -509,7 +505,6 @@ const routes = [
   { path: 'fr/metodo-farray', lang: 'fr', page: 'metodoFarray' },
   { path: 'fr/merchandising', lang: 'fr', page: 'merchandising' },
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
-  { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
   { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
@@ -651,7 +646,7 @@ const generateImagesSitemap = () => {
   const footer = `</urlset>`;
 
   const entries = KEY_IMAGES.map(img => `  <url>
-    <loc>${BASE_URL}/es</loc>
+    <loc>${BASE_URL}/es/${img.pagePath}</loc>
     <image:image>
       <image:loc>${BASE_URL}${img.url}</image:loc>
       <image:caption>${img.caption}</image:caption>

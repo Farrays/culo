@@ -252,10 +252,15 @@ export function pushToDataLayer(eventData: Record<string, unknown>): void {
 
 /**
  * Track micro-conversion: Lead captured
- * Use for: Exit Intent Modal, Contact Form, Lead Modals
+ * Use for: Exit Intent Modal, Contact Form, Lead Modals, Booking Widget
  *
- * When eventId is provided (from server CAPI response), fires Meta Pixel
- * directly with matching eventID for deduplication with server-side CAPI.
+ * DEDUPLICATION: Always fires Meta Pixel with eventID + value/currency.
+ * - If eventId provided (from server CAPI response): uses it for dedup with server CAPI
+ * - If eventId missing: generates one and sends CAPI from browser via /api/meta-event
+ *
+ * This ensures 100% of Lead events have:
+ * 1. Matching eventID on browser + server (for deduplication)
+ * 2. value + currency (for ROAS calculation)
  */
 export function trackLeadConversion(params: {
   leadSource:
@@ -267,20 +272,34 @@ export function trackLeadConversion(params: {
     | 'booking_widget';
   formName: string;
   leadValue: number;
-  email?: string; // Optional, only pass if user consented
+  email?: string;
   discountCode?: string;
   pagePath?: string;
-  eventId?: string; // For Meta CAPI deduplication (from server response)
+  eventId?: string; // From server CAPI response (preferred). If missing, auto-generated.
 }): void {
   const utmParams = getStoredUTMParams();
   const pagePath =
     params.pagePath || (typeof window !== 'undefined' ? window.location.pathname : '');
 
-  // 1. Push to dataLayer for GTM
-  // When eventId is present, we handle Meta Pixel directly (with eventID for CAPI dedup).
-  // The _meta_pixel_handled flag tells GTM to NOT fire its own Meta Pixel Lead tag,
-  // preventing double-fire (GTM pixel without eventID + direct pixel with eventID).
-  // GTM should add blocking condition: fire Meta Pixel Lead ONLY when _meta_pixel_handled != true.
+  // Ensure we always have an eventId for deduplication.
+  // Server form endpoints provide eventId (with full PII hashing).
+  // If missing, generate one and send CAPI from browser (lower quality but ensures dedup).
+  let eventId = params.eventId;
+  if (!eventId) {
+    eventId = sendCAPIBrowserEvent(
+      'Lead',
+      {
+        value: params.leadValue,
+        currency: 'EUR',
+        content_name: params.formName,
+        content_category: params.leadSource,
+      },
+      { skipPixel: true } // We fire pixel below with full params
+    );
+  }
+
+  // 1. Push to dataLayer for GTM (GA4 + any GTM-based tags)
+  // _meta_pixel_handled = true tells GTM to NOT fire its own Meta Pixel Lead tag
   pushToDataLayer({
     event: 'generate_lead',
     lead_source: params.leadSource,
@@ -289,14 +308,13 @@ export function trackLeadConversion(params: {
     currency: 'EUR',
     page_path: pagePath,
     discount_code: params.discountCode,
-    event_id: params.eventId,
-    _meta_pixel_handled: !!params.eventId,
+    event_id: eventId,
+    _meta_pixel_handled: true,
     ...utmParams,
   });
 
-  // When eventId is present, fire Meta Pixel directly with eventID for CAPI deduplication.
-  // GA4 is handled by GTM from the dataLayer push above (no need for direct gtag call).
-  if (params.eventId && hasConsentFor('marketing') && window.fbq) {
+  // 2. Always fire Meta Pixel with eventID + value/currency for CAPI deduplication
+  if (hasConsentFor('marketing') && window.fbq) {
     window.fbq(
       'track',
       'Lead',
@@ -306,7 +324,7 @@ export function trackLeadConversion(params: {
         value: params.leadValue,
         currency: 'EUR',
       },
-      { eventID: params.eventId }
+      { eventID: eventId }
     );
   }
 }
@@ -323,7 +341,7 @@ export function trackPurchaseConversion(params: {
 }): void {
   const utmParams = getStoredUTMParams();
 
-  // 0. Send CAPI event (returns eventId for pixel deduplication)
+  // Send CAPI + pixel (sendCAPIBrowserEvent now fires both with matching eventId)
   const eventId = sendCAPIBrowserEvent('Purchase', {
     value: params.value,
     currency: 'EUR',
@@ -331,7 +349,7 @@ export function trackPurchaseConversion(params: {
     content_category: params.productCategory,
   });
 
-  // 1. Push to dataLayer for GTM
+  // Push to dataLayer for GTM (GA4)
   pushToDataLayer({
     event: 'purchase',
     transaction_id: params.transactionId,
@@ -340,24 +358,9 @@ export function trackPurchaseConversion(params: {
     product_name: params.productName,
     product_category: params.productCategory,
     event_id: eventId,
+    _meta_pixel_handled: true,
     ...utmParams,
   });
-
-  // 2. Track in Meta Pixel with eventID for CAPI deduplication
-  // GA4 is handled by GTM from the dataLayer push above.
-  if (hasConsentFor('marketing') && window.fbq) {
-    window.fbq(
-      'track',
-      'Purchase',
-      {
-        content_name: params.productName,
-        content_category: params.productCategory,
-        value: params.value,
-        currency: 'EUR',
-      },
-      { eventID: eventId }
-    );
-  }
 }
 
 /**
@@ -372,7 +375,7 @@ export function trackScheduleConversion(params: {
   const utmParams = getStoredUTMParams();
   const value = params.value || (params.classType === 'trial' ? 0 : LEAD_VALUES.TRIAL_CLASS);
 
-  // 0. Send CAPI event (returns eventId for pixel deduplication)
+  // Send CAPI + pixel (sendCAPIBrowserEvent now fires both with matching eventId)
   const eventId = sendCAPIBrowserEvent('Schedule', {
     value,
     currency: 'EUR',
@@ -380,7 +383,7 @@ export function trackScheduleConversion(params: {
     content_category: params.classType,
   });
 
-  // 1. Push to dataLayer for GTM
+  // Push to dataLayer for GTM (GA4)
   pushToDataLayer({
     event: 'schedule_class',
     class_name: params.className,
@@ -388,24 +391,9 @@ export function trackScheduleConversion(params: {
     value: value,
     currency: 'EUR',
     event_id: eventId,
+    _meta_pixel_handled: true,
     ...utmParams,
   });
-
-  // 2. Track in Meta Pixel with eventID for CAPI deduplication
-  // GA4 is handled by GTM from the dataLayer push above.
-  if (hasConsentFor('marketing') && window.fbq) {
-    window.fbq(
-      'track',
-      'Schedule',
-      {
-        content_name: params.className,
-        content_category: params.classType,
-        value: value,
-        currency: 'EUR',
-      },
-      { eventID: eventId }
-    );
-  }
 }
 
 // ============================================================================
@@ -424,14 +412,21 @@ function generateEventId(prefix: string): string {
 }
 
 /**
- * Send any standard Meta event to CAPI via server endpoint.
- * Pairs with pixel events to close the CAPI coverage gap.
+ * Send any standard Meta event to CAPI via server endpoint AND fire matching pixel.
+ * Ensures every CAPI event has a paired browser pixel event with the same eventID.
  *
- * @returns The generated eventId (pass to fbq for deduplication)
+ * DEDUPLICATION: Fires both pixel + CAPI with identical eventId so Meta
+ * can match browser ↔ server events and count only once.
+ *
+ * @param eventName - Standard Meta event name (PageView, Lead, Purchase, etc.)
+ * @param customData - Optional custom data (value, currency, content_name, etc.)
+ * @param options - { skipPixel: true } to skip browser pixel fire (if caller handles it)
+ * @returns The generated eventId
  */
 export function sendCAPIBrowserEvent(
   eventName: string,
-  customData?: Record<string, unknown>
+  customData?: Record<string, unknown>,
+  options?: { skipPixel?: boolean }
 ): string {
   const prefix = eventName
     .toLowerCase()
@@ -441,6 +436,19 @@ export function sendCAPIBrowserEvent(
 
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return eventId;
 
+  // 1. Fire pixel with matching eventID for deduplication
+  if (!options?.skipPixel && hasConsentFor('marketing') && window.fbq) {
+    window.fbq('track', eventName as 'Lead', customData || {}, { eventID: eventId });
+  }
+
+  // 2. Signal GTM to NOT fire its own pixel event (prevents double-fire)
+  pushToDataLayer({
+    event: `capi_${eventName.toLowerCase()}`,
+    _meta_pixel_handled: true,
+    meta_event_id: eventId,
+  });
+
+  // 3. Send matching event to CAPI via server endpoint
   const { fbc, fbp } = getMetaCookies();
 
   const payload = JSON.stringify({
@@ -488,14 +496,16 @@ export function sendCAPIBrowserEvent(
 let lastCAPIPageViewPath = '';
 
 /**
- * Send PageView event to Meta CAPI via server endpoint.
- * Call this on every route change to match GTM's pixel PageView.
+ * Send PageView event to Meta CAPI via server endpoint AND fire pixel with matching eventID.
+ * Call this on every route change.
  *
- * - Generates unique event_id for deduplication with pixel
- * - Includes fbp/fbc cookies for Meta to match browser ↔ server events
- * - Uses sendBeacon (non-blocking, survives page navigation)
- * - Falls back to fetch with keepalive
- * - Fire-and-forget: errors are silently ignored
+ * DEDUPLICATION FIX: Fires browser pixel with eventID so Meta can match
+ * the browser event with the server CAPI event. Without this, GTM fires
+ * PageView without eventID → Meta can't deduplicate → double-counted.
+ *
+ * IMPORTANT: After deploying this, disable the GTM "Meta Pixel - PageView" tag
+ * (or add blocking trigger: _meta_pixel_handled equals true) to prevent
+ * GTM from firing a second PageView without eventID.
  */
 export function sendCAPIPageView(): void {
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
@@ -506,7 +516,6 @@ export function sendCAPIPageView(): void {
   lastCAPIPageViewPath = currentPath;
 
   // Generate unique event ID for pixel/CAPI deduplication
-  // crypto.randomUUID is available in all modern browsers (Chrome 92+, Firefox 95+, Safari 15.4+)
   let eventId: string;
   try {
     eventId = `pv_${window.crypto.randomUUID()}`;
@@ -514,6 +523,19 @@ export function sendCAPIPageView(): void {
     eventId = `pv_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`;
   }
 
+  // 1. Fire pixel PageView with eventID for deduplication with CAPI
+  if (hasConsentFor('marketing') && window.fbq) {
+    window.fbq('track', 'PageView', {}, { eventID: eventId });
+  }
+
+  // 2. Signal GTM to NOT fire its own PageView pixel (prevents double-fire)
+  pushToDataLayer({
+    event: 'capi_pageview',
+    _meta_pixel_handled: true,
+    meta_event_id: eventId,
+  });
+
+  // 3. Send matching event to CAPI via server endpoint
   const { fbc, fbp } = getMetaCookies();
 
   const payload = JSON.stringify({
@@ -526,12 +548,10 @@ export function sendCAPIPageView(): void {
 
   const url = '/api/meta-event';
 
-  // Use sendBeacon for non-blocking delivery (doesn't delay page navigation)
   if (navigator.sendBeacon) {
     const blob = new window.Blob([payload], { type: 'application/json' });
     const sent = navigator.sendBeacon(url, blob);
     if (!sent) {
-      // Beacon queue full — fallback to fetch
       fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -540,7 +560,6 @@ export function sendCAPIPageView(): void {
       }).catch(() => {});
     }
   } else {
-    // Fallback for very old browsers
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

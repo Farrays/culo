@@ -5,6 +5,7 @@ import type { Locale } from '../constants/image-alt-texts';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 const ReviewsSection = lazy(() => import('./reviews/ReviewsSection'));
 
@@ -312,10 +313,10 @@ const HorariosPageV2: React.FC = () => {
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '509',
-      bestRating: '5',
-      worstRating: '1',
+      ratingValue: REVIEW_STATS.ratingValue,
+      reviewCount: REVIEW_STATS.reviewCount,
+      bestRating: REVIEW_STATS.bestRating,
+      worstRating: REVIEW_STATS.worstRating,
     },
     availableLanguage: ['es', 'ca', 'en', 'fr'],
     sameAs: [

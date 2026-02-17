@@ -6,6 +6,7 @@ import { LocalBusinessSchema, CourseSchema } from '../SchemaMarkup';
 import FAQSection from '../FAQSection';
 import { ReviewsSection } from '../reviews';
 import YouTubeEmbed from '../YouTubeEmbed';
+import { REVIEW_STATS } from '../../constants/reviews-config';
 
 export interface FAQ {
   id: string;
@@ -170,8 +171,8 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '4.9',
-          reviewCount: '509',
+          ratingValue: REVIEW_STATS.ratingValue,
+          reviewCount: REVIEW_STATS.reviewCount,
         }}
         reserveActionName={t('schema_reserveActionName')}
       />

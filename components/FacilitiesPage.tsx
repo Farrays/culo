@@ -11,6 +11,7 @@ import { ReviewsSection } from './reviews';
 import AnimateOnScroll from './AnimateOnScroll';
 import AnimatedCounter from './AnimatedCounter';
 import { LocalBusinessSchema } from './SchemaMarkup';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 const FacilitiesPage: React.FC = () => {
   const { t, i18n } = useTranslation([
@@ -330,8 +331,8 @@ const FacilitiesPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '4.9',
-          reviewCount: '509',
+          ratingValue: REVIEW_STATS.ratingValue,
+          reviewCount: REVIEW_STATS.reviewCount,
         }}
       />
 

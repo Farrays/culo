@@ -120,7 +120,7 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
           name: "Farray's International Dance Center",
           url: baseUrl,
         },
-        inLanguage: locale === 'ca' ? 'ca-ES' : `${locale}-ES`,
+        inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
         hasCourseInstance: limitedSessions.map((session, index) => ({
           '@type': 'CourseInstance',
           '@id': `${courseUrl}#session-${session.id || index}`,
@@ -261,8 +261,8 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
               },
               geo: {
                 '@type': 'GeoCoordinates',
-                latitude: 41.3851,
-                longitude: 2.1519,
+                latitude: 41.380421,
+                longitude: 2.148014,
               },
             },
             organizer: {

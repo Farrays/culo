@@ -186,7 +186,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     name: t('schema_prepFisica_courseName'),
     description: t('prepFisica_description'),
     image: heroImageUrl,
-    inLanguage: locale,
+    inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
     provider: {
       '@type': 'Organization',
       name: "Farray's International Dance Center",

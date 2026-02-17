@@ -71,7 +71,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     wordCount: config.wordCount,
     articleSection: config.category,
     inLanguage:
-      locale === 'es' ? 'es-ES' : locale === 'ca' ? 'ca-ES' : locale === 'fr' ? 'fr-FR' : 'en',
+      locale === 'es' ? 'es-ES' : locale === 'ca' ? 'ca-ES' : locale === 'fr' ? 'fr-FR' : 'en-GB',
     author: {
       '@type': 'Person',
       '@id': `${baseUrl}/${locale}${author.profileUrl}#person`,
@@ -324,7 +324,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
                 ? 'ca-ES'
                 : locale === 'fr'
                   ? 'fr-FR'
-                  : 'en',
+                  : 'en-GB',
           url: `${articleUrl}#${section.id}`,
         }))
       : [];

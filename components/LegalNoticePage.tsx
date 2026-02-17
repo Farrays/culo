@@ -430,7 +430,7 @@ const LegalNoticePage: React.FC = () => {
     name: t('legalNotice_page_title'),
     description: t('legalNotice_page_description'),
     dateModified: LAST_UPDATED,
-    inLanguage: 'es',
+    inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
     isPartOf: {
       '@type': 'WebSite',
       '@id': `${baseUrl}/#website`,
