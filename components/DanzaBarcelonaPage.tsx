@@ -396,7 +396,7 @@ const DanzaBarcelonaPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '5',
+          ratingValue: '4.9',
           reviewCount: '509',
         }}
       />

@@ -212,7 +212,7 @@ interface RelatedClassesSchemaProps {
  * Improves SEO and enables rich snippets in search results.
  */
 const RelatedClassesSchema: React.FC<RelatedClassesSchemaProps> = memo(({ items, locale, t }) => {
-  const baseUrl = 'https://www.bailemananas.com';
+  const baseUrl = 'https://www.farrayscenter.com';
 
   const schemaData = {
     '@context': 'https://schema.org',
@@ -242,9 +242,9 @@ const RelatedClassesSchema: React.FC<RelatedClassesSchemaProps> = memo(({ items,
             name: "Farray's International Dance Center",
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Carrer de Pallars, 85',
+              streetAddress: "Carrer d'Entença, 100, Local 1",
               addressLocality: 'Barcelona',
-              postalCode: '08018',
+              postalCode: '08015',
               addressCountry: 'ES',
             },
           },

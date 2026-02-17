@@ -392,7 +392,7 @@ const SEO: React.FC = () => {
   const ogLocaleMap: Record<string, string> = {
     es: 'es_ES',
     ca: 'ca_ES',
-    en: 'en_US',
+    en: 'en_GB',
     fr: 'fr_FR',
   };
 

@@ -170,7 +170,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '5',
+          ratingValue: '4.9',
           reviewCount: '509',
         }}
         reserveActionName={t('schema_reserveActionName')}

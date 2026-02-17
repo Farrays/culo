@@ -239,7 +239,7 @@ const HorariosPageV2: React.FC = () => {
       case 'ca':
         return 'ca-ES';
       case 'en':
-        return 'en';
+        return 'en-GB';
       case 'fr':
         return 'fr-FR';
       default:
@@ -299,16 +299,16 @@ const HorariosPageV2: React.FC = () => {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Carrer de Pallars, 85',
+      streetAddress: "Carrer d'Entença, 100, Local 1",
       addressLocality: 'Barcelona',
-      postalCode: '08018',
+      postalCode: '08015',
       addressRegion: 'Cataluña',
       addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 41.3979,
-      longitude: 2.1919,
+      latitude: 41.380421,
+      longitude: 2.148014,
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -416,7 +416,7 @@ const HorariosPageV2: React.FC = () => {
         <meta property="og:locale" content={getInLanguage().replace('-', '_')} />
         <meta property="og:locale:alternate" content="es_ES" />
         <meta property="og:locale:alternate" content="ca_ES" />
-        <meta property="og:locale:alternate" content="en" />
+        <meta property="og:locale:alternate" content="en_GB" />
         <meta property="og:locale:alternate" content="fr_FR" />
         {/* OG Image - JPG for social crawlers compatibility */}
         <meta property="og:image" content={`${baseUrl}${HERO_IMAGE.ogImage}`} />

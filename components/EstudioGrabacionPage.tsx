@@ -335,7 +335,7 @@ const EstudioGrabacionPage: React.FC = () => {
               : locale === 'ca'
                 ? 'ca_ES'
                 : locale === 'en'
-                  ? 'en_US'
+                  ? 'en_GB'
                   : 'fr_FR'
           }
         />

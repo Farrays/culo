@@ -133,7 +133,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Farray's International Dance Center" />
-        <meta property="og:locale" content={locale === 'es' ? 'es_ES' : locale} />
+        <meta property="og:locale" content={{ es: 'es_ES', ca: 'ca_ES', en: 'en_GB', fr: 'fr_FR' }[locale] || 'es_ES'} />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />

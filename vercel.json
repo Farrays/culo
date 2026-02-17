@@ -146,6 +146,11 @@
       "statusCode": 301
     },
     {
+      "source": "/:locale(es|ca|en|fr)/reparto",
+      "destination": "/:locale/clases/reggaeton-cubano-barcelona",
+      "statusCode": 301
+    },
+    {
       "source": "/:locale(es|ca|en|fr)/clases/afro-jazz-barcelona",
       "destination": "/:locale/clases/afro-jazz",
       "statusCode": 301

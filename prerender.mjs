@@ -2630,6 +2630,20 @@ console.log(`   - i18n chunks: es=${criticalChunks.es ? '✓' : '✗'}, ca=${cri
 
 let generatedCount = 0;
 
+// Auto-build page → pagePath map from routes array (replaces manual if/else chain)
+// Uses first 'es' route for each page key, strips 'es/' prefix to get the shared path
+const pageToPathMap = {};
+for (const r of [...routes, ...LANDING_ROUTES]) {
+  if (r.lang === 'es' && !pageToPathMap.hasOwnProperty(r.page)) {
+    if (r.path === '' || r.path === 'es') {
+      pageToPathMap[r.page] = '';
+    } else if (r.path.startsWith('es/')) {
+      pageToPathMap[r.page] = r.path.slice(3);
+    }
+    // else: skip pages without locale prefix (e.g., yr-project)
+  }
+}
+
 routes.forEach(route => {
   const { path: routePath, lang, page } = route;
 
@@ -2647,97 +2661,17 @@ routes.forEach(route => {
     ? `\n    <!-- Preload critical chunks for faster LCP -->\n    ${pagePreloadHints.join('\n    ')}\n`
     : '';
 
-  // Generate hreflang alternates
-  let pagePath = '';
-  if (page === 'home') {
-    pagePath = '';
-  } else if (page === 'classes') {
-    pagePath = 'clases/baile-barcelona';
-  } else if (page === 'danza') {
-    pagePath = 'clases/danza-barcelona';
-  } else if (page === 'salsaBachata') {
-    pagePath = 'clases/salsa-bachata-barcelona';
-  } else if (page === 'bachataSensual') {
-    pagePath = 'clases/bachata-barcelona';
-  } else if (page === 'salsaCubana') {
-    pagePath = 'clases/salsa-cubana-barcelona';
-  } else if (page === 'salsaLadyStyle') {
-    pagePath = 'clases/salsa-lady-style-barcelona';
-  } else if (page === 'folkloreCubano') {
-    pagePath = 'clases/folklore-cubano';
-  } else if (page === 'timba') {
-    pagePath = 'clases/timba-barcelona';
-  } else if (page === 'danzasUrbanas') {
-    pagePath = 'clases/danzas-urbanas-barcelona';
-  } else if (page === 'dancehall') {
-    pagePath = 'clases/dancehall-barcelona';
-  } else if (page === 'twerk') {
-    pagePath = 'clases/twerk-barcelona';
-  } else if (page === 'kpop') {
-    pagePath = 'clases/kpop-dance-barcelona';
-  } else if (page === 'commercial') {
-    pagePath = 'clases/commercial-dance-barcelona';
-  } else if (page === 'kizomba') {
-    pagePath = 'clases/kizomba-barcelona';
-  } else if (page === 'heelsBarcelona') {
-    pagePath = 'clases/heels-barcelona';
-  } else if (page === 'modernJazz') {
-    pagePath = 'clases/modern-jazz-barcelona';
-  } else if (page === 'clasesParticulares') {
-    pagePath = 'clases-particulares-baile';
-  } else if (page === 'teamBuilding') {
-    pagePath = 'team-building-barcelona';
-  } else if (page === 'blog') {
-    pagePath = 'blog';
-  } else if (page === 'blogLifestyle') {
-    pagePath = 'blog/lifestyle';
-  } else if (page === 'blogBeneficiosSalsa') {
-    pagePath = 'blog/lifestyle/beneficios-bailar-salsa';
-  } else if (page === 'blogHistoria') {
-    pagePath = 'blog/historia';
-  } else if (page === 'blogHistoriaSalsa') {
-    pagePath = 'blog/historia/historia-salsa-barcelona';
-  } else if (page === 'blogHistoriaBachata') {
-    pagePath = 'blog/historia/historia-bachata-barcelona';
-  } else if (page === 'blogTutoriales') {
-    pagePath = 'blog/tutoriales';
-  } else if (page === 'blogSalsaRitmo') {
-    pagePath = 'blog/historia/salsa-ritmo-conquisto-mundo';
-  } else if (page === 'blogSalsaVsBachata') {
-    pagePath = 'blog/tips/salsa-vs-bachata-que-estilo-elegir';
-  } else if (page === 'blogClasesSalsaBarcelona') {
-    pagePath = 'blog/lifestyle/clases-de-salsa-barcelona';
-  } else if (page === 'blogTips') {
-    pagePath = 'blog/tips';
-  } else if (page === 'blogClasesPrincipiantes') {
-    pagePath = 'blog/tips/clases-baile-principiantes-barcelona-farrays';
-  } else if (page === 'blogAcademiaDanza') {
-    pagePath = 'blog/tips/academia-de-danza-barcelona-guia-completa';
-  } else if (page === 'blogBalletAdultos') {
-    pagePath = 'blog/tips/ballet-para-adultos-barcelona';
-  } else if (page === 'blogDanzaContemporaneaVsJazzBallet') {
-    pagePath = 'blog/tips/danza-contemporanea-vs-modern-jazz-vs-ballet';
-  } else if (page === 'blogDanzasUrbanas') {
-    pagePath = 'blog/tips/danzas-urbanas-barcelona-guia-completa';
-  } else if (page === 'blogModernJazz') {
-    pagePath = 'blog/tips/modern-jazz-barcelona-guia-completa';
-  } else if (page === 'blogPerderMiedoBailar') {
-    pagePath = 'blog/lifestyle/como-perder-miedo-bailar';
-  } else if (page === 'blogFitness') {
-    pagePath = 'blog/fitness';
-  } else if (page === 'blogBaileSaludMental') {
-    pagePath = 'blog/fitness/baile-salud-mental';
-  } else if (page === 'baileManananas') {
-    pagePath = 'clases/baile-mananas';
-  }
+  // Generate hreflang alternates (auto-lookup from routes array)
+  const pagePath = pageToPathMap[page];
 
-  const hreflangLinks = [
+  // Only generate hreflang for pages with locale-based paths
+  const hreflangLinks = pagePath !== undefined ? [
     `<link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es${pagePath ? `/${pagePath}` : ''}" />`,
     `<link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca${pagePath ? `/${pagePath}` : ''}" />`,
     `<link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en${pagePath ? `/${pagePath}` : ''}" />`,
     `<link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr${pagePath ? `/${pagePath}` : ''}" />`,
     `<link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es${pagePath ? `/${pagePath}` : ''}" />`,
-  ].join('\n    ');
+  ].join('\n    ') : '';
 
   const currentUrl = `https://www.farrayscenter.com/${routePath}`;
 
@@ -2794,7 +2728,7 @@ routes.forEach(route => {
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
     <meta property="og:image" content="${getOgImageUrl(page)}" />
-    <meta property="og:locale" content="${lang}_ES" />
+    <meta property="og:locale" content="${{ es: 'es_ES', ca: 'ca_ES', en: 'en_GB', fr: 'fr_FR' }[lang]}" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

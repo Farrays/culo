@@ -440,7 +440,7 @@ const SalsaBachataPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '5',
+          ratingValue: '4.9',
           reviewCount: '509',
         }}
       />
@@ -469,7 +469,7 @@ const SalsaBachataPage: React.FC = () => {
                 ? 'ca_ES'
                 : locale === 'fr'
                   ? 'fr_FR'
-                  : 'en_US'
+                  : 'en_GB'
           }
         />
         <meta property="og:site_name" content="Farray's International Dance Center" />

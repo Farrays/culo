@@ -37,7 +37,7 @@ export const DEFAULT_HERO_STATS = {
 export const SOCIAL_PROOF = {
   rating: '4.9',
   reviewCount: '508+',
-  ratingValue: 5,
+  ratingValue: 4.9,
 } as const;
 
 // Farray's Center location data

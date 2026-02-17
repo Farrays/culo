@@ -1126,11 +1126,11 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                 ? 'ca_ES'
                 : locale === 'fr'
                   ? 'fr_FR'
-                  : 'en_US'
+                  : 'en_GB'
           }
         />
         <meta property="og:locale:alternate" content="es_ES" />
-        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:locale:alternate" content="en_GB" />
         <meta property="og:locale:alternate" content="ca_ES" />
         <meta property="og:locale:alternate" content="fr_FR" />
         {/* Author and Publisher */}

@@ -202,7 +202,7 @@ const ClasesParticularesPage: React.FC = () => {
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '4.9',
-        reviewCount: '500+',
+        reviewCount: '509',
       },
     },
     areaServed: {
@@ -300,7 +300,7 @@ const ClasesParticularesPage: React.FC = () => {
                 ? 'ca_ES'
                 : locale === 'fr'
                   ? 'fr_FR'
-                  : 'en_US'
+                  : 'en_GB'
           }
         />
         <meta property="og:site_name" content="Farray's International Dance Center" />
