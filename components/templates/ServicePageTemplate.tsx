@@ -76,9 +76,10 @@ const BUSINESS_INFO = {
     reviewCount: REVIEW_STATS.reviewCount,
   },
   sameAs: [
-    'https://www.instagram.com/farrayscenter/',
+    'https://www.instagram.com/farrays_centerbcn/',
     'https://www.facebook.com/farrayscenter/',
-    'https://www.youtube.com/@farrayscenter',
+    'https://www.youtube.com/@farraysinternationaldance',
+    'https://www.tiktok.com/@farrays_centerbcn',
   ],
 };
 
@@ -1207,7 +1208,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
         ...BUSINESS_INFO.aggregateRating,
       },
       sameAs: BUSINESS_INFO.sameAs,
-      hasMap: `https://maps.google.com/maps?cid=6116513555580645098`,
+      hasMap: 'https://g.page/r/Ca9MFoK1mqdHEBM',
       priceRange: '$$',
     };
 

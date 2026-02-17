@@ -262,7 +262,7 @@ const EstudioGrabacionPage: React.FC = () => {
     name: t('estudioGrabacion_h1'),
     description: t('estudioGrabacion_meta_description'),
     inLanguage:
-      locale === 'es' ? 'es-ES' : locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-US' : 'fr-FR',
+      locale === 'es' ? 'es-ES' : locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-GB' : 'fr-FR',
     isPartOf: {
       '@type': 'WebSite',
       '@id': `${baseUrl}/#website`,

@@ -447,7 +447,7 @@ const DanceClassesPage: React.FC = () => {
     name: t('danceClassesHub_h1'),
     description: t('danceClassesHub_intro'),
     inLanguage:
-      locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-US' : locale === 'fr' ? 'fr-FR' : 'es-ES',
+      locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-GB' : locale === 'fr' ? 'fr-FR' : 'es-ES',
     isPartOf: {
       '@type': 'WebSite',
       '@id': `${baseUrl}/#website`,

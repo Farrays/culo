@@ -641,7 +641,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               <span className="flex items-center gap-1">
                 <StarIcon className={`w-3.5 h-3.5 ${theme.textPrimary}`} />
                 <span className="text-neutral font-bold">4.9</span>
-                <span>(508+)</span>
+                <span>(509+)</span>
               </span>
               <span className="text-neutral/40">·</span>
               <span className="flex items-center gap-1">

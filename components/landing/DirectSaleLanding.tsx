@@ -304,7 +304,7 @@ const DirectSaleLanding: React.FC<DirectSaleLandingProps> = ({ config }) => {
               <span className="flex items-center gap-1">
                 <StarIcon className={`w-4 h-4 ${theme.textPrimary}`} />
                 <span className="text-neutral font-bold">4.9</span>
-                <span>(508+ reseñas)</span>
+                <span>(509+ reseñas)</span>
               </span>
               <span className="text-neutral/40">·</span>
               <span className="flex items-center gap-1">
@@ -448,7 +448,7 @@ const DirectSaleLanding: React.FC<DirectSaleLandingProps> = ({ config }) => {
                 {[...Array(5)].map((_, i) => (
                   <StarIcon key={i} className={`w-5 h-5 ${theme.textPrimary}`} />
                 ))}
-                <span className="text-neutral/70 text-sm ml-2">4.9 en Google (508+ reseñas)</span>
+                <span className="text-neutral/70 text-sm ml-2">4.9 en Google (509+ reseñas)</span>
               </div>
             </AnimateOnScroll>
 

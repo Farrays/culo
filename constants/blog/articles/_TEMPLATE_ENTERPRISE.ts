@@ -1695,9 +1695,9 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
     description: 'blog_authorBio', // Se traduce con t('blog_authorBio')
     image: '/images/team/yunaisy-farray.webp',
     sameAs: [
-      'https://www.instagram.com/farraysdancecenter/',
+      'https://www.instagram.com/farrays_centerbcn/',
       'https://www.linkedin.com/company/farrays-dance-center/',
-      'https://www.facebook.com/farraysdancecenter',
+      'https://www.facebook.com/farrayscenter/',
     ],
     worksFor: {
       name: "Farray's Dance Center",
@@ -1719,7 +1719,7 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
     jobTitle: 'blog_authorRoleMar', // Se traduce con t('blog_authorRoleMar')
     description: 'blog_authorBioMar', // Se traduce con t('blog_authorBioMar')
     image: '/images/team/mar.webp',
-    sameAs: ['https://www.instagram.com/farraysdancecenter/'],
+    sameAs: ['https://www.instagram.com/farrays_centerbcn/'],
     worksFor: {
       name: "Farray's Dance Center",
       url: 'https://www.farrays.com',

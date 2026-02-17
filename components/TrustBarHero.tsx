@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 const TrustBarHero: React.FC = () => {
   const { t } = useTranslation([
@@ -37,8 +38,8 @@ const TrustBarHero: React.FC = () => {
                 </svg>
               ))}
             </div>
-            <span className="text-neutral font-bold text-sm">4.9/5</span>
-            <span className="text-neutral/60 text-xs">(509+ {t('trustbar_reviews')})</span>
+            <span className="text-neutral font-bold text-sm">{REVIEW_STATS.ratingValue}/5</span>
+            <span className="text-neutral/60 text-xs">({REVIEW_STATS.reviewCount}+ {t('trustbar_reviews')})</span>
           </div>
 
           {/* CID-UNESCO */}

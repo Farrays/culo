@@ -269,10 +269,10 @@ const YunaisyFarrayPage: React.FC = () => {
       name: 'Cuba',
     },
     sameAs: [
-      'https://www.instagram.com/farrays_center/',
-      'https://www.facebook.com/farrayscenter',
-      'https://www.youtube.com/@FarraysDanceCenter',
-      'https://www.tiktok.com/@farrayscenter',
+      'https://www.instagram.com/farrays_centerbcn/',
+      'https://www.facebook.com/farrayscenter/',
+      'https://www.youtube.com/@farraysinternationaldance',
+      'https://www.tiktok.com/@farrays_centerbcn',
       'https://www.imdb.com/es-es/title/tt1718903/',
     ],
     address: {

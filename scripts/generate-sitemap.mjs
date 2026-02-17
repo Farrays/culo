@@ -99,14 +99,14 @@ const BLOG_ARTICLES = [
   // === TUTORIALES ===
   {
     slug: 'salsa-ritmo-conquisto-mundo',
-    category: 'tutoriales',
+    category: 'historia',
     datePublished: '2025-01-20',
     titleKey: 'Salsa: El Ritmo que Conquistó el Mundo',
     image: '/images/blog/salsa-ritmo/og.jpg',
   },
   {
     slug: 'salsa-vs-bachata-que-estilo-elegir',
-    category: 'tutoriales',
+    category: 'tips',
     datePublished: '2026-01-16',
     titleKey: 'Salsa vs Bachata: Diferencias y Cuál Elegir',
     image: '/images/blog/salsa-vs-bachata/og.jpg',

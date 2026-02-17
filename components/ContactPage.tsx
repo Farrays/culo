@@ -462,15 +462,33 @@ const ContactPage: React.FC = () => {
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Thursday'],
+          dayOfWeek: 'Monday',
           opens: '10:30',
+          closes: '13:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: 'Wednesday',
+          opens: '10:30',
+          closes: '13:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: 'Thursday',
+          opens: '09:30',
+          closes: '12:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+          opens: '17:30',
           closes: '23:00',
         },
         {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Wednesday', 'Friday'],
+          dayOfWeek: 'Friday',
           opens: '17:30',
-          closes: '23:00',
+          closes: '20:00',
         },
       ],
       priceRange: '€€',

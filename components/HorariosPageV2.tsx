@@ -320,9 +320,10 @@ const HorariosPageV2: React.FC = () => {
     },
     availableLanguage: ['es', 'ca', 'en', 'fr'],
     sameAs: [
-      'https://www.instagram.com/farrayscenter/',
+      'https://www.instagram.com/farrays_centerbcn/',
       'https://www.facebook.com/farrayscenter/',
-      'https://www.youtube.com/@farrayscenter',
+      'https://www.youtube.com/@farraysinternationaldance',
+      'https://www.tiktok.com/@farrays_centerbcn',
     ],
   };
 
