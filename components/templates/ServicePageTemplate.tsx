@@ -24,6 +24,7 @@ import Icon from '../Icon';
 import { ReviewsSection } from '../reviews';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 import { PhoneIcon, CheckCircleIcon, ShieldCheckIcon } from '../../lib/icons';
+import { REVIEW_STATS } from '../../constants/reviews-config';
 
 import type {
   ServicePageTemplateProps,
@@ -71,8 +72,8 @@ const BUSINESS_INFO = {
     longitude: '2.148014',
   },
   aggregateRating: {
-    ratingValue: '4.9',
-    reviewCount: '500',
+    ratingValue: REVIEW_STATS.ratingValue,
+    reviewCount: REVIEW_STATS.reviewCount,
   },
   sameAs: [
     'https://www.instagram.com/farrayscenter/',

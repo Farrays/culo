@@ -10,6 +10,7 @@
  * RUTA: /:locale/salsa-test
  */
 
+import { REVIEW_STATS } from './reviews-config';
 import { getTheme } from './landing-themes';
 import type { SimpleSaleConfig } from '../components/landing/SimpleSaleLanding';
 
@@ -42,8 +43,8 @@ export const SALSA_SIMPLE_CONFIG: SimpleSaleConfig = {
 
   // Social proof mínimo
   socialProof: {
-    rating: 4.9,
-    reviewCount: 508,
+    rating: parseFloat(REVIEW_STATS.ratingValue),
+    reviewCount: parseInt(REVIEW_STATS.reviewCount),
     studentCount: '+15.000',
   },
 

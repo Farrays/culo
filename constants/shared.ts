@@ -1,3 +1,5 @@
+import { REVIEW_STATS } from './reviews-config';
+
 // ===== SHARED CONSTANTS =====
 // Constantes compartidas entre todas las páginas de clases de baile
 // Extraídas para evitar duplicación en 23+ archivos
@@ -35,9 +37,9 @@ export const DEFAULT_HERO_STATS = {
 
 // Social proof stats (Google Reviews)
 export const SOCIAL_PROOF = {
-  rating: '4.9',
-  reviewCount: '508+',
-  ratingValue: 4.9,
+  rating: REVIEW_STATS.ratingValue,
+  reviewCount: REVIEW_STATS.reviewCount,
+  ratingValue: parseFloat(REVIEW_STATS.ratingValue),
 } as const;
 
 // Farray's Center location data

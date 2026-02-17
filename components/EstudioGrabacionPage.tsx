@@ -8,6 +8,7 @@ import AnimatedCounter from './AnimatedCounter';
 import FAQSection from './FAQSection';
 import Icon, { type IconName } from './Icon';
 import { ReviewsSection } from './reviews';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // ENTERPRISE IMAGE CONFIGURATION
@@ -209,10 +210,10 @@ const EstudioGrabacionPage: React.FC = () => {
       telephone: '+34622247085',
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '500',
-        bestRating: '5',
-        worstRating: '1',
+        ratingValue: REVIEW_STATS.ratingValue,
+        reviewCount: REVIEW_STATS.reviewCount,
+        bestRating: REVIEW_STATS.bestRating,
+        worstRating: REVIEW_STATS.worstRating,
       },
     },
     areaServed: {

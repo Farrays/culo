@@ -16,6 +16,7 @@ import { CheckIcon } from '../lib/icons';
 import LazyImage from './LazyImage';
 import OptimizedImage from './OptimizedImage';
 import { getRelatedClassImageUrl, getStyleImage } from '../constants/style-images';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -162,23 +163,6 @@ const HeelsBarcelonaPage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - AggregateRating (based on Google Reviews)
-  const aggregateRatingSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: t('schema_heels_educationalOrgName'),
-    description: t('heelsBarcelona_description'),
-    url: `${baseUrl}/${locale}/clases/heels-barcelona`,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '3',
-      reviewCount: '3',
-    },
-  };
-
   return (
     <>
       {/* SEO metadata (title, description, og, hreflang) is handled by the global SEO.tsx component */}
@@ -212,8 +196,8 @@ const HeelsBarcelonaPage: React.FC = () => {
         }}
         priceRange="€€"
         aggregateRating={{
-          ratingValue: '4.9',
-          reviewCount: '509',
+          ratingValue: REVIEW_STATS.ratingValue,
+          reviewCount: REVIEW_STATS.reviewCount,
         }}
       />
       <Helmet>
@@ -221,7 +205,6 @@ const HeelsBarcelonaPage: React.FC = () => {
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
 
       {/* Skip Links for Accessibility */}

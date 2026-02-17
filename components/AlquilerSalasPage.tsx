@@ -7,6 +7,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon, { type IconName } from './Icon';
 import { ReviewsSection } from './reviews';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // ENTERPRISE ROOM DATA - Salas con nomenclatura por letras (A, B, C, D)
@@ -570,10 +571,10 @@ const AlquilerSalasPage: React.FC = () => {
           // Required by Google: Must have offers, review, or aggregateRating
           aggregateRating: {
             '@type': 'AggregateRating',
-            ratingValue: '4.9',
-            reviewCount: '375',
-            bestRating: '5',
-            worstRating: '1',
+            ratingValue: REVIEW_STATS.ratingValue,
+            reviewCount: REVIEW_STATS.reviewCount,
+            bestRating: REVIEW_STATS.bestRating,
+            worstRating: REVIEW_STATS.worstRating,
           },
         },
         position: index + 1,

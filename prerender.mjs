@@ -523,7 +523,6 @@ const routes = [
   { path: 'es/metodo-farray', lang: 'es', page: 'metodoFarray' },
   { path: 'es/merchandising', lang: 'es', page: 'merchandising' },
   { path: 'es/regala-baile', lang: 'es', page: 'regalaBaile' },
-  { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
   { path: 'es/reservas', lang: 'es', page: 'reservas' },
 
@@ -606,7 +605,6 @@ const routes = [
   { path: 'ca/metodo-farray', lang: 'ca', page: 'metodoFarray' },
   { path: 'ca/merchandising', lang: 'ca', page: 'merchandising' },
   { path: 'ca/regala-baile', lang: 'ca', page: 'regalaBaile' },
-  { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
   { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
 
@@ -686,7 +684,6 @@ const routes = [
   { path: 'en/metodo-farray', lang: 'en', page: 'metodoFarray' },
   { path: 'en/merchandising', lang: 'en', page: 'merchandising' },
   { path: 'en/regala-baile', lang: 'en', page: 'regalaBaile' },
-  { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
   { path: 'en/reservas', lang: 'en', page: 'reservas' },
 
@@ -766,7 +763,6 @@ const routes = [
   { path: 'fr/metodo-farray', lang: 'fr', page: 'metodoFarray' },
   { path: 'fr/merchandising', lang: 'fr', page: 'merchandising' },
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
-  { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
   { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
 

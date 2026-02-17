@@ -27,6 +27,7 @@ import {
   UsersIcon,
   CheckIcon,
 } from '../lib/icons';
+import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // TYPES
@@ -292,10 +293,10 @@ const ServiciosBailePage: React.FC = () => {
       priceRange: '€€',
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '287',
-        bestRating: '5',
-        worstRating: '1',
+        ratingValue: REVIEW_STATS.ratingValue,
+        reviewCount: REVIEW_STATS.reviewCount,
+        bestRating: REVIEW_STATS.bestRating,
+        worstRating: REVIEW_STATS.worstRating,
       },
     },
     areaServed: [
@@ -400,10 +401,10 @@ const ServiciosBailePage: React.FC = () => {
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '287',
-      bestRating: '5',
-      worstRating: '1',
+      ratingValue: REVIEW_STATS.ratingValue,
+      reviewCount: REVIEW_STATS.reviewCount,
+      bestRating: REVIEW_STATS.bestRating,
+      worstRating: REVIEW_STATS.worstRating,
     },
   };
 

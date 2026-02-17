@@ -1,3 +1,5 @@
+import { REVIEW_STATS } from './reviews-config';
+
 /**
  * Reviews Data - Types and Constants for Google Reviews System
  * Enterprise-grade review management for Farray's International Dance Center
@@ -229,8 +231,8 @@ export const GOOGLE_BUSINESS_PROFILE = {
   url: 'https://g.page/r/CWBvYu8J9aJAEBM/review',
   placeId: 'ChIJAW9i7-8iQg0RYGK_CflivUA',
   name: "Farray's International Dance Center",
-  totalReviews: 509,
-  averageRating: 5.0,
+  totalReviews: parseInt(REVIEW_STATS.reviewCount),
+  averageRating: parseFloat(REVIEW_STATS.ratingValue),
 };
 
 // =============================================================================

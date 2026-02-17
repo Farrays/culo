@@ -4,6 +4,7 @@
  * Now with enterprise-level i18n support for curated reviews
  */
 
+import { REVIEW_STATS } from '../constants/reviews-config';
 import { useMemo } from 'react';
 import reviewsData from '../data/reviews.json';
 import reviewTranslations from '../data/reviews-translations.json';
@@ -237,8 +238,8 @@ export function useGoogleBusinessStats(): {
 } {
   return {
     url: 'https://g.page/r/CWBvYu8J9aJAEBM/review',
-    totalReviews: 509,
-    averageRating: 5.0,
+    totalReviews: parseInt(REVIEW_STATS.reviewCount),
+    averageRating: parseFloat(REVIEW_STATS.ratingValue),
     name: "Farray's International Dance Center",
   };
 }
