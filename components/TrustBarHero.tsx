@@ -39,7 +39,9 @@ const TrustBarHero: React.FC = () => {
               ))}
             </div>
             <span className="text-neutral font-bold text-sm">{REVIEW_STATS.ratingValue}/5</span>
-            <span className="text-neutral/60 text-xs">({REVIEW_STATS.reviewCount}+ {t('trustbar_reviews')})</span>
+            <span className="text-neutral/60 text-xs">
+              ({REVIEW_STATS.reviewCount}+ {t('trustbar_reviews')})
+            </span>
           </div>
 
           {/* CID-UNESCO */}
