@@ -409,6 +409,13 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
 
   return (
     <Helmet>
+      {/* Open Graph Article Tags */}
+      <meta property="og:type" content="article" />
+      <meta property="article:published_time" content={config.datePublished} />
+      <meta property="article:modified_time" content={config.dateModified} />
+      <meta property="article:author" content={author.name} />
+      <meta property="article:section" content={config.category} />
+
       {/* Article Schema */}
       <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
 
