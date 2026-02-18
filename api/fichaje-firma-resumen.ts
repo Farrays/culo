@@ -126,6 +126,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       .update({
         firmado: true,
         fecha_firma: timestampFirma,
+        ip_firma: ip,
       })
       .eq('id', resumen.id);
 
