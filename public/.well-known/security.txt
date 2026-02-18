@@ -1,0 +1,7 @@
+# Security Policy for Farray's Center
+# https://securitytxt.org/ (RFC 9116)
+
+Contact: mailto:info@farrayscenter.com
+Expires: 2027-02-18T00:00:00.000Z
+Preferred-Languages: es, ca, en
+Canonical: https://www.farrayscenter.com/.well-known/security.txt
