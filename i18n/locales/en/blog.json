@@ -1027,12 +1027,25 @@
   "blog_danzaContemporaneaVsJazzBallet_faq8Question": "At what age is it too late to start dancing professionally?",
   "blog_danzaContemporaneaVsJazzBallet_faq8Answer": "For a professional career in classical ballet companies, starting as an adult is very difficult because it requires years of technical training from childhood. For contemporary and jazz there's more flexibility, and there are cases of dancers who started late and developed careers. But if your goal is to enjoy, improve and perhaps dance in amateur or semi-professional projects, it's never too late.",
 
-  "blog_danzaContemporaneaVsJazzBallet_ref1Title": "Effectiveness of Dance Interventions on Physical and Psychological Health",
-  "blog_danzaContemporaneaVsJazzBallet_ref2Title": "Adult Dance Training: Benefits and Best Practices",
-  "blog_danzaContemporaneaVsJazzBallet_ref3Title": "Contemporary Dance Techniques: A Comprehensive Guide",
-  "blog_danzaContemporaneaVsJazzBallet_ref4Title": "Evolution of Modern Jazz Dance in Professional Training",
-  "blog_danzaContemporaneaVsJazzBallet_ref5Title": "Dance Training at the National School of Art in Cuba",
-  "blog_danzaContemporaneaVsJazzBallet_ref6Title": "Dance Medicine: Injury Prevention and Health Benefits",
+  "blog_danzaContemporaneaVsJazzBallet_referencesIntro": "Sources consulted for this comparative article on contemporary dance, modern jazz and classical ballet.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletTitle": "Ballet — Encyclopaedia Britannica",
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletDesc": "Comprehensive encyclopaedic article on the history of ballet, from its Italian Renaissance origins to modern companies. Author: Marion Kant, dance historian at the University of Pennsylvania.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaModernTitle": "Modern Dance — Encyclopaedia Britannica",
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaModernDesc": "History, styles and techniques of modern dance. Covers pioneers such as Isadora Duncan, Martha Graham, Doris Humphrey and Merce Cunningham, and postmodern developments.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamTitle": "History — Martha Graham Dance Company",
+  "blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamDesc": "Official history of Martha Graham and her company founded in 1926. Details the 'contraction and release' technique, the creation of 181 ballets, and her recognition as 'Dancer of the Century' by TIME.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refFrontiersTitle": "The Physiological and Psychological Benefits of Dance — Frontiers in Physiology (2022)",
+  "blog_danzaContemporaneaVsJazzBallet_refFrontiersDesc": "Systematic review by Tao et al. examining the physiological and psychological benefits of dance in children and adolescents, covering multiple dance styles. DOI: 10.3389/fphys.2022.925958.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refSportsMedTitle": "Dance Interventions vs Other Physical Activity — Sports Medicine (2024)",
+  "blog_danzaContemporaneaVsJazzBallet_refSportsMedDesc": "Meta-analysis by Fong Yan et al. of 27 studies (1,392 participants) concluding that structured dance is as effective as other physical activities for quality of life and potentially superior for emotional wellbeing. DOI: 10.1007/s40279-023-01990-2.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refRADTitle": "Royal Academy of Dance — International ballet body",
+  "blog_danzaContemporaneaVsJazzBallet_refRADDesc": "Global examination body specialising in classical ballet education, founded in 1920. Their Graded Examination system (Pre-Primary to Grade 8) is the international standard in ballet training.",
 
   "blog_authorRoleMarcos": "Urban Dance Teacher",
   "blog_authorBioMarcos": "Over 20 years of experience teaching hip-hop old school, new style, popping and locking in Barcelona. Has competed in battles and jams throughout Spain and Europe. His philosophy: urban dance is for everyone.",

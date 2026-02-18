@@ -1373,12 +1373,25 @@
   "blog_danzaContemporaneaVsJazzBallet_faq8Question": "¿A qué edad es tarde para empezar a bailar profesionalmente?",
   "blog_danzaContemporaneaVsJazzBallet_faq8Answer": "Para una carrera profesional en compañías de ballet clásico, comenzar de adulto es muy difícil porque requiere años de formación técnica desde la infancia. Para contemporáneo y jazz hay más flexibilidad, y hay casos de bailarines que empezaron tarde y desarrollaron carreras. Pero si tu objetivo es disfrutar, mejorar y quizá bailar en proyectos amateur o semi-profesionales, nunca es tarde.",
 
-  "blog_danzaContemporaneaVsJazzBallet_ref1Title": "Effectiveness of Dance Interventions on Physical and Psychological Health",
-  "blog_danzaContemporaneaVsJazzBallet_ref2Title": "Adult Dance Training: Benefits and Best Practices",
-  "blog_danzaContemporaneaVsJazzBallet_ref3Title": "Contemporary Dance Techniques: A Comprehensive Guide",
-  "blog_danzaContemporaneaVsJazzBallet_ref4Title": "Evolution of Modern Jazz Dance in Professional Training",
-  "blog_danzaContemporaneaVsJazzBallet_ref5Title": "Formación en Danza en la Escuela Nacional de Arte de Cuba",
-  "blog_danzaContemporaneaVsJazzBallet_ref6Title": "Dance Medicine: Injury Prevention and Health Benefits",
+  "blog_danzaContemporaneaVsJazzBallet_referencesIntro": "Fuentes consultadas para la elaboración de este artículo comparativo entre danza contemporánea, modern jazz y ballet clásico.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletTitle": "Ballet — Encyclopaedia Britannica",
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletDesc": "Artículo enciclopédico completo sobre la historia del ballet, desde sus orígenes en el Renacimiento italiano hasta las compañías modernas. Autor: Marion Kant, historiadora de danza de la Universidad de Pensilvania.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaModernTitle": "Modern Dance — Encyclopaedia Britannica",
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaModernDesc": "Historia, estilos y técnicas de la danza moderna. Cubre pioneras como Isadora Duncan, Martha Graham, Doris Humphrey y Merce Cunningham, y el desarrollo postmoderno.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamTitle": "History — Martha Graham Dance Company",
+  "blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamDesc": "Historia oficial de Martha Graham y su compañía fundada en 1926. Detalla la técnica de 'contracción y liberación', la creación de 181 ballets, y su reconocimiento como 'Bailarina del Siglo' por TIME.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refFrontiersTitle": "The Physiological and Psychological Benefits of Dance — Frontiers in Physiology (2022)",
+  "blog_danzaContemporaneaVsJazzBallet_refFrontiersDesc": "Revisión sistemática de Tao et al. que examina los beneficios fisiológicos y psicológicos del baile en niños y adolescentes, cubriendo múltiples estilos de danza. DOI: 10.3389/fphys.2022.925958.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refSportsMedTitle": "Dance Interventions vs Other Physical Activity — Sports Medicine (2024)",
+  "blog_danzaContemporaneaVsJazzBallet_refSportsMedDesc": "Meta-análisis de Fong Yan et al. con 27 estudios (1.392 participantes) que concluye que la danza estructurada es igual de efectiva que otras actividades físicas para calidad de vida y potencialmente superior para bienestar emocional. DOI: 10.1007/s40279-023-01990-2.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refRADTitle": "Royal Academy of Dance — Organismo internacional de ballet",
+  "blog_danzaContemporaneaVsJazzBallet_refRADDesc": "Organismo examinador global especializado en educación de ballet clásico, fundado en 1920. Su sistema de exámenes graduados (Pre-Primary a Grado 8) es el estándar internacional en formación de ballet.",
 
   "blog_authorRoleMarcos": "Profesor de Danzas Urbanas",
   "blog_authorBioMarcos": "Más de 20 años de experiencia enseñando hip-hop old school, new style, popping y locking en Barcelona. Ha competido en battles y jams por toda España y Europa. Su filosofía: la danza urbana es para todos.",

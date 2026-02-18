@@ -356,6 +356,65 @@ export const DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blog_danzaContemporaneaVsJazzBallet_conclusionContent',
     },
+
+    // =====================================================
+    // REFERENCES SECTION (Cards con enlaces)
+    // =====================================================
+    {
+      id: 'references-section',
+      type: 'references',
+      contentKey: 'blog_danzaContemporaneaVsJazzBallet_referencesIntro',
+      references: [
+        {
+          id: 'britannica-ballet',
+          titleKey: 'blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletTitle',
+          url: 'https://www.britannica.com/art/ballet',
+          publisher: 'Encyclopaedia Britannica',
+          year: '2026',
+          descriptionKey: 'blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletDesc',
+        },
+        {
+          id: 'britannica-modern-dance',
+          titleKey: 'blog_danzaContemporaneaVsJazzBallet_refBritannicaModernTitle',
+          url: 'https://www.britannica.com/art/modern-dance',
+          publisher: 'Encyclopaedia Britannica',
+          year: '2024',
+          descriptionKey: 'blog_danzaContemporaneaVsJazzBallet_refBritannicaModernDesc',
+        },
+        {
+          id: 'martha-graham',
+          titleKey: 'blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamTitle',
+          url: 'https://marthagraham.org/history/',
+          publisher: 'Martha Graham Dance Company',
+          year: '2024',
+          descriptionKey: 'blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamDesc',
+        },
+        {
+          id: 'frontiers-physiology',
+          titleKey: 'blog_danzaContemporaneaVsJazzBallet_refFrontiersTitle',
+          url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9234256/',
+          publisher: 'Frontiers in Physiology',
+          year: '2022',
+          descriptionKey: 'blog_danzaContemporaneaVsJazzBallet_refFrontiersDesc',
+        },
+        {
+          id: 'sports-medicine',
+          titleKey: 'blog_danzaContemporaneaVsJazzBallet_refSportsMedTitle',
+          url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11127814/',
+          publisher: 'Sports Medicine',
+          year: '2024',
+          descriptionKey: 'blog_danzaContemporaneaVsJazzBallet_refSportsMedDesc',
+        },
+        {
+          id: 'rad',
+          titleKey: 'blog_danzaContemporaneaVsJazzBallet_refRADTitle',
+          url: 'https://www.royalacademyofdance.org/',
+          publisher: 'Royal Academy of Dance',
+          year: '2024',
+          descriptionKey: 'blog_danzaContemporaneaVsJazzBallet_refRADDesc',
+        },
+      ],
+    },
   ],
 
   // === FEATURED IMAGE ===

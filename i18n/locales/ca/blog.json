@@ -1086,12 +1086,25 @@
   "blog_danzaContemporaneaVsJazzBallet_faq8Question": "A quina edat és tard per començar a ballar professionalment?",
   "blog_danzaContemporaneaVsJazzBallet_faq8Answer": "Per a una carrera professional en companyies de ballet clàssic, començar d'adult és molt difícil perquè requereix anys de formació tècnica des de la infància. Per a contemporani i jazz hi ha més flexibilitat, i hi ha casos de ballarins que van començar tard i van desenvolupar carreres. Però si el teu objectiu és gaudir, millorar i potser ballar en projectes amateurs o semi-professionals, mai és tard.",
 
-  "blog_danzaContemporaneaVsJazzBallet_ref1Title": "Effectiveness of Dance Interventions on Physical and Psychological Health",
-  "blog_danzaContemporaneaVsJazzBallet_ref2Title": "Adult Dance Training: Benefits and Best Practices",
-  "blog_danzaContemporaneaVsJazzBallet_ref3Title": "Contemporary Dance Techniques: A Comprehensive Guide",
-  "blog_danzaContemporaneaVsJazzBallet_ref4Title": "Evolution of Modern Jazz Dance in Professional Training",
-  "blog_danzaContemporaneaVsJazzBallet_ref5Title": "Formació en Dansa a l'Escola Nacional d'Art de Cuba",
-  "blog_danzaContemporaneaVsJazzBallet_ref6Title": "Dance Medicine: Injury Prevention and Health Benefits",
+  "blog_danzaContemporaneaVsJazzBallet_referencesIntro": "Fonts consultades per a l'elaboració d'aquest article comparatiu entre dansa contemporània, modern jazz i ballet clàssic.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletTitle": "Ballet — Encyclopaedia Britannica",
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaBalletDesc": "Article enciclopèdic complet sobre la història del ballet, des dels seus orígens al Renaixement italià fins a les companyies modernes. Autora: Marion Kant, historiadora de dansa de la Universitat de Pennsilvània.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaModernTitle": "Modern Dance — Encyclopaedia Britannica",
+  "blog_danzaContemporaneaVsJazzBallet_refBritannicaModernDesc": "Història, estils i tècniques de la dansa moderna. Cobreix pioneres com Isadora Duncan, Martha Graham, Doris Humphrey i Merce Cunningham, i el desenvolupament postmodern.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamTitle": "History — Martha Graham Dance Company",
+  "blog_danzaContemporaneaVsJazzBallet_refMarthaGrahamDesc": "Història oficial de Martha Graham i la seva companyia fundada el 1926. Detalla la tècnica de 'contracció i alliberament', la creació de 181 ballets, i el seu reconeixement com a 'Ballarina del Segle' per TIME.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refFrontiersTitle": "The Physiological and Psychological Benefits of Dance — Frontiers in Physiology (2022)",
+  "blog_danzaContemporaneaVsJazzBallet_refFrontiersDesc": "Revisió sistemàtica de Tao et al. que examina els beneficis fisiològics i psicològics del ball en infants i adolescents, cobrint múltiples estils de dansa. DOI: 10.3389/fphys.2022.925958.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refSportsMedTitle": "Dance Interventions vs Other Physical Activity — Sports Medicine (2024)",
+  "blog_danzaContemporaneaVsJazzBallet_refSportsMedDesc": "Meta-anàlisi de Fong Yan et al. amb 27 estudis (1.392 participants) que conclou que la dansa estructurada és igual d'efectiva que altres activitats físiques per a qualitat de vida i potencialment superior per al benestar emocional. DOI: 10.1007/s40279-023-01990-2.",
+
+  "blog_danzaContemporaneaVsJazzBallet_refRADTitle": "Royal Academy of Dance — Organisme internacional de ballet",
+  "blog_danzaContemporaneaVsJazzBallet_refRADDesc": "Organisme examinador global especialitzat en educació de ballet clàssic, fundat el 1920. El seu sistema d'exàmens graduats (Pre-Primary a Grau 8) és l'estàndard internacional en formació de ballet.",
 
   "blog_authorRoleMarcos": "Professor de Danses Urbanes",
   "blog_authorBioMarcos": "Més de 20 anys d'experiència ensenyant hip-hop old school, new style, popping i locking a Barcelona. Ha competit en battles i jams per tota Espanya i Europa. La seva filosofia: la dansa urbana és per a tothom.",
