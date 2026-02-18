@@ -50,7 +50,6 @@ const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPag
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
-// const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2')); // Removed - file doesn't exist
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
 const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
@@ -659,18 +658,6 @@ const AppContent: React.FC = () => {
                 </>
               }
             />
-
-            {/* V2 Alternative - for A/B testing comparison - DISABLED (file doesn't exist)
-            <Route
-              path="/:locale/clases/salsa-lady-style-v2"
-              element={
-                <>
-                  <LocaleSync />
-                  <SalsaLadyStylePageV2 />
-                </>
-              }
-            />
-            */}
 
             <Route
               path="/:locale/clases/bachata-lady-style-barcelona"
@@ -1352,9 +1339,6 @@ const AppContent: React.FC = () => {
                 </>
               }
             />
-
-            {/* ===== YR PROJECT PAGE (Linktree-style - no locale) ===== */}
-            <Route path="/yr-project" element={<YRProjectPage />} />
 
             {/* 404 pages - localized */}
             <Route
