@@ -37,6 +37,7 @@ import {
   ShieldCheckIcon,
 } from '../../lib/icons';
 import type { DirectSaleLandingConfig } from '../../constants/direct-sale-landing-config';
+import { sendCAPIBrowserEvent, pushToDataLayer } from '../../utils/analytics';
 
 // =============================================================================
 // TYPES
@@ -163,8 +164,23 @@ const DirectSaleLanding: React.FC<DirectSaleLandingProps> = ({ config }) => {
     { code: 'fr', label: 'FR' },
   ];
 
-  // Handle CTA click - open Momence in new tab
+  // Handle CTA click - track + open Momence in new tab
   const handleCTAClick = (momenceUrl?: string) => {
+    // Track InitiateCheckout (same pattern as GenericDanceLanding)
+    sendCAPIBrowserEvent('InitiateCheckout', {
+      content_name: `${config.estiloValue} Direct Sale Landing`,
+      content_category: 'Dance Class',
+      value: 0,
+      currency: 'EUR',
+    });
+
+    pushToDataLayer({
+      event: 'initiate_checkout',
+      lead_source: 'direct_sale_landing',
+      style: config.estiloValue,
+      page_path: location.pathname,
+    });
+
     if (momenceUrl) {
       window.open(momenceUrl, '_blank', 'noopener,noreferrer');
     } else {
