@@ -10,6 +10,7 @@ interface YouTubeEmbedProps {
   uploadDate?: string;
   duration?: string;
   priority?: boolean; // Load thumbnail eagerly (use for above-the-fold videos)
+  disableSchema?: boolean; // Skip VideoObject JSON-LD (for pages where video is not the main content)
 }
 
 /** Metrics returned when video loads */
@@ -72,6 +73,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   uploadDate = '2025-01-01',
   duration = 'PT5M',
   priority = false,
+  disableSchema = false,
 }) => {
   const { t } = useTranslation([
     'common',
@@ -281,9 +283,11 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   if (!hasFunctionalConsent) {
     return (
       <>
-        <Helmet>
-          <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
-        </Helmet>
+        {!disableSchema && (
+          <Helmet>
+            <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
+          </Helmet>
+        )}
         <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-neutral/30 bg-black">
           {/* Skeleton while thumbnail loads */}
           {thumbnailLoading && !thumbnailError && <SkeletonLoader />}
@@ -338,9 +342,11 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   if (!isLoaded) {
     return (
       <>
-        <Helmet>
-          <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
-        </Helmet>
+        {!disableSchema && (
+          <Helmet>
+            <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
+          </Helmet>
+        )}
         <div
           className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 shadow-accent-glow cursor-pointer group bg-black"
           onClick={handlePlay}

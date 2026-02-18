@@ -550,31 +550,8 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         datePublished: new Date().toISOString(),
       }));
 
-  // VideoObject Schema - Only generate if video ID is provided
-  const videoSchema = config.video.id
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'VideoObject',
-        name: t(config.video.titleKey),
-        description: t(config.video.descKey),
-        thumbnailUrl: `https://img.youtube.com/vi/${config.video.id}/maxresdefault.jpg`,
-        uploadDate: '2024-01-01',
-        duration: 'PT2M', // Default 2 minutes for dance class videos
-        contentUrl: `https://www.youtube.com/watch?v=${config.video.id}`,
-        embedUrl: `https://www.youtube.com/embed/${config.video.id}`,
-        publisher: {
-          '@type': 'Organization',
-          name: "Farray's International Dance Center",
-          logo: {
-            '@type': 'ImageObject',
-            url: `${baseUrl}/logo.svg`,
-          },
-        },
-        inLanguage: { es: 'es-ES', ca: 'ca-ES', en: 'en-GB', fr: 'fr-FR' }[locale] || 'es-ES',
-        isAccessibleForFree: true,
-        regionsAllowed: 'ES',
-      }
-    : null;
+  // VideoObject schema removed: class pages are not "video watch pages" per Google's Dec 2023 policy.
+  // See: https://support.google.com/webmasters/answer/9495631
 
   // Schedule data for CourseSchemaEnterprise
   const courseSchedules = config.schedules.map(schedule => ({
@@ -650,13 +627,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         <meta name="twitter:image" content={`${baseUrl}${config.ogImage}`} />
       </Helmet>
 
-      {/* VideoObject Schema - Only render if video ID is provided */}
-      {videoSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-        />
-      )}
+      {/* VideoObject schema removed - class pages are not video watch pages */}
 
       {/* BreadcrumbList Schema */}
       <script
@@ -1521,7 +1492,11 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
               {config.video.id ? (
                 /* Video disponible - mostrar YouTubeEmbed */
                 <div className="max-w-4xl mx-auto">
-                  <YouTubeEmbed videoId={config.video.id} title={t(config.video.titleKey)} />
+                  <YouTubeEmbed
+                    videoId={config.video.id}
+                    title={t(config.video.titleKey)}
+                    disableSchema
+                  />
                 </div>
               ) : (
                 /* Video Coming Soon Placeholder - Enterprise (Not clickable) */

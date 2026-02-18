@@ -154,4 +154,11 @@ describe('YouTubeEmbed', () => {
     const aspectContainer = container.querySelector('.aspect-video');
     expect(aspectContainer).toBeInTheDocument();
   });
+
+  it('renders without errors when disableSchema is true', () => {
+    renderWithHelmet(<YouTubeEmbed {...defaultProps} disableSchema />);
+
+    const thumbnail = screen.getByAltText('Test Video Title');
+    expect(thumbnail).toBeInTheDocument();
+  });
 });

@@ -220,6 +220,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
                   description={videoConfig.description}
                   uploadDate={videoConfig.uploadDate}
                   duration={videoConfig.duration}
+                  disableSchema
                 />
               </div>
             </div>
