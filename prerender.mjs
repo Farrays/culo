@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateAllJsonLd, BLOG_ARTICLE_DATA } from './scripts/schema-generators.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,6 +23,18 @@ for (const locale of SUPPORTED_LOCALES) {
   } catch (e) {
     console.warn(`Warning: Could not load pages.json for locale "${locale}":`, e.message);
     pagesTranslations[locale] = {};
+  }
+}
+
+// Load blog.json translations for blog Article/FAQPage JSON-LD schemas
+const blogTranslations = {};
+for (const locale of SUPPORTED_LOCALES) {
+  try {
+    const filePath = path.join(__dirname, 'i18n', 'locales', locale, 'blog.json');
+    blogTranslations[locale] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  } catch (e) {
+    console.warn(`Warning: Could not load blog.json for locale "${locale}":`, e.message);
+    blogTranslations[locale] = {};
   }
 }
 
@@ -368,6 +381,156 @@ const STYLE_KEY_MAP = {
   contemporaneo: 'contemporaneo',
 };
 
+// Map from blog page keys (used in routes) to blog.json translation key prefixes
+// Verified against actual keys in i18n/locales/es/blog.json
+const BLOG_ARTICLE_KEY_MAP = {
+  blogBeneficiosSalsa: 'blogBeneficiosSalsa',
+  blogHistoriaSalsa: 'blogHistoriaSalsa',
+  blogClasesSalsaBarcelona: 'blogClasesSalsaBarcelona',
+  blogSalsaVsBachata: 'blogSalsaVsBachata',
+  blogBaileSaludMental: 'blogBaileSaludMental',
+  blogHistoriaBachata: 'blogHistoriaBachata',
+  blogSalsaRitmo: 'blogSalsaRitmo',
+  blogAcademiaDanza: 'blogAcademiaDanza',
+  blogBalletAdultos: 'blogBalletAdultos',
+  blogClasesPrincipiantes: 'blogClasesPrincipiantes',
+  blogPerderMiedoBailar: 'blogPerderMiedoBailar',
+  blogDanzasUrbanas: 'blogDanzasUrbanas',
+  blogModernJazz: 'blogModernJazz',
+  blogDanzaContemporaneaVsJazzBallet: 'blog_danzaContemporaneaVsJazzBallet',
+};
+
+/**
+ * Converts basic Markdown formatting to HTML.
+ * Handles: **bold**, *italic*, [links](url), paragraph breaks.
+ */
+const mdToHtml = (text) => {
+  if (!text) return '';
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/\n/g, ' ');
+};
+
+/**
+ * Generates rich HTML content for blog article pages using blog.json translations.
+ * Extracts: title, summary bullets, intro, content sections (benefit/section patterns),
+ * FAQ, and conclusion. Much richer than the fallback H1+description.
+ *
+ * @param {string} pageKey - Route page key (e.g., 'blogBeneficiosSalsa')
+ * @param {string} lang - Language code (es, ca, en, fr)
+ * @returns {string} Rich semantic HTML or '' if not a blog article
+ */
+const generateRichBlogContent = (pageKey, lang) => {
+  const articleKey = BLOG_ARTICLE_KEY_MAP[pageKey];
+  if (!articleKey) return '';
+
+  const t = blogTranslations[lang];
+  if (!t) return '';
+
+  const get = (key) => t[key] || '';
+  const sections = [];
+
+  // 1. Title + summary bullets
+  const title = get(`${articleKey}_title`);
+  if (!title) return '';
+
+  let headerHtml = `<h1>${title}</h1>`;
+  const summaryBullets = [];
+  for (let i = 1; i <= 5; i++) {
+    const bullet = get(`${articleKey}_summaryBullet${i}`);
+    if (bullet) summaryBullets.push(bullet);
+  }
+  if (summaryBullets.length > 0) {
+    headerHtml += `<ul id="article-summary">${summaryBullets.map(b => `<li>${b}</li>`).join('')}</ul>`;
+  }
+  sections.push(`<header>${headerHtml}</header>`);
+
+  // 2. Intro paragraph(s)
+  const intro = get(`${articleKey}_intro`);
+  if (intro) {
+    let introHtml = `<p>${mdToHtml(intro)}</p>`;
+    const intro2 = get(`${articleKey}_intro2`);
+    if (intro2) introHtml += `<p>${mdToHtml(intro2)}</p>`;
+    const introFarrays = get(`${articleKey}_introFarrays`);
+    if (introFarrays) introHtml += `<p>${mdToHtml(introFarrays)}</p>`;
+    sections.push(`<section id="intro">${introHtml}</section>`);
+  }
+
+  // 3. Content sections — try benefit{N} pattern, then section{N} pattern
+  const contentParts = [];
+
+  // benefit{N}Title / benefit{N}Content (e.g., blogBeneficiosSalsa)
+  for (let i = 1; i <= 15; i++) {
+    const bTitle = get(`${articleKey}_benefit${i}Title`);
+    if (bTitle) {
+      let html = `<h2>${bTitle}</h2>`;
+      const bContent = get(`${articleKey}_benefit${i}Content`);
+      if (bContent) html += `<p>${mdToHtml(bContent)}</p>`;
+      contentParts.push(html);
+    }
+  }
+
+  // section{N}Title / section{N}Content (e.g., blogDanzasUrbanas, blogModernJazz)
+  if (contentParts.length === 0) {
+    for (let i = 1; i <= 10; i++) {
+      const sTitle = get(`${articleKey}_section${i}Title`);
+      if (sTitle) {
+        let html = `<h2>${sTitle}</h2>`;
+        const sIntro = get(`${articleKey}_section${i}Intro`);
+        if (sIntro) html += `<p>${mdToHtml(sIntro)}</p>`;
+        const sContent = get(`${articleKey}_section${i}Content`);
+        if (sContent) {
+          html += `<p>${mdToHtml(sContent)}</p>`;
+        } else {
+          for (let j = 1; j <= 4; j++) {
+            const sub = get(`${articleKey}_section${i}Content${j}`);
+            if (sub) html += `<p>${mdToHtml(sub)}</p>`;
+          }
+        }
+        contentParts.push(html);
+      }
+    }
+  }
+
+  if (contentParts.length > 0) {
+    sections.push(`<section id="content">${contentParts.join('')}</section>`);
+  }
+
+  // 4. FAQ section (all articles have this)
+  let faqHtml = '';
+  let faqCount = 0;
+  for (let i = 1; i <= 10; i++) {
+    const q = get(`${articleKey}_faq${i}Question`);
+    const a = get(`${articleKey}_faq${i}Answer`);
+    if (q && a) {
+      faqHtml += `<details><summary>${mdToHtml(q)}</summary><p>${mdToHtml(a)}</p></details>`;
+      faqCount++;
+    }
+  }
+  if (faqCount > 0) {
+    const faqTitle = get(`${articleKey}_faqTitle`) || 'FAQ';
+    sections.push(`<section id="faq"><h2>${faqTitle}</h2>${faqHtml}</section>`);
+  }
+
+  // 5. Conclusion
+  const conclusionTitle = get(`${articleKey}_conclusionTitle`) || get(`${articleKey}_conclusionHeading`);
+  if (conclusionTitle) {
+    let concHtml = `<h2>${conclusionTitle}</h2>`;
+    const conclusionContent = get(`${articleKey}_conclusionContent`);
+    if (conclusionContent) concHtml += `<p>${mdToHtml(conclusionContent)}</p>`;
+    const conclusionCTA = get(`${articleKey}_conclusionCTA`);
+    if (conclusionCTA) concHtml += `<p>${mdToHtml(conclusionCTA)}</p>`;
+    sections.push(`<section id="conclusion">${concHtml}</section>`);
+  }
+
+  if (sections.length <= 1) return ''; // Only header, no real content
+
+  return `<article id="main-content">${sections.join('')}</article>`;
+};
+
 /**
  * Generates rich HTML content for class pages using pages.json translations.
  * This content is seen by crawlers (Google first-wave, AI bots like GPTBot, ClaudeBot).
@@ -468,6 +631,10 @@ const generateContentFromMetadata = (pageKey, lang, allMetadata) => {
   // Try rich content first (class pages with pages.json translations)
   const richContent = generateRichClassContent(pageKey, lang);
   if (richContent) return richContent;
+
+  // Try rich blog content (blog articles with blog.json translations)
+  const blogContent = generateRichBlogContent(pageKey, lang);
+  if (blogContent) return blogContent;
 
   // Fallback: simple H1 + description for non-class pages
   const meta = allMetadata[lang]?.[pageKey];
@@ -2736,6 +2903,18 @@ routes.forEach(route => {
 
   // Inject metadata in <head>
   const robotsContent = meta.robots || 'index, follow';
+
+  // Generate JSON-LD structured data for SEO + GEO (AI crawlers)
+  const jsonLdHtml = generateAllJsonLd({
+    routePath,
+    lang,
+    page,
+    meta,
+    translations: pagesTranslations[lang] || {},
+    blogTranslations: blogTranslations[lang] || {},
+    styleKeyMap: STYLE_KEY_MAP,
+  });
+
   html = html.replace('</head>', `
     <title>${meta.title}</title>
     <meta name="description" content="${meta.description}" />
@@ -2744,12 +2923,17 @@ routes.forEach(route => {
     ${hreflangLinks}
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="${BLOG_ARTICLE_DATA[page] ? 'article' : 'website'}" />
     <meta property="og:url" content="${currentUrl}" />
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
     <meta property="og:image" content="${getOgImageUrl(page)}" />
     <meta property="og:locale" content="${{ es: 'es_ES', ca: 'ca_ES', en: 'en_GB', fr: 'fr_FR' }[lang]}" />
+    <meta property="og:site_name" content="Farray's International Dance Center" />${BLOG_ARTICLE_DATA[page] ? `
+    <meta property="article:published_time" content="${BLOG_ARTICLE_DATA[page].datePublished}" />
+    <meta property="article:modified_time" content="${BLOG_ARTICLE_DATA[page].dateModified}" />
+    <meta property="article:author" content="Yunaisy Farray" />
+    <meta property="article:section" content="${BLOG_ARTICLE_DATA[page].category}" />` : ''}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -2759,6 +2943,7 @@ routes.forEach(route => {
     <meta name="twitter:image" content="${getOgImageUrl(page)}" />
 ${preloadHintsHtml}
     ${localeScript}
+    ${jsonLdHtml}
   </head>`);
 
   // Inject prerendered content in <div id="root">
@@ -2806,11 +2991,70 @@ if (fs.existsSync(source404)) {
   console.log(`\n⚠️  Warning: es/404/index.html not found, skipping 404.html creation`);
 }
 
+// ============================================================================
+// AUTO-GENERATE SITEMAP (sync with pre-rendered routes)
+// ============================================================================
+const BASE_URL = 'https://www.farrayscenter.com';
+const TODAY = new Date().toISOString().split('T')[0];
+const sitemapUrls = [];
+
+for (const route of routes) {
+  const { path: routePath, lang, page } = route;
+
+  // Skip root redirect ('' → /es)
+  if (routePath === '') continue;
+
+  // Skip noindex pages (404, legal, promo landings)
+  const robotsValue = metadata[lang]?.[page]?.robots || 'index, follow';
+  if (robotsValue.includes('noindex')) continue;
+
+  const url = `${BASE_URL}/${routePath}`;
+
+  // Determine lastmod: blog articles use their dateModified, rest use build date
+  const blogData = BLOG_ARTICLE_DATA[page];
+  const lastmod = blogData ? blogData.dateModified : TODAY;
+
+  // Determine priority
+  let priority = '0.5';
+  if (page === 'home') priority = '1.0';
+  else if (STYLE_KEY_MAP[page]) priority = '0.8';
+  else if (blogData) priority = '0.7';
+  else if (['classes', 'classesHub', 'horariosPrecio', 'horarios', 'precios'].includes(page)) priority = '0.8';
+
+  // Build hreflang alternates using pageToPathMap
+  const pagePath = pageToPathMap[page];
+  const hreflangLinks = pagePath !== undefined ? [
+    `      <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es${pagePath ? `/${pagePath}` : ''}"/>`,
+    `      <xhtml:link rel="alternate" hreflang="ca" href="${BASE_URL}/ca${pagePath ? `/${pagePath}` : ''}"/>`,
+    `      <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en${pagePath ? `/${pagePath}` : ''}"/>`,
+    `      <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/fr${pagePath ? `/${pagePath}` : ''}"/>`,
+    `      <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/es${pagePath ? `/${pagePath}` : ''}"/>`,
+  ].join('\n') : '';
+
+  sitemapUrls.push(`  <url>
+    <loc>${url}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${page === 'home' ? 'weekly' : 'monthly'}</changefreq>
+    <priority>${priority}</priority>
+${hreflangLinks}
+  </url>`);
+}
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${sitemapUrls.join('\n')}
+</urlset>
+`;
+
+fs.writeFileSync(path.join(distPath, 'sitemap-pages.xml'), sitemapXml);
+console.log(`\n🗺️  Sitemap: Generated ${sitemapUrls.length} URLs in sitemap-pages.xml`);
+
 console.log('\n📊 Summary:');
 console.log(`   - Total pages: ${generatedCount}`);
+console.log(`   - Sitemap: ${sitemapUrls.length} indexable URLs`);
 console.log(`   - Languages: es, ca, en, fr (4)`);
-console.log(`   - Pages per language: home, baile-barcelona, danza-barcelona, salsa-bachata-barcelona, danzas-urbanas-barcelona, dancehall-barcelona, twerk-barcelona, clases-particulares-baile (8)`);
-console.log(`   - SEO: ✅ Metadata, ✅ hreflang, ✅ Canonical, ✅ Open Graph`);
+console.log(`   - SEO: ✅ Metadata, ✅ hreflang, ✅ Canonical, ✅ Open Graph, ✅ Sitemap`);
 console.log(`   - Locale: ✅ Pre-set via localStorage + cookie before React hydration`);
 console.log(`   - 404: ✅ Real HTTP 404 (dist/404.html)`);
 console.log('\n🔍 Verify: Run "npm run preview" and view page source to see prerendered content\n');
