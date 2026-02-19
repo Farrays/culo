@@ -183,15 +183,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         try {
           await sendTextMessage(
             fichaje.profesor.telefono_whatsapp,
-            `📋 Recordatorio: ${nombreCompleto}, tu clase "${fichaje.clase_nombre}" empezó hace ${minutosTranscurridos} min.\n\nSi aún no has fichado, pulsa aquí:\nhttps://farrayscenter.com/es/fichaje`
+            `📋 Recordatorio: ${nombreCompleto}, tu clase "${fichaje.clase_nombre}" empezó hace ${minutosTranscurridos} min.\n\nSi aún no has fichado, pulsa aquí:\nhttps://www.farrayscenter.com/es/fichaje`
           );
 
           // Marcar alerta enviada
-          await supabase
-            .from('fichajes')
-            // @ts-expect-error - Supabase types are dynamic
-            .update({ alerta_enviada: true })
-            .eq('id', fichaje.id);
+          await supabase.from('fichajes').update({ alerta_enviada: true }).eq('id', fichaje.id);
 
           result.alertasProfesor++;
           console.log(`[cron-alertas] Alerta enviada a ${nombreCompleto}`);
@@ -210,14 +206,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               <h2>Fichaje No Registrado</h2>
               <p>El profesor <strong>${nombreCompleto}</strong> no ha registrado su entrada para la clase "${fichaje.clase_nombre}" (prevista a las ${horaInicioStr}).</p>
               <p>Han pasado <strong>${minutosTranscurridos} minutos</strong> desde el inicio de la clase.</p>
-              <p><a href="https://farrayscenter.com/es/admin/fichajes">Ver Dashboard de Fichajes</a></p>
+              <p><a href="https://www.farrayscenter.com/es/admin/fichajes">Ver Dashboard de Fichajes</a></p>
             `;
             await sendSystemAlert(subject, htmlBody);
 
             // Marcar alerta admin enviada
             await supabase
               .from('fichajes')
-              // @ts-expect-error - Supabase types are dynamic
               .update({ alerta_admin_enviada: true })
               .eq('id', fichaje.id);
 
@@ -236,7 +231,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
           await supabase
             .from('fichajes')
-            // @ts-expect-error - Supabase types are dynamic
             .update({
               estado: 'no_fichado',
               updated_at: timestampActual,

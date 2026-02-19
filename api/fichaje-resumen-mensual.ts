@@ -344,7 +344,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
               month: 'long',
               year: 'numeric',
             });
-            const urlFirma = `https://farrayscenter.com/es/fichaje/resumen?token=${tokenFirma}`;
+            const urlFirma = `https://www.farrayscenter.com/es/fichaje/resumen?token=${tokenFirma}`;
 
             // Enviar WhatsApp
             if (isWhatsAppConfigured() && profesor.telefono_whatsapp) {
