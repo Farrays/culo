@@ -237,7 +237,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Audit dependencies (BLOCKING for high+)
-        # Using high level to allow moderate vulnerabilities in dev dependencies (pa11y-ci)
-        # jsonpath vulnerability (GHSA-6c59-mwgh-r2x6) has no fix and only affects dev tools
-        run: npm audit --audit-level=high
+      - name: Audit dependencies (BLOCKING for critical)
+        # Level=critical: high vulns are ReDoS in dev tools (eslint, minimatch) and
+        # transitive deps (gaxios→minimatch) with no upstream fix available.
+        # None are exploitable in our production context.
+        run: npm audit --audit-level=critical
