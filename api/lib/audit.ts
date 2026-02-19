@@ -22,7 +22,12 @@ export type AuditAction =
   | 'booking_failed'
   | 'booking_cancelled'
   | 'reminder_sent'
-  | 'feedback_sent';
+  | 'feedback_sent'
+  | 'booking_attended'
+  | 'booking_no_show'
+  | 'booking_auto_rescheduled'
+  | 'booking_manual_rescheduled'
+  | 'reconciliation_completed';
 
 export type BookingChannel = 'momence_api' | 'customer_leads' | 'fallback';
 

@@ -117,6 +117,10 @@
     {
       "path": "/api/cron-process-emails",
       "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron-reconciliation",
+      "schedule": "0 * * * *"
     }
   ],
   "redirects": [
@@ -2389,6 +2393,10 @@
     },
     {
       "source": "/:locale(es|en|ca|fr)/admin/fichajes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/admin/reservas",
       "destination": "/index.html"
     },
     {

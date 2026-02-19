@@ -249,18 +249,41 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
       required: ['email'],
     },
   },
+  // Tool 14: manage_trial_booking (for trial class users)
+  {
+    name: 'manage_trial_booking',
+    description:
+      'Gestionar reserva de clase de prueba gratuita. Puede consultar estado, cancelar o reprogramar para la semana siguiente. Busca la reserva por el teléfono del usuario. Usar cuando un usuario con reserva de prueba quiera consultar, cancelar o cambiar su clase.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        action: {
+          type: 'string',
+          enum: ['check_status', 'cancel', 'reschedule_next_week'],
+          description:
+            'Acción: check_status = ver reserva, cancel = cancelar, reschedule_next_week = reprogramar para la semana siguiente',
+        },
+        reason: {
+          type: 'string',
+          description: 'Motivo de cancelación/reprogramación (opcional, para analytics)',
+        },
+      },
+      required: ['action'],
+    },
+  },
 ];
 
 // ============================================================================
 // TOOL SETS (member vs new user)
 // ============================================================================
 
-// These 4 tools work WITHOUT memberId (verified: no guard if(!context.memberId))
+// These 5 tools work WITHOUT memberId (verified: no guard if(!context.memberId))
 const NEW_USER_TOOL_NAMES = new Set([
   'search_upcoming_classes',
   'get_membership_options',
   'get_class_details',
   'transfer_to_human',
+  'manage_trial_booking',
 ]);
 
 export const LAURA_TOOLS_NEW_USER: Anthropic.Tool[] = LAURA_TOOLS.filter(t =>
@@ -326,6 +349,9 @@ export async function executeTool(
         break;
       case 'update_member_email':
         result = await executeUpdateMemberEmail(toolInput, context);
+        break;
+      case 'manage_trial_booking':
+        result = await executeManageTrialBooking(toolInput, context);
         break;
       default:
         result = JSON.stringify({ error: `Herramienta desconocida: ${toolName}` });
@@ -829,4 +855,230 @@ async function executeUpdateMemberEmail(
     const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
     return JSON.stringify({ error: `No se pudo actualizar el email: ${errorMsg}` });
   }
+}
+
+// ============================================================================
+// MANAGE TRIAL BOOKING (works without memberId - uses phone to find booking)
+// ============================================================================
+
+async function executeManageTrialBooking(
+  input: Record<string, unknown>,
+  context: ToolContext
+): Promise<string> {
+  const action = input['action'] as string;
+
+  if (!action || !['check_status', 'cancel', 'reschedule_next_week'].includes(action)) {
+    return JSON.stringify({
+      error: 'Acción no válida. Usa: check_status, cancel o reschedule_next_week',
+    });
+  }
+
+  // Find booking by phone in Redis
+  const normalizedPhone = context.phone.replace(/[\s\-+()]/g, '');
+  const eventId = (await context.redis.get(`phone:${normalizedPhone}`)) as string | null;
+
+  if (!eventId) {
+    return JSON.stringify({
+      found: false,
+      message: 'No se encontró ninguna reserva de clase de prueba asociada a este número.',
+    });
+  }
+
+  const raw = await context.redis.get(`booking_details:${eventId}`);
+  if (!raw) {
+    return JSON.stringify({
+      found: false,
+      message: 'No se encontraron los detalles de tu reserva.',
+    });
+  }
+
+  const booking = JSON.parse(typeof raw === 'string' ? raw : JSON.stringify(raw)) as {
+    eventId: string;
+    firstName: string;
+    lastName: string;
+    className: string;
+    classDate: string;
+    classTime: string;
+    category: string;
+    email: string;
+    phone: string;
+    status?: string;
+    attendance?: string;
+    reconciliationStatus?: string;
+    rescheduleCount?: number;
+    rescheduledFrom?: string | null;
+    momenceBookingId?: number | null;
+    calendarEventId?: string | null;
+  };
+
+  // CHECK STATUS
+  if (action === 'check_status') {
+    const statusMap: Record<string, string> = {
+      confirmed: 'Confirmada',
+      cancelled: 'Cancelada',
+      pending: 'Pendiente de confirmación',
+      attended: 'Asististe ✅',
+      no_show: 'No asististe',
+    };
+
+    return JSON.stringify({
+      found: true,
+      booking: {
+        className: booking.className,
+        classDate: booking.classDate,
+        classTime: booking.classTime,
+        status: statusMap[booking.status || 'confirmed'] || 'Confirmada',
+        attendance: statusMap[booking.attendance || 'pending'] || 'Pendiente',
+        canCancel: booking.status !== 'cancelled',
+        canReschedule: (booking.rescheduleCount || 0) < 1 && !booking.rescheduledFrom,
+      },
+    });
+  }
+
+  // CANCEL
+  if (action === 'cancel') {
+    if (booking.status === 'cancelled') {
+      return JSON.stringify({ error: 'Esta reserva ya está cancelada.' });
+    }
+
+    try {
+      // Cancel in Momence if exists
+      if (booking.momenceBookingId) {
+        const client = getMomenceClient(context.redis);
+        await client.cancelBooking(booking.momenceBookingId, {
+          refund: true,
+          disableNotifications: true,
+          isLateCancellation: false,
+        });
+      }
+
+      // Update Redis
+      booking.status = 'cancelled';
+      booking.attendance = 'not_attending';
+
+      // Check if cancellation is on time (>= 2h before class)
+      const now = new Date();
+      let isOnTime = true;
+      if (booking.classDate && booking.classTime && /^\d{4}-\d{2}-\d{2}$/.test(booking.classDate)) {
+        const classStart = new Date(`${booking.classDate}T${booking.classTime}:00`);
+        const hoursUntilClass = (classStart.getTime() - now.getTime()) / (1000 * 60 * 60);
+        isOnTime = hoursUntilClass >= 2;
+      }
+
+      booking.reconciliationStatus = isOnTime ? 'cancelled_on_time' : 'cancelled_late';
+
+      await context.redis.setex(
+        `booking_details:${eventId}`,
+        90 * 24 * 60 * 60,
+        JSON.stringify(booking)
+      );
+
+      // Clear dedup if on-time cancellation
+      if (isOnTime) {
+        const email = booking.email.toLowerCase().trim();
+        await context.redis.del(`booking:${email}`);
+      }
+
+      // Update Google Calendar
+      if (booking.calendarEventId) {
+        try {
+          const CALENDAR_API = 'https://www.googleapis.com/calendar/v3';
+          const CALENDAR_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+          const clientId = process.env['GOOGLE_CALENDAR_CLIENT_ID'];
+          const clientSecret = process.env['GOOGLE_CALENDAR_CLIENT_SECRET'];
+          const refreshToken = process.env['GOOGLE_CALENDAR_REFRESH_TOKEN'];
+          const calendarId = process.env['GOOGLE_CALENDAR_ID'] || 'primary';
+
+          if (clientId && clientSecret && refreshToken) {
+            const tokenRes = await fetch(CALENDAR_TOKEN_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams({
+                client_id: clientId,
+                client_secret: clientSecret,
+                refresh_token: refreshToken,
+                grant_type: 'refresh_token',
+              }),
+            });
+            if (tokenRes.ok) {
+              const tokenData = await tokenRes.json();
+              await fetch(
+                `${CALENDAR_API}/calendars/${encodeURIComponent(calendarId)}/events/${booking.calendarEventId}?sendUpdates=none`,
+                {
+                  method: 'PATCH',
+                  headers: {
+                    Authorization: `Bearer ${tokenData.access_token}`,
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    colorId: isOnTime ? '6' : '11', // Orange (on-time) or Red (late)
+                    description: `Estado: ${isOnTime ? '🟠 Cancelado a tiempo' : '🔴 Cancelación tardía'}\n\nCancelado vía WhatsApp`,
+                  }),
+                }
+              );
+            }
+          }
+        } catch {
+          /* non-blocking */
+        }
+      }
+
+      return JSON.stringify({
+        success: true,
+        message: isOnTime
+          ? `Reserva cancelada correctamente. Puedes volver a reservar cuando quieras.`
+          : `Reserva cancelada. Nota: la cancelación fue con menos de 2 horas de antelación.`,
+        canRebook: isOnTime,
+      });
+    } catch (error) {
+      return JSON.stringify({
+        error: `No se pudo cancelar: ${error instanceof Error ? error.message : 'Error desconocido'}`,
+      });
+    }
+  }
+
+  // RESCHEDULE
+  if (action === 'reschedule_next_week') {
+    if ((booking.rescheduleCount || 0) >= 1 || booking.rescheduledFrom) {
+      return JSON.stringify({
+        error:
+          'Esta reserva ya ha sido reprogramada anteriormente. Solo se permite una reprogramación por reserva.',
+      });
+    }
+
+    try {
+      const { rescheduleBooking } = await import('../../admin-bookings-reschedule.js');
+      // Upstash Redis is API-compatible with ioredis for get/set/del operations
+      const result = await rescheduleBooking(
+        context.redis as unknown as import('ioredis').default,
+        {
+          eventId,
+          mode: 'next_week',
+          notifyStudent: false, // Laura will communicate directly
+          reason: 'manual',
+        }
+      );
+
+      if (result.success) {
+        return JSON.stringify({
+          success: true,
+          message: `Clase reprogramada para ${result.newClassDate} a las ${result.newClassTime}.`,
+          newClassName: result.newClassName,
+          newClassDate: result.newClassDate,
+          newClassTime: result.newClassTime,
+        });
+      }
+
+      return JSON.stringify({
+        error: result.error || 'No se pudo reprogramar la clase.',
+        hint: 'La clase de la semana que viene puede estar llena o no existir.',
+      });
+    } catch (error) {
+      return JSON.stringify({
+        error: `Error al reprogramar: ${error instanceof Error ? error.message : 'Error desconocido'}`,
+      });
+    }
+  }
+
+  return JSON.stringify({ error: 'Acción no reconocida' });
 }

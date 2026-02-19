@@ -1849,6 +1849,158 @@ export const EMAIL_CONFIG = {
 };
 
 // =============================================================================
+// NO-SHOW RESCHEDULE EMAIL
+// =============================================================================
+
+interface NoShowRescheduleEmailData {
+  to: string;
+  firstName: string;
+  originalClassName: string;
+  originalDate: string;
+  originalTime: string;
+  newClassName: string;
+  newDate: string;
+  newTime: string;
+  managementUrl: string;
+  reason: 'no_show' | 'manual' | 'class_cancelled';
+}
+
+/**
+ * Send email when a trial class booking is rescheduled due to no-show.
+ * Notifies the student that their class has been moved to next week.
+ */
+export async function sendNoShowRescheduleEmail(
+  data: NoShowRescheduleEmailData
+): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+
+  const subject =
+    data.reason === 'class_cancelled'
+      ? `Tu clase de ${data.newClassName} ha sido reprogramada`
+      : `Hemos reprogramado tu clase de ${data.newClassName} 💃`;
+
+  const introText =
+    data.reason === 'class_cancelled'
+      ? `Lamentablemente tu clase de <strong>${data.originalClassName}</strong> del ${data.originalDate} a las ${data.originalTime} ha sido cancelada.`
+      : `Sentimos que no hayas podido asistir a tu clase de <strong>${data.originalClassName}</strong> del ${data.originalDate} a las ${data.originalTime}.`;
+
+  const reasonText =
+    data.reason === 'class_cancelled'
+      ? 'Por eso, hemos reprogramado tu clase automáticamente para:'
+      : 'Entendemos que surgen imprevistos, por eso <strong>de forma excepcional</strong> hemos reprogramado tu clase para:';
+
+  const html = `
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+    <!-- Header -->
+    <tr>
+      <td style="background: ${BRAND_GRADIENT}; padding: 30px 40px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's Center" width="80" style="display: block; margin: 0 auto 10px;" />
+        <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 600;">Clase Reprogramada</h1>
+      </td>
+    </tr>
+
+    <!-- Body -->
+    <tr>
+      <td style="padding: 40px;">
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          Hola <strong>${data.firstName}</strong>,
+        </p>
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          ${introText}
+        </p>
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          ${reasonText}
+        </p>
+
+        <!-- New Class Card -->
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: #fef2f2; border-radius: 12px; margin: 24px 0; border-left: 4px solid ${BRAND_PRIMARY};">
+          <tr>
+            <td style="padding: 24px;">
+              <p style="margin: 0 0 8px; font-size: 14px; color: #666;">📅 <strong>Fecha:</strong> ${data.newDate}</p>
+              <p style="margin: 0 0 8px; font-size: 14px; color: #666;">🕐 <strong>Hora:</strong> ${data.newTime}</p>
+              <p style="margin: 0 0 8px; font-size: 14px; color: #666;">💃 <strong>Clase:</strong> ${data.newClassName}</p>
+              <p style="margin: 0; font-size: 14px; color: #666;">📍 <strong>Lugar:</strong> ${LOCATION_FULL}</p>
+            </td>
+          </tr>
+        </table>
+
+        <p style="font-size: 14px; color: #d97706; background: #fffbeb; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #d97706;">
+          ⚠️ Esta reprogramación es <strong>excepcional y por única vez</strong>.
+        </p>
+
+        <!-- Action Buttons -->
+        <table width="100%" cellpadding="0" cellspacing="0" style="margin: 32px 0;">
+          <tr>
+            <td align="center">
+              <a href="${data.managementUrl}" style="${BUTTON_PRIMARY}">
+                Ver mi reserva
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding-top: 12px;">
+              <a href="${GOOGLE_MAPS_URL}" style="${BUTTON_SECONDARY}">
+                📍 Cómo llegar
+              </a>
+            </td>
+          </tr>
+        </table>
+
+        <p style="font-size: 13px; color: #999; line-height: 1.5;">
+          Si necesitas cancelar, puedes hacerlo desde el enlace de tu reserva hasta 2 horas antes de la clase.
+        </p>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="background: #1a1a2e; padding: 30px 40px; text-align: center;">
+        <p style="color: #ccc; font-size: 13px; margin: 0 0 8px;">
+          ${LOCATION_FULL}
+        </p>
+        <p style="margin: 0;">
+          <a href="${INSTAGRAM_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">Instagram</a>
+          &nbsp;·&nbsp;
+          <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">WhatsApp</a>
+          &nbsp;·&nbsp;
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">Web</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+
+  try {
+    const result = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: data.to,
+      replyTo: REPLY_TO,
+      headers: EMAIL_HEADERS,
+      subject,
+      html,
+    });
+
+    if (result.error) {
+      return { success: false, error: result.error.message };
+    }
+
+    console.log(`[email] No-show reschedule email sent to ${data.to}`);
+    return { success: true };
+  } catch (error) {
+    console.error('[sendNoShowRescheduleEmail] Error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
+// =============================================================================
 // RE-EXPORT GOOGLE CALENDAR (Bundler Compatibility)
 // =============================================================================
 /**

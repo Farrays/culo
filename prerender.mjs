@@ -179,6 +179,7 @@ const OG_IMAGE_MAP = {
   miReserva: 'og-home.jpg',
   fichaje: 'og-home.jpg',
   adminFichajes: 'og-home.jpg',
+  adminReservas: 'og-home.jpg',
   feedbackGracias: 'og-home.jpg',
   feedbackComentario: 'og-home.jpg',
   asistenciaConfirmada: 'og-home.jpg',
@@ -535,6 +536,7 @@ const routes = [
   { path: 'es/fichaje', lang: 'es', page: 'fichaje' },
   { path: 'es/fichaje/resumen', lang: 'es', page: 'fichajeResumen' },
   { path: 'es/admin/fichajes', lang: 'es', page: 'adminFichajes' },
+  { path: 'es/admin/reservas', lang: 'es', page: 'adminReservas' },
   { path: 'es/feedback-gracias', lang: 'es', page: 'feedbackGracias' },
   { path: 'es/feedback-comentario', lang: 'es', page: 'feedbackComentario' },
   { path: 'es/asistencia-confirmada', lang: 'es', page: 'asistenciaConfirmada' },
@@ -614,6 +616,7 @@ const routes = [
   { path: 'ca/fichaje', lang: 'ca', page: 'fichaje' },
   { path: 'ca/fichaje/resumen', lang: 'ca', page: 'fichajeResumen' },
   { path: 'ca/admin/fichajes', lang: 'ca', page: 'adminFichajes' },
+  { path: 'ca/admin/reservas', lang: 'ca', page: 'adminReservas' },
   { path: 'ca/feedback-gracias', lang: 'ca', page: 'feedbackGracias' },
   { path: 'ca/feedback-comentario', lang: 'ca', page: 'feedbackComentario' },
   { path: 'ca/asistencia-confirmada', lang: 'ca', page: 'asistenciaConfirmada' },
@@ -693,6 +696,7 @@ const routes = [
   { path: 'en/fichaje', lang: 'en', page: 'fichaje' },
   { path: 'en/fichaje/resumen', lang: 'en', page: 'fichajeResumen' },
   { path: 'en/admin/fichajes', lang: 'en', page: 'adminFichajes' },
+  { path: 'en/admin/reservas', lang: 'en', page: 'adminReservas' },
   { path: 'en/feedback-gracias', lang: 'en', page: 'feedbackGracias' },
   { path: 'en/feedback-comentario', lang: 'en', page: 'feedbackComentario' },
   { path: 'en/asistencia-confirmada', lang: 'en', page: 'asistenciaConfirmada' },
@@ -772,6 +776,7 @@ const routes = [
   { path: 'fr/fichaje', lang: 'fr', page: 'fichaje' },
   { path: 'fr/fichaje/resumen', lang: 'fr', page: 'fichajeResumen' },
   { path: 'fr/admin/fichajes', lang: 'fr', page: 'adminFichajes' },
+  { path: 'fr/admin/reservas', lang: 'fr', page: 'adminReservas' },
   { path: 'fr/feedback-gracias', lang: 'fr', page: 'feedbackGracias' },
   { path: 'fr/feedback-comentario', lang: 'fr', page: 'feedbackComentario' },
   { path: 'fr/asistencia-confirmada', lang: 'fr', page: 'asistenciaConfirmada' },
@@ -1101,6 +1106,11 @@ const metadata = {
     adminFichajes: {
       title: 'Dashboard Fichajes | Farray\'s Center',
       description: 'Panel de administración de fichajes para Farray\'s Center Barcelona.',
+      robots: 'noindex, nofollow',
+    },
+    adminReservas: {
+      title: 'Reservas de Prueba | Farray\'s Center',
+      description: 'Panel de gestión de reservas de clases de prueba gratuitas.',
       robots: 'noindex, nofollow',
     },
     feedbackGracias: {
@@ -1493,6 +1503,11 @@ const metadata = {
       description: 'Panell d\'administració de fitxatges per a Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
+    adminReservas: {
+      title: 'Reserves de Prova | Farray\'s Center',
+      description: 'Panell de gestió de reserves de classes de prova gratuïtes.',
+      robots: 'noindex, nofollow',
+    },
     feedbackGracias: {
       title: 'Gràcies per la teva opinió | Farray\'s Center Barcelona',
       description: 'La teva opinió ens ajuda a millorar. Gràcies per compartir la teva experiència amb nosaltres.',
@@ -1883,6 +1898,11 @@ const metadata = {
       description: 'Clock-in administration panel for Farray\'s Center Barcelona.',
       robots: 'noindex, nofollow',
     },
+    adminReservas: {
+      title: 'Trial Bookings | Farray\'s Center',
+      description: 'Free trial class bookings management panel.',
+      robots: 'noindex, nofollow',
+    },
     feedbackGracias: {
       title: 'Thank You for Your Feedback | Farray\'s Center Barcelona',
       description: 'Your feedback helps us improve. Thank you for sharing your experience with us.',
@@ -2271,6 +2291,11 @@ const metadata = {
     adminFichajes: {
       title: 'Tableau de Bord Pointages | Farray\'s Center',
       description: 'Panneau d\'administration des pointages pour Farray\'s Center Barcelone.',
+      robots: 'noindex, nofollow',
+    },
+    adminReservas: {
+      title: 'Réservations d\'Essai | Farray\'s Center',
+      description: 'Panneau de gestion des réservations de cours d\'essai gratuits.',
       robots: 'noindex, nofollow',
     },
     feedbackGracias: {
