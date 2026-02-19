@@ -2146,6 +2146,7 @@ export default async function handler(
           BOOKING_TTL_SECONDS,
           JSON.stringify({
             eventId: finalEventId,
+            bookingType: 'trial' as const,
             firstName: sanitize(firstName),
             lastName: sanitize(lastName),
             email: normalizedEmail,
@@ -2156,9 +2157,17 @@ export default async function handler(
             category,
             calendarEventId: calendarEventId || null,
             createdAt: new Date().toISOString(),
+            status: 'confirmed' as const,
+            attendance: 'pending' as const,
+            reconciliationStatus: 'pending' as const,
+            reconciliationProcessed: false,
+            rescheduleCount: 0,
+            rescheduledFrom: null,
+            rescheduledTo: null,
             // Momence verification status - helps identify bookings that may need manual check
             momenceVerified: momenceResult.verified ?? false,
             momenceBookingId: momenceResult.bookingId || null,
+            sessionId: sessionId || null,
           })
         );
         console.warn(

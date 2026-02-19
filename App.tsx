@@ -143,6 +143,9 @@ const ResumenFirmaPage = lazy(() => import('./components/fichaje/ResumenFirmaPag
 // ===== ADMIN FICHAJES (Dashboard de gestión de fichajes) =====
 const FichajesAdminPage = lazy(() => import('./components/admin/FichajesAdminPage'));
 
+// ===== ADMIN RESERVAS (Dashboard de reservas de prueba) =====
+const BookingsCalendarPage = lazy(() => import('./components/admin/BookingsCalendarPage'));
+
 // ===== FEEDBACK PAGES =====
 const FeedbackGraciasPage = lazy(() => import('./components/FeedbackGraciasPage'));
 const FeedbackComentarioPage = lazy(() => import('./components/FeedbackComentarioPage'));
@@ -892,6 +895,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <FichajesAdminPage />
+                </>
+              }
+            />
+
+            {/* ===== ADMIN RESERVAS (Dashboard reservas de prueba - sin header/footer) ===== */}
+            <Route
+              path="/:locale/admin/reservas"
+              element={
+                <>
+                  <LocaleSync />
+                  <BookingsCalendarPage />
                 </>
               }
             />

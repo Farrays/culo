@@ -132,7 +132,20 @@ SEGMENTACIÓN (si no queda claro de la conversación, pregunta si vive en Barcel
 
 CONDICIONES PRUEBA GRATIS: 1 por persona, solo locales, mínimo 24h antelación.
 
-NO digas "no te tengo en la base de datos". Trata con naturalidad.`;
+NO digas "no te tengo en la base de datos". Trata con naturalidad.
+
+GESTIÓN DE RESERVAS DE PRUEBA:
+Si el usuario ya tiene una reserva de prueba y quiere consultarla, cancelarla o cambiar de día:
+1. Usa manage_trial_booking con action='check_status' para verificar su reserva
+2. Confirma con el usuario qué quiere hacer
+3. Para cancelar: action='cancel'
+4. Para cambiar de día: action='reschedule_next_week' (se reprograma a la misma clase la semana siguiente)
+5. La reprogramación solo se permite UNA vez por reserva
+
+Políticas de cancelación:
+- Cancelar >= 2h antes de la clase: sin penalización, puede volver a reservar
+- Cancelar < 2h antes: se considera cancelación tardía
+- Reprogramación: máximo 1 vez, misma clase, semana siguiente`;
   }
 
   if (memberContext?.isExistingMember) {

@@ -653,3 +653,74 @@ export async function sendLeadWelcomeWhatsApp(
     },
   ]);
 }
+
+// ============================================================================
+// NO-SHOW RESCHEDULE MESSAGE
+// ============================================================================
+
+export interface NoShowRescheduleWhatsAppData {
+  to: string;
+  firstName: string;
+  className: string;
+  newDate: string;
+  newTime: string;
+  managementUrl: string;
+}
+
+/**
+ * Send no-show reschedule notification via WhatsApp.
+ *
+ * Strategy: Try free-text message first (within 24h window from last reminder).
+ * If that fails (window expired, error 131047), fall back to approved template.
+ *
+ * Template fallback: reprogramacion_no_show (must be approved in Meta Business Manager)
+ * Variables: {{1}}=firstName, {{2}}=className, {{3}}=newDate, {{4}}=newTime
+ */
+export async function sendNoShowRescheduleWhatsApp(
+  data: NoShowRescheduleWhatsAppData
+): Promise<WhatsAppResult> {
+  const freeText = [
+    `Hola ${data.firstName} 👋`,
+    '',
+    `Sentimos que no hayas podido venir a tu clase de ${data.className} hoy.`,
+    '',
+    `Entendemos que surgen imprevistos, por eso hemos reprogramado tu clase de forma excepcional para el ${data.newDate} a las ${data.newTime} 💃`,
+    '',
+    '⚠️ Esta reprogramación es por única vez.',
+    '',
+    `📋 Gestiona tu reserva aquí: ${data.managementUrl}`,
+    '',
+    '¡Te esperamos! 🎶',
+  ].join('\n');
+
+  // Try free-text first (works within 24h window)
+  const textResult = await sendTextMessage(data.to, freeText);
+
+  if (textResult.success) {
+    return textResult;
+  }
+
+  // If free-text failed (likely 24h window expired), try template
+  console.warn(
+    `[whatsapp] Free-text failed for ${data.to}, trying template fallback:`,
+    textResult.error
+  );
+
+  try {
+    return await sendTemplate('reprogramacion_no_show', data.to, 'es_ES', [
+      {
+        type: 'body',
+        parameters: [
+          { type: 'text', text: data.firstName },
+          { type: 'text', text: data.className },
+          { type: 'text', text: data.newDate },
+          { type: 'text', text: data.newTime },
+        ],
+      },
+    ]);
+  } catch (e) {
+    // Template might not be approved yet - return original error
+    console.warn('[whatsapp] Template fallback also failed:', e);
+    return textResult;
+  }
+}
