@@ -393,6 +393,7 @@ async function reconcileBooking(
 
 async function sendNoShowNotification(booking: BookingDetails): Promise<void> {
   // Send email: "Te echamos de menos"
+  const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${booking.eventId}`;
   try {
     const { sendEmail } = await import('./lib/email.js');
     await sendEmail({
@@ -401,9 +402,10 @@ async function sendNoShowNotification(booking: BookingDetails): Promise<void> {
       html: `
         <p>Hola ${booking.firstName},</p>
         <p>Sentimos que no hayas podido asistir a tu clase de <strong>${booking.className}</strong>.</p>
-        <p>Si quieres reservar otra clase de prueba, puedes hacerlo aquí:</p>
-        <p><a href="https://www.farrayscenter.com/es/horarios-precios">Ver horarios y reservar</a></p>
-        <p>¡Te esperamos!</p>
+        <p>Si quieres probar otro estilo de baile o reservar otro día, aquí tienes los enlaces:</p>
+        <p><a href="${managementUrl}" style="display:inline-block;padding:10px 20px;background:#e91e63;color:white;text-decoration:none;border-radius:8px;">Gestionar mi reserva</a></p>
+        <p><a href="https://www.farrayscenter.com/es/horarios-precios">🗓️ Ver todos los horarios</a></p>
+        <p>Lo importante es que vengas a conocernos 😊</p>
         <p>El equipo de Farray's Center</p>
       `,
     });
@@ -416,7 +418,7 @@ async function sendNoShowNotification(booking: BookingDetails): Promise<void> {
     const { sendTextMessage } = await import('./lib/whatsapp.js');
     await sendTextMessage(
       booking.phone,
-      `Hola ${booking.firstName} 👋\n\nSentimos que no hayas podido venir a tu clase de ${booking.className} hoy.\n\nSi quieres reservar otra clase de prueba, escríbenos o visita: https://www.farrayscenter.com/es/horarios-precios\n\n¡Te esperamos! 🎶`
+      `Hola ${booking.firstName} 👋\n\nSentimos que no hayas podido venir a tu clase de ${booking.className} hoy.\n\nSi quieres probar *otro estilo de baile* u *otro día*, entra en tu reserva y cámbiala:\n📋 ${managementUrl}\n\n🗓️ Ver horarios: https://www.farrayscenter.com/es/horarios-precios\n\n¡Te esperamos! 🎶`
     );
   } catch {
     // WhatsApp window may have expired, email is the reliable channel

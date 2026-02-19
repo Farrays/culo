@@ -23,7 +23,7 @@ interface BookingData {
   category?: string;
 }
 
-type LoadingState = 'loading' | 'success' | 'error' | 'not-found' | 'cancelled';
+type LoadingState = 'idle' | 'loading' | 'success' | 'error' | 'not-found' | 'cancelled';
 
 const MyBookingPage: React.FC = () => {
   const { i18n } = useTranslation(['common', 'booking']);
@@ -31,7 +31,7 @@ const MyBookingPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
-  const [loadingState, setLoadingState] = useState<LoadingState>('loading');
+  const [loadingState, setLoadingState] = useState<LoadingState>('idle');
   const [booking, setBooking] = useState<BookingData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -142,16 +142,17 @@ const MyBookingPage: React.FC = () => {
     return className.split(' ')[0] || className;
   };
 
+  const [searchEmail, setSearchEmail] = useState('');
   const email = searchParams.get('email');
   const eventId = searchParams.get('event');
 
   useEffect(() => {
     if (!email) {
-      setLoadingState('error');
-      setErrorMessage('No se proporcionó email');
+      setLoadingState('idle');
       return;
     }
 
+    setLoadingState('loading');
     const fetchBooking = async () => {
       try {
         const queryParams = eventId
@@ -271,6 +272,48 @@ const MyBookingPage: React.FC = () => {
                 {locale === 'fr' && 'Ma Réservation'}
               </h1>
             </div>
+
+            {/* Search form - shown when no email in URL */}
+            {loadingState === 'idle' && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <p className="text-gray-300 text-center mb-6">
+                  {locale === 'es' && 'Introduce tu email para ver tu reserva'}
+                  {locale === 'ca' && 'Introdueix el teu email per veure la teva reserva'}
+                  {locale === 'en' && 'Enter your email to view your booking'}
+                  {locale === 'fr' && 'Entrez votre email pour voir votre réservation'}
+                </p>
+                <form
+                  onSubmit={e => {
+                    e.preventDefault();
+                    if (searchEmail.trim()) {
+                      navigate(
+                        `/${locale}/mi-reserva?email=${encodeURIComponent(searchEmail.trim())}`,
+                        { replace: true }
+                      );
+                    }
+                  }}
+                  className="space-y-4"
+                >
+                  <input
+                    type="email"
+                    value={searchEmail}
+                    onChange={e => setSearchEmail(e.target.value)}
+                    placeholder="tu@email.com"
+                    required
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-accent focus:ring-1 focus:ring-primary-accent"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-3 bg-primary-accent hover:bg-primary-dark text-white rounded-xl transition-colors font-semibold"
+                  >
+                    {locale === 'es' && 'Buscar mi reserva'}
+                    {locale === 'ca' && 'Buscar la meva reserva'}
+                    {locale === 'en' && 'Find my booking'}
+                    {locale === 'fr' && 'Chercher ma réservation'}
+                  </button>
+                </form>
+              </div>
+            )}
 
             {/* Loading state */}
             {loadingState === 'loading' && (

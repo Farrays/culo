@@ -1932,12 +1932,25 @@ export async function sendNoShowRescheduleEmail(
           ⚠️ Esta reprogramación es <strong>excepcional y por única vez</strong>.
         </p>
 
+        <p style="font-size: 15px; color: #333; line-height: 1.6; margin-top: 24px;">
+          Si la semana que viene tampoco te va bien o <strong>prefieres probar otro estilo de baile</strong>,
+          entra en tu reserva y cámbiala por la clase que mejor te encaje.
+          Lo importante es que vengas a conocernos 😊
+        </p>
+
         <!-- Action Buttons -->
         <table width="100%" cellpadding="0" cellspacing="0" style="margin: 32px 0;">
           <tr>
             <td align="center">
               <a href="${data.managementUrl}" style="${BUTTON_PRIMARY}">
-                Ver mi reserva
+                Gestionar mi reserva
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding-top: 12px;">
+              <a href="${BASE_URL}/es/horarios-precios" style="${BUTTON_SECONDARY}">
+                🗓️ Ver todos los horarios
               </a>
             </td>
           </tr>
@@ -1951,7 +1964,7 @@ export async function sendNoShowRescheduleEmail(
         </table>
 
         <p style="font-size: 13px; color: #999; line-height: 1.5;">
-          Si necesitas cancelar, puedes hacerlo desde el enlace de tu reserva hasta 2 horas antes de la clase.
+          Puedes cancelar o cambiar tu clase desde el enlace de tu reserva hasta 2 horas antes. Solo se permite un cambio por reserva.
         </p>
       </td>
     </tr>

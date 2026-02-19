@@ -674,7 +674,8 @@ export interface NoShowRescheduleWhatsAppData {
  * If that fails (window expired, error 131047), fall back to approved template.
  *
  * Template fallback: reprogramacion_no_show (must be approved in Meta Business Manager)
- * Variables: {{1}}=firstName, {{2}}=className, {{3}}=newDate, {{4}}=newTime
+ * Body variables: {{1}}=firstName, {{2}}=className, {{3}}=newDate, {{4}}=newTime, {{5}}=managementUrl
+ * No button needed — URL is clickable in body text
  */
 export async function sendNoShowRescheduleWhatsApp(
   data: NoShowRescheduleWhatsAppData
@@ -684,11 +685,14 @@ export async function sendNoShowRescheduleWhatsApp(
     '',
     `Sentimos que no hayas podido venir a tu clase de ${data.className} hoy.`,
     '',
-    `Entendemos que surgen imprevistos, por eso hemos reprogramado tu clase de forma excepcional para el ${data.newDate} a las ${data.newTime} 💃`,
+    `Entendemos que surgen imprevistos, por eso hemos reprogramado tu clase de forma excepcional para el *${data.newDate}* a las *${data.newTime}* 💃`,
     '',
-    '⚠️ Esta reprogramación es por única vez.',
+    'Si la semana que viene tampoco te va bien o prefieres probar *otro estilo de baile*, entra en tu reserva y cámbiala por la clase que mejor te encaje. Lo importante es que vengas a conocernos 😊',
     '',
-    `📋 Gestiona tu reserva aquí: ${data.managementUrl}`,
+    '⚠️ Solo se permite un cambio por reserva.',
+    '',
+    `📋 Gestiona tu reserva: ${data.managementUrl}`,
+    `🗓️ Ver todos los horarios: https://www.farrayscenter.com/es/horarios-precios`,
     '',
     '¡Te esperamos! 🎶',
   ].join('\n');
@@ -715,6 +719,7 @@ export async function sendNoShowRescheduleWhatsApp(
           { type: 'text', text: data.className },
           { type: 'text', text: data.newDate },
           { type: 'text', text: data.newTime },
+          { type: 'text', text: data.managementUrl },
         ],
       },
     ]);
