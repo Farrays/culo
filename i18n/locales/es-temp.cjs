@@ -357,7 +357,7 @@ export const es = {
   sitemapParticulares: 'Clases Particulares de Baile',
   sitemapAlquiler: 'Alquiler Salas Barcelona',
   sitemapRegala: 'Regalar Clases de Baile',
-  footerCopyright: "© 2025 Farray's International Dance Center. Todos los Derechos Reservados.",
+  footerCopyright: "© 2026 Farray's International Dance Center. Todos los Derechos Reservados.",
   // InstagramFeed
   instagramTitle: 'Únete a Nuestra Comunidad en Instagram',
   instagramHandle: '@farrays_centerbcn',

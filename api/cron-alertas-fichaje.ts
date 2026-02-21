@@ -187,6 +187,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           );
 
           // Marcar alerta enviada
+          // @ts-expect-error - Supabase types are dynamic
           await supabase.from('fichajes').update({ alerta_enviada: true }).eq('id', fichaje.id);
 
           result.alertasProfesor++;
@@ -213,6 +214,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             // Marcar alerta admin enviada
             await supabase
               .from('fichajes')
+              // @ts-expect-error - Supabase types are dynamic
               .update({ alerta_admin_enviada: true })
               .eq('id', fichaje.id);
 
@@ -231,6 +233,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
           await supabase
             .from('fichajes')
+            // @ts-expect-error - Supabase types are dynamic
             .update({
               estado: 'no_fichado',
               updated_at: timestampActual,
