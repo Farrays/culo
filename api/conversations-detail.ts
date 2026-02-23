@@ -7,7 +7,11 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getRedisClient } from './lib/redis.js';
-import { getConversationHistory, getTakeoverInfo } from './lib/ai/human-takeover.js';
+import {
+  getConversationHistory,
+  getTakeoverInfo,
+  markConversationRead,
+} from './lib/ai/human-takeover.js';
 
 export default async function handler(
   req: VercelRequest,
@@ -36,6 +40,7 @@ export default async function handler(
     const [messages, takeover] = await Promise.all([
       getConversationHistory(redis, phone),
       getTakeoverInfo(redis, phone),
+      markConversationRead(redis, phone),
     ]);
 
     return res.status(200).json({
