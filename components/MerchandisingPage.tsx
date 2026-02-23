@@ -144,7 +144,7 @@ const MerchandisingPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -180,7 +180,7 @@ const MerchandisingPage: React.FC = () => {
     <>
       <Helmet>
         <title>{t('merchandising_page_title')} | Farray&apos;s Center</title>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <meta name="description" content={t('merchandising_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/merchandising`} />
         <meta

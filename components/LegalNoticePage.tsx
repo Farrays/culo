@@ -402,7 +402,7 @@ const LegalNoticePage: React.FC = () => {
   ];
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -457,7 +457,7 @@ const LegalNoticePage: React.FC = () => {
         <meta name="description" content={t('legalNotice_page_description')} />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/aviso-legal`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 

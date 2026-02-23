@@ -41,7 +41,6 @@ import ArtisticDanceComparisonTable, {
 import YouTubeEmbed from '../YouTubeEmbed';
 import BunnyEmbed from '../BunnyEmbed';
 import {
-  LocalBusinessSchema,
   CourseSchemaEnterprise,
   AggregateReviewsSchema,
   HowToSchema,
@@ -913,7 +912,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
     [config.breadcrumbConfig, locale, config.stylePath, t]
   );
 
-  const breadcrumbSchema = useMemo(
+  const _breadcrumbSchema = useMemo(
     () => ({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -1015,10 +1014,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
       </Helmet>
 
       {/* ===== SCHEMA MARKUP ===== */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
       {/* VideoObject schemas removed - class pages are not video watch pages */}
       {config.personSchemas?.map((person, idx) => (
         <script
@@ -1042,27 +1038,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         />
       ))}
 
-      <LocalBusinessSchema
-        name={`Farray's International Dance Center - ${t(`${config.styleKey}PageTitle`)}`}
-        description={t(`${config.styleKey}MetaDescription`)}
-        url={pageUrl}
-        telephone={FARRAYS_LOCATION.telephone}
-        email={FARRAYS_LOCATION.email}
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: FARRAYS_LOCATION.addressLocality,
-          postalCode: FARRAYS_LOCATION.postalCode,
-          addressCountry: FARRAYS_LOCATION.addressCountry,
-          addressRegion: t('schema_addressRegion'),
-        }}
-        geo={FARRAYS_LOCATION.geo}
-        priceRange={FARRAYS_LOCATION.priceRange}
-        aggregateRating={{
-          ratingValue: SOCIAL_PROOF.ratingValue.toString(),
-          reviewCount: SOCIAL_PROOF.reviewCount.replace('+', ''),
-        }}
-        reserveActionName={t('schema_reserveActionName')}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
 
       {/* Enterprise Course Schema with CourseInstance for each schedule */}
       <CourseSchemaEnterprise
@@ -2050,7 +2026,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 12. FAQ SECTION (resolve objections) ===== */}
         {config.faqSection?.enabled !== false && (
-          <FAQSection title={t(`${config.styleKey}FaqTitle`)} faqs={faqs} pageUrl={pageUrl} />
+          <FAQSection title={t(`${config.styleKey}FaqTitle`)} faqs={faqs} />
         )}
 
         {/* ===== 14. LOCAL SEO / NEARBY AREAS SECTION ===== */}

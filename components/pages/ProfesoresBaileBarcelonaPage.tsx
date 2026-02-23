@@ -74,7 +74,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
   ];
 
   // Breadcrumb schema
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -177,7 +177,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
       </Helmet>
 
       {/* Schema Markup */}
-      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
       <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
       {personSchemas.map((schema, index) => (
         <script key={index} type="application/ld+json">

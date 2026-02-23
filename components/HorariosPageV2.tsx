@@ -5,7 +5,6 @@ import type { Locale } from '../constants/image-alt-texts';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 const ReviewsSection = lazy(() => import('./reviews/ReviewsSection'));
 
@@ -248,7 +247,7 @@ const HorariosPageV2: React.FC = () => {
     }
   };
 
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     inLanguage: getInLanguage(),
@@ -268,19 +267,7 @@ const HorariosPageV2: React.FC = () => {
     ],
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    inLanguage: getInLanguage(),
-    mainEntity: SCHEDULE_FAQ.map(faq => ({
-      '@type': 'Question',
-      name: t(faq.questionKey),
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: t(faq.answerKey),
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // Organization Schema - Enterprise with translations
   const organizationSchema = {
@@ -311,13 +298,7 @@ const HorariosPageV2: React.FC = () => {
       latitude: 41.380421,
       longitude: 2.148014,
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: REVIEW_STATS.ratingValue,
-      reviewCount: REVIEW_STATS.reviewCount,
-      bestRating: REVIEW_STATS.bestRating,
-      worstRating: REVIEW_STATS.worstRating,
-    },
+    // aggregateRating removed - already in build-time LocalBusiness #danceschool schema
     availableLanguage: ['es', 'ca', 'en', 'fr'],
     sameAs: [
       'https://www.instagram.com/farrays_centerbcn/',
@@ -437,8 +418,7 @@ const HorariosPageV2: React.FC = () => {
           name="twitter:image:alt"
           content={HERO_IMAGE.alt[locale as Locale] || HERO_IMAGE.alt.es}
         />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>

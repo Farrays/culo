@@ -8,7 +8,6 @@ import FAQSection from './FAQSection';
 import Icon from './Icon';
 import OptimizedImage from './OptimizedImage';
 import { ReviewsSection } from './reviews';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 const ClasesParticularesPage: React.FC = () => {
   const { t, i18n } = useTranslation([
@@ -137,7 +136,7 @@ const ClasesParticularesPage: React.FC = () => {
   ];
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -200,11 +199,7 @@ const ClasesParticularesPage: React.FC = () => {
         addressCountry: 'ES',
       },
       telephone: '+34622247085',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: REVIEW_STATS.ratingValue,
-        reviewCount: REVIEW_STATS.reviewCount,
-      },
+      // aggregateRating removed - already in build-time LocalBusiness #danceschool schema
     },
     areaServed: {
       '@type': 'City',
@@ -262,19 +257,7 @@ const ClasesParticularesPage: React.FC = () => {
     },
   };
 
-  // Schema Markup - FAQPage
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqsParticulares.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   return (
     <>
@@ -332,9 +315,8 @@ const ClasesParticularesPage: React.FC = () => {
           imageSizes="100vw"
         />
 
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -755,11 +737,7 @@ const ClasesParticularesPage: React.FC = () => {
         <section className="pt-2 pb-6 md:pt-4 md:pb-8 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <FAQSection
-                title={t('particularesPage_faqTitle')}
-                faqs={faqsParticulares}
-                pageUrl={`${baseUrl}/${locale}/clases-particulares-baile`}
-              />
+              <FAQSection title={t('particularesPage_faqTitle')} faqs={faqsParticulares} />
             </div>
           </div>
         </section>

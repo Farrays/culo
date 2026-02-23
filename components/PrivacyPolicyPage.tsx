@@ -88,7 +88,7 @@ const PrivacyPolicyPage: React.FC = () => {
   }, []);
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -608,7 +608,7 @@ const PrivacyPolicyPage: React.FC = () => {
         <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/politica-privacidad`} />
         <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/politica-privacidad`} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 

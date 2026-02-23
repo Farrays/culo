@@ -95,7 +95,6 @@ export interface CategoryPageTemplateProps {
   breadcrumbItems: BreadcrumbItem[];
   schemas: ReactNode;
   faqTitle: string;
-  faqPageUrl: string;
 
   // Slots for page-specific content
   whatIsSection: ReactNode;
@@ -801,7 +800,6 @@ const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
   breadcrumbItems,
   schemas,
   faqTitle,
-  faqPageUrl,
   // Slots
   whatIsSection,
   whichStyleSection,
@@ -888,7 +886,7 @@ const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
         />
 
         {/* FAQ Section */}
-        <FAQSection title={faqTitle} faqs={faqs} pageUrl={faqPageUrl} />
+        <FAQSection title={faqTitle} faqs={faqs} />
 
         {/* Final CTA Section */}
         <FinalCTA

@@ -12,11 +12,7 @@ import LevelCardsSection, { type LevelConfig } from '../shared/LevelCardsSection
 import PrepareClassSection, { type PrepareConfig } from '../shared/PrepareClassSection';
 import AnimatedCounter from '../AnimatedCounter';
 import YouTubeEmbed from '../YouTubeEmbed';
-import {
-  LocalBusinessSchema,
-  AggregateReviewsSchema,
-  CourseSchemaEnterprise,
-} from '../SchemaMarkup';
+import { AggregateReviewsSchema, CourseSchemaEnterprise } from '../SchemaMarkup';
 import { StarRating, CheckIcon, CheckCircleIcon, CalendarDaysIcon } from '../../lib/icons';
 import { UsersIcon, MapPinIcon } from '../shared/CommonIcons';
 import type { Testimonial } from '../../types';
@@ -562,7 +558,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
   }));
 
   // BreadcrumbList Schema
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -629,30 +625,9 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
 
       {/* VideoObject schema removed - class pages are not video watch pages */}
 
-      {/* BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
-      {/* Schema Markup */}
-      <LocalBusinessSchema
-        name={`Farray's International Dance Center - ${t(config.pageTitleKey)}`}
-        description={t(config.metaDescriptionKey)}
-        url={pageUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-          addressRegion: t('schema_addressRegion'),
-        }}
-        geo={{ latitude: '41.380421', longitude: '2.148014' }}
-        priceRange="€€"
-        reserveActionName={t('schema_reserveActionName')}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
       {/* Enterprise Course Schema with CourseInstance for each schedule */}
       <CourseSchemaEnterprise
         name={`${t(config.pageTitleKey)} - Método Farray`}
@@ -1715,7 +1690,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         />
 
         {/* 17. FAQ Section */}
-        <FAQSection title={t(config.faqTitleKey)} faqs={faqs} pageUrl={pageUrl} />
+        <FAQSection title={t(config.faqTitleKey)} faqs={faqs} />
 
         {/* 18. Local SEO Section */}
         <section className="py-12 md:py-16 bg-black">

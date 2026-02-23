@@ -393,7 +393,7 @@ const DanceClassesPage: React.FC = () => {
   ];
 
   // Schema Markup
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     '@id': `${baseUrl}/${locale}/clases/baile-barcelona#breadcrumb`,
@@ -425,18 +425,7 @@ const DanceClassesPage: React.FC = () => {
     })),
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: classesFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // WebPage schema with primary image + speakable (GEO/AIEO/Voice Search optimized)
   const webPageSchema = {
@@ -476,9 +465,8 @@ const DanceClassesPage: React.FC = () => {
   const schemas = (
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
-      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
       <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>
   );
 
@@ -510,7 +498,6 @@ const DanceClassesPage: React.FC = () => {
       breadcrumbItems={breadcrumbItems}
       schemas={schemas}
       faqTitle={t('danceClassesHub_faq_title')}
-      faqPageUrl={`${baseUrl}/${locale}/clases/baile-barcelona`}
       // Sections config
       stylesSectionTitleKey="danceClassesHub_categories_title"
       stylesDescriptionKey="danceClassesHub_categories_description"

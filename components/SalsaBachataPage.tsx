@@ -5,14 +5,13 @@ import { HUB_CATEGORIES } from '../constants/danceClassesHub';
 import { SALSA_BACHATA_FAQS_CONFIG } from '../constants/salsa-bachata';
 import AnimateOnScroll from './AnimateOnScroll';
 import { SUPPORTED_LOCALES } from '../types';
-import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
+import { CourseSchema } from './SchemaMarkup';
 import CategoryPageTemplate, {
   type ValuePillarWithIcon,
   type RelatedClass,
   type HeroImageConfig,
 } from './templates/CategoryPageTemplate';
 import { getStyleImage } from '../constants/style-images';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // HERO IMAGE CONFIGURATION (Enterprise Level - SEO/GEO Optimized)
@@ -332,7 +331,7 @@ const SalsaBachataPage: React.FC = () => {
   ];
 
   // Schema Markup
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -369,18 +368,7 @@ const SalsaBachataPage: React.FC = () => {
     })),
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: salsaBachataFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // ImageObject Schema for SEO/GEO (helps AI search engines understand the image)
   const imageObjectSchema = {
@@ -423,28 +411,7 @@ const SalsaBachataPage: React.FC = () => {
         teaches={t('schema_salsaBachata_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
-      <LocalBusinessSchema
-        name="Farray's International Dance Center"
-        description={t('salsaBachataBarcelona_description')}
-        url={baseUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-        }}
-        geo={{
-          latitude: '41.380421',
-          longitude: '2.148014',
-        }}
-        priceRange="€€"
-        aggregateRating={{
-          ratingValue: REVIEW_STATS.ratingValue,
-          reviewCount: REVIEW_STATS.reviewCount,
-        }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
       <Helmet>
         {/* Canonical URL */}
         <link rel="canonical" href={canonicalUrl} />
@@ -486,9 +453,8 @@ const SalsaBachataPage: React.FC = () => {
         <meta name="twitter:image:alt" content={t('salsaBachataBarcelona_h1')} />
 
         {/* Schema Markup */}
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(imageObjectSchema)}</script>
       </Helmet>
     </>
@@ -512,7 +478,6 @@ const SalsaBachataPage: React.FC = () => {
       breadcrumbItems={breadcrumbItems}
       schemas={schemas}
       faqTitle={t('salsaBachataBarcelona_faq_title')}
-      faqPageUrl={`${baseUrl}/${locale}/clases/salsa-bachata-barcelona`}
       // Styles section
       stylesSectionTitleKey="salsaBachataBarcelona_styles_title"
       stylesDescriptionKey="salsaBachataBarcelona_styles_description"

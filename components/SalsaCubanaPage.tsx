@@ -9,7 +9,6 @@ import {
   getContextualAltKey,
   getRelatedClassImageUrl,
 } from '../constants/style-images';
-import { REVIEW_STATS } from '../constants/reviews-config';
 import {
   SALSA_CUBANA_FAQS_CONFIG,
   SALSA_CUBANA_SCHEDULE_KEYS,
@@ -25,7 +24,7 @@ import FAQSection from './FAQSection';
 import LevelCardsSection from './shared/LevelCardsSection';
 import PrepareClassSection from './shared/PrepareClassSection';
 import AnimatedCounter from './AnimatedCounter';
-import { LocalBusinessSchema, CourseSchema } from './SchemaMarkup';
+import { CourseSchema } from './SchemaMarkup';
 import {
   StarRating,
   CheckIcon,
@@ -76,7 +75,7 @@ const SalsaCubanaPage: React.FC = () => {
   }));
 
   // BreadcrumbList Schema (JSON-LD)
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -141,35 +140,9 @@ const SalsaCubanaPage: React.FC = () => {
         <meta name="twitter:image" content={`${baseUrl}/images/og-salsa-cubana.jpg`} />
       </Helmet>
 
-      {/* BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
-      {/* Schema Markup */}
-      <LocalBusinessSchema
-        name={t('salsaCubana_schema_businessName')}
-        description={t('salsaCubanaMetaDescription')}
-        url={pageUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('salsaCubana_schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-        }}
-        geo={{
-          latitude: '41.380421',
-          longitude: '2.148014',
-        }}
-        priceRange="€€"
-        aggregateRating={{
-          ratingValue: REVIEW_STATS.ratingValue,
-          reviewCount: REVIEW_STATS.reviewCount,
-        }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
 
       <CourseSchema
         name={t('salsaCubanaCourseSchemaName')}
@@ -1289,7 +1262,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 12. FAQ */}
-        <FAQSection title={t('salsaCubanaFaqTitle')} faqs={salsaCubanaFaqs} pageUrl={pageUrl} />
+        <FAQSection title={t('salsaCubanaFaqTitle')} faqs={salsaCubanaFaqs} />
 
         {/* 13. Local SEO Section */}
         <section className="py-12 md:py-16 bg-black">

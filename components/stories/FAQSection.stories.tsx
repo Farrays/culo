@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { HelmetProvider } from 'react-helmet-async';
 import FAQSection from '../FAQSection';
 
 const meta = {
@@ -9,13 +8,6 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  decorators: [
-    Story => (
-      <HelmetProvider>
-        <Story />
-      </HelmetProvider>
-    ),
-  ],
 } satisfies Meta<typeof FAQSection>;
 
 export default meta;
@@ -52,7 +44,6 @@ export const Default: Story = {
   args: {
     title: 'Preguntas Frecuentes',
     faqs: sampleFaqs,
-    pageUrl: 'https://example.com/clases',
   },
 };
 
@@ -79,7 +70,6 @@ export const DancehallFAQs: Story = {
           'Aprenderás pasos básicos como el <em>Bogle</em>, <em>Willie Bounce</em>, <em>Gully Creepa</em> y muchos más. También trabajaremos coreografías completas.',
       },
     ],
-    pageUrl: 'https://example.com/clases/dancehall',
   },
 };
 
@@ -93,6 +83,5 @@ export const MinimalFAQs: Story = {
         answer: 'Estamos en Barcelona, cerca de la estación de metro Verdaguer.',
       },
     ],
-    pageUrl: 'https://example.com',
   },
 };

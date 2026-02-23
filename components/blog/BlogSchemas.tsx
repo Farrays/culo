@@ -128,7 +128,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
   };
 
   // BreadcrumbList Schema
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -159,21 +159,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     ],
   };
 
-  // FAQPage Schema (if FAQ section is enabled)
-  const faqSchema = config.faqSection?.enabled
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: config.faqSection.faqs.map(faq => ({
-          '@type': 'Question',
-          name: t(faq.questionKey),
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: t(faq.answerKey),
-          },
-        })),
-      }
-    : null;
+  // FAQPage Schema removed — already generated at build time by prerender.mjs (generateBlogFAQSchema)
 
   // SpeakableSpecification Schema (for voice search)
   const speakableSchema = {
@@ -399,7 +385,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
               itemReviewed: {
                 '@type': 'LocalBusiness',
                 name: "Farray's International Dance Center",
-                '@id': `${baseUrl}/#organization`,
+                '@id': `${baseUrl}/#danceschool`,
               },
               datePublished: testimonial.datePublished || config.datePublished,
             };
@@ -422,11 +408,9 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
       {/* Person Schema */}
       <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
 
-      {/* Breadcrumb Schema */}
-      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
-      {/* FAQ Schema */}
-      {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+      {/* FAQ Schema — generated at build time by prerender.mjs */}
 
       {/* Speakable Schema */}
       <script type="application/ld+json">{JSON.stringify(speakableSchema)}</script>

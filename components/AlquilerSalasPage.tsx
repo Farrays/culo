@@ -459,7 +459,7 @@ const AlquilerSalasPage: React.FC = () => {
   // ============================================================================
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -492,60 +492,9 @@ const AlquilerSalasPage: React.FC = () => {
     name: t('roomRental_schema_serviceName'),
     description: t('roomRental_metaDescription'),
     image: `${baseUrl}/images/alquiler-salas/og.jpg`,
+    // Reference build-time LocalBusiness by @id instead of duplicating it
     provider: {
-      '@type': 'LocalBusiness',
-      '@id': `${baseUrl}/#organization`,
-      name: "Farray's International Dance Center",
-      image: `${baseUrl}/images/logo/farrays-logo.png`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: t('schema_streetAddress'),
-        addressLocality: 'Barcelona',
-        postalCode: '08015',
-        addressRegion: t('schema_addressRegion'),
-        addressCountry: 'ES',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 41.380421,
-        longitude: 2.148014,
-      },
-      telephone: '+34622247085',
-      email: 'info@farrayscenter.com',
-      url: baseUrl,
-      priceRange: '€€',
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Monday',
-          opens: '10:30',
-          closes: '13:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Wednesday',
-          opens: '10:30',
-          closes: '13:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Thursday',
-          opens: '09:30',
-          closes: '12:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-          opens: '17:30',
-          closes: '23:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Friday',
-          opens: '17:30',
-          closes: '20:00',
-        },
-      ],
+      '@id': `${baseUrl}/#danceschool`,
     },
     areaServed: {
       '@type': 'City',
@@ -620,53 +569,7 @@ const AlquilerSalasPage: React.FC = () => {
     ),
   };
 
-  // Schema Markup - FAQPage for GEO/AIEO Optimization
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: t('roomRental_faq1_q'),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: t('roomRental_faq1_a'),
-        },
-      },
-      {
-        '@type': 'Question',
-        name: t('roomRental_faq2_q'),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: t('roomRental_faq2_a'),
-        },
-      },
-      {
-        '@type': 'Question',
-        name: t('roomRental_faq3_q'),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: t('roomRental_faq3_a'),
-        },
-      },
-      {
-        '@type': 'Question',
-        name: t('roomRental_faq4_q'),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: t('roomRental_faq4_a'),
-        },
-      },
-      {
-        '@type': 'Question',
-        name: t('roomRental_faq5_q'),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: t('roomRental_faq5_a'),
-        },
-      },
-    ],
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
@@ -750,10 +653,9 @@ const AlquilerSalasPage: React.FC = () => {
         />
 
         {/* Enterprise Schema Markup - SEO/GEO/AIEO/AEO */}
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(imageGallerySchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">

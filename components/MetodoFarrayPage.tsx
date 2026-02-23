@@ -60,7 +60,7 @@ const MetodoFarrayPage: React.FC = () => {
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -183,7 +183,7 @@ const MetodoFarrayPage: React.FC = () => {
         <meta name="twitter:title" content={`${t('metodoFarray_page_title')} | Farray's Center`} />
         <meta name="twitter:description" content={t('metodoFarray_meta_description')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(credentialSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(speakableSchema)}</script>

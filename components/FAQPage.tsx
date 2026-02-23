@@ -236,7 +236,7 @@ const FAQPage: React.FC = () => {
   );
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -284,7 +284,7 @@ const FAQPage: React.FC = () => {
         <meta name="description" content={t('faq_page_description')} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/preguntas-frecuentes`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 

@@ -210,7 +210,7 @@ const YunaisyFarrayPage: React.FC = () => {
   });
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -310,7 +310,7 @@ const YunaisyFarrayPage: React.FC = () => {
         <meta name="twitter:title" content={`${t('yunaisyFarray_page_title')} | Farray's Center`} />
         <meta name="twitter:description" content={t('yunaisyFarray_meta_description')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       </Helmet>
 

@@ -75,7 +75,7 @@ const AboutPage: React.FC = () => {
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -100,52 +100,13 @@ const AboutPage: React.FC = () => {
     { name: t('about_breadcrumb_current'), url: `/${locale}/sobre-nosotros`, isActive: true },
   ];
 
-  // Schema Markup - Organization (LocalBusiness - valid Google type)
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://www.farrayscenter.com/#organization',
-    name: "Farray's International Dance Center",
-    description: t('about_description'),
-    url: 'https://www.farrayscenter.com',
-    foundingDate: '2017',
-    founder: {
-      '@type': 'Person',
-      name: 'Yunaisy Farray',
-      jobTitle: t('schema_founderJobTitle'),
-    },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: t('schema_streetAddress'),
-      addressLocality: 'Barcelona',
-      addressRegion: t('schema_addressRegion'),
-      postalCode: '08015',
-      addressCountry: 'ES',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '41.380421',
-      longitude: '2.148014',
-    },
-    telephone: '+34622247085',
-    email: 'info@farrayscenter.com',
-    areaServed: 'Barcelona',
-    slogan: t('about_slogan'),
-    sameAs: [
-      'https://www.instagram.com/farrays_centerbcn/',
-      'https://www.facebook.com/farrayscenter/',
-      'https://www.youtube.com/@farraysinternationaldance',
-      'https://www.tiktok.com/@farrays_centerbcn',
-      'https://g.page/r/Ca9MFoK1mqdHEBM', // Google Business Profile
-    ],
-  };
+  // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
   return (
     <>
       <Helmet>
         <title>{t('about_page_title')} | Farray&apos;s Center</title>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
       </Helmet>
 
       <div className="pt-20 md:pt-24">

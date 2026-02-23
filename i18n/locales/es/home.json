@@ -405,5 +405,7 @@
   "novedades_next": "Siguiente",
   "novedades_carouselLabel": "Carrusel de últimas novedades",
   "novedades_indicators": "Indicadores de navegación",
-  "novedades_goToSlide": "Ir a novedad {n}"
+  "novedades_goToSlide": "Ir a novedad {n}",
+  "asSeenIn_title": "Nos has visto en",
+  "asSeenIn_subtitle": "y en los mejores festivales de danza del mundo"
 }

@@ -112,7 +112,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
   }));
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -160,19 +160,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - FAQPage
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: prepFisicaFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // Enterprise: Hero image paths for preload and schema
   const heroImageBase =
@@ -226,9 +214,8 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
           type="image/avif"
           fetchPriority="high"
         />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
       </Helmet>
 
@@ -603,11 +590,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
-        <FAQSection
-          title={t('prepFisica_faq_title')}
-          faqs={prepFisicaFaqs}
-          pageUrl={`${baseUrl}/${locale}/clases/entrenamiento-bailarines-barcelona`}
-        />
+        <FAQSection title={t('prepFisica_faq_title')} faqs={prepFisicaFaqs} />
 
         {/* Final CTA Section - Conversion Optimized */}
         <section className="relative py-12 md:py-16 overflow-hidden">

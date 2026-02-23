@@ -24,7 +24,7 @@ const TermsConditionsPage: React.FC = () => {
   const lastUpdated = '24/12/2025';
 
   // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
+  const _breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -65,7 +65,7 @@ const TermsConditionsPage: React.FC = () => {
         <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/terminos-y-condiciones`} />
         <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/terminos-y-condiciones`} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
       </Helmet>
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">

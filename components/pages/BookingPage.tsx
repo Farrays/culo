@@ -54,19 +54,9 @@ const BookingPage: React.FC = () => {
       '@type': 'Service',
       name: t('schema_booking_serviceName'),
       description: t('schema_booking_serviceDescription'),
+      // Reference build-time LocalBusiness by @id instead of duplicating it
       provider: {
-        '@type': 'LocalBusiness',
-        name: "Farray's Center Barcelona",
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressRegion: t('schema_addressRegion'),
-          addressCountry: 'ES',
-        },
-        telephone: '+34622247085',
-        priceRange: '€€',
+        '@id': 'https://www.farrayscenter.com/#danceschool',
       },
       areaServed: {
         '@type': 'City',
