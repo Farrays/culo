@@ -1,8 +1,13 @@
 /**
- * LAURA 2.0 - Agente Simple
+ * LAURA 2.0 - Agente Simple (Hybrid Model)
  *
- * Agente minimalista que usa Claude Sonnet con el system prompt completo.
- * Sin routing complejo, sin máquinas de estado, solo prompt + Claude.
+ * Routes messages to the best model:
+ * - Simple queries (greetings, FAQs, info) → GPT-4.1-mini (cheap)
+ * - Complex queries (bookings, member ops, schedules) → Claude Sonnet (tool_use)
+ *
+ * Controlled by LAURA_MODEL_ROUTING env var:
+ * - 'anthropic' (default): all messages go to Claude Sonnet
+ * - 'hybrid': simple → GPT-4.1-mini, complex → Claude Sonnet
  *
  * El prompt se carga desde api/LAURA_PROMPT.md
  */
@@ -16,6 +21,8 @@ import { getMemberLookup } from './member-lookup.js';
 import { LAURA_TOOLS_MEMBER, LAURA_TOOLS_NEW_USER, executeTool } from './laura-tools.js';
 import { markdownToWhatsApp, splitIntoBubbles } from './whatsapp-formatter.js';
 import { sendTypingIndicator, sendTextMessage as sendWhatsAppText } from '../whatsapp.js';
+import { classifyQuery } from './query-classifier.js';
+import { generateSimpleResponse } from './openai-client.js';
 
 // Tipos
 interface AgentInput {
@@ -107,6 +114,102 @@ async function saveConversationHistory(
 }
 
 // ============================================================================
+// POST-RESPONSE HANDLER (shared by GPT and Claude paths)
+// ============================================================================
+
+async function handleResponse(params: {
+  assistantMessage: string;
+  history: ConversationMessage[];
+  text: string;
+  phone: string;
+  redis: Redis;
+  language: SupportedLanguage;
+  input: AgentInput;
+  startTime: number;
+  model: string;
+  iterations: number;
+}): Promise<AgentResponse> {
+  const {
+    assistantMessage,
+    history,
+    text,
+    phone,
+    redis,
+    language,
+    input,
+    startTime,
+    model,
+    iterations,
+  } = params;
+
+  // Format for WhatsApp
+  const formattedForWhatsApp = markdownToWhatsApp(assistantMessage);
+
+  console.log(
+    `[agent-simple] [${model}] Response in ${Date.now() - startTime}ms (${iterations} tool calls): "${assistantMessage.slice(0, 50)}..."`
+  );
+
+  // Save to history (original, not formatted)
+  const updatedHistory: ConversationMessage[] = [
+    ...history,
+    { role: 'user', content: text },
+    { role: 'assistant', content: assistantMessage },
+  ];
+  await saveConversationHistory(redis, phone, updatedHistory);
+
+  // Escalation check
+  const finalResponse = formattedForWhatsApp;
+  const additionalMessages: string[] = [];
+
+  if (process.env['ENABLE_ESCALATION'] === 'true') {
+    try {
+      const escalation = await checkAndEscalate(redis, {
+        userPhone: phone,
+        userMessage: text,
+        lauraResponse: formattedForWhatsApp,
+        conversationHistory: updatedHistory,
+        language,
+        channel: input.channel || 'whatsapp',
+      });
+      if (escalation.escalated) {
+        console.log(
+          `[agent-simple] Escalated (${escalation.type || 'unknown'}): ${escalation.caseId}`
+        );
+
+        if (escalation.type === 'IMMEDIATE' && escalation.escalationMessage) {
+          additionalMessages.push(escalation.escalationMessage);
+          console.log(`[agent-simple] IMMEDIATE escalation - adding ticket message`);
+        }
+      }
+    } catch (escalationError) {
+      console.error('[agent-simple] Escalation error (non-blocking):', escalationError);
+    }
+  }
+
+  // Split into WhatsApp bubbles
+  const mainBubbles = splitIntoBubbles(finalResponse);
+  const allBubbles = [...mainBubbles, ...additionalMessages].filter(m => m.trim().length > 0);
+
+  if (allBubbles.length > 1 && input.channel === 'whatsapp') {
+    for (let i = 0; i < allBubbles.length - 1; i++) {
+      const bubble = allBubbles[i] ?? '';
+      await sendWhatsAppText(phone, bubble);
+      const nextLen = allBubbles[i + 1]?.length || 100;
+      const typingDelay = Math.min(Math.max(nextLen * 15, 1500), 4000);
+      await new Promise(resolve => setTimeout(resolve, typingDelay));
+    }
+    console.log(`[agent-simple] Sent ${allBubbles.length - 1} bubbles, returning last for webhook`);
+    const lastBubble = allBubbles[allBubbles.length - 1] ?? finalResponse;
+    return { text: lastBubble, language };
+  }
+
+  return {
+    text: allBubbles[0] || finalResponse,
+    language,
+  };
+}
+
+// ============================================================================
 // PROCESAMIENTO DE MENSAJES
 // ============================================================================
 
@@ -181,13 +284,51 @@ export async function processSimpleMessage(
   // 4. Obtener historial de conversación
   const history = await getConversationHistory(redis, phone);
 
-  // 5. Preparar mensajes para Claude (con soporte para tool_use)
+  // 5. Hybrid routing: GPT-4.1-mini for simple, Claude Sonnet for tools
+  const modelRouting = process.env['LAURA_MODEL_ROUTING'] || 'anthropic';
+  const queryComplexity = modelRouting === 'hybrid' ? classifyQuery(text) : 'needs_tools';
+
+  console.log(`[agent-simple] Routing: mode=${modelRouting}, complexity=${queryComplexity}`);
+
+  // 5a. GPT-4.1-mini path (simple queries, no tools)
+  if (queryComplexity === 'simple') {
+    try {
+      const gptResponse = await generateSimpleResponse({
+        systemPrompt,
+        messages: [
+          ...history.map(m => ({ role: m.role as 'user' | 'assistant', content: m.content })),
+          { role: 'user' as const, content: text },
+        ],
+      });
+
+      if (gptResponse) {
+        return handleResponse({
+          assistantMessage: gptResponse,
+          history,
+          text,
+          phone,
+          redis,
+          language,
+          input,
+          startTime,
+          model: 'gpt-4.1-mini',
+          iterations: 0,
+        });
+      }
+      // Empty response → fall through to Claude
+      console.warn('[agent-simple] GPT returned empty response, falling back to Claude');
+    } catch (gptError) {
+      console.error('[agent-simple] GPT error, falling back to Claude:', gptError);
+      // Fall through to Claude Sonnet
+    }
+  }
+
+  // 5b. Claude Sonnet path (complex queries with tool_use)
   const messages: Anthropic.MessageParam[] = [
     ...history.map((m): Anthropic.MessageParam => ({ role: m.role, content: m.content })),
     { role: 'user' as const, content: text },
   ];
 
-  // 6. Llamar a Claude Sonnet con tools
   try {
     const toolsEnabled = process.env['ENABLE_LAURA_TOOLS'] !== 'false';
     const useTools = toolsEnabled;
@@ -201,7 +342,7 @@ export async function processSimpleMessage(
       ...(useTools ? { tools: toolSet } : {}),
     });
 
-    // 7. Tool use loop (max 3 iterations to stay within 30s Vercel limit)
+    // Tool use loop (max 3 iterations to stay within 30s Vercel limit)
     const MAX_TOOL_ITERATIONS = 3;
     let iterations = 0;
     const toolContext = { redis, phone, memberId, lang: language };
@@ -244,89 +385,24 @@ export async function processSimpleMessage(
       });
     }
 
-    // 8. Extract final text response (ignore any remaining tool_use blocks)
+    // Extract final text response
     const textBlocks = currentResponse.content.filter(
       (b): b is Anthropic.TextBlock => b.type === 'text'
     );
     const assistantMessage = textBlocks.map(b => b.text).join('');
 
-    // 8b. Convertir markdown de Claude a formato WhatsApp (*bold* en vez de **bold**)
-    const formattedForWhatsApp = markdownToWhatsApp(assistantMessage);
-
-    console.log(
-      `[agent-simple] Response generated in ${Date.now() - startTime}ms (${iterations} tool calls): "${assistantMessage.slice(0, 50)}..."`
-    );
-
-    // 9. Guardar en historial (original de Claude, no el formateado)
-    const updatedHistory: ConversationMessage[] = [
-      ...history,
-      { role: 'user', content: text },
-      { role: 'assistant', content: assistantMessage },
-    ];
-    await saveConversationHistory(redis, phone, updatedHistory);
-
-    // 10. Escalacion a humano (si esta activado)
-    const finalResponse = formattedForWhatsApp;
-    const additionalMessages: string[] = [];
-
-    if (process.env['ENABLE_ESCALATION'] === 'true') {
-      try {
-        const escalation = await checkAndEscalate(redis, {
-          userPhone: phone,
-          userMessage: text,
-          lauraResponse: formattedForWhatsApp,
-          conversationHistory: updatedHistory,
-          language,
-          channel: input.channel || 'whatsapp',
-        });
-        if (escalation.escalated) {
-          console.log(
-            `[agent-simple] Escalated (${escalation.type || 'unknown'}): ${escalation.caseId}`
-          );
-
-          if (escalation.type === 'IMMEDIATE' && escalation.escalationMessage) {
-            // Enfado: mantener respuesta de Laura + anadir aviso como 2a burbuja
-            additionalMessages.push(escalation.escalationMessage);
-            console.log(`[agent-simple] IMMEDIATE escalation - adding ticket message`);
-          }
-          // OFFER: Laura ya dice "contacta en info@..." - no reemplazar su respuesta
-          // El email al equipo se envio en background
-        }
-      } catch (escalationError) {
-        // Si falla la escalacion, no afecta la respuesta
-        console.error('[agent-simple] Escalation error (non-blocking):', escalationError);
-      }
-    }
-
-    // 11. Dividir en burbujas para WhatsApp (estrategia "last-bubble")
-    const mainBubbles = splitIntoBubbles(finalResponse);
-    const allBubbles = [...mainBubbles, ...additionalMessages].filter(m => m.trim().length > 0);
-
-    if (allBubbles.length > 1 && input.channel === 'whatsapp') {
-      // Enviar todas las burbujas menos la ultima desde aqui
-      for (let i = 0; i < allBubbles.length - 1; i++) {
-        const bubble = allBubbles[i] ?? '';
-        await sendWhatsAppText(phone, bubble);
-        // Delay proporcional al largo del siguiente mensaje (simula escritura humana)
-        const nextLen = allBubbles[i + 1]?.length || 100;
-        const typingDelay = Math.min(Math.max(nextLen * 15, 1500), 4000);
-        await new Promise(resolve => setTimeout(resolve, typingDelay));
-      }
-      // Retornar la ultima para que webhook la envie (flujo normal)
-      console.log(
-        `[agent-simple] Sent ${allBubbles.length - 1} bubbles, returning last for webhook`
-      );
-      const lastBubble = allBubbles[allBubbles.length - 1] ?? finalResponse;
-      return {
-        text: lastBubble,
-        language,
-      };
-    }
-
-    return {
-      text: allBubbles[0] || finalResponse,
+    return handleResponse({
+      assistantMessage,
+      history,
+      text,
+      phone,
+      redis,
       language,
-    };
+      input,
+      startTime,
+      model: 'claude-sonnet',
+      iterations,
+    });
   } catch (error) {
     console.error('[agent-simple] Claude API error:', error);
 

@@ -276,9 +276,12 @@ export class AgentMetrics {
   // --------------------------------------------------------------------------
 
   /**
-   * Track model usage (Haiku vs Sonnet)
+   * Track model usage (Haiku vs Sonnet vs GPT-4.1-mini)
    */
-  async trackModelUsage(model: 'haiku' | 'sonnet', responseTimeMs: number): Promise<void> {
+  async trackModelUsage(
+    model: 'haiku' | 'sonnet' | 'gpt4mini',
+    responseTimeMs: number
+  ): Promise<void> {
     if (!this.redis) return;
 
     const date = this.getToday();
