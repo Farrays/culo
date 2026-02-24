@@ -42,6 +42,7 @@ export type MomenceStyle =
   | 'folklore'
   | 'kpop'
   | 'commercial'
+  | 'broadwayjazz'
   | 'house'
   | 'breaking'
   | 'locking'
@@ -139,6 +140,7 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   // Other urban
   kpop: 'kpop',
   commercial: 'commercial',
+  broadwayjazz: 'broadwayjazz',
   house: 'house',
   breaking: 'breaking',
   locking: 'locking',
@@ -177,6 +179,7 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
   girly: 'urbano',
   kpop: 'urbano',
   commercial: 'urbano',
+  broadwayjazz: 'danza',
   breaking: 'urbano',
   house: 'urbano',
   locking: 'urbano',
@@ -242,6 +245,7 @@ export const STYLE_TO_PAGE_SLUG: Record<MomenceStyle, string> = {
   folklore: 'folklore-cubano-barcelona',
   kpop: 'hip-hop-barcelona', // Grouped with hip hop
   commercial: 'hip-hop-barcelona', // Grouped with hip hop
+  broadwayjazz: 'modern-jazz-barcelona', // Grouped with jazz
   house: 'hip-hop-barcelona',
   breaking: 'hip-hop-barcelona',
   locking: 'hip-hop-barcelona',
@@ -271,6 +275,7 @@ export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban'],
   afro: ['afrobeat', 'afrodance', 'afro jazz'],
   afrocontemporaneo: ['afro contemporáneo', 'afro contemporaneo'],
+  broadwayjazz: ['broadway jazz', 'broadway'],
   commercial: ['commercial', 'comercial'],
   kpop: ['k-pop', 'kpop', 'k pop'],
   twerk: ['twerk', 'twerkeo'],
