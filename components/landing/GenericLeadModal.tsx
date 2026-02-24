@@ -595,6 +595,32 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                         if (bookingDay) params.set('day', bookingDay);
                         if (bookingTime) params.set('time', bookingTime);
 
+                        // Calculate week offset to show the target date's week
+                        if (bookingWidget.targetDate) {
+                          const target = new Date(bookingWidget.targetDate + 'T00:00:00');
+                          const now = new Date();
+                          // Get Monday of current week
+                          const dayOfWeek = now.getDay();
+                          const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+                          const currentMonday = new Date(now);
+                          currentMonday.setDate(now.getDate() + mondayOffset);
+                          currentMonday.setHours(0, 0, 0, 0);
+                          // Get Monday of target week
+                          const targetDayOfWeek = target.getDay();
+                          const targetMondayOffset =
+                            targetDayOfWeek === 0 ? -6 : 1 - targetDayOfWeek;
+                          const targetMonday = new Date(target);
+                          targetMonday.setDate(target.getDate() + targetMondayOffset);
+                          targetMonday.setHours(0, 0, 0, 0);
+                          // Week offset = difference in weeks
+                          const diffMs = targetMonday.getTime() - currentMonday.getTime();
+                          const weekOffset = Math.max(
+                            0,
+                            Math.min(4, Math.round(diffMs / (7 * 24 * 60 * 60 * 1000)))
+                          );
+                          params.set('week', String(weekOffset));
+                        }
+
                         const bookingUrl = `/${locale}/reservas?${params.toString()}`;
                         navigate(bookingUrl);
                         onClose();

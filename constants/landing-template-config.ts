@@ -221,6 +221,8 @@ export interface LandingConfig {
     styleFilter: string;
     /** Clave de traducción para el texto del CTA (default: 'booking_cta_reserve') */
     ctaKey?: string;
+    /** Fecha objetivo para calcular el week offset automáticamente (ISO date, e.g. '2026-03-12') */
+    targetDate?: string;
   };
 }
 

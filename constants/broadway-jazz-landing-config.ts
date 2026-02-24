@@ -114,6 +114,7 @@ export const BROADWAY_JAZZ_LANDING_CONFIG: LandingConfig = createLandingConfig('
   // =========================================================================
   bookingWidget: {
     styleFilter: 'broadwayjazz',
+    targetDate: '2026-03-11',
   },
 
   // =========================================================================
