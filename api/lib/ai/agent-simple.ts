@@ -278,8 +278,53 @@ export async function processSimpleMessage(
     }
   }
 
+  // 2b. Si no es miembro, buscar si tiene reserva de clase de prueba
+  let trialContext:
+    | {
+        hasTrialBooking: boolean;
+        className?: string;
+        classDate?: string;
+        classTime?: string;
+        status?: string;
+        canCancel?: boolean;
+        canReschedule?: boolean;
+      }
+    | undefined;
+
+  if (!memberContext) {
+    try {
+      const normalizedPhone = phone.replace(/[\s\-+()]/g, '');
+      const eventId = (await redis.get(`phone:${normalizedPhone}`)) as string | null;
+
+      if (eventId) {
+        const booking = (await redis.get(`booking_details:${eventId}`)) as Record<
+          string,
+          unknown
+        > | null;
+
+        if (booking && booking['status'] !== 'cancelled') {
+          trialContext = {
+            hasTrialBooking: true,
+            className: booking['className'] as string,
+            classDate: booking['classDate'] as string,
+            classTime: booking['classTime'] as string,
+            status: booking['status'] as string,
+            canCancel: booking['status'] !== 'cancelled',
+            canReschedule:
+              ((booking['rescheduleCount'] as number) || 0) < 1 && !booking['rescheduledFrom'],
+          };
+          console.log(
+            `[agent-simple] 🎫 Trial booking found: ${booking['className']} on ${booking['classDate']}`
+          );
+        }
+      }
+    } catch (trialError) {
+      console.error('[agent-simple] Trial lookup error (non-blocking):', trialError);
+    }
+  }
+
   // 3. Cargar system prompt desde LAURA_PROMPT.md (con contexto de miembro si existe)
-  const systemPrompt = getFullSystemPrompt(language, memberContext);
+  const systemPrompt = getFullSystemPrompt(language, memberContext, trialContext);
 
   // 4. Obtener historial de conversación
   const history = await getConversationHistory(redis, phone);
