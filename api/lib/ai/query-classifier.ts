@@ -21,6 +21,13 @@ export function classifyQuery(text: string): QueryComplexity {
   if (isMemberQuery(lower)) return 'needs_tools';
   if (isScheduleQuery(lower)) return 'needs_tools';
   if (isCancellationIntent(lower)) return 'needs_tools';
+  if (isPricingQuery(lower)) return 'needs_tools';
+  if (isTrialBookingQuery(lower)) return 'needs_tools';
+
+  // Short message with a dance style + question mark → likely asking about schedule
+  if (hasStyleKeyword(lower) && (lower.split(/\s+/).length < 8 || lower.includes('?'))) {
+    return 'needs_tools';
+  }
 
   // Simple → GPT-4.1-mini
   return 'simple';
@@ -90,17 +97,51 @@ function isMemberQuery(text: string): boolean {
   return keywords.some(kw => text.includes(kw));
 }
 
+function isPricingQuery(text: string): boolean {
+  const keywords = [
+    'precio',
+    'precios',
+    'cuánto cuesta',
+    'cuanto cuesta',
+    'cuánto vale',
+    'cuanto vale',
+    'price',
+    'prices',
+    'how much',
+    'tarifa',
+    'tarifas',
+    'mensualidad',
+  ];
+  return keywords.some(kw => text.includes(kw));
+}
+
 function isScheduleQuery(text: string): boolean {
-  // Schedule queries need search_upcoming_classes tool
+  // Schedule queries need tools
   const scheduleKeywords = [
     'horario',
     'horarios',
     'schedule',
     'timetable',
+    'a qué hora',
+    'a que hora',
+    'cuando',
+    'when',
+    'hora',
+    'horas',
+    'que clases',
+    'qué clases',
+    'what classes',
+    'clase de',
+    'clases de',
     'quin dia',
     'quins dies',
     'quand',
     'quel jour',
+    'saturday',
+    'sunday',
+    'dissabte',
+    'diumenge',
+    'samedi',
   ];
 
   // Direct "is there X class" questions
@@ -109,6 +150,21 @@ function isScheduleQuery(text: string): boolean {
     'hay clases',
     'tienen clase',
     'tienen clases',
+    'hay bachata',
+    'hay salsa',
+    'hay twerk',
+    'hay ballet',
+    'hay hip hop',
+    'hay kizomba',
+    'hay reggaeton',
+    'hacéis',
+    'haceis',
+    'dan clase',
+    'dan clases',
+    'do you have',
+    'do you offer',
+    'impartís',
+    'impartis',
     'is there a class',
     'are there classes',
     'hi ha classe',
@@ -140,6 +196,39 @@ function isCancellationIntent(text: string): boolean {
     'desapuntarme',
     'darme de baja',
     'baja de la clase',
+    'cambiar mi reserva',
+    'reprogramar',
+    'mover mi clase',
+  ];
+  return keywords.some(kw => text.includes(kw));
+}
+
+function isTrialBookingQuery(text: string): boolean {
+  const keywords = [
+    'cambiar mi reserva',
+    'cambiar la reserva',
+    'cambiar de día',
+    'cambiar de dia',
+    'reprogramar',
+    'reschedule',
+    'mover mi clase',
+    'mover la clase',
+    'mi reserva',
+    'mi clase de prueba',
+    'my booking',
+    'my trial',
+    'my reservation',
+    'no puedo ir',
+    'no puedo asistir',
+    'no voy a poder',
+    'cambiar fecha',
+    'otro día',
+    'otro dia',
+    'another day',
+    'canviar la reserva',
+    'canviar de dia',
+    'modifier ma réservation',
+    'changer le jour',
   ];
   return keywords.some(kw => text.includes(kw));
 }
@@ -200,6 +289,10 @@ function hasTimeKeyword(text: string): boolean {
     'thursday',
     'friday',
     'esta semana',
+    'esta tarde',
+    'esta noche',
+    'por la mañana',
+    'por la tarde',
     'this week',
     'próxima',
     'proxima',

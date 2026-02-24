@@ -22,6 +22,7 @@ import type Anthropic from '@anthropic-ai/sdk';
 import { getMemberLookup } from './member-lookup.js';
 import { getMomenceClient } from '../momence-client.js';
 import { activateTakeover, addNotification } from './human-takeover.js';
+import { SCHEDULE_DATA } from '../../../constants/horarios-schedule-data.js';
 
 // ============================================================================
 // MOMENCE URL CONFIG
@@ -271,6 +272,27 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
       required: ['action'],
     },
   },
+  // Tool 15: get_weekly_schedule (static schedule data)
+  {
+    name: 'get_weekly_schedule',
+    description:
+      'Obtener el horario semanal FIJO de todas las clases del centro. Usa PRIMERO esta herramienta para consultas generales de horarios (ej: "¿a qué hora hay bachata?", "horarios de salsa"). Para consultar disponibilidad en fechas concretas o reservar, usa search_upcoming_classes después.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        style: {
+          type: 'string',
+          description: 'Filtrar por estilo de baile (opcional). Ej: "bachata", "salsa", "twerk"',
+        },
+        day: {
+          type: 'string',
+          description:
+            'Filtrar por día de la semana en inglés (opcional). Ej: "monday", "tuesday", "wednesday"',
+        },
+      },
+      required: [],
+    },
+  },
 ];
 
 // ============================================================================
@@ -280,6 +302,7 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
 // These 5 tools work WITHOUT memberId (verified: no guard if(!context.memberId))
 const NEW_USER_TOOL_NAMES = new Set([
   'search_upcoming_classes',
+  'get_weekly_schedule',
   'get_membership_options',
   'get_class_details',
   'transfer_to_human',
@@ -353,6 +376,9 @@ export async function executeTool(
       case 'manage_trial_booking':
         result = await executeManageTrialBooking(toolInput, context);
         break;
+      case 'get_weekly_schedule':
+        result = executeGetWeeklySchedule(toolInput);
+        break;
       default:
         result = JSON.stringify({ error: `Herramienta desconocida: ${toolName}` });
     }
@@ -383,7 +409,11 @@ async function executeSearchClasses(
   const style = input['style'] as string | undefined;
   const daysAhead = Math.min(Number(input['days_ahead']) || 7, 14);
 
-  const sessions = await memberService.fetchUpcomingSessions(style, daysAhead);
+  const rawSessions = await memberService.fetchUpcomingSessions(style, daysAhead);
+
+  // Filter out sessions that have already started (past dates)
+  const now = new Date();
+  const sessions = rawSessions.filter(s => new Date(s.startsAt) > now);
 
   if (sessions.length === 0) {
     return JSON.stringify({
@@ -395,7 +425,6 @@ async function executeSearchClasses(
   }
 
   // Compute 24h threshold for free trial rule (widget requires MIN_BOOKING_HOURS=24)
-  const now = new Date();
   const in24h = new Date(now.getTime() + 24 * 60 * 60 * 1000);
   const lang = context.lang || 'es';
 
@@ -420,6 +449,51 @@ async function executeSearchClasses(
     showing: classes.length,
     classes,
   });
+}
+
+function executeGetWeeklySchedule(input: Record<string, unknown>): string {
+  let classes = [...SCHEDULE_DATA];
+
+  const style = input['style'] as string | undefined;
+  if (style) {
+    const s = style.toLowerCase();
+    classes = classes.filter(
+      c => c.styleName.toLowerCase().includes(s) || c.className.toLowerCase().includes(s)
+    );
+  }
+
+  const day = input['day'] as string | undefined;
+  if (day) {
+    classes = classes.filter(c => c.day === day.toLowerCase());
+  }
+
+  if (classes.length === 0) {
+    return JSON.stringify({
+      found: 0,
+      message: 'No hay clases con esos filtros en el horario semanal.',
+    });
+  }
+
+  // Group by day for readability
+  const grouped: Record<
+    string,
+    Array<{ time: string; name: string; teacher: string; level: string }>
+  > = {};
+  for (const c of classes) {
+    const day = c.day;
+    if (!grouped[day]) grouped[day] = [];
+    const dayClasses = grouped[day];
+    if (dayClasses) {
+      dayClasses.push({
+        time: c.time,
+        name: c.className,
+        teacher: c.teacher,
+        level: c.level,
+      });
+    }
+  }
+
+  return JSON.stringify({ found: classes.length, schedule: grouped });
 }
 
 async function executeGetMemberInfo(context: ToolContext): Promise<string> {
