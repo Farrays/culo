@@ -995,9 +995,11 @@ async function handleAttendanceConfirmation(
 
       await redis.set(`booking_details:${eventId}`, JSON.stringify(booking));
 
-      // NO eliminar deduplicación - no puede reservar de nuevo
+      // ALWAYS clear dedup so admin/user can rebook (super admin mode)
+      const lateEmail = booking.email.toLowerCase();
+      await redis.del(`booking:${lateEmail}`);
       console.log(
-        `[webhook-whatsapp] Late cancellation (< 1h) - deduplication KEPT: ${booking.firstName}`
+        `[webhook-whatsapp] Late cancellation (< 1h) - dedup CLEARED (super admin): ${booking.firstName}`
       );
 
       // Eliminar del índice de teléfono

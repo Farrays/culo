@@ -1047,11 +1047,10 @@ async function executeManageTrialBooking(
         JSON.stringify(booking)
       );
 
-      // Clear dedup if on-time cancellation
-      if (isOnTime) {
-        const email = booking.email.toLowerCase().trim();
-        await context.redis.del(`booking:${email}`);
-      }
+      // ALWAYS clear dedup so user can rebook (super admin mode)
+      const email = booking.email.toLowerCase().trim();
+      await context.redis.del(`booking:${email}`);
+      console.log(`[manage_trial_booking] Dedup cleared for ${email} (isOnTime=${isOnTime})`);
 
       // Update Google Calendar
       if (booking.calendarEventId) {
