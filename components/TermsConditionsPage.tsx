@@ -23,26 +23,6 @@ const TermsConditionsPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
   const lastUpdated = '24/12/2025';
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('terms_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/terminos-y-condiciones`,
-      },
-    ],
-  };
-
   const breadcrumbItems = [
     { name: t('home'), url: `/${locale}` },
     {
@@ -65,7 +45,7 @@ const TermsConditionsPage: React.FC = () => {
         <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/terminos-y-condiciones`} />
         <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/terminos-y-condiciones`} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
       </Helmet>
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">

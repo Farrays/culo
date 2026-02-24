@@ -24,7 +24,6 @@ import Icon from '../Icon';
 import { ReviewsSection } from '../reviews';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 import { PhoneIcon, CheckCircleIcon, ShieldCheckIcon } from '../../lib/icons';
-import { REVIEW_STATS } from '../../constants/reviews-config';
 
 import type {
   ServicePageTemplateProps,
@@ -71,10 +70,7 @@ const BUSINESS_INFO = {
     latitude: '41.380421',
     longitude: '2.148014',
   },
-  aggregateRating: {
-    ratingValue: REVIEW_STATS.ratingValue,
-    reviewCount: REVIEW_STATS.reviewCount,
-  },
+  // aggregateRating removed - only in build-time LocalBusiness (#danceschool)
   sameAs: [
     'https://www.instagram.com/farrays_centerbcn/',
     'https://www.facebook.com/farrayscenter/',
@@ -1134,31 +1130,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
 
   // Generate schemas
   const schemas = useMemo(() => {
-    const breadcrumbSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: t('navHome'),
-          item: `${BASE_URL}/${locale}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: t('breadcrumb_services'),
-          item: `${BASE_URL}/${locale}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: t(heroTitleKey),
-          item: `${BASE_URL}/${locale}${canonicalPath}`,
-        },
-      ],
-    };
-
     const serviceSchema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -1167,8 +1138,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
       name: schemaOptions.serviceName,
       description: schemaOptions.serviceDescription,
       provider: {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/#localbusiness`,
+        '@id': `${BASE_URL}/#danceschool`,
       },
       areaServed: {
         '@type': 'City',
@@ -1179,38 +1149,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
       }),
     };
 
-    const localBusinessSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': `${BASE_URL}/#localbusiness`,
-      name: BUSINESS_INFO.name,
-      alternateName: BUSINESS_INFO.alternateName,
-      url: BUSINESS_INFO.url,
-      logo: BUSINESS_INFO.logo,
-      image: `${BASE_URL}${ogImage}`,
-      telephone: BUSINESS_INFO.telephone,
-      email: BUSINESS_INFO.email,
-      foundingDate: BUSINESS_INFO.foundingDate,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: t('schema_streetAddress'),
-        addressLocality: BUSINESS_INFO.address.addressLocality,
-        addressRegion: t('schema_addressRegion'),
-        postalCode: BUSINESS_INFO.address.postalCode,
-        addressCountry: BUSINESS_INFO.address.addressCountry,
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        ...BUSINESS_INFO.geo,
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ...BUSINESS_INFO.aggregateRating,
-      },
-      sameAs: BUSINESS_INFO.sameAs,
-      hasMap: 'https://g.page/r/Ca9MFoK1mqdHEBM',
-      priceRange: '$$',
-    };
+    // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
     const organizationSchema = {
       '@context': 'https://schema.org',
@@ -1223,13 +1162,12 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
     };
 
     return [
-      breadcrumbSchema,
+      // breadcrumbSchema removed - generated at build-time by prerender.mjs
       serviceSchema,
-      localBusinessSchema,
       organizationSchema,
       ...(customSchemas || []),
     ];
-  }, [t, locale, heroTitleKey, canonicalPath, schemaOptions, ogImage, customSchemas]);
+  }, [locale, canonicalPath, schemaOptions, customSchemas]);
 
   return (
     <>
@@ -1348,11 +1286,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
         />
 
         {/* FAQ Section */}
-        <FAQSection
-          title={t(faqTitleKey)}
-          faqs={translatedFaqs}
-          pageUrl={`${BASE_URL}/${locale}${canonicalPath}`}
-        />
+        <FAQSection title={t(faqTitleKey)} faqs={translatedFaqs} />
 
         {/* Related Services */}
         {relatedServicesEnabled &&

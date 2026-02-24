@@ -27,7 +27,6 @@ import {
   UsersIcon,
   CheckIcon,
 } from '../lib/icons';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // TYPES
@@ -214,26 +213,6 @@ const ServiciosBailePage: React.FC = () => {
     [t]
   );
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('serviciosBaile_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('serviciosBaile_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/servicios-baile-barcelona`,
-      },
-    ],
-  };
-
   // Schema Markup - Service (main) - Enhanced for LLMs
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -303,13 +282,7 @@ const ServiciosBailePage: React.FC = () => {
         },
       ],
       priceRange: '€€',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: REVIEW_STATS.ratingValue,
-        reviewCount: REVIEW_STATS.reviewCount,
-        bestRating: REVIEW_STATS.bestRating,
-        worstRating: REVIEW_STATS.worstRating,
-      },
+      // aggregateRating removed - already in build-time LocalBusiness #danceschool schema
     },
     areaServed: [
       { '@type': 'City', name: 'Barcelona' },
@@ -353,83 +326,7 @@ const ServiciosBailePage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - LocalBusiness with hasMap (geo-local SEO)
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#localbusiness`,
-    name: "Farray's International Dance Center",
-    alternateName: "Farray's Center",
-    description: t('schema_servicios_localBusinessDescription'),
-    url: baseUrl,
-    telephone: '+34622247085',
-    email: 'info@farrayscenter.com',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: t('schema_streetAddress'),
-      addressLocality: 'Barcelona',
-      addressRegion: t('schema_addressRegion'),
-      postalCode: '08015',
-      addressCountry: 'ES',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '41.380421',
-      longitude: '2.148014',
-    },
-    hasMap: 'https://g.page/r/Ca9MFoK1mqdHEBM',
-    image: `${baseUrl}/images/og-image.jpg`,
-    priceRange: '€€',
-    currenciesAccepted: 'EUR',
-    paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Monday',
-        opens: '10:30',
-        closes: '13:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Wednesday',
-        opens: '10:30',
-        closes: '13:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Thursday',
-        opens: '09:30',
-        closes: '12:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-        opens: '17:30',
-        closes: '23:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Friday',
-        opens: '17:30',
-        closes: '20:00',
-      },
-    ],
-    areaServed: [
-      { '@type': 'City', name: 'Barcelona' },
-      { '@type': 'City', name: "L'Hospitalet de Llobregat" },
-      { '@type': 'Place', name: 'Eixample Esquerre' },
-      { '@type': 'Place', name: 'Poble Sec' },
-      { '@type': 'Place', name: 'Sant Antoni' },
-      { '@type': 'Place', name: 'Les Corts' },
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: REVIEW_STATS.ratingValue,
-      reviewCount: REVIEW_STATS.reviewCount,
-      bestRating: REVIEW_STATS.bestRating,
-      worstRating: REVIEW_STATS.worstRating,
-    },
-  };
+  // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
   // Breadcrumb items for visual navigation
   const breadcrumbItems = [
@@ -485,10 +382,9 @@ const ServiciosBailePage: React.FC = () => {
         <meta name="twitter:image" content={`${baseUrl}/images/og-image.jpg`} />
 
         {/* Schema */}
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
       {/* Skip to main content link for accessibility */}
@@ -860,11 +756,7 @@ const ServiciosBailePage: React.FC = () => {
         {/* ================================================================
             SECTION 7: FAQ
         ================================================================ */}
-        <FAQSection
-          title={t('serviciosBaile_faq_title')}
-          faqs={faqs}
-          pageUrl={`${baseUrl}/${locale}/servicios-baile-barcelona`}
-        />
+        <FAQSection title={t('serviciosBaile_faq_title')} faqs={faqs} />
 
         {/* ================================================================
             SECTION 8: FINAL CTA

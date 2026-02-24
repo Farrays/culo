@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { HOMEPAGE_V2_CONFIG } from '../constants/homepage-v2-config';
 import Hero from './Hero';
 import TrustBarHero from './TrustBarHero';
+import AsSeenInBar from './AsSeenInBar';
 import HappinessStory from './HappinessStory';
 import About from './About';
 // import Classes from './Classes'; // Componente no encontrado - usando ClassesPreview en su lugar
@@ -273,6 +274,7 @@ const HomePage: React.FC = () => {
 
       <Hero />
       <TrustBarHero />
+      <AsSeenInBar />
       <Suspense fallback={<CarouselSkeleton />}>
         <NovedadesCarousel />
       </Suspense>
@@ -299,7 +301,7 @@ const HomePage: React.FC = () => {
             'Montse Solís Solís',
           ]}
         />
-        <FAQSection title={t('faqTitle')} faqs={homeFaqs} pageUrl={`${baseUrl}/${locale}`} />
+        <FAQSection title={t('faqTitle')} faqs={homeFaqs} />
         <FinalCTA />
         <HowToGetHere />
         <ManifestoBanner />

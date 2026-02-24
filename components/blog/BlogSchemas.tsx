@@ -127,53 +127,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     ],
   };
 
-  // BreadcrumbList Schema
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t(config.breadcrumbConfig.homeKey),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t(config.breadcrumbConfig.blogKey),
-        item: `${baseUrl}/${locale}/blog`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t(config.breadcrumbConfig.categoryKey),
-        item: `${baseUrl}/${locale}${config.breadcrumbConfig.categoryUrl}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: t(config.breadcrumbConfig.currentKey),
-        item: articleUrl,
-      },
-    ],
-  };
-
-  // FAQPage Schema (if FAQ section is enabled)
-  const faqSchema = config.faqSection?.enabled
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: config.faqSection.faqs.map(faq => ({
-          '@type': 'Question',
-          name: t(faq.questionKey),
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: t(faq.answerKey),
-          },
-        })),
-      }
-    : null;
+  // FAQPage Schema removed — already generated at build time by prerender.mjs (generateBlogFAQSchema)
 
   // SpeakableSpecification Schema (for voice search)
   const speakableSchema = {
@@ -399,7 +353,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
               itemReviewed: {
                 '@type': 'LocalBusiness',
                 name: "Farray's International Dance Center",
-                '@id': `${baseUrl}/#organization`,
+                '@id': `${baseUrl}/#danceschool`,
               },
               datePublished: testimonial.datePublished || config.datePublished,
             };
@@ -422,11 +376,9 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
       {/* Person Schema */}
       <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
 
-      {/* Breadcrumb Schema */}
-      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
-      {/* FAQ Schema */}
-      {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+      {/* FAQ Schema — generated at build time by prerender.mjs */}
 
       {/* Speakable Schema */}
       <script type="application/ld+json">{JSON.stringify(speakableSchema)}</script>

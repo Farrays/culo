@@ -411,25 +411,6 @@ const ContactPage: React.FC = () => {
   // SCHEMA MARKUP
   // ============================================================================
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('contact_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('contact_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/contacto`,
-      },
-    ],
-  };
-
   // ContactPage + LocalBusiness schema for SEO geo-targeting
   const contactPageSchema = {
     '@context': 'https://schema.org',
@@ -437,77 +418,9 @@ const ContactPage: React.FC = () => {
     name: t('contact_page_title'),
     description: t('contact_page_description'),
     url: `${baseUrl}/${locale}/contacto`,
+    // Reference build-time LocalBusiness by @id instead of duplicating it
     mainEntity: {
-      '@type': 'LocalBusiness',
-      '@id': `${baseUrl}/#organization`,
-      name: "Farray's International Dance Center",
-      alternateName: 'FIDC Barcelona',
-      description: t('contact_page_description'),
-      url: baseUrl,
-      telephone: '+34622247085',
-      email: 'info@farrayscenter.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: t('schema_streetAddress'),
-        addressLocality: 'Barcelona',
-        addressRegion: t('schema_addressRegion'),
-        postalCode: '08015',
-        addressCountry: 'ES',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 41.380421,
-        longitude: 2.148014,
-      },
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Monday',
-          opens: '10:30',
-          closes: '13:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Wednesday',
-          opens: '10:30',
-          closes: '13:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Thursday',
-          opens: '09:30',
-          closes: '12:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-          opens: '17:30',
-          closes: '23:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Friday',
-          opens: '17:30',
-          closes: '20:00',
-        },
-      ],
-      priceRange: '€€',
-      image: `${baseUrl}/images/og-image.jpg`,
-      sameAs: [
-        'https://www.instagram.com/farrays_centerbcn/',
-        'https://www.facebook.com/farrayscenter/',
-        'https://www.youtube.com/@farraysinternationaldance',
-        'https://www.tiktok.com/@farrays_centerbcn',
-        'https://g.page/r/Ca9MFoK1mqdHEBM', // Google Business Profile
-      ],
-      areaServed: {
-        '@type': 'City',
-        name: 'Barcelona',
-        containedInPlace: {
-          '@type': 'AdministrativeArea',
-          name: t('schema_addressRegion'),
-        },
-      },
+      '@id': `${baseUrl}/#danceschool`,
     },
   };
 
@@ -530,7 +443,7 @@ const ContactPage: React.FC = () => {
         <meta property="og:description" content={t('contact_page_description')} />
         <meta property="og:url" content={`${baseUrl}/${locale}/contacto`} />
         <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(contactPageSchema)}</script>
       </Helmet>
 

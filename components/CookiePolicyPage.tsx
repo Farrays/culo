@@ -131,26 +131,6 @@ const CookiePolicyPage: React.FC = () => {
     setOpenSections(new Set());
   }, []);
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('breadcrumbHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('cookies_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/politica-cookies`,
-      },
-    ],
-  };
-
   // Schema Markup - WebPage
   const webPageSchema = {
     '@context': 'https://schema.org',
@@ -568,7 +548,7 @@ const CookiePolicyPage: React.FC = () => {
         <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/politica-cookies`} />
         <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/politica-cookies`} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 

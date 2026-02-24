@@ -180,81 +180,9 @@ const UbicacionPage: React.FC = () => {
     [t, locale]
   );
 
-  // Schema Markup
-  const breadcrumbSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: t('ubicacion_breadcrumbHome'),
-          item: `${baseUrl}/${locale}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: t('ubicacion_breadcrumbCurrent'),
-          item: `${baseUrl}/${locale}/como-llegar-escuela-baile-barcelona`,
-        },
-      ],
-    }),
-    [t, locale, baseUrl]
-  );
+  // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
-  const localBusinessSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': `${baseUrl}/#organization`,
-      name: "Farray's International Dance Center",
-      description: t('ubicacion_pageDescription'),
-      url: baseUrl,
-      telephone: '+34622247085',
-      email: 'info@farrayscenter.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: "Carrer d'Entença, 100, Local 1",
-        addressLocality: 'Barcelona',
-        postalCode: '08015',
-        addressCountry: 'ES',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 41.380421,
-        longitude: 2.148014,
-      },
-      hasMap: GOOGLE_MAPS_LINK,
-      areaServed: [
-        { '@type': 'City', name: 'Barcelona' },
-        { '@type': 'AdministrativeArea', name: 'Eixample' },
-        { '@type': 'AdministrativeArea', name: 'Sants-Montjuïc' },
-        { '@type': 'AdministrativeArea', name: 'Les Corts' },
-        { '@type': 'AdministrativeArea', name: 'Poble Sec' },
-        { '@type': 'AdministrativeArea', name: 'Sant Antoni' },
-      ],
-      publicAccess: true,
-      isAccessibleForFree: false,
-    }),
-    [t, baseUrl]
-  );
-
-  const faqSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: FAQ_KEYS.map(faq => ({
-        '@type': 'Question',
-        name: t(faq.questionKey),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: t(faq.answerKey),
-        },
-      })),
-    }),
-    [t]
-  );
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   return (
     <>
@@ -269,9 +197,7 @@ const UbicacionPage: React.FC = () => {
           property="og:url"
           content={`${baseUrl}/${locale}/como-llegar-escuela-baile-barcelona`}
         />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
       </Helmet>
 
       <div className="min-h-screen bg-black pt-28 md:pt-32">
@@ -536,7 +462,6 @@ const UbicacionPage: React.FC = () => {
             <div className="max-w-3xl mx-auto">
               <FAQSection
                 title={t('ubicacion_faqTitle')}
-                pageUrl={`https://www.farrayscenter.com/${locale}/como-llegar-escuela-baile-barcelona`}
                 faqs={FAQ_KEYS.map((faq, index) => ({
                   id: `ubicacion-faq-${index + 1}`,
                   question: t(faq.questionKey),

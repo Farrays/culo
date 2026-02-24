@@ -337,6 +337,69 @@ export function generateFAQPageSchema(styleKey, t) {
 }
 
 /**
+ * Flexible FAQPage Schema — handles all translation key patterns in the codebase.
+ * Used for pages NOT in STYLE_KEY_MAP (service pages, category pages, etc.)
+ *
+ * Supports 4 patterns:
+ *   A: ${prefix}FaqQ${i} / ${prefix}FaqA${i}       (e.g., homeFaqQ1)
+ *   B: ${prefix}Q${i} / ${prefix}A${i}              (e.g., particularesPage_faqQ1)
+ *   C: ${prefix}_faq${i}_q / ${prefix}_faq${i}_a    (e.g., regalaBaile_faq1_q)
+ *   D: ${prefix}_faq${i}_question / ${prefix}_faq${i}_answer (e.g., teamBuilding_faq1_question)
+ *
+ * @param {string} prefix - Translation key prefix
+ * @param {object} t - Translation object
+ * @returns {object|null} FAQPage schema or null if no FAQs found
+ */
+export function generateFlexibleFAQSchema(prefix, t) {
+  const faqs = [];
+
+  for (let i = 1; i <= 18; i++) {
+    let question, answer;
+
+    // Pattern A: ${prefix}FaqQ${i}
+    question = t[`${prefix}FaqQ${i}`];
+    answer = t[`${prefix}FaqA${i}`];
+
+    // Pattern B: ${prefix}Q${i}
+    if (!question) {
+      question = t[`${prefix}Q${i}`];
+      answer = t[`${prefix}A${i}`];
+    }
+
+    // Pattern C: ${prefix}_faq${i}_q
+    if (!question) {
+      question = t[`${prefix}_faq${i}_q`];
+      answer = t[`${prefix}_faq${i}_a`];
+    }
+
+    // Pattern D: ${prefix}_faq${i}_question
+    if (!question) {
+      question = t[`${prefix}_faq${i}_question`];
+      answer = t[`${prefix}_faq${i}_answer`];
+    }
+
+    if (question && answer) {
+      faqs.push({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: answer,
+        },
+      });
+    }
+  }
+
+  if (faqs.length === 0) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs,
+  };
+}
+
+/**
  * Course Schema (basic — for Google carousel, without deprecated CourseInstance)
  * Reference: SchemaMarkup.tsx line 502
  *
@@ -657,10 +720,13 @@ export function generateBlogFAQSchema(articleData, blogT) {
  * @param {object} options.meta - Page metadata { title, description }
  * @param {object} options.translations - pages.json translations for this locale
  * @param {object} options.blogTranslations - blog.json translations for this locale
+ * @param {object} options.homeTranslations - home.json translations for this locale
+ * @param {object} options.scheduleTranslations - schedule.json translations for this locale
  * @param {object} options.styleKeyMap - STYLE_KEY_MAP from prerender.mjs
+ * @param {object} options.faqPageMap - FAQ_PAGE_MAP from prerender.mjs
  * @returns {string} HTML string with <script type="application/ld+json"> tags
  */
-export function generateAllJsonLd({ routePath, lang, page, meta, translations, blogTranslations, styleKeyMap }) {
+export function generateAllJsonLd({ routePath, lang, page, meta, translations, blogTranslations, homeTranslations, scheduleTranslations, styleKeyMap, faqPageMap }) {
   const t = translations;
   const schemas = [];
 
@@ -691,6 +757,16 @@ export function generateAllJsonLd({ routePath, lang, page, meta, translations, b
 
     const blogFaqSchema = generateBlogFAQSchema(blogData, blogTranslations);
     if (blogFaqSchema) schemas.push(blogFaqSchema);
+  }
+
+  // 4. Standalone page FAQs (pages not in STYLE_KEY_MAP that have their own FAQ sections)
+  const faqEntry = faqPageMap && faqPageMap[page];
+  if (faqEntry) {
+    // Select the correct translation namespace
+    const nsMap = { pages: translations, home: homeTranslations, schedule: scheduleTranslations };
+    const faqTranslations = nsMap[faqEntry.ns] || translations;
+    const faqSchema = generateFlexibleFAQSchema(faqEntry.prefix, faqTranslations);
+    if (faqSchema) schemas.push(faqSchema);
   }
 
   // Generate HTML

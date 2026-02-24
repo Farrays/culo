@@ -235,26 +235,6 @@ const FAQPage: React.FC = () => {
     [faqCategories]
   );
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('faq_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('faq_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/preguntas-frecuentes`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('faq_breadcrumb_home'), url: `/${locale}` },
@@ -284,7 +264,7 @@ const FAQPage: React.FC = () => {
         <meta name="description" content={t('faq_page_description')} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/preguntas-frecuentes`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 

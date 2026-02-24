@@ -1,5 +1,4 @@
 import React, { useState, memo, useMemo, useCallback, useTransition } from 'react';
-import { Helmet } from 'react-helmet-async';
 import DOMPurify from 'dompurify';
 import AnimateOnScroll from './AnimateOnScroll';
 import { ChevronDownIcon } from '../lib/icons';
@@ -24,18 +23,15 @@ interface FAQSectionProps {
   title: string;
   /** Array of FAQ items to display */
   faqs: FAQ[];
-  /** Page URL for schema markup */
-  pageUrl: string;
 }
 
 /**
- * Accessible FAQ accordion section with Schema.org markup for SEO.
- * Automatically generates FAQPage structured data for Google SGE/rich results.
+ * Accessible FAQ accordion section (pure UI).
+ * FAQPage JSON-LD schema is generated at build-time by prerender.mjs.
  * Answers support HTML content (sanitized with DOMPurify).
  *
  * @param title - Section heading
  * @param faqs - Array of FAQ objects with id, question, and answer
- * @param pageUrl - Current page URL for schema
  *
  * @example
  * ```tsx
@@ -47,7 +43,6 @@ interface FAQSectionProps {
  * <FAQSection
  *   title="Preguntas Frecuentes"
  *   faqs={faqs}
- *   pageUrl="https://example.com/clases"
  * />
  * ```
  */
@@ -86,85 +81,62 @@ const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, 
     [startTransition]
   );
 
-  // Generate FAQ Schema for Google SGE - memoized to prevent re-computation
-  const faqSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map(faq => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    }),
-    [faqs]
-  );
-
   return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
-
-      <section id="faq" className="py-10 md:py-14 bg-black" aria-labelledby="faq-section-title">
-        <div className="container mx-auto px-6">
-          <AnimateOnScroll>
-            <div className="text-center mb-8 max-w-3xl mx-auto">
-              <h2
-                id="faq-section-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
-                data-speakable="true"
-              >
-                {title}
-              </h2>
-            </div>
-          </AnimateOnScroll>
-
-          <div className="max-w-4xl mx-auto space-y-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openItems.has(faq.id);
-
-              return (
-                <AnimateOnScroll key={faq.id} delay={index * 50}>
-                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl overflow-hidden transition-all duration-300 hover:border-primary-accent">
-                    <button
-                      onClick={() => toggleItem(faq.id)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors duration-300 hover:bg-primary-dark/20"
-                      aria-expanded={isOpen}
-                      aria-controls={`faq-answer-${faq.id}`}
-                    >
-                      <h3 className="text-lg md:text-xl font-bold text-neutral pr-8">
-                        {faq.question}
-                      </h3>
-                      <ChevronDownIcon
-                        className={`w-6 h-6 text-primary-accent flex-shrink-0 transition-transform duration-300 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-
-                    <div
-                      id={`faq-answer-${faq.id}`}
-                      className={`overflow-hidden transition-all duration-300 ${
-                        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                      }`}
-                    >
-                      <div
-                        className="px-6 pb-5 text-neutral/90 leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: sanitizedAnswers[faq.id] || '' }}
-                      />
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              );
-            })}
+    <section id="faq" className="py-10 md:py-14 bg-black" aria-labelledby="faq-section-title">
+      <div className="container mx-auto px-6">
+        <AnimateOnScroll>
+          <div className="text-center mb-8 max-w-3xl mx-auto">
+            <h2
+              id="faq-section-title"
+              className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+              data-speakable="true"
+            >
+              {title}
+            </h2>
           </div>
+        </AnimateOnScroll>
+
+        <div className="max-w-4xl mx-auto space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openItems.has(faq.id);
+
+            return (
+              <AnimateOnScroll key={faq.id} delay={index * 50}>
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl overflow-hidden transition-all duration-300 hover:border-primary-accent">
+                  <button
+                    onClick={() => toggleItem(faq.id)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors duration-300 hover:bg-primary-dark/20"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${faq.id}`}
+                  >
+                    <h3 className="text-lg md:text-xl font-bold text-neutral pr-8">
+                      {faq.question}
+                    </h3>
+                    <ChevronDownIcon
+                      className={`w-6 h-6 text-primary-accent flex-shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    id={`faq-answer-${faq.id}`}
+                    className={`overflow-hidden transition-all duration-300 ${
+                      isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div
+                      className="px-6 pb-5 text-neutral/90 leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: sanitizedAnswers[faq.id] || '' }}
+                    />
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            );
+          })}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 });
 

@@ -59,26 +59,6 @@ const MetodoFarrayPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('metodoFarray_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('metodoFarray_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/metodo-farray`,
-      },
-    ],
-  };
-
   // Schema Markup - Course
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -183,7 +163,7 @@ const MetodoFarrayPage: React.FC = () => {
         <meta name="twitter:title" content={`${t('metodoFarray_page_title')} | Farray's Center`} />
         <meta name="twitter:description" content={t('metodoFarray_meta_description')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(credentialSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(speakableSchema)}</script>

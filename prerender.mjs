@@ -38,6 +38,30 @@ for (const locale of SUPPORTED_LOCALES) {
   }
 }
 
+// Load home.json translations for DanceClassesPage FAQ schemas
+const homeTranslations = {};
+for (const locale of SUPPORTED_LOCALES) {
+  try {
+    const filePath = path.join(__dirname, 'i18n', 'locales', locale, 'home.json');
+    homeTranslations[locale] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  } catch (e) {
+    console.warn(`Warning: Could not load home.json for locale "${locale}":`, e.message);
+    homeTranslations[locale] = {};
+  }
+}
+
+// Load schedule.json translations for HorariosPageV2 FAQ schemas
+const scheduleTranslations = {};
+for (const locale of SUPPORTED_LOCALES) {
+  try {
+    const filePath = path.join(__dirname, 'i18n', 'locales', locale, 'schedule.json');
+    scheduleTranslations[locale] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  } catch (e) {
+    console.warn(`Warning: Could not load schedule.json for locale "${locale}":`, e.message);
+    scheduleTranslations[locale] = {};
+  }
+}
+
 const LANDING_SLUGS = [
   'dancehall',
   'twerk',
@@ -57,6 +81,8 @@ const LANDING_SLUGS = [
   'afro-contemporaneo',
   'clase-bienvenida',
   'profesor-reynier',
+  'commercial-dance',
+  'broadway-jazz',
 ];
 
 // Helper: convert slug to page key (e.g., 'sexy-reggaeton' -> 'sexyReggaetonLanding')
@@ -115,6 +141,8 @@ const LANDING_DISPLAY_NAMES = {
   'afro-contemporaneo': { es: 'Afro Contemporáneo', ca: 'Afro Contemporani', en: 'Afro Contemporary', fr: 'Afro Contemporain' },
   'clase-bienvenida': { es: 'Clase de Bienvenida', ca: 'Classe de Benvinguda', en: 'Welcome Class', fr: 'Cours de Bienvenue' },
   'profesor-reynier': { es: 'Broadway Jazz y Commercial Dance', ca: 'Broadway Jazz i Commercial Dance', en: 'Broadway Jazz & Commercial Dance', fr: 'Broadway Jazz et Commercial Dance' },
+  'commercial-dance': { es: 'Commercial Dance', ca: 'Commercial Dance', en: 'Commercial Dance', fr: 'Commercial Dance' },
+  'broadway-jazz': { es: 'Broadway Jazz', ca: 'Broadway Jazz', en: 'Broadway Jazz', fr: 'Broadway Jazz' },
 };
 
 // Auto-generate landing metadata for all languages
@@ -398,6 +426,36 @@ const BLOG_ARTICLE_KEY_MAP = {
   blogDanzasUrbanas: 'blogDanzasUrbanas',
   blogModernJazz: 'blogModernJazz',
   blogDanzaContemporaneaVsJazzBallet: 'blog_danzaContemporaneaVsJazzBallet',
+};
+
+// Map from pageKey to FAQ translation prefix + namespace
+// These are pages NOT in STYLE_KEY_MAP that have their own FAQ sections
+// Used by generateFlexibleFAQSchema to generate FAQPage JSON-LD at build time
+const FAQ_PAGE_MAP = {
+  // Pattern A (pages.json) — ${prefix}FaqQ${i} / ${prefix}FaqA${i}
+  home:                    { prefix: 'home', ns: 'pages' },
+  entrenamientoBailarines: { prefix: 'prepFisica', ns: 'pages' },
+  heelsBarcelona:          { prefix: 'heels', ns: 'pages' },
+  danzaBarcelona:          { prefix: 'danza', ns: 'pages' },
+  danzasUrbanas:           { prefix: 'urban', ns: 'pages' },
+  salsaBachata:            { prefix: 'salsaBachata', ns: 'pages' },
+  facilities:              { prefix: 'facilities', ns: 'pages' },
+  // Pattern A (home.json)
+  classes:                 { prefix: 'classes', ns: 'home' },
+  // Pattern B (pages.json) — ${prefix}Q${i} / ${prefix}A${i}
+  clasesParticulares:      { prefix: 'particularesPage_faq', ns: 'pages' },
+  ubicacion:               { prefix: 'ubicacion_faq', ns: 'pages' },
+  // Pattern C (pages.json) — ${prefix}_faq${i}_q / ${prefix}_faq${i}_a
+  regalaBaile:             { prefix: 'regalaBaile', ns: 'pages' },
+  estudioGrabacion:        { prefix: 'estudioGrabacion', ns: 'pages' },
+  serviciosBaile:          { prefix: 'serviciosBaile', ns: 'pages' },
+  alquilerSalas:           { prefix: 'roomRental', ns: 'pages' },
+  preciosClases:           { prefix: 'pricing', ns: 'pages' },
+  horariosPrecio:          { prefix: 'pricing', ns: 'pages' },
+  // Pattern C (schedule.json)
+  horariosClases:          { prefix: 'horariosV2', ns: 'schedule' },
+  // Pattern D (pages.json) — ${prefix}_faq${i}_question / ${prefix}_faq${i}_answer
+  teamBuilding:            { prefix: 'teamBuilding', ns: 'pages' },
 };
 
 /**
@@ -2912,7 +2970,10 @@ routes.forEach(route => {
     meta,
     translations: pagesTranslations[lang] || {},
     blogTranslations: blogTranslations[lang] || {},
+    homeTranslations: homeTranslations[lang] || {},
+    scheduleTranslations: scheduleTranslations[lang] || {},
     styleKeyMap: STYLE_KEY_MAP,
+    faqPageMap: FAQ_PAGE_MAP,
   });
 
   html = html.replace('</head>', `

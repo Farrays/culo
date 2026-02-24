@@ -209,26 +209,6 @@ const YunaisyFarrayPage: React.FC = () => {
     respectDataSaver: true,
   });
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('yunaisyFarray_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('yunaisyFarray_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/yunaisy-farray`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('yunaisyFarray_breadcrumb_home'), url: `/${locale}` },
@@ -310,7 +290,7 @@ const YunaisyFarrayPage: React.FC = () => {
         <meta name="twitter:title" content={`${t('yunaisyFarray_page_title')} | Farray's Center`} />
         <meta name="twitter:description" content={t('yunaisyFarray_meta_description')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       </Helmet>
 

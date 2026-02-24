@@ -401,26 +401,6 @@ const LegalNoticePage: React.FC = () => {
     },
   ];
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('legalNotice_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/aviso-legal`,
-      },
-    ],
-  };
-
   // Schema Markup - WebPage
   const webPageSchema = {
     '@context': 'https://schema.org',
@@ -457,7 +437,7 @@ const LegalNoticePage: React.FC = () => {
         <meta name="description" content={t('legalNotice_page_description')} />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/aviso-legal`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 

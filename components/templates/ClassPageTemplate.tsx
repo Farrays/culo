@@ -2,11 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES } from '../../types';
-import { LocalBusinessSchema, CourseSchema } from '../SchemaMarkup';
+import { CourseSchema } from '../SchemaMarkup';
 import FAQSection from '../FAQSection';
 import { ReviewsSection } from '../reviews';
 import YouTubeEmbed from '../YouTubeEmbed';
-import { REVIEW_STATS } from '../../constants/reviews-config';
 
 export interface FAQ {
   id: string;
@@ -60,7 +59,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
   categoryKey,
   categoryPath,
   faqsConfig,
-  breadcrumbItems,
   courseSchemaConfig,
   heroContent,
   customSections,
@@ -93,27 +91,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
     answer: t(faq.answerKey),
   }));
 
-  // Generar breadcrumbs dinámicamente
-  const defaultBreadcrumbs = [
-    { name: t(`${categoryKey}_breadcrumb_home`), url: `/${locale}` },
-    { name: t(`${categoryKey}_breadcrumb_classes`), url: `/${locale}/clases/baile-barcelona` },
-    { name: t(`${categoryKey}_breadcrumb_current`), url: pageUrl },
-  ];
-
-  const breadcrumbs = breadcrumbItems || defaultBreadcrumbs;
-
-  // Breadcrumb Schema
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${baseUrl}${item.url}`,
-    })),
-  };
-
   // FAQPage Schema is rendered by FAQSection component - no need for manual schema
 
   return (
@@ -143,39 +120,11 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         <meta name="twitter:image" content={ogImage || `${baseUrl}/images/og-classes.jpg`} />
       </Helmet>
 
-      {/* BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
       {/* FAQPage Schema is rendered by FAQSection component below */}
 
-      {/* LocalBusiness Schema */}
-      <LocalBusinessSchema
-        name={`Farray's International Dance Center - ${t(`${categoryKey}_pageTitle`)}`}
-        description={t(`${categoryKey}_metaDescription`)}
-        url={pageUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-          addressRegion: t('schema_addressRegion'),
-        }}
-        geo={{
-          latitude: '41.380421',
-          longitude: '2.148014',
-        }}
-        priceRange="€€"
-        aggregateRating={{
-          ratingValue: REVIEW_STATS.ratingValue,
-          reviewCount: REVIEW_STATS.reviewCount,
-        }}
-        reserveActionName={t('schema_reserveActionName')}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
 
       {/* Course Schema */}
       <CourseSchema
@@ -234,11 +183,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
 
         {/* FAQs Section */}
         {showFAQs && faqs.length > 0 && (
-          <FAQSection
-            title={t(`${categoryKey}_faq_title`)}
-            faqs={faqs}
-            pageUrl={`/clases/${categoryPath}`}
-          />
+          <FAQSection title={t(`${categoryKey}_faq_title`)} faqs={faqs} />
         )}
       </div>
     </>

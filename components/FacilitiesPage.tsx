@@ -10,8 +10,6 @@ import FAQSection from './FAQSection';
 import { ReviewsSection } from './reviews';
 import AnimateOnScroll from './AnimateOnScroll';
 import AnimatedCounter from './AnimatedCounter';
-import { LocalBusinessSchema } from './SchemaMarkup';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 const FacilitiesPage: React.FC = () => {
   const { t, i18n } = useTranslation([
@@ -155,73 +153,7 @@ const FacilitiesPage: React.FC = () => {
     { id: 'fac-faq-7', question: t('facilitiesFaqQ7'), answer: t('facilitiesFaqA7') },
   ];
 
-  // BreadcrumbList Schema
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('facilitiesBreadcrumbHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('facilitiesBreadcrumbCurrent'),
-        item: pageUrl,
-      },
-    ],
-  };
-
-  // Place Schema for the facility
-  const placeSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: "Farray's International Dance Center",
-    description: t('facilitiesMetaDescription'),
-    url: pageUrl,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: t('schema_streetAddress'),
-      addressLocality: 'Barcelona',
-      postalCode: '08015',
-      addressCountry: 'ES',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '41.380421',
-      longitude: '2.148014',
-    },
-    amenityFeature: [
-      {
-        '@type': 'LocationFeatureSpecification',
-        name: t('schema_facilities_danceStudios'),
-        value: t('schema_facilities_danceStudiosValue'),
-      },
-      {
-        '@type': 'LocationFeatureSpecification',
-        name: t('schema_facilities_totalArea'),
-        value: '700+ m²',
-      },
-      {
-        '@type': 'LocationFeatureSpecification',
-        name: t('schema_facilities_airConditioning'),
-        value: t('schema_facilities_airConditioningValue'),
-      },
-      {
-        '@type': 'LocationFeatureSpecification',
-        name: t('schema_facilities_wifi'),
-        value: t('schema_facilities_wifiValue'),
-      },
-      {
-        '@type': 'LocationFeatureSpecification',
-        name: t('schema_facilities_lockerRooms'),
-        value: t('schema_facilities_lockerRoomsValue'),
-      },
-    ],
-  };
+  // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
   // ImageGallery Schema for SEO
   const imageGallerySchema = {
@@ -293,17 +225,9 @@ const FacilitiesPage: React.FC = () => {
         <meta name="twitter:image" content={`${baseUrl}/images/og-facilities.jpg`} />
       </Helmet>
 
-      {/* BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
-      {/* Place Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(placeSchema) }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time */}
 
       {/* ImageGallery Schema for SEO */}
       <script
@@ -311,30 +235,7 @@ const FacilitiesPage: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageGallerySchema) }}
       />
 
-      {/* LocalBusiness Schema */}
-      <LocalBusinessSchema
-        name="Farray's International Dance Center - Instalaciones"
-        description={t('facilitiesMetaDescription')}
-        url={pageUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-          addressRegion: t('schema_addressRegion'),
-        }}
-        geo={{
-          latitude: '41.380421',
-          longitude: '2.148014',
-        }}
-        priceRange="€€"
-        aggregateRating={{
-          ratingValue: REVIEW_STATS.ratingValue,
-          reviewCount: REVIEW_STATS.reviewCount,
-        }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
 
       <div className="pt-20 md:pt-24">
         {/* Hero Section */}
@@ -532,7 +433,7 @@ const FacilitiesPage: React.FC = () => {
 
         {/* FAQ Section */}
         <div className="-mt-20 md:-mt-24">
-          <FAQSection title={t('facilitiesFaqTitle')} faqs={facilitiesFaqs} pageUrl={pageUrl} />
+          <FAQSection title={t('facilitiesFaqTitle')} faqs={facilitiesFaqs} />
         </div>
 
         {/* Final CTA Section */}

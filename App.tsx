@@ -114,6 +114,10 @@ const SalsaVentaDirectaLanding = lazy(
   () => import('./components/landing/pages/SalsaVentaDirectaLanding')
 );
 const ReynierLanding = lazy(() => import('./components/landing/pages/ReynierLanding'));
+const CommercialDanceLanding = lazy(
+  () => import('./components/landing/pages/CommercialDanceLanding')
+);
+const BroadwayJazzLanding = lazy(() => import('./components/landing/pages/BroadwayJazzLanding'));
 // TEST: Pagina de prueba para el nuevo sistema de ofertas
 const OfferTestLanding = lazy(() => import('./components/landing/pages/OfferTestLanding'));
 const SalsaSimpleLanding = lazy(() => import('./components/landing/pages/SalsaSimpleLanding'));
@@ -197,7 +201,7 @@ const ScrollToTop: React.FC = () => {
     // Don't scroll on POP (back/forward/refresh) - let browser restore scroll position
     // Don't scroll when only locale changes (same path)
     if (navigationType === 'PUSH' && prevPath && prevPath !== currentPath) {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
 
     prevPathRef.current = currentPath;
@@ -306,6 +310,8 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/afro-contemporaneo',
   '/clase-bienvenida',
   '/profesor-reynier',
+  '/commercial-dance',
+  '/broadway-jazz',
   '/bachata-curso',
   '/salsa-curso',
   '/salsa-test',
@@ -346,6 +352,8 @@ const AppContent: React.FC = () => {
       location.pathname.endsWith('/afro-contemporaneo') ||
       location.pathname.endsWith('/clase-bienvenida') ||
       location.pathname.endsWith('/profesor-reynier') ||
+      location.pathname.endsWith('/commercial-dance') ||
+      location.pathname.endsWith('/broadway-jazz') ||
       location.pathname.endsWith('/bachata-curso') ||
       location.pathname.endsWith('/salsa-curso') ||
       location.pathname.endsWith('/salsa-test'));
@@ -1321,6 +1329,24 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ReynierLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/commercial-dance"
+              element={
+                <>
+                  <LocaleSync />
+                  <CommercialDanceLanding />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/broadway-jazz"
+              element={
+                <>
+                  <LocaleSync />
+                  <BroadwayJazzLanding />
                 </>
               }
             />

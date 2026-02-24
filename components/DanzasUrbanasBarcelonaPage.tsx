@@ -5,13 +5,12 @@ import { HUB_CATEGORIES } from '../constants/danceClassesHub';
 import { DANZAS_URBANAS_FAQS_CONFIG } from '../constants/danzas-urbanas';
 import AnimateOnScroll from './AnimateOnScroll';
 import { SUPPORTED_LOCALES } from '../types';
-import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
+import { CourseSchema } from './SchemaMarkup';
 import CategoryPageTemplate, {
   type ValuePillarWithIcon,
   type RelatedClass,
 } from './templates/CategoryPageTemplate';
 import { getStyleImage } from '../constants/style-images';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // PAGE-SPECIFIC DATA
@@ -318,32 +317,6 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('danzasUrbanas_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('danzasUrbanas_breadcrumb_classes'),
-        item: `${baseUrl}/${locale}/clases/baile-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('danzasUrbanas_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
-      },
-    ],
-  };
-
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -353,19 +326,6 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
       position: idx + 1,
       name: t(`danceClassesHub_style_${style.key}`),
       url: `${baseUrl}/${locale}${style.url}`,
-    })),
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: urbanFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
     })),
   };
 
@@ -383,32 +343,10 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         teaches={t('schema_urbanas_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
-      <LocalBusinessSchema
-        name="Farray's International Dance Center"
-        description={t('danzasUrbanas_description')}
-        url={baseUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-        }}
-        geo={{
-          latitude: '41.380421',
-          longitude: '2.148014',
-        }}
-        priceRange="€€"
-        aggregateRating={{
-          ratingValue: REVIEW_STATS.ratingValue,
-          reviewCount: REVIEW_STATS.reviewCount,
-        }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
       <Helmet>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
     </>
   );
@@ -440,7 +378,6 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
       breadcrumbItems={breadcrumbItems}
       schemas={schemas}
       faqTitle={t('danzasUrbanas_faq_title')}
-      faqPageUrl={`${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`}
       // Styles section
       stylesSectionTitleKey="danzasUrbanas_styles_title"
       stylesDescriptionKey="danzasUrbanas_styles_description"

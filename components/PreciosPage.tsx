@@ -5,7 +5,6 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import { ReviewsSection } from './reviews';
-import { REVIEW_STATS } from '../constants/reviews-config';
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -228,26 +227,6 @@ const PreciosPage: React.FC = () => {
     fr: 'fr-FR',
   };
 
-  // BreadcrumbList Schema
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('pricing_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('pricing_breadcrumb_current'),
-        item: pageUrl,
-      },
-    ],
-  };
-
   // WebPage Schema with Speakable (Voice Search / GEO)
   const webPageSchema = {
     '@context': 'https://schema.org',
@@ -385,14 +364,7 @@ const PreciosPage: React.FC = () => {
         },
       ],
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: REVIEW_STATS.ratingValue,
-      bestRating: REVIEW_STATS.bestRating,
-      worstRating: REVIEW_STATS.worstRating,
-      ratingCount: REVIEW_STATS.reviewCount,
-      reviewCount: REVIEW_STATS.reviewCount,
-    },
+    // aggregateRating removed - already in build-time LocalBusiness #danceschool schema
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'EUR',
@@ -416,20 +388,7 @@ const PreciosPage: React.FC = () => {
     { id: 'faq1', question: t('pricing_faq1_q'), answer: t('pricing_faq1_a') }, // Cuota inscripción
   ];
 
-  // FAQPage Schema
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': `${pageUrl}#faq`,
-    mainEntity: pricingFAQs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // Handler para abrir modal
   const openModal = () => setIsModalOpen(true);
@@ -455,10 +414,9 @@ const PreciosPage: React.FC = () => {
         <meta name="twitter:description" content={t('pricingV2_page_description')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-precios-clases-baile.jpg`} />
         {/* Enterprise Schema Markup - GEO/AIEO/AIO Optimized */}
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       {/* Lead Capture Modal */}

@@ -8,7 +8,6 @@ import AnimatedCounter from './AnimatedCounter';
 import FAQSection from './FAQSection';
 import Icon, { type IconName } from './Icon';
 import { ReviewsSection } from './reviews';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 // ============================================================================
 // ENTERPRISE IMAGE CONFIGURATION
@@ -147,26 +146,6 @@ const EstudioGrabacionPage: React.FC = () => {
     { id: 'eg-7', question: t('estudioGrabacion_faq8_q'), answer: t('estudioGrabacion_faq8_a') },
   ];
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('estudioGrabacion_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('estudioGrabacion_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/estudio-grabacion-barcelona`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('estudioGrabacion_breadcrumb_home'), url: `/${locale}` },
@@ -208,13 +187,7 @@ const EstudioGrabacionPage: React.FC = () => {
         addressCountry: 'ES',
       },
       telephone: '+34622247085',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: REVIEW_STATS.ratingValue,
-        reviewCount: REVIEW_STATS.reviewCount,
-        bestRating: REVIEW_STATS.bestRating,
-        worstRating: REVIEW_STATS.worstRating,
-      },
+      // aggregateRating removed - already in build-time LocalBusiness #danceschool schema
     },
     areaServed: {
       '@type': 'City',
@@ -351,24 +324,10 @@ const EstudioGrabacionPage: React.FC = () => {
         <meta name="twitter:image:alt" content={t('estudioGrabacion_hero_image_alt')} />
 
         {/* Schema Markup - Enterprise SEO/GEO/AIEO/AIO */}
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(heroImageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: studioFaqs.map(faq => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-              },
-            })),
-          })}
-        </script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -732,11 +691,7 @@ const EstudioGrabacionPage: React.FC = () => {
         <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <FAQSection
-                title={t('estudioGrabacion_faq_title')}
-                faqs={studioFaqs}
-                pageUrl="/servicios/estudio-grabacion"
-              />
+              <FAQSection title={t('estudioGrabacion_faq_title')} faqs={studioFaqs} />
             </div>
           </div>
         </section>

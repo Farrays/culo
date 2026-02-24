@@ -2,12 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {
-  OrganizationSchema,
-  WebSiteSchema,
-  SiteNavigationElementSchema,
-  DanceSchoolWithRatingSchema,
-} from './SchemaMarkup';
+import { SiteNavigationElementSchema } from './SchemaMarkup';
 
 /**
  * Global SEO component that manages meta tags, Open Graph, and hreflang.
@@ -398,11 +393,11 @@ const SEO: React.FC = () => {
 
   return (
     <>
-      {/* Global Schemas - render once for all pages */}
-      <OrganizationSchema />
-      <WebSiteSchema />
+      {/* Global Schemas - only SiteNavigation here; Organization, WebSite, and
+          LocalBusiness (DanceSchoolWithRating) are already injected at build-time
+          by prerender.mjs / schema-generators.mjs. Duplicating them causes
+          Google to report "multiple aggregate ratings" errors. */}
       <SiteNavigationElementSchema />
-      <DanceSchoolWithRatingSchema />
       <Helmet>
         {/* Basic meta tags */}
         <html lang={locale} />

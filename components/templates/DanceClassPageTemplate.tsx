@@ -12,7 +12,7 @@ import FAQSection from '../FAQSection';
 import { ReviewsSection } from '../reviews';
 import AnimatedCounter from '../AnimatedCounter';
 import HowToGetHere from '../HowToGetHere';
-import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
+import { CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
 import {
   ANIMATION_DELAYS,
   BARCELONA_NEARBY_AREAS,
@@ -219,21 +219,6 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
     [breadcrumbConfig, locale, stylePath, t]
   );
 
-  // Breadcrumb schema
-  const breadcrumbSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        item: `${baseUrl}${item.url}`,
-      })),
-    }),
-    [breadcrumbItems]
-  );
-
   return (
     <>
       <Helmet>
@@ -253,32 +238,9 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         <meta name="twitter:image" content={`${baseUrl}/images/og-${stylePath}.jpg`} />
       </Helmet>
 
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {/* BreadcrumbList generated at build-time by prerender.mjs */}
 
-      {/* Schema Markup */}
-      <LocalBusinessSchema
-        name={`Farray's International Dance Center - ${t(`${styleKey}PageTitle`)}`}
-        description={t(`${styleKey}MetaDescription`)}
-        url={pageUrl}
-        telephone={FARRAYS_LOCATION.telephone}
-        email={FARRAYS_LOCATION.email}
-        address={{
-          streetAddress: FARRAYS_LOCATION.streetAddress,
-          addressLocality: FARRAYS_LOCATION.addressLocality,
-          postalCode: FARRAYS_LOCATION.postalCode,
-          addressCountry: FARRAYS_LOCATION.addressCountry,
-        }}
-        geo={FARRAYS_LOCATION.geo}
-        priceRange={FARRAYS_LOCATION.priceRange}
-        aggregateRating={{
-          ratingValue: SOCIAL_PROOF.ratingValue.toString(),
-          reviewCount: SOCIAL_PROOF.reviewCount.replace('+', ''),
-        }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
 
       <CourseSchema
         name={t(`${styleKey}CourseSchemaName`)}
@@ -618,7 +580,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         {customSections?.beforeFAQ}
 
         {/* ===== FAQ SECTION ===== */}
-        <FAQSection faqs={faqs} title={t(`${styleKey}FaqTitle`)} pageUrl={pageUrl} />
+        <FAQSection faqs={faqs} title={t(`${styleKey}FaqTitle`)} />
 
         {/* ===== NEARBY AREAS / HOW TO GET HERE ===== */}
         <section className="py-12 md:py-16 bg-primary-dark/10">

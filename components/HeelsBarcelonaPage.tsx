@@ -11,12 +11,11 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 import { ReviewsSection } from './reviews';
-import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
+import { CourseSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
 import LazyImage from './LazyImage';
 import OptimizedImage from './OptimizedImage';
 import { getRelatedClassImageUrl, getStyleImage } from '../constants/style-images';
-import { REVIEW_STATS } from '../constants/reviews-config';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -89,38 +88,6 @@ const HeelsBarcelonaPage: React.FC = () => {
     answer: t(faq.answerKey),
   }));
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('heelsBarcelona_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('heelsBarcelona_breadcrumb_classes'),
-        item: `${baseUrl}/${locale}/clases/baile-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('heelsBarcelona_breadcrumb_urban'),
-        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: t('heelsBarcelona_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/heels-barcelona`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('heelsBarcelona_breadcrumb_home'), url: `/${locale}` },
@@ -149,19 +116,7 @@ const HeelsBarcelonaPage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - FAQPage
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: heelsFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   return (
     <>
@@ -178,33 +133,11 @@ const HeelsBarcelonaPage: React.FC = () => {
         teaches={t('schema_heels_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
-      <LocalBusinessSchema
-        name="Farray's International Dance Center"
-        description={t('heelsBarcelona_description')}
-        url={baseUrl}
-        telephone="+34622247085"
-        email="info@farrayscenter.com"
-        address={{
-          streetAddress: t('schema_streetAddress'),
-          addressLocality: 'Barcelona',
-          postalCode: '08015',
-          addressCountry: 'ES',
-        }}
-        geo={{
-          latitude: '41.380421',
-          longitude: '2.148014',
-        }}
-        priceRange="€€"
-        aggregateRating={{
-          ratingValue: REVIEW_STATS.ratingValue,
-          reviewCount: REVIEW_STATS.reviewCount,
-        }}
-      />
+      {/* LocalBusiness Schema removed - already injected at build-time by prerender.mjs */}
       <Helmet>
         <title>{t('heelsBarcelona_title')}</title>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       {/* Skip Links for Accessibility */}
@@ -771,11 +704,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
-        <FAQSection
-          title={t('heelsBarcelona_faq_title')}
-          faqs={heelsFaqs}
-          pageUrl={`${baseUrl}/${locale}/clases/heels-barcelona`}
-        />
+        <FAQSection title={t('heelsBarcelona_faq_title')} faqs={heelsFaqs} />
 
         {/* Final CTA Section - Conversion Optimized */}
         <section

@@ -203,11 +203,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
               {/* FAQ Section */}
               {config.faqSection?.enabled && transformedFaqs && transformedFaqs.length > 0 && (
                 <section className="mt-16">
-                  <FAQSection
-                    title={t(config.faqSection.titleKey)}
-                    faqs={transformedFaqs}
-                    pageUrl={articleUrl}
-                  />
+                  <FAQSection title={t(config.faqSection.titleKey)} faqs={transformedFaqs} />
                 </section>
               )}
 

@@ -21,8 +21,6 @@ const RegalaBailePage: React.FC = () => {
     'pages',
   ]);
   const locale = i18n.language;
-  const baseUrl = 'https://www.farrayscenter.com';
-
   // Beneficios de regalar baile
   const benefits = [
     {
@@ -78,32 +76,6 @@ const RegalaBailePage: React.FC = () => {
     { id: 'regala-7', question: t('regalaBaile_faq7_q'), answer: t('regalaBaile_faq7_a') },
   ];
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('navHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('breadcrumb_services'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('headerGiftDance'),
-        item: `${baseUrl}/${locale}/regala-baile`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('navHome'), url: `/${locale}` },
@@ -133,27 +105,14 @@ const RegalaBailePage: React.FC = () => {
     },
   };
 
-  // Schema Markup - FAQPage
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   return (
     <>
       <Helmet>
         <title>{t('regalaBaile_page_title')} | Farray&apos;s Center</title>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -352,11 +311,7 @@ const RegalaBailePage: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <FAQSection
-          title={t('regalaBaile_faq_title')}
-          faqs={faqs}
-          pageUrl={`${baseUrl}/${locale}/regala-baile`}
-        />
+        <FAQSection title={t('regalaBaile_faq_title')} faqs={faqs} />
 
         {/* Delivery Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">

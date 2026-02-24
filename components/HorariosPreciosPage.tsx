@@ -290,26 +290,6 @@ const HorariosPreciosPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('pricing_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('pricing_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/horarios-precios`,
-      },
-    ],
-  };
-
   // Pricing Schema for Google
   const pricingSchema = {
     '@context': 'https://schema.org',
@@ -345,18 +325,7 @@ const HorariosPreciosPage: React.FC = () => {
     { id: 'faq12', question: t('pricing_faq12_q'), answer: t('pricing_faq12_a') },
   ];
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: pricingFAQs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   return (
     <>
@@ -369,9 +338,8 @@ const HorariosPreciosPage: React.FC = () => {
         <meta property="og:description" content={t('pricing_page_description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${locale}/horarios-precios`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(pricingSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">

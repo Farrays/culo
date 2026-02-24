@@ -18,19 +18,19 @@ const mockFAQs = [
 
 describe('FAQSection', () => {
   it('should render FAQ section title', () => {
-    render(<FAQSection faqs={mockFAQs} title="Test FAQs" pageUrl="https://test.com" />);
+    render(<FAQSection faqs={mockFAQs} title="Test FAQs" />);
     expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
   });
 
   it('should render all FAQ questions', () => {
-    render(<FAQSection faqs={mockFAQs} title="Test FAQs" pageUrl="https://test.com" />);
+    render(<FAQSection faqs={mockFAQs} title="Test FAQs" />);
     expect(screen.getByText('What is the test question?')).toBeInTheDocument();
     expect(screen.getByText('Another test question?')).toBeInTheDocument();
   });
 
   it('should toggle answer visibility on click', async () => {
     const user = userEvent.setup();
-    render(<FAQSection faqs={mockFAQs} title="Test FAQs" pageUrl="https://test.com" />);
+    render(<FAQSection faqs={mockFAQs} title="Test FAQs" />);
 
     const firstQuestion = screen.getByText('What is the test question?');
     const button = firstQuestion.closest('button');
@@ -42,7 +42,7 @@ describe('FAQSection', () => {
   });
 
   it('should have proper ARIA attributes', () => {
-    render(<FAQSection faqs={mockFAQs} title="Test FAQs" pageUrl="https://test.com" />);
+    render(<FAQSection faqs={mockFAQs} title="Test FAQs" />);
     const buttons = screen.getAllByRole('button');
 
     buttons.forEach(button => {

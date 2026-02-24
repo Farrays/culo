@@ -111,32 +111,6 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     answer: t(faq.answerKey),
   }));
 
-  // Schema Markup - BreadcrumbList
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('prepFisica_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('prepFisica_breadcrumb_classes'),
-        item: `${baseUrl}/${locale}/clases`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('prepFisica_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/entrenamiento-bailarines-barcelona`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('prepFisica_breadcrumb_home'), url: `/${locale}` },
@@ -160,19 +134,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - FAQPage
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: prepFisicaFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // Enterprise: Hero image paths for preload and schema
   const heroImageBase =
@@ -226,9 +188,8 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
           type="image/avif"
           fetchPriority="high"
         />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* BreadcrumbList + FAQPage generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
       </Helmet>
 
@@ -603,11 +564,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
-        <FAQSection
-          title={t('prepFisica_faq_title')}
-          faqs={prepFisicaFaqs}
-          pageUrl={`${baseUrl}/${locale}/clases/entrenamiento-bailarines-barcelona`}
-        />
+        <FAQSection title={t('prepFisica_faq_title')} faqs={prepFisicaFaqs} />
 
         {/* Final CTA Section - Conversion Optimized */}
         <section className="relative py-12 md:py-16 overflow-hidden">
