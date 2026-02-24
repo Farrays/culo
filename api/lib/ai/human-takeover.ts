@@ -175,6 +175,27 @@ export async function getActiveConversations(
   // Fetch read timestamps for all conversations at once
   const readTimestamps = await getReadTimestamps(redis);
 
+  // Batch lookup de nombres de contacto desde Redis cache
+  const contactNames: Record<string, string> = {};
+  if (entries.length > 0) {
+    try {
+      const pipeline = redis.pipeline();
+      for (const entry of entries) {
+        pipeline.get(`contact:name:${entry.phone}`);
+      }
+      const nameResults = await pipeline.exec();
+      for (let i = 0; i < entries.length; i++) {
+        const name = nameResults[i] as string | null;
+        const entry = entries[i];
+        if (name && entry) {
+          contactNames[entry.phone] = name;
+        }
+      }
+    } catch {
+      // Non-blocking: if lookup fails, names stay empty
+    }
+  }
+
   // Para cada phone, obtener último mensaje y estado de takeover
   const summaries: ConversationSummary[] = [];
 
@@ -202,6 +223,7 @@ export async function getActiveConversations(
 
       summaries.push({
         phone: entry.phone,
+        contactName: contactNames[entry.phone],
         lastMessage: lastMsg?.content.slice(0, 100) || '',
         lastMessageAt: entry.score,
         lastMessageRole: lastRole,
@@ -212,6 +234,7 @@ export async function getActiveConversations(
     } catch {
       summaries.push({
         phone: entry.phone,
+        contactName: contactNames[entry.phone],
         lastMessage: '',
         lastMessageAt: entry.score,
         lastMessageRole: 'user',

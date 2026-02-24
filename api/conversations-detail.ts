@@ -37,14 +37,19 @@ export default async function handler(
   try {
     const redis = getRedisClient();
 
-    const [messages, takeover] = await Promise.all([
+    const [messages, takeover, , contactNameRaw] = await Promise.all([
       getConversationHistory(redis, phone),
       getTakeoverInfo(redis, phone),
       markConversationRead(redis, phone),
+      redis.get(`contact:name:${phone}`).catch(() => null),
     ]);
+
+    const contactName =
+      contactNameRaw && typeof contactNameRaw === 'string' ? contactNameRaw : undefined;
 
     return res.status(200).json({
       phone,
+      contactName,
       messages,
       takeover: takeover || { active: false },
     });

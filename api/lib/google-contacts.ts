@@ -623,6 +623,7 @@ export async function saveAsLead(data: ContactData): Promise<ContactResult> {
       }
 
       console.log(`[google-contacts] Lead updated: ${existing.resourceName} → ${displayName}`);
+      await cacheContactName(data.phone, data.firstName, data.lastName);
       return { success: true, resourceName: existing.resourceName };
     }
 
@@ -637,6 +638,7 @@ export async function saveAsLead(data: ContactData): Promise<ContactResult> {
     }
 
     console.log(`[google-contacts] Lead created: ${result.resourceName} → ${displayName}`);
+    await cacheContactName(data.phone, data.firstName, data.lastName);
     return result;
   } catch (error) {
     console.error('[google-contacts] saveAsLead error:', error);
@@ -703,6 +705,39 @@ export async function upgradeToCliente(phone: string): Promise<ContactResult> {
   } catch (error) {
     console.error('[google-contacts] upgradeToCliente error:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
+// ============================================================================
+// REDIS CONTACT NAME CACHE
+// ============================================================================
+
+const CONTACT_NAME_TTL = 90 * 24 * 60 * 60; // 90 days (matches conversation TTL)
+
+/**
+ * Cachea el nombre del contacto en Redis para que aparezca
+ * en el dashboard de conversaciones sin llamar a Google API.
+ *
+ * Key: contact:name:{normalizedPhone}
+ * Value: "Juan García" (nombre legible, sin formato P/A/estilo)
+ */
+export async function cacheContactName(
+  phone: string,
+  firstName: string,
+  lastName: string
+): Promise<void> {
+  try {
+    const { getRedis } = await import('../lib/redis.js');
+    const redis = getRedis();
+    const normalizedPhone = phone.replace(/[\s\-+()]/g, '');
+    const displayName = `${firstName.trim()} ${lastName.trim()}`.trim();
+    if (displayName) {
+      await redis.set(`contact:name:${normalizedPhone}`, displayName, {
+        ex: CONTACT_NAME_TTL,
+      });
+    }
+  } catch {
+    // Non-blocking: if cache fails, dashboard shows phone number instead
   }
 }
 
