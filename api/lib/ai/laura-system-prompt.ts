@@ -95,6 +95,15 @@ export function getFullSystemPrompt(
     hasActiveMembership?: boolean;
     creditsAvailable?: number;
     membershipName?: string;
+  },
+  trialContext?: {
+    hasTrialBooking: boolean;
+    className?: string;
+    classDate?: string;
+    classTime?: string;
+    status?: string;
+    canCancel?: boolean;
+    canReschedule?: boolean;
   }
 ): string {
   const basePrompt = loadLauraPrompt();
@@ -146,6 +155,30 @@ Políticas de cancelación:
 - Cancelar >= 2h antes de la clase: sin penalización, puede volver a reservar
 - Cancelar < 2h antes: se considera cancelación tardía
 - Reprogramación: máximo 1 vez, misma clase, semana siguiente`;
+
+    // Inject trial booking data if found
+    if (trialContext?.hasTrialBooking) {
+      const statusLabel = trialContext.status === 'confirmed' ? 'Confirmada' : trialContext.status;
+      fullPrompt += `
+
+================================================================================
+RESERVA DE PRUEBA ACTIVA
+================================================================================
+Este usuario YA tiene una clase de prueba reservada:
+- Clase: ${trialContext.className}
+- Fecha: ${trialContext.classDate}
+- Hora: ${trialContext.classTime}
+- Estado: ${statusLabel}
+- Puede cancelar: ${trialContext.canCancel ? 'Sí' : 'No'}
+- Puede reprogramar: ${trialContext.canReschedule ? 'Sí (1 vez)' : 'No (ya reprogramó)'}
+
+PRIORIDAD ABSOLUTA: Este usuario es un LEAD con reserva. NO le ofrezcas clases de pago.
+- Si quiere cancelar → usa manage_trial_booking con action='cancel'
+- Si quiere cambiar de día → usa manage_trial_booking con action='reschedule_next_week'
+- Si quiere info de su reserva → usa manage_trial_booking con action='check_status'
+- Si quiere reservar OTRA clase después de cancelar → comparte: www.farrayscenter.com/${lang}/reservas
+- NUNCA le compartas enlaces de pago de Momence (class_url). Solo booking_url o el widget de reservas.`;
+    }
   }
 
   if (memberContext?.isExistingMember) {

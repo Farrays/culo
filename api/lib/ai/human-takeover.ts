@@ -8,6 +8,7 @@
  * Redis keys:
  * - takeover:{phone} → JSON { active, takenBy, since, until }  TTL 2h
  * - conversations:active → Sorted Set (phone → timestamp)
+ * - conversations:read_at → Hash (phone → timestamp when admin last read)
  * - notifications:queue → List de notificaciones pendientes
  * - notifications:unread_count → Contador de no leídos
  */
@@ -42,6 +43,7 @@ export interface ConversationSummary {
   contactName?: string;
   isHumanTakeover: boolean;
   messageCount: number;
+  isUnread: boolean;
 }
 
 interface ConversationMessage {
@@ -170,6 +172,30 @@ export async function getActiveConversations(
     });
   }
 
+  // Fetch read timestamps for all conversations at once
+  const readTimestamps = await getReadTimestamps(redis);
+
+  // Batch lookup de nombres de contacto desde Redis cache
+  const contactNames: Record<string, string> = {};
+  if (entries.length > 0) {
+    try {
+      const pipeline = redis.pipeline();
+      for (const entry of entries) {
+        pipeline.get(`contact:name:${entry.phone}`);
+      }
+      const nameResults = await pipeline.exec();
+      for (let i = 0; i < entries.length; i++) {
+        const name = nameResults[i] as string | null;
+        const entry = entries[i];
+        if (name && entry) {
+          contactNames[entry.phone] = name;
+        }
+      }
+    } catch {
+      // Non-blocking: if lookup fails, names stay empty
+    }
+  }
+
   // Para cada phone, obtener último mensaje y estado de takeover
   const summaries: ConversationSummary[] = [];
 
@@ -189,23 +215,32 @@ export async function getActiveConversations(
       }
 
       const lastMsg = messages.length > 0 ? messages[messages.length - 1] : null;
+      const lastRole = lastMsg?.role || 'user';
+      const readAt = readTimestamps[entry.phone] ?? 0;
+      // readAt === -1 means manually marked as unread by admin
+      // Otherwise: unread if last message is from user AND was sent after admin last read
+      const isUnread = readAt === -1 || (lastRole === 'user' && entry.score > readAt);
 
       summaries.push({
         phone: entry.phone,
+        contactName: contactNames[entry.phone],
         lastMessage: lastMsg?.content.slice(0, 100) || '',
         lastMessageAt: entry.score,
-        lastMessageRole: lastMsg?.role || 'user',
+        lastMessageRole: lastRole,
         isHumanTakeover: takeoverActive,
         messageCount: messages.length,
+        isUnread,
       });
     } catch {
       summaries.push({
         phone: entry.phone,
+        contactName: contactNames[entry.phone],
         lastMessage: '',
         lastMessageAt: entry.score,
         lastMessageRole: 'user',
         isHumanTakeover: false,
         messageCount: 0,
+        isUnread: true,
       });
     }
   }
@@ -370,4 +405,42 @@ export async function getNotifications(
  */
 export async function resetUnreadCount(redis: Redis): Promise<void> {
   await redis.set('notifications:unread_count', '0');
+}
+
+// ============================================================================
+// CONVERSATION READ/UNREAD STATUS
+// ============================================================================
+
+const READ_STATUS_KEY = 'conversations:read_at';
+
+/**
+ * Marca una conversación como leída (timestamp actual)
+ */
+export async function markConversationRead(redis: Redis, phone: string): Promise<void> {
+  await redis.hset(READ_STATUS_KEY, { [phone]: Date.now() });
+}
+
+/**
+ * Marca una conversación como no leída manualmente.
+ * Usa valor -1 como flag para forzar "no leído" independientemente del lastRole.
+ */
+export async function markConversationUnread(redis: Redis, phone: string): Promise<void> {
+  await redis.hset(READ_STATUS_KEY, { [phone]: -1 });
+}
+
+/**
+ * Obtiene timestamps de lectura para todas las conversaciones
+ */
+export async function getReadTimestamps(redis: Redis): Promise<Record<string, number>> {
+  try {
+    const data = await redis.hgetall(READ_STATUS_KEY);
+    if (!data) return {};
+    const result: Record<string, number> = {};
+    for (const [key, val] of Object.entries(data)) {
+      result[key] = Number(val);
+    }
+    return result;
+  } catch {
+    return {};
+  }
 }

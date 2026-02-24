@@ -648,6 +648,19 @@ async function processMessage(
   const phone = message.from;
   const contactName = contact?.profile?.name || 'Usuario';
 
+  // Cache WhatsApp profile name as fallback (NX = don't overwrite better name from booking)
+  if (contactName && contactName !== 'Usuario') {
+    try {
+      const upstash = getUpstashRedis();
+      await upstash.set(`contact:name:${phone}`, contactName, {
+        ex: 90 * 24 * 60 * 60,
+        nx: true,
+      });
+    } catch {
+      // Non-blocking
+    }
+  }
+
   console.log(
     `[webhook-whatsapp] Message from ${redactPhone(phone)} (${contactName}): type=${message.type}`
   );

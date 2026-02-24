@@ -2137,6 +2137,14 @@ export default async function handler(
       console.warn('[reservar] Google Contacts skipped:', e instanceof Error ? e.message : e);
     }
 
+    // 6.6. Cache nombre del contacto en Redis (para dashboard de conversaciones)
+    try {
+      const gc = await import('./lib/google-contacts.js');
+      await gc.cacheContactName(sanitize(phone), sanitize(firstName), sanitize(lastName));
+    } catch {
+      // Non-blocking
+    }
+
     // 7. Guardar booking_details para mi-reserva y cron-reminders
     const normalizedPhone = sanitize(phone).replace(/[\s\-+]/g, '');
     if (redis) {
