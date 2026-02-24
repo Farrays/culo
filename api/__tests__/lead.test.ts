@@ -228,6 +228,13 @@ describe('Lead Capture API Endpoint', () => {
     it('should allow request when not rate limited', async () => {
       vi.mocked(isRateLimitedRedis).mockResolvedValueOnce(false);
 
+      // Mock fetch to avoid real Momence API call (use globalThis.Response for ESLint)
+      const fetchSpy = vi
+        .spyOn(globalThis, 'fetch')
+        .mockResolvedValueOnce(
+          new globalThis.Response(JSON.stringify({ id: 123 }), { status: 200 })
+        );
+
       const req = createMockRequest({ body: validLeadData });
       const res = createMockResponse();
 
@@ -235,6 +242,8 @@ describe('Lead Capture API Endpoint', () => {
 
       // Should not be rate limited (mock returns false)
       expect(res._status).not.toBe(429);
+
+      fetchSpy.mockRestore();
     }, 10000);
   });
 
