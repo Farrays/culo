@@ -98,10 +98,22 @@ export const BROADWAY_JAZZ_LANDING_CONFIG: LandingConfig = createLandingConfig('
   ],
 
   // =========================================================================
+  // VIDEO (Bunny Stream)
+  // =========================================================================
+  video: {
+    bunnyVideoId: 'b4bfe05b-4058-4efa-80c9-9b0512423863',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: false,
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/b4bfe05b-4058-4efa-80c9-9b0512423863/thumbnail_51f2310f.jpg',
+  },
+
+  // =========================================================================
   // BOOKING WIDGET (Direct booking flow - high conversion)
   // =========================================================================
   bookingWidget: {
-    styleFilter: 'broadway-jazz',
+    styleFilter: 'broadwayjazz',
   },
 
   // =========================================================================
