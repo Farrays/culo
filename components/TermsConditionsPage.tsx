@@ -23,26 +23,6 @@ const TermsConditionsPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
   const lastUpdated = '24/12/2025';
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('terms_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/terminos-y-condiciones`,
-      },
-    ],
-  };
-
   const breadcrumbItems = [
     { name: t('home'), url: `/${locale}` },
     {

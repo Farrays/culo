@@ -458,32 +458,6 @@ const AlquilerSalasPage: React.FC = () => {
   // ENTERPRISE SCHEMA MARKUP
   // ============================================================================
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('navHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('breadcrumb_services'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('headerRoomRental'),
-        item: `${baseUrl}/${locale}/alquiler-salas-baile-barcelona`,
-      },
-    ],
-  };
-
   // Schema Markup - Service with Offers for each room (Enterprise i18n)
   const serviceSchema = {
     '@context': 'https://schema.org',

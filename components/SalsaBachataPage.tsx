@@ -330,32 +330,6 @@ const SalsaBachataPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('salsaBachataBarcelona_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('salsaBachataBarcelona_breadcrumb_classes'),
-        item: `${baseUrl}/${locale}/clases/baile-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('salsaBachataBarcelona_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/salsa-bachata-barcelona`,
-      },
-    ],
-  };
-
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',

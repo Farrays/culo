@@ -557,38 +557,6 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
     teacher: schedule.teacher,
   }));
 
-  // BreadcrumbList Schema
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t(config.breadcrumb.homeKey),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t(config.breadcrumb.classesKey),
-        item: `${baseUrl}/${locale}/clases`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t(config.breadcrumb.parentKey),
-        item: `${baseUrl}/${locale}${config.breadcrumb.parentUrl}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: t(config.breadcrumb.currentKey),
-        item: pageUrl,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation
   const breadcrumbItems = [
     { name: t(config.breadcrumb.homeKey), url: `/${locale}` },

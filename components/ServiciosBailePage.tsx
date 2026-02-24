@@ -213,26 +213,6 @@ const ServiciosBailePage: React.FC = () => {
     [t]
   );
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('serviciosBaile_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('serviciosBaile_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/servicios-baile-barcelona`,
-      },
-    ],
-  };
-
   // Schema Markup - Service (main) - Enhanced for LLMs
   const serviceSchema = {
     '@context': 'https://schema.org',

@@ -247,26 +247,6 @@ const HorariosPageV2: React.FC = () => {
     }
   };
 
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    inLanguage: getInLanguage(),
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('horariosV2_breadcrumb'),
-        item: `${baseUrl}/${locale}/horarios-clases-baile-barcelona`,
-      },
-    ],
-  };
-
   // FAQPage Schema removed — generated at build-time by prerender.mjs
 
   // Organization Schema - Enterprise with translations

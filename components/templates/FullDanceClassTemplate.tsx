@@ -912,20 +912,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
     [config.breadcrumbConfig, locale, config.stylePath, t]
   );
 
-  const _breadcrumbSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        item: `${baseUrl}${item.url}`,
-      })),
-    }),
-    [breadcrumbItems]
-  );
-
   // VideoObject schemas removed: class pages are not "video watch pages" per Google's Dec 2023 policy.
   // Videos are supplementary content on class pages, so VideoObject schema triggers
   // "video is not on a watch page" errors in GSC. Schema kept in blog pages where

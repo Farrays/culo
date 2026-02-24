@@ -209,26 +209,6 @@ const YunaisyFarrayPage: React.FC = () => {
     respectDataSaver: true,
   });
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('yunaisyFarray_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('yunaisyFarray_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/yunaisy-farray`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('yunaisyFarray_breadcrumb_home'), url: `/${locale}` },

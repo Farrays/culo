@@ -411,25 +411,6 @@ const ContactPage: React.FC = () => {
   // SCHEMA MARKUP
   // ============================================================================
 
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('contact_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('contact_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/contacto`,
-      },
-    ],
-  };
-
   // ContactPage + LocalBusiness schema for SEO geo-targeting
   const contactPageSchema = {
     '@context': 'https://schema.org',

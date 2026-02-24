@@ -111,32 +111,6 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     answer: t(faq.answerKey),
   }));
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('prepFisica_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('prepFisica_breadcrumb_classes'),
-        item: `${baseUrl}/${locale}/clases`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('prepFisica_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/entrenamiento-bailarines-barcelona`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('prepFisica_breadcrumb_home'), url: `/${locale}` },

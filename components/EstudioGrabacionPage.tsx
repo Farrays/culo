@@ -146,26 +146,6 @@ const EstudioGrabacionPage: React.FC = () => {
     { id: 'eg-7', question: t('estudioGrabacion_faq8_q'), answer: t('estudioGrabacion_faq8_a') },
   ];
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('estudioGrabacion_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('estudioGrabacion_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/estudio-grabacion-barcelona`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('estudioGrabacion_breadcrumb_home'), url: `/${locale}` },

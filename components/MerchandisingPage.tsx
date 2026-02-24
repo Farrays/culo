@@ -143,32 +143,6 @@ const MerchandisingPage: React.FC = () => {
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('navHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('breadcrumb_services'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('headerMerchandising'),
-        item: `${baseUrl}/${locale}/merchandising`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('navHome'), url: `/${locale}` },

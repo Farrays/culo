@@ -73,26 +73,6 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
     },
   ];
 
-  // Breadcrumb schema
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('teachersPageBreadcrumbHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('teachersPageBreadcrumbCurrent'),
-        item: pageUrl,
-      },
-    ],
-  };
-
   // Person schemas for SEO with Geo-Local signals (i18n enabled)
   const personSchemas = TEACHERS_PERSON_SCHEMAS.map(teacher => ({
     '@context': 'https://schema.org',

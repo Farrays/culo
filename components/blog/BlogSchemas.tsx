@@ -127,38 +127,6 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     ],
   };
 
-  // BreadcrumbList Schema
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t(config.breadcrumbConfig.homeKey),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t(config.breadcrumbConfig.blogKey),
-        item: `${baseUrl}/${locale}/blog`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t(config.breadcrumbConfig.categoryKey),
-        item: `${baseUrl}/${locale}${config.breadcrumbConfig.categoryUrl}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: t(config.breadcrumbConfig.currentKey),
-        item: articleUrl,
-      },
-    ],
-  };
-
   // FAQPage Schema removed — already generated at build time by prerender.mjs (generateBlogFAQSchema)
 
   // SpeakableSpecification Schema (for voice search)

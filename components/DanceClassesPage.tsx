@@ -392,27 +392,6 @@ const DanceClassesPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    '@id': `${baseUrl}/${locale}/clases/baile-barcelona#breadcrumb`,
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('danceClassesHub_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('danceClassesHub_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/baile-barcelona`,
-      },
-    ],
-  };
-
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',

@@ -59,26 +59,6 @@ const MetodoFarrayPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('metodoFarray_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('metodoFarray_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/metodo-farray`,
-      },
-    ],
-  };
-
   // Schema Markup - Course
   const courseSchema = {
     '@context': 'https://schema.org',

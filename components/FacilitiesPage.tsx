@@ -153,26 +153,6 @@ const FacilitiesPage: React.FC = () => {
     { id: 'fac-faq-7', question: t('facilitiesFaqQ7'), answer: t('facilitiesFaqA7') },
   ];
 
-  // BreadcrumbList Schema
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('facilitiesBreadcrumbHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('facilitiesBreadcrumbCurrent'),
-        item: pageUrl,
-      },
-    ],
-  };
-
   // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
   // ImageGallery Schema for SEO

@@ -71,28 +71,7 @@ const AboutPage: React.FC = () => {
     'pages',
   ]);
   const locale = i18n.language;
-  const baseUrl = 'https://www.farrayscenter.com';
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
-
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('about_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('about_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/sobre-nosotros`,
-      },
-    ],
-  };
 
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [

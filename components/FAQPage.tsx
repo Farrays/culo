@@ -235,26 +235,6 @@ const FAQPage: React.FC = () => {
     [faqCategories]
   );
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('faq_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('faq_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/preguntas-frecuentes`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('faq_breadcrumb_home'), url: `/${locale}` },

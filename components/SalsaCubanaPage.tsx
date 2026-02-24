@@ -74,38 +74,6 @@ const SalsaCubanaPage: React.FC = () => {
     answer: t(faq.answerKey),
   }));
 
-  // BreadcrumbList Schema (JSON-LD)
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('salsaCubanaBreadcrumbHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('salsaCubanaBreadcrumbClasses'),
-        item: `${baseUrl}/${locale}/clases`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('salsaCubanaBreadcrumbLatin'),
-        item: `${baseUrl}/${locale}/clases/salsa-bachata-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: t('salsaCubanaBreadcrumbCurrent'),
-        item: pageUrl,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('salsaCubanaBreadcrumbHome'), url: `/${locale}` },

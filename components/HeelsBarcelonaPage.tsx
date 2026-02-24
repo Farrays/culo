@@ -88,38 +88,6 @@ const HeelsBarcelonaPage: React.FC = () => {
     answer: t(faq.answerKey),
   }));
 
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('heelsBarcelona_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('heelsBarcelona_breadcrumb_classes'),
-        item: `${baseUrl}/${locale}/clases/baile-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('heelsBarcelona_breadcrumb_urban'),
-        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: t('heelsBarcelona_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/clases/heels-barcelona`,
-      },
-    ],
-  };
-
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('heelsBarcelona_breadcrumb_home'), url: `/${locale}` },

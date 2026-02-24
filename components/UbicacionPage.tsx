@@ -180,29 +180,6 @@ const UbicacionPage: React.FC = () => {
     [t, locale]
   );
 
-  // Schema Markup
-  const _breadcrumbSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: t('ubicacion_breadcrumbHome'),
-          item: `${baseUrl}/${locale}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: t('ubicacion_breadcrumbCurrent'),
-          item: `${baseUrl}/${locale}/como-llegar-escuela-baile-barcelona`,
-        },
-      ],
-    }),
-    [t, locale, baseUrl]
-  );
-
   // LocalBusiness schema removed - already injected at build-time by prerender.mjs (#danceschool)
 
   // FAQPage Schema removed — generated at build-time by prerender.mjs

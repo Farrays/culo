@@ -21,8 +21,6 @@ const RegalaBailePage: React.FC = () => {
     'pages',
   ]);
   const locale = i18n.language;
-  const baseUrl = 'https://www.farrayscenter.com';
-
   // Beneficios de regalar baile
   const benefits = [
     {
@@ -77,32 +75,6 @@ const RegalaBailePage: React.FC = () => {
     { id: 'regala-6', question: t('regalaBaile_faq6_q'), answer: t('regalaBaile_faq6_a') },
     { id: 'regala-7', question: t('regalaBaile_faq7_q'), answer: t('regalaBaile_faq7_a') },
   ];
-
-  // Schema Markup - BreadcrumbList
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('navHome'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('breadcrumb_services'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: t('headerGiftDance'),
-        item: `${baseUrl}/${locale}/regala-baile`,
-      },
-    ],
-  };
 
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [

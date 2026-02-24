@@ -227,26 +227,6 @@ const PreciosPage: React.FC = () => {
     fr: 'fr-FR',
   };
 
-  // BreadcrumbList Schema
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('pricing_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('pricing_breadcrumb_current'),
-        item: pageUrl,
-      },
-    ],
-  };
-
   // WebPage Schema with Speakable (Voice Search / GEO)
   const webPageSchema = {
     '@context': 'https://schema.org',

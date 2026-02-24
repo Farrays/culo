@@ -219,21 +219,6 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
     [breadcrumbConfig, locale, stylePath, t]
   );
 
-  // Breadcrumb schema
-  const _breadcrumbSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        item: `${baseUrl}${item.url}`,
-      })),
-    }),
-    [breadcrumbItems]
-  );
-
   return (
     <>
       <Helmet>

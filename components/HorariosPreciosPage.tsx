@@ -290,26 +290,6 @@ const HorariosPreciosPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: t('pricing_breadcrumb_home'),
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: t('pricing_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/horarios-precios`,
-      },
-    ],
-  };
-
   // Pricing Schema for Google
   const pricingSchema = {
     '@context': 'https://schema.org',

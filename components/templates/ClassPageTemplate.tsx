@@ -59,7 +59,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
   categoryKey,
   categoryPath,
   faqsConfig,
-  breadcrumbItems,
   courseSchemaConfig,
   heroContent,
   customSections,
@@ -91,27 +90,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
   }));
-
-  // Generar breadcrumbs dinámicamente
-  const defaultBreadcrumbs = [
-    { name: t(`${categoryKey}_breadcrumb_home`), url: `/${locale}` },
-    { name: t(`${categoryKey}_breadcrumb_classes`), url: `/${locale}/clases/baile-barcelona` },
-    { name: t(`${categoryKey}_breadcrumb_current`), url: pageUrl },
-  ];
-
-  const breadcrumbs = breadcrumbItems || defaultBreadcrumbs;
-
-  // Breadcrumb Schema
-  const _breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${baseUrl}${item.url}`,
-    })),
-  };
 
   // FAQPage Schema is rendered by FAQSection component - no need for manual schema
 

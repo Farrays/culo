@@ -1130,31 +1130,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
 
   // Generate schemas
   const schemas = useMemo(() => {
-    const _breadcrumbSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: t('navHome'),
-          item: `${BASE_URL}/${locale}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: t('breadcrumb_services'),
-          item: `${BASE_URL}/${locale}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: t(heroTitleKey),
-          item: `${BASE_URL}/${locale}${canonicalPath}`,
-        },
-      ],
-    };
-
     const serviceSchema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -1192,7 +1167,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
       organizationSchema,
       ...(customSchemas || []),
     ];
-  }, [t, locale, heroTitleKey, canonicalPath, schemaOptions, customSchemas]);
+  }, [locale, canonicalPath, schemaOptions, customSchemas]);
 
   return (
     <>
