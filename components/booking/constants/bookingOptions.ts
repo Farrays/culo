@@ -54,6 +54,7 @@ export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: 'contemporaneo', label: 'Contemporáneo', color: '#8B5CF6', category: 'danza' },
   { value: 'afrocontemporaneo', label: 'Afro Contemporáneo', color: '#9B59B6', category: 'danza' },
   { value: 'jazz', label: 'Modern Jazz', color: '#06B6D4', category: 'danza' },
+  { value: 'broadwayjazz', label: 'Broadway Jazz', color: '#7C3AED', category: 'danza' },
   { value: 'ballet', label: 'Ballet', color: '#EC4899', category: 'danza' },
   // Fitness styles
   { value: 'stretching', label: 'Stretching', color: '#81ECEC', category: 'fitness' },
