@@ -98,10 +98,23 @@ export const COMMERCIAL_DANCE_LANDING_CONFIG: LandingConfig = createLandingConfi
   ],
 
   // =========================================================================
+  // VIDEO (Bunny Stream)
+  // =========================================================================
+  video: {
+    bunnyVideoId: '3caf2cdf-c2c8-4884-a12f-7b7b5e392573',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: false,
+    thumbnailUrl:
+      'https://vz-3d56a778-175.b-cdn.net/3caf2cdf-c2c8-4884-a12f-7b7b5e392573/thumbnail_6ec7a039.jpg',
+  },
+
+  // =========================================================================
   // BOOKING WIDGET (Direct booking flow - high conversion)
   // =========================================================================
   bookingWidget: {
     styleFilter: 'commercial',
+    targetDate: '2026-03-12',
   },
 
   // =========================================================================
