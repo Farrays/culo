@@ -32,7 +32,7 @@ export const COMMERCIAL_DANCE_LANDING_CONFIG: LandingConfig = createLandingConfi
   // =========================================================================
   images: {
     hero: '/images/classes/reynier/img/reynier-hero_960.webp',
-    showcase: '/images/classes/reynier/img/reynier-showcase_960.webp',
+    showcase: '', // TODO: Add showcase photo when available
     heroAlt:
       'Reynier Ramirez - Clases de Commercial Dance en Barcelona - Bailarín profesional cubano con experiencia en videoclips internacionales',
     showcaseAlt: "Clases de Commercial Dance con Reynier Ramirez en Farray's Center Barcelona",

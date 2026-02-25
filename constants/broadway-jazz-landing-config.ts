@@ -32,7 +32,7 @@ export const BROADWAY_JAZZ_LANDING_CONFIG: LandingConfig = createLandingConfig('
   // =========================================================================
   images: {
     hero: '/images/classes/reynier/img/reynier-hero_960.webp',
-    showcase: '/images/classes/reynier/img/reynier-showcase_960.webp',
+    showcase: '', // TODO: Add showcase photo when available
     heroAlt:
       'Reynier Ramirez - Clases de Broadway Jazz en Barcelona - Bailarín profesional cubano con experiencia en teatro musical internacional',
     showcaseAlt: "Clases de Broadway Jazz con Reynier Ramirez en Farray's Center Barcelona",
