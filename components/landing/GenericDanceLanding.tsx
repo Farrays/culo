@@ -1087,22 +1087,24 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               </div>
             </AnimateOnScroll>
 
-            {/* Showcase Image */}
-            <AnimateOnScroll>
-              <div className="max-w-md mx-auto mb-8 sm:mb-10">
-                <div
-                  className={`rounded-2xl overflow-hidden ${theme.borderPrimary} border shadow-xl`}
-                >
-                  <img
-                    src={images.showcase}
-                    alt={images.showcaseAlt}
-                    className="w-full h-auto object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
+            {/* Showcase Image (hidden when no image provided) */}
+            {images.showcase && (
+              <AnimateOnScroll>
+                <div className="max-w-md mx-auto mb-8 sm:mb-10">
+                  <div
+                    className={`rounded-2xl overflow-hidden ${theme.borderPrimary} border shadow-xl`}
+                  >
+                    <img
+                      src={images.showcase}
+                      alt={images.showcaseAlt}
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 </div>
-              </div>
-            </AnimateOnScroll>
+              </AnimateOnScroll>
+            )}
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto">
               {config.testimonials.map((testimonial, index) => (
