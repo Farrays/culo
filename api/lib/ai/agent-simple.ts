@@ -17,6 +17,7 @@ import type { Redis } from '@upstash/redis';
 import { detectLanguage, type SupportedLanguage } from './language-detector.js';
 import { getFullSystemPrompt } from './laura-system-prompt.js';
 import { checkAndEscalate } from './escalation-service.js';
+import { activateTakeover, addNotification } from './human-takeover.js';
 import { getMemberLookup } from './member-lookup.js';
 import { LAURA_TOOLS_MEMBER, LAURA_TOOLS_NEW_USER, executeTool } from './laura-tools.js';
 import { markdownToWhatsApp, splitIntoBubbles } from './whatsapp-formatter.js';
@@ -179,6 +180,21 @@ async function handleResponse(params: {
         if (escalation.type === 'IMMEDIATE' && escalation.escalationMessage) {
           additionalMessages.push(escalation.escalationMessage);
           console.log(`[agent-simple] IMMEDIATE escalation - adding ticket message`);
+
+          // Activar takeover para que Laura deje de responder
+          try {
+            await activateTakeover(redis, phone, 'escalation-immediate');
+            await addNotification(
+              redis,
+              phone,
+              `Escalación automática (${escalation.caseId}): usuario pidió hablar con humano`,
+              undefined,
+              'escalation'
+            );
+            console.log(`[agent-simple] Takeover activated for ${phone.slice(-4)}`);
+          } catch (takeoverError) {
+            console.error('[agent-simple] Takeover activation error:', takeoverError);
+          }
         }
       }
     } catch (escalationError) {
