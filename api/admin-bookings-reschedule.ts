@@ -221,33 +221,134 @@ export async function rescheduleBooking(
       };
     }
   } else {
-    // Find same class next week
-    const nextWeek = new Date();
-    nextWeek.setDate(nextWeek.getDate() + 5); // Start looking from 5 days ahead
-    const twoWeeksOut = new Date();
-    twoWeeksOut.setDate(twoWeeksOut.getDate() + 12); // Up to 12 days ahead
+    // ================================================================
+    // Find SAME class next week: same name, same day, same time
+    // ================================================================
+
+    // Validate classDate format
+    if (!booking.classDate || !/^\d{4}-\d{2}-\d{2}$/.test(booking.classDate)) {
+      return {
+        success: false,
+        error: `Invalid original class date: "${booking.classDate}". Cannot calculate next week.`,
+      };
+    }
+
+    // Target date = original classDate + 7 days (same day of the week)
+    const targetDate = new Date(booking.classDate + 'T12:00:00Z'); // noon UTC to avoid DST edge cases
+    targetDate.setDate(targetDate.getDate() + 7);
+    const targetDateStr = targetDate.toISOString().split('T')[0] || ''; // "YYYY-MM-DD"
+
+    // Search window: target date ± 1 day (covers timezone edge cases)
+    const searchStart = new Date(targetDate);
+    searchStart.setDate(searchStart.getDate() - 1);
+    const searchEnd = new Date(targetDate);
+    searchEnd.setDate(searchEnd.getDate() + 2); // +2 because startBefore is exclusive
+
+    // Original time in minutes from midnight (for comparison)
+    const [origHour, origMin] = (booking.classTime || '00:00').split(':').map(Number);
+    const originalTimeMinutes = (origHour || 0) * 60 + (origMin || 0);
+
+    console.log(
+      `[reschedule] Looking for "${booking.className}" on ${targetDateStr} at ${booking.classTime}` +
+        ` (search window: ${searchStart.toISOString().split('T')[0]} to ${searchEnd.toISOString().split('T')[0]})`
+    );
 
     try {
       const sessions = await client.getSessions({
         page: 1,
         pageSize: 50,
-        startAfter: nextWeek.toISOString(),
-        startBefore: twoWeeksOut.toISOString(),
+        startAfter: searchStart.toISOString(),
+        startBefore: searchEnd.toISOString(),
         sortBy: 'startsAt',
         sortOrder: 'ASC',
       });
 
-      // Find session with matching name (case-insensitive)
-      const className = booking.className.toLowerCase().trim();
-      const match = sessions.payload.find(s => {
-        const name = ((s as { name?: string }).name || '').toLowerCase().trim();
-        return name === className || name.includes(className) || className.includes(name);
-      });
+      // Exact name match target (case-insensitive, trimmed)
+      const targetClassName = booking.className.toLowerCase().trim();
+
+      // Score all matching sessions
+      const scoredMatches: Array<{
+        session: Record<string, unknown>;
+        dayMatch: boolean;
+        timeDiffMinutes: number;
+      }> = [];
+
+      for (const s of sessions.payload) {
+        const sessionName = ((s as { name?: string }).name || '').toLowerCase().trim();
+        const startsAt = (s as { startsAt?: string }).startsAt;
+        if (!startsAt) continue;
+
+        // EXACT name match only (no substring)
+        if (sessionName !== targetClassName) continue;
+
+        // Check day: must be on target date (in Madrid timezone)
+        const sessionDt = new Date(startsAt);
+        const sessionDateStr = sessionDt.toLocaleDateString('en-CA', {
+          timeZone: SPAIN_TIMEZONE,
+        }); // "YYYY-MM-DD" in Madrid time
+        const dayMatch = sessionDateStr === targetDateStr;
+
+        // Calculate time difference in minutes (Madrid timezone)
+        const sessionTimeStr = sessionDt.toLocaleTimeString('en-US', {
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit',
+          timeZone: SPAIN_TIMEZONE,
+        });
+        const [sessHour, sessMin] = sessionTimeStr.split(':').map(Number);
+        const sessionTimeMinutes = (sessHour || 0) * 60 + (sessMin || 0);
+        const timeDiffMinutes = Math.abs(sessionTimeMinutes - originalTimeMinutes);
+
+        scoredMatches.push({ session: s as Record<string, unknown>, dayMatch, timeDiffMinutes });
+      }
+
+      // Prioritized matching:
+      // Priority 1: Same day + close time (±30 min)
+      // Priority 2: Same day + any time
+      let match: Record<string, unknown> | undefined;
+
+      const sameDayCloseTime = scoredMatches
+        .filter(m => m.dayMatch && m.timeDiffMinutes <= 30)
+        .sort((a, b) => a.timeDiffMinutes - b.timeDiffMinutes);
+
+      if (sameDayCloseTime.length > 0) {
+        const bestMatch = sameDayCloseTime[0];
+        match = bestMatch?.session;
+        console.log(
+          `[reschedule] ✅ Exact match: same name + same day + time diff ${bestMatch?.timeDiffMinutes ?? 0}min`
+        );
+      }
 
       if (!match) {
+        const sameDayAnyTime = scoredMatches
+          .filter(m => m.dayMatch)
+          .sort((a, b) => a.timeDiffMinutes - b.timeDiffMinutes);
+
+        if (sameDayAnyTime.length > 0) {
+          const fallbackMatch = sameDayAnyTime[0];
+          match = fallbackMatch?.session;
+          console.log(
+            `[reschedule] ⚠️ Fallback match: same name + same day but different time (${fallbackMatch?.timeDiffMinutes ?? 0}min diff)`
+          );
+        }
+      }
+
+      if (!match) {
+        // Helpful error: show if class exists on other days
+        const otherDates = scoredMatches.map(m => {
+          const sa = (m.session as { startsAt?: string }).startsAt || '';
+          return sa ? new Date(sa).toLocaleDateString('en-CA', { timeZone: SPAIN_TIMEZONE }) : '?';
+        });
+        const datesInfo =
+          otherDates.length > 0
+            ? ` Found "${booking.className}" on: ${[...new Set(otherDates)].join(', ')}.`
+            : '';
+
         return {
           success: false,
-          error: `No matching class "${booking.className}" found next week`,
+          error:
+            `No matching class "${booking.className}" found for ${targetDateStr}` +
+            ` (expected same day next week at ${booking.classTime}).${datesInfo}`,
         };
       }
 
