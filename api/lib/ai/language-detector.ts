@@ -12,14 +12,16 @@ export type SupportedLanguage = 'es' | 'ca' | 'en' | 'fr';
 // Keywords and patterns unique to each language
 const LANGUAGE_PATTERNS: Record<SupportedLanguage, RegExp[]> = {
   // Catalan - check first (shares many words with Spanish)
+  // IMPORTANTE: NO incluir palabras compartidas con español (hola, gracias, etc.)
   ca: [
-    /\b(vull|puc|estic|tinc|som|sóc)\b/i, // Verbs
-    /\b(classes|informació|gràcies|sisplau|hola|adéu)\b/i, // Common words
-    /\b(què|com|quan|on|quant)\b/i, // Question words
+    /\b(vull|puc|estic|tinc|sóc)\b/i, // Verbs (quitado "som" - ambiguo)
+    /\b(classes|informació|gràcies|sisplau|adéu|benvingut)\b/i, // Catalan-only words
+    /\b(què|com\s+estàs|com\s+va|quan|quant)\b/i, // Question words (com solo en frase catalana)
     /\b(dilluns|dimarts|dimecres|dijous|divendres|dissabte|diumenge)\b/i, // Days
-    /\b(preu|preus|horari|horaris)\b/i, // Key booking terms
-    /\b(voldria|m'agradaria|necessito)\b/i, // Want/need
-    /\b(el|la|els|les|d'|l')\b.*\b(classe|classes|ball|salsa|bachata)\b/i, // Articles + dance
+    /\b(preu|preus|horaris)\b/i, // Key booking terms (quitado "horari" - similar a español)
+    /\b(voldria|m'agradaria)\b/i, // Want/need (quitado "necessito" - similar a español)
+    /\b(els|les|d'|l')\b.*\b(classe|classes|ball)\b/i, // Catalan articles + words
+    /\b(molt\s+bé|si\s+us\s+plau|bon\s+dia|bona\s+tarda|bona\s+nit)\b/i, // Catalan phrases
   ],
 
   // French
@@ -46,13 +48,15 @@ const LANGUAGE_PATTERNS: Record<SupportedLanguage, RegExp[]> = {
 
   // Spanish (default) - checked last
   es: [
-    /\b(quiero|puedo|estoy|tengo|soy|somos)\b/i, // Verbs
-    /\b(hola|gracias|por favor|buenos días|buenas tardes)\b/i, // Greetings
+    /\b(quiero|puedo|estoy|tengo|soy|somos|voy|hay)\b/i, // Verbs
+    /\b(hola|gracias|por favor|buenos días|buenas tardes|buenas|oye|vale|genial)\b/i, // Greetings
     /\b(clase|clases|precio|precios|horario|horarios|información)\b/i, // Key words
-    /\b(cómo|cuándo|dónde|cuánto|qué)\b/i, // Question words
+    /\b(cómo|cuándo|dónde|cuánto|qué)\b/i, // Question words (con acento)
+    /\b(como|cuando|donde|cuanto|que tal)\b/i, // Question words (SIN acento - WhatsApp común)
     /\b(lunes|martes|miércoles|jueves|viernes|sábado|domingo)\b/i, // Days
-    /\b(me gustaría|quisiera|necesito)\b/i, // Want/need
-    /\b(reservar|apuntar|inscribir)\b/i, // Booking terms
+    /\b(me gustaría|quisiera|necesito|me interesa)\b/i, // Want/need
+    /\b(reservar|apuntar|inscribir|apuntarme|reserva)\b/i, // Booking terms
+    /\b(muchas gracias|buen día|buenas noches|hasta luego)\b/i, // Common Spanish phrases
   ],
 };
 
@@ -94,11 +98,13 @@ export function detectLanguage(text: string): SupportedLanguage {
   let bestLang: SupportedLanguage = 'es';
   let bestScore = 0;
 
-  // Check in order: ca, fr, en, es (Catalan first because it's similar to Spanish)
+  // Check in order: es last so it wins ties (most common language)
+  // A non-Spanish language must score STRICTLY higher to win
   const checkOrder: SupportedLanguage[] = ['ca', 'fr', 'en', 'es'];
 
   for (const lang of checkOrder) {
-    if (scores[lang] > bestScore) {
+    // Spanish wins ties (>=), other languages must beat strictly (>)
+    if (lang === 'es' ? scores[lang] >= bestScore : scores[lang] > bestScore) {
       bestScore = scores[lang];
       bestLang = lang;
     }
