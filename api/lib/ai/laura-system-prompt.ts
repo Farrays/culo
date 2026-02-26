@@ -148,13 +148,85 @@ INSTRUCCIONES DE IDIOMA
 ${langInstructions[lang]}`;
 
   // Añadir contexto según tipo de usuario
-  if (!memberContext) {
+  // Árbol de decisión: trial > miembro real > nuevo/lapsed
+  const isRealMember =
+    memberContext?.isExistingMember &&
+    (memberContext.hasActiveMembership || (memberContext.creditsAvailable ?? 0) > 0);
+
+  if (trialContext?.hasTrialBooking) {
+    // RAMA 1: TRIAL USER (con o sin memberContext — reservar.ts crea miembros en Momence)
+    const statusLabel = trialContext.status === 'confirmed' ? 'Confirmada' : trialContext.status;
+    fullPrompt += `
+
+================================================================================
+USUARIO CON CLASE DE PRUEBA RESERVADA
+================================================================================
+IMPORTANTE: Este usuario reservó su primera clase GRATIS a través de nuestra web.
+Aunque aparezca en Momence, NO es un miembro de pago. Trátalo como LEAD.
+
+Datos de la reserva:
+- Clase: ${trialContext.className}
+- Fecha: ${trialContext.classDate}
+- Hora: ${trialContext.classTime}
+- Estado: ${statusLabel}
+- Puede cancelar: ${trialContext.canCancel ? 'Sí' : 'No'}
+- Puede reprogramar: ${trialContext.canReschedule ? 'Sí (1 vez)' : 'No (ya reprogramó)'}
+${memberContext?.firstName ? `- Nombre: ${memberContext.firstName}` : ''}
+
+INSTRUCCIONES (PRIORIDAD ABSOLUTA):
+- Su clase es GRATIS. NUNCA le pidas que pague ni le compartas class_url
+- Para gestionar su reserva → usa manage_trial_booking
+- Si quiere cancelar → action='cancel'
+- Si quiere cambiar de día → action='reschedule_next_week'
+- Si quiere info de su reserva → action='check_status'
+- Si canceló y quiere reservar otra → comparte: www.farrayscenter.com/${lang}/reservas
+- Para consultar horarios → get_weekly_schedule o search_upcoming_classes
+- NO uses herramientas de miembro (get_member_info, create_booking, cancel_booking, etc.)
+- NUNCA le compartas enlaces de pago de Momence (class_url). Solo booking_url o el widget de reservas
+- NO digas "no te tengo en la base de datos". Trata con naturalidad
+
+Políticas de cancelación:
+- Cancelar >= 2h antes de la clase: sin penalización, puede volver a reservar
+- Cancelar < 2h antes: se considera cancelación tardía
+- Reprogramación: máximo 1 vez, misma clase, semana siguiente`;
+  } else if (isRealMember && memberContext) {
+    // RAMA 2: MIEMBRO REAL (membresía activa o créditos > 0)
+    const memberInfo = [];
+    if (memberContext.firstName) {
+      memberInfo.push(`Nombre: ${memberContext.firstName}`);
+    }
+
+    const credits = memberContext.creditsAvailable ?? 0;
+    memberInfo.push(`Créditos disponibles: ${credits}`);
+
+    if (memberContext.hasActiveMembership) {
+      memberInfo.push(`Estado: miembro ACTIVO`);
+      if (memberContext.membershipName) {
+        memberInfo.push(`Membresía: ${memberContext.membershipName}`);
+      }
+    }
+
+    fullPrompt += `
+
+================================================================================
+INFORMACIÓN DEL USUARIO (datos de Momence)
+================================================================================
+${memberInfo.join('\n')}
+
+INSTRUCCIONES PARA ESTE USUARIO:
+- NO le ofrezcas clase de prueba gratis (ya es miembro registrado)
+- Si pregunta por créditos, DEBES decirle: "Tienes ${credits} créditos disponibles"
+- Si quiere reservar y tiene créditos, puede usarlos
+- Si tiene 0 créditos, sugiérele comprar un bono o pack de clases
+- Sé familiar: usa su nombre, "Hola de nuevo!", "¿Qué tal?"`;
+  } else {
+    // RAMA 3: NUEVO USUARIO o LAPSED (sin trial, sin membresía activa)
     const membershipUrl = `www.farrayscenter.com/${lang}/hazte-socio`;
 
     fullPrompt += `
 
 ================================================================================
-USUARIO NUEVO (no registrado en Momence)
+USUARIO NUEVO (no registrado o sin membresía activa)
 ================================================================================
 Usuario NO miembro. Tienes herramientas para buscar clases.
 
@@ -179,64 +251,6 @@ Políticas de cancelación:
 - Cancelar >= 2h antes de la clase: sin penalización, puede volver a reservar
 - Cancelar < 2h antes: se considera cancelación tardía
 - Reprogramación: máximo 1 vez, misma clase, semana siguiente`;
-
-    // Inject trial booking data if found
-    if (trialContext?.hasTrialBooking) {
-      const statusLabel = trialContext.status === 'confirmed' ? 'Confirmada' : trialContext.status;
-      fullPrompt += `
-
-================================================================================
-RESERVA DE PRUEBA ACTIVA
-================================================================================
-Este usuario YA tiene una clase de prueba reservada:
-- Clase: ${trialContext.className}
-- Fecha: ${trialContext.classDate}
-- Hora: ${trialContext.classTime}
-- Estado: ${statusLabel}
-- Puede cancelar: ${trialContext.canCancel ? 'Sí' : 'No'}
-- Puede reprogramar: ${trialContext.canReschedule ? 'Sí (1 vez)' : 'No (ya reprogramó)'}
-
-PRIORIDAD ABSOLUTA: Este usuario es un LEAD con reserva. NO le ofrezcas clases de pago.
-- Si quiere cancelar → usa manage_trial_booking con action='cancel'
-- Si quiere cambiar de día → usa manage_trial_booking con action='reschedule_next_week'
-- Si quiere info de su reserva → usa manage_trial_booking con action='check_status'
-- Si quiere reservar OTRA clase después de cancelar → comparte: www.farrayscenter.com/${lang}/reservas
-- NUNCA le compartas enlaces de pago de Momence (class_url). Solo booking_url o el widget de reservas.`;
-    }
-  }
-
-  if (memberContext?.isExistingMember) {
-    const memberInfo = [];
-    if (memberContext.firstName) {
-      memberInfo.push(`Nombre: ${memberContext.firstName}`);
-    }
-
-    // Siempre mostrar los créditos, aunque sean 0
-    const credits = memberContext.creditsAvailable ?? 0;
-    memberInfo.push(`Créditos disponibles: ${credits}`);
-
-    if (memberContext.hasActiveMembership) {
-      memberInfo.push(`Estado: miembro ACTIVO`);
-      if (memberContext.membershipName) {
-        memberInfo.push(`Membresía: ${memberContext.membershipName}`);
-      }
-    } else {
-      memberInfo.push(`Estado: sin membresía activa`);
-    }
-
-    fullPrompt += `
-
-================================================================================
-INFORMACIÓN DEL USUARIO (datos de Momence)
-================================================================================
-${memberInfo.join('\n')}
-
-INSTRUCCIONES PARA ESTE USUARIO:
-- NO le ofrezcas clase de prueba gratis (ya es miembro registrado)
-- Si pregunta por créditos, DEBES decirle: "Tienes ${credits} créditos disponibles"
-- Si quiere reservar y tiene créditos, puede usarlos
-- Si tiene 0 créditos, sugiérele comprar un bono o pack de clases
-- Sé familiar: usa su nombre, "Hola de nuevo!", "¿Qué tal?"`;
   }
 
   return fullPrompt;

@@ -294,7 +294,8 @@ export async function processSimpleMessage(
     }
   }
 
-  // 2b. Si no es miembro, buscar si tiene reserva de clase de prueba
+  // 2b. Buscar SIEMPRE si tiene reserva de clase de prueba
+  // (reservar.ts crea miembros en Momence para trial users, así que memberContext puede existir)
   let trialContext:
     | {
         hasTrialBooking: boolean;
@@ -307,36 +308,34 @@ export async function processSimpleMessage(
       }
     | undefined;
 
-  if (!memberContext) {
-    try {
-      const normalizedPhone = phone.replace(/[\s\-+()]/g, '');
-      const eventId = (await redis.get(`phone:${normalizedPhone}`)) as string | null;
+  try {
+    const normalizedPhone = phone.replace(/[\s\-+()]/g, '');
+    const eventId = (await redis.get(`phone:${normalizedPhone}`)) as string | null;
 
-      if (eventId) {
-        const booking = (await redis.get(`booking_details:${eventId}`)) as Record<
-          string,
-          unknown
-        > | null;
+    if (eventId) {
+      const booking = (await redis.get(`booking_details:${eventId}`)) as Record<
+        string,
+        unknown
+      > | null;
 
-        if (booking && booking['status'] !== 'cancelled') {
-          trialContext = {
-            hasTrialBooking: true,
-            className: booking['className'] as string,
-            classDate: booking['classDate'] as string,
-            classTime: booking['classTime'] as string,
-            status: booking['status'] as string,
-            canCancel: booking['status'] !== 'cancelled',
-            canReschedule:
-              ((booking['rescheduleCount'] as number) || 0) < 1 && !booking['rescheduledFrom'],
-          };
-          console.log(
-            `[agent-simple] 🎫 Trial booking found: ${booking['className']} on ${booking['classDate']}`
-          );
-        }
+      if (booking && booking['status'] !== 'cancelled') {
+        trialContext = {
+          hasTrialBooking: true,
+          className: booking['className'] as string,
+          classDate: booking['classDate'] as string,
+          classTime: booking['classTime'] as string,
+          status: booking['status'] as string,
+          canCancel: booking['status'] !== 'cancelled',
+          canReschedule:
+            ((booking['rescheduleCount'] as number) || 0) < 1 && !booking['rescheduledFrom'],
+        };
+        console.log(
+          `[agent-simple] 🎫 Trial booking found: ${booking['className']} on ${booking['classDate']}`
+        );
       }
-    } catch (trialError) {
-      console.error('[agent-simple] Trial lookup error (non-blocking):', trialError);
     }
+  } catch (trialError) {
+    console.error('[agent-simple] Trial lookup error (non-blocking):', trialError);
   }
 
   // 3. Cargar system prompt desde LAURA_PROMPT.md (con contexto de miembro si existe)
@@ -393,7 +392,19 @@ export async function processSimpleMessage(
   try {
     const toolsEnabled = process.env['ENABLE_LAURA_TOOLS'] !== 'false';
     const useTools = toolsEnabled;
-    const toolSet = memberId ? LAURA_TOOLS_MEMBER : LAURA_TOOLS_NEW_USER;
+    // Árbol de decisión para toolset:
+    // 1. Trial booking activo → LAURA_TOOLS_NEW_USER (incluye manage_trial_booking)
+    // 2. Miembro real (membresía activa o créditos > 0) → LAURA_TOOLS_MEMBER
+    // 3. En Momence sin membresía/créditos o no en Momence → LAURA_TOOLS_NEW_USER
+    const isRealMember =
+      memberContext?.isExistingMember &&
+      (memberContext.hasActiveMembership || (memberContext.creditsAvailable ?? 0) > 0);
+    const toolSet =
+      trialContext?.hasTrialBooking || !isRealMember ? LAURA_TOOLS_NEW_USER : LAURA_TOOLS_MEMBER;
+
+    console.log(
+      `[agent-simple] User type: trial=${!!trialContext?.hasTrialBooking}, realMember=${!!isRealMember}, toolSet=${toolSet === LAURA_TOOLS_MEMBER ? 'MEMBER' : 'NEW_USER'}`
+    );
 
     let currentResponse = await createMessageWithRetry({
       model: 'claude-sonnet-4-20250514',
@@ -406,7 +417,9 @@ export async function processSimpleMessage(
     // Tool use loop (max 3 iterations to stay within 30s Vercel limit)
     const MAX_TOOL_ITERATIONS = 3;
     let iterations = 0;
-    const toolContext = { redis, phone, memberId, lang: language };
+    // No pasar memberId si es trial user o no es miembro real (evita que herramientas de miembro funcionen)
+    const effectiveMemberId = trialContext?.hasTrialBooking || !isRealMember ? undefined : memberId;
+    const toolContext = { redis, phone, memberId: effectiveMemberId, lang: language };
 
     while (currentResponse.stop_reason === 'tool_use' && iterations < MAX_TOOL_ITERATIONS) {
       iterations++;
