@@ -1052,6 +1052,28 @@ async function executeManageTrialBooking(
       await context.redis.del(`booking:${email}`);
       console.log(`[manage_trial_booking] Dedup cleared for ${email} (isOnTime=${isOnTime})`);
 
+      // Record audit event for analytics
+      try {
+        const { recordAuditEvent } = await import('../audit.js');
+        await recordAuditEvent(context.redis as unknown as import('ioredis').default, {
+          action: 'booking_cancelled',
+          channel: 'customer_leads',
+          eventId,
+          email,
+          className: booking.className,
+          classDate: booking.classDate,
+          success: true,
+          metadata: {
+            type: 'trial_cancellation',
+            isOnTime,
+            momenceCancelled: !!booking.momenceBookingId,
+            cancelledVia: 'laura_manage_trial_booking',
+          },
+        });
+      } catch {
+        /* non-blocking */
+      }
+
       // Update Google Calendar
       if (booking.calendarEventId) {
         try {
