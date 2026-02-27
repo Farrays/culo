@@ -167,7 +167,10 @@ export default defineConfig({
             return 'react-dom';
           }
           // Router + Helmet bundled together (prevents initialization order issues)
-          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-helmet')) {
+          if (
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/react-helmet')
+          ) {
             return 'router-vendor';
           }
           // Scheduler (React internals)
