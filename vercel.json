@@ -240,6 +240,21 @@
       "statusCode": 301
     },
     {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/como-perder-miedo-bailar",
+      "destination": "/:locale/blog/lifestyle/como-perder-miedo-bailar",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/clases-de-salsa-barcelona",
+      "destination": "/:locale/blog/lifestyle/clases-de-salsa-barcelona",
+      "statusCode": 301
+    },
+    {
+      "source": "/:locale(es|ca|en|fr)/blog/clases/academia-de-danza-barcelona",
+      "destination": "/:locale/blog/tips/academia-de-danza-barcelona-guia-completa",
+      "statusCode": 301
+    },
+    {
       "source": "/:locale(es|ca|en|fr)/blog/clases/:slug*",
       "destination": "/:locale/blog",
       "statusCode": 301
