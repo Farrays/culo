@@ -633,30 +633,52 @@ export async function rescheduleBooking(
   }
 
   // 10. Send notifications
-  const notificationResults = { email: false, whatsapp: false };
+  const notificationResults = { email: false, whatsapp: false, adminEmail: false };
+  const managementUrl = `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${newEventId}`;
 
+  // 10a. Email to student — ALWAYS sent (even when Laura handles WhatsApp)
+  try {
+    const { sendNoShowRescheduleEmail } = await import('./lib/email.js');
+    const emailResult = await sendNoShowRescheduleEmail({
+      to: booking.email,
+      firstName: booking.firstName,
+      originalClassName: booking.className,
+      originalDate: booking.classDate,
+      originalTime: booking.classTime,
+      newClassName: nextSessionName || booking.className,
+      newDate: nextSessionDate || newCalendarDateStr || '',
+      newTime: nextSessionTime || booking.classTime,
+      managementUrl,
+      reason,
+    });
+    notificationResults.email = emailResult.success;
+    console.log(`[reschedule] Student email: ${emailResult.success ? '✅' : '❌'}`);
+  } catch (e) {
+    console.warn(`[reschedule] Student email failed: ${e}`);
+  }
+
+  // 10b. Admin notification — ALWAYS sent
+  try {
+    const { sendAdminBookingNotification } = await import('./lib/email.js');
+    const adminResult = await sendAdminBookingNotification({
+      firstName: booking.firstName,
+      lastName: booking.lastName || '',
+      email: booking.email,
+      phone: booking.phone,
+      className: nextSessionName || booking.className,
+      classDate: nextSessionDate || newCalendarDateStr || '',
+      classTime: nextSessionTime || booking.classTime,
+      category: booking.category || '',
+      sourceUrl: `Reprogramación ${reason === 'no_show' ? '(no-show automática)' : '(manual vía WhatsApp)'}`,
+    });
+    notificationResults.adminEmail = adminResult.success;
+    console.log(`[reschedule] Admin email: ${adminResult.success ? '✅' : '❌'}`);
+  } catch (e) {
+    console.warn(`[reschedule] Admin email failed: ${e}`);
+  }
+
+  // 10c. WhatsApp to student — only if notifyStudent (Laura handles it otherwise)
   if (notifyStudent) {
-    // Email notification
-    try {
-      const { sendNoShowRescheduleEmail } = await import('./lib/email.js');
-      const emailResult = await sendNoShowRescheduleEmail({
-        to: booking.email,
-        firstName: booking.firstName,
-        originalClassName: booking.className,
-        originalDate: booking.classDate,
-        originalTime: booking.classTime,
-        newClassName: nextSessionName || booking.className,
-        newDate: nextSessionDate || newCalendarDateStr || '',
-        newTime: nextSessionTime || booking.classTime,
-        managementUrl: `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${newEventId}`,
-        reason,
-      });
-      notificationResults.email = emailResult.success;
-    } catch (e) {
-      console.warn(`[reschedule] Email failed: ${e}`);
-    }
-
-    // WhatsApp notification
     try {
       const { sendNoShowRescheduleWhatsApp } = await import('./lib/whatsapp.js');
       const waResult = await sendNoShowRescheduleWhatsApp({
@@ -665,7 +687,7 @@ export async function rescheduleBooking(
         className: nextSessionName || booking.className,
         newDate: nextSessionDate || newCalendarDateStr || '',
         newTime: nextSessionTime || booking.classTime,
-        managementUrl: `https://www.farrayscenter.com/es/mi-reserva?email=${encodeURIComponent(booking.email)}&event=${newEventId}`,
+        managementUrl,
       });
       notificationResults.whatsapp = waResult.success;
     } catch (e) {
