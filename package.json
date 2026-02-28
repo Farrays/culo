@@ -60,7 +60,7 @@
     "react": "^19.2.0",
     "react-helmet-async": "^2.0.5",
     "react-i18next": "^16.5.3",
-    "react-router-dom": "^7.9.5",
+    "react-router-dom": "^7.13.0",
     "resend": "^6.9.1",
     "web-vitals": "^5.1.0"
   },
