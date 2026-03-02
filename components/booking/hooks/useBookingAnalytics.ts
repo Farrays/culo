@@ -35,19 +35,21 @@ export function useBookingAnalytics(): UseBookingAnalyticsReturn {
     });
   }, []);
 
-  // Track class selection
+  // Track class selection (deferred to next tick for INP optimization)
   const trackClassSelected = useCallback((classData: ClassData) => {
-    pushToDataLayer({
-      event: 'booking_class_selected',
-      class_id: classData.id,
-      class_name: classData.name,
-      class_style: classData.style,
-      class_level: classData.level,
-      class_instructor: classData.instructor,
-      class_day: classData.dayOfWeek,
-      class_time: classData.time,
-      class_spots_available: classData.spotsAvailable,
-    });
+    setTimeout(() => {
+      pushToDataLayer({
+        event: 'booking_class_selected',
+        class_id: classData.id,
+        class_name: classData.name,
+        class_style: classData.style,
+        class_level: classData.level,
+        class_instructor: classData.instructor,
+        class_day: classData.dayOfWeek,
+        class_time: classData.time,
+        class_spots_available: classData.spotsAvailable,
+      });
+    }, 0);
   }, []);
 
   // Track class shared
@@ -88,28 +90,30 @@ export function useBookingAnalytics(): UseBookingAnalyticsReturn {
     });
   }, []);
 
-  // Track successful booking
+  // Track successful booking (deferred to next tick for INP optimization)
   const trackBookingSuccess = useCallback((classData: ClassData, eventId?: string) => {
-    // Track lead conversion (eventId enables CAPI deduplication)
-    trackLeadConversion({
-      leadSource: 'booking_widget',
-      formName: `Booking - ${classData.style}`,
-      leadValue: LEAD_VALUES.BOOKING_LEAD,
-      pagePath: window.location.pathname,
-      eventId,
-    });
+    setTimeout(() => {
+      // Track lead conversion (eventId enables CAPI deduplication)
+      trackLeadConversion({
+        leadSource: 'booking_widget',
+        formName: `Booking - ${classData.style}`,
+        leadValue: LEAD_VALUES.BOOKING_LEAD,
+        pagePath: window.location.pathname,
+        eventId,
+      });
 
-    // Also push to dataLayer for GTM
-    pushToDataLayer({
-      event: 'booking_success',
-      class_id: classData.id,
-      class_name: classData.name,
-      class_style: classData.style,
-      class_level: classData.level,
-      class_instructor: classData.instructor,
-      class_day: classData.dayOfWeek,
-      class_time: classData.time,
-    });
+      // Also push to dataLayer for GTM
+      pushToDataLayer({
+        event: 'booking_success',
+        class_id: classData.id,
+        class_name: classData.name,
+        class_style: classData.style,
+        class_level: classData.level,
+        class_instructor: classData.instructor,
+        class_day: classData.dayOfWeek,
+        class_time: classData.time,
+      });
+    }, 0);
   }, []);
 
   // Track booking error

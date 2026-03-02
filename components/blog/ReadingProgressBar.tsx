@@ -44,14 +44,25 @@ const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({ targetSelector 
       setProgress(percentage);
     };
 
-    // Calculate on mount and scroll
+    // Calculate on mount and scroll (throttled with rAF to avoid blocking main thread)
     calculateProgress();
-    window.addEventListener('scroll', calculateProgress, { passive: true });
-    window.addEventListener('resize', calculateProgress, { passive: true });
+
+    let rafId: number | null = null;
+    const throttledProgress = () => {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(() => {
+        calculateProgress();
+        rafId = null;
+      });
+    };
+
+    window.addEventListener('scroll', throttledProgress, { passive: true });
+    window.addEventListener('resize', throttledProgress, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', calculateProgress);
-      window.removeEventListener('resize', calculateProgress);
+      window.removeEventListener('scroll', throttledProgress);
+      window.removeEventListener('resize', throttledProgress);
+      if (rafId !== null) window.cancelAnimationFrame(rafId);
     };
   }, [targetSelector]);
 
