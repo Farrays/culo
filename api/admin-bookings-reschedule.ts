@@ -497,6 +497,9 @@ export async function rescheduleBooking(
     await redis.sadd(`reminders:${newCalendarDateStr}`, newEventId);
   }
 
+  // Global index of all trial booking IDs (for admin dashboard)
+  await redis.sadd('all_trial_booking_ids', newEventId);
+
   // Remove old eventId from old date's reminders set
   if (booking.classDate && /^\d{4}-\d{2}-\d{2}$/.test(booking.classDate)) {
     try {

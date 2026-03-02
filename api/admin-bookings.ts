@@ -176,7 +176,7 @@ function toAdminBooking(details: BookingDetails, fallbackDate?: string): AdminBo
     email: details.email,
     phone: details.phone,
     className: details.className,
-    classDate: details.classDate || fallbackDate || '',
+    classDate: (details.classDate || fallbackDate || '').replace(/T.*$/, ''),
     classTime: details.classTime,
     classEndTime: calculateEndTime(details.classTime),
     category: details.category,
@@ -253,7 +253,117 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       dates = [today];
     }
 
-    // Fetch bookings for each date
+    const dateSet = new Set(dates);
+
+    // =========================================================================
+    // COLLECT ALL BOOKING IDs — global index + reminders sets (hybrid)
+    // =========================================================================
+
+    // 1. Try global index first (reliable, contains ALL trial booking IDs)
+    let allEventIds = await redis.smembers('all_trial_booking_ids');
+
+    // 2. If global index is empty, bootstrap from SCAN (one-time for old data)
+    if (allEventIds.length === 0) {
+      console.log('[admin-bookings] Global index empty, bootstrapping from SCAN...');
+      const scannedIds: string[] = [];
+      let cursor = '0';
+      do {
+        const [nextCursor, keys] = await redis.scan(
+          cursor,
+          'MATCH',
+          'booking_details:*',
+          'COUNT',
+          200
+        );
+        cursor = nextCursor;
+        for (const key of keys) {
+          const id = key.replace('booking_details:', '');
+          if (id) scannedIds.push(id);
+        }
+      } while (cursor !== '0');
+
+      if (scannedIds.length > 0) {
+        // Populate the global index for future requests
+        await redis.sadd('all_trial_booking_ids', ...scannedIds);
+        allEventIds = scannedIds;
+        console.log(
+          `[admin-bookings] Bootstrapped ${scannedIds.length} booking IDs into global index`
+        );
+      }
+    }
+
+    // 3. Also merge IDs from reminders sets for the requested dates (belt & suspenders)
+    const reminderEventIds = new Set<string>();
+    for (const dateStr of dates) {
+      const ids = await redis.smembers(`reminders:${dateStr}`);
+      for (const id of ids) reminderEventIds.add(id);
+    }
+
+    // Merge: global + reminders (deduplicate)
+    const combinedIds = new Set([...allEventIds, ...reminderEventIds]);
+
+    // =========================================================================
+    // FETCH ALL BOOKING DETAILS IN BATCH
+    // =========================================================================
+
+    const bookingsByDate = new Map<string, AdminBooking[]>();
+    for (const d of dates) bookingsByDate.set(d, []);
+
+    if (combinedIds.size > 0) {
+      const idArray = [...combinedIds];
+      // Batch fetch in chunks of 200 to avoid huge pipelines
+      const CHUNK_SIZE = 200;
+      for (let i = 0; i < idArray.length; i += CHUNK_SIZE) {
+        const chunk = idArray.slice(i, i + CHUNK_SIZE);
+        const pipeline = redis.pipeline();
+        for (const eventId of chunk) {
+          pipeline.get(`booking_details:${eventId}`);
+        }
+        const results = await pipeline.exec();
+
+        if (!results) continue;
+
+        for (let j = 0; j < results.length; j++) {
+          const [err, result] = results[j] as [Error | null, string | null];
+          if (err || !result) continue;
+
+          try {
+            const details: BookingDetails = JSON.parse(result);
+
+            // Only process trial bookings
+            if (details.bookingType && details.bookingType !== 'trial') continue;
+
+            // Skip bookings rescheduled to another date
+            if (details.rescheduledTo && details.reconciliationStatus === 'rescheduled') continue;
+
+            // Extract the ISO date from classDate (handles both "2026-03-05" and "2026-03-05T18:00:00Z")
+            const isoMatch = (details.classDate || '').match(/\d{4}-\d{2}-\d{2}/);
+            const bookingDate = isoMatch ? isoMatch[0] : '';
+
+            // Only include bookings whose date falls in the requested range
+            if (!bookingDate || !dateSet.has(bookingDate)) continue;
+
+            const booking = toAdminBooking(details, bookingDate);
+            const dayBookings = bookingsByDate.get(bookingDate);
+            if (dayBookings) {
+              dayBookings.push(booking);
+            }
+
+            // Self-heal: ensure this booking is in the reminders set
+            if (!reminderEventIds.has(details.eventId)) {
+              redis.sadd(`reminders:${bookingDate}`, details.eventId).catch(() => {});
+            }
+          } catch {
+            // Skip malformed entries
+          }
+        }
+      }
+    }
+
+    // =========================================================================
+    // BUILD RESPONSE
+    // =========================================================================
+
     const days: DaySummary[] = [];
     let totalBookings = 0;
     let totalAttended = 0;
@@ -262,70 +372,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     let totalRescheduled = 0;
 
     for (const dateStr of dates) {
-      const eventIds = await redis.smembers(`reminders:${dateStr}`);
+      const bookings = bookingsByDate.get(dateStr) || [];
 
-      if (eventIds.length === 0) {
-        days.push({
-          date: dateStr,
-          total: 0,
-          confirmed: 0,
-          attended: 0,
-          noShow: 0,
-          cancelled: 0,
-          rescheduled: 0,
-          bookings: [],
-        });
-        continue;
-      }
+      // Sort by class time
+      bookings.sort((a, b) => a.classTime.localeCompare(b.classTime));
 
-      // Fetch all booking details in parallel
-      const pipeline = redis.pipeline();
-      for (const eventId of eventIds) {
-        pipeline.get(`booking_details:${eventId}`);
-      }
-      const results = await pipeline.exec();
-
-      const bookings: AdminBooking[] = [];
       let dayConfirmed = 0;
       let dayAttended = 0;
       let dayNoShow = 0;
       let dayCancelled = 0;
       let dayRescheduled = 0;
 
-      if (results) {
-        for (const [err, result] of results) {
-          if (err || !result) continue;
-
-          try {
-            const details: BookingDetails = JSON.parse(result as string);
-
-            // CRITICAL: Only process trial bookings
-            // All bookings from our widget are trials, but filter explicitly for safety
-            if (details.bookingType && details.bookingType !== 'trial') continue;
-
-            // Skip bookings rescheduled to another date (stale entries in reminders set)
-            if (details.rescheduledTo && details.reconciliationStatus === 'rescheduled') continue;
-
-            const booking = toAdminBooking(details, dateStr);
-            bookings.push(booking);
-
-            // Count by status
-            const reconStatus = booking.reconciliationStatus;
-            if (reconStatus === 'attended') dayAttended++;
-            else if (reconStatus === 'no_show' || reconStatus === 'no_show_unresolved') dayNoShow++;
-            else if (reconStatus === 'cancelled_on_time' || reconStatus === 'cancelled_late')
-              dayCancelled++;
-            else if (reconStatus === 'rescheduled') dayRescheduled++;
-            else if (booking.status === 'cancelled') dayCancelled++;
-            else dayConfirmed++;
-          } catch {
-            // Skip malformed entries
-          }
-        }
+      for (const booking of bookings) {
+        const reconStatus = booking.reconciliationStatus;
+        if (reconStatus === 'attended') dayAttended++;
+        else if (reconStatus === 'no_show' || reconStatus === 'no_show_unresolved') dayNoShow++;
+        else if (reconStatus === 'cancelled_on_time' || reconStatus === 'cancelled_late')
+          dayCancelled++;
+        else if (reconStatus === 'rescheduled') dayRescheduled++;
+        else if (booking.status === 'cancelled') dayCancelled++;
+        else dayConfirmed++;
       }
-
-      // Sort by class time
-      bookings.sort((a, b) => a.classTime.localeCompare(b.classTime));
 
       days.push({
         date: dateStr,

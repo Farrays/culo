@@ -2212,6 +2212,9 @@ export default async function handler(
           await redis.sadd(`reminders:${calendarDateStr}`, finalEventId);
           console.warn(`[reservar] Added to reminders:${calendarDateStr}`);
         }
+
+        // Global index of all trial booking IDs (for admin dashboard)
+        await redis.sadd('all_trial_booking_ids', finalEventId);
       } catch (e) {
         console.warn('[reservar] Failed to save booking details:', e);
       }
