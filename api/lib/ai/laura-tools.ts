@@ -71,7 +71,7 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
   {
     name: 'search_upcoming_classes',
     description:
-      'Buscar clases disponibles en los próximos días. Usa cuando pregunten por horarios, disponibilidad o clases de un estilo concreto.',
+      'Buscar clases disponibles en los próximos días. Usa cuando pregunten por horarios, disponibilidad o clases de un estilo concreto. Usa los filtros para obtener resultados precisos.',
     input_schema: {
       type: 'object' as const,
       properties: {
@@ -79,6 +79,16 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
           type: 'string',
           description:
             'Estilo de baile (ej: "salsa", "bachata", "twerk", "hip hop", "ballet", "contemporaneo", "heels", "femmology", "sexy style", "stretching")',
+        },
+        day: {
+          type: 'string',
+          description:
+            'Día de la semana en español (ej: "lunes", "martes", "miércoles", "jueves", "viernes"). Filtra para mostrar solo clases de ese día.',
+        },
+        level: {
+          type: 'string',
+          description:
+            'Nivel (ej: "principiantes", "iniciación", "básico", "intermedio", "avanzado", "open level"). Filtra por nivel en el nombre de la clase.',
         },
         days_ahead: {
           type: 'number',
@@ -407,13 +417,51 @@ async function executeSearchClasses(
 ): Promise<string> {
   const memberService = getMemberLookup(context.redis);
   const style = input['style'] as string | undefined;
+  const dayFilter = input['day'] as string | undefined;
+  const levelFilter = input['level'] as string | undefined;
   const daysAhead = Math.min(Number(input['days_ahead']) || 7, 45);
 
   const rawSessions = await memberService.fetchUpcomingSessions(style, daysAhead);
 
   // Filter out sessions that have already started (past dates)
   const now = new Date();
-  const sessions = rawSessions.filter(s => new Date(s.startsAt) > now);
+  let sessions = rawSessions.filter(s => new Date(s.startsAt) > now);
+
+  // Day-of-week filter (Spanish day names → match against dayOfWeek)
+  if (dayFilter) {
+    const dayMap: Record<string, string> = {
+      lunes: 'lunes',
+      martes: 'martes',
+      miércoles: 'miércoles',
+      miercoles: 'miércoles',
+      jueves: 'jueves',
+      viernes: 'viernes',
+      sábado: 'sábado',
+      sabado: 'sábado',
+      domingo: 'domingo',
+    };
+    const normalizedDay = dayMap[dayFilter.toLowerCase()] ?? dayFilter.toLowerCase();
+    sessions = sessions.filter(s => s.dayOfWeek?.toLowerCase() === normalizedDay);
+  }
+
+  // Level filter (match against class name)
+  if (levelFilter) {
+    const lf = levelFilter.toLowerCase();
+    // Map common level terms for broader matching
+    const levelTerms: string[] = [lf];
+    if (lf.includes('principiante') || lf.includes('iniciación') || lf.includes('iniciacion')) {
+      levelTerms.push('principiante', 'principiantes', 'iniciación', 'iniciacion');
+    } else if (lf.includes('básico') || lf.includes('basico')) {
+      levelTerms.push('básico', 'basico', 'basic');
+    } else if (lf.includes('intermedio')) {
+      levelTerms.push('intermedio');
+    } else if (lf.includes('avanzado')) {
+      levelTerms.push('avanzado', 'advanced');
+    } else if (lf.includes('open') || lf.includes('abierto')) {
+      levelTerms.push('open level', 'nivel abierto', 'open');
+    }
+    sessions = sessions.filter(s => levelTerms.some(term => s.name.toLowerCase().includes(term)));
+  }
 
   if (sessions.length === 0) {
     return JSON.stringify({
