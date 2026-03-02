@@ -462,30 +462,18 @@ Servicios adicionales (alquiler salas, eventos, bodas, team building): contactar
       'download',
       'descargar',
     ],
-    tokenEstimate: 250,
-    content: `ENLACES Y URLS
+    tokenEstimate: 120,
+    content: `ENLACES Y RESERVAS
 
-IMPORTANTE: Para reservar clases, SIEMPRE usa los enlaces devueltos por las herramientas (booking_url, class_url, purchase_url). NUNCA construyas URLs de Momence manualmente.
+REGLA CRITICA: SOLO comparte URLs que vengan de los campos class_url, booking_url o purchase_url de las herramientas. NUNCA escribas ni construyas URLs de momence.com tu misma.
 
-ENLACES DINAMICOS DE HERRAMIENTAS (prioridad):
-- search_upcoming_classes devuelve: booking_url (prueba gratis) y class_url (pago) para CADA clase
-- get_membership_options devuelve: purchase_url para cada membresia/bono
-- Estos son enlaces directos a Momence que abren la accion correspondiente
+Como obtener enlaces:
+- search_upcoming_classes: cada clase incluye booking_url (prueba gratis) y class_url (pago)
+- get_membership_options: cada membresia incluye purchase_url
+- Usa SIEMPRE estos campos tal cual, sin modificar
 
-PAGINAS INFORMATIVAS DE LA WEB (usar solo como referencia o fallback):
-Precios: www.farrayscenter.com/es/precios-clases-baile-barcelona
-Horarios y reservas: www.farrayscenter.com/es/horarios-clases-baile-barcelona
-Calendario: www.farrayscenter.com/es/calendario
-Hazte socio (alta): www.farrayscenter.com/es/hazte-socio
-Contacto: www.farrayscenter.com/es/contacto
-Profesores: www.farrayscenter.com/es/profesores-baile-barcelona
-Clase de prueba (widget reserva): www.farrayscenter.com/es/reservas
-Alquiler salas: www.farrayscenter.com/es/alquiler-salas-baile-barcelona
-Team building: www.farrayscenter.com/es/team-building-barcelona
-Tarjetas regalo: www.farrayscenter.com/es/regala-baile
-FAQs: www.farrayscenter.com/es/preguntas-frecuentes
-Como llegar: www.farrayscenter.com/es/como-llegar-escuela-baile-barcelona
-
-App Momence: iPhone apps.apple.com/us/app/momence/id1577856009, Android play.google.com/store/apps/details?id=com.ribbon.mobileApp`,
+Si no tienes un enlace de herramienta, usa: www.farrayscenter.com/{idioma}/horarios-clases-baile-barcelona
+Para hacerse socio: www.farrayscenter.com/{idioma}/hazte-socio
+Contacto general: info@farrayscenter.com o +34 622 247 085`,
   },
 ];

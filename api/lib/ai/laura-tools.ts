@@ -1112,14 +1112,27 @@ async function executeManageTrialBooking(
         }
       }
 
+      // If Momence cancel failed and booking IS in Momence → do NOT touch Redis, return error
+      if (!momenceCancelled && booking.momenceBookingId) {
+        console.error(
+          `[manage_trial_booking] FAILED: Could not cancel Momence booking ${booking.momenceBookingId} for ${booking.email}. Redis NOT modified.`
+        );
+        return JSON.stringify({
+          success: false,
+          error:
+            'No se pudo cancelar la reserva en el sistema. Inténtalo de nuevo o contacta con el centro en info@farrayscenter.com o al +34 622 247 085.',
+          momenceCancelled: false,
+        });
+      }
+
       if (!momenceCancelled) {
+        // No momenceBookingId — booking only exists locally (Customer Leads), safe to clean
         console.warn(
-          `[manage_trial_booking] ⚠️ Could NOT cancel in Momence for ${booking.email} — ` +
-            `momenceBookingId=${booking.momenceBookingId}, sessionId=${booking.sessionId}`
+          `[manage_trial_booking] No Momence booking for ${booking.email} — local-only cancel`
         );
       }
 
-      // 2. Update booking status in Redis
+      // 2. Update booking status in Redis (only reaches here if Momence cancelled OR booking is local-only)
       booking.status = 'cancelled';
       booking.attendance = 'not_attending';
 
@@ -1233,26 +1246,15 @@ async function executeManageTrialBooking(
         }
       }
 
-      if (momenceCancelled) {
-        return JSON.stringify({
-          success: true,
-          message: isOnTime
-            ? `Reserva cancelada correctamente en Momence (crédito devuelto). Puedes volver a reservar cuando quieras.`
-            : `Reserva cancelada en Momence. Nota: la cancelación fue con menos de 2 horas de antelación.`,
-          canRebook: isOnTime,
-          momenceCancelled: true,
-        });
-      } else {
-        // Momence cancel failed but Redis is cleaned — user needs manual help
-        return JSON.stringify({
-          success: false,
-          message:
-            'No se pudo cancelar automáticamente en el sistema de reservas. El equipo del centro debe cancelarla manualmente.',
-          action_needed:
-            'Escribe a info@farrayscenter.com o llama al +34 622 247 085 para confirmar la cancelación.',
-          momenceCancelled: false,
-        });
-      }
+      // If we reach here, cancellation succeeded (Momence or local-only)
+      return JSON.stringify({
+        success: true,
+        message: isOnTime
+          ? `Reserva cancelada correctamente${momenceCancelled ? ' (crédito devuelto)' : ''}. Puedes volver a reservar cuando quieras.`
+          : `Reserva cancelada. Nota: la cancelación fue con menos de 2 horas de antelación.`,
+        canRebook: isOnTime,
+        momenceCancelled,
+      });
     } catch (error) {
       return JSON.stringify({
         error: `No se pudo cancelar: ${error instanceof Error ? error.message : 'Error desconocido'}`,
