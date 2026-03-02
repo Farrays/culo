@@ -951,14 +951,34 @@ async function executeManageTrialBooking(
     });
   }
 
-  // Find booking by phone in Redis
-  const normalizedPhone = context.phone.replace(/[\s\-+()]/g, '');
-  const eventId = (await context.redis.get(`phone:${normalizedPhone}`)) as string | null;
+  // Find booking by phone in Redis — try multiple format variants
+  const rawPhone = context.phone.replace(/[\s\-+()]/g, '');
+  // Build phone variants: with country code, without, as-is
+  const phoneVariants = [rawPhone];
+  if (rawPhone.startsWith('34') && rawPhone.length > 9) {
+    phoneVariants.push(rawPhone.slice(2)); // Without country code: 622247085
+  } else if (/^[6789]\d{8}$/.test(rawPhone)) {
+    phoneVariants.push('34' + rawPhone); // With Spanish country code: 34622247085
+  }
+
+  let eventId: string | null = null;
+  let matchedPhone = rawPhone;
+  for (const variant of phoneVariants) {
+    const found = (await context.redis.get(`phone:${variant}`)) as string | null;
+    if (found) {
+      eventId = found;
+      matchedPhone = variant;
+      break;
+    }
+  }
 
   if (!eventId) {
+    const lang = context.lang || 'es';
     return JSON.stringify({
       found: false,
-      message: 'No se encontró ninguna reserva de clase de prueba asociada a este número.',
+      message:
+        'No se encontró ninguna reserva de clase de prueba asociada a este número. Si reservaste con otro teléfono, puedes cancelar desde tu email de confirmación o contactarnos en recepción.',
+      scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-clases-baile-barcelona`,
     });
   }
 
@@ -1160,12 +1180,17 @@ async function executeManageTrialBooking(
       // Delete dedup by email
       await context.redis.del(`booking:${email}`);
 
-      // Delete phone→eventId mapping
-      if (bookingPhone) {
-        await context.redis.del(`phone:${bookingPhone}`);
-        await context.redis.del(`phone_email:${bookingPhone}`);
-        console.log(`[manage_trial_booking] Phone keys cleared for ${bookingPhone}`);
+      // Delete phone→eventId mapping (both stored format and lookup format)
+      const phonesToClear = new Set<string>();
+      if (bookingPhone) phonesToClear.add(bookingPhone);
+      if (matchedPhone) phonesToClear.add(matchedPhone);
+      for (const p of phonesToClear) {
+        await context.redis.del(`phone:${p}`);
+        await context.redis.del(`phone_email:${p}`);
       }
+      console.log(
+        `[manage_trial_booking] Phone keys cleared for: ${[...phonesToClear].join(', ')}`
+      );
 
       // Remove from reminders set
       if (booking.classDate && /^\d{4}-\d{2}-\d{2}$/.test(booking.classDate)) {
@@ -1247,12 +1272,14 @@ async function executeManageTrialBooking(
       }
 
       // If we reach here, cancellation succeeded (Momence or local-only)
+      const lang = context.lang || 'es';
       return JSON.stringify({
         success: true,
         message: isOnTime
           ? `Reserva cancelada correctamente${momenceCancelled ? ' (crédito devuelto)' : ''}. Puedes volver a reservar cuando quieras.`
           : `Reserva cancelada. Nota: la cancelación fue con menos de 2 horas de antelación.`,
         canRebook: isOnTime,
+        rebookUrl: isOnTime ? `https://www.farrayscenter.com/${lang}/reservas` : undefined,
         momenceCancelled,
       });
     } catch (error) {
