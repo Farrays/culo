@@ -298,35 +298,38 @@ export function trackLeadConversion(params: {
     );
   }
 
-  // 1. Push to dataLayer for GTM (GA4 + any GTM-based tags)
-  // _meta_pixel_handled = true tells GTM to NOT fire its own Meta Pixel Lead tag
-  pushToDataLayer({
-    event: 'generate_lead',
-    lead_source: params.leadSource,
-    form_name: params.formName,
-    lead_value: params.leadValue,
-    currency: 'EUR',
-    page_path: pagePath,
-    discount_code: params.discountCode,
-    event_id: eventId,
-    _meta_pixel_handled: true,
-    ...utmParams,
-  });
+  // Defer analytics to next tick so the browser can paint the UI response first (INP optimization)
+  setTimeout(() => {
+    // 1. Push to dataLayer for GTM (GA4 + any GTM-based tags)
+    // _meta_pixel_handled = true tells GTM to NOT fire its own Meta Pixel Lead tag
+    pushToDataLayer({
+      event: 'generate_lead',
+      lead_source: params.leadSource,
+      form_name: params.formName,
+      lead_value: params.leadValue,
+      currency: 'EUR',
+      page_path: pagePath,
+      discount_code: params.discountCode,
+      event_id: eventId,
+      _meta_pixel_handled: true,
+      ...utmParams,
+    });
 
-  // 2. Always fire Meta Pixel with eventID + value/currency for CAPI deduplication
-  if (hasConsentFor('marketing') && window.fbq) {
-    window.fbq(
-      'track',
-      'Lead',
-      {
-        content_name: params.formName,
-        content_category: params.leadSource,
-        value: params.leadValue,
-        currency: 'EUR',
-      },
-      { eventID: eventId }
-    );
-  }
+    // 2. Always fire Meta Pixel with eventID + value/currency for CAPI deduplication
+    if (hasConsentFor('marketing') && window.fbq) {
+      window.fbq(
+        'track',
+        'Lead',
+        {
+          content_name: params.formName,
+          content_category: params.leadSource,
+          value: params.leadValue,
+          currency: 'EUR',
+        },
+        { eventID: eventId }
+      );
+    }
+  }, 0);
 }
 
 /**

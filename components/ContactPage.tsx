@@ -180,7 +180,7 @@ const ContactPage: React.FC = () => {
     };
 
     updateRateLimitInfo();
-    const interval = setInterval(updateRateLimitInfo, 1000);
+    const interval = setInterval(updateRateLimitInfo, 60000);
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
