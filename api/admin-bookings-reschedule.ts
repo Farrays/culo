@@ -246,11 +246,12 @@ export async function rescheduleBooking(
     targetDate.setDate(targetDate.getDate() + 7);
     const targetDateStr = targetDate.toISOString().split('T')[0] || ''; // "YYYY-MM-DD"
 
-    // Search window: target date ± 1 day (covers timezone edge cases)
+    // Search window: target date -1 to +21 days
+    // Wider window covers biweekly/irregular schedules (class may not run every week)
     const searchStart = new Date(targetDate);
     searchStart.setDate(searchStart.getDate() - 1);
     const searchEnd = new Date(targetDate);
-    searchEnd.setDate(searchEnd.getDate() + 2); // +2 because startBefore is exclusive
+    searchEnd.setDate(searchEnd.getDate() + 22); // +22 to cover up to 3 weeks ahead
 
     // Original time in minutes from midnight (for comparison)
     const [origHour, origMin] = (booking.classTime || '00:00').split(':').map(Number);
@@ -273,8 +274,8 @@ export async function rescheduleBooking(
         const sessionsPage = await client.getSessions({
           page: currentPage,
           pageSize: PAGE_SIZE,
-          startAfter: searchStart.toISOString(),
-          startBefore: searchEnd.toISOString(),
+          startAfter: searchStart.toISOString().split('T')[0],
+          startBefore: searchEnd.toISOString().split('T')[0],
           sortBy: 'startsAt',
           sortOrder: 'ASC',
         });
@@ -351,6 +352,30 @@ export async function rescheduleBooking(
           match = fallbackMatch?.session;
           console.log(
             `[reschedule] ⚠️ Fallback match: same name + same day but different time (${fallbackMatch?.timeDiffMinutes ?? 0}min diff)`
+          );
+        }
+      }
+
+      // Priority 3: Not on target date, but next available occurrence (same weekday, close time)
+      if (!match) {
+        const nextAvailable = scoredMatches
+          .filter(m => !m.dayMatch && m.timeDiffMinutes <= 30)
+          .sort((a, b) => {
+            // Sort by date (earliest first)
+            const aDate = (a.session as { startsAt?: string }).startsAt || '';
+            const bDate = (b.session as { startsAt?: string }).startsAt || '';
+            return aDate.localeCompare(bDate);
+          });
+
+        if (nextAvailable.length > 0) {
+          const fallback = nextAvailable[0];
+          match = fallback?.session;
+          const matchDate = (match as { startsAt?: string })?.startsAt;
+          const matchDateStr = matchDate
+            ? new Date(matchDate).toLocaleDateString('en-CA', { timeZone: SPAIN_TIMEZONE })
+            : '?';
+          console.log(
+            `[reschedule] ⚠️ Class not found on ${targetDateStr}, using next available occurrence on ${matchDateStr}`
           );
         }
       }
