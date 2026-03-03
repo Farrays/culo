@@ -551,7 +551,7 @@ function executeGetWeeklySchedule(input: Record<string, unknown>): string {
     found: classes.length,
     schedule: grouped,
     _instruction:
-      'Este horario es solo referencia. NO tiene enlaces de reserva. Para dar al usuario un enlace directo de reserva o consultar disponibilidad real, DEBES llamar a search_upcoming_classes con los filtros adecuados (style, day, level). NUNCA compartas URLs que no vengan de search_upcoming_classes o get_membership_options.',
+      'ATENCION: Este horario es solo referencia general. NO tiene enlaces de reserva ni IDs. Para ofrecer clases concretas al usuario DEBES llamar a search_upcoming_classes (tiene booking_url y class_url reales). NUNCA uses estos datos para listar clases directamente al usuario sin antes llamar a search_upcoming_classes. NUNCA inventes booking_url con classId a partir de estos datos.',
   });
 }
 

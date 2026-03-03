@@ -34,8 +34,8 @@ import { retrieveRelevantChunks } from './rag/index.js';
 
 /** Static URL patterns that Laura is allowed to share (website pages only) */
 const VALID_STATIC_URL_PATTERNS: RegExp[] = [
-  // Booking widget (only allows ?classId=<number> or no params)
-  /^(https?:\/\/)?(www\.)?farrayscenter\.com\/[a-z]{2}\/reservas(\?classId=\d+)?$/i,
+  // Booking widget WITHOUT classId (generic page only — classId URLs must come from tools)
+  /^(https?:\/\/)?(www\.)?farrayscenter\.com\/[a-z]{2}\/reservas$/i,
   // Known website pages
   /^(https?:\/\/)?(www\.)?farrayscenter\.com\/[a-z]{2}\/(hazte-socio|horarios-clases-baile-barcelona|precios-clases-baile-barcelona|calendario|contacto|mi-reserva|profesores-baile-barcelona|alquiler-salas-baile-barcelona|team-building-barcelona|regala-baile|preguntas-frecuentes|como-llegar-escuela-baile-barcelona)$/i,
   // App store links (from FAQs chunk)
@@ -130,6 +130,7 @@ interface AgentResponse {
 interface ConversationMessage {
   role: 'user' | 'assistant';
   content: string;
+  timestamp?: string;
 }
 
 // Cliente Anthropic (singleton)
@@ -257,8 +258,8 @@ async function handleResponse(params: {
   // Save to history (original, not formatted)
   const updatedHistory: ConversationMessage[] = [
     ...history,
-    { role: 'user', content: text },
-    { role: 'assistant', content: assistantMessage },
+    { role: 'user', content: text, timestamp: new Date().toISOString() },
+    { role: 'assistant', content: assistantMessage, timestamp: new Date().toISOString() },
   ];
   await saveConversationHistory(redis, phone, updatedHistory);
 
