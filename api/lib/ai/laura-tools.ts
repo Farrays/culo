@@ -142,16 +142,21 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
   {
     name: 'cancel_booking',
     description:
-      'Cancelar una reserva. IMPORTANTE: SIEMPRE pide confirmación al usuario antes de ejecutar. Pregunta "¿Seguro que quieres cancelar [nombre clase]?"',
+      'Cancelar una reserva de un miembro. IMPORTANTE: SIEMPRE pide confirmación al usuario antes de ejecutar. Puedes pasar booking_id (si lo tienes) O class_name (nombre de la clase a cancelar). Si solo pasas class_name, se buscará automáticamente la reserva.',
     input_schema: {
       type: 'object' as const,
       properties: {
         booking_id: {
           type: 'number',
-          description: 'ID de la reserva a cancelar (obtenido de get_member_bookings)',
+          description: 'ID de la reserva a cancelar (si lo conoces de get_member_bookings)',
+        },
+        class_name: {
+          type: 'string',
+          description:
+            'Nombre de la clase a cancelar (ej: "Salsa Cubana"). Se usa para buscar la reserva si no tienes booking_id.',
         },
       },
-      required: ['booking_id'],
+      required: [],
     },
   },
   {
@@ -675,14 +680,56 @@ async function executeCancelBooking(
     return JSON.stringify({ error: 'No se encontró tu perfil de miembro.' });
   }
 
-  const bookingId = input['booking_id'] as number;
-  if (!bookingId) {
-    return JSON.stringify({
-      error: 'Falta el ID de la reserva. Consulta primero tus reservas.',
-    });
-  }
+  let bookingId = input['booking_id'] as number | undefined;
+  const className = input['class_name'] as string | undefined;
 
   const client = getMomenceClient(context.redis);
+
+  // If no booking_id, search by class_name
+  if (!bookingId) {
+    if (!className) {
+      return JSON.stringify({
+        error: 'Indica el nombre de la clase a cancelar o su booking_id.',
+      });
+    }
+
+    try {
+      const now = new Date();
+      const result = await client.getMemberSessionBookings(context.memberId, {
+        page: 0,
+        pageSize: 20,
+        startAfter: now.toISOString(),
+      });
+
+      const bookings = (result.payload || []).filter(b => !b.cancelledAt);
+      const classLower = className.toLowerCase();
+      const match = bookings.find(
+        b => b.session?.name && b.session.name.toLowerCase().includes(classLower)
+      );
+
+      if (!match) {
+        // Return available bookings so Laura can show them
+        const available = bookings.map(b => ({
+          booking_id: b.id,
+          class_name: b.session?.name || 'Clase',
+          starts_at: b.session?.startsAt || '',
+        }));
+        return JSON.stringify({
+          error: `No se encontró una reserva de "${className}".`,
+          available_bookings: available,
+          hint: 'Muestra estas reservas al usuario para que elija cuál cancelar.',
+        });
+      }
+
+      bookingId = match.id;
+      console.log(
+        `[cancel_booking] Matched "${className}" → booking ${bookingId} (${match.session?.name})`
+      );
+    } catch (searchError) {
+      const msg = searchError instanceof Error ? searchError.message : 'Error desconocido';
+      return JSON.stringify({ error: `Error buscando reservas: ${msg}` });
+    }
+  }
 
   try {
     await client.cancelBooking(bookingId, {

@@ -49,6 +49,7 @@ export interface ConversationSummary {
 interface ConversationMessage {
   role: 'user' | 'assistant';
   content: string;
+  timestamp?: string;
 }
 
 // ============================================================================
@@ -277,7 +278,7 @@ export async function saveUserMessageDuringTakeover(
         typeof data === 'object' ? (data as ConversationMessage[]) : JSON.parse(data as string);
     }
 
-    messages.push({ role: 'user', content: text });
+    messages.push({ role: 'user', content: text, timestamp: new Date().toISOString() });
 
     // Mantener últimos N mensajes
     const recent = messages.slice(-MAX_CONVERSATION_MESSAGES);
@@ -301,7 +302,7 @@ export async function saveHumanReply(redis: Redis, phone: string, text: string):
         typeof data === 'object' ? (data as ConversationMessage[]) : JSON.parse(data as string);
     }
 
-    messages.push({ role: 'assistant', content: text });
+    messages.push({ role: 'assistant', content: text, timestamp: new Date().toISOString() });
 
     const recent = messages.slice(-MAX_CONVERSATION_MESSAGES);
     await redis.set(key, JSON.stringify(recent), { ex: CONVERSATION_TTL });
