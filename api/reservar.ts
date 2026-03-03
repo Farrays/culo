@@ -122,7 +122,7 @@ function generateBookingDetails(data: {
   <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
     <table style="width: 100%; border-collapse: collapse;">
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${formatDateReadable(data.classDate)}</strong></td></tr>
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
       ${data.instructor ? `<tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Instructor</span><br><strong>${data.instructor}</strong></td></tr>` : ''}
       <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>${LOCATION_ADDRESS}</strong><br><span style="color: #666;">${LOCATION_STREET}</span></td></tr>
@@ -293,7 +293,7 @@ async function sendBookingConfirmation(data: {
       subject: `Reserva confirmada: ${data.className}`,
       html: `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} está confirmada para el ${data.classDate} a las ${data.classTime}. ¡Te esperamos!`)}
+  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} está confirmada para el ${formatDateReadable(data.classDate)} a las ${data.classTime}. ¡Te esperamos!`)}
   ${generateHeader()}
   <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
@@ -383,7 +383,7 @@ async function sendAdminBookingNotification(data: {
       </tr>
       <tr>
         <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Fecha:</strong></td>
-        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${data.classDate}</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;">${formatDateReadable(data.classDate)}</td>
       </tr>
       <tr>
         <td style="padding: 8px 0; border-bottom: 1px solid #c8e6c9;"><strong>Hora:</strong></td>
@@ -829,7 +829,7 @@ async function sendBookingConfirmationWhatsApp(data: {
                 parameters: [
                   { type: 'text', text: data.firstName },
                   { type: 'text', text: data.className },
-                  { type: 'text', text: data.classDate },
+                  { type: 'text', text: formatDateReadable(data.classDate) },
                   { type: 'text', text: data.classTime },
                 ],
               },

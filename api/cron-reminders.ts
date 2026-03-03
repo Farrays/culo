@@ -25,6 +25,25 @@ import { Resend } from 'resend';
 const SPAIN_TIMEZONE = 'Europe/Madrid';
 const BOOKING_MANAGEMENT_URL = 'https://www.farrayscenter.com/es/mi-reserva';
 
+function formatDateReadable(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const dateStr = isoDate.includes('T') ? isoDate : isoDate + 'T12:00:00Z';
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return isoDate;
+    const formatted = new Intl.DateTimeFormat('es-ES', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: SPAIN_TIMEZONE,
+    }).format(date);
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+  } catch {
+    return isoDate;
+  }
+}
+
 // Brand colors
 const BRAND_PRIMARY = '#B01E3C';
 const BRAND_DARK = '#800020';
@@ -303,7 +322,7 @@ function generateBookingDetails(data: {
   <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
     <table style="width: 100%; border-collapse: collapse;">
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${formatDateReadable(data.classDate)}</strong></td></tr>
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
       <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>${LOCATION_ADDRESS}</strong><br><span style="color: #666;">${LOCATION_STREET}</span></td></tr>
     </table>

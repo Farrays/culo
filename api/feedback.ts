@@ -2,6 +2,25 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
 import { Resend } from 'resend';
 
+function formatDateReadable(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const dateStr = isoDate.includes('T') ? isoDate : isoDate + 'T12:00:00Z';
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return isoDate;
+    const formatted = new Intl.DateTimeFormat('es-ES', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'Europe/Madrid',
+    }).format(date);
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+  } catch {
+    return isoDate;
+  }
+}
+
 /**
  * API Route: GET /api/feedback
  *
@@ -158,7 +177,7 @@ async function sendFeedbackNotification(feedback: FeedbackData): Promise<boolean
         <span class="label">Clase:</span> ${feedback.className}
       </div>
       <div class="info-row">
-        <span class="label">Fecha clase:</span> ${feedback.classDate} a las ${feedback.classTime}
+        <span class="label">Fecha clase:</span> ${formatDateReadable(feedback.classDate)} a las ${feedback.classTime}
       </div>
       <div class="info-row">
         <span class="label">Feedback recibido:</span> ${new Date(feedback.receivedAt).toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}
@@ -260,7 +279,7 @@ async function sendCommentNotification(
         <span class="label">Clase:</span> ${feedback.className}
       </div>
       <div class="info-row">
-        <span class="label">Fecha clase:</span> ${feedback.classDate} a las ${feedback.classTime}
+        <span class="label">Fecha clase:</span> ${formatDateReadable(feedback.classDate)} a las ${feedback.classTime}
       </div>
       <div class="info-row">
         <span class="label">Comentario enviado:</span> ${new Date(feedback.commentReceivedAt || '').toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}

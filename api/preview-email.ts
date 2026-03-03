@@ -1,5 +1,24 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+function formatDateReadable(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const dateStr = isoDate.includes('T') ? isoDate : isoDate + 'T12:00:00Z';
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return isoDate;
+    const formatted = new Intl.DateTimeFormat('es-ES', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'Europe/Madrid',
+    }).format(date);
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+  } catch {
+    return isoDate;
+  }
+}
+
 /**
  * API Route: GET /api/preview-email
  *
@@ -128,7 +147,7 @@ function generateBookingDetails(data: {
   <div style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
     <table style="width: 100%; border-collapse: collapse;">
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Clase</span><br><strong style="font-size: 18px;">${data.className}</strong></td></tr>
-      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${data.classDate}</strong></td></tr>
+      <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Fecha</span><br><strong>${formatDateReadable(data.classDate)}</strong></td></tr>
       <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Hora</span><br><strong>${data.classTime}</strong></td></tr>
       ${data.instructor ? `<tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><span style="color: #666;">Instructor</span><br><strong>${data.instructor}</strong></td></tr>` : ''}
       <tr><td style="padding: 10px 0;"><span style="color: #666;">Ubicación</span><br><strong>${LOCATION_ADDRESS}</strong><br><span style="color: #666;">${LOCATION_STREET}</span></td></tr>
@@ -245,7 +264,7 @@ function generateWhatToBringSection(category?: ClassCategory): string {
 function generateConfirmationEmailHtml(data: ConfirmationHtmlData): string {
   return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} está confirmada para el ${data.classDate} a las ${data.classTime}. ¡Te esperamos!`)}
+  ${generatePreheader(`${data.firstName}, tu clase de ${data.className} está confirmada para el ${formatDateReadable(data.classDate)} a las ${data.classTime}. ¡Te esperamos!`)}
   ${generateHeader()}
   <div style="background: ${BRAND_GRADIENT}; color: white; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
     <h2 style="margin: 0 0 10px 0;">¡Reserva Confirmada!</h2>
@@ -337,7 +356,7 @@ function generateCancellationEmailHtml(data: CancellationHtmlData): string {
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
     <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
-    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> del ${data.classDate} a las ${data.classTime} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
+    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong> del ${formatDateReadable(data.classDate)} a las ${data.classTime} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
   </div>
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
