@@ -22,6 +22,29 @@ const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
 const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 const BOOKING_KEY_PREFIX = 'booking:';
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+
+/**
+ * Formats ISO date to readable Spanish format.
+ * "2026-03-13T17:00:00.000Z" → "Jueves 13 de marzo de 2026"
+ */
+function formatDateReadable(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return isoDate;
+    const formatted = new Intl.DateTimeFormat('es-ES', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: SPAIN_TIMEZONE,
+    }).format(date);
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+  } catch {
+    return isoDate;
+  }
+}
 
 // Fetch timeout
 const DEFAULT_FETCH_TIMEOUT_MS = 8000; // 8 seconds
@@ -368,7 +391,7 @@ async function sendCancellationEmailInline(data: {
   <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 15px 0; font-size: 18px;">¡Hola <strong>${data.firstName}</strong>!</p>
     <p style="margin: 0 0 15px 0;">¡Vaya! Sentimos que no puedas venir a la clase. 😔</p>
-    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong>${data.classDate ? ` del ${data.classDate}` : ''}${data.classTime ? ` a las ${data.classTime}` : ''} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
+    <p style="margin: 0;">Tu clase de <strong>${data.className}</strong>${data.classDate ? ` del ${formatDateReadable(data.classDate)}` : ''}${data.classTime ? ` a las ${data.classTime}` : ''} ha sido cancelada y la plaza liberada para que otra persona pueda aprovecharla.</p>
   </div>
   <div style="background: #fff3e0; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
     <p style="margin: 0 0 10px 0;"><strong>¿Te arrepientes?</strong> 😉</p>
@@ -750,14 +773,14 @@ export default async function handler(
           from: `"${bookingData.firstName} ${bookingData.lastName}" <noreply@farrayscenter.com>`,
           to: 'info@farrayscenter.com',
           replyTo: bookingData.email,
-          subject: `Cancelación de ${bookingData.className} (${bookingData.firstName} ${bookingData.lastName}) el ${bookingData.classDate}`,
+          subject: `Cancelación de ${bookingData.className} (${bookingData.firstName} ${bookingData.lastName}) el ${formatDateReadable(bookingData.classDate)}`,
           html: `<h2>Cancelación de Reserva</h2>
             <p><strong>Alumno:</strong> ${bookingData.firstName} ${bookingData.lastName}</p>
             <p><strong>Email:</strong> ${bookingData.email}</p>
             <p><strong>Teléfono:</strong> ${bookingData.phone || 'No proporcionado'}</p>
             <hr>
             <p><strong>Clase:</strong> ${bookingData.className}</p>
-            <p><strong>Fecha:</strong> ${bookingData.classDate}</p>
+            <p><strong>Fecha:</strong> ${formatDateReadable(bookingData.classDate)}</p>
             <p><strong>Hora:</strong> ${bookingData.classTime}</p>
             <hr>
             <p style="color: #dc3545;"><strong>Estado:</strong> CANCELADA</p>
