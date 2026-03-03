@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import Redis from 'ioredis';
+import { MomenceApiClient } from './lib/momence-client.js';
 
 /**
  * API Route: /api/admin-bookings
@@ -87,6 +88,10 @@ interface AdminBooking {
   rescheduledTo: string | null;
   rescheduledFrom: string | null;
   rescheduleCount: number;
+  // New fields for dashboard indicators
+  checkedIn: boolean;
+  membershipStatus: 'none' | 'active' | 'unknown';
+  membershipName: string | null;
 }
 
 interface DaySummary {
@@ -192,7 +197,151 @@ function toAdminBooking(details: BookingDetails, fallbackDate?: string): AdminBo
     rescheduledTo: details.rescheduledTo || null,
     rescheduledFrom: details.rescheduledFrom || null,
     rescheduleCount: details.rescheduleCount || 0,
+    // Defaults - enriched later by enrichBookingsWithMomenceData()
+    checkedIn: false,
+    membershipStatus: 'unknown',
+    membershipName: null,
   };
+}
+
+// ============================================================================
+// MOMENCE ENRICHMENT (check-in + membership status)
+// ============================================================================
+
+/**
+ * Enrich bookings with live Momence data:
+ * 1. Check-in status: queries getSessionBookings for each unique sessionId
+ * 2. Membership status: queries searchMembers + active memberships for each unique email
+ *
+ * Both are batched to minimize API calls. Failures are non-blocking (defaults remain).
+ */
+async function enrichBookingsWithMomenceData(allBookings: AdminBooking[]): Promise<void> {
+  let momence: MomenceApiClient;
+  try {
+    momence = new MomenceApiClient(null);
+    // Validate credentials early
+    await momence.getAccessToken();
+  } catch (e) {
+    console.warn(
+      '[admin-bookings] Momence unavailable, skipping enrichment:',
+      e instanceof Error ? e.message : e
+    );
+    return;
+  }
+
+  // ------------------------------------------------------------------
+  // 1. CHECK-IN STATUS: batch by unique sessionId
+  // ------------------------------------------------------------------
+  const sessionIds = new Set<string>();
+  for (const b of allBookings) {
+    if (b.sessionId && b.momenceBookingId) {
+      sessionIds.add(b.sessionId);
+    }
+  }
+
+  // Map: sessionId → Map<momenceBookingId, checkedIn>
+  const checkinMap = new Map<string, Map<number, boolean>>();
+
+  for (const sid of sessionIds) {
+    try {
+      const resp = await momence.getSessionBookings(parseInt(sid, 10), {
+        page: 1,
+        pageSize: 200,
+        includeCancelled: true,
+      });
+      const map = new Map<number, boolean>();
+      for (const booking of resp.payload) {
+        map.set(booking.id, booking.checkedIn || false);
+      }
+      checkinMap.set(sid, map);
+    } catch (e) {
+      console.warn(
+        `[admin-bookings] Check-in fetch failed for session ${sid}:`,
+        e instanceof Error ? e.message : e
+      );
+    }
+  }
+
+  // Apply check-in data
+  for (const b of allBookings) {
+    if (b.sessionId && b.momenceBookingId) {
+      const sessionMap = checkinMap.get(b.sessionId);
+      if (sessionMap) {
+        b.checkedIn = sessionMap.get(b.momenceBookingId) ?? false;
+      }
+    }
+    // If reconciliation already marked as attended, also set checkedIn true
+    if (b.reconciliationStatus === 'attended') {
+      b.checkedIn = true;
+    }
+  }
+
+  // ------------------------------------------------------------------
+  // 2. MEMBERSHIP STATUS: batch by unique email
+  // ------------------------------------------------------------------
+  const uniqueEmails = new Set<string>();
+  for (const b of allBookings) {
+    if (b.email) uniqueEmails.add(b.email.toLowerCase());
+  }
+
+  // Map: email → { status, name }
+  const membershipMap = new Map<string, { status: 'none' | 'active'; name: string | null }>();
+
+  for (const email of uniqueEmails) {
+    try {
+      const searchResult = await momence.searchMembers({
+        page: 0,
+        pageSize: 5,
+        query: email,
+      });
+
+      const member = searchResult.payload.find(m => m.email?.toLowerCase() === email);
+
+      if (!member) {
+        membershipMap.set(email, { status: 'none', name: null });
+        continue;
+      }
+
+      // Check active memberships
+      const memberships = await momence.getMemberBoughtMemberships(member.id, {
+        page: 0,
+        pageSize: 10,
+      });
+
+      const activeMemberships = memberships.payload.filter(m => !m.isFrozen);
+
+      if (activeMemberships.length > 0) {
+        const first = activeMemberships[0];
+        membershipMap.set(email, {
+          status: 'active',
+          name: first?.membership?.name || null,
+        });
+      } else {
+        membershipMap.set(email, { status: 'none', name: null });
+      }
+    } catch (e) {
+      console.warn(
+        `[admin-bookings] Membership check failed for ${email.slice(0, 4)}...:`,
+        e instanceof Error ? e.message : e
+      );
+      // Leave as 'unknown'
+    }
+  }
+
+  // Apply membership data
+  for (const b of allBookings) {
+    const emailKey = b.email?.toLowerCase();
+    const info = emailKey ? membershipMap.get(emailKey) : undefined;
+    if (info) {
+      b.membershipStatus = info.status;
+      b.membershipName = info.name;
+    }
+  }
+
+  console.log(
+    `[admin-bookings] Enriched ${allBookings.length} bookings: ` +
+      `${sessionIds.size} sessions checked, ${uniqueEmails.size} emails checked`
+  );
 }
 
 // ============================================================================
@@ -333,8 +482,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             // Only process trial bookings
             if (details.bookingType && details.bookingType !== 'trial') continue;
 
-            // Skip bookings rescheduled to another date
-            if (details.rescheduledTo && details.reconciliationStatus === 'rescheduled') continue;
+            // NOTE: rescheduled bookings are now included (not skipped)
+            // so the frontend can show them with a visual indicator
 
             // Extract the ISO date from classDate (handles both "2026-03-05" and "2026-03-05T18:00:00Z")
             const isoMatch = (details.classDate || '').match(/\d{4}-\d{2}-\d{2}/);
@@ -357,6 +506,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             // Skip malformed entries
           }
         }
+      }
+    }
+
+    // =========================================================================
+    // ENRICH WITH MOMENCE DATA (check-in + membership)
+    // =========================================================================
+
+    const allBookingsFlat: AdminBooking[] = [];
+    for (const dayBookings of bookingsByDate.values()) {
+      allBookingsFlat.push(...dayBookings);
+    }
+
+    if (allBookingsFlat.length > 0) {
+      try {
+        await enrichBookingsWithMomenceData(allBookingsFlat);
+      } catch (e) {
+        console.warn(
+          '[admin-bookings] Enrichment failed (non-blocking):',
+          e instanceof Error ? e.message : e
+        );
       }
     }
 
