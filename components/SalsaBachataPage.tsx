@@ -365,6 +365,9 @@ const SalsaBachataPage: React.FC = () => {
       name: "Farray's International Dance Center",
     },
     license: `${baseUrl}/aviso-legal`,
+    acquireLicensePage: `${baseUrl}/aviso-legal`,
+    copyrightNotice: `© ${new Date().getFullYear()} Farray's International Dance Center`,
+    creditText: "Farray's International Dance Center",
   };
 
   // Canonical URL for this page
