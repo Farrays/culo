@@ -267,7 +267,7 @@ export async function rescheduleBooking(
       // Fetch all sessions in the search window (may need multiple pages)
       // Typical schedule has ~30 classes/day, search window is 3 days = ~90 sessions
       const allSessions: Record<string, unknown>[] = [];
-      let currentPage = 1;
+      let currentPage = 0;
       const PAGE_SIZE = 100;
       let hasMore = true;
 
