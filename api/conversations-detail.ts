@@ -52,7 +52,6 @@ export default async function handler(
       contactName,
       messages,
       takeover: takeover || { active: false },
-      _v: '2026-03-04a',
     });
   } catch (error) {
     console.error('[conversations-detail] Error:', error);
