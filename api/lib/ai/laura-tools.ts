@@ -60,6 +60,8 @@ export interface ToolContext {
   redis: Redis;
   phone: string;
   memberId?: number;
+  /** IDs of bought memberships with available credits (for Momence booking API) */
+  boughtMembershipIds?: number[];
   lang: string;
 }
 
@@ -640,7 +642,11 @@ async function executeCreateBooking(
   const client = getMomenceClient(context.redis);
 
   try {
-    const result = await client.createFreeBooking(sessionId, context.memberId);
+    const result = await client.createFreeBooking(
+      sessionId,
+      context.memberId,
+      context.boughtMembershipIds
+    );
     return JSON.stringify({
       success: true,
       message: 'Reserva creada correctamente.',

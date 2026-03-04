@@ -31,6 +31,8 @@ export interface MemberInfo {
   creditsAvailable?: number;
   membershipName?: string;
   memberSince?: string;
+  /** IDs of bought memberships with available credits (needed for Momence booking API) */
+  boughtMembershipIds?: number[];
 }
 
 export interface MemberLookupResult {
@@ -335,6 +337,7 @@ export class MemberLookupService {
     hasActiveMembership: boolean;
     creditsAvailable: number;
     membershipName?: string;
+    boughtMembershipIds?: number[];
   }> {
     console.log(`[member-lookup] 📊 fetchMembershipInfo for member: ${memberId}`);
     try {
@@ -406,20 +409,25 @@ export class MemberLookupService {
       // - combinedUsageLimit - combinedUsage: combined limits
       let totalCredits = 0;
       let activeMembershipName = '';
+      const boughtMembershipIds: number[] = [];
 
       for (const m of memberships) {
         // Skip frozen memberships
         if (m.isFrozen) continue;
 
+        let hasCredits = false;
+
         // Package credits (eventCreditsLeft for class packages)
         if (typeof m.eventCreditsLeft === 'number' && m.eventCreditsLeft > 0) {
           totalCredits += m.eventCreditsLeft;
+          hasCredits = true;
           console.log(`[member-lookup] 📦 Package credits: ${m.eventCreditsLeft}`);
         }
 
         // Money credits
         if (typeof m.moneyCreditsLeft === 'number' && m.moneyCreditsLeft > 0) {
           totalCredits += m.moneyCreditsLeft;
+          hasCredits = true;
           console.log(`[member-lookup] 💰 Money credits: ${m.moneyCreditsLeft}`);
         }
 
@@ -428,6 +436,7 @@ export class MemberLookupService {
           const remaining = m.usageLimitForSessions - m.usedSessions;
           if (remaining > 0) {
             totalCredits += remaining;
+            hasCredits = true;
             console.log(`[member-lookup] 📅 Subscription sessions remaining: ${remaining}`);
           }
         }
@@ -437,8 +446,14 @@ export class MemberLookupService {
           const remaining = m.combinedUsageLimit - m.combinedUsage;
           if (remaining > 0) {
             totalCredits += remaining;
+            hasCredits = true;
             console.log(`[member-lookup] 🔢 Combined usage remaining: ${remaining}`);
           }
+        }
+
+        // Track bought membership IDs with credits (needed for Momence booking API)
+        if (hasCredits && typeof m.id === 'number') {
+          boughtMembershipIds.push(m.id);
         }
 
         // Get membership name
@@ -455,6 +470,7 @@ export class MemberLookupService {
         hasActiveMembership: memberships.length > 0,
         creditsAvailable: totalCredits,
         membershipName: activeMembershipName || undefined,
+        boughtMembershipIds: boughtMembershipIds.length > 0 ? boughtMembershipIds : undefined,
       };
     } catch (error) {
       console.error('[member-lookup] Membership fetch error:', error);

@@ -360,6 +360,7 @@ export async function processSimpleMessage(
         hasActiveMembership?: boolean;
         creditsAvailable?: number;
         membershipName?: string;
+        boughtMembershipIds?: number[];
       }
     | undefined;
   let memberId: number | undefined;
@@ -383,6 +384,7 @@ export async function processSimpleMessage(
           hasActiveMembership: membershipInfo.hasActiveMembership,
           creditsAvailable: membershipInfo.creditsAvailable,
           membershipName: membershipInfo.membershipName,
+          boughtMembershipIds: membershipInfo.boughtMembershipIds,
         };
 
         console.log(
@@ -507,7 +509,17 @@ export async function processSimpleMessage(
     const toolGeneratedUrls = new Set<string>();
     // No pasar memberId si es trial user o no es miembro real (evita que herramientas de miembro funcionen)
     const effectiveMemberId = trialContext?.hasTrialBooking || !isRealMember ? undefined : memberId;
-    const toolContext = { redis, phone, memberId: effectiveMemberId, lang: language };
+    const effectiveBoughtMembershipIds =
+      isRealMember && memberContext?.boughtMembershipIds
+        ? memberContext.boughtMembershipIds
+        : undefined;
+    const toolContext = {
+      redis,
+      phone,
+      memberId: effectiveMemberId,
+      boughtMembershipIds: effectiveBoughtMembershipIds,
+      lang: language,
+    };
 
     while (currentResponse.stop_reason === 'tool_use' && iterations < MAX_TOOL_ITERATIONS) {
       iterations++;
