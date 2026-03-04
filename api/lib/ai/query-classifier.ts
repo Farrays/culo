@@ -24,8 +24,13 @@ export function classifyQuery(text: string): QueryComplexity {
   if (isPricingQuery(lower)) return 'needs_tools';
   if (isTrialBookingQuery(lower)) return 'needs_tools';
 
-  // Short message with a dance style + question mark → likely asking about schedule
-  if (hasStyleKeyword(lower) && (lower.split(/\s+/).length < 8 || lower.includes('?'))) {
+  // Any mention of a dance style → needs tools (user likely wants class info)
+  if (hasStyleKeyword(lower)) {
+    return 'needs_tools';
+  }
+
+  // Generic class/dance interest without specific style name
+  if (hasClassInterest(lower)) {
     return 'needs_tools';
   }
 
@@ -249,6 +254,7 @@ function hasStyleKeyword(text: string): boolean {
     'heels',
     'femmology',
     'sexy style',
+    'sexy reggaeton',
     'dancehall',
     'kizomba',
     'afrobeat',
@@ -264,8 +270,46 @@ function hasStyleKeyword(text: string): boolean {
     'timba',
     'body conditioning',
     'bum bum',
+    'comercial',
+    'commercial',
+    'commercial dance',
+    'urban',
+    'urbano',
+    'ladies styling',
+    'lady style',
+    'modern jazz',
+    'afro jazz',
   ];
   return styles.some(s => text.includes(s));
+}
+
+function hasClassInterest(text: string): boolean {
+  const keywords = [
+    'clase',
+    'clases',
+    'class',
+    'classes',
+    'dance',
+    'baile',
+    'bailar',
+    'danza',
+    'curso',
+    'cursos',
+    'course',
+    'taller',
+    'workshop',
+    'quiero probar',
+    'quiero empezar',
+    'quiero aprender',
+    'want to try',
+    'want to learn',
+    'want to start',
+    'vull provar',
+    'vull aprendre',
+    'je veux essayer',
+    'je veux apprendre',
+  ];
+  return keywords.some(kw => text.includes(kw));
 }
 
 function hasTimeKeyword(text: string): boolean {
