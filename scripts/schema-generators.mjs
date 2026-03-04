@@ -782,12 +782,16 @@ export function generateAllJsonLd({ routePath, lang, page, meta, translations, b
   const faqEntry = faqPageMap && faqPageMap[page];
   if (faqEntry) {
     const nsMap = { pages: translations, home: homeTranslations, schedule: scheduleTranslations, faq: faqJsonTranslations };
-    // Support array of entries (e.g., FAQ page with multiple categories)
+    // Support array of entries (e.g., FAQ page with multiple categories) — merge into single FAQPage
     const entries = Array.isArray(faqEntry) ? faqEntry : [faqEntry];
+    const allFaqs = [];
     for (const entry of entries) {
       const faqTranslations = nsMap[entry.ns] || translations;
       const faqSchema = generateFlexibleFAQSchema(entry.prefix, faqTranslations);
-      if (faqSchema) schemas.push(faqSchema);
+      if (faqSchema) allFaqs.push(...faqSchema.mainEntity);
+    }
+    if (allFaqs.length > 0) {
+      schemas.push({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: allFaqs });
     }
   }
 

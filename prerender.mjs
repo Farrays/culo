@@ -492,12 +492,7 @@ const FAQ_PAGE_MAP = {
   horariosClases:          { prefix: 'horariosV2', ns: 'schedule' },
   // Pattern D (pages.json) — ${prefix}_faq${i}_question / ${prefix}_faq${i}_answer
   teamBuilding:            { prefix: 'teamBuilding', ns: 'pages' },
-  // Pattern E (faq.json) — ${prefix}_${i}_q / ${prefix}_${i}_a (multiple categories)
-  faq: [
-    { prefix: 'faq_reservas', ns: 'faq' },
-    { prefix: 'faq_cuenta', ns: 'faq' },
-    { prefix: 'faq_otras', ns: 'faq' },
-  ],
+  // Note: 'faq' page NOT here — FAQPage.tsx already generates its own FAQPage schema via React Helmet
 };
 
 /**
