@@ -717,8 +717,20 @@ async function executeCreateBooking(
     );
 
     // Parse common Momence errors
+    if (errorMsg.includes('403') || errorMsg.includes('Forbidden')) {
+      return JSON.stringify({
+        error:
+          'Esa sesión ha expirado o ya no está disponible. Busca la clase de nuevo con search_upcoming_classes para obtener el ID correcto.',
+        _instruction:
+          'OBLIGATORIO: Llama a search_upcoming_classes de nuevo para obtener el session_id actualizado. El ID que usaste ya no es válido.',
+      });
+    }
     if (errorMsg.includes('404')) {
-      return JSON.stringify({ error: 'Esa clase no existe o ya no está disponible.' });
+      return JSON.stringify({
+        error: 'Esa clase no existe o ya no está disponible.',
+        _instruction:
+          'Llama a search_upcoming_classes de nuevo para obtener sesiones actualizadas.',
+      });
     }
     if (errorMsg.includes('409') || errorMsg.includes('already')) {
       return JSON.stringify({ error: 'Ya tienes una reserva para esta clase.' });
