@@ -79,8 +79,9 @@ function sanitizeUrls(
 
   // Match any URL (with or without protocol) containing our domains
   // Note: apostrophe NOT excluded — Momence host contains "Farray's"
+  // Negative lookbehind (?<!@) prevents matching domains inside email addresses
   const urlRegex =
-    /(?:https?:\/\/)?(?:www\.)?(?:farrayscenter\.com|momence\.com|app\.momence\.com)[^\s,)}\]"<>]*/gi;
+    /(?<!@)(?:https?:\/\/)?(?:www\.)?(?:farrayscenter\.com|momence\.com|app\.momence\.com)[^\s,)}\]"<>]*/gi;
   let hadFabricatedUrls = false;
 
   sanitized = sanitized.replace(urlRegex, matchedUrl => {
