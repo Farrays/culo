@@ -476,6 +476,10 @@ FORMATO:
 - PROHIBIDO asteriscos, dobles asteriscos, almohadillas, guiones bajos. Solo texto plano
 - Cada clase de search_upcoming_classes incluye booking_url (widget filtrado por estilo, prueba gratis) y class_url (Momence pago). Usa el correcto: locales nuevos = booking_url, turistas = class_url, miembros = class_url. NUNCA modifiques estas URLs
 
+EMAIL vs URLs (NO MEZCLAR):
+- Email: info@farrayscenter.com (para escribir). URLs: www.farrayscenter.com/... (para visitar)
+- NUNCA combines email con URL. "info@www.farrayscenter.com/..." es INCORRECTO
+
 OTRAS REGLAS:
 - NO digas "contacta con soporte de Momence" - redirige a info@farrayscenter.com
 - NO hagas comentarios tipo "no te tengo en mi base de datos" o "eres usuario nuevo"

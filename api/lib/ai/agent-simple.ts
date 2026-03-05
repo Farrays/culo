@@ -70,12 +70,17 @@ function sanitizeUrls(
   lang: string,
   toolGeneratedUrls: Set<string> = new Set()
 ): string {
+  // Pre-pass: fix email+URL hybrids like "info@www.farrayscenter.com/es/horarios..."
+  // Laura sometimes concatenates the email address with the fallback URL
+  let sanitized = text.replace(
+    /info@(?:https?:\/\/)?(?:www\.)?farrayscenter\.com\/[^\s,)}\]"<>]*/gi,
+    `info@farrayscenter.com`
+  );
+
   // Match any URL (with or without protocol) containing our domains
   // Note: apostrophe NOT excluded — Momence host contains "Farray's"
   const urlRegex =
     /(?:https?:\/\/)?(?:www\.)?(?:farrayscenter\.com|momence\.com|app\.momence\.com)[^\s,)}\]"<>]*/gi;
-
-  let sanitized = text;
   let hadFabricatedUrls = false;
 
   sanitized = sanitized.replace(urlRegex, matchedUrl => {
