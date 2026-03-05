@@ -258,7 +258,7 @@ async function enrichBookingsWithMomenceData(allBookings: AdminBooking[]): Promi
         byId.set(booking.id, booking.checkedIn || false);
         // Fallback: also index by email for bookings without momenceBookingId
         // Momence API returns member data but our interface doesn't type it
-        const raw = booking as Record<string, unknown>;
+        const raw = booking as unknown as Record<string, unknown>;
         const member = raw['member'] as Record<string, unknown> | undefined;
         const email = (member?.['email'] as string) || '';
         if (email) {
