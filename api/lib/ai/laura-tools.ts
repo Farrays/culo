@@ -695,6 +695,10 @@ async function executeCreateBooking(
 
   const client = getMomenceClient(context.redis);
 
+  console.log(
+    `[create_booking] sessionId=${sessionId}, memberId=${context.memberId}, boughtMembershipIds=${JSON.stringify(context.boughtMembershipIds)}`
+  );
+
   try {
     const result = await client.createFreeBooking(
       sessionId,
@@ -708,6 +712,9 @@ async function executeCreateBooking(
     });
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : 'Error desconocido';
+    console.error(
+      `[create_booking] FAILED: sessionId=${sessionId}, memberId=${context.memberId}, boughtMembershipIds=${JSON.stringify(context.boughtMembershipIds)}, error=${errorMsg}`
+    );
 
     // Parse common Momence errors
     if (errorMsg.includes('404')) {
@@ -719,6 +726,19 @@ async function executeCreateBooking(
     if (errorMsg.includes('full') || errorMsg.includes('capacity')) {
       return JSON.stringify({
         error: 'La clase está llena. ¿Quieres que te apunte a la lista de espera?',
+      });
+    }
+    if (
+      errorMsg.includes('402') ||
+      errorMsg.includes('payment') ||
+      errorMsg.includes('credit') ||
+      errorMsg.includes('insufficient')
+    ) {
+      const classUrl = className ? buildClassUrl(className, sessionId) : null;
+      return JSON.stringify({
+        error: 'No tienes créditos suficientes para esta clase.',
+        ...(classUrl && { class_url: classUrl }),
+        hint: 'Ofrece al usuario comprar la clase directamente desde class_url o renovar su membresía con get_membership_options.',
       });
     }
 
