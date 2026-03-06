@@ -651,7 +651,7 @@ async function executeSearchClasses(
   const lang = context.lang || 'es';
 
   // When filtered by day, show all sessions (complete day view); otherwise limit to 8
-  const maxResults = dayFilter ? 20 : 8;
+  const maxResults = dayFilter ? 30 : 8;
   const classes = sessions.slice(0, maxResults).map(s => {
     const classDate = new Date(s.startsAt);
     return {
