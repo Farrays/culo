@@ -642,7 +642,7 @@ async function executeSearchClasses(
       _instruction: weeklySchedule
         ? 'Muestra el horario semanal de referencia incluido arriba. Explica que las reservas se abren mas adelante. Comparte booking_url para que vean clases disponibles de ese estilo en el widget. NO llames a get_weekly_schedule (ya tienes los datos). NUNCA inventes URLs con classId.'
         : 'No se encontraron clases con esos filtros. Si usaste filtros (day/level), sugiere probar sin ellos. Comparte booking_url si esta disponible. NO llames a get_weekly_schedule. NUNCA inventes URLs con classId.',
-      scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-clases-baile-barcelona`,
+      scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-precios`,
     });
   }
 
@@ -725,7 +725,7 @@ function executeGetWeeklySchedule(input: Record<string, unknown>, lang: string =
     ...(style && {
       booking_url: `https://www.farrayscenter.com/${lang}/reservas?style=${mapToWidgetStyle(style)}`,
     }),
-    scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-clases-baile-barcelona`,
+    scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-precios`,
     _instruction:
       'Este horario es referencia general. Comparte booking_url para que vean clases de este estilo en el widget de reservas. Para clases concretas con fechas usa search_upcoming_classes. NUNCA inventes URLs con classId.',
   });
@@ -1320,7 +1320,7 @@ async function executeManageTrialBooking(
       found: false,
       message:
         'No se encontró ninguna reserva de clase de prueba asociada a este número. Si reservaste con otro teléfono, puedes cancelar desde tu email de confirmación o contactarnos en recepción.',
-      scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-clases-baile-barcelona`,
+      scheduleUrl: `https://www.farrayscenter.com/${lang}/horarios-precios`,
     });
   }
 
