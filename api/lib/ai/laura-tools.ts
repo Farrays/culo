@@ -557,9 +557,10 @@ async function executeSearchClasses(
 
   const rawSessions = await memberService.fetchUpcomingSessions(style, daysAhead);
 
-  // Filter out sessions that have already started (past dates)
+  // Filter out sessions that have already started — unless user filtered by day
+  // (when asking "clases del lunes" we show ALL sessions for that day, even past ones)
   const now = new Date();
-  let sessions = rawSessions.filter(s => new Date(s.startsAt) > now);
+  let sessions = dayFilter ? rawSessions : rawSessions.filter(s => new Date(s.startsAt) > now);
 
   // Day-of-week filter (Spanish day names → match against dayOfWeek)
   if (dayFilter) {
@@ -649,7 +650,9 @@ async function executeSearchClasses(
   const in24h = new Date(now.getTime() + 24 * 60 * 60 * 1000);
   const lang = context.lang || 'es';
 
-  const classes = sessions.slice(0, 8).map(s => {
+  // When filtered by day, show all sessions (complete day view); otherwise limit to 8
+  const maxResults = dayFilter ? 20 : 8;
+  const classes = sessions.slice(0, maxResults).map(s => {
     const classDate = new Date(s.startsAt);
     return {
       id: s.id,

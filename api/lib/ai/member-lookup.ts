@@ -784,13 +784,17 @@ export class MemberLookupService {
       }
 
       const now = new Date();
+      // Start from beginning of today (Madrid timezone) so we include ALL of today's sessions
+      const todayStart = new Date(
+        now.toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' }) + 'T00:00:00+01:00'
+      );
       const futureLimit = new Date(now.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
       // Use Momence API with date filtering
       const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
       url.searchParams.set('page', '0');
       url.searchParams.set('pageSize', '100');
-      url.searchParams.set('startAfter', now.toISOString());
+      url.searchParams.set('startAfter', todayStart.toISOString());
       url.searchParams.set('startBefore', futureLimit.toISOString());
       url.searchParams.set('sortBy', 'startsAt');
       url.searchParams.set('sortOrder', 'ASC');
