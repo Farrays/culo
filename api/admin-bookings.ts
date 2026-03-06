@@ -599,7 +599,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
       for (const booking of bookings) {
         const reconStatus = booking.reconciliationStatus;
-        if (reconStatus === 'attended') dayAttended++;
+        // Count as attended if reconciliation says so OR Momence check-in confirmed
+        if (reconStatus === 'attended' || booking.checkedIn) dayAttended++;
         else if (reconStatus === 'no_show' || reconStatus === 'no_show_unresolved') dayNoShow++;
         else if (reconStatus === 'cancelled_on_time' || reconStatus === 'cancelled_late')
           dayCancelled++;

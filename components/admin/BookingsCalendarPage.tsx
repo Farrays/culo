@@ -848,27 +848,29 @@ export default function BookingsCalendarPage() {
               />
             </div>
 
-            {/* Attendance Rate */}
-            {data.summary.attendanceRate > 0 && (
-              <div
-                style={{
-                  background: '#1e1e2e',
-                  border: '1px solid #2d2d44',
-                  borderRadius: 8,
-                  padding: '8px 16px',
-                  marginBottom: 16,
-                  fontSize: 13,
-                  color: '#9ca3af',
-                }}
-              >
-                Tasa de asistencia:{' '}
-                <strong
-                  style={{ color: data.summary.attendanceRate >= 70 ? '#22c55e' : '#f97316' }}
-                >
-                  {data.summary.attendanceRate}%
-                </strong>
-              </div>
-            )}
+            {/* Attendance Rate — always visible */}
+            <div
+              style={{
+                background: '#1e1e2e',
+                border: '1px solid #2d2d44',
+                borderRadius: 8,
+                padding: '8px 16px',
+                marginBottom: 16,
+                fontSize: 13,
+                color: '#9ca3af',
+              }}
+            >
+              Tasa de asistencia:{' '}
+              <strong style={{ color: data.summary.attendanceRate >= 70 ? '#22c55e' : '#f97316' }}>
+                {data.summary.attendanceRate}%
+              </strong>
+              {data.summary.totalBookings > 0 && (
+                <span style={{ marginLeft: 8, fontSize: 11 }}>
+                  ({data.summary.totalAttended} de{' '}
+                  {data.summary.totalBookings - data.summary.totalCancelled} reservas no canceladas)
+                </span>
+              )}
+            </div>
 
             {/* Filters */}
             <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
