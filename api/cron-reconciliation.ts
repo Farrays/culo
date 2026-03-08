@@ -526,7 +526,7 @@ async function reconcileLateCancellation(
       try {
         const { recordAuditEvent } = await import('./lib/audit.js');
         await recordAuditEvent(redis, {
-          action: 'booking_late_cancel_rescheduled',
+          action: 'booking_auto_rescheduled',
           eventId,
           email: booking.email,
           className: booking.className,
