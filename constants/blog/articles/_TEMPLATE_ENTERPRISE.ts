@@ -1388,8 +1388,8 @@ export const TEMPLATE_ENTERPRISE_CONFIG: BlogArticleConfig = {
   breadcrumbConfig: {
     homeKey: 'blog_breadcrumbHome',
     blogKey: 'blog_breadcrumbBlog',
-    categoryKey: 'blog_category_tutoriales', // Ajustar según categoría
-    categoryUrl: '/blog/tutoriales',
+    categoryKey: 'blog_category_tips', // Ajustar según categoría
+    categoryUrl: '/blog/tips',
     currentKey: 'blogTemplateEnterprise_breadcrumbCurrent',
   },
 

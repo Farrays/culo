@@ -313,14 +313,17 @@ export class MomenceApiClient {
     });
   }
 
-  async searchMembers(body: {
+  async searchMembers(params: {
     page: number;
     pageSize: number;
     query?: string;
     filter?: Record<string, unknown>;
   }): Promise<PaginatedResponse<MomenceMember>> {
-    return this.request<PaginatedResponse<MomenceMember>>('POST', '/api/v2/host/members/list', {
-      body,
+    // Use documented GET /api/v2/host/members endpoint (POST /members/list is undocumented and ignores filters)
+    return this.getMembers({
+      page: params.page,
+      pageSize: params.pageSize,
+      query: params.query,
     });
   }
 

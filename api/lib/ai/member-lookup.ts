@@ -250,19 +250,17 @@ export class MemberLookupService {
 
       for (const query of queriesToTry) {
         console.log(
-          `[member-lookup] Calling Momence API: POST /api/v2/host/members/list (query="${query.slice(0, 4)}...${query.slice(-4)}")`
+          `[member-lookup] Calling Momence API: GET /api/v2/host/members (query="${query.slice(0, 4)}...${query.slice(-4)}")`
         );
-        const response = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
-          method: 'POST',
+        const searchUrl = new URL(`${MOMENCE_API_URL}/api/v2/host/members`);
+        searchUrl.searchParams.set('query', query);
+        searchUrl.searchParams.set('page', '0');
+        searchUrl.searchParams.set('pageSize', '10');
+        const response = await fetch(searchUrl.toString(), {
+          method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            query,
-            page: 0,
-            pageSize: 10,
-          }),
         });
 
         if (!response.ok) {

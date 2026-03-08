@@ -434,8 +434,11 @@ export async function rescheduleBooking(
       filter: { email: booking.email },
     });
 
-    if (members.payload.length > 0 && members.payload[0]) {
-      memberId = members.payload[0].id;
+    const matched = members.payload.find(
+      (m: { email?: string }) => m.email?.toLowerCase() === booking.email.toLowerCase()
+    );
+    if (matched) {
+      memberId = matched.id;
     } else {
       const created = await client.createMember({
         email: booking.email,

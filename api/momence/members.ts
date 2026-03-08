@@ -5,8 +5,7 @@
  * POST /api/momence/members - Create member
  *
  * Calls:
- * - GET /api/v2/host/members
- * - POST /api/v2/host/members/list (for advanced search)
+ * - GET /api/v2/host/members (list + search via query param)
  * - POST /api/v2/host/members (for creation)
  */
 
@@ -61,12 +60,11 @@ export default async function handler(
 
       // Check if this is a search request or create request
       if (body.filter || body.query) {
-        // Advanced search using POST /api/v2/host/members/list
-        const result = await client.searchMembers({
+        // Search using GET /api/v2/host/members with query param
+        const result = await client.getMembers({
           page: body.page || 0,
           pageSize: body.pageSize || 50,
-          query: body.query,
-          filter: body.filter,
+          query: body.query || (body.filter?.email as string),
         });
         return res.status(200).json(result);
       }
