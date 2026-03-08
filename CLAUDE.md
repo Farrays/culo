@@ -192,3 +192,39 @@ Generates:
 - [ ] 6-8 FAQs for schema markup
 - [ ] References section with academic/authoritative sources
 - [ ] Alt texts are descriptive (15-25 words)
+
+---
+
+## Git & Deploy Workflow
+
+### Remotes
+
+- `origin` → `Farrays/agente-whatsapp` (repo principal de desarrollo)
+- `culo-temp` → `Farrays/culo` (conectado a Vercel, producción)
+
+### Reglas OBLIGATORIAS
+
+1. **SIEMPRE push a `origin` (agente-whatsapp)** — es gratis, no dispara builds
+2. **NUNCA push directo a `culo-temp` main** — cada push dispara un build en Vercel (= coste)
+3. **Para desplegar a Vercel**: crear rama en `culo-temp` → PR en GitHub → merge manual
+
+### Flujo de deploy
+
+```bash
+# 1. Push normal a origin (desarrollo)
+git push origin main
+
+# 2. Cuando quieras desplegar a Vercel, crear rama en culo
+git push culo-temp main:deploy/nombre-descriptivo
+
+# 3. Crear PR en GitHub: deploy/nombre-descriptivo → main
+# URL: https://github.com/Farrays/culo/compare/main...deploy/nombre-descriptivo
+
+# 4. El usuario hace merge en GitHub cuando quiera → Vercel despliega
+```
+
+### Por qué funciona sin conflictos
+
+- `culo/main` siempre está igual o detrás de `origin/main`
+- Nadie hace commits directos en `culo` — solo recibe merges desde `origin`
+- Los PRs siempre son fast-forward (0 conflictos garantizado)
