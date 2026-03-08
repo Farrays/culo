@@ -1188,26 +1188,24 @@ async function createMomenceBooking(
 
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
-    const memberResponse = await fetchWithTimeout(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
-      method: 'POST',
+    const memberSearchUrl = new URL(`${MOMENCE_API_URL}/api/v2/host/members`);
+    memberSearchUrl.searchParams.set('page', '0');
+    memberSearchUrl.searchParams.set('pageSize', '5');
+    memberSearchUrl.searchParams.set('query', customerData.email);
+    const memberResponse = await fetchWithTimeout(memberSearchUrl.toString(), {
+      method: 'GET',
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        page: 0,
-        pageSize: 100,
-        filters: {
-          email: customerData.email,
-        },
-      }),
     });
 
     let customerId: number | null = null;
 
     if (memberResponse.ok) {
       const memberData = await memberResponse.json();
-      console.warn('[Momence Booking] Member search response:', JSON.stringify(memberData));
+      console.warn(
+        `[Momence Booking] Member search returned ${memberData.payload?.length ?? 0} result(s)`
+      );
       if (memberData.payload && memberData.payload.length > 0) {
         // Verify the email matches - API may return all members instead of filtering
         const foundMember = memberData.payload.find(
