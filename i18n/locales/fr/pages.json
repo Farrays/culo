@@ -10500,5 +10500,15 @@
   "cbLandingCountdownDays": "Jours",
   "cbLandingCountdownHours": "Heures",
   "cbLandingCountdownMinutes": "Min",
-  "cbLandingCountdownSeconds": "Sec"
+  "cbLandingCountdownSeconds": "Sec",
+
+  "yr_meta_description": "Contactez Y&R (Yunaisy & Reynier). Artistes de danse, spectacles et cours à Barcelone. WhatsApp et Instagram.",
+  "miReserva_meta_description": "Gérez votre réservation de cours chez Farray's Center Barcelone. Reprogrammez ou annulez votre cours.",
+  "fichaje_meta_description": "Système de pointage pour les professeurs de Farray's Center Barcelone.",
+  "fichajeResumen_meta_description": "Consultez et signez votre résumé mensuel d'heures travaillées chez Farray's Center Barcelone.",
+  "adminFichajes_meta_description": "Panneau d'administration des pointages pour Farray's Center Barcelone.",
+  "adminReservas_meta_description": "Panneau de gestion des réservations de cours d'essai gratuits.",
+  "feedbackGracias_meta_description": "Votre avis nous aide à nous améliorer. Merci de partager votre expérience avec nous.",
+  "feedbackComentario_meta_description": "Dites-nous plus sur votre expérience. Votre avis nous aide à nous améliorer.",
+  "asistencia_meta_description": "Confirmation de présence à votre cours de danse chez Farray's Center Barcelone."
 }
