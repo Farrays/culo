@@ -422,7 +422,22 @@ export async function processSimpleMessage(
 
   try {
     const normalizedPhone = phone.replace(/[\s\-+()]/g, '');
-    const eventId = (await redis.get(`phone:${normalizedPhone}`)) as string | null;
+    // Try multiple phone variants (WhatsApp sends 34xxx, widget may store xxx or vice versa)
+    const trialPhoneVariants = [normalizedPhone];
+    if (normalizedPhone.startsWith('34') && normalizedPhone.length > 9) {
+      trialPhoneVariants.push(normalizedPhone.slice(2)); // Without country code
+    } else if (/^[6789]\d{8}$/.test(normalizedPhone)) {
+      trialPhoneVariants.push('34' + normalizedPhone); // With Spanish country code
+    }
+
+    let eventId: string | null = null;
+    for (const variant of trialPhoneVariants) {
+      const found = (await redis.get(`phone:${variant}`)) as string | null;
+      if (found) {
+        eventId = found;
+        break;
+      }
+    }
 
     if (eventId) {
       const booking = (await redis.get(`booking_details:${eventId}`)) as Record<

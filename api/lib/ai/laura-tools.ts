@@ -1160,7 +1160,9 @@ async function executeTransferToHuman(
       `Laura ha transferido la conversación: ${reason}`,
       undefined,
       'escalation'
-    ).catch(() => {});
+    ).catch(notifErr => {
+      console.error('[laura-tools] Failed to send escalation notification:', notifErr);
+    });
 
     return JSON.stringify({
       success: true,
