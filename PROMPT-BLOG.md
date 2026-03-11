@@ -94,7 +94,7 @@ trigger_de_compra: 'Prueba gratuita, horarios flexibles, profesores expertos'
 
 ## ARTICULOS EXISTENTES (EVITAR CANIBALIZACION)
 
-**CRITICO**: NO cubrir los temas principales de estos 14 articulos ya posicionados. Puedes ENLAZAR a ellos pero NO competir por sus keywords primarias.
+**CRITICO**: NO cubrir los temas principales de estos 16 articulos ya posicionados. Puedes ENLAZAR a ellos pero NO competir por sus keywords primarias.
 
 | #   | Slug                                           | Categoria | Tema Principal             | Keywords Protegidas                                    |
 | --- | ---------------------------------------------- | --------- | -------------------------- | ------------------------------------------------------ |
@@ -112,12 +112,14 @@ trigger_de_compra: 'Prueba gratuita, horarios flexibles, profesores expertos'
 | 12  | `danzas-urbanas-barcelona-guia-completa`       | tips      | Danzas urbanas             | danzas urbanas barcelona, hip hop barcelona            |
 | 13  | `modern-jazz-barcelona-guia-completa`          | tips      | Modern Jazz                | modern jazz barcelona, jazz contemporaneo              |
 | 14  | `baile-salud-mental`                           | fitness   | Baile y salud mental       | baile ansiedad, baile depresion, baile bienestar       |
+| 15  | `clases-bachata-barcelona-guia-completa`       | tips      | Clases bachata BCN         | clases bachata barcelona, bachata sensual barcelona    |
+| 16  | `clases-reggaeton-barcelona-guia-completa`     | tips      | Clases reggaeton BCN       | clases reggaeton barcelona, reggaeton cubano barcelona |
 
 ### Estrategia de Diferenciacion
 
 Para cada nuevo articulo, DEBES:
 
-1. Identificar que lo hace UNICO vs los 14 existentes
+1. Identificar que lo hace UNICO vs los 16 existentes
 2. Enlazar a minimo 3 articulos existentes relevantes (refuerza cluster)
 3. NO repetir estadisticas ya usadas en otros articulos (buscar nuevas)
 4. Encontrar un angulo que los articulos existentes NO cubren
@@ -722,7 +724,7 @@ Antes de entregar, verificar TODOS estos puntos:
 7. **Local SEO**: Mencionar Barcelona, Eixample, Catalunya naturalmente (no forzar)
 8. **Linkbuilding**: INCLUIR los links directamente en el texto del articulo, no como nota al pie
 9. **Conversion**: El articulo debe hacer que el lector QUIERA probar una clase, sin ser agresivo
-10. **Diferenciacion**: Verificar contra la tabla de 14 articulos existentes que NO canibalizas
+10. **Diferenciacion**: Verificar contra la tabla de 16 articulos existentes que NO canibalizas
 
 ---
 
@@ -746,4 +748,4 @@ Cuando el usuario pegue el resultado de Perplexity, debo:
 
 _Ultima actualizacion: 11 de marzo de 2026_
 _Version del prompt: 3.0_
-_Cambios v3.0: Linkbuilding enterprise completo, tabla anti-canibalizacion 14 articulos, GEO 2026 stats frequency, semantic entity linking, cluster bidireccional, internal/external link maps, expert quotes, digital PR hooks_
+_Cambios v3.0: Linkbuilding enterprise completo, tabla anti-canibalizacion 16 articulos, GEO 2026 stats frequency, semantic entity linking, cluster bidireccional, internal/external link maps, expert quotes, digital PR hooks_

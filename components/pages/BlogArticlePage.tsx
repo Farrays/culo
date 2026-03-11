@@ -28,6 +28,7 @@ import { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from '../../constants/blog/
 import { DANZAS_URBANAS_BARCELONA_CONFIG } from '../../constants/blog/articles/danzas-urbanas-barcelona';
 import { MODERN_JAZZ_BARCELONA_CONFIG } from '../../constants/blog/articles/modern-jazz-barcelona';
 import { CLASES_BACHATA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-bachata-barcelona';
+import { CLASES_REGGAETON_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-reggaeton-barcelona';
 
 // Map of slug -> config for all articles
 const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
@@ -46,6 +47,7 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
   'danzas-urbanas-barcelona-guia-completa': DANZAS_URBANAS_BARCELONA_CONFIG,
   'modern-jazz-barcelona-guia-completa': MODERN_JAZZ_BARCELONA_CONFIG,
   'clases-bachata-barcelona-guia-completa': CLASES_BACHATA_BARCELONA_CONFIG,
+  'clases-reggaeton-barcelona-guia-completa': CLASES_REGGAETON_BARCELONA_CONFIG,
 };
 
 const BlogArticlePage: React.FC = () => {

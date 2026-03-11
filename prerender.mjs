@@ -375,6 +375,7 @@ const OG_IMAGE_MAP = {
   blogDanzasUrbanas: 'blog/danzas-urbanas/og.jpg',
   blogModernJazz: 'blog/modern-jazz/og.jpg',
   blogBachata: 'blog/clases-bachata/og.jpg',
+  blogReggaeton: 'blog/clases-reggaeton/og.jpg',
 
   // === Páginas legales ===
   termsConditions: 'og-home.jpg',
@@ -500,6 +501,7 @@ const BLOG_ARTICLE_KEY_MAP = {
   blogDanzasUrbanas: 'blogDanzasUrbanas',
   blogModernJazz: 'blogModernJazz',
   blogBachata: 'blogBachata',
+  blogReggaeton: 'blogReggaeton',
   blogDanzaContemporaneaVsJazzBallet: 'blog_danzaContemporaneaVsJazzBallet',
 };
 
@@ -1939,6 +1941,7 @@ const routes = [
   { path: 'es/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'es', page: 'blogDanzasUrbanas' },
   { path: 'es/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'es', page: 'blogModernJazz' },
   { path: 'es/blog/tips/clases-bachata-barcelona-guia-completa', lang: 'es', page: 'blogBachata' },
+  { path: 'es/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'es', page: 'blogReggaeton' },
   { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
   { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
@@ -1961,6 +1964,7 @@ const routes = [
   { path: 'ca/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'ca', page: 'blogDanzasUrbanas' },
   { path: 'ca/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'ca', page: 'blogModernJazz' },
   { path: 'ca/blog/tips/clases-bachata-barcelona-guia-completa', lang: 'ca', page: 'blogBachata' },
+  { path: 'ca/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'ca', page: 'blogReggaeton' },
   { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
   { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
@@ -1983,6 +1987,7 @@ const routes = [
   { path: 'en/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'en', page: 'blogDanzasUrbanas' },
   { path: 'en/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'en', page: 'blogModernJazz' },
   { path: 'en/blog/tips/clases-bachata-barcelona-guia-completa', lang: 'en', page: 'blogBachata' },
+  { path: 'en/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'en', page: 'blogReggaeton' },
   { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
   { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
@@ -2005,6 +2010,7 @@ const routes = [
   { path: 'fr/blog/tips/danzas-urbanas-barcelona-guia-completa', lang: 'fr', page: 'blogDanzasUrbanas' },
   { path: 'fr/blog/tips/modern-jazz-barcelona-guia-completa', lang: 'fr', page: 'blogModernJazz' },
   { path: 'fr/blog/tips/clases-bachata-barcelona-guia-completa', lang: 'fr', page: 'blogBachata' },
+  { path: 'fr/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'fr', page: 'blogReggaeton' },
   { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
   { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 
