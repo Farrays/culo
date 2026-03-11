@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SiteNavigationElementSchema } from './SchemaMarkup';
+import { SEO_META_KEYS } from '../constants/seo-meta-keys.mjs';
 
 /**
  * Global SEO component that manages meta tags, Open Graph, and hreflang.
@@ -160,209 +161,49 @@ const SEO: React.FC = () => {
     faq: 'preguntas-frecuentes',
   };
 
-  // Metadata mapping per page
-  const metaData: Record<string, { titleKey: string; descKey: string; image: string }> = {
-    home: {
-      titleKey: 'pageTitle',
-      descKey: 'metaDescription',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    classes: {
-      titleKey: 'danceClassesHub_h1',
-      descKey: 'danceClassesHub_description',
-      image: `${baseUrl}/images/og-clases-baile-barcelona.jpg`,
-    },
-    danza: {
-      titleKey: 'danzaBarcelona_title',
-      descKey: 'danzaBarcelona_description',
-      image: `${baseUrl}/images/classes/contemporaneo/img/mgs_5189_1440.webp`,
-    },
-    salsaBachata: {
-      titleKey: 'salsaBachataBarcelona_title',
-      descKey: 'salsaBachataBarcelona_description',
-      image: `${baseUrl}/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1440.webp`,
-    },
-    salsaCubana: {
-      titleKey: 'salsaCubanaPageTitle',
-      descKey: 'salsaCubanaMetaDescription',
-      image: `${baseUrl}/images/classes/salsa-cubana/img/salsa-cubana_1440.webp`,
-    },
-    salsaLadyStyle: {
-      titleKey: 'salsaLadyPageTitle',
-      descKey: 'salsaLadyMetaDescription',
-      image: `${baseUrl}/images/classes/Salsa-Lady-Style/img/clases-salsa-lady-style-barcelona_1440.webp`,
-    },
-    bachata: {
-      titleKey: 'bachataV3PageTitle',
-      descKey: 'bachataV3MetaDescription',
-      image: `${baseUrl}/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1440.webp`,
-    },
-    danzasUrbanas: {
-      titleKey: 'danzasUrbanas_title',
-      descKey: 'danzasUrbanas_description',
-      image: `${baseUrl}/images/classes/hip-hop/img/clases-hip-hop-barcelona_1440.webp`,
-    },
-    dancehall: {
-      titleKey: 'dhV3PageTitle',
-      descKey: 'dhV3MetaDescription',
-      image: `${baseUrl}/images/classes/dancehall/img/dancehall-classes-barcelona-01_1440.webp`,
-    },
-    twerk: {
-      titleKey: 'twerkPageTitle',
-      descKey: 'twerkMetaDescription',
-      image: `${baseUrl}/images/classes/twerk/img/clases-twerk-barcelona_1440.webp`,
-    },
-    afrobeat: {
-      titleKey: 'afroPageTitle',
-      descKey: 'afroMetaDescription',
-      image: `${baseUrl}/images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.webp`,
-    },
-    hipHopReggaeton: {
-      titleKey: 'hhrPageTitle',
-      descKey: 'hhrMetaDescription',
-      image: `${baseUrl}/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_1440.webp`,
-    },
-    hipHop: {
-      titleKey: 'hiphopPageTitle',
-      descKey: 'hiphopMetaDescription',
-      image: `${baseUrl}/images/classes/hip-hop/img/clases-hip-hop-barcelona_1440.webp`,
-    },
-    sexyReggaeton: {
-      titleKey: 'sxrPageTitle',
-      descKey: 'sxrMetaDescription',
-      image: `${baseUrl}/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1440.webp`,
-    },
-    reggaetonCubano: {
-      titleKey: 'rcbPageTitle',
-      descKey: 'rcbMetaDescription',
-      image: `${baseUrl}/images/classes/reggaeton-cubano/img/mgs_8884_1440.webp`,
-    },
-    heels: {
-      titleKey: 'heelsBarcelona_title',
-      descKey: 'heelsBarcelona_description',
-      image: `${baseUrl}/images/classes/Heels/img/clases-heels-barcelona_1440.webp`,
-    },
-    femmology: {
-      titleKey: 'femPageTitle',
-      descKey: 'femMetaDescription',
-      image: `${baseUrl}/images/classes/femmology/img/femmology-hero-barcelona_1440.webp`,
-    },
-    sexyStyle: {
-      titleKey: 'sexystylePageTitle',
-      descKey: 'sexystyleMetaDescription',
-      image: `${baseUrl}/images/classes/sexy-style/img/clases-de-sexy-style-barcelona_1440.webp`,
-    },
-    modernJazz: {
-      titleKey: 'modernjazzPageTitle',
-      descKey: 'modernjazzMetaDescription',
-      image: `${baseUrl}/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.webp`,
-    },
-    ballet: {
-      titleKey: 'balletPageTitle',
-      descKey: 'balletMetaDescription',
-      image: `${baseUrl}/images/classes/ballet/img/clases-ballet-barcelona_1440.webp`,
-    },
-    contemporaneo: {
-      titleKey: 'contemporaneoPageTitle',
-      descKey: 'contemporaneoMetaDescription',
-      image: `${baseUrl}/images/classes/contemporaneo/img/mgs_5189_1440.webp`,
-    },
-    afroContemporaneo: {
-      titleKey: 'afrocontemporaneoPageTitle',
-      descKey: 'afrocontemporaneoMetaDescription',
-      image: `${baseUrl}/images/classes/afro-contemporaneo/img/mgs_5260_1440.webp`,
-    },
-    afroJazz: {
-      titleKey: 'afrojazzPageTitle',
-      descKey: 'afrojazzMetaDescription',
-      image: `${baseUrl}/images/classes/afro-jazz/img/afro-jazz_1440.webp`,
-    },
-    stretching: {
-      titleKey: 'stretchingPageTitle',
-      descKey: 'stretchingMetaDescription',
-      image: `${baseUrl}/images/og-stretching.jpg`,
-    },
-    prepFisica: {
-      titleKey: 'prepFisica_title',
-      descKey: 'prepFisica_description',
-      image: `${baseUrl}/images/og-entrenamiento-bailarines.jpg`,
-    },
-    cuerpofit: {
-      titleKey: 'cuerpofitPageTitle',
-      descKey: 'cuerpofitMetaDescription',
-      image: `${baseUrl}/images/categories/img/body-conditioning-og.jpg`,
-    },
-    baileManananas: {
-      titleKey: 'bailemanananasPageTitle',
-      descKey: 'bailemanananasMetaDescription',
-      image: `${baseUrl}/images/og-baile-mananas.jpg`,
-    },
-    clasesParticulares: {
-      titleKey: 'particularesPage_title',
-      descKey: 'particularesPage_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    alquilerSalas: {
-      titleKey: 'roomRental_pageTitle',
-      descKey: 'roomRental_metaDescription',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    estudioGrabacion: {
-      titleKey: 'estudioGrabacion_h1',
-      descKey: 'estudioGrabacion_intro',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    regalaBaile: {
-      titleKey: 'regalaBaile_page_title',
-      descKey: 'regalaBaile_meta_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    merchandising: {
-      titleKey: 'merchandising_page_title',
-      descKey: 'merchandising_page_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    about: {
-      titleKey: 'about_page_title',
-      descKey: 'about_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    yunaisyFarray: {
-      titleKey: 'yunaisyFarray_page_title',
-      descKey: 'yunaisyFarray_meta_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    facilities: {
-      titleKey: 'facilitiesPageTitle',
-      descKey: 'facilitiesMetaDescription',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    contact: {
-      titleKey: 'contact_page_title',
-      descKey: 'contact_page_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    faq: {
-      titleKey: 'faq_page_title',
-      descKey: 'faq_page_description',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
-    servicios: {
-      titleKey: 'serviciosBaile_pageTitle',
-      descKey: 'serviciosBaile_metaDescription',
-      image: `${baseUrl}/images/og-home.jpg`,
-    },
+  // OG images per page (titleKey/descKey come from shared SEO_META_KEYS)
+  const ogImages: Record<string, string> = {
+    home: `${baseUrl}/images/og-home.jpg`,
+    classes: `${baseUrl}/images/og-clases-baile-barcelona.jpg`,
+    danza: `${baseUrl}/images/classes/contemporaneo/img/mgs_5189_1440.webp`,
+    salsaBachata: `${baseUrl}/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1440.webp`,
+    salsaCubana: `${baseUrl}/images/classes/salsa-cubana/img/salsa-cubana_1440.webp`,
+    salsaLadyStyle: `${baseUrl}/images/classes/Salsa-Lady-Style/img/clases-salsa-lady-style-barcelona_1440.webp`,
+    bachata: `${baseUrl}/images/classes/Bachata/img/clases-bachata-sensual-barcelona_1440.webp`,
+    danzasUrbanas: `${baseUrl}/images/classes/hip-hop/img/clases-hip-hop-barcelona_1440.webp`,
+    dancehall: `${baseUrl}/images/classes/dancehall/img/dancehall-classes-barcelona-01_1440.webp`,
+    twerk: `${baseUrl}/images/classes/twerk/img/clases-twerk-barcelona_1440.webp`,
+    afrobeat: `${baseUrl}/images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.webp`,
+    hipHopReggaeton: `${baseUrl}/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_1440.webp`,
+    hipHop: `${baseUrl}/images/classes/hip-hop/img/clases-hip-hop-barcelona_1440.webp`,
+    sexyReggaeton: `${baseUrl}/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1440.webp`,
+    reggaetonCubano: `${baseUrl}/images/classes/reggaeton-cubano/img/mgs_8884_1440.webp`,
+    heels: `${baseUrl}/images/classes/Heels/img/clases-heels-barcelona_1440.webp`,
+    femmology: `${baseUrl}/images/classes/femmology/img/femmology-hero-barcelona_1440.webp`,
+    sexyStyle: `${baseUrl}/images/classes/sexy-style/img/clases-de-sexy-style-barcelona_1440.webp`,
+    modernJazz: `${baseUrl}/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.webp`,
+    ballet: `${baseUrl}/images/classes/ballet/img/clases-ballet-barcelona_1440.webp`,
+    contemporaneo: `${baseUrl}/images/classes/contemporaneo/img/mgs_5189_1440.webp`,
+    afroContemporaneo: `${baseUrl}/images/classes/afro-contemporaneo/img/mgs_5260_1440.webp`,
+    afroJazz: `${baseUrl}/images/classes/afro-jazz/img/afro-jazz_1440.webp`,
+    stretching: `${baseUrl}/images/og-stretching.jpg`,
+    prepFisica: `${baseUrl}/images/og-entrenamiento-bailarines.jpg`,
+    cuerpofit: `${baseUrl}/images/categories/img/body-conditioning-og.jpg`,
+    baileManananas: `${baseUrl}/images/og-baile-mananas.jpg`,
   };
+  const defaultOgImage = `${baseUrl}/images/og-home.jpg`;
 
   const pagePath = page ? pageToPath[page] || '' : '';
   const currentUrl = `${baseUrl}/${locale}${pagePath ? `/${pagePath}` : ''}`;
 
-  const pageMetaData = page ? metaData[page] : null;
-  const titleKey = pageMetaData?.titleKey || '';
-  const descKey = pageMetaData?.descKey || '';
-  const image = pageMetaData?.image || '';
+  const seoMeta = page
+    ? (SEO_META_KEYS as Record<string, { titleKey: string; descKey: string; ns: string }>)[page]
+    : null;
+  const titleKey = seoMeta?.titleKey || '';
+  const descKey = seoMeta?.descKey || '';
+  const image = page ? ogImages[page] || defaultOgImage : '';
 
-  // Get title and description
+  // Get title and description from shared i18n keys
   const title = titleKey ? t(titleKey) : '';
   const description = descKey ? t(descKey) || t('metaDescription') : '';
 
@@ -374,7 +215,7 @@ const SEO: React.FC = () => {
   }, [title, titleKey, location.pathname]);
 
   // If page is not recognized, don't render SEO component (let page-specific Helmet handle it)
-  if (!page || !pageMetaData) {
+  if (!page || !seoMeta) {
     return null;
   }
 

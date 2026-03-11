@@ -10309,5 +10309,15 @@
   "ubicacion_ctaTitle": "¿Listo para Visitarnos?",
   "ubicacion_ctaSubtitle": "Te esperamos en el corazón de Barcelona",
   "ubicacion_ctaButtonPrimary": "Reservar Clase de Prueba",
-  "ubicacion_ctaButtonSecondary": "Contactar"
+  "ubicacion_ctaButtonSecondary": "Contactar",
+
+  "yr_meta_description": "Contacta con Y&R (Yunaisy & Reynier). Artistas de baile, shows y clases en Barcelona. WhatsApp e Instagram.",
+  "miReserva_meta_description": "Gestiona tu reserva de clase en Farray's Center Barcelona. Reprograma o cancela tu clase.",
+  "fichaje_meta_description": "Sistema de fichaje para profesores de Farray's Center Barcelona.",
+  "fichajeResumen_meta_description": "Revisa y firma tu resumen mensual de horas trabajadas en Farray's Center Barcelona.",
+  "adminFichajes_meta_description": "Panel de administración de fichajes para Farray's Center Barcelona.",
+  "adminReservas_meta_description": "Panel de gestión de reservas de clases de prueba gratuitas.",
+  "feedbackGracias_meta_description": "Tu opinión nos ayuda a mejorar. Gracias por compartir tu experiencia con nosotros.",
+  "feedbackComentario_meta_description": "Cuéntanos más sobre tu experiencia. Tu opinión nos ayuda a mejorar.",
+  "asistencia_meta_description": "Confirmación de asistencia a tu clase de baile en Farray's Center Barcelona."
 }

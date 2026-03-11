@@ -10348,5 +10348,15 @@
   "cbLandingCountdownDays": "Dies",
   "cbLandingCountdownHours": "Hores",
   "cbLandingCountdownMinutes": "Min",
-  "cbLandingCountdownSeconds": "Seg"
+  "cbLandingCountdownSeconds": "Seg",
+
+  "yr_meta_description": "Contacta amb Y&R (Yunaisy & Reynier). Artistes de ball, shows i classes a Barcelona. WhatsApp i Instagram.",
+  "miReserva_meta_description": "Gestiona la teva reserva de classe a Farray's Center Barcelona. Reprograma o cancel·la la teva classe.",
+  "fichaje_meta_description": "Sistema de fitxatge per a professors de Farray's Center Barcelona.",
+  "fichajeResumen_meta_description": "Revisa i signa el teu resum mensual d'hores treballades a Farray's Center Barcelona.",
+  "adminFichajes_meta_description": "Panell d'administració de fitxatges per a Farray's Center Barcelona.",
+  "adminReservas_meta_description": "Panell de gestió de reserves de classes de prova gratuïtes.",
+  "feedbackGracias_meta_description": "La teva opinió ens ajuda a millorar. Gràcies per compartir la teva experiència amb nosaltres.",
+  "feedbackComentario_meta_description": "Explica'ns més sobre la teva experiència. La teva opinió ens ajuda a millorar.",
+  "asistencia_meta_description": "Confirmació d'assistència a la teva classe de ball a Farray's Center Barcelona."
 }
