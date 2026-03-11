@@ -31,6 +31,7 @@ import { getMomenceClient } from '../momence-client.js';
 import { activateTakeover, addNotification } from './human-takeover.js';
 import { SCHEDULE_DATA } from '../../../constants/horarios-schedule-data.js';
 import { STYLE_KEYWORDS } from '../../../constants/style-mappings.js';
+import { getByPhone, addSignals } from '../lead-repository.js';
 
 // ============================================================================
 // MOMENCE URL CONFIG
@@ -823,6 +824,12 @@ async function executeCreateBooking(
       context.memberId,
       context.boughtMembershipIds
     );
+
+    // CRM: Track conversion signals (fire-and-forget)
+    getByPhone(context.phone)
+      .then(lead => lead && addSignals(lead.id, ['started_booking', 'completed_booking']))
+      .catch(err => console.error('[create_booking] Lead scoring failed:', err));
+
     return JSON.stringify({
       success: true,
       message: 'Reserva creada correctamente.',

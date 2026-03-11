@@ -2300,6 +2300,29 @@ export default async function handler(
       console.warn('[reservar] WhatsApp not configured, skipping');
     }
 
+    // ================================================================
+    // CRM: Upsert lead + conversion signals (fire-and-forget)
+    // ================================================================
+    try {
+      const { upsertLead, addSignals } = await import('./lib/lead-repository.js');
+      const lead = await upsertLead({
+        phone: sanitize(phone),
+        name: `${sanitize(firstName)} ${sanitize(lastName)}`.trim(),
+        email: normalizedEmail,
+        channel: 'web',
+        source: 'trial_booking',
+        dance_styles: estilo ? [sanitize(estilo)] : undefined,
+      });
+      addSignals(lead.id, [
+        'started_booking',
+        'completed_booking',
+        'shared_email',
+        'shared_name',
+      ]).catch(err => console.error('[reservar] Lead scoring failed:', err));
+    } catch (crmErr) {
+      console.error('[reservar] CRM upsert failed (non-blocking):', crmErr);
+    }
+
     // Respuesta
     return res.status(200).json({
       success: true,

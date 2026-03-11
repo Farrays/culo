@@ -5,6 +5,8 @@ import Redis from 'ioredis';
 import { getRedisClient as getUpstashRedis } from './lib/redis.js';
 import { getSupabaseAdmin } from './lib/supabase.js';
 import { processAgentMessage } from './lib/ai/agent-simple.js';
+import { upsertLead, recordInteraction, addSignals } from './lib/lead-repository.js';
+import { detectSignalsFromMessage } from './lib/ai/lead-scorer.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 import {
   isHumanTakeover,
@@ -759,6 +761,18 @@ async function processMessage(
       // Crear notificación para el dashboard
       addNotification(upstashRedis, phone, textBody, contactName).catch(() => {});
 
+      // ================================================================
+      // CRM: Upsert lead en Supabase (fire-and-forget, no bloquea flujo)
+      // ================================================================
+      const leadPromise = upsertLead({
+        phone,
+        name: contactName !== 'Usuario' ? contactName : undefined,
+        channel: 'whatsapp',
+      }).catch(err => {
+        console.error(`[webhook-whatsapp] Lead upsert failed:`, err);
+        return null;
+      });
+
       // Notificación WhatsApp al móvil del admin (fire and forget)
       const adminPhone = process.env['ADMIN_NOTIFICATION_PHONE'];
       if (adminPhone && adminPhone !== phone) {
@@ -817,6 +831,53 @@ async function processMessage(
         console.log(`[webhook-whatsapp] LAURA response sent successfully`);
       } else {
         console.error(`[webhook-whatsapp] Failed to send LAURA response:`, sendResult.error);
+      }
+
+      // ================================================================
+      // CRM: Registrar interacciones (no bloquea el envío de respuesta)
+      // ================================================================
+      const lead = await leadPromise;
+      if (lead) {
+        // Registrar mensaje inbound del usuario + respuesta outbound de Laura
+        Promise.all([
+          recordInteraction({
+            lead_id: lead.id,
+            channel: 'whatsapp',
+            direction: 'inbound',
+            type: 'message',
+            content: textBody,
+          }),
+          recordInteraction({
+            lead_id: lead.id,
+            channel: 'whatsapp',
+            direction: 'outbound',
+            type: 'message',
+            content: response.text,
+            ai_model: 'sonnet',
+          }),
+        ]).catch(err => {
+          console.error(`[webhook-whatsapp] Interaction recording failed:`, err);
+        });
+
+        // ================================================================
+        // CRM: Detectar signals y actualizar score (fire-and-forget)
+        // ================================================================
+        const detectedSignals = detectSignalsFromMessage(textBody, response.language);
+
+        // Engagement: returning user (created >24h ago and signal not yet tracked)
+        if (
+          lead.created_at &&
+          !lead.signals.includes('returned_user') &&
+          Date.now() - new Date(lead.created_at).getTime() > 24 * 60 * 60 * 1000
+        ) {
+          detectedSignals.push('returned_user');
+        }
+
+        if (detectedSignals.length > 0) {
+          addSignals(lead.id, detectedSignals).catch(err => {
+            console.error(`[webhook-whatsapp] Lead scoring failed:`, err);
+          });
+        }
       }
     } catch (agentError) {
       console.error(`[webhook-whatsapp] LAURA error:`, agentError);

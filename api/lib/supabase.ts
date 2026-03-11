@@ -1,8 +1,9 @@
 /**
  * Supabase Client
  *
- * Cliente configurado para el sistema de fichaje de profesores.
- * Cumple con la legislación española (RD-ley 8/2019, Art. 34.9 ET).
+ * Cliente configurado para:
+ * - Sistema de fichaje de profesores (RD-ley 8/2019, Art. 34.9 ET)
+ * - CRM de leads omnicanal (WhatsApp, Instagram, Voz, Web)
  *
  * @see https://supabase.com/docs/reference/javascript
  */
@@ -143,6 +144,301 @@ export interface ResumenMensual {
 }
 
 // ============================================================================
+// CRM DE LEADS - TYPES
+// ============================================================================
+
+/** Canal de origen del lead */
+export type LeadChannel = 'whatsapp' | 'instagram' | 'web' | 'voice' | 'manual';
+
+/** Tier del lead scoring */
+export type LeadTierDB = 'hot' | 'warm' | 'cold';
+
+/** Estado del lead en el pipeline */
+export type LeadStatus =
+  | 'new'
+  | 'engaged'
+  | 'qualified'
+  | 'booked'
+  | 'attended'
+  | 'converted'
+  | 'lost'
+  | 'dormant';
+
+/** Estado de membresía Momence */
+export type MembershipStatus = 'none' | 'active' | 'expired' | 'frozen' | 'unknown';
+
+/**
+ * Lead - Perfil unificado de un potencial alumno
+ * Un lead = un teléfono único (E.164), puede venir de múltiples canales
+ */
+export interface Lead {
+  id: string;
+
+  // Identificación
+  phone: string;
+  name: string | null;
+  email: string | null;
+
+  // Origen y canal
+  source: string | null;
+  source_id: string | null;
+  channel: LeadChannel;
+
+  // Lead scoring
+  score: number;
+  tier: LeadTierDB;
+  signals: string[];
+
+  // Pipeline
+  status: LeadStatus;
+
+  // Preferencias
+  dance_styles: string[];
+  level: string | null;
+  preferred_schedule: string | null;
+  language: string;
+
+  // Seguimiento
+  first_contact: string;
+  last_contact: string;
+  next_followup: string | null;
+  followup_count: number;
+  assigned_to: string | null;
+
+  // Consentimientos RGPD
+  consent_marketing: boolean;
+  consent_calls: boolean;
+  consent_date: string | null;
+  consent_renewed: string | null;
+
+  // Atribución Meta Ads
+  meta_fbclid: string | null;
+  meta_fbc: string | null;
+  meta_fbp: string | null;
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_term: string | null;
+  utm_content: string | null;
+
+  // Momence
+  momence_member_id: number | null;
+  membership_status: MembershipStatus;
+  membership_name: string | null;
+
+  // Segmentación
+  tags: string[];
+  notes: string | null;
+
+  // Timestamps
+  created_at: string;
+  updated_at: string;
+}
+
+/** Canal de interacción (incluye email que leads no tiene como canal de origen) */
+export type InteractionChannel = 'whatsapp' | 'instagram' | 'voice' | 'web' | 'email' | 'manual';
+
+/** Dirección de la interacción */
+export type InteractionDirection = 'inbound' | 'outbound';
+
+/** Tipo de interacción */
+export type InteractionType =
+  | 'message'
+  | 'voice_note'
+  | 'image'
+  | 'call'
+  | 'booking'
+  | 'booking_cancel'
+  | 'booking_reschedule'
+  | 'checkin'
+  | 'payment'
+  | 'escalation'
+  | 'nurture_step'
+  | 'note';
+
+/**
+ * LeadInteraction - Una interacción individual con un lead
+ * Inmutable (insert-only, sin updated_at)
+ */
+export interface LeadInteraction {
+  id: string;
+  lead_id: string;
+
+  channel: InteractionChannel;
+  direction: InteractionDirection;
+  type: InteractionType;
+
+  content: string | null;
+  content_summary: string | null;
+  metadata: Record<string, unknown>;
+
+  ai_model: string | null;
+  sentiment: string | null;
+  intent: string | null;
+
+  duration_seconds: number | null;
+
+  created_at: string;
+}
+
+/** Tipo de trigger para secuencias de nurturing */
+export type NurtureTriggerType =
+  | 'new_lead'
+  | 'post_trial'
+  | 'no_show'
+  | 'abandoned'
+  | 'dormant'
+  | 'manual';
+
+/** Paso de una secuencia de nurturing */
+export interface NurtureStep {
+  step: number;
+  delay_hours: number;
+  channel: string;
+  action: string;
+  template_name?: string;
+  description: string;
+}
+
+/**
+ * NurtureSequence - Definición de una cadencia de seguimiento automático
+ */
+export interface NurtureSequence {
+  id: string;
+
+  name: string;
+  description: string | null;
+
+  trigger_type: NurtureTriggerType;
+  trigger_conditions: Record<string, unknown>;
+  steps: NurtureStep[];
+
+  active: boolean;
+  priority: number;
+
+  total_enrolled: number;
+  total_completed: number;
+  total_converted: number;
+
+  created_at: string;
+  updated_at: string;
+}
+
+/** Estado de una ejecución de nurturing */
+export type NurtureExecutionStatus =
+  | 'active'
+  | 'completed'
+  | 'converted'
+  | 'paused'
+  | 'cancelled'
+  | 'failed';
+
+/**
+ * NurtureExecution - Ejecución de una secuencia para un lead específico
+ */
+export interface NurtureExecution {
+  id: string;
+  lead_id: string;
+  sequence_id: string;
+
+  step_index: number;
+  total_steps: number;
+  status: NurtureExecutionStatus;
+
+  scheduled_at: string | null;
+  last_executed_at: string | null;
+  last_step_result: Record<string, unknown>;
+
+  created_at: string;
+  updated_at: string;
+}
+
+// ============================================================================
+// INSERT TYPES (campos con DEFAULT en SQL son opcionales)
+// ============================================================================
+
+/** Insert para leads: solo phone es obligatorio */
+export interface LeadInsert {
+  phone: string;
+  name?: string | null;
+  email?: string | null;
+  source?: string | null;
+  source_id?: string | null;
+  channel?: LeadChannel;
+  score?: number;
+  tier?: LeadTierDB;
+  signals?: string[];
+  status?: LeadStatus;
+  dance_styles?: string[];
+  level?: string | null;
+  preferred_schedule?: string | null;
+  language?: string;
+  first_contact?: string;
+  last_contact?: string;
+  next_followup?: string | null;
+  followup_count?: number;
+  assigned_to?: string | null;
+  consent_marketing?: boolean;
+  consent_calls?: boolean;
+  consent_date?: string | null;
+  consent_renewed?: string | null;
+  meta_fbclid?: string | null;
+  meta_fbc?: string | null;
+  meta_fbp?: string | null;
+  utm_source?: string | null;
+  utm_medium?: string | null;
+  utm_campaign?: string | null;
+  utm_term?: string | null;
+  utm_content?: string | null;
+  momence_member_id?: number | null;
+  membership_status?: MembershipStatus;
+  membership_name?: string | null;
+  tags?: string[];
+  notes?: string | null;
+}
+
+/** Insert para lead_interactions: lead_id, channel, direction, type obligatorios */
+export interface LeadInteractionInsert {
+  lead_id: string;
+  channel: InteractionChannel;
+  direction: InteractionDirection;
+  type: InteractionType;
+  content?: string | null;
+  content_summary?: string | null;
+  metadata?: Record<string, unknown>;
+  ai_model?: string | null;
+  sentiment?: string | null;
+  intent?: string | null;
+  duration_seconds?: number | null;
+}
+
+/** Insert para nurture_sequences: name y trigger_type obligatorios */
+export interface NurtureSequenceInsert {
+  name: string;
+  trigger_type: NurtureTriggerType;
+  description?: string | null;
+  trigger_conditions?: Record<string, unknown>;
+  steps?: NurtureStep[];
+  active?: boolean;
+  priority?: number;
+  total_enrolled?: number;
+  total_completed?: number;
+  total_converted?: number;
+}
+
+/** Insert para nurture_executions: lead_id, sequence_id, total_steps obligatorios */
+export interface NurtureExecutionInsert {
+  lead_id: string;
+  sequence_id: string;
+  total_steps: number;
+  step_index?: number;
+  status?: NurtureExecutionStatus;
+  scheduled_at?: string | null;
+  last_executed_at?: string | null;
+  last_step_result?: Record<string, unknown>;
+}
+
+// ============================================================================
 // DATABASE SCHEMA TYPE
 // ============================================================================
 
@@ -153,28 +449,59 @@ export interface Database {
         Row: Profesor;
         Insert: Omit<Profesor, 'id' | 'created_at' | 'updated_at'>;
         Update: Partial<Omit<Profesor, 'id' | 'created_at'>>;
+        Relationships: [];
       };
       fichajes: {
         Row: Fichaje;
         Insert: Omit<Fichaje, 'id' | 'created_at' | 'updated_at'>;
         Update: Partial<Omit<Fichaje, 'id' | 'created_at'>>;
+        Relationships: [];
       };
       fichajes_audit_log: {
         Row: FichajeAuditLog;
         Insert: Omit<FichajeAuditLog, 'id' | 'timestamp'>;
         Update: never;
+        Relationships: [];
       };
       configuracion_fichaje: {
         Row: ConfiguracionFichaje;
         Insert: Partial<ConfiguracionFichaje>;
         Update: Partial<ConfiguracionFichaje>;
+        Relationships: [];
       };
       resumen_mensual: {
         Row: ResumenMensual;
         Insert: Omit<ResumenMensual, 'id' | 'created_at'>;
         Update: Partial<Omit<ResumenMensual, 'id' | 'created_at'>>;
+        Relationships: [];
+      };
+      leads: {
+        Row: Lead;
+        Insert: LeadInsert;
+        Update: Partial<LeadInsert>;
+        Relationships: [];
+      };
+      lead_interactions: {
+        Row: LeadInteraction;
+        Insert: LeadInteractionInsert;
+        Update: never;
+        Relationships: [];
+      };
+      nurture_sequences: {
+        Row: NurtureSequence;
+        Insert: NurtureSequenceInsert;
+        Update: Partial<NurtureSequenceInsert>;
+        Relationships: [];
+      };
+      nurture_executions: {
+        Row: NurtureExecution;
+        Insert: NurtureExecutionInsert;
+        Update: Partial<NurtureExecutionInsert>;
+        Relationships: [];
       };
     };
+    Views: {};
+    Functions: {};
   };
 }
 
