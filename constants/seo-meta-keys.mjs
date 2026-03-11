@@ -148,6 +148,7 @@ export const SEO_META_KEYS = {
   blogModernJazz:      { titleKey: 'blogModernJazz_title',         descKey: 'blogModernJazz_metaDescription',      ns: 'blog' },
   blogPerderMiedoBailar: { titleKey: 'blogPerderMiedoBailar_title', descKey: 'blogPerderMiedoBailar_metaDescription', ns: 'blog' },
   blogBaileSaludMental:{ titleKey: 'blogBaileSaludMental_title',   descKey: 'blogBaileSaludMental_metaDescription',ns: 'blog' },
+  blogBachata:         { titleKey: 'blogBachata_title',            descKey: 'blogBachata_metaDescription',         ns: 'blog' },
 
   // ═══════════════════════════════════════════════════════════════
   // PROMO / LANDING PAGES
