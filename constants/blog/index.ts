@@ -44,6 +44,7 @@ export { DANZAS_URBANAS_BARCELONA_CONFIG } from './articles/danzas-urbanas-barce
 export { MODERN_JAZZ_BARCELONA_CONFIG } from './articles/modern-jazz-barcelona';
 export { CLASES_BACHATA_BARCELONA_CONFIG } from './articles/clases-bachata-barcelona';
 export { CLASES_REGGAETON_BARCELONA_CONFIG } from './articles/clases-reggaeton-barcelona';
+export { CLASES_HEELS_DANCE_BARCELONA_CONFIG } from './articles/clases-heels-dance-barcelona';
 
 // Template Enterprise (Reference - Do not use in production routes)
 export { TEMPLATE_ENTERPRISE_CONFIG } from './articles/_TEMPLATE_ENTERPRISE';
