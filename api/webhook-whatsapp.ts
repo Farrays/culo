@@ -8,6 +8,9 @@ import { processAgentMessage } from './lib/ai/agent-simple.js';
 import { isFeatureEnabled, FEATURES } from './lib/feature-flags.js';
 import {
   isHumanTakeover,
+  getTakeoverInfo,
+  deactivateTakeover,
+  getConversationHistory,
   trackConversationActivity,
   saveUserMessageDuringTakeover,
   addNotification,
@@ -766,11 +769,35 @@ async function processMessage(
       // Comprobar si un humano ha tomado el control
       const takeoverActive = await isHumanTakeover(upstashRedis, phone);
       if (takeoverActive) {
+        // Check if admin actually replied since takeover started
+        // If not, auto-release takeover so Laura responds instead of leaving user hanging
+        const takeoverInfo = await getTakeoverInfo(upstashRedis, phone);
+        const history = await getConversationHistory(upstashRedis, phone);
+
+        const adminRepliedSinceTakeover =
+          takeoverInfo &&
+          history.some(
+            msg =>
+              msg.role === 'assistant' &&
+              msg.timestamp &&
+              new Date(msg.timestamp).getTime() > takeoverInfo.since
+          );
+
+        if (adminRepliedSinceTakeover) {
+          // Admin is actively handling this conversation — stay in takeover
+          console.log(
+            `[webhook-whatsapp] Human takeover active for ${phone.slice(-4)} - admin replied, skipping Laura`
+          );
+          await saveUserMessageDuringTakeover(upstashRedis, phone, textBody);
+          return;
+        }
+
+        // Admin hasn't replied — release takeover so Laura handles it
         console.log(
-          `[webhook-whatsapp] Human takeover active for ${phone.slice(-4)} - skipping Laura`
+          `[webhook-whatsapp] Human takeover active for ${phone.slice(-4)} but admin never replied - releasing to Laura`
         );
-        await saveUserMessageDuringTakeover(upstashRedis, phone, textBody);
-        return; // No llamar a Laura
+        await deactivateTakeover(upstashRedis, phone);
+        // Fall through to Laura processing below
       }
 
       console.log(`[webhook-whatsapp] Processing with LAURA agent...`);
