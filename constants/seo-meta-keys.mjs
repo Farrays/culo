@@ -151,6 +151,7 @@ export const SEO_META_KEYS = {
   blogBachata:         { titleKey: 'blogBachata_title',            descKey: 'blogBachata_metaDescription',         ns: 'blog' },
   blogReggaeton:       { titleKey: 'blogReggaeton_title',          descKey: 'blogReggaeton_metaDescription',       ns: 'blog' },
   blogHeels:           { titleKey: 'blogHeels_title',              descKey: 'blogHeels_metaDescription',           ns: 'blog' },
+  blogStretching:      { titleKey: 'blogStretching_title',         descKey: 'blogStretching_metaDescription',      ns: 'blog' },
 
   // ═══════════════════════════════════════════════════════════════
   // PROMO / LANDING PAGES

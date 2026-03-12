@@ -146,6 +146,29 @@ export const AUTHOR_CHARLIE_BREEZY: AuthorConfig = {
 };
 
 /**
+ * CrisAg - Body Conditioning, Stretching & Fitness Expert
+ *
+ * Guest author for fitness, stretching and body conditioning articles.
+ * Método Farray® certified since 2012, trained at The Cuban School of Arts London.
+ */
+export const AUTHOR_CRISAG: AuthorConfig = {
+  id: 'crisag',
+  name: 'CrisAg',
+  roleKey: 'blog_authorRoleCrisAg',
+  bioKey: 'blog_authorBioCrisAg',
+  image: '/images/teachers/img/profesora-crisag_320.webp',
+  imageSrcSet:
+    '/images/teachers/img/profesora-crisag_320.webp 320w, /images/teachers/img/profesora-crisag_640.webp 640w',
+  profileUrl: '/es/profesores-baile-barcelona',
+  credentials: [
+    'blog_credential_metodoFarray2012',
+    'blog_credential_bodyConditioning',
+    'blog_credential_cubanSchoolArtsLondon',
+  ],
+  sameAs: [],
+};
+
+/**
  * Default author for all blog articles
  */
 export const DEFAULT_AUTHOR = AUTHOR_YUNAISY;

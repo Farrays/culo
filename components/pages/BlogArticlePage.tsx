@@ -30,6 +30,7 @@ import { MODERN_JAZZ_BARCELONA_CONFIG } from '../../constants/blog/articles/mode
 import { CLASES_BACHATA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-bachata-barcelona';
 import { CLASES_REGGAETON_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-reggaeton-barcelona';
 import { CLASES_HEELS_DANCE_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-heels-dance-barcelona';
+import { CLASES_STRETCHING_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-stretching-barcelona';
 
 // Map of slug -> config for all articles
 const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
@@ -50,6 +51,7 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
   'clases-bachata-barcelona-guia-completa': CLASES_BACHATA_BARCELONA_CONFIG,
   'clases-reggaeton-barcelona-guia-completa': CLASES_REGGAETON_BARCELONA_CONFIG,
   'clases-heels-dance-barcelona-guia-completa': CLASES_HEELS_DANCE_BARCELONA_CONFIG,
+  'clases-stretching-barcelona-guia-completa': CLASES_STRETCHING_BARCELONA_CONFIG,
 };
 
 const BlogArticlePage: React.FC = () => {
