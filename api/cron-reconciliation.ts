@@ -176,16 +176,34 @@ function getHourInTimezone(date: Date, timezone: string): number {
   );
 }
 
+/**
+ * Parse classDate + classTime as Madrid timezone → proper UTC Date.
+ * Without this, Vercel (UTC) interprets "21:00" as 21:00 UTC instead of 21:00 Madrid.
+ */
+function parseClassDateTimeMadrid(classDate: string, classTime: string): Date {
+  const temp = new Date(`${classDate}T12:00:00Z`);
+  const madridHour = parseInt(
+    temp.toLocaleTimeString('en-US', {
+      timeZone: SPAIN_TIMEZONE,
+      hour12: false,
+      hour: '2-digit',
+    }),
+    10
+  );
+  const offsetHours = madridHour - 12; // +1 (CET) or +2 (CEST)
+  const sign = offsetHours >= 0 ? '+' : '-';
+  const abs = Math.abs(offsetHours).toString().padStart(2, '0');
+  return new Date(`${classDate}T${classTime}:00${sign}${abs}:00`);
+}
+
 function isClassFinished(classDate: string, classTime: string): boolean {
   const now = new Date();
-  const [hours, minutes] = classTime.split(':').map(Number);
 
-  // Build class end time: classTime + duration + buffer
   let classEndDate: Date;
   if (/^\d{4}-\d{2}-\d{2}$/.test(classDate)) {
-    classEndDate = new Date(`${classDate}T${classTime}:00`);
+    classEndDate = parseClassDateTimeMadrid(classDate, classTime);
   } else {
-    // Try to parse Spanish date format
+    const [hours, minutes] = classTime.split(':').map(Number);
     classEndDate = new Date();
     classEndDate.setHours(hours || 0, minutes || 0, 0, 0);
   }
