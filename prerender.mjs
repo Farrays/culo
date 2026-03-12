@@ -378,6 +378,7 @@ const OG_IMAGE_MAP = {
   blogReggaeton: 'blog/clases-reggaeton/og.jpg',
   blogHeels: 'blog/clases-heels/og.jpg',
   blogStretching: 'blog/clases-stretching/og.jpg',
+  blogBaileAdultos: 'blog/clases-baile-adultos/og.jpg',
 
   // === Páginas legales ===
   termsConditions: 'og-home.jpg',
@@ -506,6 +507,7 @@ const BLOG_ARTICLE_KEY_MAP = {
   blogReggaeton: 'blogReggaeton',
   blogHeels: 'blogHeels',
   blogStretching: 'blogStretching',
+  blogBaileAdultos: 'blogBaileAdultos',
   blogDanzaContemporaneaVsJazzBallet: 'blog_danzaContemporaneaVsJazzBallet',
 };
 
@@ -1948,6 +1950,7 @@ const routes = [
   { path: 'es/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'es', page: 'blogReggaeton' },
   { path: 'es/blog/tips/clases-heels-dance-barcelona-guia-completa', lang: 'es', page: 'blogHeels' },
   { path: 'es/blog/fitness/clases-stretching-barcelona-guia-completa', lang: 'es', page: 'blogStretching' },
+  { path: 'es/blog/tips/clases-baile-adultos-barcelona-guia-completa', lang: 'es', page: 'blogBaileAdultos' },
   { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
   { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
@@ -1973,6 +1976,7 @@ const routes = [
   { path: 'ca/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'ca', page: 'blogReggaeton' },
   { path: 'ca/blog/tips/clases-heels-dance-barcelona-guia-completa', lang: 'ca', page: 'blogHeels' },
   { path: 'ca/blog/fitness/clases-stretching-barcelona-guia-completa', lang: 'ca', page: 'blogStretching' },
+  { path: 'ca/blog/tips/clases-baile-adultos-barcelona-guia-completa', lang: 'ca', page: 'blogBaileAdultos' },
   { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
   { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
@@ -1998,6 +2002,7 @@ const routes = [
   { path: 'en/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'en', page: 'blogReggaeton' },
   { path: 'en/blog/tips/clases-heels-dance-barcelona-guia-completa', lang: 'en', page: 'blogHeels' },
   { path: 'en/blog/fitness/clases-stretching-barcelona-guia-completa', lang: 'en', page: 'blogStretching' },
+  { path: 'en/blog/tips/clases-baile-adultos-barcelona-guia-completa', lang: 'en', page: 'blogBaileAdultos' },
   { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
   { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
@@ -2023,6 +2028,7 @@ const routes = [
   { path: 'fr/blog/tips/clases-reggaeton-barcelona-guia-completa', lang: 'fr', page: 'blogReggaeton' },
   { path: 'fr/blog/tips/clases-heels-dance-barcelona-guia-completa', lang: 'fr', page: 'blogHeels' },
   { path: 'fr/blog/fitness/clases-stretching-barcelona-guia-completa', lang: 'fr', page: 'blogStretching' },
+  { path: 'fr/blog/tips/clases-baile-adultos-barcelona-guia-completa', lang: 'fr', page: 'blogBaileAdultos' },
   { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
   { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 

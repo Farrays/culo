@@ -36,6 +36,7 @@ import { CLASES_BACHATA_BARCELONA_CONFIG } from '../../constants/blog/articles/c
 import { CLASES_REGGAETON_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-reggaeton-barcelona';
 import { CLASES_HEELS_DANCE_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-heels-dance-barcelona';
 import { CLASES_STRETCHING_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-stretching-barcelona';
+import { CLASES_BAILE_ADULTOS_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-baile-adultos-barcelona';
 
 // Generate article card data from configs
 const ALL_ARTICLES: ArticleCardData[] = [
@@ -57,6 +58,7 @@ const ALL_ARTICLES: ArticleCardData[] = [
   getArticleCardData(CLASES_REGGAETON_BARCELONA_CONFIG),
   getArticleCardData(CLASES_HEELS_DANCE_BARCELONA_CONFIG),
   getArticleCardData(CLASES_STRETCHING_BARCELONA_CONFIG),
+  getArticleCardData(CLASES_BAILE_ADULTOS_BARCELONA_CONFIG),
 ];
 
 const BlogListPage: React.FC = () => {
