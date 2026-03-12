@@ -123,6 +123,52 @@ export const AUTHOR_MARCOS_MARTINEZ: AuthorConfig = {
 };
 
 /**
+ * Charlie Breezy - Reggaeton Cubano & Urban Dance Expert
+ *
+ * Guest author for reggaeton and urban dance articles.
+ * Trained at ENA Cuba, international master of urban dance.
+ */
+export const AUTHOR_CHARLIE_BREEZY: AuthorConfig = {
+  id: 'charlie-breezy',
+  name: 'Charlie Breezy',
+  roleKey: 'blog_authorRoleCharlie',
+  bioKey: 'blog_authorBioCharlie',
+  image: '/images/teachers/img/profesor-charlie-breezy_320.webp',
+  imageSrcSet:
+    '/images/teachers/img/profesor-charlie-breezy_320.webp 320w, /images/teachers/img/profesor-charlie-breezy_640.webp 640w',
+  profileUrl: '/es/profesores-baile-barcelona',
+  credentials: [
+    'blog_credential_enaCuba',
+    'blog_credential_reggaetonCubano',
+    'blog_credential_maestroInternacional',
+  ],
+  sameAs: [],
+};
+
+/**
+ * CrisAg - Body Conditioning, Stretching & Fitness Expert
+ *
+ * Guest author for fitness, stretching and body conditioning articles.
+ * Método Farray® certified since 2012, trained at The Cuban School of Arts London.
+ */
+export const AUTHOR_CRISAG: AuthorConfig = {
+  id: 'crisag',
+  name: 'CrisAg',
+  roleKey: 'blog_authorRoleCrisAg',
+  bioKey: 'blog_authorBioCrisAg',
+  image: '/images/teachers/img/profesora-crisag_320.webp',
+  imageSrcSet:
+    '/images/teachers/img/profesora-crisag_320.webp 320w, /images/teachers/img/profesora-crisag_640.webp 640w',
+  profileUrl: '/es/profesores-baile-barcelona',
+  credentials: [
+    'blog_credential_metodoFarray2012',
+    'blog_credential_bodyConditioning',
+    'blog_credential_cubanSchoolArtsLondon',
+  ],
+  sameAs: [],
+};
+
+/**
  * Default author for all blog articles
  */
 export const DEFAULT_AUTHOR = AUTHOR_YUNAISY;

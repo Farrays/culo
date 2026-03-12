@@ -14,6 +14,8 @@ export {
   AUTHOR_DANIEL_SENE,
   AUTHOR_ALEJANDRO_MINOSO,
   AUTHOR_MARCOS_MARTINEZ,
+  AUTHOR_CHARLIE_BREEZY,
+  AUTHOR_CRISAG,
   DEFAULT_AUTHOR,
 } from './author';
 
@@ -42,6 +44,9 @@ export { DANZA_CONTEMPORANEA_VS_JAZZ_BALLET_CONFIG } from './articles/danza-cont
 export { DANZAS_URBANAS_BARCELONA_CONFIG } from './articles/danzas-urbanas-barcelona';
 export { MODERN_JAZZ_BARCELONA_CONFIG } from './articles/modern-jazz-barcelona';
 export { CLASES_BACHATA_BARCELONA_CONFIG } from './articles/clases-bachata-barcelona';
+export { CLASES_REGGAETON_BARCELONA_CONFIG } from './articles/clases-reggaeton-barcelona';
+export { CLASES_HEELS_DANCE_BARCELONA_CONFIG } from './articles/clases-heels-dance-barcelona';
+export { CLASES_STRETCHING_BARCELONA_CONFIG } from './articles/clases-stretching-barcelona';
 
 // Template Enterprise (Reference - Do not use in production routes)
 export { TEMPLATE_ENTERPRISE_CONFIG } from './articles/_TEMPLATE_ENTERPRISE';
