@@ -825,10 +825,15 @@ async function executeCreateBooking(
       context.boughtMembershipIds
     );
 
-    // CRM: Track conversion signals (fire-and-forget)
+    // CRM: Track conversion signals + advance status (fire-and-forget)
     getByPhone(context.phone)
-      .then(lead => lead && addSignals(lead.id, ['started_booking', 'completed_booking']))
-      .catch(err => console.error('[create_booking] Lead scoring failed:', err));
+      .then(async lead => {
+        if (!lead) return;
+        await addSignals(lead.id, ['started_booking', 'completed_booking']);
+        const { progressStatus } = await import('../lead-repository.js');
+        await progressStatus(lead.id, 'booking_created');
+      })
+      .catch(err => console.error('[create_booking] Lead CRM update failed:', err));
 
     return JSON.stringify({
       success: true,
@@ -1160,7 +1165,9 @@ async function executeTransferToHuman(
       `Laura ha transferido la conversación: ${reason}`,
       undefined,
       'escalation'
-    ).catch(() => {});
+    ).catch(notifErr => {
+      console.error('[laura-tools] Failed to send escalation notification:', notifErr);
+    });
 
     return JSON.stringify({
       success: true,
@@ -1506,10 +1513,23 @@ async function executeManageTrialBooking(
       booking.attendance = 'not_attending';
 
       // Check if cancellation is on time (>= 2h before class)
+      // Parse as Madrid timezone (Vercel runs in UTC, class times are Madrid)
       const now = new Date();
       let isOnTime = true;
       if (booking.classDate && booking.classTime && /^\d{4}-\d{2}-\d{2}$/.test(booking.classDate)) {
-        const classStart = new Date(`${booking.classDate}T${booking.classTime}:00`);
+        const temp = new Date(`${booking.classDate}T12:00:00Z`);
+        const madridHour = parseInt(
+          temp.toLocaleTimeString('en-US', {
+            timeZone: 'Europe/Madrid',
+            hour12: false,
+            hour: '2-digit',
+          }),
+          10
+        );
+        const offset = madridHour - 12; // +1 (CET) or +2 (CEST)
+        const sign = offset >= 0 ? '+' : '-';
+        const abs = Math.abs(offset).toString().padStart(2, '0');
+        const classStart = new Date(`${booking.classDate}T${booking.classTime}:00${sign}${abs}:00`);
         const hoursUntilClass = (classStart.getTime() - now.getTime()) / (1000 * 60 * 60);
         isOnTime = hoursUntilClass >= 2;
       }
