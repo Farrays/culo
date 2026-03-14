@@ -220,12 +220,13 @@ export function shouldEnroll(lead: Lead, sequence: NurtureSequence): boolean {
   const conditions = sequence.trigger_conditions;
   if (conditions) {
     // Filtro por canal
-    if (conditions.channel && conditions.channel !== lead.channel) return false;
-    if (Array.isArray(conditions.channels) && !conditions.channels.includes(lead.channel))
+    if (conditions['channel'] && conditions['channel'] !== lead.channel) return false;
+    if (Array.isArray(conditions['channels']) && !conditions['channels'].includes(lead.channel))
       return false;
 
     // Filtro por score mínimo
-    if (typeof conditions.min_score === 'number' && lead.score < conditions.min_score) return false;
+    if (typeof conditions['min_score'] === 'number' && lead.score < conditions['min_score'])
+      return false;
   }
 
   return true;
@@ -248,7 +249,7 @@ export async function enrollLead(
   // Guard: ya enrollado
   if (await hasActiveExecution(leadId, sequenceId)) return null;
 
-  const firstStep = sequence.steps[0];
+  const firstStep = sequence.steps[0] as NurtureStep;
   const scheduledAt = new Date(Date.now() + firstStep.delay_hours * 3600_000);
 
   const insert: NurtureExecutionInsert = {
@@ -261,7 +262,7 @@ export async function enrollLead(
   };
 
   const { data, error } = await executionsTable()
-    .insert(insert as Record<string, unknown>)
+    .insert(insert as unknown as Record<string, unknown>)
     .select()
     .single();
 

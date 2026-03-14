@@ -2313,7 +2313,6 @@ export default async function handler(
         channel: 'web',
         source: 'trial_booking',
         dance_styles: estilo ? [sanitize(estilo)] : undefined,
-        consent_marketing: !!acceptsMarketing || !!acceptsTerms,
       });
       addSignals(lead.id, [
         'started_booking',
