@@ -463,7 +463,11 @@ export async function findTrialBooking(
 ): Promise<TrialBookingLookupResult | null> {
   // --- TIER 1: Phone lookup (O(1)) ---
   if (opts.phone) {
-    const rawPhone = opts.phone.replace(/[\s\-+()]/g, '');
+    let rawPhone = opts.phone.replace(/[\s\-+()]/g, '');
+    // Strip international prefix 0034 → 34
+    if (rawPhone.startsWith('0034')) {
+      rawPhone = rawPhone.slice(2); // 0034xxx → 34xxx
+    }
     const phoneVariants = [rawPhone];
     if (rawPhone.startsWith('34') && rawPhone.length > 9) {
       phoneVariants.push(rawPhone.slice(2));

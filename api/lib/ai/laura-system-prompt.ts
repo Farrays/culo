@@ -92,6 +92,7 @@ export function getFullSystemPrompt(
   memberContext?: {
     isExistingMember: boolean;
     firstName?: string;
+    email?: string;
     hasActiveMembership?: boolean;
     creditsAvailable?: number;
     membershipName?: string;
@@ -193,10 +194,11 @@ Datos de la reserva:
 - Puede cancelar: ${trialContext.canCancel ? 'Sí' : 'No'}
 - Puede reprogramar: ${trialContext.canReschedule ? 'Sí (1 vez)' : 'No (ya reprogramó)'}
 ${memberContext?.firstName ? `- Nombre: ${memberContext.firstName}` : ''}
+${memberContext?.email ? `- Email: ${memberContext.email}` : ''}
 
 INSTRUCCIONES (PRIORIDAD ABSOLUTA):
 - Su clase es GRATIS. NUNCA le pidas que pague ni le compartas class_url
-- Para gestionar su reserva → usa manage_trial_booking
+- Para gestionar su reserva → usa manage_trial_booking${memberContext?.email ? `. PASA SIEMPRE email='${memberContext.email}' como fallback` : ''}
 - Si quiere cancelar → action='cancel'
 - Si quiere cambiar de día → action='reschedule_next_week'
 - Si quiere info de su reserva → action='check_status'

@@ -472,11 +472,12 @@ export async function rescheduleBooking(
     }
   }
 
-  // 6. Delete old deduplication key
+  // 6. Delete old deduplication + trial_email keys
   try {
     const normalizedEmail = booking.email.toLowerCase().trim();
     await redis.del(`booking:${normalizedEmail}`);
-    console.log(`[reschedule] Cleared dedup for ${normalizedEmail}`);
+    await redis.del(`trial_email:${normalizedEmail}`);
+    console.log(`[reschedule] Cleared dedup + trial_email for ${normalizedEmail.slice(0, 3)}***`);
   } catch (e) {
     console.warn(`[reschedule] Failed to clear dedup: ${e}`);
   }
@@ -541,7 +542,7 @@ export async function rescheduleBooking(
     await redis.setex(`phone:${normalizedPhone}`, BOOKING_TTL_SECONDS, newEventId);
   }
 
-  // Set new dedup key
+  // Set new dedup + trial_email keys
   const normalizedEmail = booking.email.toLowerCase().trim();
   await redis.setex(
     `booking:${normalizedEmail}`,
@@ -553,6 +554,7 @@ export async function rescheduleBooking(
       eventId: newEventId,
     })
   );
+  await redis.setex(`trial_email:${normalizedEmail}`, BOOKING_TTL_SECONDS, newEventId);
 
   // 8. Update original booking in Redis
   booking.rescheduledTo = newEventId;

@@ -1052,6 +1052,7 @@ async function handleAttendanceConfirmation(
       // Eliminar deduplicación para que pueda reservar otro día
       const normalizedEmail = booking.email.toLowerCase();
       await redis.del(`booking:${normalizedEmail}`);
+      await redis.del(`trial_email:${normalizedEmail}`);
       console.log(`[webhook-whatsapp] Deduplication removed for ${redactEmail(normalizedEmail)}`);
 
       // Eliminar del índice de teléfono
@@ -1109,6 +1110,7 @@ async function handleAttendanceConfirmation(
       // ALWAYS clear dedup so admin/user can rebook (super admin mode)
       const lateEmail = booking.email.toLowerCase();
       await redis.del(`booking:${lateEmail}`);
+      await redis.del(`trial_email:${lateEmail}`);
       console.log(
         `[webhook-whatsapp] Late cancellation (< 1h) - dedup CLEARED (super admin): ${booking.firstName}`
       );
