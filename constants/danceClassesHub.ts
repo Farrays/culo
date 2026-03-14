@@ -58,6 +58,7 @@ export const HUB_CATEGORIES: HubCategory[] = [
     allStyles: [
       // Ordenado alfabéticamente - URLs de páginas que existen
       { key: 'afrobeat', url: '/clases/afrobeats-barcelona' },
+      { key: 'commercial_dance', url: '/clases/commercial-dance-barcelona' },
       { key: 'dancehall', url: '/clases/dancehall-barcelona' },
       { key: 'femmology_heels', url: '/clases/femmology' },
       { key: 'heels_barcelona', url: '/clases/heels-barcelona' },
@@ -128,6 +129,7 @@ export const FEATURED_STYLES: StyleLink[] = [
   { key: 'modern_jazz', url: '/clases/modern-jazz-barcelona' },
   // Urbanas
   { key: 'afrobeat', url: '/clases/afrobeats-barcelona' },
+  { key: 'commercial_dance', url: '/clases/commercial-dance-barcelona' },
   { key: 'dancehall', url: '/clases/dancehall-barcelona' },
   { key: 'femmology_heels', url: '/clases/femmology' },
   { key: 'heels_barcelona', url: '/clases/heels-barcelona' },

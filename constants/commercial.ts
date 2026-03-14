@@ -32,7 +32,7 @@ export const COMMERCIAL_COURSE_CONFIG = {
   duration: 'PT1H',
 };
 
-// Schedule data for Commercial Dance classes (empty - waitlist mode)
+// Schedule data for Commercial Dance classes
 export const COMMERCIAL_SCHEDULE_KEYS: Array<{
   id: string;
   dayKey: string;
@@ -40,7 +40,16 @@ export const COMMERCIAL_SCHEDULE_KEYS: Array<{
   time: string;
   teacher: string;
   levelKey: string;
-}> = [];
+}> = [
+  {
+    id: 'commercial-thu-1',
+    dayKey: 'schedule_thursday',
+    className: 'Commercial Dance',
+    time: '18:00',
+    teacher: 'Reynier Ramírez',
+    levelKey: 'beginnerLevel',
+  },
+];
 
 // Level descriptions for cards - Only Iniciación for now
 export const COMMERCIAL_LEVELS = [
