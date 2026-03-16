@@ -140,14 +140,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           } else {
             // Si el paso falló pero no es un error fatal (ej: ventana 24h expirada),
             // avanzar igualmente al siguiente paso
-            const nonFatalErrors = [
+            const sequenceStopErrors = [
               'Conversation active',
               'Lead opted out',
               'Lead converted',
               'Lead lost',
             ];
-            const isFatal = nonFatalErrors.some(e => stepResult.error?.includes(e));
-            if (!isFatal && stepResult.error) {
+            const shouldStop = sequenceStopErrors.some(e => stepResult.error?.includes(e));
+            if (!shouldStop && stepResult.error) {
               // Paso falló (ej: send_text fuera de ventana) — avanzar
               await advanceStep(exec.id);
               results.advanced++;
@@ -174,6 +174,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     await redis.hincrby(metricsKey, 'enrolled', results.enrolled);
     await redis.hincrby(metricsKey, 'executed', results.executed);
     await redis.hincrby(metricsKey, 'resumed', results.resumed);
+    await redis.hincrby(metricsKey, 'advanced', results.advanced);
     await redis.hincrby(metricsKey, 'errors', results.errors);
     await redis.expire(metricsKey, 90 * 24 * 3600);
 

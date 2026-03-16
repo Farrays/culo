@@ -369,6 +369,7 @@ export async function processSimpleMessage(
     | {
         isExistingMember: boolean;
         firstName?: string;
+        lastName?: string;
         email?: string;
         hasActiveMembership?: boolean;
         creditsAvailable?: number;
@@ -394,6 +395,7 @@ export async function processSimpleMessage(
         memberContext = {
           isExistingMember: true,
           firstName: lookup.member.firstName,
+          lastName: lookup.member.lastName,
           email: lookup.member.email,
           hasActiveMembership: membershipInfo.hasActiveMembership,
           creditsAvailable: membershipInfo.creditsAvailable,
@@ -432,7 +434,8 @@ export async function processSimpleMessage(
     const result = await findTrialBooking(redis, {
       phone,
       email: memberContext?.email,
-      name: memberContext?.firstName,
+      name:
+        [memberContext?.firstName, memberContext?.lastName].filter(Boolean).join(' ') || undefined,
     });
 
     if (result) {

@@ -883,8 +883,8 @@ async function processMessage(
         // CRM: Progresión automática de status (fire-and-forget)
         // ================================================================
         import('./lib/lead-repository.js')
-          .then(({ progressStatus }) => {
-            progressStatus(lead.id, 'first_reply');
+          .then(async ({ progressStatus }) => {
+            await progressStatus(lead.id, 'first_reply');
           })
           .catch(err => console.error('[webhook-whatsapp] progressStatus error:', err));
 
