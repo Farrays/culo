@@ -145,6 +145,11 @@
       "statusCode": 301
     },
     {
+      "source": "/:locale(es|ca|en|fr)/clases",
+      "destination": "/:locale/clases/baile-barcelona",
+      "statusCode": 301
+    },
+    {
       "source": "/:locale(es|ca|en|fr)/reparto",
       "destination": "/:locale/clases/reggaeton-cubano-barcelona",
       "statusCode": 301

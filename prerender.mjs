@@ -1605,7 +1605,6 @@ const routes = [
   { path: 'es', lang: 'es', page: 'home' },
   // YR Project (Linktree-style, no locale)
   { path: 'yr-project', lang: 'es', page: 'yrProject' },
-  { path: 'es/clases', lang: 'es', page: 'classesHub' },
   { path: 'es/horarios-precios', lang: 'es', page: 'horariosPrecio' },
   { path: 'es/clases/baile-barcelona', lang: 'es', page: 'classes' },
   { path: 'es/clases/danza-barcelona', lang: 'es', page: 'danza' },
@@ -1688,7 +1687,6 @@ const routes = [
   { path: 'es/404', lang: 'es', page: 'notFound' },
 
   { path: 'ca', lang: 'ca', page: 'home' },
-  { path: 'ca/clases', lang: 'ca', page: 'classesHub' },
   { path: 'ca/horarios-precios', lang: 'ca', page: 'horariosPrecio' },
   { path: 'ca/clases/baile-barcelona', lang: 'ca', page: 'classes' },
   { path: 'ca/clases/danza-barcelona', lang: 'ca', page: 'danza' },
@@ -1768,7 +1766,6 @@ const routes = [
   { path: 'ca/404', lang: 'ca', page: 'notFound' },
 
   { path: 'en', lang: 'en', page: 'home' },
-  { path: 'en/clases', lang: 'en', page: 'classesHub' },
   { path: 'en/horarios-precios', lang: 'en', page: 'horariosPrecio' },
   { path: 'en/clases/baile-barcelona', lang: 'en', page: 'classes' },
   { path: 'en/clases/danza-barcelona', lang: 'en', page: 'danza' },
@@ -1848,7 +1845,6 @@ const routes = [
   { path: 'en/404', lang: 'en', page: 'notFound' },
 
   { path: 'fr', lang: 'fr', page: 'home' },
-  { path: 'fr/clases', lang: 'fr', page: 'classesHub' },
   { path: 'fr/horarios-precios', lang: 'fr', page: 'horariosPrecio' },
   { path: 'fr/clases/baile-barcelona', lang: 'fr', page: 'classes' },
   { path: 'fr/clases/danza-barcelona', lang: 'fr', page: 'danza' },
