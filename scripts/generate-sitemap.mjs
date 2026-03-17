@@ -223,7 +223,7 @@ const routes = [
   // ===== ESPAÑOL (ES) =====
   { path: '', lang: 'es', page: 'home' },
   { path: 'es', lang: 'es', page: 'home' },
-  { path: 'es/clases', lang: 'es', page: 'classesHub' },
+  // es/clases removed from sitemap — it's a redirect to es/clases/baile-barcelona
   { path: 'es/clases/baile-barcelona', lang: 'es', page: 'classes' },
   { path: 'es/clases/danza-barcelona', lang: 'es', page: 'danza' },
   { path: 'es/clases/salsa-bachata-barcelona', lang: 'es', page: 'salsaBachata' },
@@ -306,7 +306,7 @@ const routes = [
 
   // ===== CATALÁN (CA) =====
   { path: 'ca', lang: 'ca', page: 'home' },
-  { path: 'ca/clases', lang: 'ca', page: 'classesHub' },
+  // ca/clases removed from sitemap — it's a redirect to ca/clases/baile-barcelona
   { path: 'ca/clases/baile-barcelona', lang: 'ca', page: 'classes' },
   { path: 'ca/clases/danza-barcelona', lang: 'ca', page: 'danza' },
   { path: 'ca/clases/salsa-bachata-barcelona', lang: 'ca', page: 'salsaBachata' },
@@ -389,7 +389,7 @@ const routes = [
 
   // ===== ENGLISH (EN) =====
   { path: 'en', lang: 'en', page: 'home' },
-  { path: 'en/clases', lang: 'en', page: 'classesHub' },
+  // en/clases removed from sitemap — it's a redirect to en/clases/baile-barcelona
   { path: 'en/clases/baile-barcelona', lang: 'en', page: 'classes' },
   { path: 'en/clases/danza-barcelona', lang: 'en', page: 'danza' },
   { path: 'en/clases/salsa-bachata-barcelona', lang: 'en', page: 'salsaBachata' },
@@ -472,7 +472,7 @@ const routes = [
 
   // ===== FRENCH (FR) =====
   { path: 'fr', lang: 'fr', page: 'home' },
-  { path: 'fr/clases', lang: 'fr', page: 'classesHub' },
+  // fr/clases removed from sitemap — it's a redirect to fr/clases/baile-barcelona
   { path: 'fr/clases/baile-barcelona', lang: 'fr', page: 'classes' },
   { path: 'fr/clases/danza-barcelona', lang: 'fr', page: 'danza' },
   { path: 'fr/clases/salsa-bachata-barcelona', lang: 'fr', page: 'salsaBachata' },

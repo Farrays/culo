@@ -1458,41 +1458,43 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         )}
 
         {/* ===== 4. TEACHERS SECTION ===== */}
-        <section
-          id="teachers"
-          aria-labelledby="teachers-title"
-          className="py-12 md:py-16 bg-primary-dark/10"
-        >
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
-                <h2
-                  id="teachers-title"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
-                >
-                  {t(`${config.styleKey}TeachersTitle`)}
-                </h2>
-                <p className="text-lg sm:text-xl text-neutral/70 mt-4">
-                  {t(`${config.styleKey}TeachersSubtitle`)}
-                </p>
+        {config.teachers.length > 0 && (
+          <section
+            id="teachers"
+            aria-labelledby="teachers-title"
+            className="py-12 md:py-16 bg-primary-dark/10"
+          >
+            <div className="container mx-auto px-4 sm:px-6">
+              <AnimateOnScroll>
+                <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
+                  <h2
+                    id="teachers-title"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
+                  >
+                    {t(`${config.styleKey}TeachersTitle`)}
+                  </h2>
+                  <p className="text-lg sm:text-xl text-neutral/70 mt-4">
+                    {t(`${config.styleKey}TeachersSubtitle`)}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+
+              <div
+                className={`grid ${config.teachers.length === 1 ? '' : config.teachers.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6 sm:gap-8 max-w-5xl mx-auto`}
+              >
+                {config.teachers.map((teacher, index) => (
+                  <TeacherCard key={teacher.name} teacher={teacher} index={index} t={t} />
+                ))}
               </div>
-            </AnimateOnScroll>
 
-            <div
-              className={`grid ${config.teachers.length === 1 ? '' : config.teachers.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6 sm:gap-8 max-w-5xl mx-auto`}
-            >
-              {config.teachers.map((teacher, index) => (
-                <TeacherCard key={teacher.name} teacher={teacher} index={index} t={t} />
-              ))}
+              <AnimateOnScroll>
+                <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
+                  {t(`${config.styleKey}TeachersClosing`)}
+                </p>
+              </AnimateOnScroll>
             </div>
-
-            <AnimateOnScroll>
-              <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
-                {t(`${config.styleKey}TeachersClosing`)}
-              </p>
-            </AnimateOnScroll>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* ===== 4b. PREPARE CLASS SECTION ===== */}
         {config.prepareConfig && (
