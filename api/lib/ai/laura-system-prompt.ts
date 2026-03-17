@@ -92,6 +92,7 @@ export function getFullSystemPrompt(
   memberContext?: {
     isExistingMember: boolean;
     firstName?: string;
+    lastName?: string;
     email?: string;
     hasActiveMembership?: boolean;
     creditsAvailable?: number;
