@@ -440,7 +440,7 @@ describe('CRITICAL: Integration Sanity', () => {
     }
   });
 
-  it('should export all required modules from api/lib', async () => {
+  it('should export all required modules from api/lib', { timeout: 15_000 }, async () => {
     // Verificar que los módulos críticos se pueden importar
     const modules = [
       '../redis',

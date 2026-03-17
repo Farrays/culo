@@ -272,10 +272,16 @@ export async function enrollLead(
     throw new Error(`[nurture] Error enrolling lead: ${error.message}`);
   }
 
-  // Incrementar contador
-  await sequencesTable()
-    .update({ total_enrolled: sequence.total_enrolled + 1 })
-    .eq('id', sequenceId);
+  // Incrementar contador (re-read para evitar race condition)
+  const { data: freshSeq } = await sequencesTable()
+    .select('total_enrolled')
+    .eq('id', sequenceId)
+    .single();
+  if (freshSeq) {
+    await sequencesTable()
+      .update({ total_enrolled: (freshSeq.total_enrolled ?? 0) + 1 })
+      .eq('id', sequenceId);
+  }
 
   console.log(
     `[nurture] Enrolled lead ${leadId} in "${sequence.name}" (seq ${sequenceId}), ` +
@@ -296,9 +302,9 @@ export async function enrollLead(
 function interpolateText(template: string, lead: Lead): string {
   const firstName = lead.name?.split(' ')[0] || 'amigo/a';
   return template
-    .replace(/\{\{firstName\}\}/g, firstName)
-    .replace(/\{\{name\}\}/g, lead.name || 'amigo/a')
-    .replace(/\{\{phone\}\}/g, lead.phone);
+    .replace(/\{\{firstName\}\}/g, () => firstName)
+    .replace(/\{\{name\}\}/g, () => lead.name || 'amigo/a')
+    .replace(/\{\{phone\}\}/g, () => lead.phone);
 }
 
 /**

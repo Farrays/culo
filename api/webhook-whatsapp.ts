@@ -883,10 +883,10 @@ async function processMessage(
         // CRM: Progresión automática de status (fire-and-forget)
         // ================================================================
         import('./lib/lead-repository.js')
-          .then(({ progressStatus }) => {
-            progressStatus(lead.id, 'first_reply');
+          .then(async ({ progressStatus }) => {
+            await progressStatus(lead.id, 'first_reply');
           })
-          .catch(() => {});
+          .catch(err => console.error('[webhook-whatsapp] progressStatus error:', err));
 
         // ================================================================
         // CRM: Enrollment en nurture sequences (fire-and-forget)
@@ -1052,6 +1052,8 @@ async function handleAttendanceConfirmation(
       // Eliminar deduplicación para que pueda reservar otro día
       const normalizedEmail = booking.email.toLowerCase();
       await redis.del(`booking:${normalizedEmail}`);
+      await redis.del(`trial_email:${normalizedEmail}`);
+      await redis.srem('all_trial_booking_ids', eventId);
       console.log(`[webhook-whatsapp] Deduplication removed for ${redactEmail(normalizedEmail)}`);
 
       // Eliminar del índice de teléfono
@@ -1109,6 +1111,8 @@ async function handleAttendanceConfirmation(
       // ALWAYS clear dedup so admin/user can rebook (super admin mode)
       const lateEmail = booking.email.toLowerCase();
       await redis.del(`booking:${lateEmail}`);
+      await redis.del(`trial_email:${lateEmail}`);
+      await redis.srem('all_trial_booking_ids', eventId);
       console.log(
         `[webhook-whatsapp] Late cancellation (< 1h) - dedup CLEARED (super admin): ${booking.firstName}`
       );
