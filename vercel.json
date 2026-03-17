@@ -67,6 +67,11 @@
       "maxDuration": 60,
       "includeFiles": "api/lib/**"
     },
+    "api/cron-reconciliation.ts": {
+      "memory": 512,
+      "maxDuration": 300,
+      "includeFiles": "api/lib/**"
+    },
     "api/**/*.ts": {
       "memory": 512,
       "maxDuration": 60,

@@ -231,9 +231,75 @@ async function reconcileBooking(
     return { eventId, action: 'skipped', details: 'Already cancelled' };
   }
 
-  // Skip already processed
+  // Skip fully processed bookings (attended, rescheduled, or unresolved)
   if (booking.reconciliationProcessed) {
     return { eventId, action: 'skipped', details: 'Already processed' };
+  }
+
+  // Resume: no-show already detected but reschedule not yet attempted (e.g. previous timeout)
+  if (booking.reconciliationStatus === 'no_show' && (booking.attendance as string) === 'no_show') {
+    const canRetry =
+      (booking.rescheduleCount || 0) < 1 &&
+      !booking.rescheduledFrom &&
+      autoRescheduleCount.value < MAX_AUTO_RESCHEDULES_PER_RUN;
+
+    if (canRetry) {
+      try {
+        const { rescheduleBooking } = await import('./admin-bookings-reschedule.js');
+        const result = await rescheduleBooking(redis, {
+          eventId,
+          mode: 'next_week',
+          notifyStudent: true,
+          reason: 'no_show',
+        });
+
+        if (result.success) {
+          autoRescheduleCount.value++;
+          const updatedRaw = await redis.get(`booking_details:${eventId}`);
+          if (updatedRaw) {
+            const updated = JSON.parse(updatedRaw);
+            updated.reconciliationProcessed = true;
+            updated.reconciliationTimestamp = new Date().toISOString();
+            await redis.setex(
+              `booking_details:${eventId}`,
+              BOOKING_TTL_SECONDS,
+              JSON.stringify(updated)
+            );
+          }
+          return {
+            eventId,
+            action: 'no_show_rescheduled',
+            details: `Retry: rescheduled to ${result.newClassDate}`,
+          };
+        }
+
+        // Reschedule failed — mark as unresolved so we don't retry forever
+        booking.reconciliationStatus = 'no_show_unresolved';
+        booking.reconciliationProcessed = true;
+        await redis.setex(
+          `booking_details:${eventId}`,
+          BOOKING_TTL_SECONDS,
+          JSON.stringify(booking)
+        );
+        await sendNoShowFailedNotification(booking);
+        return { eventId, action: 'no_show_unresolved', details: result.error || 'Retry failed' };
+      } catch (e) {
+        console.error(`[reconciliation] Retry reschedule error for ${eventId}:`, e);
+        booking.reconciliationStatus = 'no_show_unresolved';
+        booking.reconciliationProcessed = true;
+        await redis.setex(
+          `booking_details:${eventId}`,
+          BOOKING_TTL_SECONDS,
+          JSON.stringify(booking)
+        );
+        return { eventId, action: 'error', details: e instanceof Error ? e.message : 'Unknown' };
+      }
+    }
+
+    // Can't reschedule (limit reached or already rescheduled) — finalize
+    booking.reconciliationProcessed = true;
+    await redis.setex(`booking_details:${eventId}`, BOOKING_TTL_SECONDS, JSON.stringify(booking));
+    return { eventId, action: 'no_show_notified', details: 'Retry: no reschedule possible' };
   }
 
   // Skip if class hasn't finished yet
@@ -322,8 +388,12 @@ async function reconcileBooking(
   // NO-SHOW: Class finished but didn't check in
   booking.attendance = 'no_show' as BookingDetails['attendance'];
   booking.reconciliationStatus = 'no_show';
-  booking.reconciliationProcessed = true;
+  // NOTE: reconciliationProcessed stays false until reschedule is resolved
   booking.reconciliationTimestamp = new Date().toISOString();
+
+  // Persist no-show status to Redis BEFORE side-effects so a timeout
+  // won't leave the booking in an inconsistent state
+  await redis.setex(`booking_details:${eventId}`, BOOKING_TTL_SECONDS, JSON.stringify(booking));
 
   // Update calendar to red
   if (booking.calendarEventId) {
@@ -397,6 +467,7 @@ async function reconcileBooking(
 
       // Reschedule failed (class full, etc.)
       booking.reconciliationStatus = 'no_show_unresolved';
+      booking.reconciliationProcessed = true;
       await redis.setex(`booking_details:${eventId}`, BOOKING_TTL_SECONDS, JSON.stringify(booking));
 
       // Send branded "could not reschedule" notification
@@ -410,6 +481,7 @@ async function reconcileBooking(
     } catch (e) {
       console.error(`[reconciliation] Reschedule error for ${eventId}:`, e);
       booking.reconciliationStatus = 'no_show_unresolved';
+      booking.reconciliationProcessed = true;
       await redis.setex(`booking_details:${eventId}`, BOOKING_TTL_SECONDS, JSON.stringify(booking));
 
       return {
@@ -422,6 +494,7 @@ async function reconcileBooking(
 
   // No reschedule possible (already rescheduled before, or limit reached)
   // No notification for repeat no-shows — they already received a reschedule notification before
+  booking.reconciliationProcessed = true;
   await redis.setex(`booking_details:${eventId}`, BOOKING_TTL_SECONDS, JSON.stringify(booking));
 
   return {
