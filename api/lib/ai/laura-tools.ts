@@ -453,6 +453,32 @@ export interface TrialBookingLookupResult {
  *
  * Returns null if no active (non-cancelled) booking found.
  */
+/**
+ * Check if a trial booking is still relevant (class hasn't happened yet).
+ * A booking with a past classDate should not block member tools.
+ */
+function isTrialBookingActive(booking: Record<string, unknown>): boolean {
+  if (booking['status'] === 'cancelled') return false;
+  const classDate = booking['classDate'] as string | undefined;
+  if (!classDate || !/^\d{4}-\d{2}-\d{2}$/.test(classDate)) return true; // Can't determine, assume active
+  // Compare against today in Madrid timezone
+  const now = new Date();
+  const todayMadrid = now.toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' }); // YYYY-MM-DD
+  // Active if class is today or in the future
+  return classDate >= todayMadrid;
+}
+
+function parseBookingDetails(raw: unknown): Record<string, unknown> | null {
+  try {
+    return typeof raw === 'string'
+      ? (JSON.parse(raw) as Record<string, unknown>)
+      : (raw as Record<string, unknown>);
+  } catch {
+    console.error('[findTrialBooking] Corrupted booking_details JSON, skipping');
+    return null;
+  }
+}
+
 export async function findTrialBooking(
   redis: Redis,
   opts: {
@@ -480,11 +506,8 @@ export async function findTrialBooking(
       if (eventId) {
         const raw = await redis.get(`booking_details:${eventId}`);
         if (raw) {
-          const booking =
-            typeof raw === 'string'
-              ? (JSON.parse(raw) as Record<string, unknown>)
-              : (raw as Record<string, unknown>);
-          if (booking['status'] !== 'cancelled') {
+          const booking = parseBookingDetails(raw);
+          if (booking && isTrialBookingActive(booking)) {
             return { eventId, booking, matchedVia: 'phone' };
           }
         }
@@ -499,11 +522,8 @@ export async function findTrialBooking(
     if (eventId) {
       const raw = await redis.get(`booking_details:${eventId}`);
       if (raw) {
-        const booking =
-          typeof raw === 'string'
-            ? (JSON.parse(raw) as Record<string, unknown>)
-            : (raw as Record<string, unknown>);
-        if (booking['status'] !== 'cancelled') {
+        const booking = parseBookingDetails(raw);
+        if (booking && isTrialBookingActive(booking)) {
           return { eventId, booking, matchedVia: 'email_index' };
         }
       }
@@ -537,12 +557,8 @@ export async function findTrialBooking(
         const bookingId = chunk[j];
         if (!raw || !bookingId) continue;
 
-        const booking =
-          typeof raw === 'string'
-            ? (JSON.parse(raw) as Record<string, unknown>)
-            : (raw as Record<string, unknown>);
-
-        if (booking['status'] === 'cancelled') continue;
+        const booking = parseBookingDetails(raw);
+        if (!booking || !isTrialBookingActive(booking)) continue;
 
         // Match by email
         if (
@@ -1707,9 +1723,10 @@ async function executeManageTrialBooking(
       const email = booking.email.toLowerCase().trim();
       const bookingPhone = booking.phone?.replace(/[\s\-+()]/g, '') || '';
 
-      // Delete dedup by email + trial_email index
+      // Delete dedup by email + trial_email index + remove from global set
       await context.redis.del(`booking:${email}`);
       await context.redis.del(`trial_email:${email}`);
+      await context.redis.srem('all_trial_booking_ids', eventId);
 
       // Delete phone→eventId mapping (both stored format and lookup format)
       const phonesToClear = new Set<string>();

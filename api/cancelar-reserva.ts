@@ -724,6 +724,7 @@ export default async function handler(
     if (bookingData.email) {
       const cancelEmail = bookingData.email.toLowerCase().trim();
       await redis.del(`trial_email:${cancelEmail}`);
+      await redis.srem('all_trial_booking_ids', eventId || bookingData.momenceEventId);
       console.log(`[Cancel] Deleted trial_email:${redactEmail(cancelEmail)}`);
     }
 
