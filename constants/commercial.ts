@@ -43,7 +43,7 @@ export const COMMERCIAL_SCHEDULE_KEYS: Array<{
 }> = [
   {
     id: 'commercial-thu-1',
-    dayKey: 'schedule_thursday',
+    dayKey: 'thursday',
     className: 'Commercial Dance',
     time: '18:00',
     teacher: 'Reynier Ramírez',
