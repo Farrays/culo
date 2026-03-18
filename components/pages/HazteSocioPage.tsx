@@ -357,6 +357,8 @@ const HazteSocioPage: React.FC = () => {
     enablePagination: true,
     // Fetch all weeks when no explicit week in URL to find optimal week
     fetchAllWeeks: hasActiveFilters || !hasExplicitWeek,
+    // Show today's classes (no minimum booking hours) for membership signups
+    minBookingHours: 0,
   });
 
   // Track if we've auto-selected the optimal week (only once on mount)

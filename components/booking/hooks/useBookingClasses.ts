@@ -74,6 +74,8 @@ interface UseBookingClassesOptions {
   pageSize?: number;
   /** Fetch all 4 weeks when true (Acuity mode for filters) */
   fetchAllWeeks?: boolean;
+  /** Minimum hours in advance required to book a class (default: 24) */
+  minBookingHours?: number;
 }
 
 interface UseBookingClassesReturn {
@@ -238,10 +240,14 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
 }
 
 // Filter classes by week offset (client-side filtering)
-function filterByWeek(classesData: ClassData[], offset: number): ClassData[] {
+function filterByWeek(
+  classesData: ClassData[],
+  offset: number,
+  minHours: number = MIN_BOOKING_HOURS
+): ClassData[] {
   const now = new Date();
-  // Minimum booking time: classes must start at least MIN_BOOKING_HOURS from now
-  const minBookingTime = new Date(now.getTime() + MIN_BOOKING_HOURS * 60 * 60 * 1000);
+  // Minimum booking time: classes must start at least minHours from now
+  const minBookingTime = new Date(now.getTime() + minHours * 60 * 60 * 1000);
 
   // Get start of current week (Monday)
   const dayOfWeek = now.getDay();
@@ -369,6 +375,7 @@ export function useBookingClasses({
   enablePagination: _enablePagination = false,
   pageSize: _pageSize = PAGE_SIZE,
   fetchAllWeeks = false,
+  minBookingHours = MIN_BOOKING_HOURS,
 }: UseBookingClassesOptions): UseBookingClassesReturn {
   const [weekClasses, setWeekClasses] = useState<ClassData[]>([]);
   const [allClasses, setAllClasses] = useState<ClassData[]>([]);
@@ -406,7 +413,7 @@ export function useBookingClasses({
         setFromCache(true);
         setAllClasses(cached);
         // Filter by current week for display
-        const weekFiltered = filterByWeek(cached, weekOffset);
+        const weekFiltered = filterByWeek(cached, weekOffset, minBookingHours);
         setWeekClasses(weekFiltered);
         setHasMore(false);
         setLoading(false);
@@ -469,7 +476,7 @@ export function useBookingClasses({
       if (isMountedRef.current) {
         setAllClasses(allData);
         // Filter by current week for display
-        const weekFiltered = filterByWeek(allData, weekOffset);
+        const weekFiltered = filterByWeek(allData, weekOffset, minBookingHours);
         setWeekClasses(weekFiltered);
         setHasMore(false);
       }
@@ -494,7 +501,7 @@ export function useBookingClasses({
         setIsRetrying(false);
       }
     }
-  }, [weekOffset]);
+  }, [weekOffset, minBookingHours]);
 
   // Load more is not needed since we fetch all data at once
   const loadMore = useCallback(async () => {
@@ -520,10 +527,10 @@ export function useBookingClasses({
   useEffect(() => {
     const cached = classCache.getAll();
     if (cached && isMountedRef.current) {
-      const weekFiltered = filterByWeek(cached, weekOffset);
+      const weekFiltered = filterByWeek(cached, weekOffset, minBookingHours);
       setWeekClasses(weekFiltered);
     }
-  }, [weekOffset]);
+  }, [weekOffset, minBookingHours]);
 
   // When Acuity mode (filters active), use all cached data
   useEffect(() => {
@@ -537,8 +544,8 @@ export function useBookingClasses({
     // Use all cached data - already has 28 days
     const cached = classCache.getAll();
     if (cached && isMountedRef.current) {
-      // Apply 24h minimum booking filter to all weeks too
-      const minBookingTime = new Date(Date.now() + MIN_BOOKING_HOURS * 60 * 60 * 1000);
+      // Apply minimum booking filter to all weeks too
+      const minBookingTime = new Date(Date.now() + minBookingHours * 60 * 60 * 1000);
       const filtered = cached.filter(c => new Date(c.rawStartsAt) >= minBookingTime);
       setAllWeeksClasses(filtered);
       setAllWeeksLoading(false);
@@ -546,7 +553,7 @@ export function useBookingClasses({
       // If no cache yet, data will be available after initial fetch
       setAllWeeksLoading(loading);
     }
-  }, [fetchAllWeeks, allClasses, loading]);
+  }, [fetchAllWeeks, allClasses, loading, minBookingHours]);
 
   // Apply filters to current week classes
   const classes = useMemo(() => {
