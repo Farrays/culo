@@ -449,27 +449,37 @@ export async function rescheduleBooking(
       memberId = created.memberId;
     }
   } catch (e) {
-    console.warn(`[reschedule] Member lookup/create failed: ${e instanceof Error ? e.message : e}`);
-    // Continue without Momence booking - we'll still create the Redis booking
+    return {
+      success: false,
+      error: `Cannot find/create member in Momence: ${e instanceof Error ? e.message : e}`,
+    };
+  }
+
+  if (!memberId) {
+    return { success: false, error: 'No Momence member ID — cannot create booking' };
   }
 
   // 5. Create new booking in Momence
   let newMomenceBookingId: number | undefined;
-  if (memberId && nextSessionId) {
-    try {
-      const result = await client.createFreeBooking(nextSessionId, memberId);
-      newMomenceBookingId =
-        (result as { sessionBookingId?: number; id?: number }).sessionBookingId ||
-        (result as { id?: number }).id;
-      console.log(`[reschedule] Created new Momence booking: ${newMomenceBookingId}`);
-    } catch (e) {
-      const errorMsg = e instanceof Error ? e.message : String(e);
-      if (errorMsg.includes('full') || errorMsg.includes('capacity')) {
-        return { success: false, error: 'Target class is full. Cannot reschedule automatically.' };
-      }
-      console.warn(`[reschedule] Momence booking creation failed: ${errorMsg}`);
-      // Continue - we'll still create the Redis booking
+  try {
+    const result = await client.createFreeBooking(nextSessionId, memberId);
+    newMomenceBookingId =
+      (result as { sessionBookingId?: number; id?: number }).sessionBookingId ||
+      (result as { id?: number }).id;
+    console.log(`[reschedule] Created new Momence booking: ${newMomenceBookingId}`);
+  } catch (e) {
+    const errorMsg = e instanceof Error ? e.message : String(e);
+    if (errorMsg.includes('full') || errorMsg.includes('capacity')) {
+      return { success: false, error: 'Target class is full. Cannot reschedule automatically.' };
     }
+    return {
+      success: false,
+      error: `Momence booking creation failed: ${errorMsg}`,
+    };
+  }
+
+  if (!newMomenceBookingId) {
+    return { success: false, error: 'Momence returned no booking ID — reschedule aborted' };
   }
 
   // 6. Delete old deduplication + trial_email keys
