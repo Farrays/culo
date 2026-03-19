@@ -2,18 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.farrayscenter.com</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/es</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -1274,18 +1262,6 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/ca/merchandising</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/merchandising"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/ca/regala-baile</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -1307,18 +1283,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/contacto"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/contacto"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/ca/reservas</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/reservas"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/reservas"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/reservas"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/reservas"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/reservas"/>
   </url>
 
   <url>
@@ -1478,54 +1442,6 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/ca/terminos-y-condiciones</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/terminos-y-condiciones"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/ca/aviso-legal</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/aviso-legal"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/ca/politica-privacidad</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/politica-privacidad"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/ca/politica-cookies</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/politica-cookies"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/ca/servicios-baile-barcelona</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -1547,18 +1463,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/como-llegar-escuela-baile-barcelona"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/como-llegar-escuela-baile-barcelona"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/como-llegar-escuela-baile-barcelona"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/ca/calendario</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/calendario"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/calendario"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/calendario"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/calendario"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/calendario"/>
   </url>
 
   <url>
@@ -2162,18 +2066,6 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/en/merchandising</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/merchandising"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/en/regala-baile</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -2195,18 +2087,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/contacto"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/contacto"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/en/reservas</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/reservas"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/reservas"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/reservas"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/reservas"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/reservas"/>
   </url>
 
   <url>
@@ -2366,54 +2246,6 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/en/terminos-y-condiciones</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/terminos-y-condiciones"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/en/aviso-legal</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/aviso-legal"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/en/politica-privacidad</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/politica-privacidad"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/en/politica-cookies</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/politica-cookies"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/en/servicios-baile-barcelona</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -2435,18 +2267,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/como-llegar-escuela-baile-barcelona"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/como-llegar-escuela-baile-barcelona"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/como-llegar-escuela-baile-barcelona"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/en/calendario</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/calendario"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/calendario"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/calendario"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/calendario"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/calendario"/>
   </url>
 
   <url>
@@ -3050,18 +2870,6 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/fr/merchandising</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/merchandising"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/merchandising"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/fr/regala-baile</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -3083,18 +2891,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/contacto"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/contacto"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/fr/reservas</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/reservas"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/reservas"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/reservas"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/reservas"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/reservas"/>
   </url>
 
   <url>
@@ -3254,54 +3050,6 @@
   </url>
 
   <url>
-    <loc>https://www.farrayscenter.com/fr/terminos-y-condiciones</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/terminos-y-condiciones"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/terminos-y-condiciones"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/fr/aviso-legal</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/aviso-legal"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/aviso-legal"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/fr/politica-privacidad</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/politica-privacidad"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/politica-privacidad"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/fr/politica-cookies</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/politica-cookies"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/politica-cookies"/>
-  </url>
-
-  <url>
     <loc>https://www.farrayscenter.com/fr/servicios-baile-barcelona</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -3323,18 +3071,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/como-llegar-escuela-baile-barcelona"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/como-llegar-escuela-baile-barcelona"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/como-llegar-escuela-baile-barcelona"/>
-  </url>
-
-  <url>
-    <loc>https://www.farrayscenter.com/fr/calendario</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/calendario"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/calendario"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/calendario"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/calendario"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/calendario"/>
   </url>
 
   <url>
