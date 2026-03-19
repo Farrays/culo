@@ -1886,6 +1886,8 @@ async function executeManageTrialBooking(
               );
             }
             await context.redis.sadd('all_trial_booking_ids', newEventId);
+            // Add to reminders set so cron jobs send 48h/24h reminders
+            await context.redis.sadd(`reminders:${nextDateISO}`, newEventId);
             console.log(
               `[manage_trial_booking] Momence fallback: Redis records created for ${newEventId}`
             );
@@ -1894,6 +1896,49 @@ async function executeManageTrialBooking(
             console.warn(
               '[manage_trial_booking] Momence fallback: Redis save failed (non-blocking):',
               redisErr
+            );
+          }
+
+          // 6. Send notification emails (non-blocking)
+          try {
+            const { sendNoShowRescheduleEmail, sendAdminBookingNotification } =
+              await import('../email.js');
+
+            // Email to student: reschedule confirmation
+            const managementUrl = `https://www.farrayscenter.com/${lang}/reservas`;
+            await sendNoShowRescheduleEmail({
+              to: normalizedEmail,
+              firstName: momenceFallback.memberFirstName,
+              originalClassName: mb.className,
+              originalDate: mb.classDate,
+              originalTime: mb.classTime,
+              newClassName: newBookingDetails.className,
+              newDate: nextDateHuman,
+              newTime: nextTime,
+              managementUrl,
+              reason: 'manual' as const,
+            });
+            console.log(
+              `[manage_trial_booking] Momence fallback: reschedule email sent to ${normalizedEmail.slice(0, 4)}...`
+            );
+
+            // Email to admin: new booking notification
+            await sendAdminBookingNotification({
+              firstName: momenceFallback.memberFirstName,
+              lastName: momenceFallback.memberLastName,
+              email: normalizedEmail,
+              phone: normalizedPhone,
+              className: newBookingDetails.className,
+              classDate: nextDateHuman,
+              classTime: nextTime,
+              sourceUrl: 'Reprogramación vía WhatsApp (Momence fallback)',
+            });
+            console.log('[manage_trial_booking] Momence fallback: admin notification sent');
+          } catch (emailErr) {
+            // Non-blocking — booking is already done
+            console.warn(
+              '[manage_trial_booking] Momence fallback: email notification failed (non-blocking):',
+              emailErr
             );
           }
 
