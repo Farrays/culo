@@ -301,9 +301,9 @@ export const LAURA_TOOLS: Anthropic.Tool[] = [
       properties: {
         action: {
           type: 'string',
-          enum: ['check_status', 'cancel', 'reschedule_next_week'],
+          enum: ['check_status', 'cancel', 'reschedule_next_week', 'reschedule_in_two_weeks'],
           description:
-            'Acción: check_status = ver reserva, cancel = cancelar, reschedule_next_week = reprogramar para la semana siguiente',
+            'Acción: check_status = ver reserva, cancel = cancelar, reschedule_next_week = reprogramar +1 semana, reschedule_in_two_weeks = reprogramar +2 semanas',
         },
         email: {
           type: 'string',
@@ -1635,9 +1635,13 @@ async function executeManageTrialBooking(
 ): Promise<string> {
   const action = input['action'] as string;
 
-  if (!action || !['check_status', 'cancel', 'reschedule_next_week'].includes(action)) {
+  if (
+    !action ||
+    !['check_status', 'cancel', 'reschedule_next_week', 'reschedule_in_two_weeks'].includes(action)
+  ) {
     return JSON.stringify({
-      error: 'Acción no válida. Usa: check_status, cancel o reschedule_next_week',
+      error:
+        'Acción no válida. Usa: check_status, cancel, reschedule_next_week o reschedule_in_two_weeks',
     });
   }
 
@@ -1710,7 +1714,7 @@ async function executeManageTrialBooking(
         }
       }
 
-      if (action === 'reschedule_next_week') {
+      if (action === 'reschedule_next_week' || action === 'reschedule_in_two_weeks') {
         if (mb.cancelledAt) {
           return JSON.stringify({
             error: 'Esta reserva ya está cancelada, no se puede reprogramar.',
@@ -1720,9 +1724,10 @@ async function executeManageTrialBooking(
           const client = getMomenceClient(context.redis);
           const MADRID_TZ = 'Europe/Madrid';
 
-          // 1. Calculate next week's date (+7 days, same day of week)
+          // 1. Calculate target date (+7 or +14 days, same day of week)
+          const daysOffset = action === 'reschedule_in_two_weeks' ? 14 : 7;
           const targetDate = new Date(mb.classDate + 'T12:00:00Z');
-          targetDate.setDate(targetDate.getDate() + 7);
+          targetDate.setDate(targetDate.getDate() + daysOffset);
           const targetDateStr = targetDate.toISOString().split('T')[0] || '';
 
           // Search window: target ±1 to +2 days
@@ -2309,7 +2314,7 @@ async function executeManageTrialBooking(
   }
 
   // RESCHEDULE
-  if (action === 'reschedule_next_week') {
+  if (action === 'reschedule_next_week' || action === 'reschedule_in_two_weeks') {
     if ((booking.rescheduleCount || 0) >= 1 || booking.rescheduledFrom) {
       return JSON.stringify({
         error:
@@ -2319,6 +2324,7 @@ async function executeManageTrialBooking(
 
     try {
       const { rescheduleBooking } = await import('../../admin-bookings-reschedule.js');
+      const offset = action === 'reschedule_in_two_weeks' ? 14 : 7;
       // Upstash Redis is API-compatible with ioredis for get/set/del operations
       const result = await rescheduleBooking(
         context.redis as unknown as import('ioredis').default,
@@ -2327,6 +2333,7 @@ async function executeManageTrialBooking(
           mode: 'next_week',
           notifyStudent: false, // Laura will communicate directly
           reason: 'manual',
+          daysOffset: offset,
         }
       );
 

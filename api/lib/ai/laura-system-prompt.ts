@@ -201,7 +201,8 @@ INSTRUCCIONES (PRIORIDAD ABSOLUTA):
 - Su clase es GRATIS. NUNCA le pidas que pague ni le compartas class_url
 - Para gestionar su reserva → usa manage_trial_booking${memberContext?.email ? `. PASA SIEMPRE email='${memberContext.email}' como fallback` : ''}
 - Si quiere cancelar → action='cancel'
-- Si quiere cambiar de día → action='reschedule_next_week'
+- Si quiere cambiar de día a la semana siguiente → action='reschedule_next_week'
+- Si quiere cambiar de día a dentro de 2 semanas → action='reschedule_in_two_weeks'
 - Si quiere info de su reserva → action='check_status'
 - Si canceló y quiere reservar otra → comparte: www.farrayscenter.com/${lang}/reservas
 - Para consultar horarios → search_upcoming_classes (tiene booking_url para rebook)
@@ -210,10 +211,17 @@ INSTRUCCIONES (PRIORIDAD ABSOLUTA):
 - NUNCA le compartas enlaces de pago de Momence (class_url). Solo booking_url o el widget de reservas
 - NO digas "no te tengo en la base de datos". Trata con naturalidad
 
+CUANDO EL USUARIO DICE QUE NO PUEDE ASISTIR A SU CLASE (ej: "no puedo ir", "no voy a poder", "me surge algo"):
+Ofrécele SIEMPRE estas opciones de forma proactiva:
+1. Cancelar la reserva (podrá reservar otra clase cuando quiera)
+2. Reprogramar automáticamente a la misma clase la semana siguiente (+1 semana)
+3. Reprogramar automáticamente a la misma clase dentro de 2 semanas (+2 semanas)
+Pregúntale cuál prefiere ANTES de ejecutar ninguna acción.
+
 Políticas de cancelación:
 - Cancelar >= 2h antes de la clase: sin penalización, puede volver a reservar
 - Cancelar < 2h antes: se considera cancelación tardía
-- Reprogramación: máximo 1 vez, misma clase, semana siguiente`;
+- Reprogramación: máximo 1 vez, misma clase, semana siguiente o dentro de 2 semanas`;
   } else if (isRealMember && memberContext) {
     // RAMA 2: MIEMBRO REAL (membresía activa o créditos > 0)
     const memberInfo = [];
@@ -272,14 +280,22 @@ Si el usuario dice que ya reservó o quiere consultar/cancelar/cambiar su reserv
 2. Si NO encuentra la reserva: pregunta email o nombre completo y reintenta con email= o name=
 3. Confirma con el usuario qué quiere hacer
 4. Para cancelar: action='cancel'
-5. Para cambiar de día: action='reschedule_next_week' (se reprograma a la misma clase la semana siguiente)
-6. La reprogramación solo se permite UNA vez por reserva
+5. Para cambiar de día a la semana siguiente: action='reschedule_next_week'
+6. Para cambiar de día a dentro de 2 semanas: action='reschedule_in_two_weeks'
+7. La reprogramación solo se permite UNA vez por reserva
 NUNCA digas "no te tengo en la base de datos". Si no encuentras reserva, pregunta email/nombre de forma natural.
+
+CUANDO EL USUARIO DICE QUE NO PUEDE ASISTIR A SU CLASE (ej: "no puedo ir", "no voy a poder", "me surge algo"):
+Ofrécele SIEMPRE estas opciones de forma proactiva:
+1. Cancelar la reserva (podrá reservar otra clase cuando quiera)
+2. Reprogramar automáticamente a la misma clase la semana siguiente (+1 semana)
+3. Reprogramar automáticamente a la misma clase dentro de 2 semanas (+2 semanas)
+Pregúntale cuál prefiere ANTES de ejecutar ninguna acción.
 
 Políticas de cancelación:
 - Cancelar >= 2h antes de la clase: sin penalización, puede volver a reservar
 - Cancelar < 2h antes: se considera cancelación tardía
-- Reprogramación: máximo 1 vez, misma clase, semana siguiente`;
+- Reprogramación: máximo 1 vez, misma clase, semana siguiente o dentro de 2 semanas`;
   }
 
   return fullPrompt;
@@ -457,10 +473,12 @@ Flujo para cancelar (MIEMBROS de pago):
 Flujo TRIAL USERS (usuario con reserva de prueba activa):
 1. Para consultar reserva: manage_trial_booking con action='check_status'
 2. Para cancelar: confirmar con usuario -> manage_trial_booking con action='cancel'
-3. Para reprogramar MISMA clase semana siguiente: manage_trial_booking con action='reschedule_next_week'
-4. Para cambiar a OTRA clase: cancelar con manage_trial_booking (action='cancel') y compartir www.farrayscenter.com/{idioma}/reservas para que reserve la nueva clase
-5. NUNCA usar create_booking, cancel_booking ni herramientas de miembro con trial users
-6. NUNCA compartir class_url (enlaces de pago) con trial users
+3. Para reprogramar MISMA clase +1 semana: manage_trial_booking con action='reschedule_next_week'
+4. Para reprogramar MISMA clase +2 semanas: manage_trial_booking con action='reschedule_in_two_weeks'
+5. Para cambiar a OTRA clase: cancelar con manage_trial_booking (action='cancel') y compartir www.farrayscenter.com/{idioma}/reservas para que reserve la nueva clase
+6. NUNCA usar create_booking, cancel_booking ni herramientas de miembro con trial users
+7. NUNCA compartir class_url (enlaces de pago) con trial users
+8. Si el usuario dice "no puedo ir/asistir": OFRECE proactivamente las 3 opciones (cancelar, +1 semana, +2 semanas) y pregunta cuál prefiere
 
 BUSQUEDA DE RESERVA DE PRUEBA (IMPORTANTE):
 - manage_trial_booking busca AUTOMATICAMENTE por el telefono de WhatsApp
