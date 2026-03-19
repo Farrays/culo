@@ -724,19 +724,11 @@ export default async function handler(
     if (bookingData.email) {
       const cancelEmail = bookingData.email.toLowerCase().trim();
       await redis.del(`trial_email:${cancelEmail}`);
-      await redis.srem('all_trial_booking_ids', eventId || bookingData.momenceEventId);
+      // NOTE: Do NOT srem all_trial_booking_ids — admin analytics needs cancelled bookings
       console.log(`[Cancel] Deleted trial_email:${redactEmail(cancelEmail)}`);
     }
 
-    // También eliminar del set de reminders
-    if (bookingData.classDate) {
-      const dateMatch = bookingData.classDate.match(/\d{4}-\d{2}-\d{2}/);
-      if (dateMatch) {
-        const reminderKey = `reminders:${dateMatch[0]}`;
-        await redis.srem(reminderKey, eventId || bookingData.momenceEventId);
-        console.log(`[Cancel] Removed from ${reminderKey}`);
-      }
-    }
+    // NOTE: Do NOT remove from reminders:{date} — admin analytics needs cancelled bookings
 
     // 4. Enviar notificaciones
 

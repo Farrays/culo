@@ -536,9 +536,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // 1. Try global index first (reliable, contains ALL trial booking IDs)
     let allEventIds = await redis.smembers('all_trial_booking_ids');
 
-    // 2. If global index is empty, bootstrap from SCAN (one-time for old data)
-    if (allEventIds.length === 0) {
-      console.log('[admin-bookings] Global index empty, bootstrapping from SCAN...');
+    // 2. Self-heal: SCAN booking_details:* and re-populate index if needed
+    //    This catches bookings removed from the index by past cancellation bugs.
+    //    Uses a Redis flag to only run once per hour (not on every request).
+    const repairFlag = 'admin_bookings:index_repaired';
+    const alreadyRepaired = await redis.get(repairFlag);
+    if (!alreadyRepaired || allEventIds.length === 0) {
+      console.log('[admin-bookings] Running index self-heal SCAN...');
       const scannedIds: string[] = [];
       let cursor = '0';
       do {
@@ -557,13 +561,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       } while (cursor !== '0');
 
       if (scannedIds.length > 0) {
-        // Populate the global index for future requests
+        // Re-populate the global index (SADD is idempotent for existing members)
         await redis.sadd('all_trial_booking_ids', ...scannedIds);
-        allEventIds = scannedIds;
-        console.log(
-          `[admin-bookings] Bootstrapped ${scannedIds.length} booking IDs into global index`
-        );
+        const added = scannedIds.length - allEventIds.length;
+        if (added > 0) {
+          console.log(`[admin-bookings] Self-heal recovered ${added} missing booking IDs`);
+        }
+        allEventIds = await redis.smembers('all_trial_booking_ids');
       }
+      // Flag: don't re-scan for 1 hour
+      await redis.setex(repairFlag, 3600, '1');
     }
 
     // 3. Also merge IDs from reminders sets for the requested dates (belt & suspenders)
