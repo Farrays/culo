@@ -159,7 +159,7 @@ const ResumenFirmaPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
         <div className="relative z-10 bg-white/10 backdrop-blur-sm rounded-2xl border border-primary-dark/30 p-8 max-w-md w-full text-center">
           <div className="text-6xl mb-4">&#10060;</div>
-          <h1 className="text-2xl font-bold text-white mb-2">Error</h1>
+          <h2 className="text-2xl font-bold text-white mb-2">Error</h2>
           <p className="text-brand-300">{error}</p>
         </div>
       </div>

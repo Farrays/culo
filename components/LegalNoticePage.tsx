@@ -434,7 +434,7 @@ const LegalNoticePage: React.FC = () => {
       <Helmet>
         <title>{t('legalNotice_page_title')} | Farray's Center</title>
         <meta name="description" content={t('legalNotice_page_description')} />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/aviso-legal`} />
         {/* BreadcrumbList generated at build-time by prerender.mjs */}
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>

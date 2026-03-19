@@ -64,6 +64,7 @@ const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
                 <img
                   src={config.backgroundImage}
                   alt=""
+                  aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="eager"
                   fetchPriority="high"

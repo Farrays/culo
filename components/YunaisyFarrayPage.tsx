@@ -305,7 +305,7 @@ const YunaisyFarrayPage: React.FC = () => {
             {/* Poster Image - Always rendered for LCP (local optimized WebP) */}
             <img
               src={YUNAISY_VIDEO_CONFIG.posterUrl}
-              alt=""
+              alt="Yunaisy Farray bailando en Farray's International Dance Center Barcelona"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
                 isVideoPlaying ? 'opacity-0' : 'opacity-100'
               }`}
