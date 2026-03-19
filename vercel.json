@@ -134,6 +134,54 @@
   ],
   "redirects": [
     {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "wordfence_lh" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "amp" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "s" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "avia-element-paging" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "paged" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "attachment_id" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "page_id" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "query", "key": "p", "value": "\\d+" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
       "source": "/",
       "destination": "/es",
       "statusCode": 301

@@ -25,8 +25,66 @@ const BASE_URL = 'https://www.farrayscenter.com';
 const SUPPORTED_LOCALES = ['es', 'ca', 'en', 'fr'];
 const OUTPUT_DIR = path.join(ROOT_DIR, 'public');
 
-// Get current date in ISO format for lastmod
+// Get current date in ISO format
 const getCurrentDate = () => new Date().toISOString().split('T')[0];
+
+// =============================================================================
+// LASTMOD STRATEGY - Use realistic dates instead of always "today"
+// Google penalizes sitemaps where all pages show the same lastmod date.
+// =============================================================================
+
+// Last significant content update dates by page type
+const LASTMOD_DATES = {
+  // Home pages get updated frequently (schedule changes, announcements)
+  home: '2026-03-15',
+  // Class pages - last batch content update
+  classes: '2026-03-01',
+  // Class detail pages - content is stable, updated when schedule changes
+  classDetail: '2026-02-15',
+  // Blog articles use their datePublished (handled per-article below)
+  blog: '2026-02-01',
+  blogCategory: '2026-02-01',
+  // Service pages - relatively static
+  service: '2026-01-20',
+  // Legal pages - rarely change
+  legal: '2025-12-01',
+  // Other pages
+  default: '2026-02-01',
+};
+
+// Blog article dates (use actual publish dates)
+const BLOG_LASTMOD = {};
+// Populated from BLOG_ARTICLES after definition
+
+const getLastmod = (route) => {
+  const { page, path } = route;
+
+  // Blog articles - use their published date
+  if (BLOG_LASTMOD[page]) return BLOG_LASTMOD[page];
+
+  // Blog category pages
+  if (page.startsWith('blog') && !page.includes('Blog')) return LASTMOD_DATES.blogCategory;
+  if (['blog', 'blogLifestyle', 'blogHistoria', 'blogTutoriales', 'blogTips', 'blogFitness'].includes(page)) return LASTMOD_DATES.blogCategory;
+
+  // Home
+  if (page === 'home') return LASTMOD_DATES.home;
+
+  // Hub pages (class listing pages)
+  if (['classesHub', 'classes', 'danza', 'danzasUrbanas', 'salsaBachata'].includes(page)) return LASTMOD_DATES.classes;
+
+  // Class detail pages
+  if (path && path.includes('/clases/')) return LASTMOD_DATES.classDetail;
+
+  // Legal pages
+  if (['termsConditions', 'legalNotice', 'privacyPolicy', 'cookiePolicy'].includes(page)) return LASTMOD_DATES.legal;
+
+  // Service pages
+  if (['profesores', 'about', 'clasesParticulares', 'teamBuilding', 'alquilerSalas', 'estudioGrabacion',
+       'yunaisy', 'metodoFarray', 'facilities', 'contact', 'faq', 'regalaBaile', 'merchandising',
+       'serviciosBaile', 'ubicacion', 'calendario', 'reservas'].includes(page)) return LASTMOD_DATES.service;
+
+  return LASTMOD_DATES.default;
+};
 
 // Pages to EXCLUDE from sitemap (noindex)
 const EXCLUDED_PAGES = [
@@ -150,6 +208,27 @@ const BLOG_ARTICLES = [
   },
 ];
 
+// Populate blog lastmod dates from article publish dates
+// Map page keys to their publish dates
+const blogPageKeyMap = {
+  'beneficios-bailar-salsa': 'blogBeneficiosSalsa',
+  'clases-de-salsa-barcelona': 'blogClasesSalsaBarcelona',
+  'como-perder-miedo-bailar': 'blogPerderMiedoBailar',
+  'historia-salsa-barcelona': 'blogHistoriaSalsa',
+  'historia-bachata-barcelona': 'blogHistoriaBachata',
+  'salsa-ritmo-conquisto-mundo': 'blogSalsaRitmo',
+  'salsa-vs-bachata-que-estilo-elegir': 'blogSalsaVsBachata',
+  'clases-baile-principiantes-barcelona-farrays': 'blogClasesPrincipiantes',
+  'academia-de-danza-barcelona-guia-completa': 'blogAcademiaDanza',
+  'ballet-para-adultos-barcelona': 'blogBalletAdultos',
+  'danza-contemporanea-vs-modern-jazz-vs-ballet': 'blogDanzaContemporaneaVsJazzBallet',
+  'baile-salud-mental': 'blogBaileSaludMental',
+};
+BLOG_ARTICLES.forEach(article => {
+  const pageKey = blogPageKeyMap[article.slug];
+  if (pageKey) BLOG_LASTMOD[pageKey] = article.datePublished;
+});
+
 // =============================================================================
 // KEY IMAGES (for Image Sitemap)
 // =============================================================================
@@ -184,13 +263,16 @@ const getPriority = (path, page, lang) => {
   if (page === 'home' && lang === 'es') return 1.0;
   if (page === 'home') return 0.9;
 
-  const mainHubs = ['classesHub', 'danza', 'danzasUrbanas', 'salsaBachata'];
+  // Class hub pages - highest after home
+  const mainHubs = ['classes', 'classesHub', 'danza', 'danzasUrbanas', 'salsaBachata'];
   if (mainHubs.includes(page)) return 0.9;
 
+  // Top popular classes - boosted to 0.9
   const topClasses = ['bachataSensual', 'salsaCubana', 'dancehall', 'twerk', 'femmology', 'heelsBarcelona', 'hipHopReggaeton'];
-  if (topClasses.includes(page)) return 0.8;
+  if (topClasses.includes(page)) return 0.9;
 
-  if (path.includes('/clases/')) return 0.7;
+  // ALL class detail pages boosted from 0.7 → 0.8 (core content, should be indexed)
+  if (path.includes('/clases/')) return 0.8;
 
   const servicePages = ['profesores', 'about', 'clasesParticulares', 'teamBuilding', 'alquilerSalas', 'estudioGrabacion', 'yunaisy', 'metodoFarray'];
   if (servicePages.includes(page)) return 0.7;
@@ -202,9 +284,9 @@ const getPriority = (path, page, lang) => {
   if (secondaryPages.includes(page)) return 0.6;
 
   const legalPages = ['termsConditions', 'legalNotice', 'privacyPolicy', 'cookiePolicy'];
-  if (legalPages.includes(page)) return 0.5;
+  if (legalPages.includes(page)) return 0.3;
 
-  return 0.6;
+  return 0.5;
 };
 
 const getChangeFreq = (page) => {
@@ -578,7 +660,7 @@ const generateUrlEntry = (route) => {
   const url = route.path ? `${BASE_URL}/${route.path}` : BASE_URL;
   const priority = getPriority(route.path, route.page, route.lang);
   const changefreq = getChangeFreq(route.page);
-  const lastmod = getCurrentDate();
+  const lastmod = getLastmod(route);
   const hreflangLinks = generateHreflangLinks(route.path);
 
   return `  <url>

@@ -207,6 +207,8 @@ interface ClassCardProps {
   onSelect: (classData: ClassData) => void;
   onShowInfo: (classData: ClassData) => void;
   isSelected?: boolean;
+  /** Hide the share/copy-link button */
+  hideShareButton?: boolean;
 }
 
 // Teacher Modal Component - with history management and proper scroll
@@ -380,7 +382,7 @@ const TeacherModal: React.FC<{
 
 // Memoized ClassCard - V1 compact style
 export const ClassCard: React.FC<ClassCardProps> = memo(
-  ({ classData, onSelect, onShowInfo, isSelected = false }) => {
+  ({ classData, onSelect, onShowInfo, isSelected = false, hideShareButton = false }) => {
     const { t, i18n } = useTranslation([
       'common',
       'booking',
@@ -548,19 +550,21 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
                 )}
 
                 {/* Share button */}
-                <button
-                  type="button"
-                  onClick={handleShareClick}
-                  className="p-1.5 rounded-lg text-neutral/50 hover:text-primary-accent hover:bg-white/10 transition-all"
-                  aria-label={copied ? t('booking_class_copied') : t('booking_class_share')}
-                  title={copied ? t('booking_class_copied') : t('booking_class_share')}
-                >
-                  {copied ? (
-                    <CheckIcon className="w-4 h-4 text-green-400" />
-                  ) : (
-                    <ShareIcon className="w-4 h-4" />
-                  )}
-                </button>
+                {!hideShareButton && (
+                  <button
+                    type="button"
+                    onClick={handleShareClick}
+                    className="p-1.5 rounded-lg text-neutral/50 hover:text-primary-accent hover:bg-white/10 transition-all"
+                    aria-label={copied ? t('booking_class_copied') : t('booking_class_share')}
+                    title={copied ? t('booking_class_copied') : t('booking_class_share')}
+                  >
+                    {copied ? (
+                      <CheckIcon className="w-4 h-4 text-green-400" />
+                    ) : (
+                      <ShareIcon className="w-4 h-4" />
+                    )}
+                  </button>
+                )}
 
                 {/* Selected indicator */}
                 {isSelected && <CheckIcon className="w-5 h-5 text-primary-accent" />}

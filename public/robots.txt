@@ -38,6 +38,8 @@ Disallow: /*?tribe-bar-date=
 Disallow: /*?outlook-ical=
 Disallow: /*?ical=
 Disallow: /*?avia-element-paging=
+Disallow: /*?wordfence_lh=
+Disallow: /*?amp=
 Disallow: /*?feed=
 
 # WordPress system paths (no SEO value, waste crawl budget)
