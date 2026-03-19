@@ -15,6 +15,7 @@
 import type { Redis } from '@upstash/redis';
 import { Buffer } from 'node:buffer';
 import { detectStyleFromName } from '../../../constants/style-mappings.js';
+import { generatePhoneVariants } from '../phone-utils.js';
 
 // ============================================================================
 // TYPES
@@ -225,17 +226,7 @@ export class MemberLookupService {
 
       // Try multiple query formats to maximize match chances
       // Momence search depends on how the phone was stored
-      const queriesToTry = [phone];
-
-      // Add local number (without country code) as fallback
-      if (phone.startsWith('34') && phone.length >= 11) {
-        queriesToTry.push(phone.slice(2)); // e.g., "34663331640" → "663331640"
-      } else if (phone.startsWith('33') && phone.length >= 11) {
-        queriesToTry.push(phone.slice(2));
-      }
-
-      // Also try with + prefix in case Momence indexes that way
-      queriesToTry.push('+' + phone);
+      const queriesToTry = generatePhoneVariants(phone);
 
       let members: Array<{
         id: number;
