@@ -1926,7 +1926,6 @@ export async function sendNoShowRescheduleEmail(
     <!-- Header -->
     <tr>
       <td style="background: ${BRAND_GRADIENT}; padding: 30px 40px; text-align: center;">
-        <img src="${LOGO_URL}" alt="Farray's Center" width="80" style="display: block; margin: 0 auto 10px;" />
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 600;">Clase Reprogramada</h1>
       </td>
     </tr>
@@ -1999,16 +1998,16 @@ export async function sendNoShowRescheduleEmail(
 
     <!-- Footer -->
     <tr>
-      <td style="background: #1a1a2e; padding: 30px 40px; text-align: center;">
-        <p style="color: #ccc; font-size: 13px; margin: 0 0 8px;">
-          ${LOCATION_FULL}
+      <td style="background: #1a1a1a; padding: 30px 40px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="120" height="120" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">www.farrayscenter.com</a>
         </p>
-        <p style="margin: 0;">
-          <a href="${INSTAGRAM_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">Instagram</a>
-          &nbsp;·&nbsp;
-          <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">WhatsApp</a>
-          &nbsp;·&nbsp;
-          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">Web</a>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="${WHATSAPP_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
         </p>
       </td>
     </tr>
@@ -2074,7 +2073,6 @@ export async function sendNoShowFailedEmail(
     <!-- Header -->
     <tr>
       <td style="background: ${BRAND_GRADIENT}; padding: 30px 40px; text-align: center;">
-        <img src="${LOGO_URL}" alt="Farray's Center" width="80" style="display: block; margin: 0 auto 10px;" />
         <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 600;">Te esperamos</h1>
       </td>
     </tr>
@@ -2128,16 +2126,16 @@ export async function sendNoShowFailedEmail(
 
     <!-- Footer -->
     <tr>
-      <td style="background: #1a1a2e; padding: 30px 40px; text-align: center;">
-        <p style="color: #ccc; font-size: 13px; margin: 0 0 8px;">
-          ${LOCATION_FULL}
+      <td style="background: #1a1a1a; padding: 30px 40px; text-align: center;">
+        <img src="${LOGO_URL}" alt="Farray's International Dance Center" width="120" height="120" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px; color: #ffffff;">Farray's International Dance Center</p>
+        <p style="margin: 0 0 15px 0; color: #999999; font-size: 13px;">${LOCATION_STREET}</p>
+        <p style="margin: 0 0 20px 0;">
+          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-weight: bold; font-size: 14px;">www.farrayscenter.com</a>
         </p>
-        <p style="margin: 0;">
-          <a href="${INSTAGRAM_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">Instagram</a>
-          &nbsp;·&nbsp;
-          <a href="${WHATSAPP_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">WhatsApp</a>
-          &nbsp;·&nbsp;
-          <a href="${BASE_URL}" style="color: ${BRAND_PRIMARY}; text-decoration: none; font-size: 13px;">Web</a>
+        <p style="margin: 0; padding-top: 15px; border-top: 1px solid #333;">
+          <a href="${INSTAGRAM_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">Instagram</a>
+          <a href="${WHATSAPP_URL}" style="color: #888888; text-decoration: none; margin: 0 12px; font-size: 13px;">WhatsApp</a>
         </p>
       </td>
     </tr>
