@@ -2156,10 +2156,9 @@ async function executeManageTrialBooking(
       const email = booking.email.toLowerCase().trim();
       const bookingPhone = booking.phone?.replace(/[\s\-+()]/g, '') || '';
 
-      // Delete dedup by email + trial_email index + remove from global set
+      // Delete dedup by email + trial_email index (keep all_trial_booking_ids for analytics)
       await context.redis.del(`booking:${email}`);
       await context.redis.del(`trial_email:${email}`);
-      await context.redis.srem('all_trial_booking_ids', eventId);
 
       // Delete phone→eventId mapping (both stored format and lookup format)
       const phonesToClear = new Set<string>();
@@ -2173,14 +2172,8 @@ async function executeManageTrialBooking(
         `[manage_trial_booking] Phone keys cleared for: ${[...phonesToClear].join(', ')}`
       );
 
-      // Remove from reminders set
-      if (booking.classDate && /^\d{4}-\d{2}-\d{2}$/.test(booking.classDate)) {
-        try {
-          await context.redis.srem(`reminders:${booking.classDate}`, eventId);
-        } catch {
-          /* non-blocking */
-        }
-      }
+      // NOTE: Do NOT remove from reminders:{date} or all_trial_booking_ids
+      // — admin-bookings analytics needs cancelled bookings to display correctly
 
       console.log(
         `[manage_trial_booking] Full cleanup done: email=${email}, phone=${bookingPhone}, isOnTime=${isOnTime}, momence=${momenceCancelled}`

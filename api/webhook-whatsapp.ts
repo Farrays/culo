@@ -1053,7 +1053,7 @@ async function handleAttendanceConfirmation(
       const normalizedEmail = booking.email.toLowerCase();
       await redis.del(`booking:${normalizedEmail}`);
       await redis.del(`trial_email:${normalizedEmail}`);
-      await redis.srem('all_trial_booking_ids', eventId);
+      // NOTE: Do NOT srem all_trial_booking_ids — admin analytics needs cancelled bookings
       console.log(`[webhook-whatsapp] Deduplication removed for ${redactEmail(normalizedEmail)}`);
 
       // Eliminar del índice de teléfono
@@ -1112,7 +1112,7 @@ async function handleAttendanceConfirmation(
       const lateEmail = booking.email.toLowerCase();
       await redis.del(`booking:${lateEmail}`);
       await redis.del(`trial_email:${lateEmail}`);
-      await redis.srem('all_trial_booking_ids', eventId);
+      // NOTE: Do NOT srem all_trial_booking_ids — admin analytics needs cancelled bookings
       console.log(
         `[webhook-whatsapp] Late cancellation (< 1h) - dedup CLEARED (super admin): ${booking.firstName}`
       );
