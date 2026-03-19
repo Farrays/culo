@@ -1711,13 +1711,208 @@ async function executeManageTrialBooking(
       }
 
       if (action === 'reschedule_next_week') {
-        return JSON.stringify({
-          found: true,
-          source: 'momence_direct',
-          error:
-            'Encontré tu reserva en Momence pero la reprogramación automática requiere datos adicionales. Contacta con info@farrayscenter.com o reserva de nuevo en:',
-          scheduleUrl: `https://www.farrayscenter.com/${lang}/reservas`,
-        });
+        if (mb.cancelledAt) {
+          return JSON.stringify({
+            error: 'Esta reserva ya está cancelada, no se puede reprogramar.',
+          });
+        }
+        try {
+          const client = getMomenceClient(context.redis);
+          const MADRID_TZ = 'Europe/Madrid';
+
+          // 1. Calculate next week's date (+7 days, same day of week)
+          const targetDate = new Date(mb.classDate + 'T12:00:00Z');
+          targetDate.setDate(targetDate.getDate() + 7);
+          const targetDateStr = targetDate.toISOString().split('T')[0] || '';
+
+          // Search window: target ±1 to +2 days
+          const searchStart = new Date(targetDate);
+          searchStart.setDate(searchStart.getDate() - 1);
+          searchStart.setHours(0, 0, 0, 0);
+          const searchEnd = new Date(targetDate);
+          searchEnd.setDate(searchEnd.getDate() + 2);
+          searchEnd.setHours(23, 59, 59, 999);
+
+          // Original time for comparison
+          const [origH, origM] = (mb.classTime || '00:00').split(':').map(Number);
+          const origMinutes = (origH || 0) * 60 + (origM || 0);
+
+          // 2. Find same class next week
+          const sessionsResult = await client.getSessions({
+            page: 0,
+            pageSize: 100,
+            startAfter: searchStart.toISOString(),
+            startBefore: searchEnd.toISOString(),
+            sortBy: 'startsAt',
+            sortOrder: 'ASC',
+          });
+          const sessions = sessionsResult.payload || [];
+          const targetClassName = mb.className.toLowerCase().trim();
+
+          // Score matches: same name + same day + closest time
+          type ScoredMatch = {
+            session: Record<string, unknown>;
+            dayMatch: boolean;
+            timeDiff: number;
+          };
+          const scored: ScoredMatch[] = [];
+          for (const s of sessions) {
+            const sName = ((s as { name?: string }).name || '').toLowerCase().trim();
+            const startsAt = (s as { startsAt?: string }).startsAt;
+            if (!startsAt || sName !== targetClassName) continue;
+
+            const dt = new Date(startsAt);
+            const sessionDateStr = dt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
+            const dayMatch = sessionDateStr === targetDateStr;
+
+            const timeStr = dt.toLocaleTimeString('en-US', {
+              hour12: false,
+              hour: '2-digit',
+              minute: '2-digit',
+              timeZone: MADRID_TZ,
+            });
+            const [sH, sM] = timeStr.split(':').map(Number);
+            const timeDiff = Math.abs((sH || 0) * 60 + (sM || 0) - origMinutes);
+            scored.push({ session: s as Record<string, unknown>, dayMatch, timeDiff });
+          }
+
+          // Best match: same day + closest time
+          const bestMatch = scored
+            .filter(m => m.dayMatch)
+            .sort((a, b) => a.timeDiff - b.timeDiff)[0];
+
+          if (!bestMatch) {
+            return JSON.stringify({
+              found: true,
+              source: 'momence_direct',
+              error: `No encontré "${mb.className}" para la semana del ${targetDateStr}. Puede que no esté programada.`,
+              scheduleUrl: `https://www.farrayscenter.com/${lang}/reservas`,
+            });
+          }
+
+          const nextSession = bestMatch.session;
+          const nextSessionId = (nextSession as { id?: number }).id;
+          const nextStartsAt = (nextSession as { startsAt?: string }).startsAt || '';
+          const nextDt = new Date(nextStartsAt);
+          const nextDateISO = nextDt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
+          const nextDateHuman = nextDt.toLocaleDateString('es-ES', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: MADRID_TZ,
+          });
+          const nextTime = nextDt.toLocaleTimeString('es-ES', {
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: MADRID_TZ,
+          });
+
+          if (!nextSessionId) {
+            return JSON.stringify({ error: 'Sesión encontrada pero sin ID válido.' });
+          }
+
+          // 3. Cancel old booking in Momence
+          await client.cancelBooking(mb.momenceBookingId, {
+            refund: false,
+            disableNotifications: true,
+            isLateCancellation: false,
+          });
+          console.log(
+            `[manage_trial_booking] Momence fallback: cancelled booking ${mb.momenceBookingId}`
+          );
+
+          // 4. Create new booking in Momence
+          const newBookingResult = await client.createFreeBooking(
+            nextSessionId,
+            momenceFallback.memberId
+          );
+          const nbr = newBookingResult as Record<string, unknown>;
+          const newMomenceBookingId =
+            (nbr['sessionBookingId'] as number) ||
+            ((nbr['payload'] as Record<string, unknown> | undefined)?.['id'] as number) ||
+            (nbr['id'] as number);
+          console.log(
+            `[manage_trial_booking] Momence fallback: created new booking ${newMomenceBookingId} for session ${nextSessionId}`
+          );
+
+          // 5. Create Redis record so future lookups work (phone + email + booking_details)
+          const TTL = 90 * 24 * 60 * 60; // 90 days
+          const newEventId = `evt_${Date.now()}_rsch_${Math.random().toString(36).substring(2, 10)}`;
+          const normalizedPhone = context.phone.replace(/[\s\-+()]/g, '');
+          const normalizedEmail = (momenceFallback.memberEmail || '').toLowerCase().trim();
+
+          const newBookingDetails = {
+            eventId: newEventId,
+            bookingType: 'trial',
+            firstName: momenceFallback.memberFirstName,
+            lastName: momenceFallback.memberLastName,
+            email: normalizedEmail,
+            phone: normalizedPhone,
+            className: (nextSession as { name?: string }).name || mb.className,
+            classDate: nextDateISO,
+            classTime: nextTime,
+            createdAt: new Date().toISOString(),
+            status: 'confirmed',
+            attendance: 'pending',
+            reconciliationStatus: 'pending',
+            rescheduleCount: 1, // Already rescheduled once — no more allowed
+            rescheduledFrom: null,
+            momenceVerified: !!newMomenceBookingId,
+            momenceBookingId: newMomenceBookingId || null,
+            sessionId: String(nextSessionId),
+          };
+
+          try {
+            await context.redis.setex(
+              `booking_details:${newEventId}`,
+              TTL,
+              JSON.stringify(newBookingDetails)
+            );
+            if (normalizedPhone) {
+              await context.redis.setex(`phone:${normalizedPhone}`, TTL, newEventId);
+            }
+            if (normalizedEmail) {
+              await context.redis.setex(`trial_email:${normalizedEmail}`, TTL, newEventId);
+              await context.redis.setex(
+                `booking:${normalizedEmail}`,
+                TTL,
+                JSON.stringify({
+                  timestamp: Date.now(),
+                  sessionId: nextSessionId,
+                  className: newBookingDetails.className,
+                  eventId: newEventId,
+                })
+              );
+            }
+            await context.redis.sadd('all_trial_booking_ids', newEventId);
+            console.log(
+              `[manage_trial_booking] Momence fallback: Redis records created for ${newEventId}`
+            );
+          } catch (redisErr) {
+            // Non-blocking — Momence booking already created successfully
+            console.warn(
+              '[manage_trial_booking] Momence fallback: Redis save failed (non-blocking):',
+              redisErr
+            );
+          }
+
+          return JSON.stringify({
+            success: true,
+            found: true,
+            source: 'momence_direct',
+            rescheduled: true,
+            message: `Clase reprogramada para ${nextDateHuman} a las ${nextTime}.`,
+            newClassName: newBookingDetails.className,
+            newClassDate: nextDateHuman,
+            newClassTime: nextTime,
+          });
+        } catch (reschErr) {
+          console.error('[manage_trial_booking] Momence fallback reschedule failed:', reschErr);
+          return JSON.stringify({
+            error: `No pude reprogramar la clase: ${reschErr instanceof Error ? reschErr.message : 'Error desconocido'}. Contacta con info@farrayscenter.com.`,
+          });
+        }
       }
     }
 
