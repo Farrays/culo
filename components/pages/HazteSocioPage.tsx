@@ -651,6 +651,7 @@ const HazteSocioPage: React.FC = () => {
                     allWeeksClasses={allWeeksClasses}
                     allWeeksLoading={allWeeksLoading}
                     hideFilters={false}
+                    hideShareButton={true}
                   />
                 </Suspense>
 

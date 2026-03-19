@@ -520,6 +520,8 @@ interface ClassListStepProps {
   allWeeksLoading?: boolean;
   /** Hide filter UI (but keep filters applied) - for locked mode from landing pages */
   hideFilters?: boolean;
+  /** Hide the share button on class cards */
+  hideShareButton?: boolean;
 }
 
 export const ClassListStep: React.FC<ClassListStepProps> = memo(
@@ -544,6 +546,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     allWeeksClasses = [],
     allWeeksLoading = false,
     hideFilters = false,
+    hideShareButton = false,
   }) => {
     const { t, i18n } = useTranslation([
       'common',
@@ -769,6 +772,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                         onSelect={onSelectClass}
                         onShowInfo={handleShowInfo}
                         isSelected={selectedClassId === classData.id}
+                        hideShareButton={hideShareButton}
                       />
                     ))}
                   </div>
@@ -792,6 +796,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                         onSelect={onSelectClass}
                         onShowInfo={handleShowInfo}
                         isSelected={selectedClassId === item.id}
+                        hideShareButton={hideShareButton}
                       />
                     </div>
                   ))}
