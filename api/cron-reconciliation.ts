@@ -770,6 +770,47 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // Process today AND yesterday (catches evening classes that finished after 22:00)
     const datesToProcess = [yesterdayStr, todayStr];
 
+    // === PHASE 0: One-time repair for no-shows that failed reschedule due to bug ===
+    const repairKey = 'reconciliation:repair_noshow_v1';
+    const repairDone = await redis.get(repairKey);
+    if (!repairDone) {
+      console.log('[cron-reconciliation] Running one-time repair for failed reschedules...');
+      let repairCount = 0;
+      // Scan dates from March 17-19 (when the bug was active)
+      const repairDates = ['2026-03-17', '2026-03-18', '2026-03-19'];
+      for (const dateStr of repairDates) {
+        const eventIds = await redis.smembers(`reminders:${dateStr}`);
+        for (const eid of eventIds) {
+          try {
+            const raw = await redis.get(`booking_details:${eid}`);
+            if (!raw) continue;
+            const b = JSON.parse(raw) as BookingDetails;
+            // Reset failed reschedules so they get retried with the fixed code
+            if (
+              b.reconciliationStatus === 'no_show_unresolved' &&
+              (b.rescheduleCount || 0) < 1 &&
+              !b.rescheduledFrom
+            ) {
+              b.reconciliationStatus = 'no_show';
+              b.reconciliationProcessed = false;
+              b.attendance = 'no_show' as BookingDetails['attendance'];
+              await redis.setex(`booking_details:${eid}`, BOOKING_TTL_SECONDS, JSON.stringify(b));
+              repairCount++;
+              console.log(`[cron-reconciliation] Repair: reset ${eid} for retry`);
+            }
+          } catch {
+            /* skip */
+          }
+        }
+      }
+      await redis.setex(repairKey, 7 * 24 * 3600, '1'); // Don't run again for 7 days
+      console.log(`[cron-reconciliation] Repair complete: ${repairCount} bookings reset for retry`);
+      // Include repair dates in this run so the reset bookings get processed now
+      for (const rd of repairDates) {
+        if (!datesToProcess.includes(rd)) datesToProcess.push(rd);
+      }
+    }
+
     // === PHASE 1: Process bookings (attendance + no-show reschedule) ===
     let totalEventIds = 0;
     for (const dateStr of datesToProcess) {
