@@ -149,9 +149,6 @@ const SEO_META_KEYS = {
   blogFitness:         { titleKey: 'blog_fitness_title',           descKey: 'blog_category_fitness_desc',          ns: 'blog' },
   blogBaileSaludMental:{ titleKey: 'blogBaileSaludMental_title',   descKey: 'blogBaileSaludMental_metaDescription',ns: 'blog' },
 
-  // === Promo/landing pages ===
-  promoClaseGratis:    { titleKey: 'fbLandingPageTitle',           descKey: 'fbLandingPageDescription',            ns: 'pages' },
-  promoSexyReggaeton:  { titleKey: 'sxrLandingPageTitle',          descKey: 'sxrLandingPageDescription',           ns: 'pages' },
 };
 
 // ─── Load hardcoded metadata from prerender.mjs ─────────────────────────────────

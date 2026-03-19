@@ -154,9 +154,4 @@ export const SEO_META_KEYS = {
   blogStretching:      { titleKey: 'blogStretching_title',         descKey: 'blogStretching_metaDescription',      ns: 'blog' },
   blogBaileAdultos:    { titleKey: 'blogBaileAdultos_title',       descKey: 'blogBaileAdultos_metaDescription',    ns: 'blog' },
 
-  // ═══════════════════════════════════════════════════════════════
-  // PROMO / LANDING PAGES
-  // ═══════════════════════════════════════════════════════════════
-  promoClaseGratis:    { titleKey: 'fbLandingPageTitle',           descKey: 'fbLandingPageDescription',            ns: 'pages' },
-  promoSexyReggaeton:  { titleKey: 'sxrLandingPageTitle',          descKey: 'sxrLandingPageDescription',           ns: 'pages' },
 };

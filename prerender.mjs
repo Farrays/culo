@@ -403,10 +403,6 @@ const OG_IMAGE_MAP = {
   afroContemporaneoLanding: 'classes/afro-contemporaneo/img/mgs_5260_1920.jpg',
   jornadaPuertasAbiertasLanding: 'og-home.jpg',
 
-  // === Promociones ===
-  promoClaseGratis: 'og-home.jpg',
-  promoSexyReggaeton: 'classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1920.jpg',
-
   // === 404 ===
   notFound: 'og-home.jpg',
 
@@ -2027,18 +2023,6 @@ const routes = [
   { path: 'fr/blog/tips/clases-baile-adultos-barcelona-guia-completa', lang: 'fr', page: 'blogBaileAdultos' },
   { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
   { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
-
-  // Facebook Ads Landing (promo)
-  { path: 'es/promo/clase-gratis', lang: 'es', page: 'promoClaseGratis' },
-  { path: 'ca/promo/clase-gratis', lang: 'ca', page: 'promoClaseGratis' },
-  { path: 'en/promo/clase-gratis', lang: 'en', page: 'promoClaseGratis' },
-  { path: 'fr/promo/clase-gratis', lang: 'fr', page: 'promoClaseGratis' },
-
-  // Sexy Reggaeton Landing (FB Ads)
-  { path: 'es/promo/sexy-reggaeton', lang: 'es', page: 'promoSexyReggaeton' },
-  { path: 'ca/promo/sexy-reggaeton', lang: 'ca', page: 'promoSexyReggaeton' },
-  { path: 'en/promo/sexy-reggaeton', lang: 'en', page: 'promoSexyReggaeton' },
-  { path: 'fr/promo/sexy-reggaeton', lang: 'fr', page: 'promoSexyReggaeton' },
 
   // Generic Dance Landing Pages (auto-generated from LANDING_SLUGS)
   ...LANDING_ROUTES,
