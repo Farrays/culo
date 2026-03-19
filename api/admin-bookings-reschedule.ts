@@ -54,6 +54,7 @@ export interface RescheduleRequest {
   targetSessionId?: number;
   notifyStudent?: boolean;
   reason: 'no_show' | 'manual' | 'class_cancelled' | 'cancelled_late';
+  daysOffset?: number; // Default 7 (next week). Use 14 for two weeks.
 }
 
 export interface RescheduleResult {
@@ -164,7 +165,7 @@ export async function rescheduleBooking(
   redis: Redis,
   request: RescheduleRequest
 ): Promise<RescheduleResult> {
-  const { eventId, mode, targetSessionId, notifyStudent = true, reason } = request;
+  const { eventId, mode, targetSessionId, notifyStudent = true, reason, daysOffset = 7 } = request;
 
   // 1. Read original booking
   const raw = await redis.get(`booking_details:${eventId}`);
@@ -241,9 +242,9 @@ export async function rescheduleBooking(
       };
     }
 
-    // Target date = original classDate + 7 days (same day of the week)
+    // Target date = original classDate + N days (same day of the week)
     const targetDate = new Date(booking.classDate + 'T12:00:00Z'); // noon UTC to avoid DST edge cases
-    targetDate.setDate(targetDate.getDate() + 7);
+    targetDate.setDate(targetDate.getDate() + daysOffset);
     const targetDateStr = targetDate.toISOString().split('T')[0] || ''; // "YYYY-MM-DD"
 
     // Search window: target date -1 to +2 days (covers timezone edge cases)
