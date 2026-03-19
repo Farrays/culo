@@ -566,6 +566,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         const added = scannedIds.length - allEventIds.length;
         if (added > 0) {
           console.log(`[admin-bookings] Self-heal recovered ${added} missing booking IDs`);
+          // Also re-populate reminders:{date} for recovered bookings
+          // so the cron can find them too
+          const pipeline = redis.pipeline();
+          for (const id of scannedIds) {
+            pipeline.get(`booking_details:${id}`);
+          }
+          const repairResults = await pipeline.exec();
+          if (repairResults) {
+            for (let r = 0; r < repairResults.length; r++) {
+              const [rErr, rRaw] = repairResults[r] as [Error | null, string | null];
+              if (rErr || !rRaw) continue;
+              try {
+                const d = JSON.parse(rRaw);
+                const dm = (d.classDate || '').match(/\d{4}-\d{2}-\d{2}/);
+                if (dm) {
+                  redis.sadd(`reminders:${dm[0]}`, d.eventId).catch(() => {});
+                }
+              } catch {
+                /* skip */
+              }
+            }
+          }
         }
         allEventIds = await redis.smembers('all_trial_booking_ids');
       }
