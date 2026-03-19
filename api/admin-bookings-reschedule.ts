@@ -450,9 +450,9 @@ export async function rescheduleBooking(
       // Extract member ID with all known Momence response formats (aligned with reservar.ts)
       const cm = created as Record<string, unknown>;
       memberId =
-        (cm.memberId as number) ||
-        ((cm.payload as Record<string, unknown> | undefined)?.id as number) ||
-        (cm.id as number);
+        (cm['memberId'] as number) ||
+        ((cm['payload'] as Record<string, unknown> | undefined)?.['id'] as number) ||
+        (cm['id'] as number);
     }
   } catch (e) {
     return {
@@ -473,9 +473,9 @@ export async function rescheduleBooking(
     // Extract booking ID with all known Momence response formats (aligned with reservar.ts)
     const res = result as Record<string, unknown>;
     newMomenceBookingId =
-      (res.sessionBookingId as number) ||
-      ((res.payload as Record<string, unknown> | undefined)?.id as number) ||
-      (res.id as number);
+      (res['sessionBookingId'] as number) ||
+      ((res['payload'] as Record<string, unknown> | undefined)?.['id'] as number) ||
+      (res['id'] as number);
     console.log(`[reschedule] Created new Momence booking: ${newMomenceBookingId}`);
   } catch (e) {
     const errorMsg = e instanceof Error ? e.message : String(e);
