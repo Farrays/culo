@@ -30,6 +30,7 @@
 import React, { useEffect, useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
+import { useImageAlt } from '../hooks/useImageAlt';
 
 // ============================================================================
 // TYPES
@@ -81,6 +82,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
     'contact',
     'pages',
   ]);
+  const { getAlt } = useImageAlt();
   const overlayRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -290,7 +292,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
       <div className="relative w-full h-full max-w-7xl max-h-[90vh] mx-4 flex items-center justify-center">
         <img
           src={`${currentImage.src}_1920.jpg`}
-          alt={currentImage.altKey}
+          alt={getAlt(currentImage.altKey, currentImage.index)}
           className="max-w-full max-h-[85vh] object-contain rounded-lg"
           loading="eager"
         />

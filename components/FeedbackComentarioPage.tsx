@@ -74,7 +74,7 @@ const FeedbackComentarioPage: React.FC = () => {
             <div className="mb-6">
               <span className="text-[80px]">🔗</span>
             </div>
-            <h1 className="text-3xl font-bold mb-4 text-white">Enlace no válido</h1>
+            <h2 className="text-3xl font-bold mb-4 text-white">Enlace no válido</h2>
             <p className="text-neutral/70 mb-8">Este enlace ha expirado o no es válido.</p>
             <Link
               to={`/${locale}`}

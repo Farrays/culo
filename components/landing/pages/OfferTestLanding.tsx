@@ -55,7 +55,7 @@ const OfferTestLanding: React.FC = () => {
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h1 className="text-lg font-bold text-white">TEST: OfferComparisonCard</h1>
+              <h2 className="text-lg font-bold text-white">TEST: OfferComparisonCard</h2>
               <p className="text-xs text-neutral/60">
                 Pagina de prueba para visualizar el componente de ofertas
               </p>
