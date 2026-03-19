@@ -103,6 +103,58 @@ export function redactPhone(phone: string | null | undefined): string {
 }
 
 /**
+ * Generate phone number variants for lookup.
+ * Given a normalized phone, produces multiple formats that might match Redis keys
+ * or Momence records (with/without country code, with + prefix).
+ *
+ * Common country codes for Barcelona dance school clientele.
+ *
+ * @example
+ * generatePhoneVariants('34622247085') // ['34622247085', '622247085', '+34622247085']
+ * generatePhoneVariants('995591234567') // ['995591234567', '591234567', '+995591234567']
+ */
+// Country codes sorted by length descending to match longest first
+const COUNTRY_CODES = [
+  '995', // Georgia
+  '380', // Ukraine
+  '351', // Portugal
+  '593', // Ecuador
+  '57', // Colombia
+  '58', // Venezuela
+  '55', // Brazil
+  '48', // Poland
+  '40', // Romania
+  '44', // UK
+  '49', // Germany
+  '39', // Italy
+  '34', // Spain
+  '33', // France
+];
+
+export function generatePhoneVariants(phone: string): string[] {
+  const normalized = normalizePhone(phone);
+  const variants = new Set<string>([normalized]);
+
+  // Try to detect and strip country code → add local variant
+  for (const cc of COUNTRY_CODES) {
+    if (normalized.startsWith(cc) && normalized.length > cc.length + 5) {
+      variants.add(normalized.slice(cc.length)); // local number without country code
+      break;
+    }
+  }
+
+  // If it looks like a local number (no country code detected), try adding Spain
+  if (normalized.length <= 10 && /^[6789]\d{8}$/.test(normalized)) {
+    variants.add('34' + normalized);
+  }
+
+  // Also try with + prefix (some systems store it that way)
+  variants.add('+' + normalized);
+
+  return [...variants];
+}
+
+/**
  * INLINE VERSION for files that can't import from lib/ due to Vercel bundler
  * Copy this function directly into API route files that need it.
  *

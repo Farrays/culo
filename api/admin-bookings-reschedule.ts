@@ -409,20 +409,78 @@ export async function rescheduleBooking(
   }
 
   // 3. Cancel original booking in Momence (if it exists there)
-  if (booking.momenceBookingId) {
+  let momenceBookingIdToCancel = booking.momenceBookingId;
+
+  // If no momenceBookingId stored, try to find it by searching member's bookings
+  if (!momenceBookingIdToCancel && booking.email) {
     try {
-      await client.cancelBooking(booking.momenceBookingId, {
+      const members = await client.searchMembers({
+        page: 0,
+        pageSize: 1,
+        query: booking.email,
+      });
+      const matched = members.payload.find(
+        (m: { email?: string }) => m.email?.toLowerCase() === booking.email.toLowerCase()
+      );
+      if (matched) {
+        const memberBookings = await client.getMemberSessionBookings(matched.id, {
+          page: 0,
+          pageSize: 20,
+          startAfter: new Date().toISOString(),
+          includeCancelled: false,
+        });
+        // Find matching booking by session ID or class name + date
+        const match = memberBookings.payload.find(b => {
+          if (booking.sessionId && b.session?.id === Number(booking.sessionId)) return true;
+          if (b.session?.name === booking.className) {
+            const bookingDate = b.session?.startsAt
+              ? new Date(b.session.startsAt).toLocaleDateString('en-CA', {
+                  timeZone: 'Europe/Madrid',
+                })
+              : '';
+            return bookingDate === booking.classDate;
+          }
+          return false;
+        });
+        if (match) {
+          momenceBookingIdToCancel = match.id;
+          console.log(`[reschedule] Found momenceBookingId via member search: ${match.id}`);
+        }
+      }
+    } catch (searchErr) {
+      console.warn(
+        `[reschedule] Failed to search for momenceBookingId: ${searchErr instanceof Error ? searchErr.message : searchErr}`
+      );
+    }
+  }
+
+  if (momenceBookingIdToCancel) {
+    try {
+      await client.cancelBooking(momenceBookingIdToCancel, {
         refund: false,
         disableNotifications: true,
         isLateCancellation: reason === 'no_show' || reason === 'cancelled_late',
       });
-      console.log(`[reschedule] Cancelled Momence booking ${booking.momenceBookingId}`);
+      console.log(`[reschedule] Cancelled Momence booking ${momenceBookingIdToCancel}`);
     } catch (e) {
-      // Don't fail the whole operation if Momence cancel fails
-      console.warn(
-        `[reschedule] Failed to cancel Momence booking: ${e instanceof Error ? e.message : e}`
+      const cancelError = e instanceof Error ? e.message : String(e);
+      console.error(
+        `[reschedule] FAILED to cancel Momence booking ${momenceBookingIdToCancel}: ${cancelError}`
       );
+      // If this is not a "not found" error (already cancelled/deleted), abort
+      if (!cancelError.includes('404') && !cancelError.includes('not found')) {
+        return {
+          success: false,
+          error: `No se pudo cancelar la reserva anterior en Momence: ${cancelError}. Abortando reprogramación para evitar reserva doble.`,
+        };
+      }
+      // If 404/not found, the booking was already cancelled/deleted — safe to continue
+      console.log('[reschedule] Momence booking not found (already cancelled?) — continuing');
     }
+  } else {
+    console.warn(
+      '[reschedule] No momenceBookingId found — old booking may remain active in Momence'
+    );
   }
 
   // 4. Find or create member in Momence for new booking
@@ -430,8 +488,8 @@ export async function rescheduleBooking(
   try {
     const members = await client.searchMembers({
       page: 0,
-      pageSize: 1,
-      filter: { email: booking.email },
+      pageSize: 5,
+      query: booking.email,
     });
 
     const matched = members.payload.find(

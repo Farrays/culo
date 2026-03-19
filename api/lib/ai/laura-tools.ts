@@ -32,6 +32,7 @@ import { activateTakeover, addNotification } from './human-takeover.js';
 import { SCHEDULE_DATA } from '../../../constants/horarios-schedule-data.js';
 import { STYLE_KEYWORDS } from '../../../constants/style-mappings.js';
 import { getByPhone, addSignals } from '../lead-repository.js';
+import { generatePhoneVariants } from '../phone-utils.js';
 
 // ============================================================================
 // MOMENCE URL CONFIG
@@ -494,12 +495,7 @@ export async function findTrialBooking(
     if (rawPhone.startsWith('0034')) {
       rawPhone = rawPhone.slice(2); // 0034xxx → 34xxx
     }
-    const phoneVariants = [rawPhone];
-    if (rawPhone.startsWith('34') && rawPhone.length > 9) {
-      phoneVariants.push(rawPhone.slice(2));
-    } else if (/^[6789]\d{8}$/.test(rawPhone)) {
-      phoneVariants.push('34' + rawPhone);
-    }
+    const phoneVariants = generatePhoneVariants(rawPhone);
 
     for (const variant of phoneVariants) {
       const eventId = (await redis.get(`phone:${variant}`)) as string | null;
@@ -583,10 +579,12 @@ export async function findTrialBooking(
         // Match by phone (field inside booking_details, different format than Redis key)
         if (rawPhone && typeof booking['phone'] === 'string') {
           const bookingPhone = booking['phone'].replace(/[\s\-+()]/g, '');
+          // Match by exact or by last 9 digits (handles different country code formats)
+          const last9Booking = bookingPhone.slice(-9);
+          const last9Search = rawPhone.slice(-9);
           if (
             bookingPhone === rawPhone ||
-            bookingPhone === '34' + rawPhone ||
-            '34' + bookingPhone === rawPhone
+            (last9Booking.length === 9 && last9Booking === last9Search)
           ) {
             return { eventId: bookingId, booking, matchedVia: 'scan_phone' };
           }
@@ -598,6 +596,167 @@ export async function findTrialBooking(
   }
 
   return null;
+}
+
+// ============================================================================
+// MOMENCE API FALLBACK — when Redis has no data
+// ============================================================================
+
+export interface MomenceFallbackResult {
+  memberId: number;
+  memberEmail: string;
+  memberFirstName: string;
+  memberLastName: string;
+  memberPhone: string;
+  booking: {
+    momenceBookingId: number;
+    sessionId: number;
+    className: string;
+    startsAt: string;
+    classDate: string;
+    classTime: string;
+    checkedIn: boolean;
+    cancelledAt?: string;
+  } | null;
+}
+
+/**
+ * Fallback: search Momence API directly when Redis has no data.
+ * Searches member by email (most reliable) or phone, then gets upcoming bookings.
+ * Returns null if no member or no upcoming booking found.
+ */
+export async function findBookingInMomence(
+  redis: Redis,
+  opts: { phone?: string; email?: string; name?: string }
+): Promise<MomenceFallbackResult | null> {
+  try {
+    const client = getMomenceClient(redis);
+
+    // 1. Search member by email (most reliable) then by phone
+    const queriesToTry: string[] = [];
+    if (opts.email) queriesToTry.push(opts.email.toLowerCase().trim());
+    if (opts.phone) {
+      const rawPhone = opts.phone.replace(/[\s\-+()]/g, '');
+      queriesToTry.push(rawPhone);
+      // Also try with + prefix
+      queriesToTry.push('+' + rawPhone);
+    }
+    if (opts.name) queriesToTry.push(opts.name);
+
+    if (queriesToTry.length === 0) return null;
+
+    let foundMember: {
+      id: number;
+      firstName: string;
+      lastName: string;
+      email: string;
+      phoneNumber?: string;
+    } | null = null;
+
+    for (const query of queriesToTry) {
+      try {
+        const result = await client.searchMembers({
+          page: 0,
+          pageSize: 5,
+          query,
+        });
+        const members = result.payload || [];
+        if (members.length > 0) {
+          // If searching by email, require exact match to avoid false positives
+          if (opts.email && query === opts.email.toLowerCase().trim()) {
+            const match = members.find(
+              m => m.email?.toLowerCase() === (opts.email ?? '').toLowerCase().trim()
+            );
+            if (match) {
+              foundMember = match;
+              break;
+            }
+            // No exact email match — skip to next query, don't take a random member
+            continue;
+          }
+          // For phone/name queries, take first result if it exists
+          if (members[0]) {
+            foundMember = members[0];
+            break;
+          }
+        }
+      } catch (searchErr) {
+        console.warn(
+          `[findBookingInMomence] Search failed for query "${query.slice(0, 4)}...":`,
+          searchErr
+        );
+      }
+    }
+
+    if (!foundMember) {
+      console.log('[findBookingInMomence] No member found in Momence');
+      return null;
+    }
+
+    console.log(
+      `[findBookingInMomence] Found member: ${foundMember.firstName} ${foundMember.lastName} (ID: ${foundMember.id})`
+    );
+
+    // 2. Get upcoming bookings for this member (next 14 days)
+    const now = new Date();
+    const twoWeeksLater = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
+
+    let upcomingBooking: MomenceFallbackResult['booking'] = null;
+
+    try {
+      const bookingsResult = await client.getMemberSessionBookings(foundMember.id, {
+        page: 0,
+        pageSize: 20,
+        startAfter: now.toISOString(),
+        startBefore: twoWeeksLater.toISOString(),
+        includeCancelled: false,
+      });
+
+      const bookings = bookingsResult.payload || [];
+      const first = bookings[0];
+      if (first) {
+        // Take the earliest upcoming booking
+        const startsAt = first.session?.startsAt || '';
+        const sessionDate = startsAt ? new Date(startsAt) : null;
+        upcomingBooking = {
+          momenceBookingId: first.id,
+          sessionId: first.session?.id || 0,
+          className: first.session?.name || 'Clase',
+          startsAt,
+          classDate: sessionDate
+            ? sessionDate.toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' })
+            : '',
+          classTime: sessionDate
+            ? sessionDate.toLocaleTimeString('es-ES', {
+                timeZone: 'Europe/Madrid',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+              })
+            : '',
+          checkedIn: first.checkedIn,
+          cancelledAt: first.cancelledAt,
+        };
+        console.log(
+          `[findBookingInMomence] Found upcoming booking: ${upcomingBooking.className} on ${upcomingBooking.classDate}`
+        );
+      }
+    } catch (bookingsErr) {
+      console.warn('[findBookingInMomence] Failed to fetch member bookings:', bookingsErr);
+    }
+
+    return {
+      memberId: foundMember.id,
+      memberEmail: foundMember.email || '',
+      memberFirstName: foundMember.firstName || '',
+      memberLastName: foundMember.lastName || '',
+      memberPhone: foundMember.phoneNumber || '',
+      booking: upcomingBooking,
+    };
+  } catch (error) {
+    console.error('[findBookingInMomence] Fallback failed:', error);
+    return null;
+  }
 }
 
 // ============================================================================
@@ -1493,6 +1652,85 @@ async function executeManageTrialBooking(
   });
 
   if (!result) {
+    // FALLBACK: Search Momence API directly when Redis has no data
+    console.log('[manage_trial_booking] Redis lookup failed, trying Momence API fallback...');
+    const momenceFallback = await findBookingInMomence(context.redis, {
+      phone: context.phone,
+      email: inputEmail,
+      name: inputName,
+    });
+
+    if (momenceFallback?.booking) {
+      const mb = momenceFallback.booking;
+      const lang = context.lang || 'es';
+
+      if (action === 'check_status') {
+        return JSON.stringify({
+          found: true,
+          source: 'momence_direct',
+          booking: {
+            className: mb.className,
+            classDate: mb.classDate,
+            classTime: mb.classTime,
+            status: mb.cancelledAt ? 'Cancelada' : 'Confirmada',
+            attendance: mb.checkedIn ? 'Asististe ✅' : 'Pendiente',
+            canCancel: !mb.cancelledAt,
+            canReschedule: !mb.cancelledAt,
+          },
+        });
+      }
+
+      if (action === 'cancel') {
+        if (mb.cancelledAt) {
+          return JSON.stringify({ error: 'Esta reserva ya está cancelada en Momence.' });
+        }
+        try {
+          const client = getMomenceClient(context.redis);
+          await client.cancelBooking(mb.momenceBookingId, {
+            refund: true,
+            disableNotifications: true,
+            isLateCancellation: false,
+          });
+          console.log(
+            `[manage_trial_booking] Momence booking ${mb.momenceBookingId} cancelled via fallback`
+          );
+          return JSON.stringify({
+            found: true,
+            source: 'momence_direct',
+            cancelled: true,
+            message: `Reserva de ${mb.className} (${mb.classDate} ${mb.classTime}) cancelada correctamente.`,
+            scheduleUrl: `https://www.farrayscenter.com/${lang}/reservas`,
+          });
+        } catch (cancelErr) {
+          console.error('[manage_trial_booking] Momence fallback cancel failed:', cancelErr);
+          return JSON.stringify({
+            error:
+              'Encontré tu reserva en Momence pero no pude cancelarla. Contacta con info@farrayscenter.com.',
+          });
+        }
+      }
+
+      if (action === 'reschedule_next_week') {
+        return JSON.stringify({
+          found: true,
+          source: 'momence_direct',
+          error:
+            'Encontré tu reserva en Momence pero la reprogramación automática requiere datos adicionales. Contacta con info@farrayscenter.com o reserva de nuevo en:',
+          scheduleUrl: `https://www.farrayscenter.com/${lang}/reservas`,
+        });
+      }
+    }
+
+    // Also check if we found the member but no upcoming booking
+    if (momenceFallback && !momenceFallback.booking) {
+      return JSON.stringify({
+        found: false,
+        memberFound: true,
+        message: `Te encontré en el sistema como ${momenceFallback.memberFirstName} ${momenceFallback.memberLastName}, pero no tienes ninguna reserva próxima.`,
+        hint: 'El usuario existe en Momence pero no tiene bookings futuros. Puede que ya se haya cancelado o que la clase ya haya pasado.',
+      });
+    }
+
     const lang = context.lang || 'es';
     return JSON.stringify({
       found: false,

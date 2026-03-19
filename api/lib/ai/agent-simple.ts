@@ -24,6 +24,7 @@ import {
   LAURA_TOOLS_NEW_USER,
   executeTool,
   findTrialBooking,
+  findBookingInMomence,
 } from './laura-tools.js';
 import { markdownToWhatsApp, splitIntoBubbles } from './whatsapp-formatter.js';
 import { sendTypingIndicator, sendTextMessage as sendWhatsAppText } from '../whatsapp.js';
@@ -453,6 +454,52 @@ export async function processSimpleMessage(
       console.log(
         `[agent-simple] 🎫 Trial booking found (via ${matchedVia}): ${booking['className']} on ${booking['classDate']}`
       );
+    } else {
+      // FALLBACK: Search Momence API directly when Redis has no data
+      // ONLY for non-members — if user is a paying member with active membership/credits,
+      // their bookings are regular classes, not trial. Running this fallback for them would
+      // incorrectly set hasTrialBooking=true and downgrade their tools to NEW_USER set.
+      const isRealMember =
+        memberContext?.isExistingMember &&
+        (memberContext.hasActiveMembership || (memberContext.creditsAvailable ?? 0) > 0);
+
+      if (!isRealMember) {
+        try {
+          let fallbackEmail = memberContext?.email;
+          if (!fallbackEmail) {
+            const lead = await import('../lead-repository.js').then(m => m.getByPhone(phone));
+            if (lead?.email) fallbackEmail = lead.email;
+          }
+          const fallbackName =
+            [memberContext?.firstName, memberContext?.lastName].filter(Boolean).join(' ') ||
+            undefined;
+
+          if (fallbackEmail || fallbackName) {
+            const momenceResult = await findBookingInMomence(redis, {
+              phone,
+              email: fallbackEmail,
+              name: fallbackName,
+            });
+            if (momenceResult?.booking) {
+              const mb = momenceResult.booking;
+              trialContext = {
+                hasTrialBooking: true,
+                className: mb.className,
+                classDate: mb.classDate,
+                classTime: mb.classTime,
+                status: mb.cancelledAt ? 'cancelled' : 'confirmed',
+                canCancel: !mb.cancelledAt,
+                canReschedule: !mb.cancelledAt,
+              };
+              console.log(
+                `[agent-simple] 🎫 Trial booking found (via momence_fallback): ${mb.className} on ${mb.classDate}`
+              );
+            }
+          }
+        } catch (fallbackErr) {
+          console.warn('[agent-simple] Momence fallback lookup error (non-blocking):', fallbackErr);
+        }
+      }
     }
   } catch (trialError) {
     console.error('[agent-simple] Trial lookup error (non-blocking):', trialError);
