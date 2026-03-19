@@ -303,7 +303,7 @@ const getChangeFreq = (page) => {
 
 const routes = [
   // ===== ESPAÑOL (ES) =====
-  { path: '', lang: 'es', page: 'home' },
+  // Root URL '' removed — it 301-redirects to /es, redirect URLs shouldn't be in sitemap
   { path: 'es', lang: 'es', page: 'home' },
   // es/clases removed from sitemap — it's a redirect to es/clases/baile-barcelona
   { path: 'es/clases/baile-barcelona', lang: 'es', page: 'classes' },
@@ -419,10 +419,10 @@ const routes = [
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
   { path: 'ca/metodo-farray', lang: 'ca', page: 'metodoFarray' },
-  { path: 'ca/merchandising', lang: 'ca', page: 'merchandising' },
+  // ca/merchandising removed — low search value in Catalan locale
   { path: 'ca/regala-baile', lang: 'ca', page: 'regalaBaile' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
-  { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
+  // ca/reservas removed — app-like page, low SEO value in secondary locales
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
   { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
   { path: 'ca/clases/contemporaneo-barcelona', lang: 'ca', page: 'contemporaneo' },
@@ -436,13 +436,10 @@ const routes = [
   { path: 'ca/preguntas-frecuentes', lang: 'ca', page: 'faq' },
   { path: 'ca/alquiler-salas-baile-barcelona', lang: 'ca', page: 'alquilerSalas' },
   { path: 'ca/estudio-grabacion-barcelona', lang: 'ca', page: 'estudioGrabacion' },
-  { path: 'ca/terminos-y-condiciones', lang: 'ca', page: 'termsConditions' },
-  { path: 'ca/aviso-legal', lang: 'ca', page: 'legalNotice' },
-  { path: 'ca/politica-privacidad', lang: 'ca', page: 'privacyPolicy' },
-  { path: 'ca/politica-cookies', lang: 'ca', page: 'cookiePolicy' },
+  // ca legal pages removed — low search value, dilute crawl budget in secondary locales
   { path: 'ca/servicios-baile-barcelona', lang: 'ca', page: 'serviciosBaile' },
   { path: 'ca/como-llegar-escuela-baile-barcelona', lang: 'ca', page: 'ubicacion' },
-  { path: 'ca/calendario', lang: 'ca', page: 'calendario' },
+  // ca/calendario removed — app-like page, low SEO value in secondary locales
   { path: 'ca/instalaciones-escuela-baile-barcelona', lang: 'ca', page: 'facilities' },
   { path: 'ca/blog', lang: 'ca', page: 'blog' },
   // Blog categories
@@ -502,10 +499,10 @@ const routes = [
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
   { path: 'en/metodo-farray', lang: 'en', page: 'metodoFarray' },
-  { path: 'en/merchandising', lang: 'en', page: 'merchandising' },
+  // en/merchandising removed — low search value in English locale
   { path: 'en/regala-baile', lang: 'en', page: 'regalaBaile' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
-  { path: 'en/reservas', lang: 'en', page: 'reservas' },
+  // en/reservas removed — app-like page, low SEO value in secondary locales
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
   { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
   { path: 'en/clases/contemporaneo-barcelona', lang: 'en', page: 'contemporaneo' },
@@ -519,13 +516,10 @@ const routes = [
   { path: 'en/preguntas-frecuentes', lang: 'en', page: 'faq' },
   { path: 'en/alquiler-salas-baile-barcelona', lang: 'en', page: 'alquilerSalas' },
   { path: 'en/estudio-grabacion-barcelona', lang: 'en', page: 'estudioGrabacion' },
-  { path: 'en/terminos-y-condiciones', lang: 'en', page: 'termsConditions' },
-  { path: 'en/aviso-legal', lang: 'en', page: 'legalNotice' },
-  { path: 'en/politica-privacidad', lang: 'en', page: 'privacyPolicy' },
-  { path: 'en/politica-cookies', lang: 'en', page: 'cookiePolicy' },
+  // en legal pages removed — low search value, dilute crawl budget in secondary locales
   { path: 'en/servicios-baile-barcelona', lang: 'en', page: 'serviciosBaile' },
   { path: 'en/como-llegar-escuela-baile-barcelona', lang: 'en', page: 'ubicacion' },
-  { path: 'en/calendario', lang: 'en', page: 'calendario' },
+  // en/calendario removed — app-like page, low SEO value in secondary locales
   { path: 'en/instalaciones-escuela-baile-barcelona', lang: 'en', page: 'facilities' },
   { path: 'en/blog', lang: 'en', page: 'blog' },
   // Blog categories
@@ -585,10 +579,10 @@ const routes = [
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
   { path: 'fr/metodo-farray', lang: 'fr', page: 'metodoFarray' },
-  { path: 'fr/merchandising', lang: 'fr', page: 'merchandising' },
+  // fr/merchandising removed — low search value in French locale
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
-  { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
+  // fr/reservas removed — app-like page, low SEO value in secondary locales
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
   { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
   { path: 'fr/clases/contemporaneo-barcelona', lang: 'fr', page: 'contemporaneo' },
@@ -602,13 +596,10 @@ const routes = [
   { path: 'fr/preguntas-frecuentes', lang: 'fr', page: 'faq' },
   { path: 'fr/alquiler-salas-baile-barcelona', lang: 'fr', page: 'alquilerSalas' },
   { path: 'fr/estudio-grabacion-barcelona', lang: 'fr', page: 'estudioGrabacion' },
-  { path: 'fr/terminos-y-condiciones', lang: 'fr', page: 'termsConditions' },
-  { path: 'fr/aviso-legal', lang: 'fr', page: 'legalNotice' },
-  { path: 'fr/politica-privacidad', lang: 'fr', page: 'privacyPolicy' },
-  { path: 'fr/politica-cookies', lang: 'fr', page: 'cookiePolicy' },
+  // fr legal pages removed — low search value, dilute crawl budget in secondary locales
   { path: 'fr/servicios-baile-barcelona', lang: 'fr', page: 'serviciosBaile' },
   { path: 'fr/como-llegar-escuela-baile-barcelona', lang: 'fr', page: 'ubicacion' },
-  { path: 'fr/calendario', lang: 'fr', page: 'calendario' },
+  // fr/calendario removed — app-like page, low SEO value in secondary locales
   { path: 'fr/instalaciones-escuela-baile-barcelona', lang: 'fr', page: 'facilities' },
   { path: 'fr/blog', lang: 'fr', page: 'blog' },
   // Blog categories
@@ -742,7 +733,9 @@ const generateImagesSitemap = () => {
 
 // 4. SITEMAP INDEX
 const generateSitemapIndex = () => {
-  const lastmod = getCurrentDate();
+  // Use the most recent content update date, not today's date
+  // This prevents Google from seeing the index as "spam-refreshed" daily
+  const lastmod = '2026-03-15';
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
