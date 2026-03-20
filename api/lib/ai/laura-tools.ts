@@ -1723,430 +1723,238 @@ async function executeManageTrialBooking(
         try {
           const client = getMomenceClient(context.redis);
           const MADRID_TZ = 'Europe/Madrid';
-
-          // 1. Calculate target date (+7 or +14 days, same day of week)
-          const daysOffset = action === 'reschedule_in_two_weeks' ? 14 : 7;
-          const targetDate = new Date(mb.classDate + 'T12:00:00Z');
-          targetDate.setDate(targetDate.getDate() + daysOffset);
-          const targetDateStr = targetDate.toISOString().split('T')[0] || '';
-
-          // Search window: target ±1 to +2 days
-          const searchStart = new Date(targetDate);
-          searchStart.setDate(searchStart.getDate() - 1);
-          searchStart.setHours(0, 0, 0, 0);
-          const searchEnd = new Date(targetDate);
-          searchEnd.setDate(searchEnd.getDate() + 2);
-          searchEnd.setHours(23, 59, 59, 999);
-
-          // Original time for comparison
           const [origH, origM] = (mb.classTime || '00:00').split(':').map(Number);
           const origMinutes = (origH || 0) * 60 + (origM || 0);
-
-          // 2. Find same class next week
-          const sessionsResult = await client.getSessions({
-            page: 0,
-            pageSize: 100,
-            startAfter: searchStart.toISOString(),
-            startBefore: searchEnd.toISOString(),
-            sortBy: 'startsAt',
-            sortOrder: 'ASC',
-          });
-          const sessions = sessionsResult.payload || [];
           const targetClassName = mb.className.toLowerCase().trim();
 
-          // Score matches: same name + same day + closest time
-          type ScoredMatch = {
-            session: Record<string, unknown>;
-            dayMatch: boolean;
-            timeDiff: number;
-          };
-          const scored: ScoredMatch[] = [];
-          for (const s of sessions) {
-            const sName = ((s as { name?: string }).name || '').toLowerCase().trim();
-            const startsAt = (s as { startsAt?: string }).startsAt;
-            if (!startsAt || sName !== targetClassName) continue;
+          // Helper: find best session match for a given day offset
+          const findSessionAtOffset = async (
+            offset: number
+          ): Promise<{ session: Record<string, unknown>; dateStr: string } | null> => {
+            const tDate = new Date(mb.classDate + 'T12:00:00Z');
+            tDate.setDate(tDate.getDate() + offset);
+            const tDateStr = tDate.toISOString().split('T')[0] || '';
+            const sStart = new Date(tDate);
+            sStart.setDate(sStart.getDate() - 1);
+            sStart.setHours(0, 0, 0, 0);
+            const sEnd = new Date(tDate);
+            sEnd.setDate(sEnd.getDate() + 2);
+            sEnd.setHours(23, 59, 59, 999);
 
-            const dt = new Date(startsAt);
-            const sessionDateStr = dt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
-            const dayMatch = sessionDateStr === targetDateStr;
-
-            const timeStr = dt.toLocaleTimeString('en-US', {
-              hour12: false,
-              hour: '2-digit',
-              minute: '2-digit',
-              timeZone: MADRID_TZ,
-            });
-            const [sH, sM] = timeStr.split(':').map(Number);
-            const timeDiff = Math.abs((sH || 0) * 60 + (sM || 0) - origMinutes);
-            scored.push({ session: s as Record<string, unknown>, dayMatch, timeDiff });
-          }
-
-          // Best match: same day + closest time
-          const bestMatch = scored
-            .filter(m => m.dayMatch)
-            .sort((a, b) => a.timeDiff - b.timeDiff)[0];
-
-          if (!bestMatch) {
-            // Try the alternative week (+7 if user asked +14, or +14 if user asked +7)
-            const altOffset = daysOffset === 7 ? 14 : 7;
-            const altTargetDate = new Date(mb.classDate + 'T12:00:00Z');
-            altTargetDate.setDate(altTargetDate.getDate() + altOffset);
-            const altTargetDateStr = altTargetDate.toISOString().split('T')[0] || '';
-
-            const altSearchStart = new Date(altTargetDate);
-            altSearchStart.setDate(altSearchStart.getDate() - 1);
-            altSearchStart.setHours(0, 0, 0, 0);
-            const altSearchEnd = new Date(altTargetDate);
-            altSearchEnd.setDate(altSearchEnd.getDate() + 2);
-            altSearchEnd.setHours(23, 59, 59, 999);
-
-            const altResult = await client.getSessions({
+            const result = await client.getSessions({
               page: 0,
               pageSize: 100,
-              startAfter: altSearchStart.toISOString(),
-              startBefore: altSearchEnd.toISOString(),
+              startAfter: sStart.toISOString(),
+              startBefore: sEnd.toISOString(),
               sortBy: 'startsAt',
               sortOrder: 'ASC',
             });
-            const altSessions = altResult.payload || [];
-            const altScored: ScoredMatch[] = [];
-            for (const s of altSessions) {
+
+            const matches: { s: Record<string, unknown>; diff: number }[] = [];
+            for (const s of result.payload || []) {
               const sName = ((s as { name?: string }).name || '').toLowerCase().trim();
               const startsAt = (s as { startsAt?: string }).startsAt;
               if (!startsAt || sName !== targetClassName) continue;
               const dt = new Date(startsAt);
-              const sessionDateStr = dt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
-              const dayMatch = sessionDateStr === altTargetDateStr;
-              const timeStr = dt.toLocaleTimeString('en-US', {
+              if (dt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ }) !== tDateStr) continue;
+              const tStr = dt.toLocaleTimeString('en-US', {
                 hour12: false,
                 hour: '2-digit',
                 minute: '2-digit',
                 timeZone: MADRID_TZ,
               });
-              const [sH, sM] = timeStr.split(':').map(Number);
-              const timeDiff = Math.abs((sH || 0) * 60 + (sM || 0) - origMinutes);
-              altScored.push({ session: s as Record<string, unknown>, dayMatch, timeDiff });
-            }
-            const altBestMatch = altScored
-              .filter(m => m.dayMatch)
-              .sort((a, b) => a.timeDiff - b.timeDiff)[0];
-
-            if (!altBestMatch) {
-              return JSON.stringify({
-                found: true,
-                source: 'momence_direct',
-                error: `No encontré "${mb.className}" ni en +${daysOffset / 7} semana(s) ni en +${altOffset / 7} semana(s). Puede que no esté programada esas semanas.`,
-                scheduleUrl: `https://www.farrayscenter.com/${lang}/reservas`,
+              const [h, m] = tStr.split(':').map(Number);
+              matches.push({
+                s: s as Record<string, unknown>,
+                diff: Math.abs((h || 0) * 60 + (m || 0) - origMinutes),
               });
             }
+            matches.sort((a, b) => a.diff - b.diff);
+            return matches[0] ? { session: matches[0].s, dateStr: tDateStr } : null;
+          };
 
-            // Found in alternative week — inform user and use it
-            const altWeekLabel = altOffset === 7 ? 'la semana siguiente' : 'dentro de 2 semanas';
-            console.log(
-              `[manage_trial_booking] Momence fallback: class not found at +${daysOffset}d, found at +${altOffset}d`
-            );
-            // Replace bestMatch-related variables with alt match for the rest of the flow
-            Object.assign(bestMatch ?? {}, altBestMatch);
-            // We need to reassign since bestMatch was const — use the alt data directly below
-            const altSession = altBestMatch.session;
-            const altSessionId = (altSession as { id?: number }).id;
-            const altStartsAt = (altSession as { startsAt?: string }).startsAt || '';
-            const altDt = new Date(altStartsAt);
-            const altDateISO = altDt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
-            const altDateHuman = altDt.toLocaleDateString('es-ES', {
+          // Helper: execute the reschedule (cancel old + create new + Redis + emails)
+          const executeReschedule = async (
+            session: Record<string, unknown>,
+            extraMessage?: string
+          ): Promise<string> => {
+            const sessionId = (session as { id?: number }).id;
+            const startsAt = (session as { startsAt?: string }).startsAt || '';
+            const dt = new Date(startsAt);
+            const dateISO = dt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
+            const dateHuman = dt.toLocaleDateString('es-ES', {
               weekday: 'long',
               year: 'numeric',
               month: 'long',
               day: 'numeric',
               timeZone: MADRID_TZ,
             });
-            const altTime = altDt.toLocaleTimeString('es-ES', {
+            const time = dt.toLocaleTimeString('es-ES', {
               hour: '2-digit',
               minute: '2-digit',
               timeZone: MADRID_TZ,
             });
 
-            if (!altSessionId) {
-              return JSON.stringify({ error: 'Sesión alternativa encontrada pero sin ID válido.' });
+            if (!sessionId) {
+              return JSON.stringify({ error: 'Sesión encontrada pero sin ID válido.' });
             }
 
-            // Use alt session for the rest of the flow — return early with the full reschedule
+            // Cancel old booking
             await client.cancelBooking(mb.momenceBookingId, {
               refund: false,
               disableNotifications: true,
               isLateCancellation: false,
             });
+            console.log(
+              `[manage_trial_booking] Momence fallback: cancelled booking ${mb.momenceBookingId}`
+            );
 
-            const altBookingResult = await client.createFreeBooking(
-              altSessionId,
+            // Create new booking — if this fails, the cancel already happened
+            // but the outer catch will inform the user to contact support
+            const bookingResult = await client.createFreeBooking(
+              sessionId,
               momenceFallback.memberId
             );
-            const altNbr = altBookingResult as Record<string, unknown>;
-            const altNewMomenceBookingId =
-              (altNbr['sessionBookingId'] as number) ||
-              ((altNbr['payload'] as Record<string, unknown> | undefined)?.['id'] as number) ||
-              (altNbr['id'] as number);
+            const br = bookingResult as Record<string, unknown>;
+            const newMomenceId =
+              (br['sessionBookingId'] as number) ||
+              ((br['payload'] as Record<string, unknown> | undefined)?.['id'] as number) ||
+              (br['id'] as number);
+            console.log(
+              `[manage_trial_booking] Momence fallback: created booking ${newMomenceId} for session ${sessionId}`
+            );
 
-            // Create Redis records
-            const altTTL = 90 * 24 * 60 * 60;
-            const altNewEventId = `evt_${Date.now()}_rsch_${Math.random().toString(36).substring(2, 10)}`;
-            const altNormalizedPhone = context.phone.replace(/[\s\-+()]/g, '');
-            const altNormalizedEmail = (momenceFallback.memberEmail || '').toLowerCase().trim();
-            const altNewBooking = {
-              eventId: altNewEventId,
+            // Redis records (non-blocking)
+            const TTL = 90 * 24 * 60 * 60;
+            const newEventId = `evt_${Date.now()}_rsch_${Math.random().toString(36).substring(2, 10)}`;
+            const nPhone = context.phone.replace(/[\s\-+()]/g, '');
+            const nEmail = (momenceFallback.memberEmail || '').toLowerCase().trim();
+            const className = (session as { name?: string }).name || mb.className;
+
+            const newBooking = {
+              eventId: newEventId,
               bookingType: 'trial',
               firstName: momenceFallback.memberFirstName,
               lastName: momenceFallback.memberLastName,
-              email: altNormalizedEmail,
-              phone: altNormalizedPhone,
-              className: (altSession as { name?: string }).name || mb.className,
-              classDate: altDateISO,
-              classTime: altTime,
+              email: nEmail,
+              phone: nPhone,
+              className,
+              classDate: dateISO,
+              classTime: time,
               createdAt: new Date().toISOString(),
               status: 'confirmed',
               attendance: 'pending',
               reconciliationStatus: 'pending',
               rescheduleCount: 1,
               rescheduledFrom: null,
-              momenceVerified: !!altNewMomenceBookingId,
-              momenceBookingId: altNewMomenceBookingId || null,
-              sessionId: String(altSessionId),
+              momenceVerified: !!newMomenceId,
+              momenceBookingId: newMomenceId || null,
+              sessionId: String(sessionId),
             };
 
             try {
               await context.redis.setex(
-                `booking_details:${altNewEventId}`,
-                altTTL,
-                JSON.stringify(altNewBooking)
+                `booking_details:${newEventId}`,
+                TTL,
+                JSON.stringify(newBooking)
               );
-              if (altNormalizedPhone)
-                await context.redis.setex(`phone:${altNormalizedPhone}`, altTTL, altNewEventId);
-              if (altNormalizedEmail) {
+              if (nPhone) await context.redis.setex(`phone:${nPhone}`, TTL, newEventId);
+              if (nEmail) {
+                await context.redis.setex(`trial_email:${nEmail}`, TTL, newEventId);
                 await context.redis.setex(
-                  `trial_email:${altNormalizedEmail}`,
-                  altTTL,
-                  altNewEventId
-                );
-                await context.redis.setex(
-                  `booking:${altNormalizedEmail}`,
-                  altTTL,
+                  `booking:${nEmail}`,
+                  TTL,
                   JSON.stringify({
                     timestamp: Date.now(),
-                    sessionId: altSessionId,
-                    className: altNewBooking.className,
-                    eventId: altNewEventId,
+                    sessionId,
+                    className,
+                    eventId: newEventId,
                   })
                 );
               }
-              await context.redis.sadd('all_trial_booking_ids', altNewEventId);
-              await context.redis.sadd(`reminders:${altDateISO}`, altNewEventId);
+              await context.redis.sadd('all_trial_booking_ids', newEventId);
+              await context.redis.sadd(`reminders:${dateISO}`, newEventId);
             } catch {
               /* non-blocking */
             }
 
+            // Emails (non-blocking)
             try {
               const { sendNoShowRescheduleEmail, sendAdminBookingNotification } =
                 await import('../email.js');
               await sendNoShowRescheduleEmail({
-                to: altNormalizedEmail,
+                to: nEmail,
                 firstName: momenceFallback.memberFirstName,
                 originalClassName: mb.className,
                 originalDate: mb.classDate,
                 originalTime: mb.classTime,
-                newClassName: altNewBooking.className,
-                newDate: altDateHuman,
-                newTime: altTime,
+                newClassName: className,
+                newDate: dateHuman,
+                newTime: time,
                 managementUrl: `https://www.farrayscenter.com/${lang}/reservas`,
                 reason: 'manual' as const,
               });
               await sendAdminBookingNotification({
                 firstName: momenceFallback.memberFirstName,
                 lastName: momenceFallback.memberLastName,
-                email: altNormalizedEmail,
-                phone: altNormalizedPhone,
-                className: altNewBooking.className,
-                classDate: altDateHuman,
-                classTime: altTime,
-                sourceUrl: 'Reprogramación vía WhatsApp (Momence fallback, semana alternativa)',
+                email: nEmail,
+                phone: nPhone,
+                className,
+                classDate: dateHuman,
+                classTime: time,
+                sourceUrl: `Reprogramación vía WhatsApp (Momence fallback${extraMessage ? ', ' + extraMessage : ''})`,
               });
             } catch {
               /* non-blocking */
             }
+
+            const msg = extraMessage
+              ? `${extraMessage} Tu clase ha sido reprogramada para ${dateHuman} a las ${time}.`
+              : `Clase reprogramada para ${dateHuman} a las ${time}.`;
 
             return JSON.stringify({
               success: true,
               found: true,
               source: 'momence_direct',
               rescheduled: true,
-              alternativeWeekUsed: true,
-              message: `No había clase ${altWeekLabel === 'la semana siguiente' ? 'dentro de 2 semanas' : 'la semana siguiente'}, pero sí ${altWeekLabel}. Tu clase ha sido reprogramada para ${altDateHuman} a las ${altTime}.`,
-              newClassName: altNewBooking.className,
-              newClassDate: altDateHuman,
-              newClassTime: altTime,
+              alternativeWeekUsed: !!extraMessage,
+              message: msg,
+              newClassName: className,
+              newClassDate: dateHuman,
+              newClassTime: time,
             });
-          }
-
-          const nextSession = bestMatch.session;
-          const nextSessionId = (nextSession as { id?: number }).id;
-          const nextStartsAt = (nextSession as { startsAt?: string }).startsAt || '';
-          const nextDt = new Date(nextStartsAt);
-          const nextDateISO = nextDt.toLocaleDateString('en-CA', { timeZone: MADRID_TZ });
-          const nextDateHuman = nextDt.toLocaleDateString('es-ES', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            timeZone: MADRID_TZ,
-          });
-          const nextTime = nextDt.toLocaleTimeString('es-ES', {
-            hour: '2-digit',
-            minute: '2-digit',
-            timeZone: MADRID_TZ,
-          });
-
-          if (!nextSessionId) {
-            return JSON.stringify({ error: 'Sesión encontrada pero sin ID válido.' });
-          }
-
-          // 3. Cancel old booking in Momence
-          await client.cancelBooking(mb.momenceBookingId, {
-            refund: false,
-            disableNotifications: true,
-            isLateCancellation: false,
-          });
-          console.log(
-            `[manage_trial_booking] Momence fallback: cancelled booking ${mb.momenceBookingId}`
-          );
-
-          // 4. Create new booking in Momence
-          const newBookingResult = await client.createFreeBooking(
-            nextSessionId,
-            momenceFallback.memberId
-          );
-          const nbr = newBookingResult as Record<string, unknown>;
-          const newMomenceBookingId =
-            (nbr['sessionBookingId'] as number) ||
-            ((nbr['payload'] as Record<string, unknown> | undefined)?.['id'] as number) ||
-            (nbr['id'] as number);
-          console.log(
-            `[manage_trial_booking] Momence fallback: created new booking ${newMomenceBookingId} for session ${nextSessionId}`
-          );
-
-          // 5. Create Redis record so future lookups work (phone + email + booking_details)
-          const TTL = 90 * 24 * 60 * 60; // 90 days
-          const newEventId = `evt_${Date.now()}_rsch_${Math.random().toString(36).substring(2, 10)}`;
-          const normalizedPhone = context.phone.replace(/[\s\-+()]/g, '');
-          const normalizedEmail = (momenceFallback.memberEmail || '').toLowerCase().trim();
-
-          const newBookingDetails = {
-            eventId: newEventId,
-            bookingType: 'trial',
-            firstName: momenceFallback.memberFirstName,
-            lastName: momenceFallback.memberLastName,
-            email: normalizedEmail,
-            phone: normalizedPhone,
-            className: (nextSession as { name?: string }).name || mb.className,
-            classDate: nextDateISO,
-            classTime: nextTime,
-            createdAt: new Date().toISOString(),
-            status: 'confirmed',
-            attendance: 'pending',
-            reconciliationStatus: 'pending',
-            rescheduleCount: 1, // Already rescheduled once — no more allowed
-            rescheduledFrom: null,
-            momenceVerified: !!newMomenceBookingId,
-            momenceBookingId: newMomenceBookingId || null,
-            sessionId: String(nextSessionId),
           };
 
-          try {
-            await context.redis.setex(
-              `booking_details:${newEventId}`,
-              TTL,
-              JSON.stringify(newBookingDetails)
-            );
-            if (normalizedPhone) {
-              await context.redis.setex(`phone:${normalizedPhone}`, TTL, newEventId);
-            }
-            if (normalizedEmail) {
-              await context.redis.setex(`trial_email:${normalizedEmail}`, TTL, newEventId);
-              await context.redis.setex(
-                `booking:${normalizedEmail}`,
-                TTL,
-                JSON.stringify({
-                  timestamp: Date.now(),
-                  sessionId: nextSessionId,
-                  className: newBookingDetails.className,
-                  eventId: newEventId,
-                })
-              );
-            }
-            await context.redis.sadd('all_trial_booking_ids', newEventId);
-            // Add to reminders set so cron jobs send 48h/24h reminders
-            await context.redis.sadd(`reminders:${nextDateISO}`, newEventId);
-            console.log(
-              `[manage_trial_booking] Momence fallback: Redis records created for ${newEventId}`
-            );
-          } catch (redisErr) {
-            // Non-blocking — Momence booking already created successfully
-            console.warn(
-              '[manage_trial_booking] Momence fallback: Redis save failed (non-blocking):',
-              redisErr
+          // Try requested week first, then alternative week if no session found
+          const primaryOffset = action === 'reschedule_in_two_weeks' ? 14 : 7;
+          const altOffset = primaryOffset === 7 ? 14 : 7;
+
+          const primaryMatch = await findSessionAtOffset(primaryOffset);
+          if (primaryMatch) {
+            return await executeReschedule(primaryMatch.session);
+          }
+
+          // Primary week has no class — try alternative week
+          console.log(
+            `[manage_trial_booking] Momence fallback: no class at +${primaryOffset}d, trying +${altOffset}d`
+          );
+          const altMatch = await findSessionAtOffset(altOffset);
+          if (altMatch) {
+            const altLabel = altOffset === 7 ? 'la semana siguiente' : 'dentro de 2 semanas';
+            const requestedLabel =
+              primaryOffset === 7 ? 'la semana siguiente' : 'dentro de 2 semanas';
+            return await executeReschedule(
+              altMatch.session,
+              `No había clase ${requestedLabel}, pero sí ${altLabel}.`
             );
           }
 
-          // 6. Send notification emails (non-blocking)
-          try {
-            const { sendNoShowRescheduleEmail, sendAdminBookingNotification } =
-              await import('../email.js');
-
-            // Email to student: reschedule confirmation
-            const managementUrl = `https://www.farrayscenter.com/${lang}/reservas`;
-            await sendNoShowRescheduleEmail({
-              to: normalizedEmail,
-              firstName: momenceFallback.memberFirstName,
-              originalClassName: mb.className,
-              originalDate: mb.classDate,
-              originalTime: mb.classTime,
-              newClassName: newBookingDetails.className,
-              newDate: nextDateHuman,
-              newTime: nextTime,
-              managementUrl,
-              reason: 'manual' as const,
-            });
-            console.log(
-              `[manage_trial_booking] Momence fallback: reschedule email sent to ${normalizedEmail.slice(0, 4)}...`
-            );
-
-            // Email to admin: new booking notification
-            await sendAdminBookingNotification({
-              firstName: momenceFallback.memberFirstName,
-              lastName: momenceFallback.memberLastName,
-              email: normalizedEmail,
-              phone: normalizedPhone,
-              className: newBookingDetails.className,
-              classDate: nextDateHuman,
-              classTime: nextTime,
-              sourceUrl: 'Reprogramación vía WhatsApp (Momence fallback)',
-            });
-            console.log('[manage_trial_booking] Momence fallback: admin notification sent');
-          } catch (emailErr) {
-            // Non-blocking — booking is already done
-            console.warn(
-              '[manage_trial_booking] Momence fallback: email notification failed (non-blocking):',
-              emailErr
-            );
-          }
-
+          // Neither week has the class
           return JSON.stringify({
-            success: true,
             found: true,
             source: 'momence_direct',
-            rescheduled: true,
-            message: `Clase reprogramada para ${nextDateHuman} a las ${nextTime}.`,
-            newClassName: newBookingDetails.className,
-            newClassDate: nextDateHuman,
-            newClassTime: nextTime,
+            error: `No encontré "${mb.className}" ni en +1 ni en +2 semanas. Puede que no esté programada.`,
+            scheduleUrl: `https://www.farrayscenter.com/${lang}/reservas`,
           });
         } catch (reschErr) {
           console.error('[manage_trial_booking] Momence fallback reschedule failed:', reschErr);
@@ -2538,36 +2346,44 @@ async function executeManageTrialBooking(
         });
       }
 
-      // If requested week failed, try the alternative week automatically
-      const altOffset = offset === 7 ? 14 : 7;
-      const altResult = await rescheduleBooking(
-        context.redis as unknown as import('ioredis').default,
-        {
-          eventId,
-          mode: 'next_week',
-          notifyStudent: false,
-          reason: 'manual',
-          daysOffset: altOffset,
-        }
-      );
+      // Only retry alt week if error indicates "no matching session" (not API/capacity errors)
+      const isSessionNotFound =
+        result.error?.includes('No matching class') ||
+        result.error?.includes('not found') ||
+        result.error?.includes('Could not find');
 
-      if (altResult.success) {
-        const altWeekLabel = altOffset === 7 ? 'la semana siguiente' : 'dentro de 2 semanas';
-        return JSON.stringify({
-          success: true,
-          alternativeWeekUsed: true,
-          message: `No había clase en +${offset / 7} semana(s), pero sí ${altWeekLabel}. Clase reprogramada para ${altResult.newClassDate} a las ${altResult.newClassTime}.`,
-          newClassName: altResult.newClassName,
-          newClassDate: altResult.newClassDate,
-          newClassTime: altResult.newClassTime,
-        });
+      if (isSessionNotFound) {
+        const altOffset = offset === 7 ? 14 : 7;
+        const altResult = await rescheduleBooking(
+          context.redis as unknown as import('ioredis').default,
+          {
+            eventId,
+            mode: 'next_week',
+            notifyStudent: false,
+            reason: 'manual',
+            daysOffset: altOffset,
+          }
+        );
+
+        if (altResult.success) {
+          const altWeekLabel = altOffset === 7 ? 'la semana siguiente' : 'dentro de 2 semanas';
+          return JSON.stringify({
+            success: true,
+            alternativeWeekUsed: true,
+            message: `No había clase en +${offset / 7} semana(s), pero sí ${altWeekLabel}. Clase reprogramada para ${altResult.newClassDate} a las ${altResult.newClassTime}.`,
+            newClassName: altResult.newClassName,
+            newClassDate: altResult.newClassDate,
+            newClassTime: altResult.newClassTime,
+          });
+        }
       }
 
       const lang = context.lang || 'es';
       return JSON.stringify({
-        error:
-          'No se encontró la clase ni en +1 ni en +2 semanas. Puede que sea festivo o no esté programada.',
-        hint: 'No hay clase disponible en las próximas 2 semanas.',
+        error: result.error || 'No se pudo reprogramar la clase.',
+        hint: isSessionNotFound
+          ? 'No hay clase disponible en las próximas 2 semanas.'
+          : 'La clase puede estar llena o hubo un error del sistema.',
         alternative: `Cancela esta reserva y reserva de nuevo cuando haya clases: https://www.farrayscenter.com/${lang}/reservas`,
       });
     } catch (error) {
