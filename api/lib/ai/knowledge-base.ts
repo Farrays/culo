@@ -614,8 +614,13 @@ Y lo mejor: ¡la primera clase es GRATIS para que pruebes sin compromiso!`,
     },
     {
       question: '¿Hay matrícula?',
-      answer:
-        '¡Ahora mismo la matrícula (que normalmente son 60€) está GRATIS! Es el mejor momento para apuntarse.',
+      answer: `¡Ahora mismo la matrícula (que normalmente son 60€) está GRATIS! Es el mejor momento para apuntarse.
+
+Las cuotas mensuales son:
+- 1 clase/semana → 50€/mes
+- 2 clases/semana → 78€/mes (la más popular)
+
+Y la primera clase es GRATIS para que pruebes sin compromiso.`,
       keywords: ['matricula', 'inscripcion', 'alta'],
     },
     {
@@ -859,8 +864,13 @@ I el millor: la primera classe és GRATIS per provar sense compromís!`,
     },
     {
       question: 'Hi ha matrícula?',
-      answer:
-        "Ara mateix la matrícula (que normalment són 60€) està GRATIS! És el millor moment per apuntar-s'hi.",
+      answer: `Ara mateix la matrícula (que normalment són 60€) està GRATIS! És el millor moment per apuntar-s'hi.
+
+Les quotes mensuals són:
+- 1 classe/setmana → 50€/mes
+- 2 classes/setmana → 78€/mes (la més popular)
+
+I la primera classe és GRATIS per provar sense compromís.`,
       keywords: ['matricula', 'inscripcio', 'alta'],
     },
     {
@@ -1098,8 +1108,13 @@ Best part: your first class is FREE with no commitment!`,
     },
     {
       question: 'Is there a registration fee?',
-      answer:
-        "Right now the registration fee (normally 60€) is FREE! It's the best time to sign up.",
+      answer: `Right now the registration fee (normally 60€) is FREE! It's the best time to sign up.
+
+Monthly fees:
+- 1 class/week → 50€/month
+- 2 classes/week → 78€/month (most popular)
+
+And your first class is FREE with no commitment.`,
       keywords: ['registration', 'signup', 'fee', 'enrollment'],
     },
     {
@@ -1337,8 +1352,13 @@ Le meilleur: le premier cours est GRATUIT sans engagement!`,
     },
     {
       question: "Y a-t-il des frais d'inscription?",
-      answer:
-        "En ce moment les frais d'inscription (normalement 60€) sont GRATUITS! C'est le meilleur moment pour s'inscrire.",
+      answer: `En ce moment les frais d'inscription (normalement 60€) sont GRATUITS! C'est le meilleur moment pour s'inscrire.
+
+Les tarifs mensuels:
+- 1 cours/semaine → 50€/mois
+- 2 cours/semaine → 78€/mois (le plus populaire)
+
+Et le premier cours est GRATUIT sans engagement.`,
       keywords: ['inscription', 'frais', 'enregistrement'],
     },
     {
